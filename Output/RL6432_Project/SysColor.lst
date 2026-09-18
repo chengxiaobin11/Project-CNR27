@@ -1,0 +1,540 @@
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SYSCOLOR
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\SysColor.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\System\Code\SysColor.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL643
+                    -2;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFun
+                    -ction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\Scale
+                    -rCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Ker
+                    -nel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function
+                    -\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\No
+                    -ne Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJ
+                    -ECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysColor.lst) OBJECT(.\Output\RL6432_P
+                    -roject\SysColor.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : SysColor.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __SYSTEM_COLOR__
+  18          
+  19          #include "SysInclude.h"
+  20          #define _DEF_Aim_HLW            _OFF
+  21          
+  22          //****************************************************************************
+  23          // DEFINITIONS / MACROS
+  24          //****************************************************************************
+  25          #if(_DEF_Aim_HLW)
+              #define P0_60_HLW_ADDR_PORT                                                                               
+             -              0x0060
+              #define P0_61_HLW_DATA_PORT                                                                               
+             -              0x0061
+              #define _P0_61_PT_0D_HLW_CONTROL1                                                                         
+             -              0x0D
+              #define _P0_61_PT_0E_HLW_CONTROL0                                                                         
+             -              0x0E
+              #define P7_DA_DCR_CTRL                                                                                    
+             -              0x07DA
+              
+              extern void ScalerSetDataPortBit(WORD usAddr, BYTE ucValue, BYTE ucAnd, BYTE ucOr);
+              extern void OsdFuncEnableOsd(void);
+              extern BYTE GetOsdAim_ColorAuto();
+              extern BYTE UserCommonHDRGetHDR10Status_1(void);
+              BYTE rgb_flag = 0;
+              #endif
+  38          
+  39          
+  40          //****************************************************************************
+  41          // STRUCT / TYPE / ENUM DEFINITTIONS
+  42          //****************************************************************************
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 2   
+
+  43          
+  44          
+  45          //****************************************************************************
+  46          // CODE TABLES
+  47          //****************************************************************************
+  48          
+  49          
+  50          //****************************************************************************
+  51          // VARIABLE DECLARATIONS
+  52          //****************************************************************************
+  53          
+  54          
+  55          //****************************************************************************
+  56          // FUNCTION DECLARATIONS
+  57          //****************************************************************************
+  58          void SysColorHandler(void);
+  59          #if(_COLOR_IP_DCC_HISTOGRAM == _ON)
+  60          void SysColorDCCHistogramHandler(void);
+  61          #endif
+  62          #if(_COLOR_IP_DCR == _ON)
+  63          void SysColorDCRHandler(void);
+  64          #endif
+  65          
+  66          //****************************************************************************
+  67          // FUNCTION DEFINITIONS
+  68          //****************************************************************************
+  69          //--------------------------------------------------
+  70          // Description  : Color Handler
+  71          // Input Value  : None
+  72          // Output Value : None
+  73          //--------------------------------------------------
+  74          void SysColorHandler(void)
+  75          {
+  76   1          switch(GET_MODE_STATE())
+  77   1          {
+  78   2              case _MODE_STATUS_ACTIVE:
+  79   2      
+  80   2      #if(_COLOR_IP_DCC_HISTOGRAM == _ON)
+  81   2                  SysColorDCCHistogramHandler();
+  82   2      #endif
+  83   2      
+  84   2      #if(_COLOR_IP_DCR == _ON)
+  85   2                  SysColorDCRHandler();
+  86   2      #endif
+  87   2      
+  88   2      #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+                          UserCommonSeamlessChgHandler();
+              #endif
+  91   2      
+  92   2      #if((_MOTION_BLUR_REDUCTION_SUPPORT == _ON) && (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
+                          UserCommonInterfaceMbrDrrHandler();
+              #endif
+  95   2                  break;
+  96   2      
+  97   2              default:
+  98   2                  break;
+  99   2          }
+ 100   1      }
+ 101          
+ 102          #if(_COLOR_IP_DCC_HISTOGRAM == _ON)
+ 103          //--------------------------------------------------
+ 104          // Description  : Color DCC Histogram Handler
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 3   
+
+ 105          // Input Value  : None
+ 106          // Output Value : None
+ 107          //--------------------------------------------------
+ 108          void SysColorDCCHistogramHandler(void)
+ 109          {
+ 110   1          if(ScalerColorDCCGetDataReadyStatus() == _TRUE)
+ 111   1          {
+ 112   2              // Clear DCC data ready status.
+ 113   2              ScalerColorDCCClrDataReadyStatus();
+ 114   2      
+ 115   2              SET_DCC_READY_STATUS();
+ 116   2          }
+ 117   1      
+ 118   1          if(GET_DCC_READY_STATUS() == _TRUE)
+ 119   1          {
+ 120   2      #if(_DCC_HISTOGRM_INFO == _ON)
+                      UserInterfaceDCCHistogramHandler();
+              #endif
+ 123   2      
+ 124   2      #if(_ULTRA_HDR_SUPPORT == _ON)
+ 125   2              UserCommonHDRHandler();
+ 126   2      #endif
+ 127   2          }
+ 128   1      
+ 129   1          CLR_DCC_READY_STATUS();
+ 130   1      }
+ 131          #endif
+ 132          
+ 133          #if(_COLOR_IP_DCR == _ON)
+ 134          //--------------------------------------------------
+ 135          // Description  : Color DCR Handler
+ 136          // Input Value  : None
+ 137          // Output Value : None
+ 138          //--------------------------------------------------
+ 139          void SysColorDCRHandler(void)
+ 140          {
+ 141   1          if(ScalerColorDCRGetDataReadyStatus() == _TRUE)
+ 142   1          {
+ 143   2              // Clear DCR data ready status.
+ 144   2              ScalerColorDCRClrDataReadyStatus();
+ 145   2      
+ 146   2              SET_DCR_READY_STATUS();
+ 147   2      
+ 148   2              // freeze DCR data
+ 149   2              ScalerColorDCRDataRefreshControl(_DISABLE);
+ 150   2      
+ 151   2      #if(_LOCAL_DIMMING_SUPPORT == _ON)
+                      if(ScalerColorDCRGetLocalDimmingHistoEnable() == _TRUE)
+                      {
+                          ScalerColorDCRLocalDimmingStoreResult();
+              
+                          // release DCR data
+                          ScalerColorDCRDataRefreshControl(_ENABLE);
+                      }
+              #endif
+ 160   2          }
+ 161   1      
+ 162   1          if(GET_DCR_READY_STATUS() == _TRUE)
+ 163   1          {
+ 164   2        
+ 165   2      #if _DEF_Aim_HLW
+              #if 1//_HDR_AIM_AUTO_NEW
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 4   
+
+              #define RGB_Limit               200//240
+              #define RGB_Limit1              40//240
+              #define RGB_Limit2              25//240
+              #define RGB_Limit3              30//240
+              #else
+              #define RGB_Limit               200//240
+              #define RGB_Limit1              30//240
+              #define RGB_Limit2              30//240
+              #define RGB_Limit3              15//240
+              #endif
+                      static DWORD R_number = 0,G_number = 0,B_number = 0;
+                      static DWORD R_Pre = 0,G_Pre = 0,B_Pre = 0;
+                      static BYTE bg_Count=0;
+              #endif  
+ 181   2      #if _DEF_Aim_HLW
+                              if(GetOsdAim_ColorAuto())
+                              {
+                                              DebugMessageSystem("5.1111111 rgb_flag = ",rgb_flag);
+                                              if(rgb_flag==0||rgb_flag==2)
+                                              {
+                                                      rgb_flag ++;
+                                                      return ;
+                                              }
+                                              switch(ScalerGetBit(P7_DA_DCR_CTRL,(_BIT2 | _BIT1))/2)
+                                              {
+                                                      case 0: 
+              #if(_DCR_SUPPORT == _ON)
+                                                              UserInterfaceAdjustDCRHandler();
+              #endif
+                                                      #if 1
+                                                      if((UserCommonHDRGetHDR10Status_1() == _ON))
+                                                      {       
+                                                              if(R_number>128)
+                                                                      R_number=(128+(R_number-128)*2)>255?255:(128+(R_number-128)*2);
+                                                              if(G_number>128)
+                                                                      G_number=(128+(G_number-128)*2)>255?255:(128+(G_number-128)*2);
+                                                              if(B_number>128)
+                                                                      B_number=(128+(B_number-128)*2)>255?255:(128+(B_number-128)*2);
+                                                      }
+                                                      #else
+                                                              R_number = R_number*0xff/_PANEL_DH_WIDTH/_PANEL_DV_HEIGHT;
+                                                              G_number = G_number*0xff/_PANEL_DH_WIDTH/_PANEL_DV_HEIGHT;
+                                                              B_number = B_number*0xff/_PANEL_DH_WIDTH/_PANEL_DV_HEIGHT;
+                                                      #endif
+                                                              #if 1
+                                                              if((UserInterfaceGetIntoPSStatus()  != _TRUE)&&bg_Count<6)
+                                                              {
+                                                                      DebugMessageSystem("8.1 UserCommonOsdGetOsdEnable = ",0);
+                                                                      bg_Count=6;
+                                                                      R_Pre=0XFFFF;
+                                                                      B_Pre=0XFFFF;
+                                                                      G_Pre=0XFFFF;
+                                                              }
+                                                      #if 1//_HDR_AIM_AUTO_NEW
+                                                      else if((UserInterfaceGetIntoPSStatus() == _TRUE)&&
+                                                              (R_number<=(R_Pre<(0X100-RGB_Limit2) ? (R_Pre+RGB_Limit2):255) && R_number>=(R_Pre>=RGB_Limit2 ? (R_
+             -Pre-RGB_Limit2):0))
+                                                              &&(G_number<=(G_Pre<(0X100-RGB_Limit2) ? (G_Pre+RGB_Limit2):255) && G_number>=(G_Pre>=RGB_Limit2 ? (
+             -G_Pre-RGB_Limit2):0))
+                                                              &&(B_number<=(B_Pre<(0X100-RGB_Limit2) ? (B_Pre+RGB_Limit2):255) && B_number>=(B_Pre>=RGB_Limit2 ? (
+             -B_Pre-RGB_Limit2):0))
+                                                              )
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 5   
+
+                                                      #else
+                                                              else if((UserCommonOsdGetOsdEnable() == _TRUE)&&
+                                                                      (R_number<=(R_Pre<(0X100-RGB_Limit2) ? (R_Pre+RGB_Limit2):255) && R_number>=(R_Pre>=RGB_Limit2 ? (R
+             -_Pre-RGB_Limit2):0))
+                                                                      &&(G_number<=(G_Pre<(0X100-RGB_Limit2) ? (G_Pre+RGB_Limit2):255) && G_number>=(G_Pre>=RGB_Limit2 ? 
+             -(G_Pre-RGB_Limit2):0))
+                                                                      &&(B_number<=(B_Pre<(0X100-RGB_Limit2) ? (B_Pre+RGB_Limit2):255) && B_number>=(B_Pre>=RGB_Limit2 ? 
+             -(B_Pre-RGB_Limit2):0))
+                                                                      )
+                                                      #endif
+                                                              {
+                                                                      bg_Count=3;
+                                                              }
+                                                              else
+                                                              {
+                                                                      bg_Count++;
+                                                              }
+                                                              DebugMessageSystem("8.1 bg_Count = ",bg_Count);
+                                                              DebugMessageSystem("6.1 R_number = ",R_number);
+                                                              DebugMessageSystem("6.1 G_number = ",G_number);
+                                                              DebugMessageSystem("6.1 B_number = ",B_number);
+                                                              if(bg_Count>7)
+                                                              {
+                                                                      bg_Count=0;                                                     
+                                                                      #if 0
+                                                                      R_Pre=R_number;
+                                                                      G_Pre=G_number;
+                                                                      B_Pre=B_number;
+                                                                      UserCommonOsdSetColorPalette(15, (R_number+120)%0XFF,(R_number+120)%0XFF,(R_number+120)%0XFF);
+                                                                      #else
+                                                                      if(R_number>RGB_Limit&&G_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",1);
+                                                                              ScalerOsdSetColorPalette(2, 255,0,0);
+                                                                      }
+                                                                      else if(R_number<=RGB_Limit1&&G_number<=RGB_Limit1&&B_number<=RGB_Limit1)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",2);
+                                                                              ScalerOsdSetColorPalette(2, 255,255,255);
+                                                                      }
+                                                                      else if(R_number>RGB_Limit&&G_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",3);
+                                                                              ScalerOsdSetColorPalette(2, 0,0,255);
+                                                                      }
+                                                                      else if(R_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",4);
+                                                                              ScalerOsdSetColorPalette(2, 0,255,0);
+                                                                      }
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 6   
+
+                                                                      else if(G_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",5);
+                                                                              ScalerOsdSetColorPalette(2, 255,0,0);
+                                                                      }
+                                                                      else if(R_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",6);
+                                                                              ScalerOsdSetColorPalette(2, 0,255,255);
+                                                                      }
+                                                                      else if(G_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("7.1 COLOR = ",7);
+                                                                              ScalerOsdSetColorPalette(2, 255,0,255);
+                                                                      }
+                                                                      else if(B_number>RGB_Limit)
+                                                                      {
+                                                                              DebugMessageSystem("7.1 COLOR = ",8);
+                                                                      #if 1//_HDR_AIM_AUTO_NEW
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              ScalerOsdSetColorPalette(2, 255,0,0);
+                                                                      #else
+                                                                              UserCommonOsdSetColorPalette(15, 255,255,0);
+                                                                      #endif
+                                                                      }
+                                                              #if 1//_HDR_AIM_AUTO_NEW
+                                                                      else if(R_number>G_number&&(R_number-G_number)>RGB_Limit3 &&R_number>B_number &&(R_number-B_number)
+             ->RGB_Limit3 )
+                                                                      {
+                                                                              DebugMessageSystem("6.1 COLOR = ",9);
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              ScalerOsdSetColorPalette(15, 100,200,200);
+                                                                      }
+                                                                      else if(G_number>R_number&&(G_number-R_number)>RGB_Limit3 &&G_number>B_number &&(G_number-B_number)
+             ->RGB_Limit3 )
+                                                                      {
+                                                                              DebugMessageSystem("6.1 COLOR = ",10);
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              ScalerOsdSetColorPalette(15, 200,100,200);
+                                                                      }
+                                                                      else if(B_number>R_number&&(B_number-R_number)>RGB_Limit3 &&B_number>G_number &&(B_number-G_number)
+             ->RGB_Limit3 )
+                                                                      {
+                                                                              DebugMessageSystem("6.1 COLOR = ",11);
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 7   
+
+                                                                              ScalerOsdSetColorPalette(15, 200,200,100);
+                                                                      }                       
+                                                                      else if((MAXOF(R_number,G_number)-MINOF(R_number,G_number)<RGB_Limit3)
+                                                                              &&(MAXOF(R_number,G_number)-MINOF(R_number,G_number)<RGB_Limit3)
+                                                                              &&(MAXOF(R_number,G_number)-MINOF(R_number,G_number)<RGB_Limit3) )
+                                                                      {
+                                                                              DebugMessageSystem("6.1 COLOR = ",11);
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              if(R_number>100&&R_number<175)
+                                                                                      ScalerOsdSetColorPalette(15, 255,255,255);
+                                                                              else
+                                                                                      ScalerOsdSetColorPalette(15, 255,0,0);
+                                                                      }
+                                                              #endif
+                                                                      else if(R_number>RGB_Limit1&&G_number>RGB_Limit1&&B_number>RGB_Limit1 )
+                                                                      {
+                                                                              DebugMessageSystem("6.1 COLOR = ",13);
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              ScalerOsdSetColorPalette(15, 255,255,255);
+                                                                      }
+                                                                      else //if(R_number>RGB_Limit)
+                                                                      {
+                                                                              R_Pre=R_number;
+                                                                              G_Pre=G_number;
+                                                                              B_Pre=B_number;
+                                                                              DebugMessageSystem("6.1 COLOR = ",12);
+                                                                              ScalerOsdSetColorPalette(15, 255,0,0);
+                                                                      }
+                                                                      #endif
+                                                                      if(ScalerOsdGetOsdEnable()  != _TRUE)
+                                                                      {
+                                                                              OsdFuncEnableOsd();
+                                                                      }
+                                                              }
+                                                              #else
+                                                              if(
+                                                                      (R_number<=(R_Pre<248 ? (R_Pre+16):255) && R_number>=(R_Pre>=16 ? (R_Pre-16):0))
+                                                                      &&(G_number<=(G_Pre<248 ? (G_Pre+16):255) && G_number>=(G_Pre>=16 ? (G_Pre-16):0))
+                                                                      &&(B_number<=(B_Pre<248 ? (B_Pre+16):255) && B_number>=(B_Pre>=16 ? (B_Pre-16):0))
+                                                                      )
+                                                              {
+                                                                      bg_Count++;
+                                                                      DebugMessageSystem("6.1 bg_Count++ = ",bg_Count);
+                                                              }
+                                                              else
+                                                              {
+                                                                      bg_Count=0;
+                                                              }
+                                                              if(bg_Count==0)
+                                                              {
+                                                                      DebugMessageSystem("6.1 bg_Count ",0);
+                                                                      R_Pre=R_number;
+                                                                      G_Pre=G_number;
+                                                                      B_Pre=B_number;
+                                                              }
+                                                              if(bg_Count>10)
+                                                              {
+                                                                      DebugMessageSystem("6.1 bg_Count  ",bg_Count);
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 8   
+
+                                                                      bg_Count=0;
+                                                                      if(R_number>RGB_Limit&&G_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 255,0,0);
+                                                                      else if(R_number<RGB_Limit&&G_number<RGB_Limit&&B_number<RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 240,240,240);
+                                                                      else if(R_number>RGB_Limit&&G_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 0,0,250);
+                                                                      else if(R_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 0,250,0);
+                                                                      else if(G_number>RGB_Limit&&B_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 255,0,0);
+                                                                      else if(R_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 0,250,250);
+                                                                      else if(G_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 250,0,250);
+                                                                      else if(B_number>RGB_Limit)
+                                                                              UserCommonOsdSetColorPalette(15, 250,250,0);
+                                                                      else
+                                                                              UserCommonOsdSetColorPalette(15, (255-R_number),(255-G_number),(255-B_number));
+                                                                      if((UserCommonOsdGetOsdEnable() != _TRUE))
+                                                                      {
+                                                                              UserCommonOsdEnableOsd();
+                                                                      }
+                                                                      DebugMessageSystem("6.1 R_number = ",R_number);
+                                                                      DebugMessageSystem("6.1 G_number = ",G_number);
+                                                                      DebugMessageSystem("6.1 B_number = ",B_number);
+                                                              }
+                                                              #endif
+                                                              break;
+                                                      case 1: 
+                                                              R_number =ScalerColorDCRReadResult(_DCR_ABOVE_TH1_VAL)/12/9/6/18;
+                                                              DebugMessageSystem("5.9 B_number = ",R_number );
+                                                              break;
+                                                      case 2: 
+                                                              G_number =ScalerColorDCRReadResult(_DCR_ABOVE_TH1_VAL)/12/9/6/18;
+                                                              DebugMessageSystem("5.9 G_number = ",G_number);
+                                                              break;
+                                                      case 3:                                         
+                                                              B_number =ScalerColorDCRReadResult(_DCR_ABOVE_TH1_VAL)/12/9/6/18;
+                                                              DebugMessageSystem("5.9 B_number = ",B_number);
+                                                              break;
+                                              }
+                                              rgb_flag++;
+                                              if(rgb_flag>5)
+                                                      rgb_flag = 0;
+                              }
+                              else
+              #endif
+ 454   2                      {
+ 455   3      
+ 456   3      #if(_DCR_SUPPORT == _ON)
+ 457   3                      UserInterfaceAdjustDCRHandler();
+ 458   3      #endif
+ 459   3      
+ 460   3      #if(_IAPS_SUPPORT == _ON)
+                              UserInterfaceAdjustIAPSHandler();
+              #endif
+ 463   3      
+ 464   3      #if(_LOCAL_DIMMING_SUPPORT == _ON)
+                              UserCommonLocalDimmingHandler();
+              #endif
+ 467   3      
+C51 COMPILER V8.12   SYSCOLOR                                                              09/16/2026 20:27:03 PAGE 9   
+
+ 468   3      #if(_GLOBAL_DIMMING_SUPPORT == _ON)
+                              UserCommonGlobalDimmingHandler();
+              #endif
+ 471   3                  }
+ 472   2              }
+ 473   1          CLR_DCR_READY_STATUS();
+ 474   1      
+ 475   1          // release DCR data
+ 476   1          ScalerColorDCRDataRefreshControl(_ENABLE);
+ 477   1      }
+ 478          #endif
+ 479          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     64    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,437 @@
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014USERINTERFACEHDR
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014UserInterfaceHDR.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserInterfaceHDR.c LARGE OPTIMI
+                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
+                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
+                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
+                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
+                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
+                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
+                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD20
+                    -14UserInterfaceHDR.lst) OBJECT(.\Output\RL6432_Project\RTD2014UserInterfaceHDR.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : RTD2014UserInterfaceHDR.c
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __USER_INTERFACE_HDR__
+  18          
+  19          #include "UserCommonInclude.h"
+  20          
+  21          #if(_ULTRA_HDR_SUPPORT == _ON)
+  22          
+  23          //****************************************************************************
+  24          // DEFINITIONS / MACROS
+  25          //****************************************************************************
+  26          
+  27          
+  28          //****************************************************************************
+  29          // STRUCT / TYPE / ENUM DEFINITTIONS
+  30          //****************************************************************************
+  31          
+  32          
+  33          //****************************************************************************
+  34          // CODE TABLES
+  35          //****************************************************************************
+  36          
+  37          
+  38          //****************************************************************************
+  39          // VARIABLE DECLARATIONS
+  40          //****************************************************************************
+  41          
+  42          
+  43          //****************************************************************************
+  44          // FUNCTION DECLARATIONS
+  45          //****************************************************************************
+  46          void UserInterfaceHDRAdjustSDRProc(void);
+  47          
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 2   
+
+  48          #if(_HDR10_SUPPORT == _ON)
+  49          EnumHDR10ModeDef UserInterfaceHDRGetHDR10ModeStatus(EnumSourceSearchPort enumSourcePort);
+  50          void UserInterfaceHDRAdjustHDR10Proc(void);
+  51          EnumHDR10MaxMasteringLvType UserInterfaceHDRGetHDR10ForceModeMaxMasteringLv(void);
+  52          EnumHDR10ColorMatrix UserInterfaceHDRGetHDR10ForceModeColorMatrix(void);
+  53          EnumHDR10MaxMasteringLvType UserInterfaceHDRGetHDR10MaxMasteringLv0Type(void);
+  54          EnumHDR10DarkEnhanceStatus UserInterfaceHDRGetHDR10DarkEnhanceStatus(void);
+  55          
+  56          #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+              EnumHDR10LightEnhanceStatus UserInterfaceHDRGetHDR10LightEnhanceStatus(void);
+              #if(_BACKLIGHT_DIMMING_SUPPORT == _ON)
+              BYTE UserInterfaceHDRGetHDR10LightEnhanceGain(void);
+              #endif
+              #endif
+  62          
+  63          #if(_DCC_FUNCTION == _ON)
+  64          BYTE UserInterfaceHDRGetHDR10DCCTableBank(void);
+  65          code BYTE *UserInterfaceHDRGetHDR10DCCTable(EnumHDR10LightEnhanceMaxMasteringLv enumHDR10LightEnhanceMaxMa
+             -steringLv);
+  66          #endif
+  67          
+  68          #if(_ICM_SUPPORT == _ON)
+              BYTE UserInterfaceHDRGetHDR10ICMTableBank(void);
+              code BYTE *UserInterfaceHDRGetHDR10ICMTable(void);
+              #endif
+  72          
+  73          #if((_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON) || (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT
+             - == _ON))
+              EnumHDR10FixedPointToneMappingStatus UserInterfaceHDRGetHDR10FixedPointTMStatus(void);
+              #endif
+  76          
+  77          extern void UserInterfaceHDRGetHDR10UserAssignTable(StructHDR10Table *pstHDR10Table);
+  78          #endif
+  79          
+  80          #if(_FREESYNC_II_SUPPORT == _ON)
+              void UserInterfaceHDRAdjustFreeSyncIIProc(void);
+              #endif
+  83          
+  84          //****************************************************************************
+  85          // FUNCTION DEFINITIONS
+  86          //****************************************************************************
+  87          //--------------------------------------------------
+  88          // Description  : Adjust HDR to SDR flow
+  89          // Input Value  : EnumDisplayRegion
+  90          // Output Value : None
+  91          //--------------------------------------------------
+  92          void UserInterfaceHDRAdjustSDRProc(void)
+  93          {
+  94   1      #if(_SDR_TO_HDR_SUPPORT == _ON)
+                  if(GET_OSD_SDR_TO_HDR() == _ON)
+                  {
+                      UserAdjustSDRToHDR(_ON);
+                  }
+                  else
+              #endif
+ 101   1          {
+ 102   2      #if((_DCC_FUNCTION == _ON) || (_ICM_SUPPORT == _ON))
+ 103   2              UserAdjustColorEffectMode();
+ 104   2      #endif
+ 105   2              OsdFuncColorPcmAdjust();
+ 106   2          }
+ 107   1          UserAdjustBacklight(GET_OSD_BACKLIGHT());
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 3   
+
+ 108   1      }
+ 109          
+ 110          #if(_HDR10_SUPPORT == _ON)
+ 111          //--------------------------------------------------
+ 112          // Description  : None
+ 113          // Input Value  : None
+ 114          // Output Value : None
+ 115          //--------------------------------------------------
+ 116          EnumHDR10ModeDef UserInterfaceHDRGetHDR10ModeStatus(EnumSourceSearchPort enumSourcePort)
+ 117          {
+ 118   1          enumSourcePort = enumSourcePort;
+ 119   1      
+ 120   1          if(GET_OSD_HDR_MODE() == _HDR10_MODE_OFF)
+ 121   1          {
+ 122   2              // HDR always OFF
+ 123   2              return _HDR10_MODE_OFF;
+ 124   2          }
+ 125   1          else if(GET_OSD_HDR_MODE() == _HDR10_MODE_AUTO)
+ 126   1          {
+ 127   2              // HDR Check Data
+ 128   2              return _HDR10_MODE_AUTO;
+ 129   2          }
+ 130   1          else if(GET_OSD_HDR_MODE() == _HDR10_MODE_FORCE_2084)
+ 131   1          {
+ 132   2              // HDR always ON
+ 133   2              return _HDR10_MODE_FORCE_2084;
+ 134   2          }
+ 135   1      
+ 136   1          return _HDR10_MODE_OFF;
+ 137   1      }
+ 138          
+ 139          //--------------------------------------------------
+ 140          // Description  : Adjust SDR to HDR flow
+ 141          // Input Value  : void
+ 142          // Output Value : None
+ 143          //--------------------------------------------------
+ 144          void UserInterfaceHDRAdjustHDR10Proc(void)
+ 145          {
+ 146   1      #if(_CONTRAST_SUPPORT == _ON)
+ 147   1          UserCommonHDRAdjustHDR10Contrast(GET_OSD_HDR_CONTRAST());
+ 148   1      #endif
+ 149   1          UserAdjustBacklight(100);
+ 150   1      }
+ 151          
+ 152          //--------------------------------------------------
+ 153          // Description  : Get HDR10 Force Mode - Max Mastering Lv Type
+ 154          // Input Value  : None
+ 155          // Output Value : EnumHDR10MaxMasteringLvType
+ 156          //--------------------------------------------------
+ 157          EnumHDR10MaxMasteringLvType UserInterfaceHDRGetHDR10ForceModeMaxMasteringLv(void)
+ 158          {
+ 159   1          return _HDR10_MAX_MASTERING_LV_TYPE_1200;
+ 160   1      }
+ 161          
+ 162          
+ 163          //--------------------------------------------------
+ 164          // Description  : Get HDR10 Force Mode - Color Matrix
+ 165          // Input Value  : None
+ 166          // Output Value : EnumHDR10ColorMatrix
+ 167          //--------------------------------------------------
+ 168          EnumHDR10ColorMatrix UserInterfaceHDRGetHDR10ForceModeColorMatrix(void)
+ 169          {
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 4   
+
+ 170   1          return _HDR10_COLOR_MATRIX_BT2020;
+ 171   1      }
+ 172          
+ 173          //--------------------------------------------------
+ 174          // Description  : Get HDR10 Max Mastering Lv 0 - Max Mastering Lv Type
+ 175          // Input Value  : None
+ 176          // Output Value : EnumHDR10MaxMasteringLvType
+ 177          //--------------------------------------------------
+ 178          EnumHDR10MaxMasteringLvType UserInterfaceHDRGetHDR10MaxMasteringLv0Type(void)
+ 179          {
+ 180   1          return _HDR10_MAX_MASTERING_LV_TYPE_540;
+ 181   1      }
+ 182          
+ 183          //--------------------------------------------------
+ 184          // Description  : None
+ 185          // Input Value  : None
+ 186          // Output Value : None
+ 187          //--------------------------------------------------
+ 188          EnumHDR10DarkEnhanceStatus UserInterfaceHDRGetHDR10DarkEnhanceStatus(void)
+ 189          {
+ 190   1          if(GET_OSD_DARK_ENHANCE_STATUS()== _ON)
+ 191   1          {
+ 192   2              return _HDR10_DARK_ENHANCE_ON;
+ 193   2          }
+ 194   1          else
+ 195   1          {
+ 196   2              return _HDR10_DARK_ENHANCE_OFF;
+ 197   2          }
+ 198   1      }
+ 199          
+ 200          #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Get HDR10 Light Enhance Status
+              // Input Value  : None
+              // Output Value : EnumHDR10LightEnhanceStatus
+              //--------------------------------------------------
+              EnumHDR10LightEnhanceStatus UserInterfaceHDRGetHDR10LightEnhanceStatus(void)
+              {
+                  if(GET_OSD_HDR_LIGHT_ENHANCE() != _HDR10_LIGHTENHANCE_NONE)
+                  {
+                      return _HDR10_LIGHTENHANCE_ON;
+                  }
+                  else
+                  {
+                      return _HDR10_LIGHTENHANCE_OFF;
+                  }
+              }
+              
+              #if(_BACKLIGHT_DIMMING_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Get HDR10 Light Enhance Gain Value, user should return value corresponded to Light Enhan
+             -ce table used.
+              // Input Value  : None
+              // Output Value : HDR10 Light Enhance Gain Value / 100, e.g. return 160 when actual gain value is 1.60, an
+             -d Gain Value range should be 100 ~ 160!!
+              //--------------------------------------------------
+              BYTE UserInterfaceHDRGetHDR10LightEnhanceGain(void)
+              {
+                  if(UserCommonHDRGetHDR10Status() == _HDR10_ON)
+                  {
+                      switch(GET_OSD_HDR_LIGHT_ENHANCE())
+                      {
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 5   
+
+                          default:
+                          case _HDR10_LIGHTENHANCE_NONE:
+                              return 100;
+              
+                          case _HDR10_LIGHTENHANCE_TYPE_120:
+                              return 120;
+              
+                          case _HDR10_LIGHTENHANCE_TYPE_140:
+                              return 140;
+              
+                          case _HDR10_LIGHTENHANCE_TYPE_160:
+                              return 160;
+                      }
+                  }
+              
+                  return 100;
+              }
+              #endif
+              #endif
+ 249          
+ 250          #if(_DCC_FUNCTION == _ON)
+ 251          //--------------------------------------------------
+ 252          // Description  : Get HDR10 DCC Table Bnak
+ 253          // Input Value  : None
+ 254          // Output Value : HDR10 DCC table bank
+ 255          //--------------------------------------------------
+ 256          BYTE UserInterfaceHDRGetHDR10DCCTableBank(void)
+ 257          {
+ 258   1          return GET_CURRENT_BANK_NUMBER();
+ 259   1      }
+ 260          
+ 261          //--------------------------------------------------
+ 262          // Description  : Get HDR10 DCC Table Address
+ 263          // Input Value  : Max MasteringLv Type --> 540 / 1200 / 4000 / 10000 nit
+ 264          // Output Value : HDR10 DCC table address
+ 265          //--------------------------------------------------
+ 266          code BYTE *UserInterfaceHDRGetHDR10DCCTable(EnumHDR10LightEnhanceMaxMasteringLv enumHDR10LightEnhanceMaxMa
+             -steringLv)
+ 267          {
+ 268   1          enumHDR10LightEnhanceMaxMasteringLv = enumHDR10LightEnhanceMaxMasteringLv;
+ 269   1      
+ 270   1      #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+                  switch((EnumHDR10LightEnhanceType)GET_OSD_HDR_LIGHT_ENHANCE())
+                  {
+                      case _HDR10_LIGHTENHANCE_NONE:
+                          break;
+              
+                      case _HDR10_LIGHTENHANCE_TYPE_120:
+                          return tDCC_LIGHTENHANCE_120_TABLE[enumHDR10LightEnhanceMaxMasteringLv];
+              
+                      case _HDR10_LIGHTENHANCE_TYPE_140:
+                          return tDCC_LIGHTENHANCE_140_TABLE[enumHDR10LightEnhanceMaxMasteringLv];
+              
+                      case _HDR10_LIGHTENHANCE_TYPE_160:
+                          return tDCC_LIGHTENHANCE_160_TABLE[enumHDR10LightEnhanceMaxMasteringLv];
+              
+                      default:
+                          return tDCC_LIGHTENHANCE_120_TABLE[enumHDR10LightEnhanceMaxMasteringLv];
+                  }
+              #endif
+ 289   1      
+ 290   1          if(GET_OSD_COLOR_EFFECT() != _COLOREFFECT_USER)
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 6   
+
+ 291   1          {
+ 292   2              return tDCC_HDR10_TABLE[GET_OSD_COLOR_EFFECT()];
+ 293   2          }
+ 294   1      
+ 295   1          return tDCC_HDR10_TABLE[0];
+ 296   1      }
+ 297          #endif
+ 298          
+ 299          #if(_ICM_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Get HDR10 ICM Table Bnak
+              // Input Value  : None
+              // Output Value : HDR10 ICM table bank
+              //--------------------------------------------------
+              BYTE UserInterfaceHDRGetHDR10ICMTableBank(void)
+              {
+                  return GET_CURRENT_BANK_NUMBER();
+              }
+              
+              //--------------------------------------------------
+              // Description  : Get HDR10 ICM Table Address
+              // Input Value  : None
+              // Output Value : HDR10 ICM table address
+              //--------------------------------------------------
+              code BYTE *UserInterfaceHDRGetHDR10ICMTable(void)
+              {
+              #if(_HDR10_COLOR_ENHANCE_SUPPORT == _ON)
+                  EnumHDR10ColorEnhanceType enumHDR10ColorEnhanceType = GET_OSD_HDR_COLOR_ENHANCE();
+              
+                  if(enumHDR10ColorEnhanceType != _HDR10_COLORENHANCE_OFF)
+                  {
+                      switch(enumHDR10ColorEnhanceType)
+                      {
+                          case _HDR10_COLORENHANCE_TYPE_1:
+                              return tICM_COLORENHANCE_TABLE[0];
+                              break;
+              
+                          case _HDR10_COLORENHANCE_TYPE_2:
+                              return tICM_COLORENHANCE_TABLE[1];
+                              break;
+              
+                          case _HDR10_COLORENHANCE_TYPE_3:
+                              return tICM_COLORENHANCE_TABLE[2];
+                              break;
+              
+                          default:
+                              return tICM_COLORENHANCE_TABLE[0];
+                              break;
+                      }
+                  }
+              #endif
+                  if(GET_OSD_COLOR_EFFECT() != _COLOREFFECT_USER)
+                  {
+                      return tICM_HDR10_TABLE[GET_OSD_COLOR_EFFECT()];
+                  }
+                  else
+                  {
+                      return tICM_HDR10_TABLE[0];
+                  }
+              }
+              #endif
+ 352          
+C51 COMPILER V8.12   RTD2014USERINTERFACEHDR                                               09/16/2026 20:29:01 PAGE 7   
+
+ 353          #if((_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON) || (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT
+             - == _ON))
+              //--------------------------------------------------
+              // Description  : Get HDR10 Fixed Point Tone Mapping Status
+              // Input Value  : None
+              // Output Value : EnumHDR10FixedPointToneMappingStatus
+              //--------------------------------------------------
+              EnumHDR10FixedPointToneMappingStatus UserInterfaceHDRGetHDR10FixedPointTMStatus(void)
+              {
+                  return _HDR10_FIXED_POINT_TM_OFF;
+              }
+              #endif
+ 364          
+ 365          //--------------------------------------------------
+ 366          // Description  : Get HDR10 User assigned PCM Table Status. If status is on, please assigned PCM table add
+             -r & bank;
+ 367          // Input Value  : None
+ 368          // Output Value : StructHDR10UserAssignTable
+ 369          //--------------------------------------------------
+ 370          void UserInterfaceHDRGetHDR10UserAssignTable(StructHDR10Table *pstHDR10Table)
+ 371          {
+ 372   1          pstHDR10Table->enumHDR10UserAssignTableStatus = _HDR10_USER_ASSIGNED_TABLE_OFF;
+ 373   1      }
+ 374          #endif // End of #if(_HDR10_SUPPORT == _ON)
+ 375          
+ 376          #if(_FREESYNC_II_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Adjust SDR to FreeSync II flow
+              // Input Value  : void
+              // Output Value : None
+              //--------------------------------------------------
+              void UserInterfaceHDRAdjustFreeSyncIIProc(void)
+              {
+              }
+              #endif // End of #if(_FREESYNC_II_SUPPORT == _ON)
+ 386          #endif // End of #if(_ULTRA_HDR_SUPPORT == _ON)
+ 387          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    130    ----
+   CONSTANT SIZE    =    395    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

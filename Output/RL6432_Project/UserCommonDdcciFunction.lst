@@ -1,0 +1,902 @@
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONDDCCIFUNCTION
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonDdcciFunction.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonDdcciFunction.c LARGE OPTIMIZE(9
+                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
+                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
+                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
+                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
+                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
+                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
+                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCommo
+                    -nDdcciFunction.lst) OBJECT(.\Output\RL6432_Project\UserCommonDdcciFunction.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : UserCommonDdcciFunction.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __USER_COMMON_DDCCI_FUNCTION__
+  18          
+  19          #include "UserCommonInclude.h"
+  20          /////////////////////////////////////////////////////////////////////////////////////////
+  21          /*
+  22          
+  23          typedef enum
+  24          {
+  25              _VGA_A0 = 0x01,
+  26          } EnumOsdSourceTypeVga;
+  27          
+  28          typedef enum
+  29          {
+  30              _DVI = 0x02,
+  31          #if(_D0_INPUT_PORT_TYPE == _D0_DVI_PORT)
+  32              _DVI_D0,
+  33          #endif
+  34          #if(_D1_INPUT_PORT_TYPE == _D1_DVI_PORT)
+  35              _DVI_D1,
+  36          #endif
+  37          #if((_D2_INPUT_PORT_TYPE == _D2_DVI_PORT) || (_D2_INPUT_PORT_TYPE == _D2_DUAL_DVI_PORT))
+  38              _DVI_D2,
+  39          #endif
+  40          #if((_D3_INPUT_PORT_TYPE == _D3_DVI_PORT) || (_D3_INPUT_PORT_TYPE == _D3_DUAL_DVI_PORT))
+  41              _DVI_D3,
+  42          #endif
+  43          #if((_D4_INPUT_PORT_TYPE == _D4_DVI_PORT) || (_D4_INPUT_PORT_TYPE == _D4_DUAL_DVI_PORT))
+  44              _DVI_D4,
+  45          #endif
+  46          #if(_D5_INPUT_PORT_TYPE == _D5_DVI_PORT)
+  47              _DVI_D5,
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 2   
+
+  48          #endif
+  49          
+  50              _HDMI = 0x10,
+  51          #if(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT)
+  52              _HDMI_D0,
+  53          #endif
+  54          #if(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
+  55              _HDMI_D1,
+  56          #endif
+  57          #if(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)
+  58              _HDMI_D2,
+  59          #endif
+  60          #if(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)
+  61              _HDMI_D3,
+  62          #endif
+  63          #if(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)
+  64              _HDMI_D4,
+  65          #endif
+  66          #if(_D5_INPUT_PORT_TYPE == _D5_HDMI_PORT)
+  67              _HDMI_D5,
+  68          #endif
+  69          }EnumOsdSourceTypeTMDS;
+  70          
+  71          typedef enum
+  72          {
+  73              _DP = 0x0E,
+  74          #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
+  75              _DP_D0,
+  76          #endif
+  77          #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
+  78              _DP_D1,
+  79          #endif
+  80          #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
+  81              _DP_D2,
+  82          #endif
+  83          #if(_D6_INPUT_PORT_TYPE == _D6_DP_PORT)
+  84              _DP_D6,
+  85          #endif
+  86          } EnumOsdSourceTypeDP;
+  87          */
+  88          /////////////////////////////////////////////////////Project_ID///////////////////////////////////////////
+             -/////////////////////////////////////
+  89          
+  90          #define _DEF_STRING_PORT                                                                                "(prot(monitor) "
+  91          #define _DEF_STRING_tYPE                                                                                "type(LCD) "
+  92          #define _DEF_STRING_MODEL                                                                               "model(RTK) "
+  93          #define _DEF_STRING_CMD                                                                                 "cmds(01 02 03 07 0C E3 F3) "
+  94          #if (_A0_INPUT_PORT_TYPE==_A0_VGA_PORT)
+  95          #define _DEF_STRING_INPUT_vga                                                                   "01 "
+  96          #else
+              #define _DEF_STRING_INPUT_vga                                                                   ""
+              #endif
+  99          
+ 100          #if (((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
+             -ORT))>=2)
+              #define _DEF_STRING_INPUT_DP                                                                    "F 10 "
+              #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
+             -ORT)==1)
+ 103          #define _DEF_STRING_INPUT_DP                                                                    "E "
+ 104          #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
+             -ORT)==0)
+              #define _DEF_STRING_INPUT_DP                                                                    ""
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 3   
+
+              #else
+              #warning "zhe is DDCCI error!!"
+              #endif
+ 109          
+ 110          #if 0//(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_
+             -D2_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==3)
+              #define _DEF_STRING_INPUT_HDMI                                                                  "11 12 "
+              #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
+             -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))>=2)
+              #define _DEF_STRING_INPUT_HDMI                                                                  "11 12 "
+              #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
+             -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==1)
+ 115          #define _DEF_STRING_INPUT_HDMI                                                                  "11 "
+ 116          #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
+             -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==0)
+              #define _DEF_STRING_INPUT_HDMI                                                                  ""
+              #else
+              #warning "zhe is DDCCI error!!"
+              #endif
+ 121          
+ 122          #define _DEF_STRING_INPUT                                                                               "60("_DEF_STRING_INPUT_vga _DEF_STRING_INPUT_DP _DEF_STRING_INPUT_HDMI"
+             -)"
+ 123          
+ 124          #if _CT_sRGB_SUPPRT
+ 125          #define _DEF_STRING_CT1                                                                                 "01 "//SRGB
+ 126          #else
+              #define _DEF_STRING_CT1                                                                                 ""//SRGB
+              #endif
+ 129          #if _CT_5800_SUPPRT
+              #define _DEF_STRING_CT2                                                                                 "04 "//5800
+              #else
+ 132          #define _DEF_STRING_CT2                                                                                 ""//5800
+ 133          #endif
+ 134          
+ 135          #define _DEF_STRING_CT3                                                                                 "05 "//6500
+ 136          
+ 137          #if _CT_7500_SUPPRT
+              #define _DEF_STRING_CT4                                                                                 "06 "//7500
+              #else
+ 140          #define _DEF_STRING_CT4                                                                                 ""//7500
+ 141          #endif
+ 142          
+ 143          #define _DEF_STRING_CT5                                                                                 "08 "//9300
+ 144          #define _DEF_STRING_CT6                                                                                 "0B "//SRGB
+ 145          
+ 146          
+ 147          #define _DEF_STRING_CT                                                                                  _DEF_STRING_CT1 _DEF_STRING_CT2  _DEF_STRING_CT3 _DEF_STRING_CT4 _DEF_STR
+             -ING_CT5 _DEF_STRING_CT6
+ 148          
+ 149          
+ 150          /*
+ 151          Chinesse_S      0x01
+ 152          Engish          0x02
+ 153          French          0x03
+ 154          German          0x04
+ 155          Italian         0x05
+ 156          Japanese                0x06
+ 157          Korean          0x07
+ 158          Portuguese      0x08
+ 159          Russian         0x09
+ 160          Spanish         0x0A
+ 161          Swedish         0x0B
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 4   
+
+ 162          Turkish         0x0C
+ 163          Chineses_T      0x0D
+ 164          Brzil           0x0E
+ 165           Arabic         0x0F
+ 166          Bulgarian               0x10
+ 167          Croaian         0x11
+ 168          Czech           0x12
+ 169          Danish          0x13
+ 170          Dutch           0x14
+ 171          Estonian                0x15
+ 172          Finnish         0x16
+ 173          Greek           0x17
+ 174          Hebrew          0x18
+ 175          Hindi           0x19
+ 176          Hungrian                0x1A
+ 177          Norwegian       0x1B
+ 178          Polish          0x1C
+ 179          Romanian                0x1D
+ 180          Serbian         0x1E
+ 181          Slovak          0x1F
+ 182          Slovenian               0x20
+ 183          Thai            0x21
+ 184          Ukranian                0x22
+ 185          Vietnamese      0x23
+ 186          
+ 187          */
+ 188          //BYTE code tLANGUAGEDEFINE[] = {0x02,0x03,0x0A, 0x08,0x04,0x05,0x14, 0x0B,0x16,0x1C  ,0x12,0x09 ,0x07,0x0
+             -1,0x0D, 0x06,0x17,0x1A,0x0C};
+ 189          
+ 190          #define _DEF_STRING_LANGUAGE                                                                    "CC(02 03 0A 08 04 05 14 0B 16 1C 12 09 07 01 0D 06 17 1A 0C)"
+ 191          
+ 192          
+ 193          
+ 194          #define _DEF_STRING_VCP                                                                                 "vcp(04 05 06 08 0C 10 12 14( " _DEF_STRING_CT ") 16 18 1A 52 " _DEF_STR
+             -ING_INPUT "87 AC AE B2 B6 C6 C8 CA " _DEF_STRING_LANGUAGE " D6(01 04 05) DF FD FF)"
+ 195          #define _DEF_STRING_VCP_VGA                                                                             "vcp(04 05 06 08 0C 0E 10 12 14( " _DEF_STRING_CT ") 16 18 1A 1E 1F 2
+             -0 30 3E 52 "_DEF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA " _DEF_STRING_LANGUAGE " D6(01 04 05) DF FD FF)"
+ 196          //
+ 197          //#define _DEF_STRING_VCP                                                                                       "vcp(02 04 05 06 08 0B 0C 10 12 14(" _DEF_STRING_CT ") 16 18 1A 52" _D
+             -EF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)"
+ 198          //#define _DEF_STRING_VCP_VGA                                                                           "vcp(02 04 05 06 08 0B 0C 0E 10 12 14(" _DEF_STRING_CT ") 16 18 1A 
+             -1E 1F 20 30 3E 52" _DEF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)"
+ 199          
+ 200          #define _DEF_STRING_END                                                                                 "mswhql(1)asset_eep(40)mccs_ver(2.2))"
+ 201          
+ 202          
+ 203          
+ 204          #define _DEF_CAPABILITIES_STRING_DDCCI                         _DEF_STRING_PORT _DEF_STRING_tYPE _DEF_STRI
+             -NG_MODEL _DEF_STRING_CMD _DEF_STRING_VCP _DEF_STRING_END
+ 205          #define _DEF_CAPABILITIES_STRING_DDCCI_VGA                     _DEF_STRING_PORT _DEF_STRING_tYPE _DEF_STRI
+             -NG_MODEL _DEF_STRING_CMD _DEF_STRING_VCP_VGA _DEF_STRING_END
+ 206          
+ 207          #define _CAPABILITIES_STRING_VGA                               _DEF_CAPABILITIES_STRING_DDCCI_VGA// "(prot
+             -(monitor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 0E 10 12 14(01 02 04 05 06 08 0B) 16 18 1
+             -A 1E 1F 20 30 3E 52 60(01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswh
+             -ql(1)asset_eep(40)mccs_ver(2.2))"
+ 208          #define _CAPABILITIES_STRING_DVI                               _DEF_CAPABILITIES_STRING_DDCCI//"(prot(moni
+             -tor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 10 12 14(01 02 04 05 06 08 0B) 16 18 1A 52 60(
+             -01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswhql(1)asset_eep(40)mccs_
+             -ver(2.2))"
+ 209          #define _CAPABILITIES_STRING_HDMI                              _DEF_CAPABILITIES_STRING_DDCCI// "(prot(mon
+             -itor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 10 12 14(01 02 04 05 06 08 0B) 16 18 1A 52 60
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 5   
+
+             -(01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswhql(1)asset_eep(40)mccs
+             -_ver(2.2))"
+ 210          #define _CAPABILITIES_STRING_DP                                _DEF_CAPABILITIES_STRING_DDCCI// "(prot(mon
+             -itor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 10 12 14(01 02 04 05 06 08 0B) 16 18 1A 52 60
+             -(01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswhql(1)asset_eep(40)mccs
+             -_ver(2.2))"
+ 211          
+ 212          #if(_DDCCI_CODE_REDUCTION == _OFF)
+ 213          //****************************************************************************
+ 214          // DEFINITIONS / MACROS
+ 215          //****************************************************************************
+ 216          //--------------------------------------------------
+ 217          // Definitions of DDCCI Capabilities Request
+ 218          //--------------------------------------------------
+ 219          #if(_DDCCI_AUTO_SWITCH_SUPPORT == _ON)
+ 220          // I2C Speed = 20k, DDCCI Buffer = _DDCCI_RXBUF_LENGTH
+ 221          // (1/20K)*_DDCCI_RXBUF_LENGTH*8
+ 222          #define _CLR_DDCCI_CMD_RECEIVE_NOT_FINISH_TIMEOUT       (((_DDCCI_RXBUF_LENGTH * 9) / 20) + 1)
+ 223          #endif
+ 224          
+ 225          //****************************************************************************
+ 226          // STRUCT / TYPE / ENUM DEFINITTIONS
+ 227          //****************************************************************************
+ 228          
+ 229          
+ 230          //****************************************************************************
+ 231          // CODE TABLES
+ 232          //****************************************************************************
+ 233          #if(_DDCCI_CUSTOM_CAPABILITY_STR_SUPPORT == _OFF)
+ 234          #if(_VGA_PORT_EXIST == _ON)
+ 235          BYTE code tCP_STRING_DSUB[] =
+ 236          {
+ 237              _CAPABILITIES_STRING_VGA
+ 238          };
+ 239          #endif
+ 240          
+ 241          #if(_DVI_PORT_EXIST == _ON)
+              BYTE code tCP_STRING_DVI[] =
+              {
+                  _CAPABILITIES_STRING_DVI
+              };
+              #endif
+ 247          
+ 248          #if(_HDMI_PORT_EXIST == _ON)
+ 249          BYTE code tCP_STRING_HDMI[] =
+ 250          {
+ 251              _CAPABILITIES_STRING_HDMI
+ 252          };
+ 253          #endif
+ 254          
+ 255          #if(_DP_PORT_EXIST == _ON)
+ 256          BYTE code tCP_STRING_DP[] =
+ 257          {
+ 258              _CAPABILITIES_STRING_DP
+ 259          };
+ 260          #endif
+ 261          #endif
+ 262          
+ 263          //****************************************************************************
+ 264          // VARIABLE DECLARATIONS
+ 265          //****************************************************************************
+ 266          
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 6   
+
+ 267          //****************************************************************************
+ 268          // FUNCTION DECLARATIONS
+ 269          //****************************************************************************
+ 270          void UserCommonDdcciHandler(void);
+ 271          void UserCommonDdcciInitTx(void);
+ 272          void UserCommonDdcciInitRx(void);
+ 273          BYTE UserCommonDdcciCalCheckSum(void);
+ 274          void UserCommonDdcciSetVCPReplyValue(BYTE ucTypeOpcode, WORD usMax, WORD usPresent);
+ 275          void UserCommonDdcciGetTimingReport(void);
+ 276          void UserCommonDdcciGetCapabilitiesRequest(void);
+ 277          void UserCommonDdcciGetCpStringData(BYTE *pucDest, EnumInputPortType enumPortType, WORD usStartIndex, WORD
+             - usLength);
+ 278          WORD UserCommonDdcciGetCpStringSize(EnumInputPortType enumPortType);
+ 279          void UserCommonDdcciGetFwInfoRequest(void);
+ 280          bit UserCommonDdcciKernelHandler(void);
+ 281          #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
+              void UserCommonDdcciSetSmbusBlockReadWrite(void);
+              #endif
+ 284          
+ 285          #if(_ISP_FW_CHECK_PROJECT_ID_SUPPORT == _ON)
+              void UserCommonDdcciFwCheck(BYTE *pucCmdArry);
+              #endif
+ 288          
+ 289          //****************************************************************************
+ 290          // FUNCTION DEFINITIONS
+ 291          //****************************************************************************
+ 292          //--------------------------------------------------
+ 293          // Description  : User Common DDC Handler Process
+ 294          // Input Value  : None
+ 295          // Output Value : None
+ 296          //--------------------------------------------------
+ 297          void UserCommonDdcciHandler(void)
+ 298          {
+ 299   1      #if(_DDCCI_AUTO_SWITCH_SUPPORT == _ON)
+ 300   1          if(GET_RUN_DDCCI_COMMAND() == _FAIL)
+ 301   1          {
+ 302   2              if(GET_RECEIVE_DDCCI_CMD_NOT_FINISH() == _SUCCESS)
+ 303   2              {
+ 304   3                  // Polling User Ddcci Cmd Finished
+ 305   3                  ScalerTimerActiveTimerEvent(_CLR_DDCCI_CMD_RECEIVE_NOT_FINISH_TIMEOUT, _SYSTEM_TIMER_EVENT_CLR
+             -_DDCCI_RECEIVE_COMMAND_NOT_FINISH);
+ 306   3              }
+ 307   2              else
+ 308   2              {
+ 309   3                  if(GET_DDCCI_AUTO_SWITCH() == _FALSE)
+ 310   3                  {
+ 311   4                      // Enable DDCCI Channel Auto Switch
+ 312   4                      SET_DDCCI_AUTO_SWITCH();
+ 313   4      
+ 314   4                      // Set Other DDC Enable
+ 315   4                      ScalerMcuDdcciAutoSwitchInactiveChannel(_ENABLE);
+ 316   4                  }
+ 317   3              }
+ 318   2          }
+ 319   1      #endif
+ 320   1          if(UserCommonDdcciKernelHandler() == _TRUE)
+ 321   1          {
+ 322   2              return;
+ 323   2          }
+ 324   1          UserDdcciHandler();
+ 325   1      }
+ 326          //--------------------------------------------------
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 7   
+
+ 327          // Description  : Initial TX variables and Send Null-Message
+ 328          // Input Value  : None
+ 329          // Output Value : None
+ 330          //--------------------------------------------------
+ 331          void UserCommonDdcciInitTx(void)
+ 332          {
+ 333   1          // Send Null-Message
+ 334   1          g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
+ 335   1          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG;
+ 336   1          g_pucDdcciTxBuf[_DDCCI_COMMAND] = UserCommonDdcciCalCheckSum();
+ 337   1      
+ 338   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
+                  if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_I2C)
+              #endif
+ 341   1          {
+ 342   2              ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 343   2          }
+ 344   1      }
+ 345          
+ 346          //--------------------------------------------------
+ 347          // Description  : Initial RX variables
+ 348          // Input Value  : None
+ 349          // Output Value : None
+ 350          //--------------------------------------------------
+ 351          void UserCommonDdcciInitRx(void)
+ 352          {
+ 353   1          // Clear buffer for new message
+ 354   1          memset(g_pucDdcciRxBuf, 0, _DDCCI_RXBUF_LENGTH);
+ 355   1      }
+ 356          
+ 357          //--------------------------------------------------
+ 358          // Description  : Caculate checksum
+ 359          // Input Value  : None
+ 360          // Output Value : ucSum --> Checksum value
+ 361          //--------------------------------------------------
+ 362          BYTE UserCommonDdcciCalCheckSum(void)
+ 363          {
+ 364   1          BYTE ucCount = 0;
+ 365   1          BYTE ucCheckLen = 0;
+ 366   1          BYTE ucSum = _DDCCI_VIRTUAL_HOST_ADDRESS;
+ 367   1      
+ 368   1          ucCheckLen = (g_pucDdcciTxBuf[_DDCCI_LENGTH] & 0x7F) + 2;
+ 369   1      
+ 370   1          for(ucCount = 0; ucCount < ucCheckLen; ucCount++)
+ 371   1          {
+ 372   2              ucSum = ucSum ^ g_pucDdcciTxBuf[ucCount];
+ 373   2          }
+ 374   1      
+ 375   1          return ucSum;
+ 376   1      }
+ 377          
+ 378          //--------------------------------------------------
+ 379          // Description  : DDCCI VCP Feature Reply Max and Present Value
+ 380          // Input Value  : ucOpcode --> OPCODE
+ 381          //                  usMax --> Maximum Value
+ 382          //                  usPresent --> Present Value
+ 383          // Output Value : None
+ 384          //--------------------------------------------------
+ 385          void UserCommonDdcciSetVCPReplyValue(BYTE ucTypeOpcode, WORD usMax, WORD usPresent)
+ 386          {
+ 387   1          g_pucDdcciTxBuf[_DDCCI_TYPE_CODE] = ucTypeOpcode;
+ 388   1          g_pucDdcciTxBuf[_DDCCI_MAX_HIGH_BYTE] = HIBYTE(usMax);
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 8   
+
+ 389   1          g_pucDdcciTxBuf[_DDCCI_MAX_LOW_BYTE] = LOBYTE(usMax);
+ 390   1          g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE] = HIBYTE(usPresent);
+ 391   1          g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE] = LOBYTE(usPresent);
+ 392   1      }
+ 393          
+ 394          //--------------------------------------------------
+ 395          // Description  : DDCCI Get and Reply Timing Report
+ 396          // Input Value  : None
+ 397          // Output Value : None
+ 398          //--------------------------------------------------
+ 399          void UserCommonDdcciGetTimingReport(void)
+ 400          {
+ 401   1          BYTE ucPolarity = 0;
+ 402   1      
+ 403   1          ucPolarity = (GET_INPUT_TIMING_H_POLARITY() | (GET_INPUT_TIMING_V_POLARITY() << 1));
+ 404   1      
+ 405   1          g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
+ 406   1          g_pucDdcciTxBuf[_DDCCI_TIMING_MSG_COMMAND] = _DDCCI_CMD_REPLY_TIMING_MESSAGE;
+ 407   1          g_pucDdcciTxBuf[_DDCCI_TIMING_MSG_OPCODE] = _DDCCI_OPCODE_TIMING_MSG;
+ 408   1          g_pucDdcciTxBuf[_DDCCI_TIMING_STATUS] = 0x00;
+ 409   1      
+ 410   1          // H sync pol :Bit 1 = 1:positive H-sync polarity
+ 411   1          if((bit)(ucPolarity & _BIT0) == _TRUE)
+ 412   1          {
+ 413   2              g_pucDdcciTxBuf[_DDCCI_TIMING_STATUS] |= _BIT1;
+ 414   2          }
+ 415   1      
+ 416   1          // V sync pol :Bit 0 = 1:positive V-sync polarity
+ 417   1          if((bit)(ucPolarity & _BIT1) == _TRUE)
+ 418   1          {
+ 419   2              g_pucDdcciTxBuf[_DDCCI_TIMING_STATUS] |= _BIT0;
+ 420   2          }
+ 421   1      
+ 422   1          g_pucDdcciTxBuf[_DDCCI_TIMING_HFREQ_HBYTE] = HIBYTE(GET_INPUT_TIMING_HFREQ() * 10);
+ 423   1          g_pucDdcciTxBuf[_DDCCI_TIMING_HFREQ_LBYTE] = LOBYTE(GET_INPUT_TIMING_HFREQ() * 10);
+ 424   1          g_pucDdcciTxBuf[_DDCCI_TIMING_VFREQ_HBYTE] = HIBYTE(GET_INPUT_TIMING_VFREQ() * 10);
+ 425   1          g_pucDdcciTxBuf[_DDCCI_TIMING_VFREQ_LBYTE] = LOBYTE(GET_INPUT_TIMING_VFREQ() * 10);
+ 426   1          g_pucDdcciTxBuf[_DDCCI_TIMING_VFREQ_LBYTE + 1] = UserCommonDdcciCalCheckSum();
+ 427   1      
+ 428   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
+                  if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_I2C)
+              #endif
+ 431   1          {
+ 432   2              ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 433   2          }
+ 434   1      }
+ 435          
+ 436          //--------------------------------------------------
+ 437          // Description  : DDCCI Capabilities Request & Reply
+ 438          // Input Value  : None
+ 439          // Output Value : None
+ 440          //--------------------------------------------------
+ 441          void UserCommonDdcciGetCapabilitiesRequest(void)
+ 442          {
+ 443   1          WORD usOffset = 0;
+ 444   1          BYTE ucSendLen = 0;
+ 445   1          EnumInputPortType enumPortType = _PORT_NONE;
+ 446   1          WORD usCreqLen = 0;
+ 447   1      
+ 448   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
+                  if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_MST)
+                  {
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 9   
+
+                      enumPortType = GET_PORT_TYPE(SysSourceGetInputPortType(ScalerDpRxMstGetInputPort(ScalerDpRxMstGetC
+             -apablePort())));
+                  }
+                  else
+              #endif
+ 455   1          {
+ 456   2              enumPortType = GET_PORT_TYPE(SysSourceGetInputPortType(ScalerMcuDdcciGetInputPort()));
+ 457   2          }
+ 458   1      
+ 459   1          usCreqLen = UserCommonDdcciGetCpStringSize(enumPortType);
+ 460   1      
+ 461   1          usOffset = ((((WORD)g_pucDdcciRxBuf[_DDCCI_OFS_HIGH_BYTE]) << 8) & 0xFF00) | (g_pucDdcciRxBuf[_DDCCI_O
+             -FS_LOW_BYTE]);
+ 462   1      
+ 463   1          if(usOffset >= usCreqLen)
+ 464   1          {
+ 465   2              ucSendLen = 0;
+ 466   2          }
+ 467   1          else if(usCreqLen > (usOffset + ScalerMcuDdcciGetBufferSize() - 6))
+ 468   1          {
+ 469   2              ucSendLen = ScalerMcuDdcciGetBufferSize() - 6;
+ 470   2          }
+ 471   1          else
+ 472   1          {
+ 473   2              ucSendLen = usCreqLen - usOffset;
+ 474   2          }
+ 475   1      
+ 476   1          g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
+ 477   1          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | (ucSendLen + 3);
+ 478   1          g_pucDdcciTxBuf[_DDCCI_COMMAND] = _DDCCI_CMD_CAPABILITIES_REQUEST_REPLY;
+ 479   1          g_pucDdcciTxBuf[_DDCCI_OFS_HIGH_BYTE] = g_pucDdcciRxBuf[_DDCCI_OFS_HIGH_BYTE];
+ 480   1          g_pucDdcciTxBuf[_DDCCI_OFS_LOW_BYTE] = g_pucDdcciRxBuf[_DDCCI_OFS_LOW_BYTE];
+ 481   1      
+ 482   1          UserCommonDdcciGetCpStringData(&g_pucDdcciTxBuf[_DDCCI_OFS_LOW_BYTE + 1], enumPortType, usOffset, ucSe
+             -ndLen);
+ 483   1      
+ 484   1          g_pucDdcciTxBuf[_DDCCI_OFS_LOW_BYTE + 1 + ucSendLen] = UserCommonDdcciCalCheckSum();
+ 485   1      
+ 486   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
+                  if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_I2C)
+              #endif
+ 489   1          {
+ 490   2              ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 491   2          }
+ 492   1      }
+ 493          
+ 494          //--------------------------------------------------
+ 495          // Description  : Get capability string data
+ 496          // Input Value  : pucDest -> destination
+ 497          //                enumPortType -> port type
+ 498          //                usStartIndex -> data offset
+ 499          //                usLength -> data length
+ 500          // Output Value : None
+ 501          //--------------------------------------------------
+ 502          void UserCommonDdcciGetCpStringData(BYTE *pucDest, EnumInputPortType enumPortType, WORD usStartIndex, WORD
+             - usLength)
+ 503          {
+ 504   1      #if(_DDCCI_CUSTOM_CAPABILITY_STR_SUPPORT == _ON)
+              
+                  UserInterfaceDdcciGetCpStringData(pucDest, enumPortType, usStartIndex, usLength);
+              
+              #else
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 10  
+
+ 509   1      
+ 510   1          switch(enumPortType)
+ 511   1          {
+ 512   2      #if(_VGA_PORT_EXIST == _ON)
+ 513   2              case _PORT_VGA:
+ 514   2                  memcpy(pucDest, &tCP_STRING_DSUB[usStartIndex], usLength);
+ 515   2                  break;
+ 516   2      #endif
+ 517   2      
+ 518   2      #if(_DVI_PORT_EXIST == _ON)
+                      case _PORT_DVI:
+                      case _PORT_DUAL_DVI:
+                          memcpy(pucDest, &tCP_STRING_DVI[usStartIndex], usLength);
+                          break;
+              #endif
+ 524   2      
+ 525   2      #if(_HDMI_PORT_EXIST == _ON)
+ 526   2              case _PORT_HDMI:
+ 527   2              case _PORT_MHL:
+ 528   2              case _PORT_HDMI20:
+ 529   2                  memcpy(pucDest, &tCP_STRING_HDMI[usStartIndex], usLength);
+ 530   2                  break;
+ 531   2      #endif
+ 532   2      
+ 533   2      #if(_DP_PORT_EXIST == _ON)
+ 534   2              case _PORT_DP:
+ 535   2                  memcpy(pucDest, &tCP_STRING_DP[usStartIndex], usLength);
+ 536   2                  break;
+ 537   2      #endif
+ 538   2      
+ 539   2              default:
+ 540   2                  break;
+ 541   2          }
+ 542   1      
+ 543   1      #endif
+ 544   1      }
+ 545          
+ 546          //--------------------------------------------------
+ 547          // Description  : Get capability string size
+ 548          // Input Value  : enumPortType -> port type
+ 549          // Output Value : size
+ 550          //--------------------------------------------------
+ 551          WORD UserCommonDdcciGetCpStringSize(EnumInputPortType enumPortType)
+ 552          {
+ 553   1      #if(_DDCCI_CUSTOM_CAPABILITY_STR_SUPPORT == _ON)
+              
+                  return UserInterfaceDdcciGetCpStringSize(enumPortType);
+              
+              #else
+ 558   1      
+ 559   1          switch(enumPortType)
+ 560   1          {
+ 561   2      #if(_VGA_PORT_EXIST == _ON)
+ 562   2              case _PORT_VGA:
+ 563   2                  return (sizeof(tCP_STRING_DSUB) - 1);
+ 564   2      #endif
+ 565   2      
+ 566   2      #if(_DVI_PORT_EXIST == _ON)
+                      case _PORT_DVI:
+                      case _PORT_DUAL_DVI:
+                          return (sizeof(tCP_STRING_DVI) - 1);
+              #endif
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 11  
+
+ 571   2      
+ 572   2      #if(_HDMI_PORT_EXIST == _ON)
+ 573   2              case _PORT_HDMI:
+ 574   2              case _PORT_MHL:
+ 575   2              case _PORT_HDMI20:
+ 576   2                  return (sizeof(tCP_STRING_HDMI) - 1);
+ 577   2      #endif
+ 578   2      
+ 579   2      #if(_DP_PORT_EXIST == _ON)
+ 580   2              case _PORT_DP:
+ 581   2                  return (sizeof(tCP_STRING_DP) - 1);
+ 582   2      #endif
+ 583   2      
+ 584   2              default:
+ 585   2                  return 0;
+ 586   2          }
+ 587   1      
+ 588   1      #endif
+ 589   1      }
+ 590          
+ 591          //--------------------------------------------------
+ 592          // Description  : Get Fw Info Requeset
+ 593          // Input Value  : None
+ 594          // Output Value : None
+ 595          //--------------------------------------------------
+ 596          void UserCommonDdcciGetFwInfoRequest(void)
+ 597          {
+ 598   1          BYTE ucSendLen = 0;
+ 599   1          g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
+ 600   1          g_pucDdcciTxBuf[_DDCCI_COMMAND] = _DDCCI_CMD_GET_FW_INFO_REQUEST;
+ 601   1      
+ 602   1          switch(g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE])
+ 603   1          {
+ 604   2      #if(_CUSTOMER_FW_VERSION_SUPPORT == _ON)
+                      case _DDCCI_OPCODE_GET_CURRENT_FW_VER_REQUEST:
+                          ucSendLen = 3;
+                          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLen;
+                          ScalerFwInfoGetCurrentVersion(&g_pucDdcciTxBuf[3]);
+                          g_pucDdcciTxBuf[5] = UserCommonDdcciCalCheckSum();
+                          break;
+                      case _DDCCI_OPCODE_GET_FW_VER_LOCATE_REQUEST:
+                          ucSendLen = 6;
+                          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLen;
+                          ScalerFwInfoGetFwVersionAddress(&g_pucDdcciTxBuf[3]);
+                          g_pucDdcciTxBuf[8] = UserCommonDdcciCalCheckSum();
+                          break;
+              #endif
+ 618   2      
+ 619   2              case _DDCCI_OPCODE_GET_DUAL_BANK_INFO_REQUEST:
+ 620   2                  ucSendLen = 11;
+ 621   2                  g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLen;
+ 622   2      #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
+                          UserCommonDualBankUserGetFwInfo(&g_pucDdcciTxBuf[3]);
+              #else
+ 625   2                  // Byte Count
+ 626   2                  g_pucDdcciTxBuf[3] = 9;
+ 627   2      
+ 628   2                  // Dual bank Support
+ 629   2                  g_pucDdcciTxBuf[4] = _DUAL_BANK_SUPPORT;
+ 630   2      
+ 631   2                  // Dual bank Type
+ 632   2                  g_pucDdcciTxBuf[5] = 0xFF;
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 12  
+
+ 633   2      
+ 634   2                  // Active User(1)
+ 635   2                  g_pucDdcciTxBuf[6] = 0xFF;
+ 636   2      
+ 637   2      #if(_CUSTOMER_FW_VERSION_SUPPORT == _ON)
+                          ScalerFwInfoGetCurrentVersion(&g_pucDdcciTxBuf[7]);
+                          memset(&g_pucDdcciTxBuf[9], 0xFFU, 4);
+              #else
+ 641   2                  // User1 Version(2) + User2 Version(2) + Reserved(2)
+ 642   2                  memset(&g_pucDdcciTxBuf[7], 0xFFU, 6);
+ 643   2      #endif
+ 644   2      
+ 645   2      #endif
+ 646   2                  g_pucDdcciTxBuf[13] = UserCommonDdcciCalCheckSum();
+ 647   2                  break;
+ 648   2      
+ 649   2              default:
+ 650   2                  UserCommonDdcciInitTx();
+ 651   2                  break;
+ 652   2          }
+ 653   1      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
+                  g_stSmbusBlockRWCmd.ucDataLen = ucSendLen + 3;
+              #endif
+ 656   1          ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 657   1      }
+ 658          //--------------------------------------------------
+ 659          // Description  : RTK DDCCI  Handler for dual bank
+ 660          // Input Value  : None
+ 661          // Output Value : None
+ 662          //--------------------------------------------------
+ 663          bit UserCommonDdcciKernelHandler(void)
+ 664          {
+ 665   1          BYTE ucOpCode = 0;
+ 666   1      
+ 667   1          if(GET_OSD_DDCCI_STATUS() == _ON)
+ 668   1          {
+ 669   2              // Check if Data is needed to be received
+ 670   2              // Reply data to source according to the request
+ 671   2              if(GET_RUN_DDCCI_COMMAND() == _SUCCESS)
+ 672   2              {
+ 673   3                  if((g_pucDdcciRxBuf[_DDCCI_SOURCE] == _DDCCI_SRC_RTK_ADDRESS))
+ 674   3                  {
+ 675   4                      if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_RTK_CMD_TYPE)
+ 676   4                      {
+ 677   5                          ucOpCode = g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE];
+ 678   5                      }
+ 679   4                      // compatible  For Old Tool (0x6E, 0x51, 0xAA);
+ 680   4                      // New Tool 0x6E, 0x71, 0xAA
+ 681   4                      else if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_CMD_SWITCH_DEBUG_SALVE_REQUEST)
+ 682   4                      {
+ 683   5                          ucOpCode = g_pucDdcciRxBuf[_DDCCI_COMMAND];
+ 684   5                      }
+ 685   4                      else
+ 686   4                      {
+ 687   5                          return _FALSE;
+ 688   5                      }
+ 689   4                      switch(ucOpCode)
+ 690   4                      {
+ 691   5                          case _DDCCI_CMD_GET_FW_INFO_REQUEST:
+ 692   5                              UserCommonDdcciGetFwInfoRequest();
+ 693   5                              break;
+ 694   5      #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 13  
+
+                                  case _DDCCI_CMD_SWITCH_DEBUG_SALVE_REQUEST:
+                                      ScalerDebugSetDdcciSwitchState();
+                                      // Switch DDCCI to Debug Mode, No Matter Which Port as Auto-Switch
+                                      ScalerMcuDdcciSwitchPort(_DEBUG_MODE, _A0_INPUT_PORT);
+                                      break;
+              #endif
+ 701   5      
+ 702   5      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
+                                  case _DDCCI_CMD_SET_SMBUS_BLOCK_REQUEST:
+                                      UserCommonDdcciSetSmbusBlockReadWrite();
+                                      break;
+              #endif
+ 707   5      #if(_FW_UPDATE_PROCESS_SUPPORT == _ON)
+                                  case _SCALER_FW_UPDATE_CMD:
+                                      if(((_FW_UPDATE_BACKGROUND_SUPPORT == _ON) && (g_pucDdcciRxBuf[4] == _FW_UPDATE_BA
+             -CKGROUND_SUB_OP_CODE)) ||
+                                         ((_FW_UPDATE_FOREGROUND_SUPPORT == _ON) && (g_pucDdcciRxBuf[4] == _FW_UPDATE_FO
+             -REGROUND_SUB_OP_CODE)))
+                                      {
+                                          ScalerFwUpdateSwitchState(_DDCCI_MODE, g_pucDdcciRxBuf[4]);
+                                      }
+                                      break;
+              #endif
+ 716   5      #if(_ISP_FW_CHECK_PROJECT_ID_SUPPORT == _ON)
+                                  case _SCALER_FW_CHECK_CMD:
+                                      UserCommonDdcciFwCheck(&g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE]);
+                                      break;
+              #endif
+ 721   5      
+ 722   5                          default:
+ 723   5                              UserCommonDdcciInitTx();
+ 724   5                              break;
+ 725   5                      }
+ 726   4      
+ 727   4      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
+                              if(GET_SMBUS_BLOCK_RW_STATUS() == _TRUE)
+                              {
+                                  ScalerTimerReactiveTimerEvent(_SMBUS_BLOCK_READ_WRITE_EXIT_TIMER_COUNT, _SCALER_TIMER_
+             -EVENT_SMBUS_BLOCK_READ_WRITE);
+                              }
+              #endif
+ 733   4                      UserCommonDdcciInitRx();
+ 734   4                      SET_RUN_DDCCI_COMMAND(_FAIL);
+ 735   4                      return _TRUE;
+ 736   4                  }
+ 737   3              }
+ 738   2          }
+ 739   1          return _FALSE;
+ 740   1      }
+ 741          #endif  // #if(_DDCCI_CODE_REDUCTION == _OFF)
+ 742          
+ 743          #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : set Smbus Block Read Write Requeset
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void UserCommonDdcciSetSmbusBlockReadWrite(void)
+              {
+                  BYTE ucSendLen = 0;
+              
+                  if(g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE] != 0)
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 14  
+
+                  {
+                      SET_SMBUS_BLOCK_RW_STATUS(_TRUE);
+                  }
+              
+                  g_stSmbusBlockRWCmd.ucDataLen = 5;
+                  g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
+                  g_pucDdcciTxBuf[_DDCCI_COMMAND] = _DDCCI_CMD_SET_SMBUS_BLOCK_REQUEST;
+                  ucSendLen = 2;
+                  g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLen;
+                  g_pucDdcciTxBuf[3] = 0; // Success
+                  g_pucDdcciTxBuf[4] = UserCommonDdcciCalCheckSum();
+                  ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+              
+                  if(g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE] == 0)
+                  {
+                      SET_SMBUS_BLOCK_RW_STATUS(_FALSE);
+                  }
+              }
+              #endif
+ 773          
+ 774          #if(_ISP_FW_CHECK_PROJECT_ID_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : FW check Handler
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void UserCommonDdcciFwCheck(BYTE *pucCmdArry)
+              {
+                  g_pucDdcciTxBuf[0] = _DDCCI_DEST_ADDRESS;
+                  g_pucDdcciTxBuf[_DDCCI_COMMAND] = _SCALER_FW_CHECK_CMD;
+              
+                  switch(pucCmdArry[0])
+                  {
+                      case _SCALER_FW_CHECK_SUB_OP_GET_ADDR:
+                          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | 0x07;
+                          ScalerFwCheckGetProjectIDAddress(&g_pucDdcciTxBuf[3]);
+                          break;
+              
+                      case _SCALER_FW_CHECK_SUB_OP_VERIFY:
+                          g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | 0x03;
+                          g_pucDdcciTxBuf[3] = ScalerFwCheckProjectIDVerify(&pucCmdArry[1]);
+                          break;
+              
+                      default:
+                          UserCommonDdcciInitTx();
+                          break;
+                  }
+                  ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+              }
+              #endif
+ 804          
+ 805          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    768    ----
+   CONSTANT SIZE    =    840    ----
+   XDATA SIZE       =   ----      14
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 15  
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

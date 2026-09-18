@@ -1,0 +1,1725 @@
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SYSPOWER
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\SysPower.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\System\Code\SysPower.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL643
+                    -2;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFun
+                    -ction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\Scale
+                    -rCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Ker
+                    -nel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function
+                    -\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\No
+                    -ne Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJ
+                    -ECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysPower.lst) OBJECT(.\Output\RL6432_P
+                    -roject\SysPower.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : SysPower.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __SYSTEM_POWER__
+  18          
+  19          #include "SysInclude.h"
+  20          
+  21          
+  22          //****************************************************************************
+  23          // DEFINITIONS / MACROS
+  24          //****************************************************************************
+  25          
+  26          //****************************************************************************
+  27          // STRUCT / TYPE / ENUM DEFINITTIONS
+  28          //****************************************************************************
+  29          
+  30          
+  31          //****************************************************************************
+  32          // CODE TABLES
+  33          //****************************************************************************
+  34          
+  35          
+  36          //****************************************************************************
+  37          // VARIABLE DECLARATIONS
+  38          //****************************************************************************
+  39          StructPowerInfoType g_stPowerInfo;
+  40          
+  41          //****************************************************************************
+  42          // FUNCTION DECLARATIONS
+  43          //****************************************************************************
+  44          void SysPowerInitial(void);
+  45          void SysPowerHandler(void);
+  46          void SysPowerSwitch(EnumPowerAction enumSwitch);
+  47          
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 2   
+
+  48          #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
+              void SysPowerIdleProc(void);
+              #endif
+  51          
+  52          BYTE SysPowerGetPowerStatus(void);
+  53          void SysPowerSystemClockSelect(BYTE ucClockSel);
+  54          void SysPowerSetTargetPowerStatus(EnumPowerStatus enumPorStatus);
+  55          
+  56          #if(_DIGITAL_PORT_SUPPORT == _ON)
+  57          void SysPowerLoadHDCPKey(void);
+  58          
+  59          #if(_DP_TX_SUPPORT == _ON)
+              void SysPowerLoadDPTxHDCPKey(void);
+              #endif
+  62          #endif
+  63          
+  64          void SysPowerIsolation(EnumPowerAction enumSwitch);
+  65          void SysPowerRecoverIsolationAreaData(void);
+  66          bit SysPowerCheckFakeSaving(void);
+  67          bit SysPowerCheckFakeOff(void);
+  68          bit SysPowerCheckNormal(void);
+  69          
+  70          #if(_MHL_PS_WITHOUT_POWERCUT_SUPPORT == _ON)
+              void SysPowerMHLPowerCutProc(void);
+              #endif
+  73          
+  74          //****************************************************************************
+  75          // FUNCTION DEFINITIONS
+  76          //****************************************************************************
+  77          //--------------------------------------------------
+  78          // Description  : Initial Source Switch Flags
+  79          // Input Value  : None
+  80          // Output Value : None
+  81          //--------------------------------------------------
+  82          void SysPowerInitial(void)
+  83          {
+  84   1          // Scaler whole chip reset
+  85   1          ScalerGlobalWholeChipReset();
+  86   1      
+  87   1      #if((_HW_DP_AUX_CLK_DEFAULT_FROM_M2PLL_SUPPORT == _ON) && (_HW_M2PLL_POWER_CTRL_BY_MCU_RESET_SUPPORT == _O
+             -FF))
+  88   1          // Power on Xtal Clock
+  89   1          ScalerPowerXtalPower(_ON);
+  90   1      
+  91   1          // Power on M2PLL
+  92   1          ScalerPLLM2PLLPower(_ON);
+  93   1      #endif
+  94   1      
+  95   1      #if((_LC_TANK_SUPPORT != _ON) || (_XTALESS_SUPPORT != _ON))
+  96   1          // Internal oscillator trimming and on
+  97   1          ScalerIOSCTrimming();
+  98   1      #endif
+  99   1      
+ 100   1          // Initial PC99 System Control
+ 101   1      #if(_HW_PC99_SUPPORT == _ON)
+                  ScalerPC99EDIDInitialControl();
+              #endif
+ 104   1      
+ 105   1          // Initial LDO Voltage Output
+ 106   1          ScalerLDOPowerControl(_POWER_STATUS_AC_ON);
+ 107   1      
+ 108   1          ////////////////////////////
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 3   
+
+ 109   1          // TYPE-C Initial Setting //
+ 110   1          ////////////////////////////
+ 111   1      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+              
+              #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
+                  // When AC ON, detect TypeC device & initially update the result
+                  ScalerTypeCRx0CcACOnDeviceDetect();
+              #endif
+              
+                  SysTypeCInitial();
+              #endif
+ 120   1      
+ 121   1      #if(_TYPE_C_GPIO_MODE_SUPPORT == _ON)
+                  ScalerTypeCGpioModeInitialSetting();
+              #endif
+ 124   1      
+ 125   1      #if(_10_BIT_ADC_FOR_NONE_TYPE_C_SUPPORT == _ON)
+                  ScalerPinshareTypeCAdcInitial();
+              #endif
+ 128   1      
+ 129   1          ///////////////////
+ 130   1          // Load EDID     //
+ 131   1          ///////////////////
+ 132   1      #if(_WRITE_EDID_TO_SYSTEM_EEPROM == _ON)
+ 133   1          UserCommonInterfaceNVRamRestoreEDID();
+ 134   1      #endif
+ 135   1      
+ 136   1      #if(_EMBEDDED_EDID_SUPPORT == _ON)
+ 137   1          UserCommonInterfaceLoadEmbeddedEdidData();
+ 138   1      #endif
+ 139   1      
+ 140   1      #if(_HDMI_MULTI_EDID_SUPPORT == _ON)
+                  // External Edid GPO Initial
+                  UserCommonInterfaceHDMIMultiEdidInitial();//buzuo
+              #endif
+ 144   1      
+ 145   1      #if(_HDMI_SUPPORT == _ON)
+ 146   1      #if(_EDID_EXTERNAL_EEPROM_MAX_SIZE != _EDID_SIZE_NONE)
+                  // External Edid Parser
+                  UserCommonInterfaceHdmiAllPortExternalEdidParser();
+              #endif
+ 150   1      #endif
+ 151   1      
+ 152   1          ///////////////////
+ 153   1          // Load HDCP Key //
+ 154   1          ///////////////////
+ 155   1          // HDCP Initial
+ 156   1      #if(_WRITE_HDCP_TO_SYSTEM_EEPROM == _ON)
+                 // UserCommonInterfaceNVRamRestoreHDCP();
+              #endif // End of #if(_WRITE_HDCP_TO_SYSTEM_EEPROM == _ON)
+ 159   1      
+ 160   1      #if(_DIGITAL_PORT_SUPPORT == _ON)
+ 161   1          SysPowerLoadHDCPKey();
+ 162   1      #endif
+ 163   1      
+ 164   1      #if((_DELL_HDMI_HPD_DDC_STYLE_SUPPORT == _ON) && (_HDMI_2_0_SUPPORT == _ON))
+                  ScalerTMDSRxAllPortScdcEnableSetting(_DISABLE);
+              #endif
+ 167   1      
+ 168   1          //////////////////////////
+ 169   1          // TMDS Initial Setting //
+ 170   1          //////////////////////////
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 4   
+
+ 171   1      #if(_DVI_SUPPORT == _ON)
+ 172   1          ScalerTMDSRxAcOnInitial();
+ 173   1      #endif
+ 174   1      
+ 175   1      #if(_HDMI_2_0_SUPPORT == _ON)
+ 176   1          UserCommonInterfaceTmdsGetVersionScdcInfo();
+ 177   1      #endif
+ 178   1      
+ 179   1          //////////////////////////
+ 180   1          // CEC Initial Setting //
+ 181   1          //////////////////////////
+ 182   1      #if(_HDMI_CEC_SUPPORT == _ON)
+                  ScalerCecInitial();
+                  ScalerCecFunctionEnable(UserInterfaceCecGetCecActive());
+              #endif
+ 186   1      
+ 187   1          /////////////////////////////////////
+ 188   1          // DP Aux and DPCD Initial Setting //
+ 189   1          /////////////////////////////////////
+ 190   1      
+ 191   1      #if(_DP_EMBEDDED_SWITCH_SUPPORT_TYPE == _DP_EMBEDDED_SWITCH_2_DP)
+              
+                  if(GET_DP_EMBEDDED_SWITCH_SELECT() == _D0_INPUT_PORT)
+                  {
+                      ScalerDpInitial(_D0_INPUT_PORT, UserInterfaceGetDPVersion(_D0_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D0_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D0_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D0_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D0_INPUT_PORT));
+                  }
+                  else if(GET_DP_EMBEDDED_SWITCH_SELECT() == _D1_INPUT_PORT)
+                  {
+                      ScalerDpInitial(_D1_INPUT_PORT, UserInterfaceGetDPVersion(_D1_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D1_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D1_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D1_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D1_INPUT_PORT));
+                  }
+                  else if(GET_DP_EMBEDDED_SWITCH_SELECT() == _D2_INPUT_PORT)
+                  {
+                      ScalerDpInitial(_D2_INPUT_PORT, UserInterfaceGetDPVersion(_D2_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D2_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D2_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D2_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D2_INPUT_PORT));
+                  }
+              
+              #else // Else of #if(_DP_EMBEDDED_SWITCH_SUPPORT_TYPE == _DP_EMBEDDED_SWITCH_2_DP)
+ 207   1      
+ 208   1      #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
+ 209   1      #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+                  ScalerDpRxHdcp14RepeaterCapabilityCheck(_D0_INPUT_PORT, UserCommonInterfaceGetDpMstCapablePort(), User
+             -InterfaceGetDpCloneOutputStatus());
+              #endif
+ 212   1      
+ 213   1      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                  if(GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT)
+                  {
+                      ScalerDpInitial(_D6_INPUT_PORT, UserInterfaceGetDPVersion(_D6_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D6_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D6_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D6_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D6_INPUT_PORT));
+                      ScalerDpInitial(_D0_INPUT_PORT, UserInterfaceGetDPVersion(_D0_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D0_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D0_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D0_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D0_INPUT_PORT));
+                  }
+                  else if(GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT)
+                  {
+                      ScalerDpInitial(_D0_INPUT_PORT, UserInterfaceGetDPVersion(_D0_INPUT_PORT), UserInterfaceGetDpLaneC
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 5   
+
+             -ount(_D0_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D0_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D0_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D0_INPUT_PORT));
+                      ScalerDpInitial(_D6_INPUT_PORT, UserInterfaceGetDPVersion(_D6_INPUT_PORT), UserInterfaceGetDpLaneC
+             -ount(_D6_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D6_INPUT_PORT), UserComm
+             -onAudioDpGetCapabilityInitialState(_D6_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D6_INPUT_PORT));
+                  }
+              #else
+ 225   1          ScalerDpInitial(_D0_INPUT_PORT, UserInterfaceGetDPVersion(_D0_INPUT_PORT), UserInterfaceGetDpLaneCount
+             -(_D0_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D0_INPUT_PORT), UserCommonAu
+             -dioDpGetCapabilityInitialState(_D0_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D0_INPUT_PORT));
+ 226   1      #endif
+ 227   1      #endif
+ 228   1      
+ 229   1      #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
+              #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+                  ScalerDpRxHdcp14RepeaterCapabilityCheck(_D1_INPUT_PORT, UserCommonInterfaceGetDpMstCapablePort(), User
+             -InterfaceGetDpCloneOutputStatus());
+              #endif
+                  ScalerDpInitial(_D1_INPUT_PORT, UserInterfaceGetDPVersion(_D1_INPUT_PORT), UserInterfaceGetDpLaneCount
+             -(_D1_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D1_INPUT_PORT), UserCommonAu
+             -dioDpGetCapabilityInitialState(_D1_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D1_INPUT_PORT));
+              #endif
+ 235   1      
+ 236   1      #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
+                  ScalerDpInitial(_D2_INPUT_PORT, UserInterfaceGetDPVersion(_D2_INPUT_PORT), UserInterfaceGetDpLaneCount
+             -(_D2_INPUT_PORT), UserCommonInterfaceGetDpMstCapablePort(), UserInterfaceGetFreeSyncEnable(_D2_INPUT_PORT), UserCommonAu
+             -dioDpGetCapabilityInitialState(_D2_INPUT_PORT), UserCommonInterfaceHDRGetHDR10Support(_D2_INPUT_PORT));
+              #endif
+ 239   1      
+ 240   1      #endif // End of #if(_DP_EMBEDDED_SWITCH_SUPPORT_TYPE == _DP_EMBEDDED_SWITCH_2_DP)
+ 241   1      
+ 242   1      #if(_DP_HDCP_ARBITER_SUPPORT == _ON)
+                  ScalerDpHdcpCtrlDpcdSwitch(SysSourceGetInputPort());
+              #endif
+ 245   1      
+ 246   1          /////////////////////////////////////
+ 247   1          // DP MST Initial Setting //
+ 248   1          /////////////////////////////////////
+ 249   1      
+ 250   1      #if(_DP_MST_SUPPORT == _ON)
+                  ScalerDpRxMstPowerOnInitial();
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _OFF)
+                  ScalerDpRxMstInitial(UserCommonInterfaceGetDpMstCapablePort());
+              #endif
+              #endif
+ 257   1      
+ 258   1          /////////////////////////////////////
+ 259   1          // DP Tx Initial Setting //
+ 260   1          /////////////////////////////////////
+ 261   1      #if(_DP_TX_SUPPORT == _ON)
+                  ScalerDpTxAuxTimeoutInitial();
+              #if(_DP_TX_BLOCK_CONTROL_BEFORE_STREAM_OUTPUT == _ON)
+                  ScalerDpTxCloneModeSwitch(UserInterfaceGetDpCloneOutputStatus());
+              #endif
+              #endif
+ 267   1      
+ 268   1          //////////////////////////////
+ 269   1          // MHL CBus Initial Setting //
+ 270   1          //////////////////////////////
+ 271   1          ScalerPinshareCBUSPinInitialReset();
+ 272   1      
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 6   
+
+ 273   1      #if(_MHL_SUPPORT == _ON)
+                  ScalerMHLInitialSettings();
+              #endif
+ 276   1      
+ 277   1      
+ 278   1      
+ 279   1          //////////////////////
+ 280   1          // Memory Power Off //
+ 281   1          //////////////////////
+ 282   1      
+ 283   1      #if(_MEMORY_TYPE_CONFIG != _NO_MEMORY)
+ 284   1          ScalerMemoryPowerControl(_OFF);
+ 285   1      
+ 286   1      #if((_DDR1_PHASE_CALIBRATION == _ON) || (_SDRAM_PHASE_CALIBRATION == _ON))
+ 287   1          CLR_FIRST_AUTOK_STATUS();
+ 288   1      #endif
+ 289   1      
+ 290   1      #endif
+ 291   1      
+ 292   1      
+ 293   1          ///////////////////////////////////////
+ 294   1          // All Group Power Cut and Isolation //
+ 295   1          ///////////////////////////////////////
+ 296   1      
+ 297   1          SysPowerIsolation(_POWER_ACTION_AC_ON_INITIAL);
+ 298   1      }
+ 299          
+ 300          //--------------------------------------------------
+ 301          // Description  : Power Handler Process
+ 302          // Input Value  : None
+ 303          // Output Value : None
+ 304          //--------------------------------------------------
+ 305          void SysPowerHandler(void)
+ 306          {
+ 307   1          // The process will deal with all kinds of power changing by power action flag.
+ 308   1          switch(GET_TARGET_POWER_STATUS())
+ 309   1          {
+ 310   2              case _POWER_STATUS_NORMAL:
+ 311   2                      #if(_PCB_TYPE == _RL6432__156PIN__HKMRT2557E03__1T1H1DP_EDP)
+                              #if(_DEF_255XE03_PCB_TYPE==1)
+                                      MCU_FE23_PORT83_PIN_REG=1;MCU_FE04_PORT44_PIN_REG=1;
+                              #endif
+                              #endif
+ 316   2                      #if(_PCB_TYPE ==_RL6432__156PIN__HKMRT255XE08__1T1H1DP_LVDS)
+                                      MCU_FE23_PORT83_PIN_REG=1;MCU_FE04_PORT44_PIN_REG=1;
+                              #endif
+ 319   2      
+ 320   2                  switch(GET_POWER_STATUS())
+ 321   2                  {
+ 322   3                      case _POWER_STATUS_OFF:
+ 323   3      
+ 324   3                          if(SysPowerCheckNormal() == _TRUE)
+ 325   3                          {
+ 326   4                              SysPowerSwitch(_POWER_ACTION_OFF_TO_NORMAL);
+ 327   4                          }
+ 328   3                          else
+ 329   3                          {
+ 330   4                              SysPowerSwitch(_POWER_ACTION_OFF_TO_FAKE_OFF);
+ 331   4                          }
+ 332   3                          break;
+ 333   3      
+ 334   3                      case _POWER_STATUS_SAVING:
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 7   
+
+ 335   3      
+ 336   3                          SysPowerSwitch(_POWER_ACTION_PS_TO_NORMAL);
+ 337   3      
+ 338   3      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                                  if(UserInterfaceGetAIOModernStandbyMode() == _AIO_MODERN_STANDBY_MODE_ENABLE)
+                                  {
+                                      SET_AIO_MODERN_STANDBY_MODE();
+                                      ScalerTimerReactiveTimerEvent(SEC(0.5), _SYSTEM_TIMER_EVENT_AIO_MODERN_STANDBY_MOD
+             -E_TIMEOUT);
+                                  }
+                                  else
+                                  {
+                                      CLR_AIO_MODERN_STANDBY_MODE();
+                                      ScalerTimerCancelTimerEvent(_SYSTEM_TIMER_EVENT_AIO_MODERN_STANDBY_MODE_TIMEOUT);
+                                  }
+              #endif
+ 350   3                          break;
+ 351   3      
+ 352   3                      case _POWER_STATUS_AC_ON:
+ 353   3                          SysPowerSwitch(_POWER_ACTION_AC_ON_TO_NORMAL);
+ 354   3                          break;
+ 355   3      
+ 356   3                      case _POWER_STATUS_NORMAL:
+ 357   3      
+ 358   3                          if((GET_MODE_STATE() == _MODE_STATUS_POWER_OFF) || (GET_POWER_SWITCH_TO_FAKE_OFF() == 
+             -_TRUE))
+ 359   3                          {
+ 360   4                              CLR_POWER_SWITCH_TO_FAKE_OFF();
+ 361   4                              ScalerTimerCancelTimerEvent(_SYSTEM_TIMER_EVENT_POWER_FAKE_OFF_TO_OFF);
+ 362   4                              SysPowerSwitch(_POWER_ACTION_FAKE_OFF_TO_NORMAL);
+ 363   4                          }
+ 364   3                          else if(GET_POWER_SWITCH_TO_FAKE_SAVING() == _TRUE)
+ 365   3                          {
+ 366   4                              CLR_POWER_SWITCH_TO_FAKE_SAVING();
+ 367   4                              SysPowerSwitch(_POWER_ACTION_FAKE_PS_TO_NORMAL);
+ 368   4      
+ 369   4      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                                      if(UserInterfaceGetAIOModernStandbyMode() == _AIO_MODERN_STANDBY_MODE_ENABLE)
+                                      {
+                                          SET_AIO_MODERN_STANDBY_MODE();
+                                          ScalerTimerReactiveTimerEvent(SEC(0.5), _SYSTEM_TIMER_EVENT_AIO_MODERN_STANDBY
+             -_MODE_TIMEOUT);
+                                      }
+                                      else
+                                      {
+                                          CLR_AIO_MODERN_STANDBY_MODE();
+                                          ScalerTimerCancelTimerEvent(_SYSTEM_TIMER_EVENT_AIO_MODERN_STANDBY_MODE_TIMEOU
+             -T);
+                                      }
+              #endif
+ 381   4                          }
+ 382   3      
+ 383   3                          break;
+ 384   3      
+ 385   3                      default:
+ 386   3                          break;
+ 387   3                  }
+ 388   2      
+ 389   2                  SET_POWER_STATUS(_POWER_STATUS_NORMAL);
+ 390   2      
+ 391   2                  break;
+ 392   2      
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 8   
+
+ 393   2              case _POWER_STATUS_OFF:
+ 394   2      
+ 395   2                  CLR_POWER_SWITCH_TO_FAKE_SAVING();
+ 396   2      
+ 397   2                  // Clear Mode change flag
+ 398   2                  CLR_MODE_STATE_CHANGE_MODE();
+ 399   2      
+ 400   2                  switch(GET_POWER_STATUS())
+ 401   2                  {
+ 402   3                      case _POWER_STATUS_SAVING:
+ 403   3                          SysPowerSwitch(_POWER_ACTION_PS_TO_OFF);
+ 404   3                          SET_POWER_STATUS(_POWER_STATUS_OFF);
+ 405   3                          break;
+ 406   3      
+ 407   3                      case _POWER_STATUS_AC_ON:
+ 408   3                          SysPowerSwitch(_POWER_ACTION_AC_ON_TO_OFF);
+ 409   3                          SET_POWER_STATUS(_POWER_STATUS_OFF);
+ 410   3                          break;
+ 411   3      
+ 412   3                      case _POWER_STATUS_NORMAL:
+ 413   3      
+ 414   3                          if(SysPowerCheckFakeOff() == _FALSE)
+ 415   3                          {
+ 416   4                              CLR_POWER_SWITCH_TO_FAKE_OFF();
+ 417   4                              SysPowerSwitch(_POWER_ACTION_NORMAL_TO_OFF);
+ 418   4                              SET_POWER_STATUS(_POWER_STATUS_OFF);
+ 419   4                          }
+ 420   3                          else
+ 421   3                          {
+ 422   4                              SET_POWER_SWITCH_TO_FAKE_OFF();
+ 423   4                              SysPowerSwitch(_POWER_ACTION_NORMAL_TO_FAKE_OFF);
+ 424   4                          }
+ 425   3                          break;
+ 426   3      
+ 427   3                      default:
+ 428   3                          break;
+ 429   3                  }
+ 430   2      
+ 431   2                  break;
+ 432   2      
+ 433   2              case _POWER_STATUS_SAVING:
+ 434   2      
+ 435   2                  CLR_POWER_SWITCH_TO_FAKE_SAVING();
+ 436   2      
+ 437   2                  switch(GET_POWER_STATUS())
+ 438   2                  {
+ 439   3                      case _POWER_STATUS_NORMAL:
+ 440   3      
+ 441   3                          if(UserCommonInterfaceCheckFakeSaving() == _TRUE)
+ 442   3                          {
+ 443   4                              SET_POWER_SWITCH_TO_FAKE_SAVING();
+ 444   4                              SysPowerSwitch(_POWER_ACTION_NORMAL_TO_FAKE_PS);
+ 445   4                          }
+ 446   3                          else
+ 447   3                          {
+ 448   4                              SysPowerSwitch(_POWER_ACTION_NORMAL_TO_PS);
+ 449   4                              SET_POWER_STATUS(_POWER_STATUS_SAVING);
+ 450   4                          }
+ 451   3      
+ 452   3                          break;
+ 453   3      
+ 454   3                      default:
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 9   
+
+ 455   3                          break;
+ 456   3                  }
+ 457   2      
+ 458   2                  break;
+ 459   2      
+ 460   2              default:
+ 461   2                  break;
+ 462   2          }
+ 463   1      
+ 464   1          // Clear power action to avoid repeat calls in next circle.
+ 465   1          SET_TARGET_POWER_STATUS(_POWER_STATUS_NONE);
+ 466   1      
+ 467   1      #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
+                  // Flash go into idle mode to reduce overall system power consumption under power saving and power off
+             - status.
+                  if(((GET_POWER_STATUS() == _POWER_STATUS_SAVING) || (GET_POWER_STATUS() == _POWER_STATUS_OFF)) && (Use
+             -rCommonInterfaceGetRunDdcciCommand() == _FALSE))
+                  {
+                      // Call operation function to make Flash into idle mode.
+                      SysPowerIdleProc();
+                  }
+              #endif
+ 475   1      }
+ 476          
+ 477          //--------------------------------------------------
+ 478          // Description  : Deal With Power Manage According To Input Pamater
+ 479          // Input Value  : ucSwitch    --> Power action description.
+ 480          // Output Value : None
+ 481          //--------------------------------------------------
+ 482          void SysPowerSwitch(EnumPowerAction enumSwitch)
+ 483          {
+ 484   1          switch(enumSwitch)
+ 485   1          {
+ 486   2              case _POWER_ACTION_NORMAL_TO_PS:
+ 487   2      
+ 488   2                  // User Power Process
+ 489   2                  UserInterfacePowerSwitch(enumSwitch);
+ 490   2      
+ 491   2      #if(_AUDIO_SUPPORT == _ON)
+ 492   2                  SysAudioPowerProc(enumSwitch);
+ 493   2      #endif
+ 494   2                  // Mode Power Saving Process
+ 495   2                  SysModeResetState(_MODE_ACTION_RESET_TO_POWER_SAVING);
+ 496   2      
+ 497   2      #if(_MEMORY_TYPE_CONFIG != _NO_MEMORY)
+ 498   2                  ScalerMemoryPowerControl(_OFF);
+ 499   2      #endif
+ 500   2      
+ 501   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 504   2      
+ 505   2      #if(_DP_SUPPORT == _ON)
+ 506   2                  // DP Fake LT Protect
+ 507   2                  ScalerSyncDpFakeLTProtect();
+ 508   2      #endif
+ 509   2      
+ 510   2      #if(_HDMI_SUPPORT == _ON)
+ 511   2                  if((UserInterfaceGetForcePSStatus() == _TRUE) || (UserInterfaceForcePSWakeupTmdsHpdToggle() ==
+             - _USER_FORCE_PS_TMDS_HPD_TOGGLE))
+ 512   2                  {
+ 513   3                      SysTMDSRxSetPsWakeupHpdToggle();
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 10  
+
+ 514   3                  }
+ 515   2      #endif
+ 516   2      
+ 517   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_1)
+ 518   2                  // Interface Power Saving Process
+ 519   2                  ScalerSyncPowerProc(enumSwitch);
+ 520   2      #endif
+ 521   2      
+ 522   2                  // Set mcu module to power saving state
+ 523   2                  ScalerMcuPwmControl(_POWER_STATUS_SAVING);
+ 524   2      
+ 525   2                  // Set Pin configure to power saving state
+ 526   2                  ScalerPinshareConfig(_POWER_STATUS_SAVING);
+ 527   2      
+ 528   2      #if(_THERMAL_SENSOR_SUPPORT == _ON)
+                          // Thermal Sensor to power off state.
+                          ScalerThermalSensorControl(enumSwitch);
+              #endif
+ 532   2      
+ 533   2                  // Some Case Power Fake Saving Proc
+ 534   2      #if(_MHL_PS_WITHOUT_POWERCUT_SUPPORT == _ON)
+                          SysPowerMHLPowerCutProc();
+              #endif
+ 537   2                  // Select Internal Oscillator or EXT Xtal as System Clock.
+ 538   2                  SysPowerSystemClockSelect(_SYS_PS_CLOCK_SOURCE);
+ 539   2      
+ 540   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_2)
+                          // Interface Power Saving Process
+                          ScalerSyncPowerProc(enumSwitch);
+              #endif
+ 544   2      
+ 545   2                  // Enable all power cut area.
+ 546   2                  SysPowerIsolation(enumSwitch);
+ 547   2      
+ 548   2                  // LDO low power control.
+ 549   2                  ScalerLDOPowerControl(_POWER_STATUS_SAVING);
+ 550   2      
+ 551   2      #if(_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
+              #if((_D0_INPUT_PORT_TYPE != _D0_NO_PORT) && (_D0_DP_REPEATER_TYPE == _REPEATER_RTS_TRANSLATOR))
+                          if((GET_D0_CABLE_STATUS() == _FALSE) || (UserInterfaceGetRepeaterIntoPowerOff() == _DATA_EXCHA
+             -NGE_REPEATER_POWER_OFF))
+              #elif((_D1_INPUT_PORT_TYPE != _D1_NO_PORT) && (_D1_DP_REPEATER_TYPE == _REPEATER_RTS_TRANSLATOR))
+                          if((GET_D1_CABLE_STATUS() == _FALSE) || (UserInterfaceGetRepeaterIntoPowerOff() == _DATA_EXCHA
+             -NGE_REPEATER_POWER_OFF))
+              #endif
+                          {
+                              // Switch Off Repeater Power By PCB Control
+                              PCB_TWO_CHIP_REPEATER_POW(_TWO_CHIP_REPEATER_POWER_OFF);
+              
+                              // Switch Off Repeater Power By PCB Control
+                              PCB_TWO_CHIP_PORT_CTRL_POW(_TWO_CHIP_PORT_CTRL_POWER_OFF);
+              
+                              // Clear status that might cause PS predetect passed unexpetedly
+                              ScalerSyncDpRepeaterPowerOffReset();
+                          }
+              #endif
+ 568   2      
+ 569   2                  // Set SI's powerboard to low power
+ 570   2                  PCB_POWERBOARD_LOWPOWER(_LOW_POWER_ON);
+ 571   2      
+ 572   2                  break;
+ 573   2      
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 11  
+
+ 574   2              case _POWER_ACTION_NORMAL_TO_OFF:
+ 575   2              case _POWER_ACTION_AC_ON_TO_OFF:
+ 576   2      
+ 577   2                  // User Power Process
+ 578   2                  UserInterfacePowerSwitch(enumSwitch);
+ 579   2      
+ 580   2      #if(_AUDIO_SUPPORT == _ON)
+ 581   2                  SysAudioPowerProc(enumSwitch);
+ 582   2      #endif
+ 583   2                  SysSourcePowerOffProc();
+ 584   2      
+ 585   2                  // Mode Power Off Process
+ 586   2                  SysModeResetState(_MODE_ACTION_RESET_TO_POWER_OFF);
+ 587   2      
+ 588   2      #if(_MEMORY_TYPE_CONFIG != _NO_MEMORY)
+ 589   2                  ScalerMemoryPowerControl(_OFF);
+ 590   2      #endif
+ 591   2      
+ 592   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 595   2      
+ 596   2      #if(_DP_SUPPORT == _ON)
+ 597   2                  // DP Fake LT Protect
+ 598   2                  ScalerSyncDpFakeLTProtect();
+ 599   2      #endif
+ 600   2      
+ 601   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_1)
+ 602   2                  // Interface Power Off Process
+ 603   2                  ScalerSyncPowerProc(enumSwitch);
+ 604   2      #endif
+ 605   2      
+ 606   2                  // Set mcu module to power off state
+ 607   2                  ScalerMcuPwmControl(_POWER_STATUS_OFF);
+ 608   2      
+ 609   2                  // Set mcu module to power off state
+ 610   2                  ScalerPinshareConfig(_POWER_STATUS_OFF);
+ 611   2      
+ 612   2                  // Select internal oscillator as system clock.
+ 613   2                  SysPowerSystemClockSelect(_IOSC_CLK);
+ 614   2      
+ 615   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_2)
+                          // Interface Power Off Process
+                          ScalerSyncPowerProc(enumSwitch);
+              #endif
+ 619   2      
+ 620   2                  // Enable all power cut area.
+ 621   2                  SysPowerIsolation(enumSwitch);
+ 622   2      
+ 623   2                  // LDO low power control.
+ 624   2                  ScalerLDOPowerControl(_POWER_STATUS_OFF);
+ 625   2      
+ 626   2      #if(_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
+                          // Switch Off Repeater Power By PCB Control
+                          PCB_TWO_CHIP_REPEATER_POW(_TWO_CHIP_REPEATER_POWER_OFF);
+              
+                          // Switch Off Repeater Power By PCB Control
+                          PCB_TWO_CHIP_PORT_CTRL_POW(_TWO_CHIP_PORT_CTRL_POWER_OFF);
+              #endif
+ 633   2      
+ 634   2                  // Set SI's powerboard to low power
+ 635   2                  PCB_POWERBOARD_LOWPOWER(_LOW_POWER_ON);
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 12  
+
+ 636   2      
+ 637   2                  break;
+ 638   2      
+ 639   2              case _POWER_ACTION_PS_TO_OFF:
+ 640   2      
+ 641   2                  // User Power process
+ 642   2                  UserInterfacePowerSwitch(enumSwitch);
+ 643   2      
+ 644   2      #if(_AUDIO_SUPPORT == _ON)
+ 645   2                  SysAudioPowerProc(enumSwitch);
+ 646   2      #endif
+ 647   2      
+ 648   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 651   2      
+ 652   2                  SysSourcePowerOffProc();
+ 653   2      
+ 654   2                  // Interface Power Off Process
+ 655   2                  ScalerSyncPowerProc(enumSwitch);
+ 656   2      
+ 657   2                  // Set mcu module to power off state
+ 658   2                  ScalerMcuPwmControl(_POWER_STATUS_OFF);
+ 659   2      
+ 660   2                  // Pin configure to power off state.
+ 661   2                  ScalerPinshareConfig(_POWER_STATUS_OFF);
+ 662   2      
+ 663   2      #if(_THERMAL_SENSOR_SUPPORT == _ON)
+                          // Thermal Sensor to power off state.
+                          ScalerThermalSensorControl(enumSwitch);
+              #endif
+ 667   2      
+ 668   2                  // Enable all power cut area.
+ 669   2                  SysPowerIsolation(enumSwitch);
+ 670   2      
+ 671   2      #if(_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
+                          // Switch Off Repeater Power By PCB Control
+                          PCB_TWO_CHIP_REPEATER_POW(_TWO_CHIP_REPEATER_POWER_OFF);
+              
+                          // Switch Off Repeater Power By PCB Control
+                          PCB_TWO_CHIP_PORT_CTRL_POW(_TWO_CHIP_PORT_CTRL_POWER_OFF);
+              #endif
+ 678   2      
+ 679   2                  break;
+ 680   2      
+ 681   2              case _POWER_ACTION_AC_ON_TO_NORMAL:
+ 682   2              case _POWER_ACTION_OFF_TO_NORMAL:
+ 683   2              case _POWER_ACTION_PS_TO_NORMAL:
+ 684   2              case _POWER_ACTION_OFF_TO_FAKE_OFF:
+ 685   2      
+ 686   2                  // Wake up SI's powerboard
+ 687   2                  PCB_POWERBOARD_LOWPOWER(_LOW_POWER_OFF);
+ 688   2      
+ 689   2                  // LDO to normal setting.
+ 690   2                  ScalerLDOPowerControl(_POWER_STATUS_NORMAL);
+ 691   2      
+ 692   2                  // Disable all power cut area.
+ 693   2                  SysPowerIsolation(enumSwitch);
+ 694   2      
+ 695   2      #if(_LC_TANK_SUPPORT == _ON)
+              #if(_XTALESS_SUPPORT == _ON)
+                          ScalerLCTankSystemInitial();
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 13  
+
+              #endif
+              #endif
+ 700   2      
+ 701   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_2)
+                          // Sync Power On Process
+                          ScalerSyncPowerProc(enumSwitch);
+              #endif
+ 705   2      
+ 706   2      #if(_THERMAL_SENSOR_SUPPORT == _ON)
+                          // Thermal Sensor to power off state.
+                          ScalerThermalSensorControl(enumSwitch);
+              #endif
+ 710   2      
+ 711   2                  // Select M2PLL as system clock.
+ 712   2                  SysPowerSystemClockSelect(_M2PLL_CLK);
+ 713   2      
+ 714   2                  // Recovery data in all power cut area
+ 715   2                  SysPowerRecoverIsolationAreaData();
+ 716   2      
+ 717   2      #if(_AUDIO_SUPPORT == _ON)
+ 718   2      #if(_LINE_IN_SUPPORT == _ON)
+ 719   2                  // Audio ADC initial
+ 720   2                  ScalerAudioADCInitial();
+ 721   2      #endif
+ 722   2      
+ 723   2      #if(_EMBEDDED_DAC_SUPPORT == _ON)
+ 724   2                  // Audio DAC initial, Initialize Audio DAC to Gain Depop Time
+ 725   2                  ScalerAudioDACInitial();
+ 726   2      #endif
+ 727   2      #endif
+ 728   2      
+ 729   2      #if(_SYSTEM_LOW_POWER_GEN == _POWER_FLOW_GEN_1)
+ 730   2                  // Sync Power On Process
+ 731   2                  ScalerSyncPowerProc(enumSwitch);
+ 732   2      #endif
+ 733   2      
+ 734   2                  // Pin configure to normal state.
+ 735   2                  ScalerPinshareConfig(_POWER_STATUS_NORMAL);
+ 736   2      
+ 737   2                  // Set mcu module to normal state
+ 738   2                  ScalerMcuPwmControl(_POWER_STATUS_NORMAL);
+ 739   2      
+ 740   2                  // User Power Process
+ 741   2                  UserInterfacePowerSwitch(enumSwitch);
+ 742   2      
+ 743   2                  // User initial LUT/Latch/SRAM tabled data
+ 744   2                  UserCommonInterfaceOsdPowerOnInitial();
+ 745   2      
+ 746   2      #if(_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
+                          if((GET_PCB_TWO_CHIP_REPEATER_POW_STATUS() == _TWO_CHIP_REPEATER_POWER_OFF) ||
+                             (enumSwitch == _POWER_ACTION_AC_ON_TO_NORMAL))
+                          {
+                              // Switch On Repeater Power By PCB Control
+                              PCB_TWO_CHIP_REPEATER_POW(_TWO_CHIP_REPEATER_POWER_ON);
+              
+                              // Transmit Local Data to Repeater Device for Synchronization
+                              UserCommonDataExchangeInit();
+                          }
+              
+                          if(GET_PCB_TWO_CHIP_PORT_CTRL_POW_STATUS() == _TWO_CHIP_PORT_CTRL_POWER_OFF)
+                          {
+                              // Switch On Repeater Power By PCB Control
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 14  
+
+                              PCB_TWO_CHIP_PORT_CTRL_POW(_TWO_CHIP_PORT_CTRL_POWER_ON);
+                          }
+              #endif
+ 763   2      
+ 764   2      #if(_MEMORY_TYPE_CONFIG != _NO_MEMORY)
+ 765   2                  ScalerMemoryPowerControl(_ON);
+ 766   2      #endif
+ 767   2                  // Clear Source Ready Flag
+ 768   2                  SysSourceInfoReset();
+ 769   2      
+ 770   2      #if(_TRANSLATOR_SUPPORT == _OFF)
+ 771   2                  // Set Display to Free Run Mode
+ 772   2                  SysModeSetFreeRun();
+ 773   2      
+ 774   2                  // Initialize Osd Position
+ 775   2                  ScalerGlobalOsdInitial();
+ 776   2      #endif
+ 777   2      
+ 778   2      #if(_VGA_SUPPORT == _ON)
+ 779   2                  // Calibrate sync processor HS delay
+ 780   2                  ScalerVgaTopModifyHsLatchEdgeDelay();
+ 781   2      #endif
+ 782   2      
+ 783   2      #if(_AUDIO_SUPPORT == _ON)
+ 784   2                  SysAudioPowerProc(enumSwitch);
+ 785   2      #endif
+ 786   2      
+ 787   2      #if((_DDR1_PHASE_CALIBRATION == _ON) || (_SDRAM_PHASE_CALIBRATION == _ON))
+ 788   2                  if(enumSwitch != _POWER_ACTION_AC_ON_TO_NORMAL)
+ 789   2                  {
+ 790   3                      // Restore memory initial phase
+ 791   3      #if(_DDR1_PHASE_CALIBRATION == _ON)
+ 792   3                      ScalerDDR1RestoreInitialPhase();
+ 793   3      #elif(_SDRAM_PHASE_CALIBRATION == _ON)
+                              ScalerSdramRestoreInitialPhase();
+              #endif
+ 796   3                  }
+ 797   2      #endif
+ 798   2      
+ 799   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 802   2      
+ 803   2      #if(_DP_SUPPORT == _ON)
+ 804   2      #if(_DP_HDCP_ARBITER_SUPPORT == _ON)
+                          if((enumSwitch == _POWER_ACTION_OFF_TO_NORMAL) || (enumSwitch == _POWER_ACTION_OFF_TO_FAKE_OFF
+             -))
+                          {
+                              ScalerDpHdcpCtrlDpcdSwitch(SysSourceGetInputPort());
+                          }
+              #endif
+ 810   2                  SysDpDcOffHPDToggleProc(enumSwitch);
+ 811   2      #endif
+ 812   2      
+ 813   2      #if(_IR_SUPPORT == _IR_HW_SUPPORT)
+ 814   2                  ScalerIRHWModeClrNECStatus();
+ 815   2      #endif
+ 816   2                  break;
+ 817   2      
+ 818   2              case _POWER_ACTION_NORMAL_TO_FAKE_PS:
+ 819   2      
+ 820   2                  // User Power Process
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 15  
+
+ 821   2                  UserInterfacePowerSwitch(_POWER_ACTION_NORMAL_TO_PS);
+ 822   2      
+ 823   2                  break;
+ 824   2      
+ 825   2              case _POWER_ACTION_NORMAL_TO_FAKE_OFF:
+ 826   2      
+ 827   2                  // User Power Process
+ 828   2                  UserInterfacePowerSwitch(_POWER_ACTION_NORMAL_TO_OFF);
+ 829   2      
+ 830   2      #if(_AUDIO_SUPPORT == _ON)
+ 831   2                  SysAudioPowerProc(enumSwitch);
+ 832   2      #endif
+ 833   2      
+ 834   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 837   2      
+ 838   2                  SysSourcePowerOffProc();
+ 839   2      
+ 840   2                  // Interface Power Process
+ 841   2                  ScalerSyncPowerProc(enumSwitch);
+ 842   2      
+ 843   2                  // Mode Power Off Process
+ 844   2                  SysModeResetState(_MODE_ACTION_RESET_TO_POWER_OFF);
+ 845   2      
+ 846   2                  break;
+ 847   2      
+ 848   2              case _POWER_ACTION_FAKE_OFF_TO_NORMAL:
+ 849   2      
+ 850   2      #if(_AUDIO_SUPPORT == _ON)
+ 851   2      #if(_LINE_IN_SUPPORT == _ON)
+ 852   2                  // Audio ADC initial
+ 853   2                  ScalerAudioADCInitial();
+ 854   2      #endif
+ 855   2      
+ 856   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 859   2      
+ 860   2      #if(_EMBEDDED_DAC_SUPPORT == _ON)
+ 861   2                  // Audio DAC initial, Initialize Audio DAC to Gain Depop Time
+ 862   2                  ScalerAudioDACInitial();
+ 863   2      #endif
+ 864   2      #endif
+ 865   2      
+ 866   2                  // User Power Process
+ 867   2                  UserInterfacePowerSwitch(_POWER_ACTION_OFF_TO_NORMAL);
+ 868   2      
+ 869   2                  // User initial LUT/Latch/SRAM tabled data
+ 870   2                  UserCommonInterfaceOsdPowerOnInitial();
+ 871   2      
+ 872   2      #if(_AUDIO_SUPPORT == _ON)
+ 873   2                  SysAudioPowerProc(_POWER_ACTION_OFF_TO_NORMAL);
+ 874   2      #endif
+ 875   2      
+ 876   2      #if(_DP_SUPPORT == _ON)
+ 877   2                  SysDpDcOffHPDToggleProc(enumSwitch);
+ 878   2      #endif
+ 879   2      
+ 880   2      #if(_TRANSLATOR_SUPPORT == _OFF)
+ 881   2                  // Set Display to Free Run Mode
+ 882   2                  SysModeSetFreeRun();
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 16  
+
+ 883   2      
+ 884   2                  // Initialize Osd Position
+ 885   2                  ScalerGlobalOsdInitial();
+ 886   2      #endif
+ 887   2      
+ 888   2                  break;
+ 889   2      
+ 890   2              case _POWER_ACTION_FAKE_PS_TO_NORMAL:
+ 891   2      
+ 892   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
+                          SysTypeCPowerSwitch(enumSwitch);
+              #endif
+ 895   2      
+ 896   2                  // User Power Process
+ 897   2                  UserInterfacePowerSwitch(_POWER_ACTION_PS_TO_NORMAL);
+ 898   2      
+ 899   2                  break;
+ 900   2      
+ 901   2              default:
+ 902   2                  break;
+ 903   2          }
+ 904   1      }
+ 905          
+ 906          #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : MCU Work In Idle Mode In A Short Period Of Time.
+              // Input Value  : None.
+              // Output Value : None
+              //--------------------------------------------------
+              void SysPowerIdleProc(void)
+              {
+                  // Set Timer2 Count to 100ms but Reload value remains the same(1ms)
+                  ScalerTimerSetTimerCount(_TIMER_OPERATION_POWER_IDLE_MODE);
+              
+                  // Enter Idle Mode
+                  ScalerMcuIntoIdle();
+              
+                  // Add Timer Counter according to Timer2
+                  ScalerTimerAddTimerCounter();
+              
+              #if(_SYS_PS_TIMER_PRECISION_SUPPPORT == _OFF)
+                  // Set Timer2 Count to 1ms
+                  ScalerTimerSetTimerCount(_TIMER_OPERATION_POWER_SAVING_MODE);
+              #else
+                  // Set Timer2 Count to 1ms
+                  ScalerTimerSetTimerCount(_TIMER_OPERATION_INITIAL_MODE);
+              #endif
+              }
+              #endif // End of #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
+ 932          
+ 933          //--------------------------------------------------
+ 934          // Description  : Get Current System Power Status.
+ 935          // Input Value  : None
+ 936          // Output Value : None
+ 937          //--------------------------------------------------
+ 938          BYTE SysPowerGetPowerStatus(void)
+ 939          {
+ 940   1          switch(GET_POWER_STATUS())
+ 941   1          {
+ 942   2              case _POWER_STATUS_NORMAL:
+ 943   2      
+ 944   2                  if(GET_POWER_SWITCH_TO_FAKE_OFF() == _TRUE)
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 17  
+
+ 945   2                  {
+ 946   3                      return _POWER_STATUS_OFF;
+ 947   3                  }
+ 948   2      
+ 949   2                  if(GET_POWER_SWITCH_TO_FAKE_SAVING() == _TRUE)
+ 950   2                  {
+ 951   3                      return _POWER_STATUS_SAVING;
+ 952   3                  }
+ 953   2      
+ 954   2                  return GET_POWER_STATUS();
+ 955   2      
+ 956   2                  break;
+ 957   2      
+ 958   2              default:
+ 959   2      
+ 960   2                  return GET_POWER_STATUS();
+ 961   2      
+ 962   2                  break;
+ 963   2          }
+ 964   1      
+ 965   1          return GET_POWER_STATUS();
+ 966   1      }
+ 967          
+ 968          //--------------------------------------------------
+ 969          // Description  : Clock Select For System.
+ 970          // Input Value  : ucClockSel    --> System refernce clock select.
+ 971          // Output Value : None
+ 972          //--------------------------------------------------
+ 973          void SysPowerSystemClockSelect(BYTE ucClockSel)
+ 974          {
+ 975   1          BYTE ucGlobalIRQTemp = 0;
+ 976   1      
+ 977   1          if(ucClockSel == _M2PLL_CLK)
+ 978   1          {
+ 979   2              // Power on Xtal Clock.
+ 980   2              ScalerPowerXtalPower(_ON);
+ 981   2      
+ 982   2              // Power on M2PLL.
+ 983   2              ScalerPLLM2PLLPower(_ON);
+ 984   2      
+ 985   2              // Backup Global IRQ Control Status
+ 986   2              ucGlobalIRQTemp = ScalerGlobalGetIRQControl();
+ 987   2      
+ 988   2              ScalerGlobalIRQControl(_DISABLE);
+ 989   2      
+ 990   2              // Cache control by IC base
+ 991   2              ScalerMcuCacheControl(_ENABLE);
+ 992   2      
+ 993   2              // Set Mcu/Flash Clock to M2PLL
+ 994   2              ScalerMcuFlashClockGroupSetting(_M2PLL_CLK);
+ 995   2      
+ 996   2              // Restore Global IRQ Control Status
+ 997   2              ScalerGlobalSetIRQControl(ucGlobalIRQTemp);
+ 998   2      
+ 999   2              // Set Timer Count
+1000   2              ScalerTimerSetTimerCount(_TIMER_OPERATION_POWER_NORMAL_MODE);
+1001   2      
+1002   2      #if(_PWM_FUNCTION_SUPPORT == _ON)
+1003   2              // PWM clock select to M2PLL.
+1004   2              ScalerMcuPwmClockSel(_M2PLL_CLK);
+1005   2      #endif
+1006   2      
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 18  
+
+1007   2      #if(_LOW_SPEED_ADC_SUPPORT == _ON)
+1008   2              // ADC clock select to external Xtal.
+1009   2              ScalerMcuSarAdcClkSel(_EXT_XTAL_CLK);
+1010   2      #endif
+1011   2      
+1012   2      #if(_MHL_SUPPORT == _ON)
+                      // Switch D0 MHL System Clk to M2PLL
+                      ScalerMHLCBUSSwitchClk(_IOSC_CLK);
+              #endif
+1016   2      
+1017   2      #if((_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON) && (_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON))
+                      ScalerTypeCPowerClkSel(_IOSC_CLK);
+              #endif
+1020   2      
+1021   2              // Modify debounce settings for Xtal clock.
+1022   2              ScalerMcuDdcDebounceSel(_EXT_XTAL_CLK);
+1023   2      
+1024   2              // Xtal CLK Select to external crystal clock.
+1025   2              ScalerGlobalCrystalClkSel(_EXT_XTAL_CLK);
+1026   2      
+1027   2      #if(_HW_IIC_SUPPORT == _ON)
+1028   2      #if((_LC_TANK_SUPPORT == _ON) && (_XTALESS_SUPPORT == _ON))
+                      // Modify Hardware IIC frequency divisor for internal OSC clock.
+                      ScalerMcuHwIICSetFreqDiv(_IOSC_CLK);
+              #else
+1032   2              // Modify Hardware IIC frequency divisor for Xtal clock.
+1033   2              ScalerMcuHwIICSetFreqDiv(_EXT_XTAL_CLK);
+1034   2      #endif
+1035   2      #endif
+1036   2      
+1037   2              // Modify 5us delay for Flash CLK = 24.3M
+1038   2              ScalerMcu5usDelayCalc(_M2PLL_CLK);
+1039   2      
+1040   2              // Internal CLK Select to M2PLL.
+1041   2              ScalerGlobalSystemClkSel(_M2PLL_CLK);
+1042   2      
+1043   2      #if(_IR_SUPPORT == _IR_HW_SUPPORT)
+1044   2              // IRDA clock Select Xtal
+1045   2              ScalerIRHWModeClockSel(_EXT_XTAL_CLK);
+1046   2      #endif
+1047   2          }
+1048   1          else if(ucClockSel == _IOSC_CLK)
+1049   1          {
+1050   2              // Xtal CLK Select to INOSC
+1051   2              ScalerGlobalCrystalClkSel(_IOSC_CLK);
+1052   2      
+1053   2              // Modify debounce settings for INOSC clock.
+1054   2              ScalerMcuDdcDebounceSel(_IOSC_CLK);
+1055   2      
+1056   2      #if(_HW_IIC_SUPPORT == _ON)
+1057   2              // Modify Hardware IIC frequency divisor for IOSC clock.
+1058   2              ScalerMcuHwIICSetFreqDiv(_IOSC_CLK);
+1059   2      #endif
+1060   2      
+1061   2      #if(_MHL_SUPPORT == _ON)
+                      // Switch D0 MHL System Clk to IOSC
+                      ScalerMHLCBUSSwitchClk(_IOSC_CLK);
+              #endif
+1065   2      
+1066   2      #if((_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON) && (_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON))
+                      ScalerTypeCPowerClkSel(_IOSC_CLK);
+              #endif
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 19  
+
+1069   2      
+1070   2              // Internal CLK Select to Internal Crystal.
+1071   2              ScalerGlobalSystemClkSel(_IOSC_CLK);
+1072   2      
+1073   2      #if(_PWM_FUNCTION_SUPPORT == _ON)
+1074   2              // PWM clock select to Xtal.
+1075   2              ScalerMcuPwmClockSel(_IOSC_CLK);
+1076   2      #endif
+1077   2      
+1078   2      #if(_LOW_SPEED_ADC_SUPPORT == _ON)
+1079   2              // ADC clock select to Internal Crystal.
+1080   2              ScalerMcuSarAdcClkSel(_IOSC_CLK);
+1081   2      #endif
+1082   2      
+1083   2              // Set Mcu/Flash Clock to _IOSC_CLK
+1084   2              ScalerMcuFlashClockGroupSetting(_IOSC_CLK);
+1085   2      
+1086   2              // Cache control by IC base
+1087   2              ScalerMcuCacheControl(_CACHE_PS_SWITCH);
+1088   2      
+1089   2              // Set Timer Count
+1090   2              ScalerTimerSetTimerCount(_TIMER_OPERATION_POWER_SAVING_MODE);
+1091   2      
+1092   2              // Modify 5us delay for Flash CLK = 7M
+1093   2              ScalerMcu5usDelayCalc(_IOSC_CLK);
+1094   2      
+1095   2      #if(_IR_SUPPORT == _IR_HW_SUPPORT)
+1096   2              // IRDA clock Select IOSC
+1097   2              ScalerIRHWModeClockSel(_IOSC_CLK);
+1098   2      #endif
+1099   2      
+1100   2              // Power down M2PLL.
+1101   2              ScalerPLLM2PLLPower(_OFF);
+1102   2      
+1103   2              // Power down Xtal.
+1104   2              ScalerPowerXtalPower(_OFF);
+1105   2          }
+1106   1          else
+1107   1          {
+1108   2              // Xtal CLK Select to External Xtal
+1109   2              ScalerGlobalCrystalClkSel(_EXT_XTAL_CLK);
+1110   2      
+1111   2              // Modify debounce settings for External Xtal clock.
+1112   2              ScalerMcuDdcDebounceSel(_EXT_XTAL_CLK);
+1113   2      
+1114   2      #if(_HW_IIC_SUPPORT == _ON)
+1115   2              // Modify Hardware IIC frequency divisor for External Xtal clock.
+1116   2              ScalerMcuHwIICSetFreqDiv(_EXT_XTAL_CLK);
+1117   2      #endif
+1118   2      
+1119   2      #if(_MHL_SUPPORT == _ON)
+                      // Switch D0 MHL System Clk to IOSC
+                      ScalerMHLCBUSSwitchClk(_IOSC_CLK);
+              #endif
+1123   2      
+1124   2      #if((_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON) && (_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON))
+                      ScalerTypeCPowerClkSel(_IOSC_CLK);
+              #endif
+1127   2      
+1128   2              // Internal CLK Select to External Crystal.
+1129   2              ScalerGlobalSystemClkSel(_EXT_XTAL_CLK);
+1130   2      
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 20  
+
+1131   2      #if(_PWM_FUNCTION_SUPPORT == _ON)
+1132   2              // PWM clock select to Xtal.
+1133   2              ScalerMcuPwmClockSel(_EXT_XTAL_CLK);
+1134   2      #endif
+1135   2      
+1136   2      #if(_LOW_SPEED_ADC_SUPPORT == _ON)
+1137   2              // ADC clock select to Internal Crystal.
+1138   2              ScalerMcuSarAdcClkSel(_EXT_XTAL_CLK);
+1139   2      #endif
+1140   2      
+1141   2              // Set Mcu/Flash Clock to _IOSC_CLK
+1142   2              ScalerMcuFlashClockGroupSetting(_EXT_XTAL_CLK);
+1143   2      
+1144   2              // Cache control by IC base
+1145   2              ScalerMcuCacheControl(_CACHE_PS_SWITCH);
+1146   2      
+1147   2              // Set Timer Count
+1148   2              ScalerTimerSetTimerCount(_TIMER_OPERATION_INITIAL_MODE);
+1149   2      
+1150   2              // Modify 5us delay for Flash CLK = 7M
+1151   2              ScalerMcu5usDelayCalc(_EXT_XTAL_CLK);
+1152   2      
+1153   2      #if(_IR_SUPPORT == _IR_HW_SUPPORT)
+1154   2              // IRDA clock Select IOSC
+1155   2              ScalerIRHWModeClockSel(_EXT_XTAL_CLK);
+1156   2      #endif
+1157   2          }
+1158   1      }
+1159          //--------------------------------------------------
+1160          // Description  : Set Power Action for other layer
+1161          // Input Value  : ucAction    --> Power Action
+1162          // Output Value : None
+1163          //--------------------------------------------------
+1164          void SysPowerSetTargetPowerStatus(EnumPowerStatus enumPorStatus)
+1165          {
+1166   1          // When OFF to Fake OFF & DC Key ON in One Main Loop, Clr Fake OFF Flag
+1167   1          if((GET_POWER_SWITCH_TO_FAKE_OFF() == _TRUE) && (enumPorStatus == _POWER_STATUS_NORMAL))
+1168   1          {
+1169   2              CLR_POWER_SWITCH_TO_FAKE_OFF();
+1170   2          }
+1171   1      
+1172   1          SET_TARGET_POWER_STATUS(enumPorStatus);
+1173   1      }
+1174          
+1175          #if(_DIGITAL_PORT_SUPPORT == _ON)
+1176          //--------------------------------------------------
+1177          // Description  : Recover The Data of HDCP In Gdi Power Cut Area.
+1178          // Input Value  : None
+1179          // Output Value : None
+1180          //--------------------------------------------------
+1181          void SysPowerLoadHDCPKey(void)
+1182          {
+1183   1          BYTE ucI = 0;
+1184   1          BYTE pucTemp[64];
+1185   1          memset(pucTemp, 0, sizeof(pucTemp));
+1186   1      
+1187   1          ScalerSyncHdcpEnableDownLoadKey(_ENABLE);
+1188   1      
+1189   1      #if(_DVI_SUPPORT == _ON)
+1190   1      #if(_DELL_HDMI_HPD_DDC_STYLE_SUPPORT == _ON)
+                  ScalerTMDSRxAllPortChangeHdcpCap(_TMDS_HDCP_NONE);
+              #else
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 21  
+
+1193   1          ScalerTMDSRxAllPortChangeHdcpCap(UserInterfaceTmdsAcOnGetHdcpCap());
+1194   1      #endif
+1195   1      #endif
+1196   1      
+1197   1          for(ucI = 0; ucI < 20; ucI++)
+1198   1          {
+1199   2              UserCommonInterfaceGetHDCPKey((ucI * 16), 16, pucTemp);
+1200   2              ScalerSyncHdcpDownLoadKey(16, pucTemp);
+1201   2          }
+1202   1      
+1203   1          UserCommonInterfaceGetHDCPKeyBKsv(0, 5, pucTemp);
+1204   1          ScalerSyncHdcpDownLoadBKsv(0, 5, pucTemp);
+1205   1      
+1206   1      #if(_HDCP_2_2_SUPPORT == _ON)
+1207   1      
+1208   1      #if(_HDCP_2_2_TX_RSA3072_MODE == _ON)
+              
+                  for(ucI = 0; ucI < 24; ucI++)
+                  {
+                      // Load HDCP 2.2 Key Certrx
+                      UserCommonInterfaceGetHdcp2Certrx((ucI * 16), 16, pucTemp);
+                      ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_CERT_RX);
+              
+                      UserCommonInterfaceGetHdcp2RSADkey((ucI * 16), 16, pucTemp);
+                      ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_RSA_D_KEY);
+              
+                      UserCommonInterfaceGetHdcp2RSARRModN((ucI * 16), 16, pucTemp);
+                      ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_RSA_RRMODN_KEY);
+              
+              #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
+                      UserCommonInterfaceGetHdcp2KpubKm((ucI * 16), 16, pucTemp);
+                      ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_KPUB_KM);
+              #endif
+                  }
+              
+                  UserCommonInterfaceGetHdcp2RSANpinv(0, 4, pucTemp);
+                  ScalerHdcp2DownLoadCalculateKey(0, 4, pucTemp, _HDCP_2_2_RSA_N_PINV);
+              
+                  UserCommonInterfaceGetHdcp2LCKey(0, 16, pucTemp);
+                  ScalerHdcp2DownLoadCalculateKey(0, 16, pucTemp, _HDCP_2_2_LC);
+              
+                  for(ucI = 0; ucI < 5; ucI++)
+                  {
+                      UserCommonInterfaceGetHdcp2RSAKPriv(ucI * 64, 64, pucTemp);
+                      ScalerHdcp2RxPairingCalculate(pucTemp, ucI);
+                  }
+                  ScalerHdcp2RxPairingCalculate(pucTemp, 5);
+              
+              #else   // #if(_HDCP_2_2_TX_RSA3072_MODE == _OFF)
+1242   1      
+1243   1          for(ucI = 0; ucI < 33; ucI++)
+1244   1          {
+1245   2              // Load HDCP 2.2 Key Certrx
+1246   2              if(ucI < 32)
+1247   2              {
+1248   3                  UserCommonInterfaceGetHdcp2Certrx((ucI * 16), 16, pucTemp);
+1249   3                  ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_CERT_RX);
+1250   3              }
+1251   2              else
+1252   2              {
+1253   3                  UserCommonInterfaceGetHdcp2Certrx((ucI * 16), 10, pucTemp);
+1254   3                  ScalerHdcp2DownLoadCalculateKey((ucI * 16), 10, pucTemp, _HDCP_2_2_CERT_RX);
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 22  
+
+1255   3              }
+1256   2          }
+1257   1      
+1258   1          for(ucI = 0; ucI < 8; ucI++)
+1259   1          {
+1260   2              // d key, Npinv, RRmodN, public key n
+1261   2              UserCommonInterfaceGetHdcp2RSADkey((ucI * 16), 16, pucTemp);
+1262   2              ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_RSA_D_KEY);
+1263   2      
+1264   2              UserCommonInterfaceGetHdcp2RSARRModN((ucI * 16), 16, pucTemp);
+1265   2              ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_RSA_RRMODN_KEY);
+1266   2      
+1267   2      #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
+                      UserCommonInterfaceGetHdcp2KpubKm((ucI * 16), 16, pucTemp);
+                      ScalerHdcp2DownLoadCalculateKey((ucI * 16), 16, pucTemp, _HDCP_2_2_KPUB_KM);
+              #endif
+1271   2          }
+1272   1      
+1273   1          UserCommonInterfaceGetHdcp2RSANpinv(0, 4, pucTemp);
+1274   1          ScalerHdcp2DownLoadCalculateKey(0, 4, pucTemp, _HDCP_2_2_RSA_N_PINV);
+1275   1      
+1276   1          UserCommonInterfaceGetHdcp2LCKey(0, 16, pucTemp);
+1277   1          ScalerHdcp2DownLoadCalculateKey(0, 16, pucTemp, _HDCP_2_2_LC);
+1278   1      
+1279   1          for(ucI = 0; ucI < 5; ucI++)
+1280   1          {
+1281   2              UserCommonInterfaceGetHdcp2RSAKPriv(ucI * 64, 64, pucTemp);
+1282   2              ScalerHdcp2RxPairingCalculate(pucTemp, ucI);
+1283   2          }
+1284   1          ScalerHdcp2RxPairingCalculate(pucTemp, 5);
+1285   1      #endif
+1286   1      #endif
+1287   1      
+1288   1          ScalerSyncHdcpEnableDownLoadKey(_DISABLE);
+1289   1      }
+1290          
+1291          #if(_DP_TX_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Recover The Data of HDCP for DPTX
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void SysPowerLoadDPTxHDCPKey(void)
+              {
+                  BYTE ucI = 0;
+                  BYTE pucTemp[16];
+              
+                  // Enable HDCP Download Key Port
+                  ScalerSyncHdcpEnableDownLoadDPTxKey(_ENABLE);
+              
+                  for(ucI = 0; ucI < 20; ucI++)
+                  {
+                      UserCommonInterfaceGetTxHDCPKey((ucI * 16), 16, pucTemp);
+                      ScalerSyncHdcpDownLoadDPTxAKey(16, pucTemp);
+                  }
+              
+                  // Get Hdcp Key
+                  UserCommonInterfaceGetTxHDCPKeyAKsv(0, 5, &pucTemp[5]);
+              
+                  // Write Hdcp Key To SDRAM
+                  ScalerSyncHdcpDownLoadDPTxAKsv(0, 5, &pucTemp[5]);
+              
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 23  
+
+                  // Disable HDCP Download Key Port
+                  ScalerSyncHdcpEnableDownLoadDPTxKey(_DISABLE);
+              }
+              #endif
+1321          #endif
+1322          
+1323          //--------------------------------------------------
+1324          // Description  : Power Isolation Setting For all power isolation Module.
+1325          // Input Value  : enumSwitch    --> Power action description.
+1326          // Output Value : None
+1327          //--------------------------------------------------
+1328          void SysPowerIsolation(EnumPowerAction enumSwitch)
+1329          {
+1330   1          BYTE ucIsolationAreaFlg = 0x00;
+1331   1      
+1332   1          // Power isolation control.
+1333   1          ucIsolationAreaFlg = ScalerPowerIsolation(enumSwitch);
+1334   1      
+1335   1          if((ucIsolationAreaFlg & _BIT0) == _BIT0)
+1336   1          {
+1337   2              SET_POWER_ISO_A_FLG();
+1338   2          }
+1339   1      
+1340   1          if((ucIsolationAreaFlg & _BIT1) == _BIT1)
+1341   1          {
+1342   2              SET_POWER_ISO_B_FLG();
+1343   2          }
+1344   1      
+1345   1          if((ucIsolationAreaFlg & _BIT2) == _BIT2)
+1346   1          {
+1347   2              SET_POWER_ISO_C_FLG();
+1348   2          }
+1349   1      
+1350   1          if((ucIsolationAreaFlg & _BIT3) == _BIT3)
+1351   1          {
+1352   2              SET_POWER_ISO_D_FLG();
+1353   2          }
+1354   1      
+1355   1          if((ucIsolationAreaFlg & _BIT4) == _BIT4)
+1356   1          {
+1357   2              SET_POWER_ISO_E_FLG();
+1358   2          }
+1359   1      }
+1360          
+1361          //--------------------------------------------------
+1362          // Description  : Recover The Data of LUT/Latch/SRAM In Power Cut Area.
+1363          // Input Value  : None
+1364          // Output Value : None
+1365          //--------------------------------------------------
+1366          void SysPowerRecoverIsolationAreaData(void)
+1367          {
+1368   1          if(GET_POWER_ISO_A_FLG() == _TRUE)
+1369   1          {
+1370   2              CLR_POWER_ISO_A_FLG();
+1371   2      
+1372   2              // Power A Group Data Recovery
+1373   2              ScalerPowerRecoverAGroupIsolationData();
+1374   2          }
+1375   1      
+1376   1          if(GET_POWER_ISO_B_FLG() == _TRUE)
+1377   1          {
+1378   2              CLR_POWER_ISO_B_FLG();
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 24  
+
+1379   2      
+1380   2              // Power B Group Data Recovery
+1381   2              ScalerPowerRecoverBGroupIsolationData();
+1382   2          }
+1383   1      
+1384   1          if(GET_POWER_ISO_C_FLG() == _TRUE)
+1385   1          {
+1386   2              CLR_POWER_ISO_C_FLG();
+1387   2      
+1388   2      #if((_DIGITAL_PORT_SUPPORT == _ON) && (_DP_TX_SUPPORT == _ON))
+                      SysPowerLoadDPTxHDCPKey();
+              #endif
+1391   2      
+1392   2              // Power C Group Data Recovery
+1393   2              ScalerPowerRecoverCGroupIsolationData();
+1394   2          }
+1395   1      
+1396   1          if(GET_POWER_ISO_D_FLG() == _TRUE)
+1397   1          {
+1398   2              CLR_POWER_ISO_D_FLG();
+1399   2      
+1400   2              // Power D Group Data Recovery
+1401   2              ScalerPowerRecoverDGroupIsolationData();
+1402   2          }
+1403   1      
+1404   1          if(GET_POWER_ISO_E_FLG() == _TRUE)
+1405   1          {
+1406   2              CLR_POWER_ISO_E_FLG();
+1407   2      
+1408   2              // Power E Group Data Recovery
+1409   2              ScalerPowerRecoverEGroupIsolationData();
+1410   2          }
+1411   1      }
+1412          
+1413          //--------------------------------------------------
+1414          // Description  : Check Whther go to Fake Saving Mode
+1415          // Input Value  : None
+1416          // Output Value : _TRUE => Fake Saving
+1417          //--------------------------------------------------
+1418          bit SysPowerCheckFakeSaving(void)
+1419          {
+1420   1          BYTE ucTemp = 0;
+1421   1      
+1422   1          DebugMessageMst("SysPower Check Fake Saving", 0x00);
+1423   1      
+1424   1          if(UserInterfaceGetFakePSStatus() == _USER_FORCE_FAKE_POWER_SAVING)
+1425   1          {
+1426   2              ucTemp = 0x01;
+1427   2          }
+1428   1      
+1429   1          if(GET_MODE_STATE() == _MODE_STATUS_NOSUPPORT)
+1430   1          {
+1431   2              ucTemp = 0x01;
+1432   2          }
+1433   1      
+1434   1          if(ScalerSyncDpFakePowerSavingCheck() == _TRUE)
+1435   1          {
+1436   2              ucTemp = 0x01;
+1437   2          }
+1438   1      
+1439   1      #if(_SLEEP_AUDIO_SUPPORT == _ON)
+                  if(GET_AUDIO_PLAYING_ALONE() == _TRUE)
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 25  
+
+                  {
+                      ucTemp = 0x01;
+                  }
+              #endif
+1445   1      
+1446   1      #if(_USB3_RETIMER_SUPPORT == _ON)
+                  if((UserCommonPortControllerGetUsbPSStatus() == _USB3_PS_ENABLE) && (ScalerTypeCSearchCcAttach() == _T
+             -YPE_C_ATTACH))
+                  {
+                      ucTemp = 0x01;
+                  }
+              #endif
+1452   1      
+1453   1          if(ucTemp != 0x00)
+1454   1          {
+1455   2              if((GET_MODE_STATE() != _MODE_STATUS_NOSUPPORT) && (GET_MODE_STATE() != _MODE_STATUS_ACTIVE))
+1456   2              {
+1457   3                  if(GET_SOURCE_JUDGE(g_ucSearchIndex) == _TRUE)
+1458   3                  {
+1459   4                      SysSourceInfoReset();
+1460   4                  }
+1461   3              }
+1462   2      
+1463   2              return _TRUE;
+1464   2          }
+1465   1      
+1466   1      #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
+              #if((_TYPE_C_EMB_CTS_FLOW == _ON) && (_TYPE_C_EMB_CTS_FORCE_POWER_NORMAL == _ON))
+                  return _TRUE;
+              #endif
+              #endif
+1471   1      
+1472   1      #if(_FW_UPDATE_FOREGROUND_SUPPORT == _ON)
+                  if(ScalerFwUpdateForegroundGetStatus() == _TRUE)
+                  {
+                      return _TRUE;
+                  }
+              #endif
+1478   1      
+1479   1          return _FALSE;
+1480   1      }
+1481          
+1482          //--------------------------------------------------
+1483          // Description  : Check Whether go to Fake Off Mode
+1484          // Input Value  : None
+1485          // Output Value : _TRUE => Fake Off
+1486          //--------------------------------------------------
+1487          bit SysPowerCheckFakeOff(void)
+1488          {
+1489   1          if(UserInterfaceGetFakePowerOffStatus() == _USER_FORCE_FAKE_POWER_OFF)
+1490   1          {
+1491   2              return _TRUE;
+1492   2          }
+1493   1      
+1494   1          // If Power Action Switch Normal to Fake OFF, Else Power Action Switch Fake Off to OFF
+1495   1          if(GET_POWER_SWITCH_TO_FAKE_OFF() != _TRUE)
+1496   1          {
+1497   2      #if(_DP_MST_SUPPORT == _ON)
+                      if(ScalerSyncDpFakePowerOffCheck(SysSourceGetInputPort()) == _TRUE)
+                      {
+                          ScalerTimerActiveTimerEvent(_POWER_FAKE_OFF_TO_OFF_TIMEOUT, _SYSTEM_TIMER_EVENT_POWER_FAKE_OFF
+             -_TO_OFF);
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 26  
+
+              
+                          return _TRUE;
+                      }
+              #endif
+1505   2      
+1506   2      #if(_USB3_RETIMER_SUPPORT == _ON)
+                      if((UserCommonPortControllerGetUsbPDStatus() == _USB3_PD_ENABLE) && (ScalerTypeCSearchCcAttach() =
+             -= _TYPE_C_ATTACH))
+                      {
+                          return _TRUE;
+                      }
+              #endif
+1512   2          }
+1513   1          else
+1514   1          {
+1515   2      #if(_DP_MST_SUPPORT == _ON)
+                      if(GET_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD() == _TRUE)
+                      {
+                          return _TRUE;
+                      }
+                      else if(ScalerSyncDpFakePowerOffCheck(SysSourceGetInputPort()) == _TRUE)
+                      {
+                          ScalerTimerActiveTimerEvent(SEC(2), _SYSTEM_TIMER_EVENT_POWER_FAKE_OFF_TO_OFF);
+              
+                          return _TRUE;
+                      }
+                      else
+              #endif
+1528   2              {
+1529   3      #if(_USB3_RETIMER_SUPPORT == _ON)
+                          if((UserCommonPortControllerGetUsbPDStatus() == _USB3_PD_ENABLE) && (ScalerTypeCSearchCcAttach
+             -() == _TYPE_C_ATTACH))
+                          {
+                              return _TRUE;
+                          }
+              #endif
+1535   3              }
+1536   2          }
+1537   1      
+1538   1          return _FALSE;
+1539   1      }
+1540          
+1541          //--------------------------------------------------
+1542          // Description  : Check Whther go to Power Normal Mode
+1543          // Input Value  : None
+1544          // Output Value : _TRUE => Power Normal
+1545          //--------------------------------------------------
+1546          bit SysPowerCheckNormal(void)
+1547          {
+1548   1          return (!GET_POWER_SWITCH_TO_FAKE_OFF());
+1549   1      }
+1550          
+1551          #if(_MHL_PS_WITHOUT_POWERCUT_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Fake Saving Proc
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void SysPowerMHLPowerCutProc(void)
+              {
+                  switch(GET_SOURCE_SCAN_TYPE())
+                  {
+C51 COMPILER V8.12   SYSPOWER                                                              09/16/2026 20:27:00 PAGE 27  
+
+                      case _SOURCE_SWITCH_FIXED_PORT:
+              
+              #if(_MHL_SUPPORT == _ON)
+                          if(((SysSourceGetInputPort() == _D2_INPUT_PORT) && (GET_D2_TMDS_MODE() == _TMDS_MHL_MODE)) ||
+                             ((SysSourceGetInputPort() == _D3_INPUT_PORT) && (GET_D3_TMDS_MODE() == _TMDS_MHL_MODE)) ||
+                             ((SysSourceGetInputPort() == _D4_INPUT_PORT) && (GET_D4_TMDS_MODE() == _TMDS_MHL_MODE)) ||
+                             ((SysSourceGetInputPort() == _D5_INPUT_PORT) && (GET_D5_TMDS_MODE() == _TMDS_MHL_MODE)))
+                          {
+                              // Vcck 1.1v Power On, Group D Analog Isolation Off
+                              ScalerPowerSetMHLNoPowerCut();
+                          }
+                          else
+                          {
+                              ScalerPowerClrMHLNoPowerCut();
+                          }
+              
+              #endif
+              
+                          break;
+              
+                      case _SOURCE_SWITCH_AUTO_IN_GROUP:
+                      case _SOURCE_SWITCH_AUTO_WITHOUT_GROUP:
+              
+              #if(_MHL_SUPPORT == _ON)
+                          if((GET_D2_TMDS_MODE() == _TMDS_MHL_MODE) || (GET_D3_TMDS_MODE() == _TMDS_MHL_MODE) ||
+                             (GET_D4_TMDS_MODE() == _TMDS_MHL_MODE) || (GET_D5_TMDS_MODE() == _TMDS_MHL_MODE))
+                          {
+                              // Vcck 1.1v Power On, Group D Analog Isolation Off
+                              ScalerPowerSetMHLNoPowerCut();
+                          }
+                          else
+                          {
+                              ScalerPowerClrMHLNoPowerCut();
+                          }
+              #endif
+              
+                          break;
+              
+                      default:
+              
+                          break;
+                  }
+              }
+              #endif
+1605          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1760    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      2      69
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

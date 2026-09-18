@@ -1,0 +1,2448 @@
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SCALERMDOMAIN
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerMDomain.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerMDomain.c LARGE OPTIMIZE(9,SPEED) I
+                    -NCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ker
+                    -nel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.
+                    -\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series
+                    -_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\
+                    -User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fact
+                    -ory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_
+                    -PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerMDomain.lst)
+                    - OBJECT(.\Output\RL6432_Project\ScalerMDomain.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : ScalerMDomain.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __SCALER_MDOMAIN__
+  18          
+  19          #include "ScalerFunctionInclude.h"
+  20          #if(_PANEL_EXIST_MULTIPANEL == _OFF)
+  21          #if(((_PANEL_PIXEL_CLOCK + (_PANEL_PIXEL_CLOCK / 100)) >= _PANEL_PIXEL_CLOCK_MAX) ||\
+  22              ((_PANEL_PIXEL_CLOCK - (_PANEL_PIXEL_CLOCK / 100)) <= _PANEL_PIXEL_CLOCK_MIN))
+              #warning "NOTE: Panel Typ is under 1% from Panel Max/min !!!"
+              #endif
+  25          #endif
+  26          
+  27          //****************************************************************************
+  28          // DEFINITIONS / MACROS
+  29          //****************************************************************************
+  30          
+  31          
+  32          //****************************************************************************
+  33          // STRUCT / TYPE / ENUM DEFINITTIONS
+  34          //****************************************************************************
+  35          
+  36          
+  37          //****************************************************************************
+  38          // CODE TABLES
+  39          //****************************************************************************
+  40          
+  41          
+  42          //****************************************************************************
+  43          // VARIABLE DECLARATIONS
+  44          //****************************************************************************
+  45          
+  46          DWORD g_ulDClkFreq;
+  47          
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 2   
+
+  48          #if(_TMDS_CLK_INTERRUPTION_CHECK == _ON)
+              bit g_bByPassTiming;
+              #endif
+  51          
+  52          StructMDomainInfo g_stMDomainInfo;
+  53          StructTimingInfo g_stMDomainInputData;
+  54          StructDisplayInfo g_stMDomainOutputData;
+  55          StructFRCFIFOInfo g_stMDomainFRCFIFOData;
+  56          
+  57          #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
+  58          bit g_bAspectOriginMode = 0;
+  59          #endif
+  60          
+  61          WORD g_usDVFreq;
+  62          
+  63          #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+              StructMDomainInfoBackup g_stMDomainInfoBackup;
+              #endif
+  66          
+  67          //****************************************************************************
+  68          // FUNCTION DECLARATIONS
+  69          //****************************************************************************
+  70          void ScalerMDomainMemorySettings(StructSDRAMDataInfo *pstFIFOSize);
+  71          bit ScalerMDomainControl(void);
+  72          EnumMemoryWorkMode ScalerMDomainMemoryConfig(void);
+  73          DWORD ScalerMDomainDtotalLastLineFinetune(DWORD ulDclk, DWORD ulDclkMaxBoundary, DWORD ulDclkMinBoundary, 
+             -DWORD ulDtotal);
+  74          StructDHtotalFTStatus ScalerMDomainDHtotalFinetune(DWORD ulDclk, DWORD ulDclkMaxBoundary, DWORD ulDclkMinB
+             -oundary);
+  75          StructDHVtotal ScalerMDomainDHVtotalFinetune(DWORD ulDclk, BYTE ucMemorySel, bit bDclkCalculateMethod);
+  76          void ScalerMDomainSetDisplayFormat(BYTE ucMemorySel);
+  77          void ScalerMDomainCalculateDclkDVtotal(BYTE ucMemorySel);
+  78          void ScalerMDomainSetDisplayTimingGen(void);
+  79          WORD ScalerMDomainGetDisplayBackgroundVstart(void);
+  80          WORD ScalerMDomainGetDisplayVheight(void);
+  81          EnumFrameSyncModeType ScalerMDomainGetFrameSyncMode(void);
+  82          
+  83          #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+  84          void ScalerMDomainUpdateLineBufferModeDVtotal(void);
+  85          #endif
+  86          
+  87          #if((_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON) || (_FREESYNC_SUPPORT == _ON))
+  88          #if(_FRC_SUPPORT == _ON)
+  89          bit ScalerMDomainFSLineBufferDclkDvtotalCheck(void);
+  90          #endif
+  91          #endif
+  92          
+  93          void ScalerMDomainCheckDisplayFormat(void);
+  94          
+  95          void ScalerMDomainSetScaling(const StructSDRAMDataInfo *pstFIFOScaling);
+  96          BYTE ScalerMDomainMemorySelectConfirm(void);
+  97          void ScalerMDomainSetMemoryDataBit(BYTE ucColorDepth);
+  98          BYTE ScalerMDomainGetTargetMemoryDataBit(void);
+  99          
+ 100          WORD ScalerMDomainGetVerticalAdjustLimit(EnumSourceTypeDef enumSourceTypeDef);
+ 101          DWORD ScalerMDomainGetDisplayActiveRegion(void);
+ 102          bit ScalerMDomainDisplayTimingGenCheck(void);
+ 103          
+ 104          #if(_I_DITHER_SUPPORT == _ON)
+ 105          BYTE ScalerMDomainGetColorDepth(void);
+ 106          #endif
+ 107          
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 3   
+
+ 108          #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
+ 109          void ScalerMDomainAspectOriginMode(bit bOn);
+ 110          #endif
+ 111          
+ 112          #if(_OD_SUPPORT == _ON)
+ 113          void ScalerMDomainODConfig(void);
+ 114          WORD ScalerMDomainODCalculateMemoryUseSpace(BYTE ucODbit);
+ 115          WORD ScalerMDomainODCalculateMemoryUseBW(BYTE ucODbit);
+ 116          #endif // End of #if(_OD_SUPPORT == _ON)
+ 117          
+ 118          #if((_OD_SUPPORT == _ON) && (_DEBUG_MESSAGE_CHECK_MDOMAIN == _ON))
+              WORD ScalerMDomainGetODMemoryBW(void);
+              #endif
+ 121          
+ 122          #if(((_FRC_SUPPORT == _ON) && (_OD_SUPPORT == _ON)) || (_DISP_LATENCY_ADJUST_SUPPORT == _ON))
+ 123          WORD ScalerMDomainGetFRCMemorySpace(void);
+ 124          WORD ScalerMDomainGetFRCMemoryBW(EnumFRCBWType enumFRCBWType, WORD usHWidth);
+ 125          #endif
+ 126          void ScalerMDomainSetDBOsdFlow(void);
+ 127          
+ 128          #if(_FREESYNC_OD_MEASURE == _ON)
+              void ScalerMDomainFREESYNCODSetDisplayFormat(WORD usDHtotal, DWORD ulDclk, WORD usTarFreq);
+              #endif
+ 131          
+ 132          #if(_DEBUG_MESSAGE_CHECK_MDOMAIN == _ON)
+              void ScalerMDomainCheckDisplaySetting(void);
+              #endif
+ 135          
+ 136          #if((_MEASURE_ADJUSTED_IHF_SUPPORT == _ON) || (_MEASURE_ADJUSTED_IVF_SUPPORT == _ON))
+ 137          void ScalerMDomainUpdateInputInfo(void);
+ 138          #endif
+ 139          
+ 140          //****************************************************************************
+ 141          // FUNCTION DEFINITIONS
+ 142          //****************************************************************************
+ 143          typedef enum
+ 144          {
+ 145              _IMD_CRC_I_AFTER_VGIP = 0,
+ 146              _IMD_CRC_I_AFTER_IDITHER,
+ 147              _IMD_CRC_I_AFTER_SD,
+ 148              _IMD_CRC_M_AFTER_FIFO = 0,
+ 149              _IMD_CRC_D_AFTER_DDITHER = 0,
+ 150              _IMD_CRC_D_AFTER_OD,
+ 151          }EnumCRCPosition;
+ 152          
+ 153          
+ 154          
+ 155          
+ 156          //--------------------------------------------------
+ 157          // Description  : Memory Allocation for M Domain
+ 158          // Input Value  : StructSDRAMDataInfo *pstFIFOSize
+ 159          // Output Value : None
+ 160          //--------------------------------------------------
+ 161          void ScalerMDomainMemorySettings(StructSDRAMDataInfo *pstFIFOSize)
+ 162          {
+ 163   1      #if(_OD_SUPPORT == _ON)
+ 164   1          SET_OD_USE_BIT(_OFF);
+ 165   1      #endif
+ 166   1      
+ 167   1          SET_MEMORY_DVF_SELECT(ScalerDisplaySelectDVFMode());
+ 168   1          ScalerDisplaySetDVFreq();
+ 169   1      
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 4   
+
+ 170   1          SET_MEMORY_CONFIG(ScalerMDomainMemoryConfig());
+ 171   1      
+ 172   1          ScalerMDomainSetMemoryDataBit(ScalerMDomainGetTargetMemoryDataBit());
+ 173   1      
+ 174   1          // Select Memory Configuration Type
+ 175   1          SET_MEMORY_SELECT(ScalerMDomainMemorySelectConfirm());
+ 176   1      
+ 177   1          // Calculate Dclk and DVtotal
+ 178   1          ScalerMDomainCalculateDclkDVtotal(GET_MEMORY_SELECT());
+ 179   1      
+ 180   1      #if((_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N) || (_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N_CASCADE_N_F))
+ 181   1      #if(_MN_DPLL_PATH_TYPE == _MN_DPLL_PATH2)
+                  // Enable Spread Spectrum
+                  ScalerPLLSetDPLLSSC(_DCLK_SPREAD_SPEED, _DCLK_SPREAD_RANGE);
+              #else
+ 185   1          // Disable Spread Spectrum
+ 186   1          ScalerPLLSetDPLLSSC(_DCLK_SPREAD_SPEED, _OFF);
+ 187   1      #endif
+ 188   1      #else
+                  // Disable Spread Spectrum
+                  ScalerPLLSetDPLLSSC(_DCLK_SPREAD_SPEED, _OFF);
+              #endif
+ 192   1      
+ 193   1          // Get Scaling size in FIFO
+ 194   1          ScalerScalingGetFIFOScalingSize(pstFIFOSize);
+ 195   1      
+ 196   1          SET_FIFO_HWIDTH(pstFIFOSize->usOutputHWidth);
+ 197   1      
+ 198   1          // Scaling Setting
+ 199   1          ScalerMDomainSetScaling(pstFIFOSize);
+ 200   1      
+ 201   1          // I DB apply after SD to ensure the correctness of g_ulInputActiveRegionBackUp
+ 202   1          ScalerGlobalIDomainDBApply(_DB_APPLY_POLLING);
+ 203   1      
+ 204   1      #if(_OD_SUPPORT == _ON)
+ 205   1          ScalerMDomainODConfig();
+ 206   1      #endif
+ 207   1      }
+ 208          
+ 209          //--------------------------------------------------
+ 210          // Description  : M Domain Main Process
+ 211          // Input Value  : None
+ 212          // Output Value : M domain check pass or fail
+ 213          //--------------------------------------------------
+ 214          bit ScalerMDomainControl(void)
+ 215          {
+ 216   1          StructSDRAMDataInfo stFIFOScaling;
+ 217   1          memset(&stFIFOScaling, 0, sizeof(StructSDRAMDataInfo));
+ 218   1      
+ 219   1          ScalerMDomainMemorySettings(&stFIFOScaling);
+ 220   1      
+ 221   1          // Enable Active Region Measure
+ 222   1          ScalerMeasureSetInputRegionCount(_ACTIVE_REGION_TYPE);
+ 223   1      
+ 224   1          // Set FIFO Capture Window
+ 225   1          ScalerMemorySetFifoCapture(stFIFOScaling.usOutputHWidth, stFIFOScaling.usOutputVHeight);
+ 226   1      
+ 227   1          DebugMessageScaler("Memory Work Select", GET_MEMORY_SELECT());
+ 228   1      
+ 229   1      #if(_URGENT_EVENT_CHECK_MODE == _ON)
+ 230   1          if((ScalerSyncCheckUrgentEvent() == _TRUE))
+ 231   1          {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 5   
+
+ 232   2              return _FALSE;
+ 233   2          }
+ 234   1      #endif
+ 235   1      
+ 236   1          // Set Memory Utilization
+ 237   1          switch(GET_MEMORY_SELECT())
+ 238   1          {
+ 239   2              case _FRAME_SYNC_LINE_BUFFER:
+ 240   2      
+ 241   2                  // Initial M Domain Block
+ 242   2                  ScalerMemoryInitial();
+ 243   2      
+ 244   2                  // Set FIFO freq.
+ 245   2                  ScalerMemorySetFIFOFreq(_FIFO_FREQ_LINE_BUFFER_SEL);
+ 246   2      
+ 247   2                  // Set Initial Dt Value
+ 248   2                  ScalerMemoryFrameSyncSetDt(_DT_TARGET_PERCENTAGE);
+ 249   2      
+ 250   2                  // Set display Format
+ 251   2                  ScalerMDomainSetDisplayFormat(_FRAME_SYNC_LINE_BUFFER);
+ 252   2      
+ 253   2                  // Fine Tune DClk Offset
+ 254   2                  ScalerDPLLFineTuneFrameSyncLineBuffer();
+ 255   2      
+ 256   2                  // Adjust IVS/IHS for Position Range
+ 257   2                  ScalerIDomainVgipAdjustIHVDelay();
+ 258   2      
+ 259   2                  break;
+ 260   2      
+ 261   2      #if(_FRC_SUPPORT == _ON)
+ 262   2      
+ 263   2              case _FRAME_SYNC_MEMORY:
+ 264   2              case _FREE_RUN_MEMORY:
+ 265   2              case _MN_FRAME_SYNC_MEMORY:
+ 266   2      
+ 267   2                  // Adjust IVS/IHS for Position Range
+ 268   2                  ScalerIDomainVgipAdjustIHVDelay();
+ 269   2      
+ 270   2                  // Set display Format
+ 271   2                  ScalerMDomainSetDisplayFormat(GET_MEMORY_SELECT());
+ 272   2      
+ 273   2                  // Initial M Domain Block
+ 274   2                  ScalerMemoryInitial();
+ 275   2      
+ 276   2                  // Measure Input Active Region
+ 277   2                  ScalerMeasureSetInputRegionCount(_ACTIVE_REGION_TYPE);
+ 278   2                  g_ulInputActiveRegionBackUp = ScalerMeasureGetInputRegionCountResult(_WAIT);
+ 279   2      
+ 280   2                  // Set FIFO freq.
+ 281   2                  ScalerMemorySetFIFOFreq(_FIFO_FREQ_FRAME_BUFFER_SEL);
+ 282   2      
+ 283   2      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+ 284   2                  // Get Rotation status
+ 285   2                  if(ScalerRotationCheckStatus() == _TRUE)
+ 286   2                  {
+ 287   3      #if(_DISPLAY_VER_MIRROR_SUPPORT == _ON)
+                              if(GET_ROT_TYPE() == _ROT_VER_MIRROR)
+                              {
+                                  // Set FRC control
+                                  ScalerFRCControl(&stFIFOScaling);
+                              }
+                              else
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 6   
+
+              #endif
+ 295   3                      {
+ 296   4                          // Set Rotation
+ 297   4                          ScalerRotationControl(&stFIFOScaling);
+ 298   4                      }
+ 299   3                  }
+ 300   2                  else
+ 301   2      #endif
+ 302   2                  {
+ 303   3                      // Set FRC control
+ 304   3                      ScalerFRCControl(&stFIFOScaling);
+ 305   3                  }
+ 306   2      
+ 307   2                  if(GET_MEMORY_SELECT() == _FRAME_SYNC_MEMORY)
+ 308   2                  {
+ 309   3                      ScalerDPLLFineTuneFrameSyncFrameBuffer();
+ 310   3                  }
+ 311   2      #if(_MN_FINE_TUNE_LASTLINE_SUPPORT == _ON)
+                          else if(GET_MEMORY_SELECT() == _MN_FRAME_SYNC_MEMORY)
+                          {
+                              ScalerDPLLFineTuneFrameSyncFrameBuffer();
+                          }
+              #endif
+ 317   2      
+ 318   2                  break;
+ 319   2      
+ 320   2      #endif // End of #if(_FRC_SUPPORT == _ON)
+ 321   2      
+ 322   2              default:
+ 323   2      
+ 324   2                  // Initial M Domain Block
+ 325   2                  ScalerMemoryInitial();
+ 326   2      
+ 327   2                  break;
+ 328   2          }
+ 329   1      
+ 330   1          // without define to commit
+ 331   1      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                  if(ScalerGlobalGetDBStatus() == _TRUE)
+              #endif
+ 334   1          {
+ 335   2              // Enable double buffer
+ 336   2              ScalerMDomainControlDBApply();
+ 337   2          }
+ 338   1      
+ 339   1          // Enable Spread Spectrum
+ 340   1          ScalerPLLSetDPLLSSC(_DCLK_SPREAD_SPEED, _DCLK_SPREAD_RANGE);
+ 341   1      
+ 342   1      #if(_URGENT_EVENT_CHECK_MODE == _ON)
+ 343   1          if((ScalerSyncCheckUrgentEvent() == _TRUE))
+ 344   1          {
+ 345   2              return _FALSE;
+ 346   2          }
+ 347   1      #endif
+ 348   1      
+ 349   1          // Measure Input Active Region
+ 350   1          ScalerMeasureSetInputRegionCount(_ACTIVE_REGION_TYPE);
+ 351   1      
+ 352   1      #if(_URGENT_EVENT_CHECK_MODE == _ON)
+ 353   1          if((ScalerSyncCheckUrgentEvent() == _TRUE))
+ 354   1          {
+ 355   2              return _FALSE;
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 7   
+
+ 356   2          }
+ 357   1      #endif
+ 358   1      
+ 359   1          ScalerTimerWaitForEvent(_EVENT_IVS);
+ 360   1      
+ 361   1      #if(_OD_SUPPORT == _ON)
+ 362   1          ScalerODInitial(_PANEL_DH_WIDTH, _PANEL_DV_HEIGHT);
+ 363   1      
+ 364   1      #if(_FRC_HW_AUTO_3BLOCK_TOGGLE_SUPPORT == _ON)
+ 365   1          ScalerMemorySetODThreeBlockAddress();
+ 366   1      #endif
+ 367   1      #endif
+ 368   1      
+ 369   1      #if(_MEMORY_TYPE_CONFIG != _NO_MEMORY)
+ 370   1          ScalerMemoryReset();
+ 371   1      #endif
+ 372   1      
+ 373   1      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+ 374   1      #if(_DISPLAY_ROTATION_TYPE == _DISPLAY_ROTATION_GEN_II)
+ 375   1          ScalerRotationReset();
+ 376   1      #endif
+ 377   1      #endif
+ 378   1      
+ 379   1          // Clear Buffer Status
+ 380   1          ScalerSetByte(P0_02_STATUS0, 0xFF);
+ 381   1      
+ 382   1          // Clear Display Vsync timeout flag
+ 383   1          ScalerSetBit(P0_0C_WATCH_DOG_CTRL0, ~_BIT0, _BIT0);
+ 384   1      
+ 385   1      #if(_URGENT_EVENT_CHECK_MODE == _ON)
+ 386   1          if((ScalerSyncCheckUrgentEvent() == _TRUE))
+ 387   1          {
+ 388   2              return _FALSE;
+ 389   2          }
+ 390   1      #endif
+ 391   1      
+ 392   1          ScalerTimerWaitForEvent(_EVENT_DVS);
+ 393   1          ScalerTimerWaitForEvent(_EVENT_DVS);
+ 394   1      
+ 395   1      #if(_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
+                  SET_MBR_DVTOTAL(GET_MDOMAIN_OUTPUT_VTOTAL());
+              #endif
+ 398   1      
+ 399   1          if((ScalerMDomainMemoryCheck() == _FALSE) ||
+ 400   1             (ScalerMeasureInputActiveRegionChange() == _TRUE) ||
+ 401   1             (ScalerMDomainDisplayTimingGenCheck() == _FALSE))
+ 402   1          {
+ 403   2              DebugMessageScaler("MemoryCheck Fail in Display Setting", GET_MEMORY_SELECT());
+ 404   2      
+ 405   2              return _FALSE;
+ 406   2          }
+ 407   1      
+ 408   1          // If M domain setup success, set I domain DB trigger event to IEN_STOP
+ 409   1          ScalerGlobalIDDomainDBSetTriggerEvent();
+ 410   1      
+ 411   1          // Update on-line measure result
+ 412   1          ScalerMeasureUpdateOnlineMeasureResult();
+ 413   1      
+ 414   1      #if(_LC_TANK_SUPPORT == _ON)
+              #if(_XTALESS_SUPPORT == _ON)
+                  // Initialize LCTank DPLL check
+                  ScalerLCTankDpllRegulationInitial();
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 8   
+
+              #endif
+              #endif
+ 420   1      
+ 421   1      #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+ 422   1          ScalerMDomainUpdateLineBufferModeDVtotal();
+ 423   1      #endif
+ 424   1      
+ 425   1          return _TRUE;
+ 426   1      }
+ 427          
+ 428          //--------------------------------------------------
+ 429          // Description  : Memory Config
+ 430          // Input Value  : NA
+ 431          // Output Value : NA
+ 432          //--------------------------------------------------
+ 433          EnumMemoryWorkMode ScalerMDomainMemoryConfig(void)
+ 434          {
+ 435   1      #if(_FRC_SUPPORT == _ON)
+ 436   1          if(g_stDisplayCustomizedData.stDVCustomizedFreq.b1DecideMemoryConfig == _FORCE_FRAME_BUFFER_MODE)
+ 437   1          {
+ 438   2              return _MEMORY_WORK_MODE;
+ 439   2          }
+ 440   1      #endif
+ 441   1      
+ 442   1      #if(_FREESYNC_SUPPORT == _ON)
+ 443   1          if((GET_FREESYNC_ENABLED() == _TRUE) && (_FREESYNC_LINEBUFFER_PRIORITY == _ON))
+ 444   1          {
+ 445   2      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+ 446   2              if(ScalerRotationCheckStatus() == _TRUE)
+ 447   2              {
+ 448   3                  return _MEMORY_WORK_MODE;
+ 449   3              }
+ 450   2      #endif
+ 451   2      
+ 452   2              if(_LAST_LINE_FINETUNE_ENABLE == _DISABLE)
+ 453   2              {
+ 454   3                  return _MEMORY_WORK_MODE;
+ 455   3              }
+ 456   2              else
+ 457   2              {
+ 458   3      #if(_FRC_SUPPORT == _ON)
+ 459   3                  if((g_stMDomainOutputData.usVBackHeight > g_stMDomainOutputData.usVHeight) ||
+ 460   3                     (ScalerMDomainFSLineBufferDclkDvtotalCheck() == _FALSE))
+ 461   3                  {
+ 462   4                      return _MEMORY_WORK_MODE;
+ 463   4                  }
+ 464   3      #endif
+ 465   3              }
+ 466   2      
+ 467   2              return _LINE_BUFFER_MODE;
+ 468   2          }
+ 469   1          else
+ 470   1      #endif // End of #if(_FREESYNC_SUPPORT == _ON)
+ 471   1          {
+ 472   2      #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _OFF)
+                      return _MEMORY_WORK_MODE;
+              #else
+ 475   2              BYTE ucMemoryConfig = _LINE_BUFFER_MODE;
+ 476   2      
+ 477   2      #if(_FRC_SUPPORT == _ON)
+ 478   2              g_stDisplayCustomizedData.stDVCustomizedFreq.usMaxFreq += _FRAME_SYNC_MARGIN;
+ 479   2              g_stDisplayCustomizedData.stDVCustomizedFreq.usMinFreq -= _FRAME_SYNC_MARGIN;
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 9   
+
+ 480   2      
+ 481   2              if((GET_MEMORY_DVF_SELECT() != _1_IVF) ||
+ 482   2                 (g_stMDomainOutputData.usVBackHeight > g_stMDomainOutputData.usVHeight) ||
+ 483   2                 (ScalerMDomainFSLineBufferDclkDvtotalCheck() == _FALSE))
+ 484   2              {
+ 485   3                  ucMemoryConfig = _MEMORY_WORK_MODE;
+ 486   3              }
+ 487   2      
+ 488   2              if(GET_MEMORY_DVF_SELECT() == _PANEL_TYP_FRAME_RATE_FREE_RUN)
+ 489   2              {
+ 490   3                  ucMemoryConfig = _MEMORY_WORK_MODE;
+ 491   3              }
+ 492   2      
+ 493   2      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                      if(ScalerFmtCnvFtoPGetStatus() == _FALSE)
+                      {
+                          ucMemoryConfig = _MEMORY_WORK_MODE;
+                      }
+              #endif
+ 499   2      
+ 500   2      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+ 501   2              if(ScalerRotationCheckStatus() == _TRUE)
+ 502   2              {
+ 503   3                  ucMemoryConfig = _MEMORY_WORK_MODE;
+ 504   3              }
+ 505   2      #endif
+ 506   2      
+ 507   2      #if(_DISP_LATENCY_ADJUST_SUPPORT == _ON)
+                      // if display latency != faster, then change to _MEMORY_WORK_MODE
+                      if((GET_DISP_LATENCY_RATIO() != 0x00) && (ucMemoryConfig == _LINE_BUFFER_MODE))
+                      {
+                          PDATA_WORD(0) = MINOF(GET_MDOMAIN_INPUT_HWIDTH(), GET_MDOMAIN_OUTPUT_HWIDTH());
+                          if((ScalerMDomainGetFRCMemorySpace() < _MEMORY_ROW) && (ScalerMDomainGetFRCMemoryBW(_FRC_BW_AC
+             -TUAL_USAGE, PDATA_WORD(0)) < _MEMORY_TOTAL_BW))
+                          {
+                              ucMemoryConfig = _MEMORY_WORK_MODE;
+                          }
+                          else
+                          {
+                              SET_DISP_LATENCY_RATIO(0x00);
+                          }
+                      }
+              #endif // End if #if(_DISP_LATENCY_ADJUST_SUPPORT == _ON)
+ 522   2      
+ 523   2      #if(_RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
+                      ScalerMbrUpdateRtkAdvMbrMemConfig(&ucMemoryConfig);
+              #endif
+ 526   2      
+ 527   2      #endif // End of #if(_FRC_SUPPORT == _ON)
+ 528   2      
+ 529   2              return ucMemoryConfig;
+ 530   2      
+ 531   2      #endif // End of #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _OFF)
+ 532   2          }
+ 533   1      }
+ 534          
+ 535          //--------------------------------------------------
+ 536          // Description  : If Dclk over panel spec, finetune Display total pixel
+ 537          // Input Value  : current Dclk/ Dclk max boundary/ Dclk min boundary/ Display total pixel
+ 538          // Output Value : Display total pixel after fine tune
+ 539          //--------------------------------------------------
+ 540          DWORD ScalerMDomainDtotalLastLineFinetune(DWORD ulDclk, DWORD ulDclkMaxBoundary, DWORD ulDclkMinBoundary, 
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 10  
+
+             -DWORD ulDtotal)
+ 541          {
+ 542   1          if(ulDclk > ulDclkMaxBoundary)
+ 543   1          {
+ 544   2              ulDtotal -= (DWORD)GET_MDOMAIN_OUTPUT_HTOTAL();
+ 545   2              DebugMessageSystem("_Last_line_Dclk_larger", ulDtotal);
+ 546   2          }
+ 547   1          else if(ulDclk < ulDclkMinBoundary)
+ 548   1          {
+ 549   2              ulDtotal += (DWORD)GET_MDOMAIN_OUTPUT_HTOTAL();
+ 550   2              DebugMessageSystem("_Last_line_Dclk_smaller", ulDtotal);
+ 551   2          }
+ 552   1      
+ 553   1          return ulDtotal;
+ 554   1      }
+ 555          
+ 556          //--------------------------------------------------
+ 557          // Description  : If Dclk over panel spec, finetune DHtotal
+ 558          // Input Value  : current Dclk/ Dclk max boundary/ Dclk min boundary
+ 559          // Output Value : Fine tune status/ DHtotal
+ 560          //--------------------------------------------------
+ 561          StructDHtotalFTStatus ScalerMDomainDHtotalFinetune(DWORD ulDclk, DWORD ulDclkMaxBoundary, DWORD ulDclkMinB
+             -oundary)
+ 562          {
+ 563   1          StructDHtotalFTStatus stDHtotalFTStatus;
+ 564   1      
+ 565   1          stDHtotalFTStatus.b1DHtotalFineTuneStatus = _TRUE;
+ 566   1          stDHtotalFTStatus.usDHtotal = GET_MDOMAIN_OUTPUT_HTOTAL();
+ 567   1      
+ 568   1          if(ulDclk > ulDclkMaxBoundary)
+ 569   1          {
+ 570   2              // Calculate target DHTotal
+ 571   2              stDHtotalFTStatus.usDHtotal = GET_DWORD_MUL_DIV(GET_MDOMAIN_OUTPUT_HTOTAL(), ulDclkMaxBoundary, ul
+             -Dclk);
+ 572   2              stDHtotalFTStatus.usDHtotal -= (stDHtotalFTStatus.usDHtotal % _DHTOTAL_MULTIPLE);
+ 573   2      
+ 574   2              if(stDHtotalFTStatus.usDHtotal < _PANEL_DH_TOTAL_MIN)
+ 575   2              {
+ 576   3                  DebugMessageSystem("_DHTotal_over_panel", stDHtotalFTStatus.usDHtotal);
+ 577   3      
+ 578   3                  stDHtotalFTStatus.b1DHtotalFineTuneStatus = _FALSE;
+ 579   3                  stDHtotalFTStatus.usDHtotal = _PANEL_DH_TOTAL_MIN;
+ 580   3              }
+ 581   2      
+ 582   2              DebugMessageSystem("FS fine tune, Dclk larger than panel spec => Modify Htotal'", stDHtotalFTStatu
+             -s.usDHtotal);
+ 583   2          }
+ 584   1          else if(ulDclk < ulDclkMinBoundary)
+ 585   1          {
+ 586   2              // Calculate target DHTotal
+ 587   2              stDHtotalFTStatus.usDHtotal = GET_DWORD_MUL_DIV(GET_MDOMAIN_OUTPUT_HTOTAL(), ulDclkMinBoundary, ul
+             -Dclk);
+ 588   2              stDHtotalFTStatus.usDHtotal = stDHtotalFTStatus.usDHtotal + _DHTOTAL_MULTIPLE - (stDHtotalFTStatus
+             -.usDHtotal % _DHTOTAL_MULTIPLE);
+ 589   2      
+ 590   2              if(stDHtotalFTStatus.usDHtotal > _PANEL_DH_TOTAL_MAX)
+ 591   2              {
+ 592   3                  DebugMessageSystem("_DHTotal_over_panel", stDHtotalFTStatus.usDHtotal);
+ 593   3      
+ 594   3                  stDHtotalFTStatus.b1DHtotalFineTuneStatus = _FALSE;
+ 595   3                  stDHtotalFTStatus.usDHtotal = _PANEL_DH_TOTAL_MAX;
+ 596   3              }
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 11  
+
+ 597   2      
+ 598   2              DebugMessageSystem("FS fine tune, Dclk smaller than panel spec => Modify Htotal'", stDHtotalFTStat
+             -us.usDHtotal);
+ 599   2          }
+ 600   1      
+ 601   1          return stDHtotalFTStatus;
+ 602   1      }
+ 603          
+ 604          
+ 605          //--------------------------------------------------
+ 606          // Description  : If Dclk over panel spec, finetune DHtotal and DVtotal
+ 607          // Input Value  : Dclk/ Memory select
+ 608          // Output Value : ((usDVtotal << 8) | (usDHtotal))
+ 609          //--------------------------------------------------
+ 610          StructDHVtotal ScalerMDomainDHVtotalFinetune(DWORD ulDclk, BYTE ucMemorySel, bit bDclkCalculateMethod)
+ 611          {
+ 612   1          DWORD ulDclkNew = 0;
+ 613   1          DWORD ulPixelClock = ScalerDisplayGetPanelClockInfo(_PANEL_INFO_CLOCK);
+ 614   1          DWORD ulPanelClockMaxSpread = MAXOF(_PANEL_PIXEL_CLOCK_MAX_SPREAD, ulPixelClock);
+ 615   1          DWORD ulPanelClockMinSpread = MINOF(_PANEL_PIXEL_CLOCK_MIN_SPREAD, ulPixelClock);
+ 616   1      
+ 617   1          StructDHVtotal stHVtotal;
+ 618   1          StructDHtotalFTStatus stDHtotalFTStatus;
+ 619   1          stHVtotal.usDHtotal = GET_MDOMAIN_OUTPUT_HTOTAL();
+ 620   1          stHVtotal.usDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL();
+ 621   1      
+ 622   1          ucMemorySel = ucMemorySel;
+ 623   1      
+ 624   1      #if(_PANEL_HFREQ_FINE_TUNE == _ON)
+                  if(bDclkCalculateMethod == _FRAME_BUFFER_METHOD)
+                  {
+                      WORD usDHF = GET_DWORD_MUL_DIV(g_usDVFreq, stHVtotal.usDVtotal, 1000);
+              
+                      if(((ucMemorySel == _FRAME_SYNC_MEMORY) || (ucMemorySel == _MN_FRAME_SYNC_MEMORY)) &&
+                         ((usDHF > _PANEL_DH_FREQ_MAX) || (usDHF < _PANEL_DH_FREQ_MIN)))
+                      {
+                          if(usDHF > _PANEL_DH_FREQ_MAX)
+                          {
+                              // Calculate Target DVTotal
+                              stHVtotal.usDVtotal = GET_DWORD_MUL_DIV(_PANEL_DH_FREQ_MAX, 1000, g_usDVFreq);
+                              ulDclk = GET_DWORD_MUL_DIV(ulDclk, stHVtotal.usDVtotal, GET_MDOMAIN_OUTPUT_VTOTAL());
+                              DebugMessageScaler("Hfreq fine tune, Dhf larger than panel spec => Modify Vtotal'", stHVto
+             -tal.usDVtotal);
+                          }
+              
+                          else
+                          {
+                              // Calculate Target DVTotal
+                              stHVtotal.usDVtotal = GET_DWORD_MUL_DIV(_PANEL_DH_FREQ_MIN, 1000, g_usDVFreq) + 1;
+                              ulDclk = GET_DWORD_MUL_DIV(ulDclk, stHVtotal.usDVtotal, GET_MDOMAIN_OUTPUT_VTOTAL());
+                              DebugMessageScaler("Hfreq fine tune, Dhf smaller than panel spec => Modify Vtotal'", stHVt
+             -otal.usDVtotal);
+                          }
+                      }
+                  }
+              #endif
+ 650   1      
+ 651   1          // If DClk Out of Panel Spec => Try Modifying DHTotal
+ 652   1          if((ulDclk > ulPanelClockMaxSpread) || (ulDclk < ulPanelClockMinSpread))
+ 653   1          {
+ 654   2              stDHtotalFTStatus = ScalerMDomainDHtotalFinetune(ulDclk, ulPanelClockMaxSpread, ulPanelClockMinSpr
+             -ead);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 12  
+
+ 655   2      
+ 656   2              stHVtotal.usDHtotal = stDHtotalFTStatus.usDHtotal;
+ 657   2      
+ 658   2      
+ 659   2              // Calculate Target Dclk
+ 660   2              ulDclkNew = (ulDclk / GET_MDOMAIN_OUTPUT_HTOTAL() * stHVtotal.usDHtotal) +
+ 661   2                          ((ulDclk % GET_MDOMAIN_OUTPUT_HTOTAL()) * stHVtotal.usDHtotal / GET_MDOMAIN_OUTPUT_HTO
+             -TAL());
+ 662   2      
+ 663   2      #if(_FRC_SUPPORT == _ON)
+ 664   2              // Check Dclk
+ 665   2              if(bDclkCalculateMethod == _FRAME_BUFFER_METHOD)
+ 666   2              {
+ 667   3                  switch(ucMemorySel)
+ 668   3                  {
+ 669   4                      case _FRAME_SYNC_MEMORY:
+ 670   4                      case _MN_FRAME_SYNC_MEMORY:
+ 671   4      #if(_FREE_RUN_DCLK_FINE_TUNE == _ON)
+                              case _FREE_RUN_MEMORY:
+              #endif
+ 674   4      
+ 675   4                          if((ulDclkNew > ulPanelClockMaxSpread) || (ulDclkNew < ulPanelClockMinSpread))
+ 676   4                          {
+ 677   5                              if(ulDclkNew > ulPanelClockMaxSpread)
+ 678   5                              {
+ 679   6                                  // Calculate Target DVTotal
+ 680   6                                  stHVtotal.usDVtotal = ((DWORD)_PANEL_DV_TOTAL * ulPanelClockMaxSpread / ulDclk
+             -New);
+ 681   6                                  stHVtotal.usDVtotal = ((stHVtotal.usDVtotal < _PANEL_DV_TOTAL_MIN) ? _PANEL_DV
+             -_TOTAL_MIN : stHVtotal.usDVtotal);
+ 682   6                              }
+ 683   5                              else
+ 684   5                              {
+ 685   6                                  // Calculate Target DVTotal, current DVtotal add 1 for last line
+ 686   6                                  stHVtotal.usDVtotal = (DWORD)(_PANEL_DV_TOTAL + 1) * ulPanelClockMinSpread / u
+             -lDclkNew + 1;
+ 687   6                                  stHVtotal.usDVtotal = ((stHVtotal.usDVtotal > _PANEL_DV_TOTAL_MAX) ? _PANEL_DV
+             -_TOTAL_MAX : stHVtotal.usDVtotal);
+ 688   6                              }
+ 689   5                          }
+ 690   4                          break;
+ 691   4      
+ 692   4                      default:
+ 693   4                          break;
+ 694   4                  }
+ 695   3              }
+ 696   2      #else
+                      bDclkCalculateMethod = bDclkCalculateMethod;
+              #endif // End of #if(_FRC_SUPPORT == _ON)
+ 699   2          }
+ 700   1      
+ 701   1          return stHVtotal;
+ 702   1      }
+ 703          
+ 704          //--------------------------------------------------
+ 705          // Description  : Set Display Format
+ 706          // Input Value  : free run/ frame sync line buffer/ frame sync frame buffer /
+ 707          //                MN frame sync/ free run no input
+ 708          // Output Value : NA
+ 709          //--------------------------------------------------
+ 710          void ScalerMDomainSetDisplayFormat(BYTE ucMemorySel)
+ 711          {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 13  
+
+ 712   1          WORD usFreeRunDVtotal = 0;
+ 713   1          WORD usWatchDogDVtotal = 0;
+ 714   1      
+ 715   1      #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+ 716   1          WORD usDhtotalBackup = GET_DIS_TIMING_GEN_H_TOTAL();
+ 717   1      #endif
+ 718   1      
+ 719   1          if(GET_MDOMAIN_OUTPUT_VBHEIGHT() == GET_MDOMAIN_OUTPUT_VHEIGHT())
+ 720   1          {
+ 721   2              SET_MDOMAIN_OUTPUT_VBSTART(GET_MDOMAIN_OUTPUT_VSTART());
+ 722   2          }
+ 723   1      
+ 724   1      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+ 725   1          if(GET_ROT_TYPE() != _ROT_DISABLE)
+ 726   1          {
+ 727   2              SET_MDOMAIN_OUTPUT_VBSTART(_PANEL_DV_START);
+ 728   2          }
+ 729   1      #endif
+ 730   1      
+ 731   1          if((ucMemorySel == _MN_FRAME_SYNC_MEMORY) &&
+ 732   1             (ScalerGetDataPortBit(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_25_MN_FRAME_RATE_EN, _BIT7) == _BIT
+             -7))
+ 733   1          {
+ 734   2              SET_MDOMAIN_OUTPUT_HTOTAL(GET_DIS_TIMING_GEN_H_TOTAL());
+ 735   2          }
+ 736   1      
+ 737   1          // Display timing gen setting
+ 738   1          ScalerMDomainSetDisplayTimingGen();
+ 739   1      
+ 740   1          switch(ucMemorySel)
+ 741   1          {
+ 742   2              case _FRAME_SYNC_LINE_BUFFER:
+ 743   2      
+ 744   2      #if(_FREESYNC_SUPPORT == _ON)
+ 745   2                  if(GET_FREESYNC_ENABLED() == _TRUE)
+ 746   2                  {
+ 747   3                      // DVtotal for WD setting
+ 748   3                      usWatchDogDVtotal = _PANEL_DV_TOTAL_MAX + 64;
+ 749   3      
+ 750   3      #if(_PANEL_FREESYNC_FREE_RUN_DVTOTAL_CALCULATED_BY_VFREQ_MIN == _ON)
+ 751   3                      // DVtotal for free run setting
+ 752   3                      usFreeRunDVtotal = (DWORD)GET_MDOMAIN_OUTPUT_VTOTAL() * GET_MDOMAIN_INPUT_VFREQ() / _PANEL
+             -_FREESYNC_MIN_FRAME_RATE;
+ 753   3      
+ 754   3                      if(usFreeRunDVtotal > _PANEL_DV_TOTAL_MAX)
+ 755   3                      {
+ 756   4                          usFreeRunDVtotal = _PANEL_DV_TOTAL_MAX;
+ 757   4                      }
+ 758   3      #else
+                              // DVtotal for free run setting
+                              usFreeRunDVtotal = _PANEL_DV_TOTAL_MAX;
+              #endif
+ 762   3                  }
+ 763   2                  else
+ 764   2      #endif
+ 765   2                  {
+ 766   3                      // DVtotal for WD setting
+ 767   3                      usWatchDogDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL() + 64;
+ 768   3      
+ 769   3                      // DVtotal for free run setting
+ 770   3                      usFreeRunDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL();
+ 771   3                  }
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 14  
+
+ 772   2      
+ 773   2                  // Enable Display Timing, Set Frame sync
+ 774   2                  ScalerSetBit(P0_28_VIDEO_DISPLAY_CONTROL_REG, ~(_BIT7 | _BIT3 | _BIT1 | _BIT0), (_BIT3 | _BIT1
+             - | _BIT0));
+ 775   2      
+ 776   2                  break;
+ 777   2      
+ 778   2      #if(_FRC_SUPPORT == _ON)
+ 779   2      
+ 780   2              case _MN_FRAME_SYNC_MEMORY:
+ 781   2      
+ 782   2                  // DVtotal for WD setting
+ 783   2                  usWatchDogDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL() + 64;
+ 784   2      
+ 785   2                  // DVtotal for free run setting
+ 786   2                  usFreeRunDVtotal = usWatchDogDVtotal + 1;
+ 787   2      
+ 788   2                  break;
+ 789   2      
+ 790   2              case _FRAME_SYNC_MEMORY:
+ 791   2      
+ 792   2      #if(_FREESYNC_SUPPORT == _ON)
+ 793   2                  if(GET_FREESYNC_ENABLED() == _TRUE)
+ 794   2                  {
+ 795   3                      // DVtotal for WD setting
+ 796   3                      usWatchDogDVtotal = _PANEL_DV_TOTAL_MAX + 64;
+ 797   3      
+ 798   3      #if(_PANEL_FREESYNC_FREE_RUN_DVTOTAL_CALCULATED_BY_VFREQ_MIN == _ON)
+ 799   3                      // DVtotal for free run setting
+ 800   3                      usFreeRunDVtotal = ((DWORD)GET_MDOMAIN_OUTPUT_VTOTAL() * GET_MDOMAIN_INPUT_VFREQ() / _PANE
+             -L_FREESYNC_MIN_FRAME_RATE) + 1;
+ 801   3      
+ 802   3                      if(usFreeRunDVtotal > _PANEL_DV_TOTAL_MAX)
+ 803   3                      {
+ 804   4                          usFreeRunDVtotal = _PANEL_DV_TOTAL_MAX;
+ 805   4                      }
+ 806   3      #else
+                              // DVtotal for free run setting
+                              usFreeRunDVtotal = usWatchDogDVtotal + 1;
+              #endif
+ 810   3                  }
+ 811   2                  else
+ 812   2      #endif
+ 813   2                  {
+ 814   3                      // DVtotal for WD setting
+ 815   3                      usWatchDogDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL() + 64;
+ 816   3      
+ 817   3                      // DVtotal for free run setting
+ 818   3                      usFreeRunDVtotal = usWatchDogDVtotal + 1;
+ 819   3                  }
+ 820   2      
+ 821   2                  break;
+ 822   2      
+ 823   2              case _FREE_RUN_MEMORY:
+ 824   2      
+ 825   2                  if((GET_MEMORY_FRAME_BUFFER() == _MEMORY_1_FRAME_BUFFER) && (g_stMDomainOutputData.usVHeight =
+             -= _PANEL_DV_HEIGHT) && (g_stMDomainInputData.usVFreq > _PANEL_MAX_FRAME_RATE))
+ 826   2                  {
+ 827   3                      PDATA_WORD(2) = ScalerFRCSetOneFrameDVTotal();
+ 828   3                  }
+ 829   2                  else if((GET_MEMORY_FRAME_BUFFER() == _MEMORY_1_FRAME_BUFFER) && (((g_stMDomainOutputData.usVH
+             -eight < _PANEL_DV_HEIGHT) && (g_stMDomainInputData.usVFreq > _PANEL_MAX_FRAME_RATE)) || (g_stMDomainInputData.usVFreq < 
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 15  
+
+             -_PANEL_MIN_FRAME_RATE)))
+ 830   2                  {
+ 831   3                      PDATA_WORD(2) = _PANEL_DV_TOTAL_MIN;
+ 832   3                  }
+ 833   2                  else
+ 834   2                  {
+ 835   3      #if(_FREE_RUN_DCLK_FINE_TUNE == _ON)
+                              PDATA_WORD(2) = GET_MDOMAIN_OUTPUT_VTOTAL();
+              #else
+ 838   3                      PDATA_WORD(2) = _PANEL_DV_TOTAL;
+ 839   3      #endif
+ 840   3                  }
+ 841   2      
+ 842   2                  // DVtotal for WD setting
+ 843   2                  usWatchDogDVtotal = PDATA_WORD(2) + 64;
+ 844   2      
+ 845   2                  // DVtotal for free run setting
+ 846   2                  usFreeRunDVtotal = PDATA_WORD(2);
+ 847   2      
+ 848   2                  // Dvtotal != _PANEL_DV_TOTAL need to update Dclk when one frame FRC
+ 849   2                  if(PDATA_WORD(2) != _PANEL_DV_TOTAL)
+ 850   2                  {
+ 851   3                      // Update Dclk
+ 852   3                      SET_D_CLK_FREQ(GET_D_CLK_FRAME_BUFFER(PDATA_WORD(2), 0));
+ 853   3                  }
+ 854   2      
+ 855   2                  break;
+ 856   2      
+ 857   2      #endif // End of #if(_FRC_SUPPORT == _ON)
+ 858   2      
+ 859   2              case _FREE_RUN_NO_INPUT:
+ 860   2              default:
+ 861   2      
+ 862   2                  // PDATA_WORD(2): Calculate DVtotal
+ 863   2                  PDATA_WORD(2) = GET_MDOMAIN_OUTPUT_VTOTAL();
+ 864   2      
+ 865   2                  // DVtotal for WD setting
+ 866   2                  usWatchDogDVtotal = PDATA_WORD(2) + 64;
+ 867   2      
+ 868   2                  // DVtotal for free run setting
+ 869   2                  usFreeRunDVtotal = PDATA_WORD(2) + 1;
+ 870   2      
+ 871   2                  // Enable Display Timing, and enable free run mode
+ 872   2                  ScalerSetBit(P0_28_VIDEO_DISPLAY_CONTROL_REG, ~(_BIT7 | _BIT3 | _BIT1 | _BIT0), (_BIT7 | _BIT1
+             - | _BIT0));
+ 873   2      
+ 874   2                  // Disable M:N frame sync mode
+ 875   2                  ScalerSetDataPortBit(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_25_MN_FRAME_RATE_EN, ~_BIT7, 0x
+             -00);
+ 876   2      
+ 877   2                  ScalerMDomainCalculateDclkDVtotal(_FREE_RUN_NO_INPUT);
+ 878   2      
+ 879   2                  break;
+ 880   2          }
+ 881   1      
+ 882   1      #if(_FRC_SUPPORT == _ON)
+ 883   1          // M:N case reset to display setting, no need to set M:N tracking again
+ 884   1          if((ucMemorySel != _MN_FRAME_SYNC_MEMORY) ||
+ 885   1             (ScalerGetDataPortBit(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_25_MN_FRAME_RATE_EN, _BIT7) != _BIT
+             -7))
+ 886   1      #endif
+ 887   1          {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 16  
+
+ 888   2      #if(_HW_DISPLAY_FORMAT_DB_TYPE == _DIS_FORMAT_DB_GEN_II)
+                      ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+              #endif
+ 891   2              // Set DHtotal
+ 892   2              SET_DIS_TIMING_GEN_H_TOTAL(GET_MDOMAIN_OUTPUT_HTOTAL());
+ 893   2      
+ 894   2              // Set Last line for free run
+ 895   2              SET_FREE_RUN_LAST_LINE(GET_MDOMAIN_OUTPUT_HTOTAL());
+ 896   2      
+ 897   2              // Set Frame Sync Watch Dog
+ 898   2              SET_DIS_TIMING_GEN_WD_VTOTAL((usWatchDogDVtotal));
+ 899   2      
+ 900   2              // Set DVtotal for free run
+ 901   2              SET_FREE_RUN_DVTOTAL(usFreeRunDVtotal);
+ 902   2      
+ 903   2      #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+ 904   2              if(GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER)
+ 905   2              {
+ 906   3                  // Frame sync line buffer need to fine tune Dclk according I-active-region & D-active-region
+ 907   3                  if(usDhtotalBackup != GET_DIS_TIMING_GEN_H_TOTAL())
+ 908   3                  {
+ 909   4                      ScalerGlobalDDomainDBApply(_DB_APPLY_POLLING);
+ 910   4                  }
+ 911   3              }
+ 912   2      #endif
+ 913   2      
+ 914   2      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                      if(GET_AIO_MODERN_STANDBY_MODE() == _TRUE)
+                      {
+                          // let free run no input Dclk = Dclk_backup
+                          SET_D_CLK_FREQ(GET_MDOMAIN_DCLK_BACKUP());
+                      }
+                      else
+                      {
+                          SET_MDOMAIN_DCLK_BACKUP(GET_D_CLK_FREQ());
+                      }
+              #endif
+ 925   2      
+ 926   2              DebugMessageScaler("DCLK", GET_D_CLK_FREQ());
+ 927   2      
+ 928   2              // Set DClk
+ 929   2              ScalerPLLSetDPLLFreq(GET_D_CLK_FREQ());
+ 930   2          }
+ 931   1      }
+ 932          
+ 933          //--------------------------------------------------
+ 934          // Description  : Set Dclk and DVtotal macro, real DVtotal setting for BW calculate
+ 935          // Input Value  : free run/ frame sync line buffer/ frame sync frame buffer /
+ 936          //                MN frame sync/ free run no input
+ 937          // Output Value : NA
+ 938          //--------------------------------------------------
+ 939          void ScalerMDomainCalculateDclkDVtotal(BYTE ucMemorySel)
+ 940          {
+ 941   1          bit bDclkCalculateMethod = _FRAME_BUFFER_METHOD;
+ 942   1          DWORD ulDclk = 0;
+ 943   1          StructDHVtotal stHVTotal;
+ 944   1      
+ 945   1          switch(ucMemorySel)
+ 946   1          {
+ 947   2              case _FRAME_SYNC_LINE_BUFFER:
+ 948   2      
+ 949   2                  bDclkCalculateMethod = _LINE_BUFFER_METHOD;
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 17  
+
+ 950   2      
+ 951   2      #if(_FREESYNC_SUPPORT == _ON)
+ 952   2                  if((GET_FREESYNC_IVF_INFO() == _TRUE) &&
+ 953   2                     (GET_FREESYNC_ENABLED() == _TRUE))
+ 954   2                  {
+ 955   3                      SET_MDOMAIN_OUTPUT_VTOTAL(((DWORD)GET_MDOMAIN_INPUT_HFREQ() * (DWORD)(GET_MDOMAIN_OUTPUT_V
+             -HEIGHT()) / GET_MDOMAIN_INPUT_VHEIGHT() * 1000) / GET_MDOMAIN_INPUT_VFREQ());
+ 956   3                  }
+ 957   2                  else
+ 958   2      #endif
+ 959   2                  {
+ 960   3                      SET_MDOMAIN_OUTPUT_VTOTAL(GET_DWORD_MUL_DIV(GET_MDOMAIN_INPUT_VTOTAL(), GET_MDOMAIN_OUTPUT
+             -_VHEIGHT(), GET_MDOMAIN_INPUT_VHEIGHT()));
+ 961   3                  }
+ 962   2      
+ 963   2      
+ 964   2                  // Calculate Dclk
+ 965   2                  ulDclk = GET_D_CLK_LINE_BUFFER();
+ 966   2      
+ 967   2                  break;
+ 968   2      
+ 969   2      #if(_FRC_SUPPORT == _ON)
+ 970   2      
+ 971   2              case _MN_FRAME_SYNC_MEMORY:
+ 972   2      
+ 973   2                  // Calculate Dclk
+ 974   2                  ulDclk = GET_D_CLK_FRAME_BUFFER(_PANEL_DV_TOTAL, 0);
+ 975   2      
+ 976   2                  break;
+ 977   2      
+ 978   2              case _FRAME_SYNC_MEMORY:
+ 979   2      
+ 980   2      #if(_FREESYNC_SUPPORT == _ON)
+ 981   2                  if(GET_FREESYNC_ENABLED() == _TRUE)
+ 982   2                  {
+ 983   3                      if((ScalerMDomainFSLineBufferDclkDvtotalCheck() == _TRUE) &&
+ 984   3                         (g_stMDomainOutputData.usVBackHeight == g_stMDomainOutputData.usVHeight))
+ 985   3                      {
+ 986   4                          bDclkCalculateMethod = _LINE_BUFFER_METHOD;
+ 987   4      
+ 988   4                          // Set DVTotal
+ 989   4                          g_stMDomainOutputData.usVTotal = (DWORD)g_stMDomainInputData.usVTotal * (DWORD)(g_stMD
+             -omainOutputData.usVHeight) / g_stMDomainInputData.usVHeight;
+ 990   4      
+ 991   4                          // Calculate Dclk
+ 992   4                          ulDclk = GET_D_CLK_LINE_BUFFER();
+ 993   4                      }
+ 994   3                      else
+ 995   3                      {
+ 996   4                          // Calculate Dclk
+ 997   4                          ulDclk = GET_D_CLK_FRAME_BUFFER(_PANEL_DV_TOTAL, _LAST_LINE_TARGET);
+ 998   4                      }
+ 999   3                  }
+1000   2                  else
+1001   2      #endif
+1002   2                  {
+1003   3                      // Calculate Dclk
+1004   3                      ulDclk = GET_D_CLK_FRAME_BUFFER(_PANEL_DV_TOTAL, _LAST_LINE_TARGET);
+1005   3      
+1006   3      #if(_RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
+                              {
+                                  StructRtkAdvMbrPanelInfo stPanelInfo;
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 18  
+
+                                  memset(&stPanelInfo, 0, sizeof(StructRtkAdvMbrPanelInfo));
+              
+                                  stPanelInfo.usMaxFreq = g_stDisplayCustomizedData.stDVCustomizedFreq.usMaxFreq;
+                                  stPanelInfo.usMinFreq = g_stDisplayCustomizedData.stDVCustomizedFreq.usMinFreq;
+                                  stPanelInfo.ucFrameSyncMargin = _FRAME_SYNC_MARGIN;
+                                  stPanelInfo.ulPixelClock = _PANEL_PIXEL_CLOCK_KHZ;
+                                  stPanelInfo.ulPixelClockMax = _PANEL_PIXEL_CLOCK_MAX_SPREAD;
+                                  stPanelInfo.ulPixelClockMin = _PANEL_PIXEL_CLOCK_MIN_SPREAD;
+              
+                                  ScalerMbrUpdateRtkAdvMbrDisplayInfo(&ulDclk, &g_usDVFreq, &g_stMDomainOutputData, &stP
+             -anelInfo);
+                              }
+              #endif
+1021   3                  }
+1022   2      
+1023   2                  break;
+1024   2      
+1025   2              case _FREE_RUN_MEMORY:
+1026   2      
+1027   2                  // Calculate Dclk
+1028   2                  ulDclk = GET_D_CLK_FRAME_BUFFER(_PANEL_DV_TOTAL, 0);
+1029   2      
+1030   2                  break;
+1031   2      
+1032   2      #endif // End of #if(_FRC_SUPPORT == _ON)
+1033   2      
+1034   2              case _FREE_RUN_NO_INPUT:
+1035   2              default:
+1036   2      
+1037   2                  // Calculate Dclk
+1038   2                  ulDclk = GET_D_CLK_TYPICAL();
+1039   2      
+1040   2                  break;
+1041   2          }
+1042   1      
+1043   1      #if(_FRC_SUPPORT == _ON)
+1044   1          // M:N case reset to display setting, no need to set M:N tracking again
+1045   1          if((ucMemorySel != _MN_FRAME_SYNC_MEMORY) ||
+1046   1             (ScalerGetDataPortBit(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_25_MN_FRAME_RATE_EN, _BIT7) != _BIT
+             -7))
+1047   1      #endif
+1048   1          {
+1049   2              // If Dclk over panel, fine tune DHtotal, DVtotal and Dclk
+1050   2              stHVTotal = ScalerMDomainDHVtotalFinetune(ulDclk, ucMemorySel, bDclkCalculateMethod);
+1051   2      
+1052   2              if((stHVTotal.usDVtotal != GET_MDOMAIN_OUTPUT_VTOTAL()) || (stHVTotal.usDHtotal != GET_MDOMAIN_OUT
+             -PUT_HTOTAL()))
+1053   2              {
+1054   3                  if(stHVTotal.usDHtotal != GET_MDOMAIN_OUTPUT_HTOTAL())
+1055   3                  {
+1056   4                      // Calculate Target Dclk
+1057   4                      ulDclk = (ulDclk / g_stMDomainOutputData.usHTotal * stHVTotal.usDHtotal) +
+1058   4                               ((ulDclk % g_stMDomainOutputData.usHTotal) * stHVTotal.usDHtotal / g_stMDomainOut
+             -putData.usHTotal);
+1059   4      
+1060   4                      SET_MDOMAIN_OUTPUT_HTOTAL(stHVTotal.usDHtotal);
+1061   4                  }
+1062   3      
+1063   3                  if(stHVTotal.usDVtotal != GET_MDOMAIN_OUTPUT_VTOTAL())
+1064   3                  {
+1065   4                      ulDclk = (DWORD)g_stMDomainOutputData.usHTotal * stHVTotal.usDVtotal / 10 * g_usDVFreq / 1
+             -000;
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 19  
+
+1066   4      
+1067   4                      SET_MDOMAIN_OUTPUT_VTOTAL(stHVTotal.usDVtotal);
+1068   4                  }
+1069   3              }
+1070   2              SET_D_CLK_FREQ(ulDclk);
+1071   2          }
+1072   1      }
+1073          
+1074          //--------------------------------------------------
+1075          // Description  : Set Display Timgin Gen: Dtotal, Background, active region and display mode
+1076          // Input Value  : NA
+1077          // Output Value : NA
+1078          //--------------------------------------------------
+1079          void ScalerMDomainSetDisplayTimingGen(void)
+1080          {
+1081   1          WORD usVBackStartOld = 0;
+1082   1          WORD usVHeightOld = 0;
+1083   1          WORD usHStartOld = 0;
+1084   1          WORD usVStartOld = 0;
+1085   1          WORD usDVtotal = 0;
+1086   1      
+1087   1          usVBackStartOld = ScalerMDomainGetDisplayBackgroundVstart();
+1088   1          usVHeightOld = ScalerMDomainGetDisplayVheight();
+1089   1          ScalerGetDataPortByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_05_DISPLAY_HOR_ACT_STA_H, 2, pData, _A
+             -UTOINC);
+1090   1          usHStartOld = ((pData[0] << 8) | pData[1]);
+1091   1          ScalerGetDataPortByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_10_DISPLAY_VER_ACT_STA_H, 2, pData, _A
+             -UTOINC);
+1092   1          usVStartOld = ((pData[0] << 8) | pData[1]);
+1093   1      
+1094   1      #if(_HW_DISPLAY_FORMAT_DB_TYPE == _DIS_FORMAT_DB_GEN_II)
+                  ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+              #endif
+1097   1      
+1098   1          // Set H sync width, must by 2x in even-odd-mode
+1099   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_02_DISPLAY_HOR_SYNC_END);
+1100   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (_PANEL_DH_SYNC_WIDTH + _PANEL_DH_SYNC_WIDTH % 2));
+1101   1      
+1102   1          // Set Main H background st/ ed (Panel size)
+1103   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_03_DISPLAY_HOR_BG_STA_H);
+1104   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_HBSTART()) & (_DIS_TIMING_GEN
+             -_H_ACTIVE_BIT >> 8)));
+1105   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_HBSTART()));
+1106   1      
+1107   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_09_DISPLAY_HOR_BG_END_H);
+1108   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_HBSTART() + GET_MDOMAIN_OUTPU
+             -T_HBWIDTH()) & (_DIS_TIMING_GEN_H_ACTIVE_BIT >> 8)));
+1109   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_HBSTART() + GET_MDOMAIN_OUTPUT
+             -_HBWIDTH()));
+1110   1      
+1111   1          // Set Main1 H Active st/ ed
+1112   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_05_DISPLAY_HOR_ACT_STA_H);
+1113   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_HSTART()) & (_DIS_TIMING_GEN_
+             -H_ACTIVE_BIT >> 8)));
+1114   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_HSTART()));
+1115   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_HSTART() + GET_MDOMAIN_OUTPUT
+             -_HWIDTH()) & (_DIS_TIMING_GEN_H_ACTIVE_BIT >> 8)));
+1116   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_HSTART() + GET_MDOMAIN_OUTPUT_
+             -HWIDTH()));
+1117   1      
+1118   1          // Set V sync height
+1119   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_0D_DISPLAY_VER_SYNC_END);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 20  
+
+1120   1      
+1121   1      #if(_FREESYNC_SUPPORT == _ON)
+1122   1          if(GET_FREESYNC_ENABLED() == _TRUE)
+1123   1          {
+1124   2              ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(_DP_FREESYNC_DV_SYNC_HEIGHT));
+1125   2          }
+1126   1          else
+1127   1      #endif
+1128   1          {
+1129   2              ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(_PANEL_DV_SYNC_HEIGHT));
+1130   2          }
+1131   1      
+1132   1          // Set Main V background st/ ed (Panel size)
+1133   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_0E_DISPLAY_VER_BG_STA_H);
+1134   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_VBSTART()) & (_DIS_TIMING_GEN
+             -_V_ACTIVE_BIT >> 8)));
+1135   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_VBSTART()));
+1136   1      
+1137   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_14_DISPLAY_VER_BG_END_H);
+1138   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_VBSTART() + GET_MDOMAIN_OUTPU
+             -T_VBHEIGHT()) & (_DIS_TIMING_GEN_V_ACTIVE_BIT >> 8)));
+1139   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_VBSTART() + GET_MDOMAIN_OUTPUT
+             -_VBHEIGHT()));
+1140   1      
+1141   1          // Set Main1 V Active st/ ed
+1142   1          ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_10_DISPLAY_VER_ACT_STA_H);
+1143   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_VSTART()) & (_DIS_TIMING_GEN_
+             -V_ACTIVE_BIT >> 8)));
+1144   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_VSTART()));
+1145   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, (HIBYTE(GET_MDOMAIN_OUTPUT_VSTART() + GET_MDOMAIN_OUTPUT
+             -_VHEIGHT()) & (_DIS_TIMING_GEN_V_ACTIVE_BIT >> 8)));
+1146   1          ScalerSetByte(P0_2B_DISPLAY_FORMAT_DATA_PORT, LOBYTE(GET_MDOMAIN_OUTPUT_VSTART() + GET_MDOMAIN_OUTPUT_
+             -VHEIGHT()));
+1147   1      
+1148   1      #if(_D_DOMAIN_PATH != _D_DOMAIN_1_PATH)
+                  // [4]: Main source type: !4P
+                  // [3]: Dtime Main mode: select even/ odd
+                  // [2]: Dtime Sub mode: select disable
+                  // [1]: Main active num: one
+                  // [0]: Sub active num: one
+                  ScalerSetBit(P0_2E_VIDEO_DISPLAY_CONTROL_REG1, ~(0x1F), (_BIT4 | _BIT3));
+              #endif
+1156   1      
+1157   1          // Adjust OSD Position, apply D before adjust OSD position
+1158   1          // Frame sync line buffer need to fine tune Dclk according I-active-region & D-active-region
+1159   1          if((usVBackStartOld != GET_MDOMAIN_OUTPUT_VBSTART()) ||
+1160   1             (usHStartOld != GET_MDOMAIN_OUTPUT_HSTART()) ||
+1161   1             ((usVHeightOld != GET_MDOMAIN_OUTPUT_VHEIGHT()) && (GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER)
+             -))
+1162   1          {
+1163   2              // Adjust OSD Position
+1164   2              if((usVBackStartOld != GET_MDOMAIN_OUTPUT_VBSTART()) || (usHStartOld != GET_MDOMAIN_OUTPUT_HSTART(
+             -)))
+1165   2              {
+1166   3                  ScalerMDomainSetDBOsdFlow();
+1167   3              }
+1168   2              else
+1169   2              {
+1170   3                  // DDB apply only for frame sync line buffer (for Dt)
+1171   3                  if(GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER)
+1172   3                  {
+1173   4                      ScalerGlobalDDomainDBApply(_DB_APPLY_POLLING);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 21  
+
+1174   4                  }
+1175   3              }
+1176   2      
+1177   2              ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+1178   2              GET_DVTOTAL_LASTLINE(usDVtotal);
+1179   2              // show msg if current dvtotal +- dvst diff id out of panel spec
+1180   2              if(((usDVtotal + abs(usVStartOld - GET_MDOMAIN_OUTPUT_VSTART())) > (_PANEL_DV_TOTAL_MAX - _PANEL_D
+             -V_TOTAL_FINE_TUNE_MARGIN)) ||
+1181   2                 ((usDVtotal - abs(usVStartOld - GET_MDOMAIN_OUTPUT_VSTART())) < (_PANEL_DV_TOTAL_MIN + _PANEL_D
+             -V_TOTAL_FINE_TUNE_MARGIN)))
+1182   2              {
+1183   3                  DebugMessageFS("WARNING: Transient Dvtotal is out of spec!!!", 0);
+1184   3              }
+1185   2          }
+1186   1      }
+1187          
+1188          //--------------------------------------------------
+1189          // Description  : Get Display Background Vstart
+1190          // Input Value  : None
+1191          // Output Value : Display Background Vstart
+1192          //--------------------------------------------------
+1193          WORD ScalerMDomainGetDisplayBackgroundVstart(void)
+1194          {
+1195   1          ScalerGetDataPortByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_0E_DISPLAY_VER_BG_STA_H, 2, &pData[1],
+             - _AUTOINC);
+1196   1          return ((((WORD)pData[1] & (_DIS_TIMING_GEN_V_ACTIVE_BIT >> 8)) << 8) | pData[2]);
+1197   1      }
+1198          
+1199          //--------------------------------------------------
+1200          // Description  : Get Display Vheight
+1201          // Input Value  : None
+1202          // Output Value : Display Vheight
+1203          //--------------------------------------------------
+1204          WORD ScalerMDomainGetDisplayVheight(void)
+1205          {
+1206   1          ScalerGetDataPortByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_10_DISPLAY_VER_ACT_STA_H, 4, &pData[1]
+             -, _AUTOINC);
+1207   1          return (((((WORD)pData[3] & (_DIS_TIMING_GEN_V_ACTIVE_BIT >> 8)) << 8) | pData[4]) - ((((WORD)pData[1]
+             - & (_DIS_TIMING_GEN_V_ACTIVE_BIT >> 8)) << 8) | pData[2]));
+1208   1      }
+1209          
+1210          //--------------------------------------------------
+1211          // Description  : Get Current Frame Sync mode setting (P0_28[3])
+1212          // Input Value  : None
+1213          // Output Value : _FRAME_SYNC_MODE or _FREE_RUN_MODE
+1214          //--------------------------------------------------
+1215          EnumFrameSyncModeType ScalerMDomainGetFrameSyncMode(void)
+1216          {
+1217   1          if(ScalerGetBit(P0_28_VIDEO_DISPLAY_CONTROL_REG, _BIT3) == _BIT3)
+1218   1          {
+1219   2      #if(_FRC_SUPPORT == _ON)
+1220   2      #if(_MN_FRAME_TRACKING_SUPPORT == _ON)
+1221   2              if(ScalerMemoryGetFrameTrackingEnable() == _ENABLE)
+1222   2              {
+1223   3                  return _MN_FRAME_SYNC_MODE;
+1224   3              }
+1225   2              else
+1226   2      #endif
+1227   2      #endif
+1228   2              {
+1229   3                  return _FRAME_SYNC_MODE;
+1230   3              }
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 22  
+
+1231   2          }
+1232   1          else
+1233   1          {
+1234   2              return _FREE_RUN_MODE;
+1235   2          }
+1236   1      }
+1237          
+1238          #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+1239          //--------------------------------------------------
+1240          // Description  : Update Line Buffer Mode DVtotal
+1241          // Input Value  : NA
+1242          // Output Value : NA
+1243          //--------------------------------------------------
+1244          void ScalerMDomainUpdateLineBufferModeDVtotal(void)
+1245          {
+1246   1          if(GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER)
+1247   1          {
+1248   2              WORD usDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL();
+1249   2      
+1250   2              // Measure DVtotal in frame sync mode
+1251   2              ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+1252   2              ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+1253   2      
+1254   2              ScalerTimerClrEventStatus(_EVENT_DVS);
+1255   2              GET_DVTOTAL_LASTLINE_RAW(usDVtotal);
+1256   2      
+1257   2              if(ScalerTimerGetEventStatus(_EVENT_DVS) == _EVENT_DVS)
+1258   2              {
+1259   3                  GET_DVTOTAL_LASTLINE_RAW(usDVtotal);
+1260   3              }
+1261   2      
+1262   2              SET_MDOMAIN_OUTPUT_VTOTAL(usDVtotal);
+1263   2          }
+1264   1      }
+1265          #endif
+1266          
+1267          #if((_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON) || (_FREESYNC_SUPPORT == _ON))
+1268          #if(_FRC_SUPPORT == _ON)
+1269          //--------------------------------------------------
+1270          // Description  : Check DCLK & DVtotal margin when frame sync line buffer
+1271          // Input Value  : NA
+1272          // Output Value : Pass or fail
+1273          //--------------------------------------------------
+1274          bit ScalerMDomainFSLineBufferDclkDvtotalCheck(void)
+1275          {
+1276   1          DWORD ulPanelClockMaxSpread = MAXOF(_PANEL_PIXEL_CLOCK_MAX_SPREAD, _PANEL_PIXEL_CLOCK_KHZ);
+1277   1          DWORD ulPanelClockMinSpread = MINOF(_PANEL_PIXEL_CLOCK_MIN_SPREAD, _PANEL_PIXEL_CLOCK_KHZ);
+1278   1      
+1279   1      #if(_FREESYNC_SUPPORT == _ON)
+1280   1          if(GET_FREESYNC_ENABLED() == _TRUE)
+1281   1          {
+1282   2              if(GET_FREESYNC_IVF_INFO() == _TRUE)
+1283   2              {
+1284   3                  // Frame sync Dvtotal
+1285   3                  PDATA_WORD(0) = GET_MDOMAIN_INPUT_VTOTAL() * (DWORD)g_stMDomainOutputData.usVHeight / g_stMDom
+             -ainInputData.usVHeight;
+1286   3      
+1287   3                  if(PDATA_WORD(0) < (_PANEL_DV_TOTAL_MIN + _PANEL_DV_TOTAL_FINE_TUNE_MARGIN))
+1288   3                  {
+1289   4                      return _FALSE;
+1290   4                  }
+1291   3              }
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 23  
+
+1292   2      
+1293   2              if(GET_FREESYNC_SPD_INFO_FRAME_RECEIVED() == _TRUE)
+1294   2              {
+1295   3                  // IVTotal_max
+1296   3                  PDATA_WORD(1) = (DWORD)g_stMDomainInputData.usHFreq * 1000 / g_usFREESYNCVFreq_min;
+1297   3                  // Frame sync Dvtotal
+1298   3                  PDATA_WORD(1) = PDATA_WORD(1) * (DWORD)g_stMDomainOutputData.usVHeight / g_stMDomainInputData.
+             -usVHeight;
+1299   3      
+1300   3                  if(PDATA_WORD(1) > (_PANEL_DV_TOTAL_MAX - _PANEL_DV_TOTAL_FINE_TUNE_MARGIN))
+1301   3                  {
+1302   4                      return _FALSE;
+1303   4                  }
+1304   3              }
+1305   2          }
+1306   1          else
+1307   1      #endif
+1308   1          {
+1309   2              // Frame sync Dvtotal
+1310   2              PDATA_WORD(0) = (DWORD)g_stMDomainInputData.usVTotal * g_stMDomainOutputData.usVHeight / g_stMDoma
+             -inInputData.usVHeight;
+1311   2      
+1312   2              if((PDATA_WORD(0) > (_PANEL_DV_TOTAL_MAX - _PANEL_DV_TOTAL_FINE_TUNE_MARGIN)) || (PDATA_WORD(0) < 
+             -(_PANEL_DV_TOTAL_MIN + _PANEL_DV_TOTAL_FINE_TUNE_MARGIN)))
+1313   2              {
+1314   3                  return _FALSE;
+1315   3              }
+1316   2          }
+1317   1      
+1318   1          // Dclk_min > (Panel_max_clk - margin - SSCG/2)
+1319   1          if(GET_FRAME_SYNC_DCLK_FROM_DHTOTAL(_PANEL_DH_TOTAL_MIN) > ulPanelClockMaxSpread)
+1320   1          {
+1321   2              return _FALSE;
+1322   2          }
+1323   1      
+1324   1          // Dclk_max < (Panel_min_clk + margin + SSCG/2)
+1325   1          if(GET_FRAME_SYNC_DCLK_FROM_DHTOTAL(_PANEL_DH_TOTAL_MAX) < ulPanelClockMinSpread)
+1326   1          {
+1327   2              return _FALSE;
+1328   2          }
+1329   1      #if(_PANEL_TYPE == _AUO_M250HTN01_0_VBY_240HZ)||(_PANEL_TYPE == _AUO_M270HTN02_0_VBY_240HZ)
+                      if(GET_INPUT_TIMING_VFREQ()<1450)
+                              return _FALSE;
+              #elif(_PANEL_TYPE == _CSOT_SG3151B05_6_VBY1_240HZ)
+                      if(GET_INPUT_TIMING_VFREQ()<760)
+                              return _FALSE;
+              #elif(_PANEL_TYPE == _AUO_M270DAN06_6_QHD165HZ) 
+                      if(GET_INPUT_TIMING_VFREQ()<690)
+                              return _FALSE;
+              #elif(_PANEL_TYPE == _AUO_M315DVR01_0_EDP_165HZ)||(_PANEL_TYPE == _AUO_M315DVR01_9_EDP_165HZ)
+                                      if(GET_INPUT_TIMING_VFREQ()<690)
+                                              return _FALSE;
+              #elif(_PANEL_TYPE == _AUO_M270KCJ_K7B_VBY_QHD)  
+                                      if(GET_INPUT_TIMING_VFREQ()<660)
+                                      return _FALSE;
+              #elif(_PANEL_TYPE == _LG_LM270WR2_EDP_UHD_60HZ) 
+                                      if((GET_INPUT_TIMING_HWIDTH() <2000)||(GET_INPUT_TIMING_VFREQ()<480))
+                                              return _FALSE;
+              #elif 0//(_PANEL_TYPE == _AUO_M250HAN01_6_EDP_FHD165HZ) 
+                              if(GET_INPUT_TIMING_VFREQ()<740)
+                                      return _FALSE;
+              #elif(Project_ID == ID_CHANGJIA_GS24S3F_HK2556E01_1P2H_M236HVR010_FHD144HZ_20210908)
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 24  
+
+                              if((GET_INPUT_TIMING_HWIDTH() ==1920)&&(GET_INPUT_TIMING_VHEIGHT() ==540))
+                                      return _FALSE;
+              #endif
+1354   1      
+1355   1          return _TRUE;
+1356   1      }
+1357          #endif // End of #if(_FRC_SUPPORT == _ON)
+1358          #endif // End of #if(_FRAME_SYNC_LINE_BUFFER_SUPPORT == _ON)
+1359          
+1360          //--------------------------------------------------
+1361          // Description  : Check Display Format
+1362          // Input Value  : NA
+1363          // Output Value : NA
+1364          //--------------------------------------------------
+1365          void ScalerMDomainCheckDisplayFormat(void)
+1366          {
+1367   1          // Check display format resolution to be even
+1368   1          SET_MDOMAIN_OUTPUT_VSTART((GET_MDOMAIN_OUTPUT_VSTART() + 1) & 0xFFFE);
+1369   1          SET_MDOMAIN_OUTPUT_VBSTART((GET_MDOMAIN_OUTPUT_VBSTART() + 1) & 0xFFFE);
+1370   1          SET_MDOMAIN_OUTPUT_VHEIGHT((GET_MDOMAIN_OUTPUT_VHEIGHT() + 1) & 0xFFFE);
+1371   1          SET_MDOMAIN_OUTPUT_VBHEIGHT((GET_MDOMAIN_OUTPUT_VBHEIGHT() + 1) & 0xFFFE);
+1372   1      
+1373   1      #if(_PANEL_STYLE == _PANEL_LVDS)
+1374   1          // Check display format resolution according to LVDS port count
+1375   1          SET_MDOMAIN_OUTPUT_HSTART(GET_MDOMAIN_OUTPUT_HSTART() - (GET_MDOMAIN_OUTPUT_HSTART() % ((BYTE)1 << _LV
+             -DS_OUTPUT_PORT)));
+1376   1          SET_MDOMAIN_OUTPUT_HWIDTH(GET_MDOMAIN_OUTPUT_HWIDTH() - (GET_MDOMAIN_OUTPUT_HWIDTH() % ((BYTE)1 << _LV
+             -DS_OUTPUT_PORT)));
+1377   1          SET_MDOMAIN_OUTPUT_HBSTART(GET_MDOMAIN_OUTPUT_HBSTART() - (GET_MDOMAIN_OUTPUT_HBSTART() % ((BYTE)1 << 
+             -_LVDS_OUTPUT_PORT)));
+1378   1          SET_MDOMAIN_OUTPUT_HBWIDTH(GET_MDOMAIN_OUTPUT_HBWIDTH() - (GET_MDOMAIN_OUTPUT_HBWIDTH() % ((BYTE)1 << 
+             -_LVDS_OUTPUT_PORT)));
+1379   1      #else
+                  SET_MDOMAIN_OUTPUT_HSTART((GET_MDOMAIN_OUTPUT_HSTART() + 1) & 0xFFFE);
+                  SET_MDOMAIN_OUTPUT_HBSTART((GET_MDOMAIN_OUTPUT_HBSTART() + 1) & 0xFFFE);
+                  SET_MDOMAIN_OUTPUT_HWIDTH((GET_MDOMAIN_OUTPUT_HWIDTH() + 1) & 0xFFFE);
+                  SET_MDOMAIN_OUTPUT_HBWIDTH((GET_MDOMAIN_OUTPUT_HBWIDTH() + 1) & 0xFFFE);
+              #endif
+1385   1      }
+1386          
+1387          //--------------------------------------------------
+1388          // Description  : Decide which scaling function should be performed
+1389          // Input Value  : Input/Output H/V Active Region
+1390          // Output Value : None
+1391          //--------------------------------------------------
+1392          void ScalerMDomainSetScaling(const StructSDRAMDataInfo *pstFIFOScaling)
+1393          {
+1394   1          ScalerScalingSetScalingDown(pstFIFOScaling);
+1395   1      
+1396   1          ScalerScalingSetScalingUp(pstFIFOScaling);
+1397   1      }
+1398          
+1399          //--------------------------------------------------
+1400          // Description  : Select memory confirm
+1401          // Input Value  : NA
+1402          // Output Value : free run/ frame sync line buffer/ frame sync frame buffer / MN frame sync/ free run no i
+             -nput
+1403          //--------------------------------------------------
+1404          BYTE ScalerMDomainMemorySelectConfirm(void)
+1405          {
+1406   1          switch(GET_MEMORY_CONFIG())
+1407   1          {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 25  
+
+1408   2              case _LINE_BUFFER_MODE:
+1409   2      
+1410   2                  return _FRAME_SYNC_LINE_BUFFER;
+1411   2      
+1412   2      #if(_FRC_SUPPORT == _ON)
+1413   2              case _MEMORY_WORK_MODE:
+1414   2      
+1415   2                  switch(GET_MEMORY_DVF_SELECT())
+1416   2                  {
+1417   3                      case _1_IVF:
+1418   3      
+1419   3                          return _FRAME_SYNC_MEMORY;
+1420   3      
+1421   3                      case _3_IVF:
+1422   3                      case _2_5_IVF:
+1423   3                      case _2_IVF:
+1424   3      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
+1425   3      #if((_DISPLAY_ROTATION_TYPE == _DISPLAY_ROTATION_GEN_II) && (_FRC_HW_AUTO_3BLOCK_TOGGLE_SUPPORT == _ON))
+1426   3                      case _5_4_IVF:
+1427   3                      case _6_5_IVF:
+1428   3      #endif
+1429   3      #endif
+1430   3                          return _MN_FRAME_SYNC_MEMORY;
+1431   3      
+1432   3                      default:
+1433   3                      case _PANEL_TYP_FRAME_RATE_FREE_RUN:
+1434   3      
+1435   3                          return _FREE_RUN_MEMORY;
+1436   3                  }
+1437   2      #endif
+1438   2      
+1439   2              default:
+1440   2      
+1441   2                  return _FRAME_SYNC_LINE_BUFFER;
+1442   2          }
+1443   1      }
+1444          
+1445          //--------------------------------------------------
+1446          // Description  : Set Memory Data Bit
+1447          // Input Value  : ucColorDepth
+1448          // Output Value : None
+1449          //--------------------------------------------------
+1450          void ScalerMDomainSetMemoryDataBit(BYTE ucColorDepth)
+1451          {
+1452   1          if((ucColorDepth * 3) >= _M_DOMAIN_DATA_BIT_MAX)
+1453   1          {
+1454   2              SET_MEMORY_DATA_BIT(_M_DOMAIN_DATA_BIT_MAX);
+1455   2          }
+1456   1          else
+1457   1          {
+1458   2              SET_MEMORY_DATA_BIT(_COLOR_DEPTH_8_BITS * 3);
+1459   2          }
+1460   1      }
+1461          
+1462          //--------------------------------------------------
+1463          // Description  : Get Memory Target Data Bit
+1464          // Input Value  : None
+1465          // Output Value : ColorDepth
+1466          //--------------------------------------------------
+1467          BYTE ScalerMDomainGetTargetMemoryDataBit(void)
+1468          {
+1469   1          if(GET_MEMORY_CONFIG() == _MEMORY_WORK_MODE)
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 26  
+
+1470   1          {
+1471   2      #if((_FRC_SUPPORT == _ON) && (_FRC_FIXED_30_BIT_DATA_FORMAT == _ON))
+                      return _COLOR_DEPTH_10_BITS;
+              #else
+1474   2              return GET_COLOR_DEPTH();
+1475   2      #endif
+1476   2          }
+1477   1      
+1478   1          switch(g_stDisplayCustomizedData.stCustomizedMdomain.enumMemoryBitSelect)
+1479   1          {
+1480   2              case _MEMORY_FORCE_8_BIT:
+1481   2                  return _COLOR_DEPTH_8_BITS;
+1482   2      
+1483   2              case _MEMORY_FORCE_10_BIT:
+1484   2                  return _COLOR_DEPTH_10_BITS;
+1485   2      
+1486   2              case _MEMORY_REF_SOURCE_BIT:
+1487   2              default:
+1488   2                  return GET_COLOR_DEPTH();
+1489   2          }
+1490   1      }
+1491          
+1492          
+1493          //--------------------------------------------------
+1494          // Description  : Calculate I/D domain V adjust limitation
+1495          // Input Value  : input source type
+1496          // Output Value : vertical adjust limit for IV delay
+1497          //--------------------------------------------------
+1498          WORD ScalerMDomainGetVerticalAdjustLimit(EnumSourceTypeDef enumSourceTypeDef)
+1499          {
+1500   1          WORD usAdjustLimit = 0x0001;
+1501   1      
+1502   1          enumSourceTypeDef = enumSourceTypeDef;
+1503   1      
+1504   1          // Calculate I-domain limitation; Safe New V-Delay value must larger than DEN falling edge position pl
+             -us 3 lines
+1505   1      #if(_VGA_SUPPORT == _ON)
+1506   1          if(enumSourceTypeDef == _SOURCE_VGA)
+1507   1          {
+1508   2              if(GET_INPUT_TIMING_VTOTAL() > (GET_INPUT_TIMING_VHEIGHT() + ScalerVgaTopGetCaptureVStartPosition(
+             -) + 3))
+1509   2              {
+1510   3                  usAdjustLimit = (GET_INPUT_TIMING_VTOTAL() - (GET_INPUT_TIMING_VHEIGHT() + ScalerVgaTopGetCapt
+             -ureVStartPosition() + 3));
+1511   3              }
+1512   2          }
+1513   1          else
+1514   1      #endif
+1515   1          {
+1516   2              if(GET_INPUT_TIMING_VTOTAL() > (GET_INPUT_TIMING_VHEIGHT() + ScalerVgipGetCaptureVStartPosition() 
+             -+ 3))
+1517   2              {
+1518   3                  usAdjustLimit = (GET_INPUT_TIMING_VTOTAL() - (GET_INPUT_TIMING_VHEIGHT() + ScalerVgipGetCaptur
+             -eVStartPosition() + 3));
+1519   3              }
+1520   2          }
+1521   1      
+1522   1      #if((_PANEL_STYLE == _PANEL_DPTX) || (_PANEL_STYLE == _PANEL_VBO))
+              
+                  // Check D-domain limitation only for non-free-run case
+                  if(GET_MEMORY_SELECT() != _FREE_RUN_MEMORY)
+                  {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 27  
+
+                      // Calculate D-domain limitation
+                      WORD usDdomainLimit = (WORD)((DWORD)(GET_MDOMAIN_OUTPUT_VTOTAL() - GET_MDOMAIN_OUTPUT_VHEIGHT() - 
+             -GET_MDOMAIN_OUTPUT_VSTART()) * GET_MDOMAIN_INPUT_VTOTAL() / GET_MDOMAIN_OUTPUT_VTOTAL() - 1);
+              
+                      if(usDdomainLimit < usAdjustLimit)
+                      {
+                          usAdjustLimit = usDdomainLimit;
+                      }
+              
+                      // Update adjust limit for MN tracking
+                      if(GET_MEMORY_SELECT() == _MN_FRAME_SYNC_MEMORY)
+                      {
+                          switch(GET_MEMORY_DVF_SELECT())
+                          {
+                              case _3_IVF:
+                                  usAdjustLimit /= 3;
+                                  break;
+              
+                              case _2_5_IVF:
+                                  usAdjustLimit = (usAdjustLimit * 2 / 5);
+              
+                                  // For 2 successive IVS
+                                  usAdjustLimit /= 2;
+                                  break;
+              
+                              case _2_IVF:
+                                  usAdjustLimit /= 2;
+                                  break;
+              
+                              default:
+                                  break;
+                          }
+                      }
+              
+                      // Keep at least one line for adjusting V-Position; otherwise take 2 lines as margin
+                      if(usAdjustLimit < 0x0003)
+                      {
+                          usAdjustLimit = 0x0001;
+                      }
+                      else
+                      {
+                          usAdjustLimit -= 0x0002;
+                      }
+                  }
+              #endif
+1571   1      
+1572   1          // Avoid Lost Frame-Sync DVS
+1573   1          if(GET_MEMORY_DVF_SELECT() == _1_IVF)
+1574   1          {
+1575   2              WORD usIvs2dvsDelay = ((((WORD)ScalerGetByte(P0_3E_IVS2DVS_DLY_LINE_H) & 0x01F) << 8) | ScalerGetB
+             -yte(P0_40_IVS2DVS_DLY_LINE_L));
+1576   2              WORD usIvs2dvsDelayLimit = 0;
+1577   2              WORD usIvDelay = 0;
+1578   2      
+1579   2      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                      if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
+                      {
+                          usIvs2dvsDelay = usIvs2dvsDelay << 1;
+                      }
+              #endif
+1585   2      
+1586   2      #if(_VGA_SUPPORT == _ON)
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 28  
+
+1587   2              if(enumSourceTypeDef == _SOURCE_VGA)
+1588   2              {
+1589   3                  usIvDelay = ScalerVgaTopGetCaptureVDelay();
+1590   3              }
+1591   2              else
+1592   2      #endif
+1593   2              {
+1594   3                  usIvDelay = ScalerVgipGetCaptureVDelay();
+1595   3              }
+1596   2      
+1597   2              // Check IVS_Delay change from larger to smaller
+1598   2              if((GET_INPUT_TIMING_VTOTAL() - usIvDelay) < (usIvs2dvsDelay + 4)) // 4 line margin
+1599   2              {
+1600   3                  usIvs2dvsDelayLimit = ((usIvs2dvsDelay + 4) - (GET_INPUT_TIMING_VTOTAL() - usIvDelay));
+1601   3      
+1602   3                  if(usIvDelay > usIvs2dvsDelayLimit)
+1603   3                  {
+1604   4                      usIvs2dvsDelayLimit = usIvDelay - usIvs2dvsDelayLimit;
+1605   4      
+1606   4                      if(usIvs2dvsDelayLimit < usAdjustLimit)
+1607   4                      {
+1608   5                          usAdjustLimit = usIvs2dvsDelayLimit;
+1609   5                      }
+1610   4                  }
+1611   3              }
+1612   2          }
+1613   1      
+1614   1          DebugMessageScaler("V adj. limit", usAdjustLimit);
+1615   1      
+1616   1          return usAdjustLimit;
+1617   1      }
+1618          
+1619          //--------------------------------------------------
+1620          // Description  : Measure Display Active Region in Display Setting
+1621          // Input Value  : void
+1622          // Output Value : Display Avtive Region
+1623          //--------------------------------------------------
+1624          DWORD ScalerMDomainGetDisplayActiveRegion(void)
+1625          {
+1626   1          bit bChangeDVStartStatus = _FALSE;
+1627   1          WORD usIvs2dvsDelay = 0;
+1628   1          WORD usDVTotal = 0;
+1629   1          DWORD ulDisplayActiveRegion = 0;
+1630   1      
+1631   1      #if(_FREESYNC_SUPPORT == _ON)
+1632   1          if(GET_FREESYNC_ENABLED() == _ENABLE)
+1633   1          {
+1634   2              bChangeDVStartStatus = _TRUE;
+1635   2          }
+1636   1          else
+1637   1      #endif
+1638   1          {
+1639   2              // Measure DVtotal in frame sync mode
+1640   2              ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+1641   2              ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+1642   2      
+1643   2              ScalerTimerWaitForEvent(_EVENT_DVS);
+1644   2              ScalerTimerWaitForEvent(_EVENT_DVS);
+1645   2      
+1646   2              // Get DVTotal Result
+1647   2              GET_DVTOTAL_LASTLINE(usDVTotal);
+1648   2      
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 29  
+
+1649   2              // Get Ivs2dvsdelay
+1650   2              usIvs2dvsDelay = ScalerMemoryGetIVS2DVSDelayPixel() / GET_MDOMAIN_INPUT_HTOTAL() * GET_MDOMAIN_OUT
+             -PUT_VHEIGHT() / GET_MDOMAIN_INPUT_VHEIGHT();
+1651   2      
+1652   2              DebugMessageFS("usIvs2dvsDelay", usIvs2dvsDelay);
+1653   2              DebugMessageFS("DVT", usDVTotal);
+1654   2              DebugMessageFS("DVS", GET_MDOMAIN_OUTPUT_VSTART());
+1655   2      
+1656   2              // Check DVT < Ivs2dvsdelay + DVStart + DVHeigth
+1657   2              bChangeDVStartStatus = ((usDVTotal < (usIvs2dvsDelay + GET_MDOMAIN_OUTPUT_VSTART() + GET_MDOMAIN_O
+             -UTPUT_VHEIGHT() + 2)) ? (_TRUE) : (_FALSE)); // 2 line margin
+1658   2          }
+1659   1      
+1660   1          if(bChangeDVStartStatus == _TRUE)
+1661   1          {
+1662   2              // Set Main1 VHeight / 2
+1663   2              SET_D_DOMAIN_V_ACT_END(GET_MDOMAIN_OUTPUT_VSTART() + GET_MDOMAIN_OUTPUT_VHEIGHT() / 2);
+1664   2      
+1665   2              // Apply DB
+1666   2              ScalerGlobalDDomainDBApply(_DB_APPLY_POLLING);
+1667   2          }
+1668   1      
+1669   1          // Set Measure Display Active Region
+1670   1          ScalerMeasureSetDisplayRegionCount(_ACTIVE_REGION_TYPE);
+1671   1      
+1672   1          // Read Active Region Result
+1673   1          ulDisplayActiveRegion = ScalerMeasureGetDisplayRegionCountResult(_WAIT);
+1674   1      
+1675   1          if(bChangeDVStartStatus == _TRUE)
+1676   1          {
+1677   2              // Get H HBlanking
+1678   2              PDATA_WORD(0) = GET_MDOMAIN_OUTPUT_HTOTAL() - GET_MDOMAIN_OUTPUT_HWIDTH();
+1679   2      
+1680   2              // Calculate full-frame count = half-frame count * (Htotal * Vheight/2 - Hblanking) / (Htotal * Vh
+             -eight - Hblanking)
+1681   2              ulDisplayActiveRegion = GET_DWORD_MUL_DIV(ulDisplayActiveRegion, ((DWORD)GET_MDOMAIN_OUTPUT_VHEIGH
+             -T() * GET_MDOMAIN_OUTPUT_HTOTAL() - PDATA_WORD(0)), ((DWORD)GET_MDOMAIN_OUTPUT_VHEIGHT() / 2 * GET_MDOMAIN_OUTPUT_HTOTAL
+             -() - PDATA_WORD(0)));
+1682   2      
+1683   2              // Set Main1 V Active st/ ed
+1684   2              SET_D_DOMAIN_V_ACT_END(GET_MDOMAIN_OUTPUT_VSTART() + GET_MDOMAIN_OUTPUT_VHEIGHT());
+1685   2      
+1686   2              // Apply DB
+1687   2              ScalerGlobalDDomainDBApply(_DB_APPLY_POLLING);
+1688   2          }
+1689   1      
+1690   1          DebugMessageFS("bChangeDVStartStatus", bChangeDVStartStatus);
+1691   1      
+1692   1          return ulDisplayActiveRegion;
+1693   1      }
+1694          
+1695          //--------------------------------------------------
+1696          // Description  : Check Display Timing Gen
+1697          // Input Value  : None
+1698          // Output Value : TRUE: Pass
+1699          //--------------------------------------------------
+1700          bit ScalerMDomainDisplayTimingGenCheck(void)
+1701          {
+1702   1      #if(_FREESYNC_SUPPORT == _ON)
+1703   1          if((GET_FREESYNC_ENABLED() == _TRUE) &&
+1704   1             ((GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER) || (GET_MEMORY_SELECT() == _FRAME_SYNC_MEMORY)))
+1705   1          {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 30  
+
+1706   2              WORD usDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL();
+1707   2      
+1708   2              // Measure DVtotal in frame sync mode
+1709   2              ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+1710   2              ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+1711   2      
+1712   2              GET_SAFE_DVTOTAL_LASTLINE(usDVtotal);
+1713   2              SET_MDOMAIN_OUTPUT_VTOTAL(usDVtotal);
+1714   2      
+1715   2              // Check DV_BG_End > DVtotal
+1716   2              if((GET_MDOMAIN_OUTPUT_VBSTART() + GET_MDOMAIN_OUTPUT_VBHEIGHT()) > GET_MDOMAIN_OUTPUT_VTOTAL())
+1717   2              {
+1718   3                  DebugMessageScaler("DVBG end > DVtotal", usDVtotal);
+1719   3                  return _FALSE;
+1720   3              }
+1721   2          }
+1722   1      #endif
+1723   1      
+1724   1          return _TRUE;
+1725   1      }
+1726          
+1727          #if(_I_DITHER_SUPPORT == _ON)
+1728          //--------------------------------------------------
+1729          // Description  : Get Color Depth
+1730          // Input Value  : None
+1731          // Output Value : M domain use Color Depth
+1732          //--------------------------------------------------
+1733          BYTE ScalerMDomainGetColorDepth(void)
+1734          {
+1735   1          return (GET_MEMORY_DATA_BIT() / 3);
+1736   1      }
+1737          #endif
+1738          
+1739          #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
+1740          //--------------------------------------------------
+1741          // Description  : Enable/Disable
+1742          // Input Value  :
+1743          // Output Value : None
+1744          //--------------------------------------------------
+1745          void ScalerMDomainAspectOriginMode(bit bOn)
+1746          {
+1747   1          SET_ASPECT_ORIGIN_MODE(bOn);
+1748   1      }
+1749          #endif
+1750          
+1751          #if(_OD_SUPPORT == _ON)
+1752          //--------------------------------------------------
+1753          // Description  : If memory is not enough for OD, disable OD
+1754          // Input Value  : Input timing for cal FRC memory size
+1755          // Output Value : None
+1756          //--------------------------------------------------
+1757          void ScalerMDomainODConfig(void)
+1758          {
+1759   1      
+1760   1      #if(_FRC_SUPPORT == _ON)
+1761   1          DWORD ulAvailMemRow = _MEMORY_ROW; // Available Memory Row
+1762   1      #endif
+1763   1          // line buffer need this info as well
+1764   1          g_stMDomainFRCFIFOData.usFRCSpace = 0;
+1765   1          g_stMDomainFRCFIFOData.usFRCBW = 0;
+1766   1      
+1767   1          SET_OD_USE_BIT(_OFF);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 31  
+
+1768   1              DebugMessageFRC("GET_MEMORY_CONFIG", GET_MEMORY_CONFIG());
+1769   1              
+1770   1          switch(GET_MEMORY_CONFIG())
+1771   1          {
+1772   2              case _LINE_BUFFER_MODE:
+1773   2                  SET_OD_USE_BIT(ScalerODGetCompressionBitNum(_MEMORY_ROW, _MEMORY_TOTAL_BW_OD_ONLY));
+1774   2                  break;
+1775   2      
+1776   2      #if(_FRC_SUPPORT == _ON)
+1777   2              case _MEMORY_WORK_MODE:
+1778   2                  g_stMDomainFRCFIFOData.usFRCSpace = ScalerMDomainGetFRCMemorySpace();
+1779   2                  PDATA_WORD(0) = MINOF(GET_MDOMAIN_INPUT_HWIDTH(), GET_MDOMAIN_OUTPUT_HWIDTH());
+1780   2                  PDATA_WORD(0) = MINOF(PDATA_WORD(0), GET_FIFO_HWIDTH());
+1781   2                  g_stMDomainFRCFIFOData.usFRCBW = ScalerMDomainGetFRCMemoryBW(_FRC_BW_FOR_OD, PDATA_WORD(0));
+1782   2      
+1783   2                  switch(GET_MEMORY_FRAME_BUFFER())
+1784   2                  {
+1785   3                      case _MEMORY_1_5_FRAME_BUFFER:
+1786   3                          ulAvailMemRow = (DWORD)_MEMORY_ROW * 2 / 3;
+1787   3                          break;
+1788   3      
+1789   3                      case _MEMORY_2_FRAME_BUFFER:
+1790   3                          g_stMDomainFRCFIFOData.usFRCSpace *= 2;
+1791   3                          break;
+1792   3      
+1793   3                      case _MEMORY_3_FRAME_BUFFER:
+1794   3                          g_stMDomainFRCFIFOData.usFRCSpace *= 3;
+1795   3                          break;
+1796   3      
+1797   3                      case _MEMORY_1_FRAME_BUFFER:
+1798   3                      default:
+1799   3                          break;
+1800   3                  }
+1801   2      
+1802   2                  if((g_stMDomainFRCFIFOData.usFRCSpace < ulAvailMemRow) && (g_stMDomainFRCFIFOData.usFRCBW < _M
+             -EMORY_TOTAL_BW))
+1803   2                  {
+1804   3                      // Check available OD use bit
+1805   3                      SET_OD_USE_BIT(ScalerODGetCompressionBitNum((ulAvailMemRow - g_stMDomainFRCFIFOData.usFRCS
+             -pace), (_MEMORY_TOTAL_BW - g_stMDomainFRCFIFOData.usFRCBW)));
+1806   3                  }
+1807   2      
+1808   2                  DebugMessageFRC("4. FRC BW", g_stMDomainFRCFIFOData.usFRCBW);
+1809   2                  DebugMessageFRC("4. FRC Size", g_stMDomainFRCFIFOData.usFRCSpace);
+1810   2                  break;
+1811   2      #endif // End of #if(_FRC_SUPPORT == _ON)
+1812   2      
+1813   2              default:
+1814   2                  break;
+1815   2          }
+1816   1      
+1817   1          DebugMessageFRC("4. OD bit", GET_OD_USE_BIT());
+1818   1      }
+1819          
+1820          //--------------------------------------------------
+1821          // Description  : Calculate memory use space
+1822          // Input Value  : OD use bit(10x) ucODbit = real ODbit x 10, 6.5bit OD --> ucODbit = 65
+1823          // Output Value : OD memory use space, unit:row
+1824          //--------------------------------------------------
+1825          WORD ScalerMDomainODCalculateMemoryUseSpace(BYTE ucODbit)
+1826          {
+1827   1          //***************************************************//
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 32  
+
+1828   1          // Column = Column_per_bank * memory_bank
+1829   1          // Row = Total memory unit / column
+1830   1          //***************************************************//
+1831   1      
+1832   1          // OD memory size, unit:row
+1833   1          return ((((DWORD)CEILING(_PANEL_DH_WIDTH, _OD_PIXEL_PER_COMP)) * _PANEL_DV_HEIGHT * ucODbit / _MEMORY_
+             -BIT_NUM) /
+1834   1                  (_MEMORY_COL_PER_BANK * _MEMORY_BANK) / 10 + 1);
+1835   1      }
+1836          
+1837          //--------------------------------------------------
+1838          // Description  : Calculate memory use BW
+1839          // Input Value  : OD use bit(10x)
+1840          // Output Value : OD memory use BW, unit:100k
+1841          //--------------------------------------------------
+1842          WORD ScalerMDomainODCalculateMemoryUseBW(BYTE ucODbit)
+1843          {
+1844   1          PDATA_DWORD(0) = (((((DWORD)CEILING(_PANEL_DH_WIDTH, _OD_PIXEL_PER_COMP)) * g_stMDomainOutputData.usVT
+             -otal * ucODbit / _MEMORY_BUS_WIDTH / 10) * g_usDVFreq / 100) +
+1845   1                            ((((DWORD)CEILING(_PANEL_DH_WIDTH, _OD_PIXEL_PER_COMP)) * g_stMDomainOutputData.usVT
+             -otal * ucODbit / _MEMORY_BUS_WIDTH / 100) * g_usDVFreq * ((_DCLK_SPREAD_RANGE / _DPLL_SSCG_DIV_MODE) + _DCLK_SPREAD_RANG
+             -E_MARGIN) / 4 / 100 / 10)) * 2;
+1846   1      
+1847   1          PDATA_DWORD(0) = (PDATA_DWORD(0) / 10000) + ((PDATA_DWORD(0) % 10000) ? 1 : 0); // unit:100k
+1848   1      
+1849   1      #if(_FRC_SUPPORT == _ON)
+1850   1          if(GET_DYNAMIC_OD_STATUS() == _ENABLE)
+1851   1          {
+1852   2              PDATA_DWORD(0) /= 2;
+1853   2          }
+1854   1      #endif
+1855   1      
+1856   1          DebugMessageFRC("4.OD use BW", (PDATA_DWORD(0)));
+1857   1      
+1858   1          return (PDATA_DWORD(0) & 0xFFFF);
+1859   1      }
+1860          #endif // End of #if(_OD_SUPPORT == _ON)
+1861          
+1862          #if((_OD_SUPPORT == _ON) && (_DEBUG_MESSAGE_CHECK_MDOMAIN == _ON))
+              //--------------------------------------------------
+              // Description  : Calculate FRC use memory BW
+              // Input Value  : IVF, IVheight and IHwidth
+              // Output Value : FRC use memory BW, unit: 100k
+              //--------------------------------------------------
+              WORD ScalerMDomainGetODMemoryBW(void)
+              {
+                  //-----------------------------------------------------------------------------
+                  // OD read/ write BW  = DVtotal * Fifo_width * Bit_Num / Memory_Bus_bit * DVF * (1 + (SSCG_Range + mar
+             -gin) / 2) * 2
+                  //-----------------------------------------------------------------------------
+              
+                  // OD BW
+                  PDATA_DWORD(2) = GET_DWORD_MUL_DIV(((DWORD)g_stMDomainOutputData.usVTotal * g_stMDomainOutputData.usHW
+             -idth), ((DWORD)GET_OD_USE_BIT() * g_usDVFreq), ((DWORD)_MEMORY_BUS_WIDTH * 10000)) +
+                                   GET_DWORD_MUL_DIV(((DWORD)g_stMDomainOutputData.usVTotal * g_stMDomainOutputData.usHW
+             -idth), ((DWORD)GET_OD_USE_BIT() * g_usDVFreq), ((DWORD)_MEMORY_BUS_WIDTH * 10000)) * ((_DCLK_SPREAD_RANGE / _DPLL_SSCG_D
+             -IV_MODE) + _DCLK_SPREAD_RANGE_MARGIN) / 4 / 100;
+              
+                  // unit:100k
+                  PDATA_DWORD(0) = ((PDATA_DWORD(2) * 2) / 1000) + (((PDATA_DWORD(2) * 2) % 1000) ? 1 : 0);
+              
+                  return (PDATA_DWORD(0) & 0xFFFF);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 33  
+
+              }
+              #endif
+1884          
+1885          #if(((_FRC_SUPPORT == _ON) && (_OD_SUPPORT == _ON)) || (_DISP_LATENCY_ADJUST_SUPPORT == _ON))
+1886          //--------------------------------------------------
+1887          // Description  : Calculate FRC use memory space
+1888          // Input Value  : IVheight and IHwidth
+1889          // Output Value : FRC use memory space, unit: row
+1890          //--------------------------------------------------
+1891          WORD ScalerMDomainGetFRCMemorySpace(void)
+1892          {
+1893   1          WORD usMemoryFRCSpace = 0;
+1894   1          DWORD ulLineStep = 0;
+1895   1          WORD usHwidth = 0;
+1896   1          WORD usVheight = 0;
+1897   1      
+1898   1          //-----------------------------------------
+1899   1          // Column = Column_per_bank * memory_bank
+1900   1          // Row = Total memory unit / column
+1901   1          //-----------------------------------------
+1902   1          usHwidth = ((g_stMDomainInputData.usHWidth < g_stMDomainOutputData.usHWidth) ? g_stMDomainInputData.us
+             -HWidth : g_stMDomainOutputData.usHWidth);
+1903   1          usHwidth = (usHwidth < GET_FIFO_HWIDTH()) ? usHwidth : GET_FIFO_HWIDTH();
+1904   1          usVheight = ((g_stMDomainInputData.usVHeight < g_stMDomainOutputData.usVHeight) ? g_stMDomainInputData
+             -.usVHeight : g_stMDomainOutputData.usVHeight);
+1905   1      
+1906   1          ulLineStep = ScalerMemoryCalculateFrameLineTotalPixel(_MEMORY_ACCESS_TYPE, usHwidth, usVheight);
+1907   1      
+1908   1          if(_MEMORY_ACCESS_TYPE == _LINE_MODE)
+1909   1          {
+1910   2              // 10*row
+1911   2              usMemoryFRCSpace = (ulLineStep * usVheight * 10 / (_MEMORY_COL_PER_BANK * _MEMORY_BANK));
+1912   2          }
+1913   1          else
+1914   1          {
+1915   2              // 10*row
+1916   2              usMemoryFRCSpace = (ulLineStep * 10 / (_MEMORY_COL_PER_BANK * _MEMORY_BANK));
+1917   2          }
+1918   1      
+1919   1          // unit:row
+1920   1          usMemoryFRCSpace = (usMemoryFRCSpace % 10) ? (usMemoryFRCSpace / 10 + 1) : (usMemoryFRCSpace / 10);
+1921   1          return usMemoryFRCSpace;
+1922   1      }
+1923          
+1924          //--------------------------------------------------
+1925          // Description  : Calculate FRC use memory BW
+1926          // Input Value  : IVF, IVheight and IHwidth
+1927          // Output Value : FRC use memory BW, unit: 100k
+1928          //--------------------------------------------------
+1929          WORD ScalerMDomainGetFRCMemoryBW(EnumFRCBWType enumFRCBWType, WORD usHWidth)
+1930          {
+1931   1          //-----------------------------------------------------------------------------
+1932   1          // FRC write BW = IVtotal * Fifo_width * Bit_Num / Memory_Bus_bit * IVF
+1933   1          // FRC read BW  = DVtotal * Fifo_width * Bit_Num / Memory_Bus_bit * DVF * (1 + (SSCG_Range + margin) /
+             - 2)
+1934   1          //-----------------------------------------------------------------------------
+1935   1      
+1936   1      #if(_DP_FREESYNC_SUPPORT == _ON)
+1937   1          if((GET_DP_FREESYNC_ENABLED() == _TRUE) && (GET_FREESYNC_SPD_INFO_FRAME_RECEIVED() == _FALSE))
+1938   1          {
+1939   2              // FRC write BW x Multiple
+1940   2              PDATA_DWORD(1) = GET_DWORD_MUL_DIV(((DWORD)g_stMDomainInputData.usHFreq * usHWidth), GET_MEMORY_DA
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 34  
+
+             -TA_BIT(), _MEMORY_BUS_WIDTH)  * _FRC_WRITE_BW_MULTIPLE;
+1941   2          }
+1942   1          else
+1943   1      #endif
+1944   1          {
+1945   2              // FRC write BW x Multiple
+1946   2              PDATA_DWORD(1) = (((DWORD)g_stMDomainInputData.usVTotal * usHWidth * GET_MEMORY_DATA_BIT() / _MEMO
+             -RY_BUS_WIDTH / 10) * g_stMDomainInputData.usVFreq / 100) * _FRC_WRITE_BW_MULTIPLE;
+1947   2          }
+1948   1      
+1949   1          // Use dhtotal to calculate frc read bw when dvbst != dvst
+1950   1          // Ensure that frc display preread is ahead of OD
+1951   1          if((enumFRCBWType == _FRC_BW_FOR_OD) && (GET_OD_STIRCT_CONDITION() == _TRUE))
+1952   1          {
+1953   2              usHWidth = g_stMDomainOutputData.usHTotal;
+1954   2          }
+1955   1      
+1956   1          // FRC read BW
+1957   1          PDATA_DWORD(2) = ((((DWORD)g_stMDomainOutputData.usVTotal * usHWidth * GET_MEMORY_DATA_BIT() / _MEMORY
+             -_BUS_WIDTH / 10) * g_usDVFreq / 100) +
+1958   1                            (((DWORD)g_stMDomainOutputData.usVTotal * usHWidth * GET_MEMORY_DATA_BIT() / _MEMORY
+             -_BUS_WIDTH / 100) * g_usDVFreq * ((_DCLK_SPREAD_RANGE / _DPLL_SSCG_DIV_MODE) + _DCLK_SPREAD_RANGE_MARGIN) / 4 / 100 / 10
+             -));
+1959   1      
+1960   1          // unit:100k
+1961   1          PDATA_DWORD(0) = ((PDATA_DWORD(1) + PDATA_DWORD(2)) / 1000) + (((PDATA_DWORD(1) + PDATA_DWORD(2)) % 10
+             -00) ? 1 : 0);
+1962   1      
+1963   1          return (PDATA_DWORD(0) & 0xFFFF);
+1964   1      }
+1965          #endif // End of #if(((_FRC_SUPPORT == _ON) && (_OD_SUPPORT == _ON)) || (_DISP_LATENCY_ADJUST_SUPPORT == _
+             -ON))
+1966          
+1967          //--------------------------------------------------
+1968          // Description  : Apply DdomainDB before set OSD
+1969          // Input Value  : ucHOffset,ucVOffset
+1970          // Output Value : None
+1971          //--------------------------------------------------
+1972          void ScalerMDomainSetDBOsdFlow(void)
+1973          {
+1974   1          BYTE ucHOffset = 0;
+1975   1          BYTE ucVOffset = 0;
+1976   1      
+1977   1      #if(_OSD_POSITION_OFFSET_CORRECTION == _ON)
+1978   1          WORD usHVOffset = ScalerOsdPositionOffsetCalculation();
+1979   1          ucHOffset = X_POS(HIBYTE(usHVOffset));
+1980   1          ucVOffset = Y_POS(LOBYTE(usHVOffset));
+1981   1      
+1982   1      #else
+                  ucHOffset = X_POS(GET_OSD_POSITION_GOLOBAL_OFFSET_H());
+                  ucVOffset = Y_POS(GET_OSD_POSITION_GOLOBAL_OFFSET_V());
+              
+                  SET_OSD_POSITION_GOLOBAL_OFFSET_H(ucHOffset);
+                  SET_OSD_POSITION_GOLOBAL_OFFSET_V(ucVOffset);
+              
+                  ucVOffset = ScalerOsdPositionOffsetVerticalAlignByDVBGStart(ucVOffset);
+              #endif
+1991   1          // do calculation before apply DDB (to save time)
+1992   1          ScalerGlobalDDomainDBApply(_DB_APPLY_POLLING);
+1993   1      
+1994   1          ScalerSetByte(P3A_2C_FRAME_CTRL_2C, ucVOffset);
+1995   1          ScalerSetByte(P3A_2F_FRAME_CTRL_2F, ucHOffset);
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 35  
+
+1996   1      }
+1997          
+1998          #if(_FREESYNC_OD_MEASURE == _ON)
+              //--------------------------------------------------
+              // Description  : Set Display Format for FREESYNC OD measure
+              // Input Value  : Current DHtotal(pixel)/ Current Dclk(kHz)/ Target Measure VFreq(0.1Hz)
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerMDomainFREESYNCODSetDisplayFormat(WORD usDHtotal, DWORD ulDclk, WORD usTarFreq)
+              {
+                  ScalerGlobalDoubleBufferEnable(_DISABLE);
+                  ScalerGlobalWatchDog(_DISABLE);
+              
+                  // Calculate FREESYNC DVtotal for OD measure
+                  PDATA_WORD(4) = (DWORD)ulDclk * 1000 / usDHtotal * 10 / usTarFreq;
+              
+                  if(PDATA_WORD(4) < _PANEL_DV_TOTAL_MIN)
+                  {
+                      PDATA_WORD(4) = _PANEL_DV_TOTAL_MIN;
+                  }
+              
+                  // DVtotal for WD setting
+                  PDATA_WORD(3) = PDATA_WORD(4) + 64;
+              
+                  // Set Frame Sync Watch Dog
+                  SET_DIS_TIMING_GEN_WD_VTOTAL(PDATA_WORD(3));
+              
+                  // Set DVtotal for free run
+                  SET_FREE_RUN_DVTOTAL(PDATA_WORD(4));
+              
+                  // Set DHtotal
+                  SET_DIS_TIMING_GEN_H_TOTAL(usDHtotal);
+              
+                  // Set Last line for free run
+                  SET_FREE_RUN_LAST_LINE(usDHtotal);
+              
+                  SET_D_CLK_FREQ(ulDclk);
+              
+                  // Set DClk
+                  ScalerPLLSetDPLLFreq(GET_D_CLK_FREQ());
+              
+                  // Set Free Run Mode
+                  ScalerSetBit(P0_28_VIDEO_DISPLAY_CONTROL_REG, ~_BIT3, 0x00);
+              
+                  // Clear fifo flag
+                  ScalerSetByte(P0_02_STATUS0, 0xFF);
+              
+                  // Clear Display Vsync timeout flag
+                  ScalerSetBit(P0_0C_WATCH_DOG_CTRL0, ~_BIT0, _BIT0);
+              
+                  // Wait for 2 DVS for flag status update
+                  ScalerTimerWaitForEvent(_EVENT_DVS);
+                  ScalerTimerWaitForEvent(_EVENT_DVS);
+              }
+              #endif
+2051          
+2052          #if(_DEBUG_MESSAGE_CHECK_MDOMAIN == _ON)
+              //--------------------------------------------------
+              // Description  : Get Display Info
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 36  
+
+              void ScalerMDomainCheckDisplaySetting(void)
+              {
+                  WORD usDVtotal = 0;
+                  WORD usLastLine = 0;
+                  bit bDisplaySettingCheck = _FALSE;
+              #if((_OD_SUPPORT == _ON) || (_FRC_SUPPORT == _ON))
+                  BYTE ucBWUseEfficiency = 0;
+              #endif
+              
+                  DebugMessageCheckMDomain("== DISP_CHECK_START ==", 0);
+              
+              #if(_FREESYNC_SUPPORT == _ON)
+                  if(GET_FREESYNC_ENABLED() == _FALSE)
+              #endif
+                  {
+                      if((GET_INTERLACED_MODE() == _FALSE) &&
+                         ((GET_MEMORY_SELECT() == _FRAME_SYNC_LINE_BUFFER) || (GET_MEMORY_SELECT() == _FRAME_SYNC_MEMORY
+             -)))
+                      {
+                          bDisplaySettingCheck = _TRUE;
+                      }
+                  }
+              
+                  if(bDisplaySettingCheck == _TRUE)
+                  {
+                      // Measure DVtotal in frame sync mode
+                      ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+                      ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+                      GET_DVTOTAL_LASTLINE(usDVtotal);
+              
+                      // Pop out Last line
+                      ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, 0x00);
+                      GET_DVTOTAL_LASTLINE(usLastLine);
+                      usLastLine = (usLastLine << _D_DOMAIN_PATH);
+              
+                      // Measure DVtotal in frame sync mode
+                      ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+                      ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+                      GET_DVTOTAL_LASTLINE(usDVtotal);
+              
+                      // Pop out Last line
+                      ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, 0x00);
+                      GET_DVTOTAL_LASTLINE(usLastLine);
+                      usLastLine = (usLastLine << _D_DOMAIN_PATH);
+              
+              #if((_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N) || ((_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N_CASCADE_N_F) && (_P
+             -ANEL_STYLE != _PANEL_VBO)))
+              
+                      if(abs(_LAST_LINE_TARGET - usLastLine) > (_MN_DPLL_PIXEL_PER_OFFSET * 2))
+                      {
+                          DebugMessageCheckMDomain("Measured last-line value away from _LAST_LINE_TARGET !!!", usLastLin
+             -e);
+                      }
+              
+                      if((abs(_PANEL_DH_TOTAL - _LAST_LINE_TARGET) < (_MN_DPLL_PIXEL_PER_OFFSET * 2)) ||
+                         (_LAST_LINE_TARGET < (_MN_DPLL_PIXEL_PER_OFFSET * 2)))
+                      {
+                          DebugMessageCheckMDomain("_LAST_LINE_TARGET too close to DHtotal boundary !!! Double check _LA
+             -ST_LINE_TARGET.", 0);
+                      }
+              
+              #endif
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 37  
+
+                  }
+              
+                  switch(GET_MEMORY_SELECT())
+                  {
+                      case _FRAME_SYNC_LINE_BUFFER:
+                      default:
+                          DebugMessageCheckMDomain("FrameSync Line Buffer", GET_MEMORY_SELECT());
+                          break;
+              
+                      case _FRAME_SYNC_MEMORY:
+                          DebugMessageCheckMDomain("FrameSync Frame Buffer", GET_MEMORY_SELECT());
+                          break;
+              
+                      case _FREE_RUN_MEMORY:
+                          DebugMessageCheckMDomain("Free Run Mode", GET_MEMORY_SELECT());
+                          break;
+              
+                      case _MN_FRAME_SYNC_MEMORY:
+                          DebugMessageCheckMDomain("MN FrameSync Frame Buffer", GET_MEMORY_SELECT());
+                          break;
+              
+                      case _FREE_RUN_NO_INPUT:
+                          DebugMessageCheckMDomain("Free Run No Input", GET_MEMORY_SELECT());
+                          break;
+                  }
+              
+              #if((_OD_SUPPORT == _ON) || (_FRC_SUPPORT == _ON))
+              #if(_OD_SUPPORT == _ON)
+                  DebugMessageCheckMDomain("OD use bit", GET_OD_USE_BIT());
+              
+                  if(GET_OD_USE_BIT() != 0x00)
+                  {
+                      ucBWUseEfficiency = (DWORD)ScalerMDomainGetODMemoryBW() * 10 / _MEMORY_DATA_RATE_SPEED;
+                      DebugMessageCheckMDomain("OD Efficiency(%)", ucBWUseEfficiency);
+                  }
+                  else
+                  {
+                      DebugMessageCheckMDomain("[Warning]!!!!!! OD Disable", 0);
+                  }
+              
+              #endif
+              
+              #if(_FRC_SUPPORT == _ON)
+                  if(GET_MEMORY_SELECT() != _FRAME_SYNC_LINE_BUFFER)
+                  {
+                      pData[0] = (DWORD)ScalerMDomainGetFRCMemoryBW(_FRC_BW_ACTUAL_USAGE, GET_FIFO_HWIDTH()) * 10 / _MEM
+             -ORY_DATA_RATE_SPEED;
+                      ucBWUseEfficiency += pData[0];
+                      DebugMessageCheckMDomain("FRC Efficiency(%)", pData[0]);
+              
+                      if((GET_FIFO_HWIDTH() < GET_MDOMAIN_INPUT_HWIDTH()) && (GET_FIFO_HWIDTH() < GET_MDOMAIN_OUTPUT_HWI
+             -DTH()))
+                      {
+                          DebugMessageCheckMDomain("[Warning]!!!!!! HSD for Memory BW/ size", GET_FIFO_HWIDTH());
+                      }
+                  }
+              #endif
+              
+                  DebugMessageCheckMDomain("FRC + OD Efficiency(%)", ucBWUseEfficiency);
+              
+                  if(ucBWUseEfficiency > (_MEMORY_EFFICIENCY - 2))
+                  {
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 38  
+
+                      DebugMessageCheckMDomain("[Warning]!!!!!! Efficiency Utilization near boundry", ucBWUseEfficiency)
+             -;
+                  }
+              
+              #endif
+                  DebugMessageCheckMDomain("== DISP_CHECK_END ==", 0);
+              }
+              #endif
+2183          
+2184          #if((_MEASURE_ADJUSTED_IHF_SUPPORT == _ON) || (_MEASURE_ADJUSTED_IVF_SUPPORT == _ON))
+2185          //--------------------------------------------------
+2186          // Description  : Get Accuracy IVF
+2187          // Input Value  : None
+2188          // Output Value : Node
+2189          //--------------------------------------------------
+2190          void ScalerMDomainUpdateInputInfo(void)
+2191          {
+2192   1          DWORD ulIPixelCnt = 0;
+2193   1          DWORD ulIVF = 0;
+2194   1          DWORD ulIHF = 0;
+2195   1      
+2196   1          // I active region pixel count
+2197   1          ulIPixelCnt = ScalerMeasureGetAdjustedActiveRegionCount(GET_MDOMAIN_INPUT_HWIDTH(), GET_MDOMAIN_INPUT_
+             -VHEIGHT());
+2198   1      
+2199   1          ulIHF = GET_DWORD_MUL_DIV(_MEASURE_CLK, ((DWORD)GET_MDOMAIN_INPUT_VHEIGHT() * 100), ulIPixelCnt);
+2200   1      
+2201   1          ulIHF = (ulIHF + 5) / 10;
+2202   1      
+2203   1      #if(_MEASURE_ADJUSTED_IHF_SUPPORT == _ON)
+2204   1          SET_MDOMAIN_INPUT_HFREQ(ulIHF);
+2205   1      #endif
+2206   1      
+2207   1          DebugMessageScaler("Accuracy IHF", ulIHF);
+2208   1      
+2209   1          // Adjust IVF
+2210   1          if(GET_MDOMAIN_INPUT_INTERLACE_FLG() == _FALSE)
+2211   1          {
+2212   2      #if(_FREESYNC_SUPPORT == _ON)
+2213   2              if(GET_FREESYNC_ENABLED() == _FALSE)
+2214   2      #endif
+2215   2              {
+2216   3                  // I whole frame pixel count
+2217   3                  ulIPixelCnt = GET_DWORD_MUL_DIV(ulIPixelCnt, GET_MDOMAIN_INPUT_VTOTAL(), GET_MDOMAIN_INPUT_VHE
+             -IGHT());
+2218   3      
+2219   3                  // IVF = measure_clk / measure_count, unit: 0.01Hz
+2220   3                  ulIVF = GET_DWORD_MUL_DIV(_MEASURE_CLK, 100000, ulIPixelCnt);
+2221   3      
+2222   3                  // IVF round to 0.1Hz
+2223   3                  ulIVF = (ulIVF + 5) / 10;
+2224   3      
+2225   3      #if(_MEASURE_ADJUSTED_IVF_SUPPORT == _ON)
+2226   3                  SET_MDOMAIN_INPUT_VFREQ(ulIVF);
+2227   3      #endif
+2228   3      
+2229   3                  DebugMessageScaler("Accuracy IVF", ulIVF);
+2230   3              }
+2231   2          }
+2232   1      }
+2233          #endif
+2234          
+C51 COMPILER V8.12   SCALERMDOMAIN                                                         09/16/2026 20:27:21 PAGE 39  
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   6960    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     58     165
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1       4
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

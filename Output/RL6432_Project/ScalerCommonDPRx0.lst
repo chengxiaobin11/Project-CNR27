@@ -1,0 +1,4010 @@
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONDPRX0
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonDPRx0.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDPRx0.c LARGE OPTIMIZE(
+                    -9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\He
+                    -ader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Li
+                    -b\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6
+                    -432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header
+                    -;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Use
+                    -r\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header
+                    -) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerCo
+                    -mmonDPRx0.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonDPRx0.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : ScalerCommonDPRx0.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __SCALER_COMMON_DPRX0__
+  18          
+  19          #include "ScalerCommonFunctionInclude.h"
+  20          
+  21          #if(_D0_DP_EXIST == _ON)
+  22          
+  23          //****************************************************************************
+  24          // DEFINITIONS / MACROS
+  25          //****************************************************************************
+  26          
+  27          //****************************************************************************
+  28          // STRUCT / TYPE / ENUM DEFINITTIONS
+  29          //****************************************************************************
+  30          
+  31          //****************************************************************************
+  32          // CODE TABLES
+  33          //****************************************************************************
+  34          
+  35          //****************************************************************************
+  36          // VARIABLE DECLARATIONS
+  37          //****************************************************************************
+  38          #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+              bit g_bDpRx0SignaldetectINTHappened;
+              #endif
+  41          
+  42          #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+  43          bit g_bDpRx0VscSdpColorMode;
+  44          
+  45          #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+  46          bit g_bDpRx0RSV1PacketDetecting;
+  47          
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 2   
+
+  48          #if((_DP_MST_SUPPORT == _ON) && (_DP_TX_SUPPORT == _ON))
+              bit g_bDpRx0MstToSstRSV1PacketDetecting;
+              #endif
+  51          #endif
+  52          #endif
+  53          
+  54          #if(_DP_TX_SUPPORT == _ON)
+              WORD g_usDpRx0MstToSstVfrontporch;
+              #endif
+  57          
+  58          BYTE g_ucDpRx0MSAFailMacRsetCount;
+  59          bit g_bDpRx0SourceRDErrorCount = _FALSE;
+  60          bit g_bDpRx0InterlaceVtotalNum;
+  61          
+  62          #if(_DP_HDR10_SUPPORT == _ON)
+  63          BYTE g_ucDPRx0InfoTypeCompare;
+  64          BYTE g_pucDPRx0HDR10Backup[_HW_DP_INFOFRAME_RSV0_LENGTH];
+  65          BYTE g_pucDPRx0InfoTemp[_HW_DP_INFOFRAME_RSV0_LENGTH];
+  66          #endif
+  67          
+  68          #if(_DP_ULTRA_HDR_SUPPORT == _ON)
+  69          BYTE g_pucDPRx0RSV0Backup[_HW_DP_INFOFRAME_RSV0_LENGTH];
+  70          StructDPInfoFrameRSV0Ctrl g_stDPRx0InfoFrameRSV0Ctrl;
+  71          #endif
+  72          
+  73          #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+              StructDpLinkInfo g_stDpRx0LinkInfo;
+              #endif
+  76          
+  77          #if(_DP_IRQ_HPD_MODE == _DP_IRQ_HPD_T2_MODE)
+  78          BYTE g_ucDpRx0AuxModeBackup_EXINT;
+  79          #endif
+  80          
+  81          //****************************************************************************
+  82          // FUNCTION DECLARATIONS
+  83          //****************************************************************************
+  84          void ScalerDpRx0DecodeErrorCountReset(void);
+  85          WORD ScalerDpRx0GetDecodeErrorCount(BYTE ucDpRx0LaneNumber);
+  86          void ScalerDpRx0ValidSignalDetection(void);
+  87          BYTE ScalerDpRx0LinkRateDetect(void);
+  88          bit ScalerDpRx0LinkRateCheck(BYTE ucDpLinkRate);
+  89          WORD ScalerDpRx0SignalDetectMeasureCount(BYTE ucDpLaneSel, EnumDpMeasureTarget enumDpMeasureTarget, EnumDp
+             -MeasurePeriod enumDpMeasurePeriod);
+  90          bit ScalerDpRx0SignalCheck(BYTE ucDpLinkRate, BYTE ucDpcdLane);
+  91          bit ScalerDpRx0VBIOSMSACheck(bit bDeskewEnhanced);
+  92          bit ScalerDpRx0InterlaceCheck(WORD *pusVTotal, BYTE *pucOddFlg);
+  93          bit ScalerDpRx0InterlaceVtotalGetMSACheck(DWORD ulVBs2bsLeng);
+  94          bit ScalerDpRx0GetVideoInfo(void);
+  95          void ScalerDpRx0SetColorInfo(void);
+  96          void ScalerDpRx0VideoSetting(void);
+  97          void ScalerDpRx0ColorimetrySetting(void);
+  98          #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+  99          void ScalerDpRx0ColorimetryExtSetting(void);
+ 100          #endif
+ 101          void ScalerDpRx0QuantizationSetting(void);
+ 102          
+ 103          bit ScalerDpRx0MiscCheck(void);
+ 104          
+ 105          #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+ 106          bit ScalerDpRx0VscCheck(void);
+ 107          
+ 108          #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 3   
+
+ 109          void ScalerDpRx0RSV1PacketDetectEvent(void);
+ 110          void ScalerDpRx0SetInitialRSV1InfoType(void);
+ 111          #endif
+ 112          
+ 113          #endif
+ 114          
+ 115          void ScalerDpRx0HDCPUnplugReset(void);
+ 116          
+ 117          #if(_DP_MST_SUPPORT == _ON)
+              void ScalerDpRx0MstReset(void);
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+              void ScalerDpRx0MstReset_EXINT0(void);
+              #endif
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              bit ScalerDpRx0MstToSstGetVideoInfo(void);
+              void ScalerDpRx0MstToSstSetColorInfo(void);
+              void ScalerDpRx0MstToSstVideoSetting(void);
+              bit ScalerDpRx0MstToSstMiscCheck(void);
+              bit ScalerDpRx0MstToSstInterlaceCheck(WORD *pusVTotal, BYTE *pucOddFlg);
+              bit ScalerDpRx0MstToSstInterlaceVtotalGetMSACheck(DWORD ulVBs2bsLeng);
+              void ScalerDpRx0MstToSstInterlaceReset(void);
+              
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+              bit ScalerDpRx0MstToSstVscCheck(void);
+              
+              #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+              void ScalerDpRx0MstToSstRSV1PacketDetectEvent(void);
+              #endif
+              #endif
+              #endif
+              #endif
+ 142          
+ 143          #if(_DP_TX_SUPPORT == _ON)
+              void ScalerDpRx0UpdateSinkCount(BYTE ucSinkCount);
+              #endif
+ 146          
+ 147          bit ScalerDpRx0MSACheck(void);
+ 148          void ScalerDpRx0FakeLTProtect(void);
+ 149          void ScalerDpRx0SetInitialRSV0InfoType(void);
+ 150          void ScalerDpRx0InterlaceReset(void);
+ 151          WORD ScalerDpRx0GetBStoHSDelay(WORD usDpHtotal);
+ 152          
+ 153          #if((_DP_FREESYNC_SUPPORT == _ON) || (_DP_ULTRA_HDR_SUPPORT == _ON))
+ 154          void ScalerDpRx0GetInfoFrameRSV0(BYTE *pucDPRx0RSV0Data);
+ 155          #endif
+ 156          
+ 157          #if(_DP_ULTRA_HDR_SUPPORT == _ON)
+ 158          void ScalerDpRx0InfoFrameRSV0Check(void);
+ 159          void ScalerDpRx0RSV0PacketDetectEvent(void);
+ 160          void ScalerDpRx0InfoFrameRSV0Initial(void);
+ 161          #endif
+ 162          
+ 163          #if(_DP_HDR10_SUPPORT == _ON)
+ 164          BYTE ScalerDpRx0SelectInfoFrameType(BYTE ucInfoFrameTypeCurrent);
+ 165          
+ 166          #if(_AUDIO_SUPPORT == _ON)
+ 167          void ScalerDpRx0SwitchHDR10CmpAudioInfo(void);
+ 168          #endif
+ 169          #endif
+ 170          
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 4   
+
+ 171          #if(_WD_TIMER_INT_SUPPORT == _ON)
+ 172          void ScalerDpRx0DecodeErrorCountReset_WDINT(void);
+ 173          #endif
+ 174          
+ 175          //****************************************************************************
+ 176          // FUNCTION DEFINITIONS
+ 177          //****************************************************************************
+ 178          //--------------------------------------------------
+ 179          // Description  : Reset 8b10b Error Count value
+ 180          // Input Value  : None
+ 181          // Output Value : None
+ 182          //--------------------------------------------------
+ 183          void ScalerDpRx0DecodeErrorCountReset(void)
+ 184          {
+ 185   1          // Reset 8b10b Error Count Value
+ 186   1          ScalerSetBit(PB_08_BIST_PATTERN_SEL, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
+ 187   1      
+ 188   1          // Start Record 8b10b Error Count Value
+ 189   1          ScalerSetBit(PB_08_BIST_PATTERN_SEL, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
+ 190   1      }
+ 191          
+ 192          //--------------------------------------------------
+ 193          // Description  : Get 8b10b Error Count value
+ 194          // Input Value  : Lane
+ 195          // Output Value : Error Count
+ 196          //--------------------------------------------------
+ 197          WORD ScalerDpRx0GetDecodeErrorCount(BYTE ucDpRx0LaneNumber)
+ 198          {
+ 199   1          // Select Lane
+ 200   1          ScalerSetBit(PB_08_BIST_PATTERN_SEL, ~(_BIT4 | _BIT3), (ucDpRx0LaneNumber << 3));
+ 201   1      
+ 202   1          return ((((WORD)ScalerGetByte(PB_0B_BIST_PATTERN3)) << 8) | ScalerGetByte(PB_0C_BIST_PATTERN4));
+ 203   1      }
+ 204          
+ 205          //--------------------------------------------------
+ 206          // Description  : Check Valid Video Data
+ 207          // Input Value  : None
+ 208          // Output Value : None
+ 209          //--------------------------------------------------
+ 210          void ScalerDpRx0ValidSignalDetection(void)
+ 211          {
+ 212   1          BYTE ucDpLinkRate = 0;
+ 213   1          BYTE ucDpLaneCount = _DP_FOUR_LANE;
+ 214   1      
+ 215   1      #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
+                  if(ScalerTypeCRx0PdGetPinAssignment() == _TYPE_C_PIN_ASSIGNMENT_D)
+                  {
+                      ucDpLaneCount = _DP_TWO_LANE;
+                  }
+              #endif
+ 221   1      
+ 222   1      #if(_DP_MST_SUPPORT == _ON)
+              
+              #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                  if(((GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT) && (g_stDpRx0MiscInfo.b1DpMstEnableBackup == _TRUE)) ||
+                     ((GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT) && (g_stDpRx0MiscInfo.b1DpRx6MstEnableBackup == _TRUE))
+             -)
+              #else
+                  if(g_stDpRx0MiscInfo.b1DpMstEnableBackup == _TRUE)
+              #endif
+                  {
+                      SET_DP_RX0_AUX_MANUAL_MODE();
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 5   
+
+              
+                      if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+                         (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00) &&
+                         (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x11, _BIT1) != _BIT1))
+                      {
+                          ScalerDpRx0SetDpcdValue(0x00, 0x01, 0x00, g_stDpRx0MiscInfo.ucDpRxLinkRateBackup);
+                          ScalerDpRx0SetDpcdValue(0x00, 0x01, 0x01, ((ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x01) & 0x60) |
+             - (g_stDpRx0MiscInfo.ucDpRxLaneCountBackup | _BIT7)));
+              
+                          if(g_stDpRx0MiscInfo.ucDpRxLaneCountBackup == _DP_FOUR_LANE)
+                          {
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x77);
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x77);
+                          }
+                          else if(g_stDpRx0MiscInfo.ucDpRxLaneCountBackup == _DP_TWO_LANE)
+                          {
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x77);
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x00);
+                          }
+                          else
+                          {
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x07);
+                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x00);
+                          }
+              
+                          ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x04, 0x01);
+              
+                          SET_DP_RX0_LINK_TRAINING_STATUS(_DP_FAKE_LINK_TRAINING_PASS_VBIOS);
+              
+                          ScalerDpRx0MstInfoBackup(_DP_MST_BACKUP_INFO_RESTORE);
+              
+              #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                          ScalerDpRx6MstInfoBackup(_DP_MST_BACKUP_INFO_RESTORE);
+              #endif
+                      }
+              
+                      SET_DP_RX0_AUX_AUTO_MODE();
+              
+                      DebugMessageRx0("VBIOS_Link_Rate_MST", ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00));
+                      DebugMessageRx0("VBIOS_Lane_Count_MST", ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x01));
+                  }
+                  else
+              #endif // End of #if(_DP_MST_SUPPORT == _ON)
+ 274   1          {
+ 275   2              SET_DP_RX0_AUX_MANUAL_MODE();
+ 276   2      
+ 277   2      #if(_DP_MST_SUPPORT == _ON)
+                      if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+                         (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00) &&
+                         (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x11, _BIT1) != _BIT1))
+              #else
+ 282   2              if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+ 283   2                 (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00))
+ 284   2      #endif
+ 285   2              {
+ 286   3                  ucDpLinkRate = ScalerDpRx0LinkRateDetect();
+ 287   3      
+ 288   3                  SET_DP_RX0_AUX_AUTO_MODE();
+ 289   3      
+ 290   3                  if(ucDpLinkRate == _DP_LINK_NONE)
+ 291   3                  {
+ 292   4                      return;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 6   
+
+ 293   4                  }
+ 294   3      
+ 295   3                  do
+ 296   3                  {
+ 297   4                      SET_DP_RX0_AUX_MANUAL_MODE();
+ 298   4      
+ 299   4      #if(_DP_MST_SUPPORT == _ON)
+                              if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+                                 (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00) &&
+                                 (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x11, _BIT1) != _BIT1))
+              #else
+ 304   4                      if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+ 305   4                         (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00))
+ 306   4      #endif
+ 307   4                      {
+ 308   5                          ScalerDpRx0RebuildPhy(ucDpLinkRate, (ucDpLaneCount | _BIT7));
+ 309   5      
+ 310   5                          SET_DP_RX0_AUX_AUTO_MODE();
+ 311   5      
+ 312   5                          if(ScalerDpRx0VBIOSMSACheck(_FALSE) == _TRUE)
+ 313   5                          {
+ 314   6                              break;
+ 315   6                          }
+ 316   5                          else
+ 317   5                          {
+ 318   6                              if(ScalerDpRx0VBIOSMSACheck(_TRUE) == _TRUE)
+ 319   6                              {
+ 320   7                                  break;
+ 321   7                              }
+ 322   6                          }
+ 323   5      
+ 324   5                          if(ucDpLaneCount == _DP_FOUR_LANE)
+ 325   5                          {
+ 326   6                              ucDpLaneCount = _DP_TWO_LANE;
+ 327   6                          }
+ 328   5                          else if(ucDpLaneCount == _DP_TWO_LANE)
+ 329   5                          {
+ 330   6                              ucDpLaneCount = _DP_ONE_LANE;
+ 331   6                          }
+ 332   5                          else if(ucDpLaneCount == _DP_ONE_LANE)
+ 333   5                          {
+ 334   6                              ucDpLaneCount = 0x00;
+ 335   6                          }
+ 336   5                      }
+ 337   4                      else
+ 338   4                      {
+ 339   5                          SET_DP_RX0_AUX_AUTO_MODE();
+ 340   5      
+ 341   5                          return;
+ 342   5                      }
+ 343   4                  }
+ 344   3                  while((ucDpLaneCount == _DP_TWO_LANE) || (ucDpLaneCount == _DP_ONE_LANE));
+ 345   3      
+ 346   3                  if(ucDpLaneCount != 0x00)
+ 347   3                  {
+ 348   4                      SET_DP_RX0_AUX_MANUAL_MODE();
+ 349   4      
+ 350   4      #if(_DP_MST_SUPPORT == _ON)
+                              if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+                                 (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00) &&
+                                 (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x11, _BIT1) != _BIT1))
+              #else
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 7   
+
+ 355   4                      if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
+ 356   4                         (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == 0x00))
+ 357   4      #endif
+ 358   4                      {
+ 359   5                          ScalerDpRx0SetDpcdValue(0x00, 0x01, 0x00, ucDpLinkRate);
+ 360   5                          ScalerDpRx0SetDpcdValue(0x00, 0x01, 0x01, ((ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x01) &
+             - 0x60) | (ucDpLaneCount | _BIT7)));
+ 361   5                          g_ucDpRx0LinkRate = ucDpLinkRate;
+ 362   5                          g_ucDpRx0LaneCount = ucDpLaneCount;
+ 363   5      
+ 364   5                          if(ucDpLaneCount == _DP_FOUR_LANE)
+ 365   5                          {
+ 366   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x77);
+ 367   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x77);
+ 368   6                          }
+ 369   5                          else if(ucDpLaneCount == _DP_TWO_LANE)
+ 370   5                          {
+ 371   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x77);
+ 372   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x00);
+ 373   6                          }
+ 374   5                          else
+ 375   5                          {
+ 376   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x02, 0x07);
+ 377   6                              ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x03, 0x00);
+ 378   6                          }
+ 379   5      
+ 380   5                          ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x04, 0x01);
+ 381   5      
+ 382   5                          SET_DP_RX0_LINK_TRAINING_STATUS(_DP_FAKE_LINK_TRAINING_PASS_VBIOS);
+ 383   5                      }
+ 384   4      
+ 385   4                      SET_DP_RX0_AUX_AUTO_MODE();
+ 386   4                  }
+ 387   3              }
+ 388   2      
+ 389   2              SET_DP_RX0_AUX_AUTO_MODE();
+ 390   2      
+ 391   2              DebugMessageRx0("VBIOS_Link_Rate", ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00));
+ 392   2              DebugMessageRx0("VBIOS_Lane_Count", ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x01));
+ 393   2          }
+ 394   1      }
+ 395          
+ 396          //--------------------------------------------------
+ 397          // Description : DP Link Rate Detect
+ 398          // Input Value  : None
+ 399          // Output Value : Link Rate
+ 400          //--------------------------------------------------
+ 401          BYTE ScalerDpRx0LinkRateDetect(void)
+ 402          {
+ 403   1          BYTE ucDpLinkRate = 0;
+ 404   1          BYTE ucDpLinkRateDecide = _DP_LINK_NONE;
+ 405   1      
+ 406   1          do
+ 407   1          {
+ 408   2              if(ucDpLinkRate == 0)
+ 409   2              {
+ 410   3                  if(_HW_DP_D0_MAX_LINK_RATE_SUPPORT > ScalerDpRx0GetDpcdInfo(0x00, 0x00, 0x01))
+ 411   3                  {
+ 412   4                      ucDpLinkRate = _HW_DP_D0_MAX_LINK_RATE_SUPPORT;
+ 413   4                  }
+ 414   3                  else
+ 415   3                  {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 8   
+
+ 416   4                      ucDpLinkRate = ScalerDpRx0GetDpcdInfo(0x00, 0x00, 0x01);
+ 417   4                  }
+ 418   3              }
+ 419   2              else if(ucDpLinkRate == _DP_LINK_HBR3)
+ 420   2              {
+ 421   3                  ucDpLinkRate = _DP_LINK_HBR2;
+ 422   3              }
+ 423   2              else if(ucDpLinkRate == _DP_LINK_HBR2)
+ 424   2              {
+ 425   3                  ucDpLinkRate = _DP_LINK_HBR;
+ 426   3              }
+ 427   2              else if(ucDpLinkRate == _DP_LINK_HBR)
+ 428   2              {
+ 429   3                  ucDpLinkRate = _DP_LINK_RBR;
+ 430   3              }
+ 431   2      
+ 432   2              if(ScalerDpRx0LinkRateCheck(ucDpLinkRate) == _TRUE)
+ 433   2              {
+ 434   3                  ucDpLinkRateDecide = ucDpLinkRate;
+ 435   3      
+ 436   3                  break;
+ 437   3              }
+ 438   2          }
+ 439   1          while(ucDpLinkRate != _DP_LINK_RBR);
+ 440   1      
+ 441   1          return ucDpLinkRateDecide;
+ 442   1      }
+ 443          
+ 444          //--------------------------------------------------
+ 445          // Description : Check Valid Lane
+ 446          // Input Value  : ucDpLinkRate -> DP Link Rate
+ 447          // Output Value : _TRUE -> Valid Signal
+ 448          //--------------------------------------------------
+ 449          bit ScalerDpRx0LinkRateCheck(BYTE ucDpLinkRate)
+ 450          {
+ 451   1          WORD usDataStreamL0 = 0;
+ 452   1          BYTE ucDpLEQScanValue = _DP_RELOAD_LEQ_INITIAL;
+ 453   1          WORD usMeasureUpperBound = 0;
+ 454   1          WORD usMeasureLowerBound = 0;
+ 455   1      
+ 456   1          do
+ 457   1          {
+ 458   2              if(ucDpLEQScanValue == _DP_RELOAD_LEQ_INITIAL)
+ 459   2              {
+ 460   3                  ucDpLEQScanValue = _DP_RELOAD_LEQ_LARGE;
+ 461   3              }
+ 462   2              else if(ucDpLEQScanValue == _DP_RELOAD_LEQ_LARGE)
+ 463   2              {
+ 464   3                  ucDpLEQScanValue = _DP_RELOAD_LEQ_DEFAULT;
+ 465   3              }
+ 466   2      
+ 467   2              ScalerDpRx0SignalDetectInitial(ucDpLinkRate, ucDpLEQScanValue);
+ 468   2      
+ 469   2              usDataStreamL0 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_RAW_DATA, _D
+             -P_MEASURE_PERIOD_2000_CYCLE);
+ 470   2      
+ 471   2              switch(ucDpLinkRate)
+ 472   2              {
+ 473   3                  case _DP_LINK_HBR2:
+ 474   3      
+ 475   3                      usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_HBR2_SAVED;
+ 476   3                      usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_HBR2_SAVED;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 9   
+
+ 477   3      
+ 478   3                      break;
+ 479   3      
+ 480   3                  case _DP_LINK_HBR:
+ 481   3      
+ 482   3                      usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_HBR_SAVED;
+ 483   3                      usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_HBR_SAVED;
+ 484   3      
+ 485   3                      break;
+ 486   3      
+ 487   3                  case _DP_LINK_RBR:
+ 488   3      
+ 489   3                      usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_RBR_SAVED;
+ 490   3                      usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_RBR_SAVED;
+ 491   3      
+ 492   3                      break;
+ 493   3      
+ 494   3                  default:
+ 495   3      
+ 496   3                      break;
+ 497   3              }
+ 498   2      
+ 499   2              if((usDataStreamL0 < usMeasureUpperBound) && (usDataStreamL0 > usMeasureLowerBound))
+ 500   2              {
+ 501   3                  return _TRUE;
+ 502   3              }
+ 503   2          }
+ 504   1          while(ucDpLEQScanValue != _DP_RELOAD_LEQ_DEFAULT);
+ 505   1      
+ 506   1          return _FALSE;
+ 507   1      }
+ 508          
+ 509          //--------------------------------------------------
+ 510          // Description : DP Signal Detection Measure
+ 511          //               It can not use pData to avoid cross-function usage
+ 512          // Input Value  : DP Lane Select, Measure target, Measure Period
+ 513          // Output Value : Measure Counter
+ 514          //--------------------------------------------------
+ 515          WORD ScalerDpRx0SignalDetectMeasureCount(BYTE ucDpLaneSel, EnumDpMeasureTarget enumDpMeasureTarget, EnumDp
+             -MeasurePeriod enumDpMeasurePeriod)
+ 516          {
+ 517   1          WORD usDpMeasureCount = 0;
+ 518   1          BYTE ucCount = 0;
+ 519   1      
+ 520   1          // [1:0] freqdet_lane_sel
+ 521   1          ScalerSetBit(PB_51_DP_SIG_DET_1, ~(_BIT1 | _BIT0), (ucDpLaneSel & (_BIT1 | _BIT0)));
+ 522   1      
+ 523   1          // [5] ln_ck_sel
+ 524   1          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT5, enumDpMeasureTarget);
+ 525   1      
+ 526   1          switch(enumDpMeasurePeriod)
+ 527   1          {
+ 528   2              case _DP_MEASURE_PERIOD_1000_CYCLE:
+ 529   2      
+ 530   2      #if(_HW_SIGNAL_MEASURE_GEN_TYPE == _SIGNAL_MEASURE_GEN_1)
+ 531   2                  // [4:0] DP_XTAL_CYCLE = 5'b00011
+ 532   2                  ScalerSetBit(PB_50_DP_SIG_DET_0, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
+ 533   2      #elif(_HW_SIGNAL_MEASURE_GEN_TYPE == _SIGNAL_MEASURE_GEN_2)
+                          // [0] DP_XTAL_CYCLE = 1'b0
+                          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT0, 0x00);
+              #endif
+ 537   2                  break;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 10  
+
+ 538   2      
+ 539   2              case _DP_MEASURE_PERIOD_2000_CYCLE:
+ 540   2              default:
+ 541   2      
+ 542   2      #if(_HW_SIGNAL_MEASURE_GEN_TYPE == _SIGNAL_MEASURE_GEN_1)
+ 543   2                  // [4:0] DP_XTAL_CYCLE = 5'b00100
+ 544   2                  ScalerSetBit(PB_50_DP_SIG_DET_0, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT2);
+ 545   2      #elif(_HW_SIGNAL_MEASURE_GEN_TYPE == _SIGNAL_MEASURE_GEN_2)
+                          // [0] DP_XTAL_CYCLE = 1'b1
+                          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT0, _BIT0);
+              #endif
+ 549   2                  break;
+ 550   2          }
+ 551   1      
+ 552   1          // [6] LANE_COUNT_CLEAR = 0 -> Keep the LANE_COUNT value
+ 553   1          ScalerSetBit(PB_52_DP_SIG_DET_2, ~_BIT6, 0x00);
+ 554   1      
+ 555   1          // [7] DP_SIG_DET_EN = 1'b1 -> Enable Signal Detection
+ 556   1          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+ 557   1          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
+ 558   1      
+ 559   1          // Delay Time us [5,150] Polling for Measure Done
+ 560   1          for(ucCount = 0; ucCount <= 30; ucCount++)
+ 561   1          {
+ 562   2              DELAY_5US();
+ 563   2      
+ 564   2              if(ScalerGetBit(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+ 565   2              {
+ 566   3                  usDpMeasureCount = ((((WORD)ScalerGetByte(PB_53_DP_SIG_DET_3)) << 8) | ScalerGetByte(PB_54_DP_
+             -SIG_DET_4));
+ 567   3      
+ 568   3                  break;
+ 569   3              }
+ 570   2          }
+ 571   1      
+ 572   1          // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
+ 573   1          ScalerSetBit(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+ 574   1      
+ 575   1          return usDpMeasureCount;
+ 576   1      }
+ 577          
+ 578          //--------------------------------------------------
+ 579          // Description : Check Valid Signal
+ 580          //               It can not use pData to avoid cross-function usage
+ 581          // Input Value  : DP Link Rate and Lane Count
+ 582          // Output Value : True --> valid, False --> invalid
+ 583          //--------------------------------------------------
+ 584          bit ScalerDpRx0SignalCheck(BYTE ucDpLinkRate, BYTE ucDpcdLane)
+ 585          {
+ 586   1          WORD usDataStreamL0 = 0;
+ 587   1          WORD usDataStreamL1 = 0;
+ 588   1          WORD usDataStreamL2 = 0;
+ 589   1          WORD usDataStreamL3 = 0;
+ 590   1          WORD usMeasureUpperBound = 0;
+ 591   1          WORD usMeasureLowerBound = 0;
+ 592   1      
+ 593   1          // Scrambling Disable Check
+ 594   1          if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x02, _BIT5) == _BIT5)
+ 595   1          {
+ 596   2              return _TRUE;
+ 597   2          }
+ 598   1      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 11  
+
+ 599   1      #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+                  CLR_DP_RX0_SIGNALDETECT_INT_HAPPENED();
+              #endif
+ 602   1      
+ 603   1          // Measure Data Stream Count
+ 604   1          switch(ucDpcdLane)
+ 605   1          {
+ 606   2              case _DP_ONE_LANE:
+ 607   2      
+ 608   2                  usDataStreamL0 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 609   2      
+ 610   2                  break;
+ 611   2      
+ 612   2              case _DP_TWO_LANE:
+ 613   2      
+ 614   2                  usDataStreamL0 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 615   2                  usDataStreamL1 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE1, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 616   2      
+ 617   2                  break;
+ 618   2      
+ 619   2              default:
+ 620   2              case _DP_FOUR_LANE:
+ 621   2      
+ 622   2                  usDataStreamL0 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 623   2                  usDataStreamL1 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE1, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 624   2                  usDataStreamL2 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE2, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 625   2                  usDataStreamL3 = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE3, _DP_MEASURE_TARGET_RAW_DATA
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 626   2      
+ 627   2                  break;
+ 628   2          }
+ 629   1      
+ 630   1          // Data Stream Count Upper Bound = (VCO target count) x 2 x 0.65
+ 631   1          // Data Stream Count Lower Bound = (VCO target count) x 2 x 0.55
+ 632   1          switch(ucDpLinkRate)
+ 633   1          {
+ 634   2              case _DP_LINK_HBR2:
+ 635   2      
+ 636   2                  usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_HBR2_SAVED;
+ 637   2                  usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_HBR2_SAVED;
+ 638   2      
+ 639   2                  break;
+ 640   2      
+ 641   2              case _DP_LINK_HBR:
+ 642   2      
+ 643   2                  usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_HBR_SAVED;
+ 644   2                  usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_HBR_SAVED;
+ 645   2      
+ 646   2                  break;
+ 647   2      
+ 648   2              case _DP_LINK_RBR:
+ 649   2      
+ 650   2                  usMeasureUpperBound = _DP_COUNT_SST_UPPER_BOUND_2000_RBR_SAVED;
+ 651   2                  usMeasureLowerBound = _DP_COUNT_SST_LOWER_BOUND_2000_RBR_SAVED;
+ 652   2      
+ 653   2                  break;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 12  
+
+ 654   2      
+ 655   2              default:
+ 656   2      
+ 657   2                  break;
+ 658   2          }
+ 659   1      
+ 660   1          // Link Rate is a Unreasonable Value
+ 661   1          if((usMeasureUpperBound == 0) || (usMeasureLowerBound == 0))
+ 662   1          {
+ 663   2      #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+                      if(GET_DP_RX0_SIGNALDETECT_INT_HAPPENED() == _FALSE)
+              #endif
+ 666   2              {
+ 667   3                  return _FALSE;
+ 668   3              }
+ 669   2          }
+ 670   1      
+ 671   1          // Check Data Stream Count
+ 672   1          switch(ucDpcdLane)
+ 673   1          {
+ 674   2              case _DP_ONE_LANE:
+ 675   2      
+ 676   2                  if((usDataStreamL0 > usMeasureUpperBound) || (usDataStreamL0 < usMeasureLowerBound))
+ 677   2                  {
+ 678   3      #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+                              if(GET_DP_RX0_SIGNALDETECT_INT_HAPPENED() == _FALSE)
+              #endif
+ 681   3                      {
+ 682   4                          return _FALSE;
+ 683   4                      }
+ 684   3                  }
+ 685   2      
+ 686   2                  break;
+ 687   2      
+ 688   2              case _DP_TWO_LANE:
+ 689   2      
+ 690   2                  if(((usDataStreamL0 > usMeasureUpperBound) || (usDataStreamL0 < usMeasureLowerBound)) ||
+ 691   2                     ((usDataStreamL1 > usMeasureUpperBound) || (usDataStreamL1 < usMeasureLowerBound)))
+ 692   2                  {
+ 693   3      #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+                              if(GET_DP_RX0_SIGNALDETECT_INT_HAPPENED() == _FALSE)
+              #endif
+ 696   3                      {
+ 697   4                          return _FALSE;
+ 698   4                      }
+ 699   3                  }
+ 700   2      
+ 701   2                  break;
+ 702   2      
+ 703   2              default:
+ 704   2              case _DP_FOUR_LANE:
+ 705   2      
+ 706   2                  if(((usDataStreamL0 > usMeasureUpperBound) || (usDataStreamL0 < usMeasureLowerBound)) ||
+ 707   2                     ((usDataStreamL1 > usMeasureUpperBound) || (usDataStreamL1 < usMeasureLowerBound)) ||
+ 708   2                     ((usDataStreamL2 > usMeasureUpperBound) || (usDataStreamL2 < usMeasureLowerBound)) ||
+ 709   2                     ((usDataStreamL3 > usMeasureUpperBound) || (usDataStreamL3 < usMeasureLowerBound)))
+ 710   2                  {
+ 711   3      #if(_HW_DP_GDI_RX0_DFE_TYPE == _PASSIVE_DFE)
+                              if(GET_DP_RX0_SIGNALDETECT_INT_HAPPENED() == _FALSE)
+              #endif
+ 714   3                      {
+ 715   4                          return _FALSE;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 13  
+
+ 716   4                      }
+ 717   3                  }
+ 718   2      
+ 719   2                  break;
+ 720   2          }
+ 721   1      
+ 722   1          return _TRUE;
+ 723   1      }
+ 724          
+ 725          //--------------------------------------------------
+ 726          // Description  : VBIOS Lane Adjust
+ 727          // Input Value  : DP Lane Count
+ 728          // Output Value : True or False
+ 729          //--------------------------------------------------
+ 730          bit ScalerDpRx0VBIOSMSACheck(bit bDeskewEnhanced)
+ 731          {
+ 732   1          bit bMSACheckResult = _FALSE;
+ 733   1      
+ 734   1          do
+ 735   1          {
+ 736   2              // De-Skew Circuit Reset
+ 737   2              ScalerSetBit(PB_0E_DESKEW_PHY, ~(_BIT7 | _BIT6), 0x00);
+ 738   2              ScalerSetBit(PB_0E_DESKEW_PHY, ~(_BIT7 | _BIT6), (((bDeskewEnhanced == _TRUE) ? _BIT7 : 0x00) | _B
+             -IT6));
+ 739   2      
+ 740   2              // Mac Reset After Link Clock Stable
+ 741   2              ScalerSetBit(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, _BIT1);
+ 742   2              ScalerSetBit(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, 0x00);
+ 743   2      
+ 744   2              // SEC Reset
+ 745   2              ScalerSetBit(PB5_00_MAC_DIG_RESET_CTRL, ~_BIT4, _BIT4);
+ 746   2              ScalerSetBit(PB5_00_MAC_DIG_RESET_CTRL, ~_BIT4, 0x00);
+ 747   2      
+ 748   2              // Wait Two Frame Time to Get MSA
+ 749   2              ScalerTimerDelayXms(_DP_TWO_FRAME_TIME_MAX);
+ 750   2      
+ 751   2              // Pop up Main Stream Attributes
+ 752   2              ScalerSetBit(PB6_00_MN_STRM_ATTR_CTRL, ~(_BIT7 | _BIT6 | _BIT5 | _BIT3 | _BIT2), (_BIT7 | _BIT6 | 
+             -_BIT5 | _BIT3));
+ 753   2      
+ 754   2              // Get Nvid
+ 755   2              ScalerRead(PB6_1D_MSA_NVID_0, 3, pData, _AUTOINC);
+ 756   2      
+ 757   2              // Get Hactive
+ 758   2              ScalerRead(PB6_0C_MSA_HWD_0, 2, &pData[4], _AUTOINC);
+ 759   2      
+ 760   2              // Get Vactive
+ 761   2              ScalerRead(PB6_16_MSA_VHT_0, 2, &pData[6], _AUTOINC);
+ 762   2      
+ 763   2              // Get Hstart
+ 764   2              ScalerRead(PB6_0A_MSA_HST_0, 2, &pData[8], _AUTOINC);
+ 765   2      
+ 766   2              // Get Vstart
+ 767   2              ScalerRead(PB6_14_MSA_VST_0, 2, &pData[10], _AUTOINC);
+ 768   2      
+ 769   2              if(((((DWORD)pData[0] << 16) | ((DWORD)pData[1] << 8) | ((DWORD)pData[2] << 0)) != 0x00) &&
+ 770   2                 (PDATA_WORD(2) != 0x00) && (PDATA_WORD(3) != 0x00) && (PDATA_WORD(4) != 0x00) && (PDATA_WORD(5)
+             - != 0x00) &&
+ 771   2                 (PDATA_WORD(2) > PDATA_WORD(4)) && (PDATA_WORD(3) > PDATA_WORD(5)))
+ 772   2              {
+ 773   3                  bMSACheckResult = _TRUE;
+ 774   3      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 14  
+
+ 775   3                  break;
+ 776   3              }
+ 777   2          }while(ScalerDpRx0ChangeSrambleSeed() == _TRUE);
+ 778   1      
+ 779   1      #if(_DP_RX0_ASSR_MODE_SUPPORT == _ON)
+                  bMSACheckResult = ScalerDpRx0VbiosAssrCheck(bMSACheckResult);
+              #endif
+ 782   1      
+ 783   1          return bMSACheckResult;
+ 784   1      }
+ 785          
+ 786          //--------------------------------------------------
+ 787          // Description  : Check Dp Interlace by VBID or Measure
+ 788          // Input Value  : None
+ 789          // Output Value : True --> Interlace
+ 790          //--------------------------------------------------
+ 791          bit ScalerDpRx0InterlaceCheck(WORD *pusVTotal, BYTE *pucOddFlg)
+ 792          {
+ 793   1          DWORD ulLinkClk = 0;
+ 794   1          DWORD ulVBs2bsLengN = 0;
+ 795   1          DWORD ulVBs2bsLengN1 = 0;
+ 796   1          WORD usTempVTotal = *pusVTotal;
+ 797   1          WORD usHTotalCount = 0;
+ 798   1          BYTE ucVbidTempN = 0;
+ 799   1          BYTE ucVbidTempN1 = 0;
+ 800   1      
+ 801   1      #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _OFF)
+ 802   1          WORD usVsyncWidth = 0;
+ 803   1          WORD usVstart = 0;
+ 804   1          WORD usVactive = 0;
+ 805   1      #endif
+ 806   1      
+ 807   1      #if(_DP_IVF_OOR_EXTEND_SUPPORT == _ON)
+                  if(GET_DP_RX0_JUDGE_OOR() == _TRUE)
+                  {
+                      *pucOddFlg = _FALSE;
+              
+                      return _FALSE;
+                  }
+                  else
+              #endif
+ 816   1          {
+ 817   2              // Set Vfront Porch
+ 818   2              SET_DP_RX0_VFRONT_PORCH(_DP_VSYNC_FRONT_PORCH);
+ 819   2      
+ 820   2              // Reset Intercae Mode
+ 821   2              ScalerDpRx0InterlaceReset();
+ 822   2      
+ 823   2      #if(_DP_FREESYNC_SUPPORT == _ON)
+ 824   2              if(GET_FREESYNC_ENABLED() == _TRUE)
+ 825   2              {
+ 826   3                  return _FALSE;
+ 827   3              }
+ 828   2      #endif
+ 829   2      
+ 830   2      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                      if(GET_AIO_MODERN_STANDBY_MODE() == _TRUE)
+                      {
+                          // Restore DP Info
+                          ulVBs2bsLengN = g_stDpRx0LinkInfo.ulVBsToBsCountN;
+                          ulVBs2bsLengN1 = g_stDpRx0LinkInfo.ulVBsToBsCountN1;
+                          ucVbidTempN = ((BYTE) g_stDpRx0LinkInfo.b1InterlaceFieldN) << 1;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 15  
+
+                          ucVbidTempN1 = ((BYTE) g_stDpRx0LinkInfo.b1InterlaceFieldN1) << 1;
+                      }
+                      else
+              #endif
+ 841   2              {
+ 842   3                  // =========== Link Clock Measure Start ===========
+ 843   3                  PDATA_WORD(0) = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_CDR_CLOCK
+             -, _DP_MEASURE_PERIOD_2000_CYCLE);
+ 844   3      
+ 845   3                  if(PDATA_WORD(0) == 0)
+ 846   3                  {
+ 847   4                      if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR3)
+ 848   4                      {
+ 849   5                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR3;
+ 850   5                      }
+ 851   4                      else if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR2)
+ 852   4                      {
+ 853   5                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR2;
+ 854   5                      }
+ 855   4                      else if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR)
+ 856   4                      {
+ 857   5                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR;
+ 858   5                      }
+ 859   4                      else // Both Default && _DP_LINK_RBR Case
+ 860   4                      {
+ 861   5                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_RBR;
+ 862   5                      }
+ 863   4                  }
+ 864   3      
+ 865   3                  PDATA_DWORD(0) = (((DWORD)PDATA_WORD(0)) * _GDI_CLK_KHZ);
+ 866   3      
+ 867   3                  // Link Clk in KHz
+ 868   3                  ulLinkClk = (PDATA_DWORD(0) / 1000);
+ 869   3      
+ 870   3                  DebugMessageRx0("Current Link Clk", ulLinkClk);
+ 871   3                  // =========== Link Clock Measure End ===========
+ 872   3      
+ 873   3                  // =========== Continue Measure Two Frame Start ===========
+ 874   3                  // Start to Measure Vertical BS to BS Counter by GDI Clock
+ 875   3                  ScalerSetBit(PB5_58_MN_MEAS_CTRL, ~_BIT7, 0x00);
+ 876   3                  ScalerSetBit(PB5_58_MN_MEAS_CTRL, ~_BIT7, _BIT7);
+ 877   3      
+ 878   3                  if(ScalerDpRx0PollingFlagLinkCheck(_DP_MEASURE_POLLING_TIMEOUT, PB5_58_MN_MEAS_CTRL, _BIT6, _T
+             -RUE) == _FALSE)
+ 879   3                  {
+ 880   4                      return _FALSE;
+ 881   4                  }
+ 882   3      
+ 883   3                  // Pop up The result
+ 884   3                  SET_DP_RX0_MEASURE_POP_UP();
+ 885   3      
+ 886   3                  // Reset pData to avoid checking fail (F17)
+ 887   3                  PDATA_DWORD(1) = 0;
+ 888   3      
+ 889   3                  // Get Measure Result
+ 890   3                  ScalerRead(PB5_58_MN_MEAS_CTRL, 3, &pData[5], _AUTOINC);
+ 891   3      
+ 892   3                  // Record v_bs2bs2_leng
+ 893   3                  ulVBs2bsLengN = (PDATA_DWORD(1) & 0x001FFFFF);
+ 894   3      
+ 895   3                  // Delay 2ms To Get VBID
+ 896   3                  ScalerTimerDelayXms(2);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 16  
+
+ 897   3      
+ 898   3                  // Get VBID
+ 899   3                  ScalerRead(PB6_01_DP_VBID, 1, &ucVbidTempN, _NON_AUTOINC);
+ 900   3      
+ 901   3                  // Delay 1 frame
+ 902   3                  if(ScalerDpRx0TimerDelayXmsLinkCheck(((ulVBs2bsLengN / (_GDI_CLK_KHZ)) + 2)) == _FALSE)
+ 903   3                  {
+ 904   4                      return _FALSE;
+ 905   4                  }
+ 906   3      
+ 907   3                  // Pop up Measure Result
+ 908   3                  SET_DP_RX0_MEASURE_POP_UP();
+ 909   3      
+ 910   3                  // Get Measure Result
+ 911   3                  PDATA_DWORD(2) = 0;
+ 912   3                  ScalerRead(PB5_58_MN_MEAS_CTRL, 3, &pData[9], _AUTOINC);
+ 913   3      
+ 914   3                  // Get Measure Htotal Counts
+ 915   3                  ScalerRead(PB5_5B_MN_MEAS_HLN_M, 2, &pData[12], _AUTOINC);
+ 916   3      
+ 917   3                  // Get VBID
+ 918   3                  ScalerRead(PB6_01_DP_VBID, 1, &ucVbidTempN1, _NON_AUTOINC);
+ 919   3      
+ 920   3                  ulVBs2bsLengN1 = (PDATA_DWORD(2) & 0x001FFFFF);
+ 921   3      
+ 922   3                  // Disable Measure Block
+ 923   3                  ScalerSetBit(PB5_58_MN_MEAS_CTRL, ~_BIT7, 0x00);
+ 924   3                  // =========== Continue Measure Two Frame End ===========
+ 925   3      
+ 926   3      #if(_AIO_MODERN_STANDBY_SUPPORT == _ON)
+                          // Backup DP Info
+                          g_stDpRx0LinkInfo.ulVBsToBsCountN = ulVBs2bsLengN;
+                          g_stDpRx0LinkInfo.ulVBsToBsCountN1 = ulVBs2bsLengN1;
+                          g_stDpRx0LinkInfo.usHBsToBsCount = (((WORD)(pData[12] << 8)) | ((WORD)pData[13]));
+                          g_stDpRx0LinkInfo.b1InterlaceFieldN = (bit)(ucVbidTempN  & _BIT1);
+                          g_stDpRx0LinkInfo.b1InterlaceFieldN1 = (bit)(ucVbidTempN1 & _BIT1);
+              #endif
+ 934   3              }
+ 935   2      
+ 936   2              // Convert HTotal Count from 1/2 Link Clk to GDI Clk
+ 937   2              usHTotalCount = ((DWORD)PDATA_WORD(6) * _GDI_CLK_KHZ * 2 + (ulLinkClk >> 1)) / ulLinkClk;
+ 938   2      
+ 939   2              DebugMessageRx0("HTotal Count", usHTotalCount);
+ 940   2      
+ 941   2              // if VTotal Difference > 1/2 HTotal
+ 942   2              if((ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)) > (usHTotalCount / 2))
+ 943   2              {
+ 944   3                  if(ScalerDpRx0InterlaceVtotalGetMSACheck(ulVBs2bsLengN) == _TRUE)
+ 945   3                  {
+ 946   4                      usTempVTotal = TO_WORD(ScalerGetByte(PB6_10_MSA_VTTE_0), ScalerGetByte(PB6_11_MSA_VTTE_1))
+             -;
+ 947   4                  }
+ 948   3                  else
+ 949   3                  {
+ 950   4                      if(ulVBs2bsLengN < ulVBs2bsLengN1)
+ 951   4                      {
+ 952   5                          usTempVTotal = ((ulVBs2bsLengN + (usHTotalCount >> 1)) / usHTotalCount);
+ 953   5                      }
+ 954   4                      else
+ 955   4                      {
+ 956   5                          usTempVTotal = ((ulVBs2bsLengN1 + (usHTotalCount >> 1)) / usHTotalCount);
+ 957   5                      }
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 17  
+
+ 958   4                  }
+ 959   3      
+ 960   3                  *pucOddFlg = _TRUE;
+ 961   3              }
+ 962   2              else
+ 963   2              {
+ 964   3                  *pucOddFlg = _FALSE;
+ 965   3              }
+ 966   2      
+ 967   2              DebugMessageRx0("####Calculated usVTotal####", usTempVTotal);
+ 968   2      
+ 969   2              DebugMessageRx0("7. DelayTime", (((ulVBs2bsLengN & 0x000FFFFF) / (_GDI_CLK_KHZ)) + 2));
+ 970   2              DebugMessageRx0("7. Frame[N] VBS2BS Counter", ulVBs2bsLengN);
+ 971   2              DebugMessageRx0("7. Frame[N + 1] VBS2BS Counter", ulVBs2bsLengN1);
+ 972   2              DebugMessageRx0("7. Frame diff ABS", (ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)));
+ 973   2      
+ 974   2      #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _ON)
+                      // Check N and N+1 Frame Vs2Vs Count
+                      if((*pucOddFlg) == _TRUE)
+                      {
+                          // Enable DP Interlace
+                          ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+              
+                          // Enable Field Sync by BE
+                          ScalerSetBit(PB5_F1_DP_RSV1, ~_BIT0, _BIT0);
+              
+                          // HW Check Interlace
+                          if(ScalerGetBit(PB5_57_INTERLACE_MODE_CONFIG, _BIT5) == _BIT5)
+                          {
+                              // Field reference HW
+                              ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), _BIT6);
+                          }
+                          else
+                          {
+                              // Field reference VBID
+                              ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+                          }
+              
+                          // Set Vtt odd fw mode
+                          SET_DP_RX0_INTERLACE_VTT_FW_MODE(_ODD);
+              
+                          *pusVTotal = usTempVTotal;
+              
+                          return _TRUE;
+                      }
+                      else
+                      {
+                          // Check VBID Field Toggle and VBID Interlace Info
+                          if(((ucVbidTempN & _BIT1) != (ucVbidTempN1 & _BIT1)) && (ScalerGetBit(PB6_01_DP_VBID, _BIT2) =
+             -= _BIT2))
+                          {
+                              // Enable DP Interlace
+                              ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+              
+                              // Field reference VBID
+                              ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+              
+                              // Enable Field Sync by BE
+                              ScalerSetBit(PB5_F1_DP_RSV1, ~_BIT0, _BIT0);
+              
+                              // Set Vtt Even fw mode
+                              SET_DP_RX0_INTERLACE_VTT_FW_MODE(_EVEN);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 18  
+
+              
+                              *pusVTotal = usTempVTotal;
+              
+                              return _TRUE;
+                          }
+              
+                          // Enable DP Progressive Mode
+                          ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), 0x00);
+              
+                          // Field reference VBID
+                          ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+              
+                          // Enable Field Sync by VBID
+                          ScalerSetBit(PB5_F1_DP_RSV1, ~_BIT0, 0x00);
+              
+                          // Set Vtt Even fw mode
+                          SET_DP_RX0_INTERLACE_VTT_FW_MODE(_EVEN);
+              
+                          return _FALSE;
+                      }
+              #else
+1040   2              if(ScalerGetBit(PB6_01_DP_VBID, _BIT2) == _BIT2) // Interlace
+1041   2              {
+1042   3                  // Enable DP Interlace
+1043   3                  ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+1044   3      
+1045   3                  if((*pucOddFlg) == _FALSE)
+1046   3                  {
+1047   4                      // Disable DP Interlace
+1048   4                      ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), 0x00);
+1049   4                  }
+1050   3      
+1051   3                  // Get VSW
+1052   3                  usVsyncWidth = ((WORD)ScalerGetByte(PB6_18_MSA_VSW_0) << 8) | ScalerGetByte(PB6_19_MSA_VSW_1);
+1053   3                  usVsyncWidth &= 0x7FFF;
+1054   3      
+1055   3                  // Get VStart
+1056   3                  usVstart = ((WORD)ScalerGetByte(PB6_14_MSA_VST_0) << 8) | ScalerGetByte(PB6_15_MSA_VST_1);
+1057   3      
+1058   3                  // usVbackporch = usVstart - Fixed V-Sync Pulse Width, usVbackporch > usVsyncWidth + 2 lines, 
+             -here 2 lines is for V-Sync Falling edge to DEN Rising Edge distance margion
+1059   3                  if(((ucVbidTempN & _BIT1) != (ucVbidTempN1 & _BIT1)) && (usVstart > (usVsyncWidth + _DP_VSYNC_
+             -WIDTH + 2)))
+1060   3                  {
+1061   4                      // Field Information reference to VBID
+1062   4                      ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+1063   4      
+1064   4                      // Get Vactive
+1065   4                      usVactive = ((WORD)ScalerGetByte(PB6_16_MSA_VHT_0) << 8) | ScalerGetByte(PB6_17_MSA_VHT_1)
+             -;
+1066   4      
+1067   4                      // Set Front Porch = VTotal - Active height - MSA V Start + V Sync Pulse Width
+1068   4                      SET_DP_RX0_VFRONT_PORCH(usTempVTotal - usVactive - usVstart + usVsyncWidth);
+1069   4      
+1070   4                      if((ScalerGetBit(PB5_57_INTERLACE_MODE_CONFIG, _BIT0) == 0x00) &&
+1071   4                         ((((ucVbidTempN & _BIT1) == _BIT1) && ((ucVbidTempN1 & _BIT1) == 0x00) && (ulVBs2bsLeng
+             -N < ulVBs2bsLengN1)) ||
+1072   4                          (((ucVbidTempN & _BIT1) == 0x00) && ((ucVbidTempN1 & _BIT1) == _BIT1) && (ulVBs2bsLeng
+             -N > ulVBs2bsLengN1))))
+1073   4                      {
+1074   5                          // Field inverse enable
+1075   5                          ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT5 | _BIT4 | _BIT0), _BIT4);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 19  
+
+1076   5                      }
+1077   4                  }
+1078   3                  else
+1079   3                  {
+1080   4                      // Field reference HW
+1081   4                      ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), _BIT6);
+1082   4                  }
+1083   3      
+1084   3                  *pusVTotal = usTempVTotal;
+1085   3      
+1086   3                  return _TRUE;
+1087   3              }
+1088   2              else if((ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)) > (usHTotalCount / 2))
+1089   2              {
+1090   3                  // Delay a Complete Frame
+1091   3                  if(ScalerDpRx0TimerDelayXmsLinkCheck(_DP_TWO_FRAME_TIME_MAX) == _FALSE)
+1092   3                  {
+1093   4                      return _FALSE;
+1094   4                  }
+1095   3      
+1096   3                  if(ScalerGetBit(PB5_57_INTERLACE_MODE_CONFIG, _BIT0) == _BIT0)
+1097   3                  {
+1098   4                      DebugMessageRx0("Fake Interlace", 0);
+1099   4                      *pucOddFlg = _FALSE;
+1100   4                  }
+1101   3                  else
+1102   3                  {
+1103   4                      // Enable interlace mode, field reference HW
+1104   4                      ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT0), (_BIT7 | _BIT
+             -6));
+1105   4      
+1106   4                      *pusVTotal = usTempVTotal;
+1107   4      
+1108   4                      return _TRUE;
+1109   4                  }
+1110   3              }
+1111   2      
+1112   2              // Disable DP Interlace
+1113   2              ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT0), 0x00);
+1114   2      
+1115   2              return _FALSE;
+1116   2      #endif
+1117   2          }
+1118   1      }
+1119          
+1120          //--------------------------------------------------
+1121          // Description  : Judge Vtotal from MSA or not
+1122          // Input Value  : None
+1123          // Output Value : TRUE --> Get Vtotal from MSA
+1124          //--------------------------------------------------
+1125          bit ScalerDpRx0InterlaceVtotalGetMSACheck(DWORD ulVBs2bsLeng)
+1126          {
+1127   1          WORD usVfreq = 0;
+1128   1      
+1129   1          // Vfreq (unit : 0.01Hz)
+1130   1          usVfreq = _GDI_CLK_KHZ * 1000 * 100 / ulVBs2bsLeng;
+1131   1      
+1132   1          // Solve interlace issue for QD-980 for timing : 480i @ 60 Hz
+1133   1          // Central Vfreq = 60Hz +/- 1% = 59.4Hz ~ 60.6Hz
+1134   1          if((TO_WORD(ScalerGetByte(PB6_08_MSA_HTT_0), ScalerGetByte(PB6_09_MSA_HTT_1)) == 858) &&
+1135   1             (TO_WORD(ScalerGetByte(PB6_10_MSA_VTTE_0), ScalerGetByte(PB6_11_MSA_VTTE_1)) == 262) &&
+1136   1             ((usVfreq > 5940) && (usVfreq < 6060)) && (ScalerGetBit(PB6_01_DP_VBID, _BIT2) == _BIT2))
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 20  
+
+1137   1          {
+1138   2              return _TRUE;
+1139   2          }
+1140   1      
+1141   1          return _FALSE;
+1142   1      }
+1143          
+1144          //--------------------------------------------------
+1145          // Description  : DP Get Video Info
+1146          // Input Value  : None
+1147          // Output Value : TRUE --> Get successfully
+1148          //--------------------------------------------------
+1149          bit ScalerDpRx0GetVideoInfo(void)
+1150          {
+1151   1      #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1152   1          CLR_DP_RX0_VSC_SDP_COLOR_MODE();
+1153   1      
+1154   1          // Check MISC1[6]
+1155   1          if((ScalerGetBit(PB6_03_MN_STRM_ATTR_MISC1, _BIT6)) == _BIT6)
+1156   1          {
+1157   2              SET_DP_RX0_VSC_SDP_COLOR_MODE();
+1158   2      
+1159   2      #if(_HW_DP_VSC_SDP_REG_SUPPORT == _ON)
+              
+                      // Read DB16~18 --> pData[0:2]
+                      ScalerRead(PB6_46_VSC15, 3, pData, _AUTOINC);
+              #else
+1164   2              // Delay 2 frames for SRAM ready (worst case)
+1165   2              if(ScalerDpRx0TimerDelayXmsLinkCheck(_DP_ONE_FRAME_TIME_MAX * 2) == _FALSE)
+1166   2              {
+1167   3                  return _FALSE;
+1168   3              }
+1169   2      
+1170   2              SET_DP_RX0_RSV1_DETECTING();
+1171   2      
+1172   2              ScalerTimerActiveTimerEvent((_DP_ONE_FRAME_TIME_MAX * 3), _SCALER_TIMER_EVENT_DP_RX0_RSV1_PACKET_D
+             -ETECT);
+1173   2      
+1174   2              // Read DB16~18 --> pData[0:2]
+1175   2              ScalerGetDataPortByte(PB6_30_DP_INFO_FM_ADR, _DP_INFO_RSV1_DB16, 3, pData, _AUTOINC);
+1176   2      #endif
+1177   2              // Set ColorimetryExtPreValue & QuantizationPreValue & ColorDepthPreValue
+1178   2              SET_DP_RX0_COLORIMETRY_EXT_PREVALUE(pData[0] & (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+1179   2              SET_DP_RX0_QUANTIZATION_PREVALUE((pData[1] & _BIT7) >> 7);
+1180   2              SET_DP_RX0_COLOR_DEPTH_PREVALUE(pData[1] & (_BIT2 | _BIT1 | _BIT0));
+1181   2              SET_DP_RX0_COLOR_SPACE_PREVALUE(pData[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4));
+1182   2      
+1183   2              DebugMessageRx0("VSC DB16", pData[0]);
+1184   2              DebugMessageRx0("VSC DB17", pData[1]);
+1185   2          }
+1186   1          else
+1187   1      #endif
+1188   1          {
+1189   2              // Get MISC Info
+1190   2              pData[0] = ScalerGetByte(PB6_02_MN_STRM_ATTR_MISC);
+1191   2      
+1192   2              // Set ColorimetryPreValue & QuantizationPreValue
+1193   2              SET_DP_RX0_COLORIMETRY_PREVALUE((pData[0] & (_BIT4 | _BIT3 | _BIT2 | _BIT1)) >> 1);
+1194   2              SET_DP_RX0_QUANTIZATION_PREVALUE((pData[0] & _BIT3) >> 3);
+1195   2              SET_DP_RX0_COLOR_DEPTH_PREVALUE((pData[0] & (_BIT7 | _BIT6 | _BIT5)) >> 5);
+1196   2              SET_DP_RX0_COLOR_SPACE_PREVALUE((ScalerGetBit(PB6_03_MN_STRM_ATTR_MISC1, _BIT7)) | (pData[0] & (_B
+             -IT2 | _BIT1)));
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 21  
+
+1197   2          }
+1198   1      
+1199   1          return _TRUE;
+1200   1      }
+1201          
+1202          //--------------------------------------------------
+1203          // Description  : DP Set Color Info Macros
+1204          // Input Value  : None
+1205          // Output Value : None
+1206          //--------------------------------------------------
+1207          void ScalerDpRx0SetColorInfo(void)
+1208          {
+1209   1      #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1210   1          if(GET_DP_RX0_VSC_SDP_COLOR_MODE() == _TRUE)
+1211   1          {
+1212   2              // Use VSC SDP
+1213   2              // Set Color Space Macro
+1214   2              switch(GET_DP_RX0_COLOR_SPACE_PREVALUE())
+1215   2              {
+1216   3                  case _VSC_COLOR_SPACE_0:
+1217   3                      SET_COLOR_SPACE(_COLOR_SPACE_RGB);
+1218   3                      break;
+1219   3      
+1220   3                  case _VSC_COLOR_SPACE_1:
+1221   3                      SET_COLOR_SPACE(_COLOR_SPACE_YCBCR444);
+1222   3                      break;
+1223   3      
+1224   3                  case _VSC_COLOR_SPACE_2:
+1225   3                      SET_COLOR_SPACE(_COLOR_SPACE_YCBCR422);
+1226   3                      break;
+1227   3      
+1228   3                  case _VSC_COLOR_SPACE_3:
+1229   3                      SET_COLOR_SPACE(_COLOR_SPACE_YCBCR420);
+1230   3                      break;
+1231   3      
+1232   3                  case _VSC_COLOR_SPACE_4:
+1233   3                      SET_COLOR_SPACE(_COLOR_SPACE_Y_ONLY);
+1234   3                      break;
+1235   3      
+1236   3                  case _VSC_COLOR_SPACE_5:
+1237   3                      SET_COLOR_SPACE(_COLOR_SPACE_RAW);
+1238   3                      break;
+1239   3      
+1240   3                  default:
+1241   3                      SET_COLOR_SPACE(_COLOR_SPACE_RGB);
+1242   3                      break;
+1243   3              }
+1244   2      
+1245   2              // Set Colorimetry Ext
+1246   2              ScalerDpRx0ColorimetryExtSetting();
+1247   2          }
+1248   1          else
+1249   1      #endif
+1250   1          {
+1251   2              switch(GET_DP_RX0_COLOR_SPACE_PREVALUE())
+1252   2              {
+1253   3                  case _BIT1:
+1254   3                      SET_COLOR_SPACE(_COLOR_SPACE_YCBCR422);
+1255   3                      break;
+1256   3      
+1257   3                  case _BIT2:
+1258   3                      SET_COLOR_SPACE(_COLOR_SPACE_YCBCR444);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 22  
+
+1259   3                      break;
+1260   3      
+1261   3                  case _BIT7:
+1262   3                      SET_COLOR_SPACE(_COLOR_SPACE_Y_ONLY);
+1263   3                      break;
+1264   3      
+1265   3                  case (_BIT7 | _BIT1):
+1266   3                      SET_COLOR_SPACE(_COLOR_SPACE_RAW);
+1267   3                      break;
+1268   3      
+1269   3                  default:
+1270   3                      SET_COLOR_SPACE(_COLOR_SPACE_RGB);
+1271   3                      break;
+1272   3              }
+1273   2      
+1274   2              // Set Colorimetry
+1275   2              ScalerDpRx0ColorimetrySetting();
+1276   2          }
+1277   1      
+1278   1          // Get Color Depth
+1279   1          if(GET_COLOR_SPACE() != _COLOR_SPACE_RAW)
+1280   1          {
+1281   2              switch(GET_DP_RX0_COLOR_DEPTH_PREVALUE())
+1282   2              {
+1283   3                  case 0:
+1284   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_6_BITS);
+1285   3                      break;
+1286   3      
+1287   3                  case 1:
+1288   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
+1289   3                      break;
+1290   3      
+1291   3                  case 2:
+1292   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_10_BITS);
+1293   3                      break;
+1294   3      
+1295   3                  case 3:
+1296   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_12_BITS);
+1297   3                      break;
+1298   3      
+1299   3                  case 4:
+1300   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_16_BITS);
+1301   3                      break;
+1302   3      
+1303   3                  default:
+1304   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
+1305   3                      break;
+1306   3              }
+1307   2          }
+1308   1          else
+1309   1          {
+1310   2              switch(GET_DP_RX0_COLOR_DEPTH_PREVALUE())
+1311   2              {
+1312   3                  case 1:
+1313   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_6_BITS);
+1314   3                      break;
+1315   3      
+1316   3                  case 2:
+1317   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_7_BITS);
+1318   3                      break;
+1319   3      
+1320   3                  case 3:
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 23  
+
+1321   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
+1322   3                      break;
+1323   3      
+1324   3                  case 4:
+1325   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_10_BITS);
+1326   3                      break;
+1327   3      
+1328   3                  case 5:
+1329   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_12_BITS);
+1330   3                      break;
+1331   3      
+1332   3                  case 6:
+1333   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_14_BITS);
+1334   3                      break;
+1335   3      
+1336   3                  case 7:
+1337   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_16_BITS);
+1338   3                      break;
+1339   3      
+1340   3                  default:
+1341   3                      SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
+1342   3                      break;
+1343   3              }
+1344   2          }
+1345   1      
+1346   1          // Set Porch Color
+1347   1          if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR444) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
+             -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR420))
+1348   1          {
+1349   2              if(GET_DP_RX0_QUANTIZATION_PREVALUE() == _DP_COLOR_QUANTIZATION_LIMIT)
+1350   2              {
+1351   3                  SET_DP_RX0_PORCH_COLOR_YCC_LIMIT();
+1352   3              }
+1353   2              else if(GET_DP_RX0_QUANTIZATION_PREVALUE() == _DP_COLOR_QUANTIZATION_FULL)
+1354   2              {
+1355   3                  SET_DP_RX0_PORCH_COLOR_YCC_FULL();
+1356   3              }
+1357   2          }
+1358   1          else
+1359   1          {
+1360   2              SET_DP_RX0_PORCH_COLOR_RGB();
+1361   2          }
+1362   1      
+1363   1          // Set Quantization Range
+1364   1          ScalerDpRx0QuantizationSetting();
+1365   1      }
+1366          
+1367          //--------------------------------------------------
+1368          // Description  : DP Video Setting
+1369          // Input Value  : None
+1370          // Output Value : None
+1371          //--------------------------------------------------
+1372          void ScalerDpRx0VideoSetting(void)
+1373          {
+1374   1          // Set Color Space for Display Format Gen.
+1375   1          switch(GET_COLOR_SPACE())
+1376   1          {
+1377   2              case _COLOR_SPACE_RGB:
+1378   2                  DebugMessageRx0("_COLOR_SPACE_RGB", 0);
+1379   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+1380   2                  break;
+1381   2      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 24  
+
+1382   2              case _COLOR_SPACE_YCBCR444:
+1383   2                  DebugMessageRx0("_COLOR_SPACE_YCBCR444", 0);
+1384   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), _BIT4);
+1385   2                  break;
+1386   2      
+1387   2              case _COLOR_SPACE_YCBCR422:
+1388   2                  DebugMessageRx0("_COLOR_SPACE_YCBCR422", 0);
+1389   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), _BIT3);
+1390   2                  break;
+1391   2      
+1392   2              case _COLOR_SPACE_YCBCR420:
+1393   2                  DebugMessageRx0("_COLOR_SPACE_YCBCR420", 0);
+1394   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+1395   2                  break;
+1396   2      
+1397   2              case _COLOR_SPACE_Y_ONLY:
+1398   2                  DebugMessageRx0("_COLOR_SPACE_Y_ONLY", 0);
+1399   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), (_BIT4 | _BIT3));
+1400   2                  break;
+1401   2      
+1402   2              case _COLOR_SPACE_RAW:
+1403   2                  DebugMessageRx0("_COLOR_SPACE_RAW", 0);
+1404   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+1405   2                  break;
+1406   2      
+1407   2              default:
+1408   2                  // RGB
+1409   2                  ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+1410   2                  break;
+1411   2          }
+1412   1      
+1413   1          // Set Color Depth for Display Format Gen.
+1414   1          ScalerSetBit(PB5_20_PG_CTRL_0, ~(_BIT2 | _BIT1 | _BIT0), GET_DP_RX0_COLOR_DEPTH_PREVALUE());
+1415   1          DebugMessageRx0("_COLOR_DEPTH", GET_COLOR_DEPTH());
+1416   1      }
+1417          
+1418          //--------------------------------------------------
+1419          // Description  : DP Rx0 Colorimetry Setting
+1420          // Input Value  : None
+1421          // Output Value : None
+1422          //--------------------------------------------------
+1423          void ScalerDpRx0ColorimetrySetting(void)
+1424          {
+1425   1          BYTE ucColorimetryValue = (GET_DP_RX0_COLORIMETRY_PREVALUE() << 1);
+1426   1      
+1427   1          if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
+1428   1          {
+1429   2              switch(ucColorimetryValue & (_BIT4 | _BIT3))
+1430   2              {
+1431   3                  case 0:
+1432   3                      SET_COLORIMETRY(_COLORIMETRY_YCC_XVYCC601);
+1433   3                      DebugMessageRx0("_COLORIMETRY_YCC_XVYCC601", 0);
+1434   3                      break;
+1435   3      
+1436   3                  case _BIT3:
+1437   3                      SET_COLORIMETRY(_COLORIMETRY_YCC_ITUR_BT601);
+1438   3                      DebugMessageRx0("_COLORIMETRY_YCC_ITUR_BT601", 0);
+1439   3                      break;
+1440   3      
+1441   3                  case _BIT4:
+1442   3                      SET_COLORIMETRY(_COLORIMETRY_YCC_XVYCC709);
+1443   3                      DebugMessageRx0("_COLORIMETRY_YCC_XVYCC709", 0);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 25  
+
+1444   3                      break;
+1445   3      
+1446   3                  case (_BIT4 | _BIT3):
+1447   3                      SET_COLORIMETRY(_COLORIMETRY_YCC_ITUR_BT709);
+1448   3                      DebugMessageRx0("_COLORIMETRY_YCC_ITUR_BT709", 0);
+1449   3                      break;
+1450   3      
+1451   3                  default:
+1452   3                      break;
+1453   3              }
+1454   2          }
+1455   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_RGB)
+1456   1          {
+1457   2              switch(ucColorimetryValue & (_BIT4 | _BIT3 | _BIT2 | _BIT1))
+1458   2              {
+1459   3                  case 0:
+1460   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_SRGB);
+1461   3                      DebugMessageRx0("_COLORIMETRY_RGB_SRGB_VESA", 0);
+1462   3                      break;
+1463   3      
+1464   3                  case _BIT3:
+1465   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_SRGB);
+1466   3                      DebugMessageRx0("_COLORIMETRY_RGB_SRGB_CEA", 0);
+1467   3                      break;
+1468   3      
+1469   3                  case (_BIT2 | _BIT1):
+1470   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_XRRGB);
+1471   3                      DebugMessageRx0("_COLORIMETRY_RGB_XRRGB", 0);
+1472   3                      break;
+1473   3      
+1474   3                  case (_BIT4 | _BIT2 | _BIT1):
+1475   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_SCRGB);
+1476   3                      DebugMessageRx0("_COLORIMETRY_RGB_SCRGB", 0);
+1477   3                      break;
+1478   3      
+1479   3                  case (_BIT4 | _BIT3):
+1480   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_ADOBERGB);
+1481   3                      DebugMessageRx0("_COLORIMETRY_RGB_ADOBERGB", 0);
+1482   3                      break;
+1483   3      
+1484   3                  case (_BIT3 | _BIT2 | _BIT1):
+1485   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_DCI_P3);
+1486   3                      DebugMessageRx0("_COLORIMETRY_RGB_DCI_P3", 0);
+1487   3                      break;
+1488   3      
+1489   3                  case (_BIT4 | _BIT3 | _BIT2 | _BIT1):
+1490   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_COLOR_PROFILE);
+1491   3                      DebugMessageRx0("_COLORIMETRY_RGB_COLOR_PROFILE", 0);
+1492   3                      break;
+1493   3      
+1494   3                  default:
+1495   3                      SET_COLORIMETRY(_COLORIMETRY_RGB_SRGB);
+1496   3                      DebugMessageRx0("_COLORIMETRY_RGB_SRGB", 0);
+1497   3                      break;
+1498   3              }
+1499   2          }
+1500   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_Y_ONLY)
+1501   1          {
+1502   2              SET_COLORIMETRY(_COLORIMETRY_Y_ONLY);
+1503   2              DebugMessageRx0("_COLORIMETRY_Y_ONLY", 0);
+1504   2          }
+1505   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_RAW)
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 26  
+
+1506   1          {
+1507   2              SET_COLORIMETRY(_COLORIMETRY_RAW);
+1508   2              DebugMessageRx0("_COLORIMETRY_RAW", 0);
+1509   2          }
+1510   1      }
+1511          
+1512          #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1513          //--------------------------------------------------
+1514          // Description  : DP Rx0 Colorimetry Extended Setting
+1515          // Input Value  : None
+1516          // Output Value : None
+1517          //--------------------------------------------------
+1518          void ScalerDpRx0ColorimetryExtSetting(void)
+1519          {
+1520   1          SET_COLORIMETRY(_COLORIMETRY_EXT);
+1521   1      
+1522   1          if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR420) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
+             -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
+1523   1          {
+1524   2              switch(GET_DP_RX0_COLORIMETRY_EXT_PREVALUE())
+1525   2              {
+1526   3                  case _VSC_COLORIMETRY_0:
+1527   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT601);
+1528   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_ITUR_BT601", 0);
+1529   3                      break;
+1530   3      
+1531   3                  case _VSC_COLORIMETRY_1:
+1532   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT709);
+1533   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_ITUR_BT709", 0);
+1534   3                      break;
+1535   3      
+1536   3                  case _VSC_COLORIMETRY_2:
+1537   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_XVYCC601);
+1538   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_XVYCC601", 0);
+1539   3                      break;
+1540   3      
+1541   3                  case _VSC_COLORIMETRY_3:
+1542   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_XVYCC709);
+1543   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_XVYCC709", 0);
+1544   3                      break;
+1545   3      
+1546   3                  case _VSC_COLORIMETRY_4:
+1547   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_SYCC601);
+1548   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_SYCC601", 0);
+1549   3                      break;
+1550   3      
+1551   3                  case _VSC_COLORIMETRY_5:
+1552   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ADOBEYCC601);
+1553   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_ADOBEYCC601", 0);
+1554   3                      break;
+1555   3      
+1556   3                  case _VSC_COLORIMETRY_6:
+1557   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT2020_CL);
+1558   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_ITUR_BT2020_CL", 0);
+1559   3                      break;
+1560   3      
+1561   3                  case _VSC_COLORIMETRY_7:
+1562   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT2020_NCL);
+1563   3                      DebugMessageRx0("_COLORIMETRY_EXT_YCC_ITUR_BT2020_NCL", 0);
+1564   3                      break;
+1565   3      
+1566   3                  default:
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 27  
+
+1567   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RESERVED);
+1568   3                      DebugMessageRx0("_COLORIMETRY_EXT_RESERVED", 0);
+1569   3                      break;
+1570   3              }
+1571   2          }
+1572   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_RGB)
+1573   1          {
+1574   2              switch(GET_DP_RX0_COLORIMETRY_EXT_PREVALUE())
+1575   2              {
+1576   3                  case _VSC_COLORIMETRY_0:
+1577   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_SRGB);
+1578   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_SRGB", 0);
+1579   3                      break;
+1580   3      
+1581   3                  case _VSC_COLORIMETRY_1:
+1582   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_XRRGB);
+1583   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_XRRGB", 0);
+1584   3                      break;
+1585   3      
+1586   3                  case _VSC_COLORIMETRY_2:
+1587   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_SCRGB);
+1588   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_SCRGB", 0);
+1589   3                      break;
+1590   3      
+1591   3                  case _VSC_COLORIMETRY_3:
+1592   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_ADOBERGB);
+1593   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_ADOBERGB", 0);
+1594   3                      break;
+1595   3      
+1596   3                  case _VSC_COLORIMETRY_4:
+1597   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_DCI_P3);
+1598   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_DCI_P3", 0);
+1599   3                      break;
+1600   3      
+1601   3                  case _VSC_COLORIMETRY_5:
+1602   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_CUSTOM_COLOR_PROFILE);
+1603   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_CUSTOM_COLOR_PROFILE", 0);
+1604   3                      break;
+1605   3      
+1606   3                  case _VSC_COLORIMETRY_6:
+1607   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_ITUR_BT2020);
+1608   3                      DebugMessageRx0("_COLORIMETRY_EXT_RGB_ITUR_BT2020", 0);
+1609   3                      break;
+1610   3      
+1611   3                  default:
+1612   3                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RESERVED);
+1613   3                      DebugMessageRx0("_COLORIMETRY_EXT_RESERVED", 0);
+1614   3                      break;
+1615   3              }
+1616   2          }
+1617   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_Y_ONLY)
+1618   1          {
+1619   2              SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_Y_ONLY_DICOM_PART14);
+1620   2              DebugMessageRx0("_COLORIMETRY_EXT_Y_ONLY_DICOM_PART14", 0);
+1621   2          }
+1622   1          else if(GET_COLOR_SPACE() == _COLOR_SPACE_RAW)
+1623   1          {
+1624   2              SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RAW_CUSTOM_COLOR_PROFILE);
+1625   2              DebugMessageRx0("_COLORIMETRY_EXT_RAW_CUSTOM_COLOR_PROFILE", 0);
+1626   2          }
+1627   1      }
+1628          #endif
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 28  
+
+1629          
+1630          //--------------------------------------------------
+1631          // Description  : DP Rx0 Quantization Setting
+1632          // Input Value  : None
+1633          // Output Value : None
+1634          //--------------------------------------------------
+1635          void ScalerDpRx0QuantizationSetting(void)
+1636          {
+1637   1          switch(GET_COLOR_SPACE())
+1638   1          {
+1639   2              case _COLOR_SPACE_YCBCR420:
+1640   2              case _COLOR_SPACE_YCBCR422:
+1641   2              case _COLOR_SPACE_YCBCR444:
+1642   2      
+1643   2                  // Special case for xvYCC
+1644   2                  if((GET_COLORIMETRY() == _COLORIMETRY_YCC_XVYCC601) || (GET_COLORIMETRY() == _COLORIMETRY_YCC_
+             -XVYCC709))
+1645   2                  {
+1646   3                      SET_COLOR_YCC_QUANTIZATION_RANGE(_YCC_QUANTIZATION_LIMIT_RANGE);
+1647   3                      DebugMessageRx0("_YCC_QUANTIZATION_LIMIT_RANGE", 0);
+1648   3                  }
+1649   2                  else
+1650   2                  {
+1651   3                      if(GET_DP_RX0_QUANTIZATION_PREVALUE() == _DP_COLOR_QUANTIZATION_FULL)
+1652   3                      {
+1653   4                          SET_COLOR_YCC_QUANTIZATION_RANGE(_YCC_QUANTIZATION_FULL_RANGE);
+1654   4                          DebugMessageRx0("_YCC_QUANTIZATION_FULL_RANGE", 0);
+1655   4                      }
+1656   3                      else
+1657   3                      {
+1658   4                          SET_COLOR_YCC_QUANTIZATION_RANGE(_YCC_QUANTIZATION_LIMIT_RANGE);
+1659   4                          DebugMessageRx0("_YCC_QUANTIZATION_LIMIT_RANGE", 0);
+1660   4                      }
+1661   3                  }
+1662   2      
+1663   2                  SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_RESERVED);
+1664   2      
+1665   2                  break;
+1666   2      
+1667   2              default:
+1668   2              case _COLOR_SPACE_RGB:
+1669   2      
+1670   2                  // Special case for AdobeRGB
+1671   2                  if(GET_COLORIMETRY() == _COLORIMETRY_RGB_ADOBERGB)
+1672   2                  {
+1673   3                      SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_FULL_RANGE);
+1674   3                      DebugMessageRx0("_RGB_QUANTIZATION_FULL_RANGE", 0);
+1675   3                  }
+1676   2                  else
+1677   2                  {
+1678   3                      if(GET_DP_RX0_QUANTIZATION_PREVALUE() == _DP_COLOR_QUANTIZATION_FULL)
+1679   3                      {
+1680   4                          SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_FULL_RANGE);
+1681   4                          DebugMessageRx0("_RGB_QUANTIZATION_FULL_RANGE", 0);
+1682   4                      }
+1683   3                      else
+1684   3                      {
+1685   4                          SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_LIMIT_RANGE);
+1686   4                          DebugMessageRx0("_RGB_QUANTIZATION_LIMIT_RANGE", 0);
+1687   4                      }
+1688   3                  }
+1689   2      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 29  
+
+1690   2                  SET_COLOR_YCC_QUANTIZATION_RANGE(_YCC_QUANTIZATION_FULL_RANGE);
+1691   2      
+1692   2                  break;
+1693   2          }
+1694   1      }
+1695          
+1696          //--------------------------------------------------
+1697          // Description  : Check DP Misc Information
+1698          // Input Value  : None
+1699          // Output Value : True --> DP Misc Check Ok
+1700          //--------------------------------------------------
+1701          bit ScalerDpRx0MiscCheck(void)
+1702          {
+1703   1      #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1704   1          // Check MISC1[6]
+1705   1          if((ScalerGetBit(PB6_03_MN_STRM_ATTR_MISC1, _BIT6)) == _BIT6)
+1706   1          {
+1707   2              return ScalerDpRx0VscCheck();
+1708   2          }
+1709   1          else
+1710   1      #endif
+1711   1          {
+1712   2              // Get MISC Info
+1713   2              BYTE ucMisc0 = ScalerGetByte(PB6_02_MN_STRM_ATTR_MISC);
+1714   2              BYTE ucColorSpaceValue = (ScalerGetBit(PB6_03_MN_STRM_ATTR_MISC1, _BIT7)) | (ucMisc0 & (_BIT2 | _B
+             -IT1));
+1715   2      
+1716   2              // Color Space Check
+1717   2      #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1718   2      
+1719   2              // Color format info source change from VSC --> MISC
+1720   2              if(GET_DP_RX0_VSC_SDP_COLOR_MODE() == _TRUE)
+1721   2              {
+1722   3                  switch(ucColorSpaceValue)
+1723   3                  {
+1724   4                      case _BIT1:
+1725   4                          if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR422)
+1726   4                          {
+1727   5                              DebugMessageRx0("Misc change: Color Format, _COLOR_SPACE_YCBCR422", 0);
+1728   5                              return _FALSE;
+1729   5                          }
+1730   4                          break;
+1731   4      
+1732   4                      case _BIT2:
+1733   4                          if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR444)
+1734   4                          {
+1735   5                              DebugMessageRx0("Misc change: Color Format, _COLOR_SPACE_YCBCR444", 0);
+1736   5                              return _FALSE;
+1737   5                          }
+1738   4                          break;
+1739   4      
+1740   4                      case _BIT7:
+1741   4                          if(GET_COLOR_SPACE() != _COLOR_SPACE_Y_ONLY)
+1742   4                          {
+1743   5                              DebugMessageRx0("Misc change: Color Format, _COLOR_SPACE_Y_ONLY", 0);
+1744   5                              return _FALSE;
+1745   5                          }
+1746   4                          break;
+1747   4      
+1748   4                      case (_BIT7 | _BIT1):
+1749   4                          if(GET_COLOR_SPACE() != _COLOR_SPACE_RAW)
+1750   4                          {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 30  
+
+1751   5                              DebugMessageRx0("Misc change: Color Format, _COLOR_SPACE_RAW", 0);
+1752   5                              return _FALSE;
+1753   5                          }
+1754   4                          break;
+1755   4      
+1756   4                      default:
+1757   4                          if(GET_COLOR_SPACE() != _COLOR_SPACE_RGB)
+1758   4                          {
+1759   5                              DebugMessageRx0("Misc change: Color Format, _COLOR_SPACE_RGB", 0);
+1760   5                              return _FALSE;
+1761   5                          }
+1762   4                          break;
+1763   4                  }
+1764   3              }
+1765   2              else
+1766   2      #endif
+1767   2              {
+1768   3                  if(ucColorSpaceValue != GET_DP_RX0_COLOR_SPACE_PREVALUE())
+1769   3                  {
+1770   4                      DebugMessageRx0("Misc change: Color Space", 0);
+1771   4                      return _FALSE;
+1772   4                  }
+1773   3              }
+1774   2      
+1775   2              // Color Depth Check
+1776   2              if((((ucMisc0 & (_BIT7 | _BIT6 | _BIT5))) >> 5) != GET_DP_RX0_COLOR_DEPTH_PREVALUE())
+1777   2              {
+1778   3                  DebugMessageRx0("Misc change: Color Depth", (((ucMisc0 & (_BIT7 | _BIT6 | _BIT5))) >> 5));
+1779   3                  return _FALSE;
+1780   3              }
+1781   2      
+1782   2              // Colorimetry Check
+1783   2              if(GET_COLORIMETRY() != _COLORIMETRY_EXT)
+1784   2              {
+1785   3                  if(((ucMisc0 & (_BIT4 | _BIT3 | _BIT2 | _BIT1)) >> 1) != GET_DP_RX0_COLORIMETRY_PREVALUE())
+1786   3                  {
+1787   4                      DebugMessageRx0("Misc change: Colorimetry", 0);
+1788   4      
+1789   4                      if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+1790   4                      {
+1791   5                          return _FALSE;
+1792   5                      }
+1793   4                      else
+1794   4                      {
+1795   5                          SET_DP_RX0_COLORIMETRY_PREVALUE((ucMisc0 & (_BIT4 | _BIT3 | _BIT2 | _BIT1)) >> 1);
+1796   5                          ScalerDpRx0ColorimetrySetting();
+1797   5                          SET_DP_RX0_COLORIMETRY_CHANGED();
+1798   5                      }
+1799   4                  }
+1800   3              }
+1801   2              else
+1802   2              {
+1803   3                  DebugMessageRx0("Misc change: Ext Colorimetry", 0);
+1804   3      
+1805   3                  if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+1806   3                  {
+1807   4                      return _FALSE;
+1808   4                  }
+1809   3                  else
+1810   3                  {
+1811   4                      SET_DP_RX0_COLORIMETRY_PREVALUE((ucMisc0 & (_BIT4 | _BIT3 | _BIT2 | _BIT1)) >> 1);
+1812   4                      ScalerDpRx0ColorimetrySetting();
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 31  
+
+1813   4                      SET_DP_RX0_COLORIMETRY_CHANGED();
+1814   4                  }
+1815   3              }
+1816   2      
+1817   2              // Dynamic Range Check
+1818   2      #if(_YCC_QUANTIZATION_RANGE_SUPPORT == _ON)
+1819   2              if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR444) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422))
+1820   2              {
+1821   3                  if(((ucMisc0 & _BIT3) >> 3) != GET_DP_RX0_QUANTIZATION_PREVALUE())
+1822   3                  {
+1823   4                      DebugMessageRx0("Misc change: Dynamic Range", 0);
+1824   4      
+1825   4                      if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+1826   4                      {
+1827   5                          return _FALSE;
+1828   5                      }
+1829   4                      else
+1830   4                      {
+1831   5                          SET_DP_RX0_QUANTIZATION_PREVALUE((ucMisc0 & _BIT3) >> 3);
+1832   5                          ScalerDpRx0QuantizationSetting();
+1833   5                          SET_DP_RX0_QUANTIZATION_CHANGED();
+1834   5                      }
+1835   4                  }
+1836   3              }
+1837   2              else
+1838   2      #endif
+1839   2              {
+1840   3      #if(_RGB_QUANTIZATION_RANGE_SUPPORT == _ON)
+1841   3                  if(((ucMisc0 & _BIT3) >> 3) != GET_DP_RX0_QUANTIZATION_PREVALUE())
+1842   3                  {
+1843   4                      DebugMessageRx0("Misc change: Dynamic Range", 0);
+1844   4      
+1845   4                      if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+1846   4                      {
+1847   5                          return _FALSE;
+1848   5                      }
+1849   4                      else
+1850   4                      {
+1851   5                          SET_DP_RX0_QUANTIZATION_PREVALUE((ucMisc0 & _BIT3) >> 3);
+1852   5                          ScalerDpRx0QuantizationSetting();
+1853   5                          SET_DP_RX0_QUANTIZATION_CHANGED();
+1854   5                      }
+1855   4                  }
+1856   3      #endif
+1857   3              }
+1858   2      
+1859   2      #if(_DP_FREESYNC_SUPPORT == _ON)
+1860   2              if(GET_FREESYNC_ENABLED() == _FALSE)
+1861   2      #endif
+1862   2              {
+1863   3                  // Get HSW
+1864   3                  ScalerRead(PB6_0E_MSA_HSW_0, 2, &pData[0], _AUTOINC);
+1865   3      
+1866   3                  // Get VSW
+1867   3                  ScalerRead(PB6_18_MSA_VSW_0, 2, &pData[2], _AUTOINC);
+1868   3      
+1869   3                  if(((PDATA_WORD(0) & 0x7FFF) == 0x00) || ((PDATA_WORD(1) & 0x7FFF) == 0x00))
+1870   3                  {
+1871   4                      return _FALSE;
+1872   4                  }
+1873   3              }
+1874   2      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 32  
+
+1875   2              return _TRUE;
+1876   2          }
+1877   1      }
+1878          
+1879          #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+1880          //--------------------------------------------------
+1881          // Description  : Check DP VSC SDP Information
+1882          // Input Value  : None
+1883          // Output Value : True --> DP VSC SDP Check Ok
+1884          //--------------------------------------------------
+1885          bit ScalerDpRx0VscCheck(void)
+1886          {
+1887   1          BYTE pucVscColorFormat[3];
+1888   1      
+1889   1          memset(pucVscColorFormat, 0, sizeof(pucVscColorFormat));
+1890   1      
+1891   1      #if(_HW_DP_VSC_SDP_REG_SUPPORT == _ON)
+              
+                  // Read DB16~18 --> pucVscColorFormat[0:2]
+                  ScalerRead(PB6_46_VSC15, 3, pucVscColorFormat, _AUTOINC);
+              #else
+1896   1          if(GET_DP_RX0_RSV1_DETECTING() == _FALSE)
+1897   1          {
+1898   2              // Read DB16~18 --> pucVscColorFormat[0:2]
+1899   2              ScalerGetDataPortByte(PB6_30_DP_INFO_FM_ADR, _DP_INFO_RSV1_DB16, 3, pucVscColorFormat, _AUTOINC);
+1900   2      
+1901   2              SET_DP_RX0_RSV1_DETECTING();
+1902   2      
+1903   2              ScalerTimerActiveTimerEvent((_DP_ONE_FRAME_TIME_MAX * 3), _SCALER_TIMER_EVENT_DP_RX0_RSV1_PACKET_D
+             -ETECT);
+1904   2          }
+1905   1          else
+1906   1          {
+1907   2              return _TRUE;
+1908   2          }
+1909   1      #endif
+1910   1      
+1911   1          // Color Space Check
+1912   1          if(GET_DP_RX0_VSC_SDP_COLOR_MODE() == _FALSE)
+1913   1          {
+1914   2              // Color format info source change from MISC --> VSC
+1915   2              switch(pucVscColorFormat[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4))
+1916   2              {
+1917   3                  case _VSC_COLOR_SPACE_0:
+1918   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_RGB)
+1919   3                      {
+1920   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_RGB", 0);
+1921   4                          return _FALSE;
+1922   4                      }
+1923   3      
+1924   3                      break;
+1925   3      
+1926   3                  case _VSC_COLOR_SPACE_1:
+1927   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR444)
+1928   3                      {
+1929   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_YCBCR444", 0);
+1930   4                          return _FALSE;
+1931   4                      }
+1932   3      
+1933   3                      break;
+1934   3      
+1935   3                  case _VSC_COLOR_SPACE_2:
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 33  
+
+1936   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR422)
+1937   3                      {
+1938   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_YCBCR422", 0);
+1939   4                          return _FALSE;
+1940   4                      }
+1941   3      
+1942   3                      break;
+1943   3      
+1944   3                  case _VSC_COLOR_SPACE_3:
+1945   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR420)
+1946   3                      {
+1947   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_YCBCR420", 0);
+1948   4                          return _FALSE;
+1949   4                      }
+1950   3      
+1951   3                      break;
+1952   3      
+1953   3                  case _VSC_COLOR_SPACE_4:
+1954   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_Y_ONLY)
+1955   3                      {
+1956   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_Y_ONLY", 0);
+1957   4                          return _FALSE;
+1958   4                      }
+1959   3      
+1960   3                      break;
+1961   3      
+1962   3                  case _VSC_COLOR_SPACE_5:
+1963   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_RAW)
+1964   3                      {
+1965   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_RAW", 0);
+1966   4                          return _FALSE;
+1967   4                      }
+1968   3      
+1969   3                      break;
+1970   3      
+1971   3                  default:
+1972   3                      if(GET_COLOR_SPACE() != _COLOR_SPACE_RGB)
+1973   3                      {
+1974   4                          DebugMessageRx0("VSC change: Color Space, _COLOR_SPACE_RGB", 0);
+1975   4                          return _FALSE;
+1976   4                      }
+1977   3      
+1978   3                      break;
+1979   3              }
+1980   2          }
+1981   1          else
+1982   1          {
+1983   2              if((pucVscColorFormat[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4)) != GET_DP_RX0_COLOR_SPACE_PREVALUE())
+1984   2              {
+1985   3                  DebugMessageRx0("VSC change: Color Space", 0);
+1986   3                  return _FALSE;
+1987   3              }
+1988   2          }
+1989   1      
+1990   1          // Color Depth Check
+1991   1          if((pucVscColorFormat[1] & (_BIT2 | _BIT1 | _BIT0)) != GET_DP_RX0_COLOR_DEPTH_PREVALUE())
+1992   1          {
+1993   2              DebugMessageRx0("VSC change: Color Depth", 0);
+1994   2              return _FALSE;
+1995   2          }
+1996   1      
+1997   1          // Colorimetry Ext Check
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 34  
+
+1998   1          if(GET_COLORIMETRY() == _COLORIMETRY_EXT)
+1999   1          {
+2000   2              if((pucVscColorFormat[0] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) != GET_DP_RX0_COLORIMETRY_EXT_PREVALUE
+             -())
+2001   2              {
+2002   3                  DebugMessageRx0("VSC change: Colorimetry Ext", 0);
+2003   3      
+2004   3                  if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+2005   3                  {
+2006   4                      return _FALSE;
+2007   4                  }
+2008   3                  else
+2009   3                  {
+2010   4                      SET_DP_RX0_COLORIMETRY_EXT_PREVALUE(pucVscColorFormat[0] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)
+             -);
+2011   4                      ScalerDpRx0ColorimetryExtSetting();
+2012   4                      SET_DP_RX0_COLORIMETRY_EXT_CHANGED();
+2013   4                  }
+2014   3              }
+2015   2          }
+2016   1          else
+2017   1          {
+2018   2              DebugMessageRx0("VSC change: Colorimetry Ext", 0);
+2019   2      
+2020   2              if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+2021   2              {
+2022   3                  return _FALSE;
+2023   3              }
+2024   2              else
+2025   2              {
+2026   3                  SET_DP_RX0_COLORIMETRY_EXT_PREVALUE(pucVscColorFormat[0] & (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+2027   3                  ScalerDpRx0ColorimetryExtSetting();
+2028   3                  SET_DP_RX0_COLORIMETRY_EXT_CHANGED();
+2029   3              }
+2030   2          }
+2031   1      
+2032   1          // Dynamic Range Check
+2033   1      #if(_YCC_QUANTIZATION_RANGE_SUPPORT == _ON)
+2034   1          if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR444) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
+             -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR420))
+2035   1          {
+2036   2              if(((pucVscColorFormat[1] & _BIT7) >> 7) != GET_DP_RX0_QUANTIZATION_PREVALUE())
+2037   2              {
+2038   3                  DebugMessageRx0("VSC change: Dynamic Range", ((pucVscColorFormat[1] & _BIT7) >> 7));
+2039   3      
+2040   3                  if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+2041   3                  {
+2042   4                      return _FALSE;
+2043   4                  }
+2044   3                  else
+2045   3                  {
+2046   4                      SET_DP_RX0_QUANTIZATION_PREVALUE((pucVscColorFormat[1] & _BIT7) >> 7);
+2047   4                      ScalerDpRx0QuantizationSetting();
+2048   4                      SET_DP_RX0_QUANTIZATION_CHANGED();
+2049   4                  }
+2050   3              }
+2051   2          }
+2052   1          else
+2053   1      #endif
+2054   1          {
+2055   2      #if(_RGB_QUANTIZATION_RANGE_SUPPORT == _ON)
+2056   2              if(((pucVscColorFormat[1] & _BIT7) >> 7) != GET_DP_RX0_QUANTIZATION_PREVALUE())
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 35  
+
+2057   2              {
+2058   3                  DebugMessageRx0("VSC change: Dynamic Range", ((pucVscColorFormat[1] & _BIT7) >> 7));
+2059   3      
+2060   3                  if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
+2061   3                  {
+2062   4                      return _FALSE;
+2063   4                  }
+2064   3                  else
+2065   3                  {
+2066   4                      SET_DP_RX0_QUANTIZATION_PREVALUE((pucVscColorFormat[1] & _BIT7) >> 7);
+2067   4                      ScalerDpRx0QuantizationSetting();
+2068   4                      SET_DP_RX0_QUANTIZATION_CHANGED();
+2069   4                  }
+2070   3              }
+2071   2      #endif
+2072   2          }
+2073   1      
+2074   1          return _TRUE;
+2075   1      }
+2076          
+2077          #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+2078          //--------------------------------------------------
+2079          // Description  : DP Rx0 VSC Packet Detect Event
+2080          // Input Value  : None
+2081          // Output Value : None
+2082          //--------------------------------------------------
+2083          void ScalerDpRx0RSV1PacketDetectEvent(void)
+2084          {
+2085   1          CLR_DP_RX0_RSV1_DETECTING();
+2086   1      }
+2087          
+2088          //--------------------------------------------------
+2089          // Description  : Set DP Rx0 RSV1 infoframe type to VSC
+2090          // Input Value  : None
+2091          // Output Value : None
+2092          //--------------------------------------------------
+2093          void ScalerDpRx0SetInitialRSV1InfoType(void)
+2094          {
+2095   1          // Set Packet Type of RSV1 to VSC
+2096   1          ScalerSetByte(PB6_2D_DP_INFO_FM_RSV1, _DP_SDP_TYPE_VSC);
+2097   1      
+2098   1          CLR_DP_RX0_RSV1_DETECTING();
+2099   1          ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX0_RSV1_PACKET_DETECT);
+2100   1      
+2101   1      #if((_DP_MST_SUPPORT == _ON) && (_DP_TX_SUPPORT == _ON))
+                  ScalerSetByte(PBC_54_DP_INFO_FM_RSV1, _DP_SDP_TYPE_VSC);
+              
+                  CLR_DP_RX0_MST2SST_RSV1_DETECTING();
+                  ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX0_MST2SST_RSV1_PACKET_DETECT);
+              #endif
+2107   1      }
+2108          #endif
+2109          #endif
+2110          
+2111          //--------------------------------------------------
+2112          // Description  : HDCP Unplug Reset
+2113          // Input Value  : None
+2114          // Output Value : None
+2115          //--------------------------------------------------
+2116          void ScalerDpRx0HDCPUnplugReset(void)
+2117          {
+2118   1          ScalerDpRx0HDCPBlockReset();
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 36  
+
+2119   1      
+2120   1      #if(_DP_HDCP_2_2_SUPPORT == _ON)
+2121   1          ScalerDpRx0Hdcp2ResetProc();
+2122   1      #endif
+2123   1      
+2124   1          // Clear CPIRQ flag while unplug
+2125   1          ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x01, (ScalerDpRx0GetDpcdInfo(0x00, 0x02, 0x01) & ~_BIT2));
+2126   1      }
+2127          
+2128          #if(_DP_MST_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : DP Rx0 Mst Reset
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstReset(void)
+              {
+                  SET_DP_RX0_AUX_MANUAL_MODE();
+              
+                  // Reset GUID
+                  for(pData[0] = 0; pData[0] < 16; pData[0]++)
+                  {
+                      ScalerDpRx0SetDpcdValue(0x00, 0x00, (0x30 + pData[0]), 0x00);
+                  }
+              
+                  // Disable 0x111/1C2 IRQ
+                  ScalerSetBit(PB7_B2_AUX_SPECIAL_IRQ_EN, ~(_BIT7 | _BIT4), 0x00);
+              
+                  // Clear 0x111
+                  ScalerDpRx0SetDpcdValue(0x00, 0x01, 0x11, 0x00);
+              
+                  // Clear 0x1C0 ~ 0x1C2
+                  ScalerDpRx0SetDpcdValue(0x00, 0x01, 0xC0, 0x00);
+                  ScalerDpRx0SetDpcdValue(0x00, 0x01, 0xC1, 0x00);
+                  ScalerDpRx0SetDpcdValue(0x00, 0x01, 0xC2, 0x00);
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+                  if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x00, 0x21, _BIT0) == _BIT0)
+                  {
+                      // Clear 0x111 IRQ Flag
+                      ScalerSetBit(PB7_B3_AUX_SPECIAL_IRQ_FLAG, ~_BIT7, _BIT7);
+              
+                      // Enable 0x111 IRQ
+                      ScalerSetBit(PB7_B2_AUX_SPECIAL_IRQ_EN, ~_BIT7, _BIT7);
+              
+                      // Enable 0x01000 write IRQ
+                      SET_REG_DP_RX_DOWN_REQUEST_ADDR_WRITTEN_IRQ_ENABLE();
+                  }
+              #else
+              
+                  // Clear 0x111/1C2 IRQ Flag
+                  ScalerSetBit(PB7_B3_AUX_SPECIAL_IRQ_FLAG, ~(_BIT7 | _BIT4), (_BIT7 | _BIT4));
+              
+                  // Enable 0x111/1C2 IRQ
+                  ScalerSetBit(PB7_B2_AUX_SPECIAL_IRQ_EN, ~(_BIT7 | _BIT4), (_BIT7 | _BIT4));
+              #endif
+              
+                  // Disable MST
+                  ScalerSetBit(PB_01_PHY_DIG_RESET_CTRL, ~_BIT7, 0x00);
+              
+                  // Disable Read 2C0 INT
+                  CLR_REG_DP_RX_2C0_IRQ();
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 37  
+
+              
+                  // Clear 0x2C0
+                  ScalerDpRx0SetDpcdValue(0x00, 0x02, 0xC0, 0x00);
+              
+                  // Clear Payload ID Table (0x2C1 ~ 0x2FF)
+                  ScalerSetBit(PB7_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, _BIT6);
+                  ScalerSetBit(PB7_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, 0x00);
+              
+                  // Reset ST1 ~ ST5
+                  for(pData[0] = 0; pData[0] < 5; pData[0]++)
+                  {
+                      // Reset Start Position
+                      ScalerSetByte(PB5_03_STHD_CTRL_2 + (pData[0] << 1), 0x00);
+              
+                      // Reset End Position
+                      ScalerSetByte(PB5_04_STHD_CTRL_3 + (pData[0] << 1), 0x00);
+                  }
+              
+                  // Reset Daisy Chain ST3 ~ ST5
+                  for(pData[0] = 0; pData[0] < 3; pData[0]++)
+                  {
+                      // Reset Start Position
+                      ScalerSetByte(RET_REG_ADDR_DP_RX0_DAIZY_ST3_START() + (pData[0] << 1), 0x00);
+              
+                      // Reset End Position
+                      ScalerSetByte(RET_REG_ADDR_DP_RX0_DAIZY_ST3_END() + (pData[0] << 1), 0x00);
+                  }
+              
+                  if((GET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_FINISH() == 0x01) || (GET_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_FINI
+             -SH() == 0x01))
+                  {
+                      SET_DP_RX0_AUX_COMMAND_NO_REPLY();
+                  }
+              
+                  // Clr Buf0/Buf1 DownRequest MSG Finish Flag
+                  CLR_REG_DP_RX_DOWN_REQUEST_MSG_FINISH();
+              
+                  // Clr Buf0 / Buf1
+                  CLR_REG_DP_RX_DOWN_REQUEST_BUF0_BUF1();
+              
+                  // Clr Buf0/Buf1 MSG Error Flag
+                  CLR_REG_DP_RX_DOWN_REQUEST_MSG_ERROR();
+              
+                  // Disable MST Related IRQ
+                  CLR_REG_DP_RX_DOWN_REPLY_UP_REQUEST_READY_BIT_IRQ();
+              
+                  // Clr 1000h Has Been Write
+                  CLR_REG_DP_RX_DOWN_REQUEST_ADDR_WRITTEN();
+              
+                  // Clr 1200h Has Been Write
+                  CLR_REG_DP_RX_UP_REPLY_ADDR_WRITTEN();
+              
+                  // Disable Rx Igrone Error
+                  ScalerSetBit(PB7_D1_DP_IIC_SET, ~_BIT3, 0x00);
+              
+                  // Message Upstream Disable
+                  CLR_REG_DP_RX_UPSTREAM_REPLY();
+              
+                  // Reset Rx MSG Block
+                  ScalerSetBit(PB7_C0_DPCD_CTRL, ~_BIT6, _BIT6);
+                  ScalerSetBit(PB7_C0_DPCD_CTRL, ~_BIT6, 0x00);
+              
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 38  
+
+                  if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x00, 0x21, _BIT0) == _BIT0)
+                  {
+                      // Clear Flag
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_FINISH();
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_FINISH();
+              
+                      // Clear BUF0
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF0();
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF1();
+              
+                      // Enable DownRequest Buf0 / Buf1 Receive Capability
+                      SET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_RECEIVE_ENABLE();
+                      SET_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_RECEIVE_ENABLE();
+              
+                      // Clear Flag
+                      CLR_REG_DP_RX_UP_REPLY_BUF0_MSG_FINISH();
+                      CLR_REG_DP_RX_UP_REPLY_BUF1_MSG_FINISH();
+              
+                      // Clear BUF0
+                      CLR_REG_DP_RX_UP_REPLY_BUF0();
+                      CLR_REG_DP_RX_UP_REPLY_BUF1();
+              
+                      // Enable UpReply Buf0 / Buf1 Receive Capability
+                      SET_REG_DP_RX_UP_REPLY_BUF0_MSG_RECEIVE_ENABLE();
+                      SET_REG_DP_RX_UP_REPLY_BUF1_MSG_RECEIVE_ENABLE();
+                  }
+              
+                  // Reset ST1_Source ~ ST5_Source
+                  ScalerDpRxMstClrStreamMuxBackup();
+              
+                  // Disable DOWN_REP_MSG_RDY Bit INT
+                  CLR_REG_DP_RX_DOWN_REPLY_READY_BIT_IRQ();
+              
+                  // Disable UP_REQ_MSG_RDY INT
+                  CLR_REG_DP_RX_UP_REQUEST_READY_BIT_IRQ();
+              
+                  // Clear Buffer
+                  CLR_REG_DP_RX_USTERAM_REPLY_BUF();
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+                  g_enumDpMSTCapablePort = _DP_MST_NO_PORT;
+              
+                  // Sync MST Target Port
+                  SET_DP_RX_TARGET_MST_PORT(g_enumDpMSTCapablePort);
+              #endif
+              
+                  SET_DP_RX0_AUX_AUTO_MODE();
+              
+                  // Clear DOWN_REP_MSG_RDY & UP_REQ_MSG_RDY Bit of DPCD Table
+                  ScalerDpRx0SetDpcdBitValue(0x00, 0x20, 0x03, ~(_BIT5 | _BIT4), 0x00);
+              }
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : DP Rx0 Mst Reset
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstReset_EXINT0(void) using 1
+              {
+                  SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+              
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 39  
+
+                  // Reset GUID
+                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 16; pData_EXINT[0]++)
+                  {
+                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x00, (0x30 + pData_EXINT[0]), 0x00);
+                  }
+              
+                  // Disable 0x111/1C2 IRQ
+                  ScalerSetBit_EXINT(PB7_B2_AUX_SPECIAL_IRQ_EN, ~(_BIT7 | _BIT4), 0x00);
+              
+                  // Clear 0x111
+                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x01, 0x11, 0x00);
+              
+                  // Clear 0x1C0 ~ 0x1C2
+                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x01, 0xC0, 0x00);
+                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x01, 0xC1, 0x00);
+                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x01, 0xC2, 0x00);
+              
+                  if(ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x00, 0x21, _BIT0) == _BIT0)
+                  {
+                      // Clear 0x111 IRQ Flag
+                      ScalerSetBit_EXINT(PB7_B3_AUX_SPECIAL_IRQ_FLAG, ~_BIT7, _BIT7);
+              
+                      // Enable 0x111 IRQ
+                      ScalerSetBit_EXINT(PB7_B2_AUX_SPECIAL_IRQ_EN, ~_BIT7, _BIT7);
+              
+                      // Enable 0x01000 write IRQ
+                      SET_REG_DP_RX_DOWN_REQUEST_ADDR_WRITTEN_IRQ_ENABLE_EXINT();
+                  }
+              
+                  // Disable MST
+                  ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT7, 0x00);
+              
+                  // Disable Read 2C0 INT
+                  CLR_REG_DP_RX_2C0_IRQ_EXINT();
+              
+                  // Clear 0x2C0
+                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0xC0, 0x00);
+              
+                  // Clear Payload ID Table (0x2C1 ~ 0x2FF)
+                  ScalerSetBit_EXINT(PB7_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, _BIT6);
+                  ScalerSetBit_EXINT(PB7_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, 0x00);
+              
+                  // Reset ST1 ~ ST5
+                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 5; pData_EXINT[0]++)
+                  {
+                      // Reset Start Position
+                      ScalerSetByte_EXINT(PB5_03_STHD_CTRL_2 + (pData_EXINT[0] << 1), 0x00);
+              
+                      // Reset End Position
+                      ScalerSetByte_EXINT(PB5_04_STHD_CTRL_3 + (pData_EXINT[0] << 1), 0x00);
+                  }
+              
+                  // Reset Daisy Chain ST3 ~ ST5
+                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 3; pData_EXINT[0]++)
+                  {
+                      // Reset Start Position
+                      ScalerSetByte_EXINT(RET_REG_ADDR_DP_RX0_DAIZY_ST3_START() + (pData_EXINT[0] << 1), 0x00);
+              
+                      // Reset End Position
+                      ScalerSetByte_EXINT(RET_REG_ADDR_DP_RX0_DAIZY_ST3_END() + (pData_EXINT[0] << 1), 0x00);
+                  }
+              
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 40  
+
+                  if((GET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_FINISH_EXINT() == 0x01) || (GET_REG_DP_RX_DOWN_REQUEST_BUF1_MS
+             -G_FINISH_EXINT() == 0x01))
+                  {
+                      SET_DP_RX0_AUX_COMMAND_NO_REPLY();
+                  }
+              
+                  // Clr Buf0/Buf1 DownRequest MSG Finish Flag
+                  CLR_REG_DP_RX_DOWN_REQUEST_MSG_FINISH_EXINT();
+              
+                  // Clr Buf0 / Buf1
+                  CLR_REG_DP_RX_DOWN_REQUEST_BUF0_BUF1_EXINT();
+              
+                  // Clr Buf0/Buf1 MSG Error Flag
+                  CLR_REG_DP_RX_DOWN_REQUEST_MSG_ERROR_EXINT();
+              
+                  // Disable MST Related IRQ
+                  CLR_REG_DP_RX_DOWN_REPLY_UP_REQUEST_READY_BIT_IRQ_EXINT();
+              
+                  // Clr 1000h Has Been Write
+                  CLR_REG_DP_RX_DOWN_REQUEST_ADDR_WRITTEN_EXINT();
+              
+                  // Clr 1200h Has Been Write
+                  CLR_REG_DP_RX_UP_REPLY_ADDR_WRITTEN_EXINT();
+              
+                  // Disable Rx Igrone Error
+                  ScalerSetBit_EXINT(PB7_D1_DP_IIC_SET, ~_BIT3, 0x00);
+              
+                  // Message Upstream Disable
+                  CLR_REG_DP_RX_UPSTREAM_REPLY_EXINT();
+              
+                  // Reset Rx MSG Block
+                  ScalerSetBit_EXINT(PB7_C0_DPCD_CTRL, ~_BIT6, _BIT6);
+                  ScalerSetBit_EXINT(PB7_C0_DPCD_CTRL, ~_BIT6, 0x00);
+              
+                  if(ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x00, 0x21, _BIT0) == _BIT0)
+                  {
+                      // Clear Flag
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_FINISH_EXINT();
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_FINISH_EXINT();
+              
+                      // Clear BUF0
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF0_EXINT();
+                      CLR_REG_DP_RX_DOWN_REQUEST_BUF1_EXINT();
+              
+                      // Enable DownRequest Buf0 / Buf1 Receive Capability
+                      SET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_RECEIVE_ENABLE_EXINT();
+                      SET_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_RECEIVE_ENABLE_EXINT();
+              
+                      // Clear Flag
+                      CLR_REG_DP_RX_UP_REPLY_BUF0_MSG_FINISH_EXINT();
+                      CLR_REG_DP_RX_UP_REPLY_BUF1_MSG_FINISH_EXINT();
+              
+                      // Clear BUF0
+                      CLR_REG_DP_RX_UP_REPLY_BUF0_EXINT();
+                      CLR_REG_DP_RX_UP_REPLY_BUF1_EXINT();
+              
+                      // Enable UpReply Buf0 / Buf1 Receive Capability
+                      SET_REG_DP_RX_UP_REPLY_BUF0_MSG_RECEIVE_ENABLE_EXINT();
+                      SET_REG_DP_RX_UP_REPLY_BUF1_MSG_RECEIVE_ENABLE_EXINT();
+                  }
+              
+                  // Reset ST1_Source ~ ST5_Source
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 41  
+
+                  ScalerDpRxMstClrStreamMuxBackup_EXINT0();
+              
+                  // Disable DOWN_REP_MSG_RDY Bit INT
+                  CLR_REG_DP_RX_DOWN_REPLY_READY_BIT_IRQ_EXINT();
+              
+                  // Disable UP_REQ_MSG_RDY INT
+                  CLR_REG_DP_RX_UP_REQUEST_READY_BIT_IRQ_EXINT();
+              
+                  // Clear Buffer
+                  CLR_REG_DP_RX_USTERAM_REPLY_BUF_EXINT();
+              
+                  g_enumDpMSTCapablePort = _DP_MST_NO_PORT;
+              
+                  // Sync MST Target Port
+                  SET_DP_RX_TARGET_MST_PORT(g_enumDpMSTCapablePort);
+              
+                  // SET AUX AUTO MODE
+                  SET_DP_RX0_AUX_AUTO_MODE_EXINT();
+              
+                  // Clear DOWN_REP_MSG_RDY & UP_REQ_MSG_RDY Bit of DPCD Table
+                  ScalerDpRx0SetDpcdBitValue_EXINT0(0x00, 0x20, 0x03, ~(_BIT5 | _BIT4), 0x00);
+              
+                  SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+              }
+              #endif
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : DP MST2SST Get Video Info
+              // Input Value  : None
+              // Output Value : _TRUE --> Get Successfully
+              //--------------------------------------------------
+              bit ScalerDpRx0MstToSstGetVideoInfo(void)
+              {
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+              
+                  CLR_DP_TX_VSC_SDP_COLOR_MODE();
+              
+                  // Check MISC1[6]
+                  if((ScalerGetBit(PA_27_MSA_MISC_1, _BIT6)) == _BIT6)
+                  {
+                      SET_DP_TX_VSC_SDP_COLOR_MODE();
+              
+              #if(_HW_DP_VSC_SDP_REG_SUPPORT == _ON)
+              
+                      // Read DB16~18 --> pData[0:2]
+                      ScalerRead(PBC_59_VSC_RX_DB16, 3, pData, _AUTOINC);
+              #else
+                      // Delay 2 frames for SRAM ready (worst case)
+                      ScalerTimerDelayXms(_DP_ONE_FRAME_TIME_MAX * 2);
+              
+                      SET_DP_RX0_MST2SST_RSV1_DETECTING();
+              
+                      ScalerTimerActiveTimerEvent((_DP_ONE_FRAME_TIME_MAX * 3), _SCALER_TIMER_EVENT_DP_RX0_MST2SST_RSV1_
+             -PACKET_DETECT);
+              
+                      // Read DB16~18 --> pData[0:2]
+                      ScalerGetDataPortByte(PBC_55_DP_INFO_FM_ADR, _DP_INFO_RSV1_DB16, 3, pData, _AUTOINC);
+              #endif
+                      // Set Color Info PreValue
+                      g_stDpTxColorInfo.ucColorSpacePreValue = (pData[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4));
+                      g_stDpTxColorInfo.b3ColorDepthPreValue = (pData[1] & (_BIT2 | _BIT1 | _BIT0));
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 42  
+
+                  }
+                  else
+              #endif
+                  {
+                      // Get MISC0 Info
+                      pData[0] = ScalerGetByte(PA_26_MSA_MISC_0);
+              
+                      // Set Color Info PreValue
+                      g_stDpTxColorInfo.ucColorSpacePreValue = ((ScalerGetBit(PA_27_MSA_MISC_1, _BIT7)) | (pData[0] & (_
+             -BIT2 | _BIT1)));
+                      g_stDpTxColorInfo.b3ColorDepthPreValue = ((pData[0] & (_BIT7 | _BIT6 | _BIT5)) >> 5);
+                  }
+              
+                  return _TRUE;
+              }
+              
+              //--------------------------------------------------
+              // Description  : DP MST2SST Set Color Info Macros
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstToSstSetColorInfo(void)
+              {
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+                  if(GET_DP_TX_VSC_SDP_COLOR_MODE() == _TRUE)
+                  {
+                      // Set Color Space Macro
+                      switch(g_stDpTxColorInfo.ucColorSpacePreValue)
+                      {
+                          case _VSC_COLOR_SPACE_0:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_RGB);
+                              break;
+              
+                          case _VSC_COLOR_SPACE_1:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_YCBCR444);
+                              break;
+              
+                          case _VSC_COLOR_SPACE_2:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_YCBCR422);
+                              break;
+              
+                          case _VSC_COLOR_SPACE_3:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_YCBCR420);
+                              break;
+              
+                          case _VSC_COLOR_SPACE_4:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_Y_ONLY);
+                              break;
+              
+                          case _VSC_COLOR_SPACE_5:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_RAW);
+                              break;
+              
+                          default:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_RGB);
+                              break;
+                      }
+                  }
+                  else
+              #endif
+                  {
+                      // Set Color Space Macro
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 43  
+
+                      switch(g_stDpTxColorInfo.ucColorSpacePreValue)
+                      {
+                          case _BIT1:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_YCBCR422);
+                              break;
+              
+                          case _BIT2:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_YCBCR444);
+                              break;
+              
+                          case _BIT7:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_Y_ONLY);
+                              break;
+              
+                          case (_BIT7 | _BIT1):
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_RAW);
+                              break;
+              
+                          default:
+                              SET_DP_TX_INPUT_COLOR_SPACE(_COLOR_SPACE_RGB);
+                              break;
+                      }
+                  }
+              
+                  // Set Porch Color
+                  if((GET_DP_TX_INPUT_COLOR_SPACE() == _COLOR_SPACE_YCBCR444) || (GET_DP_TX_INPUT_COLOR_SPACE() == _COLO
+             -R_SPACE_YCBCR422) || (GET_DP_TX_INPUT_COLOR_SPACE() == _COLOR_SPACE_YCBCR420))
+                  {
+                      SET_DP_TX_PORCH_COLOR_YCC_FULL();
+                  }
+                  else
+                  {
+                      SET_DP_TX_PORCH_COLOR_RGB();
+                  }
+              
+                  // Set Color Depth Macro
+                  SET_DP_TX_INPUT_COLOR_DEPTH(g_stDpTxColorInfo.b3ColorDepthPreValue);
+              }
+              
+              //--------------------------------------------------
+              // Description  : DP MST2SST Video Setting
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstToSstVideoSetting(void)
+              {
+                  // Set Color Space for Display Format Gen.
+                  switch(GET_DP_TX_INPUT_COLOR_SPACE())
+                  {
+                      case _COLOR_SPACE_RGB:
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+                          break;
+              
+                      case _COLOR_SPACE_YCBCR444:
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), _BIT4);
+                          break;
+              
+                      case _COLOR_SPACE_YCBCR422:
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), _BIT3);
+                          break;
+              
+                      case _COLOR_SPACE_YCBCR420:
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 44  
+
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+                          break;
+              
+                      case _COLOR_SPACE_Y_ONLY:
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), (_BIT4 | _BIT3));
+                          break;
+              
+                      case _COLOR_SPACE_RAW:
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+                          break;
+              
+                      default:
+                          // RGB
+                          ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT4 | _BIT3), 0x00);
+                          break;
+                  }
+              
+                  // Set Color depth for Display Format Gen.
+                  ScalerSetBit(PA_30_PG_CTRL_0, ~(_BIT2 | _BIT1 | _BIT0), (g_stDpTxColorInfo.b3ColorDepthPreValue));
+              }
+              
+              //--------------------------------------------------
+              // Description  : Check DP MST2SST Misc Information
+              // Input Value  : None
+              // Output Value : True --> DP Misc Check Ok
+              //--------------------------------------------------
+              bit ScalerDpRx0MstToSstMiscCheck(void)
+              {
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+                  // Check MISC1[6]
+                  if((ScalerGetBit(PA_27_MSA_MISC_1, _BIT6)) == _BIT6)
+                  {
+                      return ScalerDpRx0MstToSstVscCheck();
+                  }
+                  else
+              #endif
+                  {
+                      // Get MISC0 Info
+                      BYTE ucMisc0 = ScalerGetByte(PA_26_MSA_MISC_0);
+                      BYTE ucColorSpaceValue = (ScalerGetBit(PA_27_MSA_MISC_1, _BIT7)) | (ucMisc0 & (_BIT2 | _BIT1));
+              
+                      // Color Space Check
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+              
+                      // Color format info source change from VSC --> MISC
+                      if(GET_DP_TX_VSC_SDP_COLOR_MODE() == _TRUE)
+                      {
+                          switch(ucColorSpaceValue)
+                          {
+                              case _BIT1:
+                                  if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_YCBCR422)
+                                  {
+                                      return _FALSE;
+                                  }
+                                  break;
+              
+                              case _BIT2:
+                                  if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_YCBCR444)
+                                  {
+                                      return _FALSE;
+                                  }
+                                  break;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 45  
+
+              
+                              case _BIT7:
+                                  if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_Y_ONLY)
+                                  {
+                                      return _FALSE;
+                                  }
+                                  break;
+              
+                              case (_BIT7 | _BIT1):
+                                  if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_RAW)
+                                  {
+                                      return _FALSE;
+                                  }
+                                  break;
+              
+                              default:
+                                  if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_RGB)
+                                  {
+                                      return _FALSE;
+                                  }
+                                  break;
+                          }
+                      }
+                      else
+              #endif
+                      {
+                          if(ucColorSpaceValue != g_stDpTxColorInfo.ucColorSpacePreValue)
+                          {
+                              return _FALSE;
+                          }
+                      }
+              
+                      // Color Depth Check
+                      if(ScalerGetBit(PA_28_MSA_COLOR_BIT, (_BIT2 | _BIT1 | _BIT0)) != (g_stDpTxColorInfo.b3ColorDepthPr
+             -eValue))
+                      {
+                          return _FALSE;
+                      }
+              
+                      // Get HSW
+                      ScalerRead(PA_16_MSA_HSW_0, 2, pData, _AUTOINC);
+              
+                      // Get VSW
+                      ScalerRead(PA_1E_MSA_VSW_0, 2, &pData[2], _AUTOINC);
+              
+                      if(((PDATA_WORD(0) & 0x7FFF) == 0x00) || ((PDATA_WORD(1) & 0x7FFF) == 0x00))
+                      {
+                          return _FALSE;
+                      }
+              
+                      return _TRUE;
+                  }
+              }
+              //--------------------------------------------------
+              // Description  : Check Dp Interlace by VBID or Measure
+              // Input Value  : None
+              // Output Value : True --> Interlace
+              //--------------------------------------------------
+              bit ScalerDpRx0MstToSstInterlaceCheck(WORD *pusVTotal, BYTE *pucOddFlg)
+              {
+                  DWORD ulLinkClk = 0;
+                  DWORD ulVBs2bsLengN = 0;
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 46  
+
+                  DWORD ulVBs2bsLengN1 = 0;
+                  WORD usTempVTotal = *pusVTotal;
+                  WORD usHTotalCount = 0;
+                  BYTE ucVbidTempN = 0;
+                  BYTE ucVbidTempN1 = 0;
+              
+              #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _OFF)
+                  WORD usVsyncWidth = 0;
+                  WORD usVstart = 0;
+                  WORD usVactive = 0;
+              #endif
+              
+                  // Reset Intercae Mode
+                  ScalerDpRx0MstToSstInterlaceReset();
+              
+              #if(_DP_FREESYNC_SUPPORT == _ON)
+                  // Set Vfront Porch
+                  SET_DP_RX0_MST_TO_SST_VFRONT_PORCH(_DP_VSYNC_FRONT_PORCH);
+              
+                  if(GET_DP_MST_FREESYNC_ENABLED() == _TRUE)
+                  {
+                      return _FALSE;
+                  }
+              #else
+                  // Set Vfront Porch
+                  SET_DP_RX0_MST_TO_SST_VFRONT_PORCH(_DP_VSYNC_FRONT_PORCH_MST2SST);
+              #endif
+              
+                  // =========== Link Clock Measure Start ===========
+                  PDATA_WORD(0) = ScalerDpRx0SignalDetectMeasureCount(_D0_DP_LANE0, _DP_MEASURE_TARGET_CDR_CLOCK, _DP_ME
+             -ASURE_PERIOD_2000_CYCLE);
+              
+                  if(PDATA_WORD(0) == 0)
+                  {
+                      if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR3)
+                      {
+                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR3;
+                      }
+                      else if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR2)
+                      {
+                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR2;
+                      }
+                      else if(ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR)
+                      {
+                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_HBR;
+                      }
+                      else // Both Default && _DP_LINK_RBR Case
+                      {
+                          PDATA_WORD(0) = _DP_VCO_TARGET_COUNT_2000_RBR;
+                      }
+                  }
+              
+                  PDATA_DWORD(0) = (((DWORD)PDATA_WORD(0)) * _GDI_CLK_KHZ);
+              
+                  // Link Clk in KHz
+                  ulLinkClk = (PDATA_DWORD(0) / 1000);
+              
+                  DebugMessageRx0("MST Current Link Clk", ulLinkClk);
+                  // =========== Link Clock Measure End ===========
+              
+                  // =========== Continue Measure Two Frame Start ===========
+                  // Start to Measure Vertical BS to BS Counter by GDI Clock
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 47  
+
+                  ScalerSetBit(PA_58_MN_MEAS_CTRL, ~_BIT7, 0x00);
+                  ScalerSetBit(PA_58_MN_MEAS_CTRL, ~_BIT7, _BIT7);
+              
+                  if(ScalerTimerPollingFlagProc(_DP_MEASURE_POLLING_TIMEOUT, PA_58_MN_MEAS_CTRL, _BIT6, _TRUE) == _FALSE
+             -)
+                  {
+                      return _FALSE;
+                  }
+              
+                  // Pop up The result
+                  SET_DP_RX0_MEASURE_POP_UP_MST2SST();
+              
+                  // Get Measure Result
+                  PDATA_DWORD(1) = 0;
+                  ScalerRead(PA_58_MN_MEAS_CTRL, 3, &pData[5], _AUTOINC);
+              
+                  // Delay 2ms To Get VBID
+                  ScalerTimerDelayXms(2);
+              
+                  // Get VBID
+                  ScalerRead(PA_29_MST2SST_VBID, 1, &ucVbidTempN, _NON_AUTOINC);
+              
+                  // Delay 1 frame
+                  ScalerTimerDelayXms((((PDATA_DWORD(1) & 0x001FFFFF) / (_GDI_CLK_KHZ)) + 2));
+              
+                  // Pop up Measure Result
+                  SET_DP_RX0_MEASURE_POP_UP_MST2SST();
+              
+                  // Get Measure Result
+                  PDATA_DWORD(2) = 0;
+                  ScalerRead(PA_58_MN_MEAS_CTRL, 3, &pData[9], _AUTOINC);
+              
+                  // Get Measure Htotal Counts
+                  ScalerRead(PA_5B_MN_MEAS_HLN_M, 2, &pData[12], _AUTOINC);
+              
+                  // Get VBID
+                  ScalerRead(PA_29_MST2SST_VBID, 1, &ucVbidTempN1, _NON_AUTOINC);
+              
+                  ulVBs2bsLengN = (PDATA_DWORD(1) & 0x001FFFFF);
+                  ulVBs2bsLengN1 = (PDATA_DWORD(2) & 0x001FFFFF);
+              
+                  // Disable Measure Block
+                  ScalerSetBit(PA_58_MN_MEAS_CTRL, ~_BIT7, 0x00);
+                  // =========== Continue Measure Two Frame End ===========
+              
+                  // Convert HTotal Count from 1/2 Link Clk to GDI Clk
+                  usHTotalCount = ((DWORD)PDATA_WORD(6) * _GDI_CLK_KHZ * 2 + (ulLinkClk >> 1)) / ulLinkClk;
+              
+                  DebugMessageRx0("MST HTotal Count", usHTotalCount);
+              
+                  // if VTotal Difference > 1/2 HTotal
+                  if((ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)) > (usHTotalCount / 2))
+                  {
+                      if(ScalerDpRx0MstToSstInterlaceVtotalGetMSACheck(ulVBs2bsLengN) == _TRUE)
+                      {
+                          usTempVTotal = TO_WORD(ScalerGetByte(PA_18_MSA_VTT_0), ScalerGetByte(PA_19_MSA_VTT_1));
+                      }
+                      else
+                      {
+                          if(ulVBs2bsLengN < ulVBs2bsLengN1)
+                          {
+                              usTempVTotal = ((ulVBs2bsLengN + (usHTotalCount >> 1)) / usHTotalCount);
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 48  
+
+                          }
+                          else
+                          {
+                              usTempVTotal = ((ulVBs2bsLengN1 + (usHTotalCount >> 1)) / usHTotalCount);
+                          }
+                      }
+              
+                      *pucOddFlg = _TRUE;
+                  }
+                  else
+                  {
+                      *pucOddFlg = _FALSE;
+                  }
+              
+                  DebugMessageRx0("MST ####Calculated usVTotal####", usTempVTotal);
+              
+                  DebugMessageRx0("7.MST DelayTime", (((ulVBs2bsLengN & 0x000FFFFF) / (_GDI_CLK_KHZ)) + 2));
+                  DebugMessageRx0("7.MST Frame[N] VBS2BS Counter", ulVBs2bsLengN);
+                  DebugMessageRx0("7.MST Frame[N + 1] VBS2BS Counter", ulVBs2bsLengN1);
+                  DebugMessageRx0("7.MST Frame diff ABS", (ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)));
+              
+              #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _ON)
+                  // Check N and N+1 Frame Vs2Vs Count
+                  if((*pucOddFlg) == _TRUE)
+                  {
+                      // Enable DP Interlace
+                      ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+              
+                      // Enable Field Sync by BE
+                      ScalerSetBit(PA_F1_DP_RSV1, ~_BIT0, _BIT0);
+              
+                      // HW Check Interlace
+                      if(ScalerGetBit(PA_56_INTERLACE_MODE_CONFIG, _BIT5) == _BIT5)
+                      {
+                          // Field reference HW
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), _BIT6);
+                      }
+                      else
+                      {
+                          // Field reference VBID
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+                      }
+              
+                      // Set Vtt odd fw mode
+                      SET_DP_RX0_INTERLACE_VTT_FW_MODE_MST2SST(_ODD);
+              
+                      *pusVTotal = usTempVTotal;
+              
+                      return _TRUE;
+                  }
+                  else
+                  {
+                      // Check VBID Field Toggle and VBID Interlace Info
+                      if(((ucVbidTempN & _BIT1) != (ucVbidTempN1 & _BIT1)) && (ScalerGetBit(PA_29_MST2SST_VBID, _BIT2) =
+             -= _BIT2))
+                      {
+                          // Enable DP Interlace
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+              
+                          // Field reference VBID
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+              
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 49  
+
+                          // Enable Field Sync by BE
+                          ScalerSetBit(PA_F1_DP_RSV1, ~_BIT0, _BIT0);
+              
+                          // Set Vtt Even fw mode
+                          SET_DP_RX0_INTERLACE_VTT_FW_MODE_MST2SST(_EVEN);
+              
+                          *pusVTotal = usTempVTotal;
+              
+                          return _TRUE;
+                      }
+              
+                      // Enable DP Progressive Mode
+                      ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), 0x00);
+              
+                      // Field reference VBID
+                      ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+              
+                      // Enable Field Sync by VBID
+                      ScalerSetBit(PA_F1_DP_RSV1, ~_BIT0, 0x00);
+              
+                      // Set Vtt Even fw mode
+                      SET_DP_RX0_INTERLACE_VTT_FW_MODE_MST2SST(_EVEN);
+              
+                      return _FALSE;
+                  }
+              #else
+                  if(ScalerGetBit(PA_29_MST2SST_VBID, _BIT2) == _BIT2) // Interlace
+                  {
+                      // Enable DP Interlace
+                      ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
+              
+                      if((*pucOddFlg) == _FALSE)
+                      {
+                          // Disable DP Interlace
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), 0x00);
+                      }
+              
+                      // Get VSW
+                      usVsyncWidth = ((WORD)ScalerGetByte(PA_1E_MSA_VSW_0) << 8) | ScalerGetByte(PA_1F_MSA_VSW_1);
+                      usVsyncWidth &= 0x7FFF;
+              
+                      // Get VStart
+                      usVstart = ((WORD)ScalerGetByte(PA_1A_MSA_VST_0) << 8) | ScalerGetByte(PA_1B_MSA_VST_1);
+              
+                      // usVbackporch = usVstart - Fixed V-Sync Pulse Width, usVbackporch > usVsyncWidth + 2 lines, here
+             - 2 lines is for V-Sync Falling edge to DEN Rising Edge distance margion
+                      if(((ucVbidTempN & _BIT1) != (ucVbidTempN1 & _BIT1)) && (usVstart > (usVsyncWidth + _DP_VSYNC_WIDT
+             -H + 2)))
+                      {
+                          // Field Information reference to VBID
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
+              
+                          // Get Vactive
+                          usVactive = ((WORD)ScalerGetByte(PA_1C_MSA_VHT_0) << 8) | ScalerGetByte(PA_1D_MSA_VHT_1);
+              
+                          // Set Front Porch = VTotal - Active height - MSA V Start + V Sync Pulse Width
+                          SET_DP_RX0_MST_TO_SST_VFRONT_PORCH(usTempVTotal - usVactive - usVstart + usVsyncWidth);
+              
+                          if((ScalerGetBit(PA_56_INTERLACE_MODE_CONFIG, _BIT0) == 0x00) &&
+                             ((((ucVbidTempN & _BIT1) == _BIT1) && ((ucVbidTempN1 & _BIT1) == 0x00) && (ulVBs2bsLengN < 
+             -ulVBs2bsLengN1)) ||
+                              (((ucVbidTempN & _BIT1) == 0x00) && ((ucVbidTempN1 & _BIT1) == _BIT1) && (ulVBs2bsLengN > 
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 50  
+
+             -ulVBs2bsLengN1))))
+                          {
+                              // Field inverse enable
+                              ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT5 | _BIT4 | _BIT0), _BIT4);
+                          }
+                      }
+                      else
+                      {
+                          // Field reference HW
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), _BIT6);
+                      }
+              
+                      *pusVTotal = usTempVTotal;
+              
+                      return _TRUE;
+                  }
+                  else if((ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)) > (usHTotalCount / 2))
+                  {
+                      // Delay a Complete Frame
+                      ScalerTimerDelayXms(_DP_TWO_FRAME_TIME_MAX);
+              
+                      if(ScalerGetBit(PA_56_INTERLACE_MODE_CONFIG, _BIT0) == _BIT0)
+                      {
+                          DebugMessageRx0("MST Fake Interlace", 0);
+                          *pucOddFlg = _FALSE;
+                      }
+                      else
+                      {
+                          // Enable interlace mode, field reference HW
+                          ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT0), (_BIT7 | _BIT6));
+              
+                          *pusVTotal = usTempVTotal;
+              
+                          return _TRUE;
+                      }
+                  }
+              
+                  // Disable DP Interlace
+                  ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT0), 0x00);
+              
+                  return _FALSE;
+              #endif
+              }
+              
+              //--------------------------------------------------
+              // Description  : Judge Vtotal from MSA or not
+              // Input Value  : None
+              // Output Value : TRUE --> Get Vtotal from MSA
+              //--------------------------------------------------
+              bit ScalerDpRx0MstToSstInterlaceVtotalGetMSACheck(DWORD ulVBs2bsLeng)
+              {
+                  WORD usVfreq = 0;
+              
+                  // Vfreq (unit : 0.01Hz)
+                  usVfreq = _GDI_CLK_KHZ * 1000 * 100 / ulVBs2bsLeng;
+              
+                  // Solve interlace issue for QD-980 for timing : 480i @ 60 Hz
+                  // Central Vfreq = 60Hz +/- 1% = 59.4Hz ~ 60.6Hz
+                  if((TO_WORD(ScalerGetByte(PA_10_MSA_HTT_0), ScalerGetByte(PA_11_MSA_HTT_1)) == 858) &&
+                     (TO_WORD(ScalerGetByte(PA_18_MSA_VTT_0), ScalerGetByte(PA_19_MSA_VTT_1)) == 262) &&
+                     ((usVfreq > 5940) && (usVfreq < 6060)) && (ScalerGetBit(PA_29_MST2SST_VBID, _BIT2) == _BIT2))
+                  {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 51  
+
+                      return _TRUE;
+                  }
+              
+                  return _FALSE;
+              }
+              
+              //--------------------------------------------------
+              // Description  : Reset Interlace Mode for MstToSst
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstToSstInterlaceReset(void)
+              {
+                  // Interlace mode disable, refer to VBID[1], Field Inverse Disable, Clear Hwardware Detect Interlace F
+             -lag, Clear Fake Interlace Flag
+                  ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT0), (_BIT5 | _BIT0));
+              
+              #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _ON)
+                  // Enable Field Sync by VBID
+                  ScalerSetBit(PA_F1_DP_RSV1, ~_BIT0, 0x00);
+              
+                  // Set Vtt odd fw mode
+                  SET_DP_RX0_INTERLACE_VTT_FW_MODE_MST2SST(_ODD);
+              #endif
+              }
+              
+              #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Check DP MST2SST VSC Information
+              // Input Value  : None
+              // Output Value : True --> DP VSC Check Ok
+              //--------------------------------------------------
+              bit ScalerDpRx0MstToSstVscCheck(void)
+              {
+                  BYTE pucVscColorFormat[3];
+              
+                  memset(pucVscColorFormat, 0, sizeof(pucVscColorFormat));
+              
+              #if(_HW_DP_VSC_SDP_REG_SUPPORT == _ON)
+              
+                  // Read DB16~18 --> pucVscColorFormat[0:2]
+                  ScalerRead(PBC_59_VSC_RX_DB16, 3, pucVscColorFormat, _AUTOINC);
+              #else
+                  if(GET_DP_RX0_MST2SST_RSV1_DETECTING() == _FALSE)
+                  {
+                      // Read DB16~18 --> pucVscColorFormat[0:2]
+                      ScalerGetDataPortByte(PBC_55_DP_INFO_FM_ADR, _DP_INFO_RSV1_DB16, 3, pucVscColorFormat, _AUTOINC);
+              
+                      SET_DP_RX0_MST2SST_RSV1_DETECTING();
+              
+                      ScalerTimerActiveTimerEvent((_DP_ONE_FRAME_TIME_MAX * 3), _SCALER_TIMER_EVENT_DP_RX0_MST2SST_RSV1_
+             -PACKET_DETECT);
+                  }
+                  else
+                  {
+                      return _TRUE;
+                  }
+              #endif
+              
+                  // Color Space Check
+                  if(GET_DP_TX_VSC_SDP_COLOR_MODE() == _FALSE)
+                  {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 52  
+
+                      // Color format info source change from MISC --> VSC
+                      switch(pucVscColorFormat[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4))
+                      {
+                          case _VSC_COLOR_SPACE_0:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_RGB)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          case _VSC_COLOR_SPACE_1:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_YCBCR444)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          case _VSC_COLOR_SPACE_2:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_YCBCR422)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          case _VSC_COLOR_SPACE_3:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_YCBCR420)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          case _VSC_COLOR_SPACE_4:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_Y_ONLY)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          case _VSC_COLOR_SPACE_5:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_RAW)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+              
+                          default:
+                              if(GET_DP_TX_INPUT_COLOR_SPACE() != _COLOR_SPACE_RGB)
+                              {
+                                  return _FALSE;
+                              }
+              
+                              break;
+                      }
+                  }
+                  else
+                  {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 53  
+
+                      if((pucVscColorFormat[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4)) != g_stDpTxColorInfo.ucColorSpacePreVa
+             -lue)
+                      {
+                          return _FALSE;
+                      }
+                  }
+              
+                  // Color Depth Check
+                  if((pucVscColorFormat[1] & (_BIT2 | _BIT1 | _BIT0)) != (ScalerGetBit(PA_30_PG_CTRL_0, (_BIT2 | _BIT1 |
+             - _BIT0))))
+                  {
+                      return _FALSE;
+                  }
+              
+                  return _TRUE;
+              }
+              
+              #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+              //--------------------------------------------------
+              // Description  : DP Rx0 MstToSst VSC Packet Detect Event
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0MstToSstRSV1PacketDetectEvent(void)
+              {
+                  CLR_DP_RX0_MST2SST_RSV1_DETECTING();
+              }
+              #endif // End of #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
+              #endif // End of #if(_DP_VSC_SDP_EXT_FOR_COLORIMETRY_SUPPORT == _ON)
+              #endif // End of #if(_DP_TX_SUPPORT == _ON)
+              #endif // End of #if(_DP_MST_SUPPORT == _ON)
+3187          
+3188          #if(_DP_TX_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : DP Sink Count Update
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRx0UpdateSinkCount(BYTE ucSinkCount)
+              {
+                  BYTE ucRxPreSinkCount = ScalerDpRx0GetDpcdInfo(0x00, 0x02, 0x00);
+                  BYTE ucRxCurSinkCount = ((ucRxPreSinkCount & _BIT6) | ucSinkCount);
+              
+                  ScalerDpRx0SetDpcdValue(0x00, 0x02, 0x00, ucRxCurSinkCount);
+              
+                  if(ucSinkCount > 1)
+                  {
+                      ScalerDpRx0DfpDeviceDetailConfig();
+                  }
+                  else
+                  {
+                      ScalerDpRx0DfpDeviceDetailConfigReset();
+                  }
+              
+                  if((ucRxPreSinkCount != ucRxCurSinkCount) && (ScalerSyncDpGetHotPlugStatus(_D0_INPUT_PORT) == _HIGH))
+                  {
+                      ScalerDpRx0SetDpcdBitValue(0x00, 0x02, 0x04, ~_BIT6, _BIT6);
+                      ScalerDpRx0HpdIrqAssert();
+                  }
+              }
+              #endif // End of #if(_DP_TX_SUPPORT == _ON)
+3217          
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 54  
+
+3218          //--------------------------------------------------
+3219          // Description  : Check Dp Video Straam VBID
+3220          // Input Value  : None
+3221          // Output Value : True --> Get Video Stream
+3222          //--------------------------------------------------
+3223          bit ScalerDpRx0MSACheck(void)
+3224          {
+3225   1          // Pop up Main Stream Attributes
+3226   1          ScalerSetBit(PB6_00_MN_STRM_ATTR_CTRL, ~(_BIT7 | _BIT6 | _BIT5 | _BIT3 | _BIT2), (_BIT7 | _BIT6 | _BIT
+             -5 | _BIT3));
+3227   1      
+3228   1          // Get Hactive
+3229   1          ScalerRead(PB6_0C_MSA_HWD_0, 2, &pData[4], _AUTOINC);
+3230   1      
+3231   1          // Get Vactive
+3232   1          ScalerRead(PB6_16_MSA_VHT_0, 2, &pData[12], _AUTOINC);
+3233   1      
+3234   1      #if(_DP_FREESYNC_SUPPORT == _ON)
+3235   1          if(GET_FREESYNC_ENABLED() == _TRUE)
+3236   1          {
+3237   2              if((PDATA_WORD(2) == 0x00) || (PDATA_WORD(6) == 0x00))
+3238   2              {
+3239   3                  return _FALSE;
+3240   3              }
+3241   2          }
+3242   1          else
+3243   1      #endif
+3244   1          {
+3245   2              // Get Htotal
+3246   2              ScalerRead(PB6_08_MSA_HTT_0, 2, &pData[0], _AUTOINC);
+3247   2      
+3248   2              // Get Hstart
+3249   2              ScalerRead(PB6_0A_MSA_HST_0, 2, &pData[2], _AUTOINC);
+3250   2      
+3251   2              // Get HSW
+3252   2              ScalerRead(PB6_0E_MSA_HSW_0, 2, &pData[6], _AUTOINC);
+3253   2      
+3254   2              // Get Vtotal
+3255   2              ScalerRead(PB6_10_MSA_VTTE_0, 2, &pData[8], _AUTOINC);
+3256   2      
+3257   2              // Get Vstart
+3258   2              ScalerRead(PB6_14_MSA_VST_0, 2, &pData[10], _AUTOINC);
+3259   2      
+3260   2              // Get VSW
+3261   2              ScalerRead(PB6_18_MSA_VSW_0, 2, &pData[14], _AUTOINC);
+3262   2      
+3263   2              if((PDATA_WORD(0) == 0x00) || (PDATA_WORD(1) == 0x00) || (PDATA_WORD(2) == 0x00) || ((PDATA_WORD(3
+             -) & 0x7FFF) == 0x00) ||
+3264   2                 (PDATA_WORD(4) == 0x00) || (PDATA_WORD(5) == 0x00) || (PDATA_WORD(6) == 0x00) || ((PDATA_WORD(7
+             -) & 0x7FFF) == 0x00))
+3265   2              {
+3266   3                  if((PDATA_WORD(0) == 0x00) && (PDATA_WORD(1) == 0x00) && (PDATA_WORD(2) == 0x00) && ((PDATA_WO
+             -RD(3) & 0x7FFF) == 0x00) &&
+3267   3                     (PDATA_WORD(4) == 0x00) && (PDATA_WORD(5) == 0x00) && (PDATA_WORD(6) == 0x00) && ((PDATA_WO
+             -RD(7) & 0x7FFF) == 0x00))
+3268   3                  {
+3269   4      #if(_DP_MST_SUPPORT == _ON)
+                              if(GET_REG_DP_RX_MST_ENABLE() == _FALSE)
+              #endif
+3272   4                      {
+3273   5                          if(ScalerDpRx0HdcpCheckValid() == _TRUE)
+3274   5                          {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 55  
+
+3275   6                              if(GET_DP_RX0_MSA_FAIL_MAC_RESET_COUNT() < 10)
+3276   6                              {
+3277   7                                  ADD_DP_RX0_MSA_FAIL_MAC_RESET_COUNT();
+3278   7                              }
+3279   6                              else
+3280   6                              {
+3281   7                                  CLR_DP_RX0_MSA_FAIL_MAC_RESET_COUNT();
+3282   7      
+3283   7                                  ScalerSetBit(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, _BIT1);
+3284   7                                  if(ScalerDpRx0TimerDelayXmsLinkCheck(30) == _FALSE)
+3285   7                                  {
+3286   8                                      return _FALSE;
+3287   8                                  }
+3288   7                                  ScalerSetBit(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, 0x00);
+3289   7      
+3290   7                                  // Delay a Complete Frame
+3291   7                                  if(ScalerDpRx0TimerDelayXmsLinkCheck(_DP_ONE_FRAME_TIME_MAX) == _FALSE)
+3292   7                                  {
+3293   8                                      return _FALSE;
+3294   8                                  }
+3295   7      
+3296   7                                  ScalerDpRx0DecodeErrorCountReset();
+3297   7                              }
+3298   6                          }
+3299   5                          else
+3300   5                          {
+3301   6                              return _FALSE;
+3302   6                          }
+3303   5                      }
+3304   4                  }
+3305   3      
+3306   3                  return _FALSE;
+3307   3              }
+3308   2      
+3309   2              CLR_DP_RX0_MSA_FAIL_MAC_RESET_COUNT();
+3310   2          }
+3311   1      
+3312   1          // Get Mvid
+3313   1          ScalerRead(PB6_1A_MSA_MVID_0, 3, pData, _AUTOINC);
+3314   1      
+3315   1          if((((DWORD)pData[0] << 16) | ((DWORD)pData[1] << 8) | ((DWORD)pData[2] << 0)) == 0x00)
+3316   1          {
+3317   2              return _FALSE;
+3318   2          }
+3319   1      
+3320   1          // Get Nvid
+3321   1          ScalerRead(PB6_1D_MSA_NVID_0, 3, pData, _AUTOINC);
+3322   1      
+3323   1          if((((DWORD)pData[0] << 16) | ((DWORD)pData[1] << 8) | ((DWORD)pData[2] << 0)) == 0x00)
+3324   1          {
+3325   2              return _FALSE;
+3326   2          }
+3327   1      
+3328   1          return _TRUE;
+3329   1      }
+3330          //--------------------------------------------------
+3331          // Description  : PS Mode Set Fake LT Flag
+3332          // Input Value  : None
+3333          // Output Value : None
+3334          //--------------------------------------------------
+3335          void ScalerDpRx0FakeLTProtect(void)
+3336          {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 56  
+
+3337   1          ScalerTimerWDCancelTimerEvent(_SCALER_WD_TIMER_EVENT_RX0_DP_LINK_TRAINING_REBUILD_PHY);
+3338   1      
+3339   1          SET_DP_RX0_FAKE_LINK_TRAINING();
+3340   1      
+3341   1          SET_DP_RX0_AUX_MANUAL_MODE();
+3342   1      
+3343   1          if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_NORMAL_LINK_TRAINING_PASS) || (GET_DP_RX0_LINK_TRAINING_S
+             -TATUS() == _DP_NORMAL_TRAINING_PATTERN_END_REBUILD_PHY))
+3344   1          {
+3345   2              SET_DP_RX0_LINK_TRAINING_STATUS(_DP_FAKE_LINK_TRAINING_PASS);
+3346   2          }
+3347   1      
+3348   1          SET_DP_RX0_AUX_AUTO_MODE();
+3349   1      }
+3350          
+3351          //--------------------------------------------------
+3352          // Description  : Set DP RSV0 infoframe type
+3353          // Input Value  : None
+3354          // Output Value : None
+3355          //--------------------------------------------------
+3356          void ScalerDpRx0SetInitialRSV0InfoType(void)
+3357          {
+3358   1      #if((_DP_FREESYNC_SUPPORT == _ON) || (_DP_FREESYNC_II_SUPPORT == _ON))
+3359   1          // Set Freesync Info Type to RSV0
+3360   1          ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, _SPD_INFO_TYPE);
+3361   1      #else
+              #if((_DP_HDR10_SUPPORT == _ON) && (_AUDIO_SUPPORT == _ON))
+                  // Set Audio Info Type to RSV0
+                  ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, _DP_AUDIO_TIMESTAMP);
+              #endif
+              #endif
+3367   1      
+3368   1      #if(_DP_ULTRA_HDR_SUPPORT == _ON)
+3369   1          CLR_DP_RX0_RSV0_DETECTING();
+3370   1          ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX0_RSV0_PACKET_DETECT);
+3371   1      #endif
+3372   1      }
+3373          
+3374          //--------------------------------------------------
+3375          // Description  : Reset Interlace Mode
+3376          // Input Value  : None
+3377          // Output Value : None
+3378          //--------------------------------------------------
+3379          void ScalerDpRx0InterlaceReset(void)
+3380          {
+3381   1          // Interlace mode disable, refer to VBID[1], Field Inverse Disable, Clear Hwardware Detect Interlace F
+             -lag, Clear Fake Interlace Flag
+3382   1          ScalerSetBit(PB5_57_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT0), (_BIT5 | _BIT0));
+3383   1      
+3384   1      #if(_DP_RX_INTERLACE_NEW_MODE_SUPPORT == _ON)
+                  // Enable Field Sync by VBID
+                  ScalerSetBit(PB5_F1_DP_RSV1, ~_BIT0, 0x00);
+              
+                  // Set Vtt odd fw mode
+                  SET_DP_RX0_INTERLACE_VTT_FW_MODE(_ODD);
+              #endif
+3391   1      }
+3392          
+3393          //--------------------------------------------------
+3394          // Description  : DP BS to HS Delay Calculation
+3395          // Input Value  : None
+3396          // Output Value : BS to VS Delay
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 57  
+
+3397          //--------------------------------------------------
+3398          WORD ScalerDpRx0GetBStoHSDelay(WORD usDpHtotal)
+3399          {
+3400   1          WORD usFifoOffset = 0;
+3401   1          WORD usHStart = 0;
+3402   1          WORD usHActive = 0;
+3403   1      
+3404   1          pData[15] = GET_COLOR_DEPTH();
+3405   1      
+3406   1          // DP fifo size = 256 x 96bit or 128 x 96bit
+3407   1          if(GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422)
+3408   1          {
+3409   2              // FifoOffset = (1/2 * (fifo size) / (2 * depth per color)), color format is YCbCr 4:2:2
+3410   2              usFifoOffset = _HW_DP_RX_VIDEO_FIFO_SIZE / (4 * (WORD)pData[15]);
+3411   2          }
+3412   1          else
+3413   1          {
+3414   2              // FifoOffset = (1/2 * (fifo size) / (3 * depth per color)), color format is RGB or YCbCr 4:4:4 or
+             - others
+3415   2              usFifoOffset = _HW_DP_RX_VIDEO_FIFO_SIZE / (6 * (WORD)pData[15]);
+3416   2          }
+3417   1      
+3418   1          // Get Hstart
+3419   1          usHStart = (((WORD)ScalerGetByte(PB5_43_MN_DPF_HST_M) << 8) | (ScalerGetByte(PB5_44_MN_DPF_HST_L)));
+3420   1      
+3421   1          // Get Hactive
+3422   1          usHActive = (((WORD)ScalerGetByte(PB5_45_MN_DPF_HWD_M) << 8) | (ScalerGetByte(PB5_46_MN_DPF_HWD_L)));
+3423   1      
+3424   1          // De Only Mode HW constraint: BS2HS delay < Htotal => 1/2 FIFO < H Width, Enough Margin = 1/2 H Width
+3425   1          if(usFifoOffset > (usHActive >> 1))
+3426   1          {
+3427   2              usFifoOffset = (usHActive >> 1);
+3428   2          }
+3429   1      
+3430   1          // H Blanking = HTotal - HActive
+3431   1          PDATA_WORD(0) = usDpHtotal - usHActive;
+3432   1      
+3433   1          // Set BS to HS delay to (HBlanking + 1/2 FIFO - HStart), BS2HS delay: 2 pixel mode
+3434   1          return ((WORD)((PDATA_WORD(0) + usFifoOffset - usHStart) >> 1));
+3435   1      }
+3436          
+3437          #if((_DP_FREESYNC_SUPPORT == _ON) || (_DP_ULTRA_HDR_SUPPORT == _ON))
+3438          //--------------------------------------------------
+3439          // Description  :
+3440          // Input Value  :
+3441          // Output Value :
+3442          //--------------------------------------------------
+3443          void ScalerDpRx0GetInfoFrameRSV0(BYTE *pucDPRx0RSV0Data)
+3444          {
+3445   1          BYTE ucTemp = 0;
+3446   1          BYTE ucDebounceCnt = 5;
+3447   1      
+3448   1          BYTE pucTmepData1[_HW_DP_INFOFRAME_RSV0_LENGTH];
+3449   1          BYTE pucTmepData2[_HW_DP_INFOFRAME_RSV0_LENGTH];
+3450   1      
+3451   1          do
+3452   1          {
+3453   2              ScalerSetByte(PB6_30_DP_INFO_FM_ADR, (_DP_INFO_RSV0_DB0 + ucTemp));
+3454   2              pucTmepData1[ucTemp] = ScalerGetByte(PB6_31_DP_INFO_FM_DAT);
+3455   2      
+3456   2              ucTemp ++;
+3457   2          }
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 58  
+
+3458   1          while(ucTemp < _HW_DP_INFOFRAME_RSV0_LENGTH);
+3459   1      
+3460   1          do
+3461   1          {
+3462   2              ucTemp = 0;
+3463   2      
+3464   2              do
+3465   2              {
+3466   3                  ScalerSetByte(PB6_30_DP_INFO_FM_ADR, (_DP_INFO_RSV0_DB0 + ucTemp));
+3467   3                  pucTmepData2[ucTemp] = ScalerGetByte(PB6_31_DP_INFO_FM_DAT);
+3468   3      
+3469   3                  ucTemp ++;
+3470   3              }
+3471   2              while(ucTemp < _HW_DP_INFOFRAME_RSV0_LENGTH);
+3472   2      
+3473   2              if(memcmp(pucTmepData1, pucTmepData2, _HW_DP_INFOFRAME_RSV0_LENGTH) == 0)
+3474   2              {
+3475   3                  break;
+3476   3              }
+3477   2              else
+3478   2              {
+3479   3                  memcpy(pucTmepData1, pucTmepData2, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3480   3              }
+3481   2      
+3482   2              ucDebounceCnt --;
+3483   2          }
+3484   1          while(ucDebounceCnt > 0);
+3485   1      
+3486   1          memcpy(pucDPRx0RSV0Data, pucTmepData2, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3487   1      }
+3488          #endif
+3489          
+3490          #if(_DP_ULTRA_HDR_SUPPORT == _ON)
+3491          //--------------------------------------------------
+3492          // Description  : DP InfoFrame RSV0 Check
+3493          // Input Value  : None
+3494          // Output Value : None
+3495          //--------------------------------------------------
+3496          void ScalerDpRx0InfoFrameRSV0Check(void)
+3497          {
+3498   1          BYTE pucDPRx0RSV0Data[_HW_DP_INFOFRAME_RSV0_LENGTH];
+3499   1          BYTE ucInfoFrameType = 0;
+3500   1      
+3501   1          memset(pucDPRx0RSV0Data, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3502   1          ScalerDpRx0GetInfoFrameRSV0(pucDPRx0RSV0Data);
+3503   1      
+3504   1      #if(_DP_HDR10_SUPPORT == _ON)
+3505   1          ucInfoFrameType = ScalerGetByte(PB6_2C_DP_INFO_FM_RSV0);
+3506   1      
+3507   1          if(ucInfoFrameType == _HDR_INFO_TYPE)
+3508   1          {
+3509   2              switch(g_ucDPRx0InfoTypeCompare)
+3510   2              {
+3511   3      #if(_DP_FREESYNC_SUPPORT == _ON)
+3512   3                  case _SPD_INFO_TYPE:
+3513   3      
+3514   3                      if(GET_DP_RX0_AMD_SPD_INFO_FRAME_RECEIVED() == _TRUE)
+3515   3                      {
+3516   4                          if(memcmp(pucDPRx0RSV0Data, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) == 0)
+3517   4                          {
+3518   5                              if(memcmp(g_pucDPRx0RSV0Backup, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) 
+             -== 0)
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 59  
+
+3519   5                              {
+3520   6                                  CLR_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3521   6                                  memset(g_pucDPRx0HDR10Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3522   6                              }
+3523   5                              else
+3524   5                              {
+3525   6                                  // Do nothing: confuse case, keep last time status
+3526   6                              }
+3527   5                          }
+3528   4                          else
+3529   4                          {
+3530   5                              SET_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3531   5                              memcpy(g_pucDPRx0HDR10Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3532   5                          }
+3533   4                      }
+3534   3                      else
+3535   3                      {
+3536   4                          SET_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3537   4                          memcpy(g_pucDPRx0HDR10Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3538   4                      }
+3539   3      
+3540   3                      break;
+3541   3      #endif
+3542   3      
+3543   3                  case _DP_AUDIO_TIMESTAMP:
+3544   3      
+3545   3                      if(GET_DP_RX0_AUDIO_INFO_FRAME_RECEIVED() == _TRUE)
+3546   3                      {
+3547   4                          // Maud:[0:15], Naud:[16:31] is constant, Check Naud (arrary[16:27])
+3548   4                          if(memcmp(&pucDPRx0RSV0Data[16], &g_pucDPRx0InfoTemp[16], 12) == 0)
+3549   4                          {
+3550   5                              if(memcmp(g_pucDPRx0RSV0Backup, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) 
+             -== 0)
+3551   5                              {
+3552   6                                  CLR_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3553   6                                  memset(g_pucDPRx0HDR10Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3554   6                              }
+3555   5                              else
+3556   5                              {
+3557   6                                  // Do nothing: confuse case, keep last time status
+3558   6                              }
+3559   5                          }
+3560   4                          else
+3561   4                          {
+3562   5                              SET_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3563   5                              memcpy(g_pucDPRx0HDR10Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3564   5                          }
+3565   4                      }
+3566   3                      else
+3567   3                      {
+3568   4                          SET_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3569   4                          memcpy(g_pucDPRx0HDR10Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3570   4                      }
+3571   3      
+3572   3                      break;
+3573   3      
+3574   3                  default:
+3575   3                      break;
+3576   3              }
+3577   2          }
+3578   1          else
+3579   1          {
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 60  
+
+3580   2              switch(g_ucDPRx0InfoTypeCompare)
+3581   2              {
+3582   3      #if(_DP_FREESYNC_SUPPORT == _ON)
+3583   3                  case _SPD_INFO_TYPE:
+3584   3      
+3585   3                      if(memcmp(pucDPRx0RSV0Data, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) == 0)
+3586   3                      {
+3587   4                          if(memcmp(g_pucDPRx0HDR10Backup, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) == 
+             -0)
+3588   4                          {
+3589   5                              CLR_DP_RX0_AMD_SPD_INFO_FRAME_RECEIVED();
+3590   5                              memset(g_pucDPRx0RSV0Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3591   5                          }
+3592   4                          else
+3593   4                          {
+3594   5                              // Do nothing: confuse case, keep last time status
+3595   5                          }
+3596   4                      }
+3597   3                      else
+3598   3                      {
+3599   4                          SET_DP_RX0_AMD_SPD_INFO_FRAME_RECEIVED();
+3600   4                          memcpy(g_pucDPRx0RSV0Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3601   4                      }
+3602   3      
+3603   3                      break;
+3604   3      #endif
+3605   3      
+3606   3                  case _DP_AUDIO_TIMESTAMP:
+3607   3      
+3608   3                      if(memcmp(pucDPRx0RSV0Data, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) == 0)
+3609   3                      {
+3610   4                          if(memcmp(g_pucDPRx0HDR10Backup, g_pucDPRx0InfoTemp, _HW_DP_INFOFRAME_RSV0_LENGTH) == 
+             -0)
+3611   4                          {
+3612   5                              CLR_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3613   5                              memset(g_pucDPRx0RSV0Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3614   5                          }
+3615   4                          else
+3616   4                          {
+3617   5                              // Do nothing: confuse case, keep last time status
+3618   5                          }
+3619   4                      }
+3620   3                      else
+3621   3                      {
+3622   4                          SET_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3623   4                          memcpy(g_pucDPRx0RSV0Backup, pucDPRx0RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3624   4                      }
+3625   3      
+3626   3                      break;
+3627   3      
+3628   3                  default:
+3629   3                      break;
+3630   3              }
+3631   2          }
+3632   1      
+3633   1          ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, ScalerDpRx0SelectInfoFrameType(ucInfoFrameType));
+3634   1      
+3635   1          // Get infoframe after switch infoframe header for check
+3636   1          ScalerDpRx0GetInfoFrameRSV0(g_pucDPRx0InfoTemp);
+3637   1      #else
+                  ucInfoFrameType = ucInfoFrameType;
+              #endif
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 61  
+
+3640   1      }
+3641          
+3642          //--------------------------------------------------
+3643          // Description  : HDMI Info Frame Packet Detect Event
+3644          // Input Value  : None
+3645          // Output Value : None
+3646          //--------------------------------------------------
+3647          void ScalerDpRx0RSV0PacketDetectEvent(void)
+3648          {
+3649   1          CLR_DP_RX0_RSV0_DETECTING();
+3650   1      }
+3651          
+3652          //--------------------------------------------------
+3653          // Description  : DP InfoFrame RSV0 initial setting
+3654          // Input Value  : None
+3655          // Output Value : None
+3656          //--------------------------------------------------
+3657          void ScalerDpRx0InfoFrameRSV0Initial(void)
+3658          {
+3659   1      #if(_DP_HDR10_SUPPORT == _ON)
+3660   1          CLR_DP_RX0_HDR_INFO_FRAME_RECEIVED();
+3661   1      
+3662   1          // Get RSV0 Infoframe
+3663   1          ScalerDpRx0GetInfoFrameRSV0(g_pucDPRx0RSV0Backup);//gyong 2080 freesync和hdr同时开
+3664   1      
+3665   1          // Get Compare with HDR infoframe type
+3666   1          g_ucDPRx0InfoTypeCompare = ScalerGetByte(PB6_2C_DP_INFO_FM_RSV0);
+3667   1      
+3668   1          // Set DP RSV0 info type: HDR
+3669   1          ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, _HDR_INFO_TYPE);
+3670   1      
+3671   1          // Get infoframe after switch infoframe header for check
+3672   1          ScalerDpRx0GetInfoFrameRSV0(g_pucDPRx0InfoTemp);
+3673   1      #endif
+3674   1      }
+3675          #endif // End of #if(_DP_ULTRA_HDR_SUPPORT == _ON)
+3676          
+3677          #if(_DP_HDR10_SUPPORT == _ON)
+3678          //--------------------------------------------------
+3679          // Description  : DP Select InfoFrame Type
+3680          // Input Value  : None
+3681          // Output Value : InfoFrame Type
+3682          //--------------------------------------------------
+3683          BYTE ScalerDpRx0SelectInfoFrameType(BYTE ucInfoFrameTypeCurrent)
+3684          {
+3685   1          BYTE ucInfoFrameTypeNext = 0;
+3686   1      
+3687   1          if(ucInfoFrameTypeCurrent == _HDR_INFO_TYPE)
+3688   1          {
+3689   2              ucInfoFrameTypeNext = g_ucDPRx0InfoTypeCompare;
+3690   2          }
+3691   1          else
+3692   1          {
+3693   2              ucInfoFrameTypeNext = _HDR_INFO_TYPE;
+3694   2          }
+3695   1      
+3696   1          return ucInfoFrameTypeNext;
+3697   1      }
+3698          
+3699          #if(_AUDIO_SUPPORT == _ON)
+3700          //--------------------------------------------------
+3701          // Description  : Switch DP HDR10 comapre info type
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 62  
+
+3702          // Input Value  : None
+3703          // Output Value : None
+3704          //--------------------------------------------------
+3705          void ScalerDpRx0SwitchHDR10CmpAudioInfo(void)
+3706          {
+3707   1          BYTE pucRSV0Data1[_HW_DP_INFOFRAME_RSV0_LENGTH];
+3708   1          BYTE pucRSV0Data2[_HW_DP_INFOFRAME_RSV0_LENGTH];
+3709   1      
+3710   1          memset(pucRSV0Data1, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3711   1          memset(pucRSV0Data2, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3712   1      
+3713   1      #if(_DP_FREESYNC_SUPPORT == _ON)
+3714   1          if(GET_DP_RX0_AMD_SPD_INFO_FRAME_RECEIVED() == _TRUE)
+3715   1          {
+3716   2              CLR_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3717   2          }
+3718   1          else
+3719   1      #endif
+3720   1          {
+3721   2              // Set Audio Info Type to RSV0
+3722   2              ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, _DP_AUDIO_TIMESTAMP);
+3723   2      
+3724   2              // Delay a Complete Frame
+3725   2              if(ScalerDpRx0TimerDelayXmsLinkCheck(_DP_TWO_FRAME_TIME_MAX) == _FALSE)
+3726   2              {
+3727   3                  return;
+3728   3              }
+3729   2      
+3730   2              ScalerDpRx0GetInfoFrameRSV0(pucRSV0Data1);
+3731   2      
+3732   2              // check pucRSV0Data1 not all 0
+3733   2              if(memcmp(pucRSV0Data1, pucRSV0Data2, _HW_DP_INFOFRAME_RSV0_LENGTH) != 0)
+3734   2              {
+3735   3                  // Get MSA Naud
+3736   3                  pucRSV0Data2[16] = ScalerGetByte(PB6_23_MSA_NAUD_0);
+3737   3                  pucRSV0Data2[17] = ScalerGetByte(PB6_24_MSA_NAUD_1);
+3738   3                  pucRSV0Data2[18] = ScalerGetByte(PB6_25_MSA_NAUD_2);
+3739   3                  pucRSV0Data2[19] = 0x00;
+3740   3      
+3741   3                  // Check Audio time stamp info
+3742   3                  if((memcmp(&pucRSV0Data1[16], &pucRSV0Data2[16], 4) == 0) &&
+3743   3                     (memcmp(&pucRSV0Data1[16], &pucRSV0Data1[20], 4) == 0) &&
+3744   3                     (memcmp(&pucRSV0Data1[16], &pucRSV0Data1[24], 4) == 0))
+3745   3                  {
+3746   4                      SET_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3747   4                      memcpy(g_pucDPRx0RSV0Backup, pucRSV0Data1, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3748   4                  }
+3749   3                  else
+3750   3                  {
+3751   4                      CLR_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3752   4                      memset(g_pucDPRx0RSV0Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3753   4                  }
+3754   3              }
+3755   2              else
+3756   2              {
+3757   3                  CLR_DP_RX0_AUDIO_INFO_FRAME_RECEIVED();
+3758   3                  memset(g_pucDPRx0RSV0Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
+3759   3              }
+3760   2      
+3761   2              // Get Compare with HDR infoframe type
+3762   2              g_ucDPRx0InfoTypeCompare = ScalerGetByte(PB6_2C_DP_INFO_FM_RSV0);
+3763   2      
+C51 COMPILER V8.12   SCALERCOMMONDPRX0                                                     09/16/2026 20:27:44 PAGE 63  
+
+3764   2              // Set DP RSV0 info type: HDR
+3765   2              ScalerSetByte(PB6_2C_DP_INFO_FM_RSV0, _HDR_INFO_TYPE);
+3766   2      
+3767   2              // Get infoframe after switch infoframe header for check
+3768   2              ScalerDpRx0GetInfoFrameRSV0(g_pucDPRx0InfoTemp);
+3769   2          }
+3770   1      }
+3771          #endif
+3772          #endif // End of #if(_DP_HDR10_SUPPORT == _ON)
+3773          
+3774          #if(_WD_TIMER_INT_SUPPORT == _ON)
+3775          //--------------------------------------------------
+3776          // Description  : Reset 8b10b Error Count value
+3777          // Input Value  : None
+3778          // Output Value : None
+3779          //--------------------------------------------------
+3780          void ScalerDpRx0DecodeErrorCountReset_WDINT(void) using 3
+3781          {
+3782   1          // Reset 8b10b Error Count Value
+3783   1          ScalerSetBit_EXINT(PB_08_BIST_PATTERN_SEL, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
+3784   1      
+3785   1          // Start Record 8b10b Error Count Value
+3786   1          ScalerSetBit_EXINT(PB_08_BIST_PATTERN_SEL, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
+3787   1      }
+3788          #endif
+3789          #endif // End of #if(_D0_DP_EXIST == _ON)
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   7455    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     88     223
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      4       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

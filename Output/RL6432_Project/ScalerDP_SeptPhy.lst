@@ -1,0 +1,2587 @@
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SCALERDP_SEPTPHY
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerDP_SeptPhy.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDP_SeptPhy.c LARGE OPTIMIZE(9,SPEED
+                    -) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\
+                    -Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Heade
+                    -r;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Ser
+                    -ies_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kern
+                    -el\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD F
+                    -actory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFIN
+                    -E(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerDP_SeptPh
+                    -y.lst) OBJECT(.\Output\RL6432_Project\ScalerDP_SeptPhy.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : ScalerDP_SeptPhy.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #include "ScalerFunctionInclude.h"
+  18          
+  19          //****************************************************************************
+  20          // DEFINITIONS / MACROS
+  21          //****************************************************************************
+  22          
+  23          //****************************************************************************
+  24          // STRUCT / TYPE / ENUM DEFINITTIONS
+  25          //****************************************************************************
+  26          
+  27          //****************************************************************************
+  28          // CODE TABLES
+  29          //****************************************************************************
+  30          
+  31          //****************************************************************************
+  32          // VARIABLE DECLARATIONS
+  33          //****************************************************************************
+  34          
+  35          //****************************************************************************
+  36          // FUNCTION DECLARATIONS
+  37          //****************************************************************************
+  38          #if(_DP_SUPPORT == _ON)
+  39          BYTE ScalerDpRxGetDpcdBitInfo(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpc
+             -dAccessPortL, BYTE ucDpcdBit);
+  40          BYTE ScalerDpRxGetDpcdInfo(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdAc
+             -cessPortL);
+  41          void ScalerDpRxSetDpcdBitValue(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDp
+             -cdAccessPortL, BYTE ucNotDpcdBit, BYTE ucDpcdBit);
+  42          void ScalerDpRxSetDpcdValue(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdA
+             -ccessPortL, BYTE ucDpcdValue);
+  43          void ScalerDpEdidSwitch(BYTE ucInputPort);
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 2   
+
+  44          void ScalerDpFakeLinkTrainingSetting(BYTE ucInputPort);
+  45          EnumDpPowerState ScalerDpGetPowerStatus(BYTE ucInputPort);
+  46          EnumDpLaneCount ScalerDpGetLaneCount(BYTE ucInputPort);
+  47          EnumDpLinkRate ScalerDpGetLinkRate(BYTE ucInputPort);
+  48          EnumDpVoltageSwingLevel ScalerDpGetLaneVoltageSwingLv(BYTE ucInputPort, EnumDpLane enumDpLane);
+  49          EnumDpPreEmphasisLevel ScalerDpGetLanePreEmpLv(BYTE ucInputPort, EnumDpLane enumDpLane);
+  50          bit ScalerDpGetSrcMstEnable(BYTE ucInputPort);
+  51          void ScalerDpSetHotPlugEvent(BYTE ucInputPort, EnumDpHotPlugAssertType enumHpdType);
+  52          void ScalerDpHotPlugHandler(void);
+  53          void ScalerDpJudgeHPDToggle(EnumPowerAction enumPowerAction);
+  54          #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+              void ScalerDpRxHdcp14RepeaterCapabilityCheck(BYTE ucInputPort, EnumDPMSTPort enumDPMSTPort, bit bClone);
+              #endif
+  57          void ScalerDpInitial(BYTE ucInputPort, EnumDpVersionType enumDpVersion, EnumDpLaneCount enumDpLaneCount, E
+             -numDPMSTPort enumDpRxMstPort, EnumFreeSyncSupport enumFreeSyncSupport, EnumAudioDpDpcdSupport enumAudioSupport, EnumDpHd
+             -rSupport enumDpHdrSupport);
+  58          void ScalerDpLaneCountSwitch(BYTE ucInputPort, EnumDpLaneCount enumDpLaneCount);
+  59          void ScalerDpLowPowerProc(void);
+  60          void ScalerDpResetProc(void);
+  61          void ScalerDpTimerEventProc(EnumScalerTimerEventID enumEventID);
+  62          void ScalerDpVersionSwitch(BYTE ucInputPort, EnumDpVersionType enumDpVersion, EnumDPMSTPort enumDpRxMstPor
+             -t);
+  63          bit ScalerDpCheckDCOffHpdToggle(EnumPowerAction enumPowerAction);
+  64          void ScalerDpHDCPUnplugReset(BYTE ucInputPort);
+  65          void ScalerDpMainLinkQualityManagement(BYTE ucInputPort);
+  66          StructDpRxErrorCount ScalerDpRxGetErrorCount(BYTE ucInputPort);
+  67          void ScalerDpRxAuxPreIntHandler_EXINT0(void);
+  68          
+  69          #if((_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON) || (_DP_AUX_RX_DPCD_HDR_CAP_WILDCARD_SUPPORT == _ON)
+             -)
+  70          void ScalerDpRxAuxTimer2PreIntHandler_EXINT(void);
+  71          #endif
+  72          
+  73          #if(_DP_RX_MI_DONGLE_SUPPORT == _ON)
+              void ScalerDpRestoreFakeLTLaneCount(EnumSourceSearchPort enumSourceSearchPort);
+              #endif
+  76          
+  77          #if(_DP_MST_SUPPORT == _ON)
+              void ScalerDpMstFakeOffDoneProc(void);
+              void ScalerDpMstReset(EnumDPMSTPort enumRxMstPort);
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+              void ScalerDpMstReset_EXINT0(EnumDPMSTPort enumRxMstPort);
+              #endif
+              
+              #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+              bit ScalerDpRxHdcp14RepeaterCapabilitySwitchProc(EnumSourceSearchPort enumInputPort, bit bEnable);
+              #endif
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              void ScalerDpHDCPHandler(void);
+              void ScalerDpHdcpResetUpstreamEventProc(void);
+              #endif
+              #endif
+  94          
+  95          void ScalerDpRxHpdIrqAssert(BYTE ucInputPort);
+  96          
+  97          #if(_DP_HDR10_SUPPORT == _ON)
+  98          #if(_DP_HDR_VENDOR_SUPPORT != _DP_HDR_VENDOR_SUPPORT_NONE)
+              void ScalerDpRxHdrSupportSwitch(BYTE ucInputPort, EnumDpHdrSupport enumDpHdrSupport);
+              EnumDpHdrSupport ScalerDpRxHdrGetSupport(BYTE ucInputPort);
+              void ScalerDpRxHdrDpcdSetting(BYTE ucInputPort);
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 3   
+
+              #endif
+ 103          #endif
+ 104          
+ 105          bit ScalerDpRxChPowerDownResetCheck(BYTE ucInputPort);
+ 106          bit ScalerDpRxGetLinkTrainingPass(BYTE ucInputPort);
+ 107          BYTE ScalerDpRxGetLTStatus(BYTE ucInputPort);
+ 108          #endif
+ 109          
+ 110          //****************************************************************************
+ 111          // FUNCTION DEFINITIONS
+ 112          //****************************************************************************
+ 113          #if(_DP_SUPPORT == _ON)
+ 114          //--------------------------------------------------
+ 115          // Description  : Get DPCD Table Information
+ 116          // Input Value  : ucDpcdAccessPortH --> High Byte of DPCD Address
+ 117          //                ucDpcdAccessPortM --> Middle Byte of DPCD Address
+ 118          //                ucDpcdAccessPortL --> Low Bye of DPCD Adress
+ 119          // Output Value : DPCD Information
+ 120          //--------------------------------------------------
+ 121          BYTE ScalerDpRxGetDpcdBitInfo(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpc
+             -dAccessPortL, BYTE ucDpcdBit)
+ 122          {
+ 123   1          switch(ucInputPort)
+ 124   1          {
+ 125   2      #if(_D0_DP_EXIST == _ON)
+ 126   2      
+ 127   2              case _D0_INPUT_PORT:
+ 128   2      
+ 129   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 133   2                  return ScalerDpRx0GetDpcdBitInfo(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucDp
+             -cdBit);
+ 134   2      #endif
+ 135   2      
+ 136   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          return ScalerDpRx1GetDpcdBitInfo(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucDp
+             -cdBit);
+              #endif
+ 142   2      
+ 143   2              default:
+ 144   2      
+ 145   2                  return 0x00;
+ 146   2          }
+ 147   1      }
+ 148          
+ 149          //--------------------------------------------------
+ 150          // Description  : Get DPCD Table Information
+ 151          // Input Value  : ucDpcdAccessPortH --> High Byte of DPCD Address
+ 152          //                ucDpcdAccessPortM --> Middle Byte of DPCD Address
+ 153          //                ucDpcdAccessPortL --> Low Bye of DPCD Adress
+ 154          // Output Value : DPCD Information
+ 155          //--------------------------------------------------
+ 156          BYTE ScalerDpRxGetDpcdInfo(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdAc
+             -cessPortL)
+ 157          {
+ 158   1          switch(ucInputPort)
+ 159   1          {
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 4   
+
+ 160   2      #if(_D0_DP_EXIST == _ON)
+ 161   2      
+ 162   2              case _D0_INPUT_PORT:
+ 163   2      
+ 164   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 168   2                  return ScalerDpRx0GetDpcdInfo(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL);
+ 169   2      #endif
+ 170   2      
+ 171   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          return ScalerDpRx1GetDpcdInfo(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL);
+              #endif
+ 177   2      
+ 178   2              default:
+ 179   2      
+ 180   2                  return 0x00;
+ 181   2          }
+ 182   1      }
+ 183          
+ 184          //--------------------------------------------------
+ 185          // Description  : Set DPCD Table Information
+ 186          // Input Value  : ucDpcdAccessPortH --> High Byte of DPCD Address
+ 187          //                ucDpcdAccessPortM --> Middle Byte of DPCD Address
+ 188          //                ucDpcdAccessPortL --> Low Bye of DPCD Adress
+ 189          //                ucDpcdValue --> DPCD Value
+ 190          // Output Value : None
+ 191          //--------------------------------------------------
+ 192          void ScalerDpRxSetDpcdBitValue(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDp
+             -cdAccessPortL, BYTE ucNotDpcdBit, BYTE ucDpcdBit)
+ 193          {
+ 194   1          switch(ucInputPort)
+ 195   1          {
+ 196   2      #if(_D0_DP_EXIST == _ON)
+ 197   2      
+ 198   2              case _D0_INPUT_PORT:
+ 199   2      
+ 200   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 204   2                  ScalerDpRx0SetDpcdBitValue(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucNotDpcdB
+             -it, ucDpcdBit);
+ 205   2                  break;
+ 206   2      #endif
+ 207   2      
+ 208   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          ScalerDpRx1SetDpcdBitValue(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucNotDpcdB
+             -it, ucDpcdBit);
+                          break;
+              #endif
+ 215   2      
+ 216   2              default:
+ 217   2      
+ 218   2                  break;
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 5   
+
+ 219   2          }
+ 220   1      }
+ 221          
+ 222          //--------------------------------------------------
+ 223          // Description  : Set DPCD Table Information
+ 224          // Input Value  : ucDpcdAccessPortH --> High Byte of DPCD Address
+ 225          //                ucDpcdAccessPortM --> Middle Byte of DPCD Address
+ 226          //                ucDpcdAccessPortL --> Low Bye of DPCD Adress
+ 227          //                ucDpcdValue --> DPCD Value
+ 228          // Output Value : None
+ 229          //--------------------------------------------------
+ 230          void ScalerDpRxSetDpcdValue(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdA
+             -ccessPortL, BYTE ucDpcdValue)
+ 231          {
+ 232   1          switch(ucInputPort)
+ 233   1          {
+ 234   2      #if(_D0_DP_EXIST == _ON)
+ 235   2      
+ 236   2              case _D0_INPUT_PORT:
+ 237   2      
+ 238   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 242   2                  ScalerDpRx0SetDpcdValue(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucDpcdValue);
+ 243   2                  break;
+ 244   2      #endif
+ 245   2      
+ 246   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          ScalerDpRx1SetDpcdValue(ucDpcdAccessPortH, ucDpcdAccessPortM, ucDpcdAccessPortL, ucDpcdValue);
+                          break;
+              #endif
+ 253   2      
+ 254   2              default:
+ 255   2      
+ 256   2                  break;
+ 257   2          }
+ 258   1      }
+ 259          
+ 260          //--------------------------------------------------
+ 261          // Description  : DP EDID Switch
+ 262          // Input Value  : Input DP Port
+ 263          // Output Value : None
+ 264          //--------------------------------------------------
+ 265          void ScalerDpEdidSwitch(BYTE ucInputPort)
+ 266          {
+ 267   1          switch(ucInputPort)
+ 268   1          {
+ 269   2      #if(_D0_DP_EXIST == _ON)
+ 270   2              case _D0_INPUT_PORT:
+ 271   2                  SET_DP_RX_D0_EDID_SWITCH();
+ 272   2                  SET_DP_RX_CAPABILITY_SWITCHED();
+ 273   2                  break;
+ 274   2      #endif
+ 275   2      
+ 276   2      #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+                          SET_DP_RX_D1_EDID_SWITCH();
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 6   
+
+                          break;
+              #endif
+ 282   2      
+ 283   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                      case _D6_INPUT_PORT:
+                          SET_DP_RX_D6_EDID_SWITCH();
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+                          break;
+              #endif
+ 289   2      
+ 290   2              default:
+ 291   2                  break;
+ 292   2          }
+ 293   1      }
+ 294          
+ 295          //--------------------------------------------------
+ 296          // Description  : DP Fake Link Training Setting
+ 297          // Input Value  : ucInputPortType
+ 298          // Output Value : None
+ 299          //--------------------------------------------------
+ 300          void ScalerDpFakeLinkTrainingSetting(BYTE ucInputPort)
+ 301          {
+ 302   1      #if(_D0_DP_EXIST == _ON)
+ 303   1      
+ 304   1      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                  if((ucInputPort != _D0_INPUT_PORT) && (ucInputPort != _D6_INPUT_PORT))
+              #else
+ 307   1          if(ucInputPort != _D0_INPUT_PORT)
+ 308   1      #endif
+ 309   1          {
+ 310   2              ScalerDpRx0FakeLTProtect();
+ 311   2          }
+ 312   1      
+ 313   1      #endif
+ 314   1      
+ 315   1      #if(_D1_DP_EXIST == _ON)
+              
+                  if(ucInputPort != _D1_INPUT_PORT)
+                  {
+                      ScalerDpRx1FakeLTProtect();
+                  }
+              
+              #endif
+ 323   1      }
+ 324          
+ 325          //--------------------------------------------------
+ 326          // Description  : Get DP Power Status (DPCD 00600h)
+ 327          // Input Value  : DP Input Port
+ 328          // Output Value : DP Power Status
+ 329          //--------------------------------------------------
+ 330          EnumDpPowerState ScalerDpGetPowerStatus(BYTE ucInputPort)
+ 331          {
+ 332   1          switch(ucInputPort)
+ 333   1          {
+ 334   2      #if(_D0_DP_EXIST == _ON)
+ 335   2      
+ 336   2              case _D0_INPUT_PORT:
+ 337   2      
+ 338   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 7   
+
+ 342   2                  if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT1)
+ 343   2                  {
+ 344   3                      return _DP_POWER_DOWN;
+ 345   3                  }
+ 346   2                  else if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == (_BIT2 | _BIT0
+             -))
+ 347   2                  {
+ 348   3                      return _DP_POWER_DOWN_WITH_AUX;
+ 349   3                  }
+ 350   2      
+ 351   2                  return _DP_POWER_NORMAL;
+ 352   2      #endif
+ 353   2      
+ 354   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          if(ScalerDpRx1GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT1)
+                          {
+                              return _DP_POWER_DOWN;
+                          }
+                          else if(ScalerDpRx1GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == (_BIT2 | _BIT0
+             -))
+                          {
+                              return _DP_POWER_DOWN_WITH_AUX;
+                          }
+              
+                          return _DP_POWER_NORMAL;
+              #endif
+ 369   2      
+ 370   2              default:
+ 371   2      
+ 372   2                  return _DP_POWER_NORMAL;
+ 373   2          }
+ 374   1      }
+ 375          
+ 376          //--------------------------------------------------
+ 377          // Description  : Get DP Lane Count (DPCD 00101h)
+ 378          // Input Value  : DP Input Port
+ 379          // Output Value : DP Lane Count
+ 380          //--------------------------------------------------
+ 381          EnumDpLaneCount ScalerDpGetLaneCount(BYTE ucInputPort)
+ 382          {
+ 383   1          switch(ucInputPort)
+ 384   1          {
+ 385   2      #if(_D0_DP_EXIST == _ON)
+ 386   2      
+ 387   2              case _D0_INPUT_PORT:
+ 388   2      
+ 389   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 393   2                  return (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, 0x01, (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)));
+ 394   2      #endif
+ 395   2      
+ 396   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          return (ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, 0x01, (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)));
+              #endif
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 8   
+
+ 402   2              default:
+ 403   2      
+ 404   2                  return _DP_LINK_4_LANE;
+ 405   2          }
+ 406   1      }
+ 407          
+ 408          //--------------------------------------------------
+ 409          // Description  : Get DP Link Rate (DPCD 00100h)
+ 410          // Input Value  : DP Input Port
+ 411          // Output Value : DP Link Rate
+ 412          //--------------------------------------------------
+ 413          EnumDpLinkRate ScalerDpGetLinkRate(BYTE ucInputPort)
+ 414          {
+ 415   1          switch(ucInputPort)
+ 416   1          {
+ 417   2      #if(_D0_DP_EXIST == _ON)
+ 418   2      
+ 419   2              case _D0_INPUT_PORT:
+ 420   2      
+ 421   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 425   2                  return (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00));
+ 426   2      #endif
+ 427   2      
+ 428   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          return (ScalerDpRx1GetDpcdInfo(0x00, 0x01, 0x00));
+              #endif
+ 434   2              default:
+ 435   2      
+ 436   2                  return _DP_LINK_RBR;
+ 437   2          }
+ 438   1      }
+ 439          
+ 440          //--------------------------------------------------
+ 441          // Description  : Get DP Voltage Swing Level(DPCD 00103h-00106h [1:0])
+ 442          // Input Value  : DP Input Port, Lane #
+ 443          // Output Value : DP Voltage Swing Level of the lane
+ 444          //--------------------------------------------------
+ 445          EnumDpVoltageSwingLevel ScalerDpGetLaneVoltageSwingLv(BYTE ucInputPort, EnumDpLane enumDpLane)
+ 446          {
+ 447   1          switch(ucInputPort)
+ 448   1          {
+ 449   2      #if(_D0_DP_EXIST == _ON)
+ 450   2      
+ 451   2              case _D0_INPUT_PORT:
+ 452   2      
+ 453   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 457   2                  return (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, (0x03 + enumDpLane), (_BIT1 | _BIT0)));
+ 458   2      #endif
+ 459   2      
+ 460   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 9   
+
+                          return (ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, (0x03 + enumDpLane), (_BIT1 | _BIT0)));
+              #endif
+ 466   2              default:
+ 467   2      
+ 468   2                  return 0;
+ 469   2          }
+ 470   1      }
+ 471          
+ 472          //--------------------------------------------------
+ 473          // Description  : Get DP Pre-emphasis Level(DPCD 00103h-00106h [4:3])
+ 474          // Input Value  : DP Input Port, Lane #
+ 475          // Output Value : DP Pre-emphasis Level of the lane
+ 476          //--------------------------------------------------
+ 477          EnumDpPreEmphasisLevel ScalerDpGetLanePreEmpLv(BYTE ucInputPort, EnumDpLane enumDpLane)
+ 478          {
+ 479   1          switch(ucInputPort)
+ 480   1          {
+ 481   2      #if(_D0_DP_EXIST == _ON)
+ 482   2      
+ 483   2              case _D0_INPUT_PORT:
+ 484   2      
+ 485   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+ 489   2                  return (ScalerDpRx0GetDpcdBitInfo(0x00, 0x01, (0x03 + enumDpLane), (_BIT4 | _BIT3)) >> 3);
+ 490   2      #endif
+ 491   2      
+ 492   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          return (ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, (0x03 + enumDpLane), (_BIT4 | _BIT3)) >> 3);
+              #endif
+ 498   2              default:
+ 499   2      
+ 500   2                  return 0;
+ 501   2          }
+ 502   1      }
+ 503          
+ 504          //--------------------------------------------------
+ 505          // Description  : Get DP Source MST enable (DPCD 00111h[0])
+ 506          // Input Value  : DP Input Port
+ 507          // Output Value : _TRUE --> MST enable, _FALSE --> SST
+ 508          //--------------------------------------------------
+ 509          bit ScalerDpGetSrcMstEnable(BYTE ucInputPort)
+ 510          {
+ 511   1          if(ScalerDpRxGetDpcdBitInfo(ucInputPort, 0x00, 0x00, 0x21, _BIT0) == _BIT0)
+ 512   1          {
+ 513   2              if(ScalerDpRxGetDpcdBitInfo(ucInputPort, 0x00, 0x01, 0x11, _BIT0) == _BIT0)
+ 514   2              {
+ 515   3                  return _ENABLE;
+ 516   3              }
+ 517   2          }
+ 518   1      
+ 519   1          return _DISABLE;
+ 520   1      }
+ 521          
+ 522          //--------------------------------------------------
+ 523          // Description  : Dp HotPlug Event for interface
+ 524          // Input Value  : Hot Plug Type
+ 525          // Output Value : None
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 10  
+
+ 526          //--------------------------------------------------
+ 527          void ScalerDpSetHotPlugEvent(BYTE ucInputPort, EnumDpHotPlugAssertType enumHpdType)
+ 528          {
+ 529   1      #if(_D0_DP_EXIST == _ON)
+ 530   1          if(ucInputPort == _D0_INPUT_PORT)
+ 531   1          {
+ 532   2              ScalerDpRx0SetHotPlugEvent(enumHpdType);
+ 533   2          }
+ 534   1      #endif
+ 535   1      
+ 536   1      #if(_D1_DP_EXIST == _ON)
+                  if(ucInputPort == _D1_INPUT_PORT)
+                  {
+                      ScalerDpRx1SetHotPlugEvent(enumHpdType);
+                  }
+              #endif
+ 542   1      }
+ 543          
+ 544          //--------------------------------------------------
+ 545          // Description  : Dp Hot Plug Handler
+ 546          // Input Value  : None
+ 547          // Output Value : None
+ 548          //--------------------------------------------------
+ 549          void ScalerDpHotPlugHandler(void)
+ 550          {
+ 551   1          BYTE ucI = 0;
+ 552   1          BYTE ucPortNum = 0;
+ 553   1      
+ 554   1          StructHpdSequence pstHpdSeq[] =
+ 555   1          {
+ 556   1              // dummy
+ 557   1              {_NO_INPUT_PORT, _DP_HPD_TIME_NONE},
+ 558   1      
+ 559   1      #if(_D0_DP_EXIST == _ON)
+ 560   1              {_NO_INPUT_PORT, _DP_HPD_TIME_NONE},
+ 561   1      #endif
+ 562   1      #if(_D1_DP_EXIST == _ON)
+                      {_NO_INPUT_PORT, _DP_HPD_TIME_NONE},
+              #endif
+ 565   1          };
+ 566   1      
+ 567   1      #if(_D0_DP_EXIST == _ON)
+ 568   1          if(GET_DP_RX0_HOTPLUG_ASSERT_TYPE() != _DP_HPD_NONE)
+ 569   1          {
+ 570   2      #if(_DP_MST_SUPPORT == _ON)
+                      if(!((GET_DP_RX0_HOTPLUG_ASSERT_TYPE() > _DP_HPD_LOW) && (GET_DP_RX0_HOTPLUG_ASSERT_TYPE() < _DP_H
+             -PD_ASSERTED) &&
+                           (g_enumDpMSTCapablePort == _DP_MST_RX0_PORT) && (ScalerDpRxMstCheckMsgTransition() == _TRUE))
+             -)
+              #endif
+ 574   2              {
+ 575   3                  if((pstHpdSeq[1 + ucPortNum].enumHpdTime = ScalerDpRx0BeforeHpdToggleProc(GET_DP_RX0_HOTPLUG_A
+             -SSERT_TYPE())) != _DP_HPD_TIME_NONE)
+ 576   3                  {
+ 577   4                      pstHpdSeq[1 + ucPortNum].enumPort = _D0_INPUT_PORT;
+ 578   4                      ucPortNum ++;
+ 579   4                  }
+ 580   3      
+ 581   3                  CLR_DP_RX0_HOTPLUG_ASSERT_TYPE();
+ 582   3              }
+ 583   2          }
+ 584   1      #endif
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 11  
+
+ 585   1      
+ 586   1      #if(_D1_DP_EXIST == _ON)
+                  if(GET_DP_RX1_HOTPLUG_ASSERT_TYPE() != _DP_HPD_NONE)
+                  {
+              #if(_DP_MST_SUPPORT == _ON)
+                      if(!((GET_DP_RX1_HOTPLUG_ASSERT_TYPE() > _DP_HPD_LOW) && (GET_DP_RX1_HOTPLUG_ASSERT_TYPE() < _DP_H
+             -PD_ASSERTED) &&
+                           (g_enumDpMSTCapablePort == _DP_MST_RX1_PORT) && (ScalerDpRxMstCheckMsgTransition() == _TRUE))
+             -)
+              #endif
+                      {
+                          if((pstHpdSeq[1 + ucPortNum].enumHpdTime = ScalerDpRx1BeforeHpdToggleProc(GET_DP_RX1_HOTPLUG_A
+             -SSERT_TYPE())) != _DP_HPD_TIME_NONE)
+                          {
+                              pstHpdSeq[1 + ucPortNum].enumPort = _D1_INPUT_PORT;
+                              ucPortNum ++;
+                          }
+              
+                          CLR_DP_RX1_HOTPLUG_ASSERT_TYPE();
+                      }
+                  }
+              #endif
+ 604   1      
+ 605   1          if(ucPortNum == 0)
+ 606   1          {
+ 607   2              return;
+ 608   2          }
+ 609   1      
+ 610   1      #if(_DP_LONG_HPD_MODE == _DP_LONG_HPD_DELAY_MODE)
+ 611   1          // Bubble sort for reorder squence (HPD time short -> long)
+ 612   1          for(pData[0] = 1; pData[0] < ucPortNum; pData[0] ++)
+ 613   1          {
+ 614   2              for(pData[1] = 1; pData[1] <= (ucPortNum - pData[0]); pData[1] ++)
+ 615   2              {
+ 616   3                  if(pstHpdSeq[pData[1]].enumHpdTime > pstHpdSeq[pData[1] + 1].enumHpdTime)
+ 617   3                  {
+ 618   4                      pstHpdSeq[0] = pstHpdSeq[pData[1]];
+ 619   4                      pstHpdSeq[pData[1]] = pstHpdSeq[pData[1] + 1];
+ 620   4                      pstHpdSeq[pData[1] + 1] = pstHpdSeq[0];
+ 621   4                  }
+ 622   3              }
+ 623   2          }
+ 624   1      
+ 625   1          // Reset the dummy seq time for first HPD delay calculation
+ 626   1          pstHpdSeq[0].enumPort = _NO_INPUT_PORT;
+ 627   1          pstHpdSeq[0].enumHpdTime = 0;
+ 628   1      #endif
+ 629   1      
+ 630   1          // Low Process
+ 631   1          for(ucI = 1; ucI <= ucPortNum; ucI ++)
+ 632   1          {
+ 633   2              if(pstHpdSeq[ucI].enumHpdTime == _DP_HPD_ASSERTED_TIME)
+ 634   2              {
+ 635   3                  // Skip low process of this turn
+ 636   3                  continue;
+ 637   3              }
+ 638   2      
+ 639   2              switch(pstHpdSeq[ucI].enumPort)
+ 640   2              {
+ 641   3      #if(_D0_DP_EXIST == _ON)
+ 642   3      
+ 643   3                  case _D0_INPUT_PORT:
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 12  
+
+ 644   3      
+ 645   3      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                              if(((GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT) && (ScalerSyncDpCableStatus(_D0_INPUT_PORT)
+             - == _TRUE)) ||
+                                 ((GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT) && (ScalerSyncDpCableStatus(_D6_INPUT_PORT)
+             - == _TRUE)))
+              #else
+ 649   3                      if(ScalerSyncDpCableStatus(_D0_INPUT_PORT) == _TRUE)
+ 650   3      #endif
+ 651   3                      {
+ 652   4      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                                  if(GET_D6_SWITCH_POWER_STATUS() == _DIGITAL_D6_SWITCH_POWER_ON)
+              #endif
+ 655   4                          {
+ 656   5                              ScalerSyncDpRxSetHotPlug(_D0_INPUT_PORT, _LOW, 0);
+ 657   5                          }
+ 658   4                      }
+ 659   3      
+ 660   3                      break;
+ 661   3      #endif
+ 662   3      
+ 663   3      #if(_D1_DP_EXIST == _ON)
+              
+                          case _D1_INPUT_PORT:
+              
+                              if(ScalerSyncDpCableStatus(_D1_INPUT_PORT) == _TRUE)
+                              {
+                                  ScalerSyncDpRxSetHotPlug(_D1_INPUT_PORT, _LOW, 0);
+                              }
+              
+                              break;
+              #endif
+ 674   3                  default:
+ 675   3                      break;
+ 676   3              }
+ 677   2          }
+ 678   1      
+ 679   1          // High Process
+ 680   1          for(ucI = 1; ucI <= ucPortNum; ucI ++)
+ 681   1          {
+ 682   2              switch(pstHpdSeq[ucI].enumPort)
+ 683   2              {
+ 684   3      #if(_D0_DP_EXIST == _ON)
+ 685   3      
+ 686   3                  case _D0_INPUT_PORT:
+ 687   3      
+ 688   3      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                              if(((GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT) && (ScalerSyncDpCableStatus(_D0_INPUT_PORT)
+             - == _TRUE)) ||
+                                 ((GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT) && (ScalerSyncDpCableStatus(_D6_INPUT_PORT)
+             - == _TRUE)))
+              #else
+ 692   3                      if(ScalerSyncDpCableStatus(_D0_INPUT_PORT) == _TRUE)
+ 693   3      #endif
+ 694   3                      {
+ 695   4      #if(_DP_LONG_HPD_MODE == _DP_LONG_HPD_DELAY_MODE)
+ 696   4                          if((pstHpdSeq[ucI].enumHpdTime != pstHpdSeq[ucI - 1].enumHpdTime))
+ 697   4                          {
+ 698   5                              ScalerTimerDelayXms(pstHpdSeq[ucI].enumHpdTime - pstHpdSeq[ucI - 1].enumHpdTime);
+ 699   5                              DebugMessageRx0("_D0_HOT_PLUG_HIGH after Xms", (pstHpdSeq[ucI].enumHpdTime - pstHp
+             -dSeq[ucI - 1].enumHpdTime));
+ 700   5                          }
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 13  
+
+ 701   4                          else
+ 702   4                          {
+ 703   5                              // Avoid pulling high concurrently (solution of NVIDIA probably ignoring the senco
+             -nd HPD high while 2 ports conneted)
+ 704   5                              if(ucI >= 2)
+ 705   5                              {
+ 706   6                                  ScalerTimerDelayXms(2);
+ 707   6                                  DebugMessageRx0("_D0_HOT_PLUG_HIGH after Xms", 2);
+ 708   6                              }
+ 709   5                          }
+ 710   4      #endif
+ 711   4      
+ 712   4      #if(_DP_LONG_HPD_MODE == _DP_LONG_HPD_TIMEREVENT_MODE)
+                                  if(pstHpdSeq[ucI].enumHpdTime > 0)
+                                  {
+                                      ScalerTimerReactiveTimerEvent(pstHpdSeq[ucI].enumHpdTime, _SCALER_TIMER_EVENT_DP_R
+             -X0_HOTPLUG_ASSERTED);
+                                  }
+                                  else
+              #endif
+ 719   4                          {
+ 720   5                              ScalerDpRx0AfterHpdToggleProc();
+ 721   5      
+ 722   5                              ScalerSyncDpRxSetHotPlug(_D0_INPUT_PORT, _HIGH, 0);
+ 723   5                          }
+ 724   4                      }
+ 725   3      
+ 726   3                      break;
+ 727   3      #endif
+ 728   3      
+ 729   3      #if(_D1_DP_EXIST == _ON)
+              
+                          case _D1_INPUT_PORT:
+              
+                              if(ScalerSyncDpCableStatus(_D1_INPUT_PORT) == _TRUE)
+                              {
+              #if(_DP_LONG_HPD_MODE == _DP_LONG_HPD_DELAY_MODE)
+                                  if((pstHpdSeq[ucI].enumHpdTime != pstHpdSeq[ucI - 1].enumHpdTime))
+                                  {
+                                      ScalerTimerDelayXms(pstHpdSeq[ucI].enumHpdTime - pstHpdSeq[ucI - 1].enumHpdTime);
+                                      DebugMessageRx1("_D1_HOT_PLUG_HIGH after Xms", (pstHpdSeq[ucI].enumHpdTime - pstHp
+             -dSeq[ucI - 1].enumHpdTime));
+                                  }
+                                  else
+                                  {
+                                      // Avoid pulling high concurrently (solution of NVIDIA probably ignoring the senco
+             -nd HPD high while 2 ports conneted)
+                                      if(ucI >= 2)
+                                      {
+                                          ScalerTimerDelayXms(2);
+                                          DebugMessageRx1("_D1_HOT_PLUG_HIGH after Xms", 2);
+                                      }
+                                  }
+              #endif
+              
+              #if(_DP_LONG_HPD_MODE == _DP_LONG_HPD_TIMEREVENT_MODE)
+                                  if(pstHpdSeq[ucI].enumHpdTime > 0)
+                                  {
+                                      ScalerTimerReactiveTimerEvent(pstHpdSeq[ucI].enumHpdTime, _SCALER_TIMER_EVENT_DP_R
+             -X1_HOTPLUG_ASSERTED);
+                                  }
+                                  else
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 14  
+
+              #endif
+                                  {
+                                      ScalerDpRx1AfterHpdToggleProc();
+              
+                                      ScalerSyncDpRxSetHotPlug(_D1_INPUT_PORT, _HIGH, 0);
+                                  }
+                              }
+              
+                              break;
+              #endif
+ 768   3                  default:
+ 769   3                      break;
+ 770   3              }
+ 771   2          }
+ 772   1      }
+ 773          
+ 774          //--------------------------------------------------
+ 775          // Description  : Decision DP HPD Toggle Behavior
+ 776          // Input Value  : Power Action State
+ 777          // Output Value : None
+ 778          //--------------------------------------------------
+ 779          void ScalerDpJudgeHPDToggle(EnumPowerAction enumPowerAction)
+ 780          {
+ 781   1          switch(enumPowerAction)
+ 782   1          {
+ 783   2              case _POWER_ACTION_NORMAL_TO_OFF:
+ 784   2              case _POWER_ACTION_NORMAL_TO_FAKE_OFF:
+ 785   2      
+ 786   2                  if(ScalerDpCheckDCOffHpdToggle(enumPowerAction) == _TRUE)
+ 787   2                  {
+ 788   3      #if(_D0_DP_EXIST == _ON)
+ 789   3      
+ 790   3      #if(_DP_MST_SUPPORT == _ON)
+                              if(ScalerDpRxMstGetMstCapability(_D0_INPUT_PORT) == _TRUE)
+                              {
+              #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                                  if(GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT)
+              #endif
+                                  {
+                                      ScalerDpRx0SetHotPlugEvent(_DP_HPD_LOW_RESET_AUX);
+                                  }
+                              }
+                              else
+              #endif
+ 802   3                      {
+ 803   4      #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
+                                  if(GET_DP_DC_OFF_HPD_HIGH() == _FALSE)
+              #else
+ 806   4                          if((GET_DP_DC_OFF_HPD_HIGH() == _FALSE) ||
+ 807   4                             ((enumPowerAction == _POWER_ACTION_NORMAL_TO_OFF) &&
+ 808   4                              (GET_DP_RX0_HDCP_CHECK_ENABLE() == _TRUE)))
+ 809   4      #endif
+ 810   4                          {
+ 811   5                              ScalerDpRx0SetHotPlugEvent(_DP_HPD_LOW_RESET_AUX);
+ 812   5                          }
+ 813   4                      }
+ 814   3      #endif // End of #if(_D0_DP_EXIST == _ON)
+ 815   3      
+ 816   3      #if(_D1_DP_EXIST == _ON)
+              
+              #if(_DP_MST_SUPPORT == _ON)
+                              if(ScalerDpRxMstGetMstCapability(_D1_INPUT_PORT) == _TRUE)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 15  
+
+                              {
+                                  ScalerDpRx1SetHotPlugEvent(_DP_HPD_LOW_RESET_AUX);
+                              }
+                              else
+              #endif
+                              {
+              #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
+                                  if(GET_DP_DC_OFF_HPD_HIGH() == _FALSE)
+              #else
+                                  if((GET_DP_DC_OFF_HPD_HIGH() == _FALSE) ||
+                                     ((enumPowerAction == _POWER_ACTION_NORMAL_TO_OFF) &&
+                                      (GET_DP_RX1_HDCP_CHECK_ENABLE() == _TRUE)))
+              #endif
+                                  {
+                                      ScalerDpRx1SetHotPlugEvent(_DP_HPD_LOW_RESET_AUX);
+                                  }
+                              }
+              #endif // End of #if(_D1_DP_EXIST == _ON)
+ 838   3                  }
+ 839   2      
+ 840   2                  break;
+ 841   2      
+ 842   2              case _POWER_ACTION_OFF_TO_NORMAL:
+ 843   2              case _POWER_ACTION_PS_TO_NORMAL:
+ 844   2      
+ 845   2      #if(_D0_DP_EXIST == _ON)
+ 846   2      
+ 847   2                  // 2002h Has Been Read and Cancel Rx Mst Msg Finish during PS/ PD
+ 848   2                  if(GET_DP_RX0_AUX_COMMAND_NO_REPLY() == _TRUE)
+ 849   2                  {
+ 850   3                      CLR_DP_RX0_AUX_COMMAND_NO_REPLY();
+ 851   3      
+ 852   3                      ScalerDpRx0SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
+ 853   3                  }
+ 854   2                  else if(enumPowerAction == _POWER_ACTION_OFF_TO_NORMAL)
+ 855   2                  {
+ 856   3      #if(_DP_MST_SUPPORT == _ON)
+                              if(ScalerDpRxMstGetMstCapability(_D0_INPUT_PORT) == _TRUE)
+                              {
+              #if(_DP_DC_ON_HPD_CONTROL_BY_USER_SUPPORT == _ON)
+                                  if((ScalerSyncDpGetHotPlugStatus(_D0_INPUT_PORT) == _LOW) || (GET_DP_DC_ON_HPD_TOGGLE_
+             -MODE() == _DP_HPD_TOGGLE_NORMAL))
+              #endif
+                                  {
+                                      // Instead of _DP_HPD_ASSERTED, do the _DP_MST_LONG_HPD_EVENT to prevent the DC of
+             -f/on toggled quickly.
+                                      ScalerDpRx0SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
+                                  }
+                              }
+                              else
+              #endif
+ 869   3                      {
+ 870   4                          if(ScalerSyncDpGetHotPlugStatus(_D0_INPUT_PORT) == _HIGH)
+ 871   4                          {
+ 872   5                              // Case of (GET_DP_DC_OFF_HPD_HIGH() == _TRUE), HPD remains high
+ 873   5      
+ 874   5      #if(_DP_DC_ON_HPD_CONTROL_BY_USER_SUPPORT == _ON)
+                                      if(GET_DP_DC_ON_HPD_TOGGLE_MODE() == _DP_HPD_TOGGLE_NORMAL)
+              #endif
+ 877   5                              {
+ 878   6      #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
+                                          return;
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 16  
+
+              #endif
+ 881   6      
+ 882   6      #if(_DP_DELL_D3_TEST_SUPPORT == _OFF)
+ 883   6                                  if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BI
+             -T0)
+ 884   6      #endif
+ 885   6                                  {
+ 886   7                                      ScalerDpRx0SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+ 887   7                                  }
+ 888   6                              }
+ 889   5                          }
+ 890   4                          else
+ 891   4                          {
+ 892   5                              // Case of ((GET_DP_DC_OFF_HPD_HIGH() == _FALSE) || (ScalerDpRx0HdcpCheckEnabled()
+             - == _TRUE)), DC off HPD low
+ 893   5      
+ 894   5                              // Use long HPD instead of assert to avoid causing HP EliteBook 840 fail to play b
+             -luray DVD due to the long HPD which width is less than ~250ms
+ 895   5                              ScalerDpRx0SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+ 896   5                          }
+ 897   4                      }
+ 898   3                  }
+ 899   2      
+ 900   2      #endif // End of #if(_D0_DP_EXIST == _ON)
+ 901   2      
+ 902   2      #if(_D1_DP_EXIST == _ON)
+              
+                          // 2002h Has Been Read and Cancel Rx Mst Msg Finish during PS/ PD
+                          if(GET_DP_RX1_AUX_COMMAND_NO_REPLY() == _TRUE)
+                          {
+                              CLR_DP_RX1_AUX_COMMAND_NO_REPLY();
+              
+                              ScalerDpRx1SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
+                          }
+                          else if(enumPowerAction == _POWER_ACTION_OFF_TO_NORMAL)
+                          {
+              #if(_DP_MST_SUPPORT == _ON)
+                              if(ScalerDpRxMstGetMstCapability(_D1_INPUT_PORT) == _TRUE)
+                              {
+              #if(_DP_DC_ON_HPD_CONTROL_BY_USER_SUPPORT == _ON)
+                                  if((ScalerSyncDpGetHotPlugStatus(_D1_INPUT_PORT) == _LOW) || (GET_DP_DC_ON_HPD_TOGGLE_
+             -MODE() == _DP_HPD_TOGGLE_NORMAL))
+              #endif
+                                  {
+                                      // Instead of _DP_HPD_ASSERTED, do the _DP_MST_LONG_HPD_EVENT to prevent the DC of
+             -f/on toggled quickly.
+                                      ScalerDpRx1SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
+                                  }
+                              }
+                              else
+              #endif
+                              {
+                                  if(ScalerSyncDpGetHotPlugStatus(_D1_INPUT_PORT) == _HIGH)
+                                  {
+                                      // Case of (GET_DP_DC_OFF_HPD_HIGH() == _TRUE), HPD remains high
+              
+              #if(_DP_DC_ON_HPD_CONTROL_BY_USER_SUPPORT == _ON)
+                                      if(GET_DP_DC_ON_HPD_TOGGLE_MODE() == _DP_HPD_TOGGLE_NORMAL)
+              #endif
+                                      {
+              #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
+                                          return;
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 17  
+
+              #endif
+              
+              #if(_DP_DELL_D3_TEST_SUPPORT == _OFF)
+                                          if(ScalerDpRx1GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BI
+             -T0)
+              #endif
+                                          {
+                                              ScalerDpRx1SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+                                          }
+                                      }
+                                  }
+                                  else
+                                  {
+                                      // Case of ((GET_DP_DC_OFF_HPD_HIGH() == _FALSE) || (ScalerDpRx1HdcpCheckEnabled()
+             - == _TRUE)), DC off HPD low
+              
+                                      // Use long HPD instead of assert to avoid causing HP EliteBook 840 fail to play b
+             -luray DVD due to the long HPD which width is less than ~250ms
+                                      ScalerDpRx1SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+                                  }
+                              }
+                          }
+              
+              #endif // End of #if(_D1_DP_EXIST == _ON)
+ 958   2      
+ 959   2                  break;
+ 960   2      
+ 961   2              case _POWER_ACTION_OFF_TO_FAKE_OFF:
+ 962   2              default:
+ 963   2      
+ 964   2                  break;
+ 965   2          }
+ 966   1      }
+ 967          
+ 968          #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+              //--------------------------------------------------
+              // Description  : Check DP Hdcp14 Repeater bit
+              // Input Value  : _D0_DP_PORT or _D1_DP_PORT , MST Port, Clone enable
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRxHdcp14RepeaterCapabilityCheck(BYTE ucInputPort, EnumDPMSTPort enumDPMSTPort, bit bClone)
+              {
+                  switch(ucInputPort)
+                  {
+              #if(_D0_DP_EXIST == _ON)
+                      case _D0_INPUT_PORT:
+                          ScalerDpRx0Hdcp14RepeaterCapabilityCheck(enumDPMSTPort, bClone);
+                          break;
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+                          ScalerDpRx1Hdcp14RepeaterCapabilityCheck(enumDPMSTPort, bClone);
+                          break;
+              #endif
+              
+                      default:
+                          break;
+                  }
+              }
+              #endif
+ 995          
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 18  
+
+ 996          //--------------------------------------------------
+ 997          // Description  : Initial DP Settings
+ 998          // Input Value  : _D0_DP_PORT or _D1_DP_PORT or _D2_DP_PORT, DPCD version, Lane Count, MST Port
+ 999          // Output Value : None
+1000          //--------------------------------------------------
+1001          void ScalerDpInitial(BYTE ucInputPort, EnumDpVersionType enumDpVersion, EnumDpLaneCount enumDpLaneCount, E
+             -numDPMSTPort enumDpRxMstPort, EnumFreeSyncSupport enumFreeSyncSupport, EnumAudioDpDpcdSupport enumAudioSupport, EnumDpHd
+             -rSupport enumDpHdrSupport)
+1002          {
+1003   1          switch(ucInputPort)
+1004   1          {
+1005   2      #if(_D0_DP_EXIST == _ON)
+1006   2              case _D0_INPUT_PORT:
+1007   2                  ScalerDpRx0Initial(enumDpVersion, enumDpLaneCount, enumDpRxMstPort, enumFreeSyncSupport, enumA
+             -udioSupport, enumDpHdrSupport);
+1008   2                  break;
+1009   2      #endif
+1010   2      
+1011   2      #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+                          ScalerDpRx1Initial(enumDpVersion, enumDpLaneCount, enumDpRxMstPort, enumFreeSyncSupport, enumA
+             -udioSupport, enumDpHdrSupport);
+                          break;
+              #endif
+1016   2      
+1017   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                      case _D6_INPUT_PORT:
+                          ScalerDpRx6Initial(enumDpVersion, enumDpLaneCount, enumDpRxMstPort, enumFreeSyncSupport, enumA
+             -udioSupport, enumDpHdrSupport);
+                          break;
+              #endif
+1022   2      
+1023   2              default:
+1024   2                  break;
+1025   2          }
+1026   1      }
+1027          
+1028          //--------------------------------------------------
+1029          // Description  : DP Lane Switch
+1030          // Input Value  : DP input port, DP Lane Count
+1031          // Output Value : None
+1032          //--------------------------------------------------
+1033          void ScalerDpLaneCountSwitch(BYTE ucInputPort, EnumDpLaneCount enumDpLaneCount)
+1034          {
+1035   1          switch(ucInputPort)
+1036   1          {
+1037   2      #if(_D0_DP_EXIST == _ON)
+1038   2              case _D0_INPUT_PORT:
+1039   2      
+1040   2                  if(enumDpLaneCount > _D0_DP_MAIN_LINK_LANES)
+1041   2                  {
+1042   3                      enumDpLaneCount = _D0_DP_MAIN_LINK_LANES;
+1043   3                  }
+1044   2      
+1045   2                  SET_DP_RX_D0_PORT_TARGET_LANE_COUNT(enumDpLaneCount);
+1046   2                  SET_DP_RX_CAPABILITY_SWITCHED();
+1047   2                  break;
+1048   2      #endif
+1049   2      
+1050   2      #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 19  
+
+                          if(enumDpLaneCount > _D1_DP_MAIN_LINK_LANES)
+                          {
+                              enumDpLaneCount = _D1_DP_MAIN_LINK_LANES;
+                          }
+              
+                          SET_DP_RX_D1_PORT_TARGET_LANE_COUNT(enumDpLaneCount);
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+                          break;
+              #endif
+1062   2      
+1063   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                      case _D6_INPUT_PORT:
+              
+                          if(enumDpLaneCount > _D6_DP_MAIN_LINK_LANES)
+                          {
+                              enumDpLaneCount = _D6_DP_MAIN_LINK_LANES;
+                          }
+              
+                          SET_DP_RX_D6_PORT_TARGET_LANE_COUNT(enumDpLaneCount);
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+                          break;
+              #endif
+1075   2      
+1076   2              default:
+1077   2                  break;
+1078   2          }
+1079   1      }
+1080          
+1081          //--------------------------------------------------
+1082          // Description  : DP Low Power Process
+1083          // Input Value  : None
+1084          // Output Value : None
+1085          //--------------------------------------------------
+1086          void ScalerDpLowPowerProc(void)
+1087          {
+1088   1      #if((_D0_DP_EXIST == _ON) && (_D1_DP_EXIST == _ON))
+              
+                  // Turn Off Output Clock
+                  ScalerSetBit(PB5_B8_MN_SCLKG_SDM_CTRL, ~_BIT6, 0x00);
+              
+                  // Turn Off SCLK PLL
+                  ScalerSetBit(PB5_BD_MN_SCLKG_PLL_PWR, ~_BIT7, _BIT7);
+              
+                  // Turn Off Output Clock
+                  ScalerSetBit(PB8_B8_MN_SCLKG_SDM_CTRL, ~_BIT6, 0x00);
+              
+                  // Turn Off SCLK PLL
+                  ScalerSetBit(PB8_BD_MN_SCLKG_PLL_PWR, ~_BIT7, _BIT7);
+              
+                  // Set end to idle trigger Aux Int, Clear Aux INT Flag
+                  ScalerSetBit(PB7_7A_AUX_DIG_PHYA, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _BIT0));
+              
+                  // Clear Manchester/Stop pattern/Sync_end pattern/Byte boundary check Error
+                  ScalerSetBit(PB7_79_AUX_DIG_PHY9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+              
+                  // Set end to idle trigger Aux Int, Clear Aux INT Flag
+                  ScalerSetBit(PBA_7A_AUX_DIG_PHYA, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _BIT0));
+              
+                  // Clear Manchester/Stop pattern/Sync_end pattern/Byte boundary check Error
+                  ScalerSetBit(PBA_79_AUX_DIG_PHY9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+              
+                  ScalerTimerDelayXms(2);
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 20  
+
+              
+                  if((ScalerGetBit(PB7_7A_AUX_DIG_PHYA, _BIT0) == 0x00) && (ScalerGetBit(PBA_7A_AUX_DIG_PHYA, _BIT0) == 
+             -0x00))
+                  {
+                      // Aux PHY Power Saving Mode
+                      ScalerSetBit(PB7_62_AUX_2, ~_BIT1, _BIT1);
+              
+                      // Aux Bias Current From POR
+                      ScalerSetBit(PB7_63_AUX_3, ~_BIT7, _BIT7);
+              
+                      // Aux PHY Power Saving Mode
+                      ScalerSetBit(PBA_62_AUX_2, ~_BIT1, _BIT1);
+              
+                      // Aux Bias Current From POR
+                      ScalerSetBit(PBA_63_AUX_3, ~_BIT7, _BIT7);
+              
+              #if(_HDMI_CEC_SUPPORT == _OFF)
+                      // Disable GDI Bandgap
+                      ScalerGDIPhyBandgap(_OFF);
+              #endif
+                      IP = 0x81;
+              
+                      CLR_DP_RX0_PS_AUX_TOGGLE();
+              
+                      CLR_DP_RX1_PS_AUX_TOGGLE();
+              
+                      // Enable Aux INT
+                      ScalerSetBit(PB7_7A_AUX_DIG_PHYA, ~(_BIT4 | _BIT0), (_BIT4));
+              
+                      // Enable Aux INT
+                      ScalerSetBit(PBA_7A_AUX_DIG_PHYA, ~(_BIT4 | _BIT0), (_BIT4));
+              
+                      DebugMessageDigital("7. Low Power Event", 0);
+                  }
+                  else
+                  {
+                      SET_DP_RX0_PS_AUX_TOGGLE();
+              
+                      SET_DP_RX1_PS_AUX_TOGGLE();
+                  }
+              
+              #elif(_D0_DP_EXIST == _ON)
+1156   1      
+1157   1          // Turn Off Output Clock
+1158   1          ScalerSetBit(PB5_B8_MN_SCLKG_SDM_CTRL, ~_BIT6, 0x00);
+1159   1      
+1160   1          // Turn Off SCLK PLL
+1161   1          ScalerSetBit(PB5_BD_MN_SCLKG_PLL_PWR, ~_BIT7, _BIT7);
+1162   1      
+1163   1          // Set end to idle trigger Aux Int, Clear Aux INT Flag
+1164   1          ScalerSetBit(PB7_7A_AUX_DIG_PHYA, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _BIT0));
+1165   1      
+1166   1          // Clear Manchester/Stop pattern/Sync_end pattern/Byte boundary check Error
+1167   1          ScalerSetBit(PB7_79_AUX_DIG_PHY9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+1168   1      
+1169   1          ScalerTimerDelayXms(2);
+1170   1      
+1171   1          if(ScalerGetBit(PB7_7A_AUX_DIG_PHYA, _BIT0) == 0x00)
+1172   1          {
+1173   2              // Aux PHY Power Saving Mode
+1174   2              ScalerSetBit(PB7_62_AUX_2, ~_BIT1, _BIT1);
+1175   2      
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 21  
+
+1176   2              // Aux Bias Current From POR
+1177   2              ScalerSetBit(PB7_63_AUX_3, ~_BIT7, _BIT7);
+1178   2      
+1179   2      #if(_HDMI_CEC_SUPPORT == _OFF)
+1180   2              // Disable GDI Bandgap
+1181   2              ScalerGDIPhyBandgap(_OFF);
+1182   2      #endif
+1183   2      
+1184   2              IP = 0x81;
+1185   2      
+1186   2              CLR_DP_RX0_PS_AUX_TOGGLE();
+1187   2      
+1188   2              // Enable Aux INT
+1189   2              ScalerSetBit(PB7_7A_AUX_DIG_PHYA, ~(_BIT4 | _BIT0), (_BIT4));
+1190   2      
+1191   2              DebugMessageDigital("7. Low Power Event", 0);
+1192   2          }
+1193   1          else
+1194   1          {
+1195   2              SET_DP_RX0_PS_AUX_TOGGLE();
+1196   2          }
+1197   1      
+1198   1      #elif(_D1_DP_EXIST == _ON)
+              
+                  // Turn Off Output Clock
+                  ScalerSetBit(PB8_B8_MN_SCLKG_SDM_CTRL, ~_BIT6, 0x00);
+              
+                  // Turn Off SCLK PLL
+                  ScalerSetBit(PB8_BD_MN_SCLKG_PLL_PWR, ~_BIT7, _BIT7);
+              
+                  // Set end to idle trigger Aux Int, Clear Aux INT Flag
+                  ScalerSetBit(PBA_7A_AUX_DIG_PHYA, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _BIT0));
+              
+                  // Clear Manchester/Stop pattern/Sync_end pattern/Byte boundary check Error
+                  ScalerSetBit(PBA_79_AUX_DIG_PHY9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+              
+                  ScalerTimerDelayXms(2);
+              
+                  if(ScalerGetBit(PBA_7A_AUX_DIG_PHYA, _BIT0) == 0x00)
+                  {
+                      // Aux PHY Power Saving Mode
+                      ScalerSetBit(PBA_62_AUX_2, ~_BIT1, _BIT1);
+              
+                      // Aux Bias Current From POR
+                      ScalerSetBit(PBA_63_AUX_3, ~_BIT7, _BIT7);
+              
+              #if(_HDMI_CEC_SUPPORT == _OFF)
+                      // Disable GDI Bandgap
+                      ScalerGDIPhyBandgap(_OFF);
+              #endif
+              
+                      IP = 0x81;
+              
+                      CLR_DP_RX1_PS_AUX_TOGGLE();
+              
+                      // Enable Aux INT
+                      ScalerSetBit(PBA_7A_AUX_DIG_PHYA, ~(_BIT4 | _BIT0), (_BIT4));
+              
+                      DebugMessageDigital("7. Low Power Event", 0);
+                  }
+                  else
+                  {
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 22  
+
+                      SET_DP_RX1_PS_AUX_TOGGLE();
+                  }
+              #endif
+1241   1      }
+1242          //--------------------------------------------------
+1243          // Description  : DP Reset Process
+1244          // Input Value  : None
+1245          // Output Value : None
+1246          //--------------------------------------------------
+1247          void ScalerDpResetProc(void)
+1248          {
+1249   1      #if(_D0_DP_EXIST == _ON)
+1250   1      
+1251   1          // Disable DP Fifo Under/OverFlow Watch Dog
+1252   1          ScalerDpRx0SetFifoWD(_DISABLE);
+1253   1      
+1254   1          // Disable DP Fifo Under/OverFlow IRQ
+1255   1          ScalerDpRx0SetFifoIRQ(_DISABLE);
+1256   1      
+1257   1          // Disable DP No Video Stream IRQ
+1258   1          ScalerDpRx0SetNoVideoStreamIRQ(_DISABLE);
+1259   1      #endif
+1260   1      
+1261   1      #if(_D1_DP_EXIST == _ON)
+              
+                  // Disable DP Fifo Under/OverFlow Watch Dog
+                  ScalerDpRx1SetFifoWD(_DISABLE);
+              
+                  // Disable DP Fifo Under/OverFlow IRQ
+                  ScalerDpRx1SetFifoIRQ(_DISABLE);
+              
+                  // Disable DP No Video Stream IRQ
+                  ScalerDpRx1SetNoVideoStreamIRQ(_DISABLE);
+              #endif
+1272   1      
+1273   1      #if(_DP_TX_SUPPORT == _ON)
+                  if(GET_DP_TX_STREAM_SOURCE() == _DP_TX_SOURCE_CLONE)
+                  {
+                      ScalerDpTxForceIdlePatternSetting();
+                      ScalerDpTxSetStreamSource(_DP_TX_SOURCE_NONE);
+                  }
+                  else if(GET_DP_TX_STREAM_SOURCE() == _DP_TX_SOURCE_NONE) // for Clone OOR Case
+                  {
+                      // Clear Exceed BW Flag for Clone Mode
+                      CLR_DP_TX_EXCEED_LINK_BANDWIDTH();
+                  }
+              #endif
+1285   1      }
+1286          //--------------------------------------------------
+1287          // Description  : Handle DP Related Timer Event
+1288          // Input Value  : ucEventID
+1289          // Output Value : None
+1290          //--------------------------------------------------
+1291          void ScalerDpTimerEventProc(EnumScalerTimerEventID enumEventID)
+1292          {
+1293   1          switch(enumEventID)
+1294   1          {
+1295   2      #if(_D0_DP_EXIST == _ON)
+1296   2              case _SCALER_TIMER_EVENT_DP_RX0_HOTPLUG_ASSERTED:
+1297   2                  ScalerDpRx0SetHotPlugEvent(_DP_HPD_ASSERTED);
+1298   2                  break;
+1299   2      
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 23  
+
+1300   2              case _SCALER_TIMER_EVENT_DP_RX0_HDCP_LONG_HOTPLUG_EVENT:
+1301   2      
+1302   2                  if(ScalerDpRx0HdcpReAuthStatusCheck() == _FALSE)
+1303   2                  {
+1304   3                      DebugMessageRx0("7. DP HDCP Long HPD", 0);
+1305   3                      ScalerDpRx0SetHotPlugEvent(_DP_HDCP_LONG_HPD_EVENT);
+1306   3                  }
+1307   2      
+1308   2                  CLR_DP_RX0_HDCP_CPIRQ();
+1309   2      
+1310   2                  break;
+1311   2      
+1312   2      #if(_DP_RX_MI_DONGLE_SUPPORT == _ON)
+                      case _SCALER_TIMER_EVENT_DP_RX0_LONG_HOTPLUG_EVENT:
+              
+                          DebugMessageRx0("7. DP Long HPD", 0);
+                          ScalerDpRx0SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+              
+                          break;
+              #endif
+1320   2              case _SCALER_TIMER_EVENT_DP_RX0_LINK_STATUS_IRQ:
+1321   2      
+1322   2      #if(_DP_HBR2_MARGIN_LINK_SUPPORT == _ON)
+              #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                          if(((GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT) && (ScalerSyncDpCableStatus(_D0_INPUT_PORT) == 
+             -_TRUE)) ||
+                             ((GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT) && (ScalerSyncDpCableStatus(_D6_INPUT_PORT) == 
+             -_TRUE)))
+              #else
+                          if(ScalerSyncDpCableStatus(_D0_INPUT_PORT) == _TRUE)
+              #endif
+                          {
+                              if((ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR2) &&
+                                 ((GET_DP_RX_D0_MARGIN_LINK_HBR2() == _TRUE) || (GET_DP_RX_D6_MARGIN_LINK_HBR2() == _TRU
+             -E)))
+                              {
+                                  DebugMessageRx0("7. DP Margin Link Long HPD", 0);
+              
+                                  ScalerDpRx0SetDpcdValue(0x00, 0x00, 0x01, _DP_LINK_HBR);
+              
+              #if(_HW_DP_DPCD_EXT_CAP_PHYSICAL_ADDRESS_SUPPORT == _ON)
+                                  // When Define Extended Rx Cap Should Set DPCD 0x02201
+                                  ScalerDpRx0SetDpcdValue(0x00, 0x22, 0x01, _DP_LINK_HBR);
+              #else
+                                  // When Define Extended Rx Cap Should Set DPCD 0x02201
+                                  g_ucDpRx0DPCD02201hValue = _DP_LINK_HBR;
+              #endif
+              
+                                  ScalerDpRx0SetHotPlugEvent(_DP_HBR2_MARGIN_LINK_HPD_EVENT);
+                              }
+                              else
+                              {
+                                  ScalerDpRx0LinkStatusIRQ();
+                              }
+                          }
+              #else
+1353   2                  ScalerDpRx0LinkStatusIRQ();
+1354   2      #endif
+1355   2                  break;
+1356   2      #endif
+1357   2      
+1358   2      #if(_D1_DP_EXIST == _ON)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 24  
+
+                      case _SCALER_TIMER_EVENT_DP_RX1_HOTPLUG_ASSERTED:
+                          ScalerDpRx1SetHotPlugEvent(_DP_HPD_ASSERTED);
+                          break;
+              
+                      case _SCALER_TIMER_EVENT_DP_RX1_HDCP_LONG_HOTPLUG_EVENT:
+              
+                          if(ScalerDpRx1HdcpReAuthStatusCheck() == _FALSE)
+                          {
+                              DebugMessageRx1("7. DP HDCP Long HPD", 0);
+                              ScalerDpRx1SetHotPlugEvent(_DP_HDCP_LONG_HPD_EVENT);
+                          }
+              
+                          CLR_DP_RX1_HDCP_CPIRQ();
+              
+                          break;
+              
+              #if(_DP_RX_MI_DONGLE_SUPPORT == _ON)
+                      case _SCALER_TIMER_EVENT_DP_RX1_LONG_HOTPLUG_EVENT:
+              
+                          DebugMessageRx1("7. DP Long HPD", 0);
+                          ScalerDpRx1SetHotPlugEvent(_DP_LONG_HPD_EVENT);
+              
+                          break;
+              #endif
+                      case _SCALER_TIMER_EVENT_DP_RX1_LINK_STATUS_IRQ:
+              
+              #if(_DP_HBR2_MARGIN_LINK_SUPPORT == _ON)
+                          if(ScalerSyncDpCableStatus(_D1_INPUT_PORT) == _TRUE)
+                          {
+                              if((ScalerDpRx1GetDpcdInfo(0x00, 0x01, 0x00) == _DP_LINK_HBR2) &&
+                                 (GET_DP_RX_D1_MARGIN_LINK_HBR2() == _TRUE))
+                              {
+                                  DebugMessageRx1("7. DP Margin Link Long HPD", 0);
+              
+                                  ScalerDpRx1SetDpcdValue(0x00, 0x00, 0x01, _DP_LINK_HBR);
+              
+              #if(_HW_DP_DPCD_EXT_CAP_PHYSICAL_ADDRESS_SUPPORT == _ON)
+                                  // When Define Extended Rx Cap Should Set DPCD 0x02201
+                                  ScalerDpRx1SetDpcdValue(0x00, 0x22, 0x01, _DP_LINK_HBR);
+              #else
+                                  // When Define Extended Rx Cap Should Set DPCD 0x02201
+                                  g_ucDpRx1DPCD02201hValue = _DP_LINK_HBR;
+              #endif
+              
+                                  ScalerDpRx1SetHotPlugEvent(_DP_HBR2_MARGIN_LINK_HPD_EVENT);
+                              }
+                              else
+                              {
+                                  ScalerDpRx1LinkStatusIRQ();
+                              }
+                          }
+              #else
+                          ScalerDpRx1LinkStatusIRQ();
+              #endif
+                          break;
+              #endif
+1415   2      
+1416   2              default:
+1417   2                  break;
+1418   2          }
+1419   1      }
+1420          
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 25  
+
+1421          //--------------------------------------------------
+1422          // Description  : Dp Version Switch
+1423          // Input Value  : DP input port, _DP_VERSION_1_1 or _DP_VERSION_1_2
+1424          // Output Value : None
+1425          //--------------------------------------------------
+1426          void ScalerDpVersionSwitch(BYTE ucInputPort, EnumDpVersionType enumDpVersion, EnumDPMSTPort enumDpRxMstPor
+             -t)
+1427          {
+1428   1          enumDpRxMstPort = enumDpRxMstPort;
+1429   1      
+1430   1          switch(ucInputPort)
+1431   1          {
+1432   2      #if(_D0_DP_EXIST == _ON)
+1433   2              case _D0_INPUT_PORT:
+1434   2                  SET_DP_RX_D0_PORT_TARGET_VERSION(enumDpVersion);
+1435   2      
+1436   2      #if(_DP_MST_AUTO_SEARCH_SUPPORT == _OFF)
+1437   2                  SET_DP_RX_TARGET_MST_PORT(enumDpRxMstPort);
+1438   2      #endif
+1439   2                  SET_DP_RX_CAPABILITY_SWITCHED();
+1440   2                  break;
+1441   2      #endif
+1442   2      
+1443   2      #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+                          SET_DP_RX_D1_PORT_TARGET_VERSION(enumDpVersion);
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _OFF)
+                          SET_DP_RX_TARGET_MST_PORT(enumDpRxMstPort);
+              #endif
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+                          break;
+              #endif
+1453   2      
+1454   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+                      case _D6_INPUT_PORT:
+                          SET_DP_RX_D6_PORT_TARGET_VERSION(enumDpVersion);
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _OFF)
+                          SET_DP_RX_TARGET_MST_PORT(enumDpRxMstPort);
+              #endif
+                          SET_DP_RX_CAPABILITY_SWITCHED();
+                          break;
+              #endif
+1464   2      
+1465   2              default:
+1466   2                  break;
+1467   2          }
+1468   1      }
+1469          
+1470          //--------------------------------------------------
+1471          // Description  : Check DP DC OFF HPD Toggle
+1472          // Input Value  : enumPowerAction
+1473          // Output Value : _TRUE or _FALSE
+1474          //--------------------------------------------------
+1475          bit ScalerDpCheckDCOffHpdToggle(EnumPowerAction enumPowerAction)
+1476          {
+1477   1          switch(enumPowerAction)
+1478   1          {
+1479   2              case _POWER_ACTION_NORMAL_TO_FAKE_OFF:
+1480   2      
+1481   2      #if(_DP_MST_SUPPORT == _ON)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 26  
+
+                          if(GET_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD() == _TRUE)
+                          {
+                              return _FALSE;
+                          }
+              
+              #if(_DP_MST_DC_OFF_HPD_HIGH_TX_ACTIVE_SUPPORT == _ON)
+                          if(GET_DP_DC_OFF_HPD_HIGH() == _TRUE)
+                          {
+                              return _FALSE;
+                          }
+              #endif
+              #endif
+1494   2      
+1495   2                  break;
+1496   2      
+1497   2              default:
+1498   2      
+1499   2                  break;
+1500   2          }
+1501   1      
+1502   1          return _TRUE;
+1503   1      }
+1504          
+1505          //--------------------------------------------------
+1506          // Description  : HDCP Reset
+1507          // Input Value  : ucInputPort
+1508          // Output Value : None
+1509          //--------------------------------------------------
+1510          void ScalerDpHDCPUnplugReset(BYTE ucInputPort)
+1511          {
+1512   1          switch(ucInputPort)
+1513   1          {
+1514   2      #if(_D0_DP_EXIST == _ON)
+1515   2      
+1516   2              case _D0_INPUT_PORT:
+1517   2      
+1518   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+              
+                      case _D6_INPUT_PORT:
+              #endif
+1522   2      
+1523   2                  ScalerDpRx0HDCPUnplugReset();
+1524   2      
+1525   2                  break;
+1526   2      #endif
+1527   2      
+1528   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          ScalerDpRx1HDCPUnplugReset();
+              
+                          break;
+              #endif
+1536   2      
+1537   2              default:
+1538   2      
+1539   2                  break;
+1540   2          }
+1541   1      }
+1542          
+1543          //--------------------------------------------------
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 27  
+
+1544          // Description  : Dp Main Link Quality Management
+1545          // Input Value  : Dx Input Port
+1546          // Output Value : None
+1547          //--------------------------------------------------
+1548          void ScalerDpMainLinkQualityManagement(BYTE ucInputPort)
+1549          {
+1550   1          ucInputPort = ucInputPort;
+1551   1      }
+1552          
+1553          //--------------------------------------------------
+1554          // Description  : Read DP Rx Error Count
+1555          // Input Value  : DP Input Port
+1556          // Output Value : DP 4 Lane Error Count & Valid Flag
+1557          //--------------------------------------------------
+1558          StructDpRxErrorCount ScalerDpRxGetErrorCount(BYTE ucInputPort)
+1559          {
+1560   1          StructDpRxErrorCount stDpRxErrorCount;
+1561   1          stDpRxErrorCount.usDpRxLane0ErrorCount = 0;
+1562   1          stDpRxErrorCount.usDpRxLane1ErrorCount = 0;
+1563   1          stDpRxErrorCount.usDpRxLane2ErrorCount = 0;
+1564   1          stDpRxErrorCount.usDpRxLane3ErrorCount = 0;
+1565   1      
+1566   1          switch(ucInputPort)
+1567   1          {
+1568   2      #if(_D0_DP_EXIST == _ON)
+1569   2              case _D0_INPUT_PORT:
+1570   2      
+1571   2                  return ScalerDpRx0GetErrorCount();
+1572   2      #endif
+1573   2      
+1574   2      #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+              
+                          return ScalerDpRx1GetErrorCount();
+              #endif
+1579   2      
+1580   2              default:
+1581   2      
+1582   2                  return stDpRxErrorCount;
+1583   2          }
+1584   1      }
+1585          
+1586          //--------------------------------------------------
+1587          // Description  : DP AUX INT Pre-Handler
+1588          // Input Value  : None
+1589          // Output Value : None
+1590          //--------------------------------------------------
+1591          void ScalerDpRxAuxPreIntHandler_EXINT0(void) using 1
+1592          {
+1593   1      #if(_D0_DP_EXIST == _ON)
+1594   1          // Aux Firmware Control -> Reply Defer
+1595   1          SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+1596   1      #endif
+1597   1      
+1598   1      #if(_D1_DP_EXIST == _ON)
+                  // Aux Firmware Control -> Reply Defer
+                  SET_DP_RX1_AUX_MANUAL_MODE_EXINT();
+              #endif
+1602   1      
+1603   1      #if(_D0_DP_EXIST == _ON)
+1604   1          if(ScalerGetBit_EXINT(PB7_FB_DUMMY_1, (_BIT7 | _BIT6)) == (_BIT7 | _BIT6))
+1605   1          {
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 28  
+
+1606   2              if(ScalerGetBit_EXINT(PB7_D0_AUX_MODE_SET, _BIT4) == 0x00)
+1607   2              {
+1608   3                  // Enable Force Defer
+1609   3                  ScalerSetBit_EXINT(PB7_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+1610   3      
+1611   3                  // Reset Aux FIFO
+1612   3                  ScalerSetBit_EXINT(PB7_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+1613   3              }
+1614   2      
+1615   2              if(g_ucDpAuxRx0DpcdLength == 0x00)
+1616   2              {
+1617   3                  // Backup DPCD Address and Length of 1st AUX Command
+1618   3                  g_ucDpAuxRx0DpcdAddress = (ScalerGetByte_EXINT(PB7_D4_AUX_RX_ADDR_L));
+1619   3                  g_ucDpAuxRx0DpcdLength = (ScalerGetByte_EXINT(PB7_D5_AUX_RXLEN) & 0x0F) + 1;
+1620   3              }
+1621   2          }
+1622   1      #if(_DP_HDR10_SUPPORT == _ON)
+1623   1      #if(_DP_HDR_VENDOR_SUPPORT != _DP_HDR_VENDOR_SUPPORT_NONE)
+                  else if(ScalerGetBit_EXINT(PB7_FB_DUMMY_1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
+                  {
+                      BYTE ucDpRxAuxCmdAddrStart = 0;
+                      BYTE ucDpRxAuxCmdAddrEnd = 0;
+              
+                      ucDpRxAuxCmdAddrEnd = ScalerGetByte_EXINT(PB7_D4_AUX_RX_ADDR_L) - 1;
+                      ucDpRxAuxCmdAddrStart = ucDpRxAuxCmdAddrEnd - (ScalerGetByte_EXINT(PB7_D5_AUX_RXLEN) & 0x0F);
+              
+                      // Fw Reply Defer if aux read request include 00340-00359
+                      if((ScalerGetBit_EXINT(PB7_D2_AUX_RX_CMD, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == (_BIT7 | _BIT4)) &&
+                         ((ucDpRxAuxCmdAddrEnd >= 0x40) && (ucDpRxAuxCmdAddrStart <= 0x59)))
+                      {
+                          if(ScalerGetBit_EXINT(PB7_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                          {
+                              // Reset Aux FIFO
+                              ScalerSetBit_EXINT(PB7_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+              
+                              // Enable Force Defer
+                              ScalerSetBit_EXINT(PB7_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+                          }
+                      }
+                  }
+              #endif
+1647   1      #endif
+1648   1      #endif
+1649   1      
+1650   1      #if(_D1_DP_EXIST == _ON)
+                  if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT7 | _BIT6)) == (_BIT7 | _BIT6))
+                  {
+                      if(ScalerGetBit_EXINT(PBA_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                      {
+                          // Enable Force Defer
+                          ScalerSetBit_EXINT(PBA_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+              
+                          // Reset Aux FIFO
+                          ScalerSetBit_EXINT(PBA_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+                      }
+              
+                      if(g_ucDpAuxRx1DpcdLength == 0x00)
+                      {
+                          // Backup DPCD Address and Length of 1st AUX Command
+                          g_ucDpAuxRx1DpcdAddress = (ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L));
+                          g_ucDpAuxRx1DpcdLength = (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F) + 1;
+                      }
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 29  
+
+                  }
+              #if(_DP_HDR10_SUPPORT == _ON)
+              #if(_DP_HDR_VENDOR_SUPPORT != _DP_HDR_VENDOR_SUPPORT_NONE)
+                  else if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
+                  {
+                      BYTE ucDpRxAuxCmdAddrStart = 0;
+                      BYTE ucDpRxAuxCmdAddrEnd = 0;
+              
+                      ucDpRxAuxCmdAddrEnd = ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L) - 1;
+                      ucDpRxAuxCmdAddrStart = ucDpRxAuxCmdAddrEnd - (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F);
+              
+                      // Fw Reply Defer if aux read request include 00340-00359
+                      if((ScalerGetBit_EXINT(PBA_D2_AUX_RX_CMD, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == (_BIT7 | _BIT4)) &&
+                         ((ucDpRxAuxCmdAddrEnd >= 0x40) && (ucDpRxAuxCmdAddrStart <= 0x59)))
+                      {
+                          if(ScalerGetBit_EXINT(PBA_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                          {
+                              // Reset Aux FIFO
+                              ScalerSetBit_EXINT(PBA_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+              
+                              // Enable Force Defer
+                              ScalerSetBit_EXINT(PBA_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+                          }
+                      }
+                  }
+              #endif
+              #endif
+              #endif
+1696   1      }
+1697          
+1698          #if((_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON) || (_DP_AUX_RX_DPCD_HDR_CAP_WILDCARD_SUPPORT == _ON)
+             -)
+1699          //--------------------------------------------------
+1700          // Description  : DP AUX INT Timer2 Pre-Handler
+1701          // Input Value  : None
+1702          // Output Value : None
+1703          //--------------------------------------------------
+1704          #pragma save
+1705          #pragma OT(8)
+1706          void ScalerDpRxAuxTimer2PreIntHandler_EXINT(void)
+1707          {
+1708   1      #if(_D0_DP_EXIST == _ON)
+1709   1      #if(_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON)
+1710   1          if(ScalerGetBit_EXINT(PB7_FB_DUMMY_1, (_BIT7 | _BIT6)) == (_BIT7 | _BIT6))
+1711   1          {
+1712   2              if(ScalerGetBit_EXINT(PB7_D0_AUX_MODE_SET, _BIT4) == 0x00)
+1713   2              {
+1714   3                  // Aux Firmware Control -> Reply Defer
+1715   3                  SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+1716   3      
+1717   3                  // Enable Force Defer
+1718   3                  ScalerSetBit_EXINT(PB7_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+1719   3      
+1720   3                  // Reset Aux FIFO
+1721   3                  ScalerSetBit_EXINT(PB7_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+1722   3              }
+1723   2      
+1724   2              if(g_ucDpAuxRx0DpcdLength == 0x00)
+1725   2              {
+1726   3                  // Backup DPCD Address and Length of 1st AUX Command
+1727   3                  g_ucDpAuxRx0DpcdAddress = (ScalerGetByte_EXINT(PB7_D4_AUX_RX_ADDR_L));
+1728   3                  g_ucDpAuxRx0DpcdLength = (ScalerGetByte_EXINT(PB7_D5_AUX_RXLEN) & 0x0F) + 1;
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 30  
+
+1729   3              }
+1730   2          }
+1731   1      #endif
+1732   1      #if(_DP_AUX_RX_DPCD_HDR_CAP_WILDCARD_SUPPORT == _ON)
+                  if(ScalerGetBit_EXINT(PB7_FB_DUMMY_1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
+                  {
+                      BYTE ucDpRxAuxCmdAddrStart = 0;
+                      BYTE ucDpRxAuxCmdAddrEnd = 0;
+              
+                      ucDpRxAuxCmdAddrEnd = ScalerGetByte_EXINT(PB7_D4_AUX_RX_ADDR_L) - 1;
+                      ucDpRxAuxCmdAddrStart = ucDpRxAuxCmdAddrEnd - (ScalerGetByte_EXINT(PB7_D5_AUX_RXLEN) & 0x0F);
+              
+                      // Fw Reply Defer if aux read request include 00340-00359
+                      if((ScalerGetBit_EXINT(PB7_D2_AUX_RX_CMD, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == (_BIT7 | _BIT4)) &&
+                         ((ucDpRxAuxCmdAddrEnd >= 0x40) && (ucDpRxAuxCmdAddrStart <= 0x59)))
+                      {
+                          if(ScalerGetBit_EXINT(PB7_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                          {
+                              // Aux Firmware Control -> Reply Defer
+                              SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+              
+                              // Reset Aux FIFO
+                              ScalerSetBit_EXINT(PB7_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+              
+                              // Enable Force Defer
+                              ScalerSetBit_EXINT(PB7_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+                          }
+                      }
+                  }
+              #endif
+1759   1      #endif
+1760   1      
+1761   1      #if(_D1_DP_EXIST == _ON)
+              #if(_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON)
+                  if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT7 | _BIT6)) == (_BIT7 | _BIT6))
+                  {
+                      if(ScalerGetBit_EXINT(PBA_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                      {
+                          // Aux Firmware Control -> Reply Defer
+                          SET_DP_RX1_AUX_MANUAL_MODE_EXINT();
+              
+                          // Enable Force Defer
+                          ScalerSetBit_EXINT(PBA_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+              
+                          // Reset Aux FIFO
+                          ScalerSetBit_EXINT(PBA_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+                      }
+              
+                      if(g_ucDpAuxRx1DpcdLength == 0x00)
+                      {
+                          // Backup DPCD Address and Length of 1st AUX Command
+                          g_ucDpAuxRx1DpcdAddress = (ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L));
+                          g_ucDpAuxRx1DpcdLength = (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F) + 1;
+                      }
+                  }
+              #endif
+              #if(_DP_AUX_RX_DPCD_HDR_CAP_WILDCARD_SUPPORT == _ON)
+                  if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
+                  {
+                      BYTE ucDpRxAuxCmdAddrStart = 0;
+                      BYTE ucDpRxAuxCmdAddrEnd = 0;
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 31  
+
+                      ucDpRxAuxCmdAddrEnd = ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L) - 1;
+                      ucDpRxAuxCmdAddrStart = ucDpRxAuxCmdAddrEnd - (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F);
+              
+                      // Fw Reply Defer if aux read request include 00340-00359
+                      if((ScalerGetBit_EXINT(PBA_D2_AUX_RX_CMD, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == (_BIT7 | _BIT4)) &&
+                         ((ucDpRxAuxCmdAddrEnd >= 0x40) && (ucDpRxAuxCmdAddrStart <= 0x59)))
+                      {
+                          if(ScalerGetBit_EXINT(PBA_D0_AUX_MODE_SET, _BIT4) == 0x00)
+                          {
+                              // Aux Firmware Control -> Reply Defer
+                              SET_DP_RX1_AUX_MANUAL_MODE_EXINT();
+              
+                              // Reset Aux FIFO
+                              ScalerSetBit_EXINT(PBA_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
+              
+                              // Enable Force Defer
+                              ScalerSetBit_EXINT(PBA_D0_AUX_MODE_SET, ~_BIT4, _BIT4);
+                          }
+                      }
+                  }
+              #endif
+              #endif
+1813   1      }
+1814          #pragma restore
+1815          #endif
+1816          
+1817          #if(_DP_RX_MI_DONGLE_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Restore DP Rx Fake LT Support Lane Count
+              // Input Value  : Input Port
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRestoreFakeLTLaneCount(EnumSourceSearchPort enumSourceSearchPort)
+              {
+                  switch(enumSourceSearchPort)
+                  {
+                      case _D0_INPUT_PORT:
+              
+                          g_ucDpRx0FakeLTLaneCount = g_ucDpRx0FakeLTLaneCountBackUp;
+                          break;
+              
+                      case _D1_INPUT_PORT:
+                          g_ucDpRx1FakeLTLaneCount = g_ucDpRx1FakeLTLaneCountBackUp;
+                          break;
+              
+                      default:
+                          break;
+                  }
+              }
+              #endif
+1841          
+1842          #if(_DP_MST_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Proc DP HPD Toggle Behavior when MST Fake Off Timer Finish
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpMstFakeOffDoneProc(void)
+              {
+                  CLR_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD();
+              
+              #if(_D0_DP_EXIST == _ON)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 32  
+
+                  if(ScalerDpRx0HdcpCheckEnabled() == _TRUE)
+                  {
+                      SET_DP_RX0_HDCP_CHECK_ENABLE();
+                  }
+                  else
+                  {
+                      CLR_DP_RX0_HDCP_CHECK_ENABLE();
+                  }
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                  if(ScalerDpRx1HdcpCheckEnabled() == _TRUE)
+                  {
+                      SET_DP_RX1_HDCP_CHECK_ENABLE();
+                  }
+                  else
+                  {
+                      CLR_DP_RX1_HDCP_CHECK_ENABLE();
+                  }
+              #endif
+              
+                  ScalerDpJudgeHPDToggle(_POWER_ACTION_NORMAL_TO_FAKE_OFF);
+              }
+              
+              //--------------------------------------------------
+              // Description  : DP Mst Reset
+              // Input Value  : _DP_MST_RX0_PORT or _DP_MST_RX1_PORT
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpMstReset(EnumDPMSTPort enumRxMstPort)
+              {
+                  if(enumRxMstPort == _DP_MST_NO_PORT)
+                  {
+                      return;
+                  }
+              
+              // HW Reset-----------------------------------
+              #if(_D0_DP_EXIST == _ON)
+              
+                  if(enumRxMstPort == _DP_MST_RX0_PORT)
+                  {
+                      DebugMessageRx0("DP Rx0 MST reset", 0);
+              
+                      ScalerDpRx0MstReset();
+                  }
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+              
+                  if(enumRxMstPort == _DP_MST_RX1_PORT)
+                  {
+                      DebugMessageRx1("DP Rx1 MST reset", 0);
+              
+                      ScalerDpRx1MstReset();
+                  }
+              #endif
+              
+              // FW Reset-----------------------------------
+              
+                  // MSG Status Reset
+                  SET_DP_RX_MST_MODE_STATE(_DP_RX_MST_MODE_STATUS_NONE_MSG);
+                  SET_DP_RX_EVENT(_DP_RX_NONE_EVENT);
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 33  
+
+              
+                  // Free Request Pool Array
+                  SET_DP_REQUEST_POOL_FREE();
+              
+                  // Free Reply Pool Array
+                  SET_DP_REPLY_POOL_FREE();
+              
+                  // Free Reply Buffer
+                  SET_DP_RX_REPLY_BUF_FREE();
+              
+                  // Clear Allocated Flag Manual Mode
+                  CLR_DP_RX_MANUAL_FORCE_SET_ACT();
+              
+                  CLR_DP_RX_CANCEL_MSG_TIMEOUT_EVENT();
+              
+                  // Reset Stream ID Mapping Table
+                  for(pData[0] = 0; pData[0] < 5; pData[0]++)
+                  {
+                      g_pucDpStreamToIdMapping[pData[0]] = 0;
+                  }
+              
+                  // Clear Down Request MSG Proc Flags
+                  CLR_DP_RX_DOWN_REQUEST_ANAL();
+                  SET_DP_RX_DOWN_REQUEST_BUF_PRIORITY(_DP_DOWN_REQUEST_BUF0);
+                  CLR_DP_GEN_DOWN_REQUEST_MSG();
+                  CLR_DP_RX_ILLEGAL_DOWN_REQUEST_MSG();
+                  CLR_DP_RX_SELF_GEN_DOWN_REQUEST_MSG();
+              
+                  // Clear Down Reply MSG Proc Flags
+                  CLR_DP_RX_DOWN_REPLY_READY();
+                  CLR_DP_RX_DOWN_REPLY_SET_HPD();
+                  CLR_DP_RX_DOWN_REPLY_BYPASS();
+                  CLR_DP_RX_DOWN_REPLY_DIRECTLY();
+                  CLR_REG_DP_RX_DOWN_REPLY_MSG_IS_READ();
+              
+              #if(_DOWN_REPLY_MANUAL_MODE_SUPPORT == _ON)
+                  // Clear the Rx Down Reply MSG Segment Count No.
+                  g_ucDpDownReplyManualMsgCount = 0;
+              #endif
+              
+                  // Clear Up Request MSG Proc Flags
+                  CLR_DP_RX_UP_REQUEST_READY();
+                  CLR_DP_RX_UP_REQUEST_ANAL();
+                  CLR_DP_RX_UP_REQUEST_BYPASS_DONE();
+                  CLR_DP_RX_UP_REQUEST_RETRY_NUM();
+                  CLR_DP_RX_UP_REQUEST_CRC_FAIL_RETRY_NUM();
+                  CLR_DP_RX_ILLEGAL_UP_REQUEST_MSG();
+                  CLR_DP_RX_SELF_GEN_UP_REQUEST_RETRY();
+                  CLR_DP_GEN_UP_REQUEST_MSG();
+              
+                  // Clear Up Reply MSG Proc Flags
+                  CLR_DP_RX_UP_REPLY_BUF_RELEASE();
+                  SET_DP_RX_UP_REPLY_BUF_PRIORITY(_DP_UP_REPLY_BUF0);
+                  CLR_DP_RX_UP_REPLY_ANAL();
+                  CLR_DP_RX_UP_REPLY_DIRECTLY();
+              
+                  ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_MSG_TIMEOUT_EVENT);
+              
+              #if(_URGENT_EVENT_CHECK_MODE == _ON)
+                  CLR_DP_MST_RX_URGENT_EVENT_CHECK_SKIP();
+              #endif
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 34  
+
+              // Tx Reset-----------------------------------
+              
+                  // Disable MST to SST
+                  SET_DP_RX_MST2SST_ENABLE(_DISABLE);
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              
+                  ScalerDpTxMstReset();
+              
+              #endif
+              }
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : DP Mst Reset
+              // Input Value  : _DP_MST_RX0_PORT or _DP_MST_RX1_PORT
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpMstReset_EXINT0(EnumDPMSTPort enumRxMstPort) using 1
+              {
+                  if(enumRxMstPort == _DP_MST_NO_PORT)
+                  {
+                      return;
+                  }
+              
+              // HW Reset-----------------------------------
+              #if(_D0_DP_EXIST == _ON)
+              
+                  if(enumRxMstPort == _DP_MST_RX0_PORT)
+                  {
+                      ScalerDpRx0MstReset_EXINT0();
+                  }
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+              
+                  if(enumRxMstPort == _DP_MST_RX1_PORT)
+                  {
+                      ScalerDpRx1MstReset_EXINT0();
+                  }
+              #endif
+              
+              // FW Reset-----------------------------------
+              
+                  // MSG Status Reset
+                  SET_DP_RX_MST_MODE_STATE(_DP_RX_MST_MODE_STATUS_NONE_MSG);
+                  SET_DP_RX_EVENT(_DP_RX_NONE_EVENT);
+              
+                  // Free Request Pool Array
+                  SET_DP_REQUEST_POOL_FREE();
+              
+                  // Free Reply Pool Array
+                  SET_DP_REPLY_POOL_FREE();
+              
+                  // Free Reply Buffer
+                  SET_DP_RX_REPLY_BUF_FREE();
+              
+                  // Clear Allocated Flag Manual Mode
+                  CLR_DP_RX_MANUAL_FORCE_SET_ACT();
+              
+                  CLR_DP_RX_CANCEL_MSG_TIMEOUT_EVENT();
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 35  
+
+                  // Reset Stream ID Mapping Table
+                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 5; pData_EXINT[0]++)
+                  {
+                      g_pucDpStreamToIdMapping[pData_EXINT[0]] = 0;
+                  }
+              
+                  // Clear Down Request MSG Proc Flags
+                  CLR_DP_RX_DOWN_REQUEST_ANAL();
+                  SET_DP_RX_DOWN_REQUEST_BUF_PRIORITY(_DP_DOWN_REQUEST_BUF0);
+                  CLR_DP_GEN_DOWN_REQUEST_MSG();
+                  CLR_DP_RX_ILLEGAL_DOWN_REQUEST_MSG();
+                  CLR_DP_RX_SELF_GEN_DOWN_REQUEST_MSG();
+              
+                  // Clear Down Reply MSG Proc Flags
+                  CLR_DP_RX_DOWN_REPLY_READY();
+                  CLR_DP_RX_DOWN_REPLY_SET_HPD();
+                  CLR_DP_RX_DOWN_REPLY_BYPASS();
+                  CLR_DP_RX_DOWN_REPLY_DIRECTLY();
+                  CLR_REG_DP_RX_DOWN_REPLY_MSG_IS_READ();
+              
+              #if(_DOWN_REPLY_MANUAL_MODE_SUPPORT == _ON)
+                  // Clear the Rx Down Reply MSG Segment Count No.
+                  g_ucDpDownReplyManualMsgCount = 0;
+              #endif
+              
+                  // Clear Up Request MSG Proc Flags
+                  CLR_DP_RX_UP_REQUEST_READY();
+                  CLR_DP_RX_UP_REQUEST_ANAL();
+                  CLR_DP_RX_UP_REQUEST_BYPASS_DONE();
+                  CLR_DP_RX_UP_REQUEST_RETRY_NUM();
+                  CLR_DP_RX_UP_REQUEST_CRC_FAIL_RETRY_NUM();
+                  CLR_DP_RX_ILLEGAL_UP_REQUEST_MSG();
+                  CLR_DP_RX_SELF_GEN_UP_REQUEST_RETRY();
+                  CLR_DP_GEN_UP_REQUEST_MSG();
+              
+                  // Clear Up Reply MSG Proc Flags
+                  CLR_DP_RX_UP_REPLY_BUF_RELEASE();
+                  SET_DP_RX_UP_REPLY_BUF_PRIORITY(_DP_UP_REPLY_BUF0);
+                  CLR_DP_RX_UP_REPLY_ANAL();
+                  CLR_DP_RX_UP_REPLY_DIRECTLY();
+              
+                  ScalerTimerCancelTimerEvent_EXINT0(_SCALER_TIMER_EVENT_DP_MSG_TIMEOUT_EVENT);
+              
+              #if(_URGENT_EVENT_CHECK_MODE == _ON)
+                  CLR_DP_MST_RX_URGENT_EVENT_CHECK_SKIP();
+              #endif
+              
+              // Tx Reset-----------------------------------
+              
+                  // Disable MST to SST
+                  SET_DP_RX_MST2SST_ENABLE(_DISABLE);
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              
+                  ScalerDpTxMstReset_EXINT0();
+              
+              #endif
+              }
+              #endif
+              
+              #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
+              //--------------------------------------------------
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 36  
+
+              // Description  : HDCP 1.4 Repeater Capability Switch
+              // Input Value  : Input Port
+              // Output Value : None
+              //--------------------------------------------------
+              bit ScalerDpRxHdcp14RepeaterCapabilitySwitchProc(EnumSourceSearchPort enumInputPort, bit bEnable)
+              {
+                  switch(enumInputPort)
+                  {
+              #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
+                      case _D0_INPUT_PORT:
+              
+                          if((ScalerDpRxGetDpcdBitInfo(enumInputPort, 0x06, 0x80, 0x28, _BIT1) >> 1) != bEnable)
+                          {
+                              SET_DP_RX0_HDCP14_REPEATER_SUPPORT(bEnable);
+              
+                              // Enable Hdcp Repeater, _BIT1: Repeater,  _BIT0: HDCP Capable
+                              ScalerDpRxSetDpcdBitValue(enumInputPort, 0x06, 0x80, 0x28, ~_BIT1, ((BYTE)GET_DP_RX0_HDCP1
+             -4_REPEATER_SUPPORT() << 1));
+              
+                              return _TRUE;
+                          }
+              
+                          break;
+              #endif
+              
+              #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
+                      case _D1_INPUT_PORT:
+              
+                          if((ScalerDpRxGetDpcdBitInfo(enumInputPort, 0x06, 0x80, 0x28, _BIT1) >> 1) != bEnable)
+                          {
+                              SET_DP_RX1_HDCP14_REPEATER_SUPPORT(bEnable);
+              
+                              // Enable Hdcp Repeater, _BIT1: Repeater,  _BIT0: HDCP Capable
+                              ScalerDpRxSetDpcdBitValue(enumInputPort, 0x06, 0x80, 0x28, ~_BIT1, ((BYTE)GET_DP_RX1_HDCP1
+             -4_REPEATER_SUPPORT() << 1));
+              
+                              return _TRUE;
+                          }
+              
+                          break;
+              #endif
+              
+                      default:
+              
+                          break;
+                  }
+              
+                  return _FALSE;
+              }
+              #endif
+              
+              #if(_DP_TX_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Dp Rx HDCP Auth Handler
+              // Input Value  :
+              // Output Value :
+              //--------------------------------------------------
+              void ScalerDpHDCPHandler(void)
+              {
+                  ScalerDpHdcpResetUpstreamEventProc();
+              
+              #if(_D0_DP_EXIST == _ON)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 37  
+
+                  ScalerDpRx0HDCPHandler();
+              
+              #if(_DP_HDCP_2_2_SUPPORT == _ON)
+                  ScalerDpRx0Hdcp2RepeaterHandler();
+              #endif
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                  ScalerDpRx1HDCPHandler();
+              
+              #if(_DP_HDCP_2_2_SUPPORT == _ON)
+                  ScalerDpRx1Hdcp2RepeaterHandler();
+              #endif
+              #endif
+              
+                  ScalerDpTxHDCPHandler();
+              
+              #if(_DP_HDCP_2_2_SUPPORT == _ON)
+                  ScalerDpTxHdcp2Handler();
+              #endif
+              }
+              
+              //--------------------------------------------------
+              // Description  : Dp Rx HDCP Auth Handler
+              // Input Value  :
+              // Output Value :
+              //--------------------------------------------------
+              void ScalerDpHdcpResetUpstreamEventProc(void)
+              {
+              #if(_D0_DP_EXIST == _ON)
+                  CLR_DP_RX0_HDCP_UPSTREAM_EVENT();
+              
+              #if(_DP_HDCP_2_2_SUPPORT == _ON)
+                  CLR_DP_RX0_HDCP2_UPSTREAM_EVENT();
+              #endif
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                  CLR_DP_RX1_HDCP_UPSTREAM_EVENT();
+              
+              #if(_DP_HDCP_2_2_SUPPORT == _ON)
+                  CLR_DP_RX1_HDCP2_UPSTREAM_EVENT();
+              #endif
+              #endif
+              }
+              #endif // #if(_DP_TX_SUPPORT == _ON)
+              #endif // #if(_DP_MST_SUPPORT == _ON)
+2208          
+2209          //--------------------------------------------------
+2210          // Description  : Dp IRQ Assert Proc
+2211          // Input Value  : ucInputPort
+2212          // Output Value : None
+2213          //--------------------------------------------------
+2214          void ScalerDpRxHpdIrqAssert(BYTE ucInputPort)
+2215          {
+2216   1          switch(ucInputPort)
+2217   1          {
+2218   2      #if(_D0_DP_EXIST == _ON)
+2219   2      
+2220   2              case _D0_INPUT_PORT:
+2221   2      
+2222   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 38  
+
+              
+                      case _D6_INPUT_PORT:
+              #endif
+2226   2                  ScalerDpRx0HpdIrqAssert();
+2227   2      
+2228   2                  break;
+2229   2      #endif
+2230   2      
+2231   2      #if(_D1_DP_EXIST == _ON)
+              
+                      case _D1_INPUT_PORT:
+              
+                          ScalerDpRx1HpdIrqAssert();
+              
+                          break;
+              #endif
+2239   2      
+2240   2              default:
+2241   2      
+2242   2                  break;
+2243   2          }
+2244   1      }
+2245          
+2246          #if(_DP_HDR10_SUPPORT == _ON)
+2247          #if(_DP_HDR_VENDOR_SUPPORT != _DP_HDR_VENDOR_SUPPORT_NONE)
+              //--------------------------------------------------
+              // Description  : Switch DP Hdr Support
+              // Input Value  : enumInputPort, enumHDR10ModeDef
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDpRxHdrSupportSwitch(BYTE ucInputPort, EnumDpHdrSupport enumDpHdrSupport)
+              {
+                  switch(ucInputPort)
+                  {
+              #if(_D0_DP_EXIST == _ON)
+                      case _D0_INPUT_PORT:
+              
+                          if(ScalerDpRxHdrGetSupport(_D0_INPUT_PORT) != enumDpHdrSupport)
+                          {
+                              SET_DP_RX_CAPABILITY_SWITCHED();
+              
+                              SET_DP_RX_D0_HDR_CAPABILITY_SWITCH();
+              
+                              SET_DP_HDR_D0_SUPPORT(enumDpHdrSupport);
+                          }
+              
+                          break;
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+              
+                          if(ScalerDpRxHdrGetSupport(_D1_INPUT_PORT) != enumDpHdrSupport)
+                          {
+                              SET_DP_RX_CAPABILITY_SWITCHED();
+              
+                              SET_DP_RX_D1_HDR_CAPABILITY_SWITCH();
+              
+                              SET_DP_HDR_D1_SUPPORT(enumDpHdrSupport);
+                          }
+              
+                          break;
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 39  
+
+              #endif
+              
+                      default:
+                          break;
+                  }
+              }
+              
+              //--------------------------------------------------
+              // Description  : Get DP Port Hdr Support
+              // Input Value  : enumInputPort
+              // Output Value : None
+              //--------------------------------------------------
+              EnumDpHdrSupport ScalerDpRxHdrGetSupport(BYTE ucInputPort)
+              {
+                  switch(ucInputPort)
+                  {
+              #if(_D0_DP_EXIST == _ON)
+                      case _D0_INPUT_PORT:
+              
+                          return GET_DP_HDR_D0_SUPPORT();
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+              
+                          return GET_DP_HDR_D1_SUPPORT();
+              #endif
+              
+                      default:
+                          break;
+                  }
+              
+                  return _DP_HDR_SUPPORT_OFF;
+              }
+              
+              //--------------------------------------------------
+              // Description  : DP Aux Rx Hdr DPCD Setting
+              // Input Value  : None
+              // Output Value : None
+              //-----------------------------------------------
+              void ScalerDpRxHdrDpcdSetting(BYTE ucInputPort)
+              {
+                  switch(ucInputPort)
+                  {
+              #if(_D0_DP_EXIST == _ON)
+                      case _D0_INPUT_PORT:
+              
+                          ScalerDpRx0HdrDpcdSetting();
+              
+                          break;
+              #endif
+              
+              #if(_D1_DP_EXIST == _ON)
+                      case _D1_INPUT_PORT:
+              
+                          ScalerDpRx1HdrDpcdSetting();
+              
+                          break;
+              #endif
+              
+                      default:
+              
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 40  
+
+                          break;
+                  }
+              }
+              #endif
+2351          #endif
+2352          
+2353          //--------------------------------------------------
+2354          // Description  : Check Aux Ch power detect low should reset dpcd or not for compatibility
+2355          // Input Value  : enumInputPort
+2356          // Output Value : _TRUE/_FALSE
+2357          //--------------------------------------------------
+2358          bit ScalerDpRxChPowerDownResetCheck(BYTE ucInputPort)
+2359          {
+2360   1          if((ScalerDpRxGetDpcdBitInfo(ucInputPort, 0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) != _BIT1) &&
+2361   1             (ScalerDpRxGetDpcdBitInfo(ucInputPort, 0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) != (_BIT2 | _BIT0
+             -)))
+2362   1          {
+2363   2              if(ScalerDpRxGetLinkTrainingPass(ucInputPort) == _TRUE)
+2364   2              {
+2365   3                  return _FALSE;
+2366   3              }
+2367   2          }
+2368   1      
+2369   1          return _TRUE;
+2370   1      }
+2371          
+2372          //--------------------------------------------------
+2373          // Description  : Get Link Training Pass
+2374          // Input Value  : enumInputPort
+2375          // Output Value : _TRUE: pass, _FALSE: fail
+2376          //--------------------------------------------------
+2377          bit ScalerDpRxGetLinkTrainingPass(BYTE ucInputPort)
+2378          {
+2379   1          if(ScalerDpRxGetLTStatus(ucInputPort) == _DP_NORMAL_LINK_TRAINING_PASS)
+2380   1          {
+2381   2              return _TRUE;
+2382   2          }
+2383   1      
+2384   1          if(ScalerDpRxGetLTStatus(ucInputPort) == _DP_FAKE_LINK_TRAINING_PASS)
+2385   1          {
+2386   2              return _TRUE;
+2387   2          }
+2388   1      
+2389   1          return _FALSE;
+2390   1      }
+2391          
+2392          //--------------------------------------------------
+2393          // Description  : DP Aux Get Link Training Status
+2394          // Input Value  : None
+2395          // Output Value : Link Training Status
+2396          //--------------------------------------------------
+2397          BYTE ScalerDpRxGetLTStatus(BYTE ucInputPort)
+2398          {
+2399   1          switch(ucInputPort)
+2400   1          {
+2401   2      #if(_D0_DP_EXIST == _ON)
+2402   2              case _D0_INPUT_PORT:
+2403   2      
+2404   2                  return GET_DP_RX0_LINK_TRAINING_STATUS();
+2405   2      #endif
+2406   2      
+2407   2      #if(_D1_DP_EXIST == _ON)
+C51 COMPILER V8.12   SCALERDP_SEPTPHY                                                      09/16/2026 20:27:33 PAGE 41  
+
+                      case _D1_INPUT_PORT:
+              
+                          return GET_DP_RX1_LINK_TRAINING_STATUS();
+              #endif
+2412   2      
+2413   2              default:
+2414   2      
+2415   2                  return _DP_LINK_TRAINING_NONE;
+2416   2          }
+2417   1      }
+2418          #endif // End of #if(_DP_SUPPORT == _ON)
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1567    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =   ----      49
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

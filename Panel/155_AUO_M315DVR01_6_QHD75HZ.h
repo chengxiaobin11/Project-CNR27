@@ -1,0 +1,135 @@
+/********************************************************************************/
+/*   The  Software  is  proprietary,  confidential,  and  valuable to Realtek   */
+/*   Semiconductor  Corporation  ("Realtek").  All  rights, including but not   */
+/*   limited  to  copyrights,  patents,  trademarks, trade secrets, mask work   */
+/*   rights, and other similar rights and interests, are reserved to Realtek.   */
+/*   Without  prior  written  consent  from  Realtek,  copying, reproduction,   */
+/*   modification,  distribution,  or  otherwise  is strictly prohibited. The   */
+/*   Software  shall  be  kept  strictly  in  confidence,  and  shall  not be   */
+/*   disclosed to or otherwise accessed by any third party.                     */
+/*   c<2003> - <2012>                                                           */
+/*   The Software is provided "AS IS" without any warranty of any kind,         */
+/*   express, implied, statutory or otherwise.                                  */
+/********************************************************************************/
+#if(_PANEL_TYPE == _AUO_M315DVR01_6_QHD75HZ)
+//----------------------------------------------------------------------------------------------------
+// ID Code      : 116_AUO_M315DVR01_6_165HZ.h No.0000
+// Update Note  :
+//----------------------------------------------------------------------------------------------------
+#define _PANNEL_NAME                        _P__,_a__,_n__,_e__,_l__,__,_COLON__,__,_A__,_U__,_O__,_M__,_3__,_1__,_5__,_D__,_V__,_R__,_0__,_1__,_6__
+
+//////////////////
+// General Info //
+//////////////////
+#define _PANEL_PRESET_MODE_FRAME_RATE            750//1650
+
+//--------------------------------------------------
+// Definitions for Panel Style
+//--------------------------------------------------
+#define _PANEL_STYLE                            _PANEL_DPTX
+
+//--------------------------------------------------
+// Definitions for DPTx  Panel Configuration
+//--------------------------------------------------
+#define _PANEL_DPTX_LINK_RATE                   _PANEL_DPTX_LINK_HBR
+#define _PANEL_DPTX_LANE_NUMBER                 _PANEL_DPTX_LANE_NUMBER_4
+#define _PANEL_DPTX_VENDOR_SPECIFIC_TYPE        _PANEL_DPTX_VENDOR_SPECIFIC_NONE
+//--------------------------------------------------
+// Definitions for MultiPanel Support
+//--------------------------------------------------
+#define _PANEL_EXIST_MULTIPANEL                 _OFF
+
+//--------------------------------------------------
+// Definitions for Panel Manufacturer
+//--------------------------------------------------
+#define _PANEL_MANUFACTURER                     _PANEL_AUO
+
+//--------------------------------------------------
+// Definitions for Panel Display Color Depth
+//--------------------------------------------------
+#define _PANEL_DISP_BIT_MODE                    _PANEL_DISP_24_BIT
+
+//--------------------------------------------------
+// Definitions for Maximum Panel Frame Rate (Unit: 0.1 Hz)
+//--------------------------------------------------
+#define _PANEL_TYP_FRAME_RATE                   600//1200
+#define _PANEL_MAX_FRAME_RATE          		    770//1660 
+#define _PANEL_MIN_FRAME_RATE                   300//580
+
+
+#define _PANEL_FREESYNC_MAX_FRAME_RATE          760//1650
+#define _PANEL_FREESYNC_MIN_FRAME_RATE          480
+
+
+///////////////
+// Parameter //
+///////////////
+
+//--------------------------------------------------
+#define _PANEL_DH_START                         48
+#define _PANEL_DH_WIDTH                         2560
+#define _PANEL_DH_END                           2608
+
+#define _PANEL_DH_TOTAL                         2720
+#define _PANEL_DH_TOTAL_MAX                 	4200//
+#define _PANEL_DH_TOTAL_MIN                		2640//     2608
+
+#define _PANEL_DV_START                         6
+#define _PANEL_DV_HEIGHT                        1440
+#define _PANEL_DV_END                           1446
+
+#define _PANEL_DV_TOTAL                         1481
+#define _PANEL_DV_TOTAL_MAX               4000//  4470//    8190
+#define _PANEL_DV_TOTAL_MIN                1456//     1450
+
+#define _PANEL_DH_SYNC_WIDTH                    8
+#define _PANEL_DV_SYNC_HEIGHT                   2
+
+
+#define _PANEL_PIXEL_CLOCK                      241//297
+#define _PANEL_PIXEL_CLOCK_MAX                  400
+#define _PANEL_PIXEL_CLOCK_MIN                  190//136	
+
+
+#define _PANEL_POWER_ON_T1                      30
+#define _PANEL_POWER_ON_T2                      20
+#define _PANEL_POWER_ON_T3                      600
+
+#define _PANEL_POWER_OFF_T4                     130
+#define _PANEL_POWER_OFF_T5                     20
+#define _PANEL_POWER_OFF_T6                     1100
+
+
+/////////////
+// Display //
+/////////////
+
+//--------------------------------------------------
+// Definitions for Last Line Finetune Target
+//--------------------------------------------------
+#define _LAST_LINE_TARGET                       (_PANEL_DH_TOTAL - 300)
+
+//--------------------------------------------------
+// Definitions for Frame Sync Margin (Unit: 0.1Hz)
+//--------------------------------------------------
+#define _FRAME_SYNC_MARGIN                      20
+
+
+///////////////////////////
+// Color Characteristics //
+///////////////////////////
+
+
+
+/////////////////////////
+// Color Default Table //
+/////////////////////////
+
+//--------------------------------------------------
+// Color Default Value
+//--------------------------------------------------
+#include "./RTDColorDefaultTable/ColorTableInclude.h"
+
+#endif // End of #if(_PANEL_TYPE == 91_AUO_M270HAN02_2_165HZ))
+
+

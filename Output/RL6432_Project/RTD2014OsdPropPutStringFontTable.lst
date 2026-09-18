@@ -1,0 +1,57 @@
+C51 COMPILER V8.12   RTD2014OSDPROPPUTSTRINGFONTTABLE                                      09/16/2026 19:25:02 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014OSDPROPPUTSTRINGFONTTABLE
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014OsdPropPutStringFontTable.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdPropPutStringFontTable.c LARGE OP
+                    -TIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sy
+                    -stem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunc
+                    -tion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sca
+                    -ler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib
+                    -\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Heade
+                    -r;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory
+                    -\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\R
+                    -TD2014OsdPropPutStringFontTable.lst) OBJECT(.\Output\RL6432_Project\RTD2014OsdPropPutStringFontTable.obj)
+
+line level    source
+
+   1          
+   2          //#include "UserCommonInclude.h"
+   3          
+   4          //****************************************************************************
+   5          // CODE TABLES
+   6          //****************************************************************************
+   7          
+   8          //--------------------------------------------------
+   9          // Font Body Table
+  10          //--------------------------------------------------
+  11          //#include "./TextTableBody/Rtd2014OsdTextTableBody_0.h"
+  12          
+  13          //#include "./TextTableBody/Rtd2014OsdTextTableBody_Chinese.h"
+  14          //
+  15          //#include "./TextTableBody/Rtd2014OsdTextTableBody_FontTableDefine.h"
+  16          
+  17          //--------------------------------------------------
+  18          // Description  :
+  19          // Input Value  : None
+  20          // Output Value : None
+  21          //--------------------------------------------------
+  22          //BYTE OsdPutStringPropFontTable(BYTE ucLanguage, WORD ucFontPoint)
+  23          //{
+  24          //    return *(tOSD_TABLE_LANGUAGE_FONT_BODY[ucLanguage] + ucFontPoint);
+  25          //}
+  26          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,348 @@
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014USERADJUSTOUTPUTGAMMA
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014UserAdjustOutputGamma.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserAdjustOutputGamma.c LARGE O
+                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
+                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
+                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
+                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
+                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
+                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
+                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
+                    -RTD2014UserAdjustOutputGamma.lst) OBJECT(.\Output\RL6432_Project\RTD2014UserAdjustOutputGamma.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : RTD2014UserAdjustOutputGamma.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __USER_ADJUST_OUTPUT_GAMMA__
+  18          
+  19          #include "UserCommonInclude.h"
+  20          
+  21          #if(_OSD_TYPE == _REALTEK_2014_OSD)
+  22          
+  23          //****************************************************************************
+  24          // DEFINITIONS / MACROS
+  25          //****************************************************************************
+  26          
+  27          
+  28          //****************************************************************************
+  29          // STRUCT / TYPE / ENUM DEFINITTIONS
+  30          //****************************************************************************
+  31          
+  32          
+  33          //****************************************************************************
+  34          // CODE TABLES
+  35          //****************************************************************************
+  36          
+  37          
+  38          //****************************************************************************
+  39          // VARIABLE DECLARATIONS
+  40          //****************************************************************************
+  41          
+  42          
+  43          //****************************************************************************
+  44          // FUNCTION DECLARATIONS
+  45          //****************************************************************************
+  46          #if(_GAMMA_FUNCTION == _ON)
+  47          void UserAdjustGamma(BYTE ucGamma);
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 2   
+
+  48          #endif
+  49          
+  50          
+  51          //-------------------------------------------------------
+  52          // PCM
+  53          //-------------------------------------------------------
+  54          #if(_PCM_FUNCTION == _ON)
+  55          void UserAdjustPCM(BYTE ucPCM);
+  56          #if(_OCC_PCM_GAMMA_SUPPORT == _ON)
+              EnumOCCPCMGammaType UserAdjustOCCPCMGammaOSDMapping(EnumGammaType enumGammaType);
+              EnumOCCPCMGammaCTMatrix UserAdjustOCCPCMGammaCTOSDMapping(EnumColortemptureDef enumColortemptureDef);
+              #endif
+  60          #endif
+  61          
+  62          //****************************************************************************
+  63          // FUNCTION DEFINITIONS
+  64          //****************************************************************************
+  65          #if(_GAMMA_FUNCTION == _ON)
+  66          //--------------------------------------------------
+  67          // Description  : Adjust Gamma
+  68          // Input Value  : Gamma type
+  69          // Output Value : None
+  70          //--------------------------------------------------
+  71          void UserAdjustGamma(BYTE ucGamma)
+  72          {
+  73   1      #if(_OGC_SUPPORT == _ON)
+                  BYTE ucGammaBankNum = 0;
+                  BYTE *pucGammaBankAddr = _NULL_POINTER;
+              #endif
+  77   1      
+  78   1          if(ucGamma != _GAMMA_OFF)
+  79   1          {
+  80   2      #if(_OGC_SUPPORT == _ON)
+                      ucGammaBankNum = UserCommonAdjustOGCBank(ucGamma - 1, _OGC_NORMAL_TYPE);
+                      pucGammaBankAddr = UserCommonAdjustOGCAddr(ucGamma - 1, _OGC_NORMAL_TYPE);
+              
+                      UserCommonAdjustGamma(pucGammaBankAddr, ucGammaBankNum);
+              
+                      RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
+                      ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+              
+              #if(_CONTRAST_SUPPORT == _ON)
+                      UserAdjustContrast(GET_OSD_CONTRAST());
+              #endif
+              
+              #else
+  94   2      
+  95   2      #if(_RGB_GAMMA_FUNCTION == _ON)
+                      ScalerColorRGBOutputGammaEnable(_FUNCTION_OFF);
+              #endif
+  98   2      #if(Project_ID == ID_HHT_HK2795E041DP2HDMI__M280DCA_UHD60HZ__20201214)
+                              if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_GAME)
+              
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
+              
+                              }
+                      #if (_EOC_RTS_FPS_SUPPORT == _ON)
+                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
+              
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 3   
+
+                              }
+                      #endif
+                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_MOVIE)
+                              {
+                              
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
+                              }
+                              else
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
+                              }
+              #elif(Project_ID==ID_HHT_HK2785E06_1P2H_AUO_P320HVN05_6_FDH180HZ_20210106)
+              
+                      if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_GAME)
+              
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
+              
+                              }
+                      #if (_EOC_RTS_FPS_SUPPORT == _ON)
+                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
+              
+                              }
+                      #endif
+                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_RTS)
+                              {
+                              
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
+                              }
+                              else
+                              {
+                                      UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
+                              }
+              
+              #else
+ 147   2              UserCommonAdjustGamma(tGAMMA_TABLE[ucGamma - 1], GET_CURRENT_BANK_NUMBER());
+ 148   2      #endif
+ 149   2      #if(_CONTRAST_6BIT_PANEL_COMPENSATE == _ON)
+                      RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
+                      ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+              
+              #if(_CONTRAST_SUPPORT == _ON)
+                      UserAdjustContrast(GET_OSD_CONTRAST());
+              #endif
+              #endif
+ 157   2      #if(_RGB_GAMMA_FUNCTION == _ON)
+                      UserAdjustRGBGamma(ucGamma);
+                      ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+                      ScalerColorRGBOutputGammaEnable(_FUNCTION_ON);
+              #endif
+ 162   2      
+ 163   2      #endif // End of #if(_OGC_SUPPORT == _ON)
+ 164   2          }
+ 165   1      }
+ 166          #endif
+ 167          
+ 168          #if(_PCM_FUNCTION == _ON)
+ 169          //--------------------------------------------------
+ 170          // Description  : Adjust PCM
+ 171          // Input Value  : ucPCM
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 4   
+
+ 172          // Output Value : None
+ 173          //--------------------------------------------------
+ 174          void UserAdjustPCM(BYTE ucPCM)
+ 175          {
+ 176   1          if(ucPCM != _PCM_OSD_NATIVE)
+ 177   1          {
+ 178   2      #if(_OCC_SUPPORT == _ON)
+ 179   2              if(ucPCM == _PCM_OSD_SRGB)
+ 180   2              {
+ 181   3                  UserCommonAdjustPCM(_PCM_SRGB, _NULL_POINTER, g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10_ADDRE
+             -SS, g_pucDISP_CALIBRATION_FLASH + _OCC_SRGBMATRIX_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+ 182   3              }
+ 183   2              else if(ucPCM == _PCM_OSD_ADOBE_RGB)
+ 184   2              {
+ 185   3                  UserCommonAdjustPCM(_PCM_ADOBE_RGB, _NULL_POINTER, g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10_
+             -ADDRESS, g_pucDISP_CALIBRATION_FLASH + _OCC_ADOBEMATRIX_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+ 186   3              }
+ 187   2              else if(ucPCM == _PCM_OSD_DCI_P3)
+ 188   2              {
+ 189   3                  UserCommonAdjustPCM(_PCM_DCI_P3, _NULL_POINTER, g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10_ADD
+             -RESS, g_pucDISP_CALIBRATION_FLASH + _OCC_DCIP3_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+ 190   3              }
+ 191   2      
+ 192   2      #if(_RGB_3D_GAMMA == _ON)
+                      else if(ucPCM == _PCM_OSD_SOFT_PROFT)
+                      {
+                          UserCommonAdjustPCM(_PCM_SOFT_PROFT, _NULL_POINTER, g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10
+             -_ADDRESS, g_pucDISP_CALIBRATION_FLASH + _OCC_SOFTPROOF_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+                      }
+              #endif // End of #if(_RGB_3D_GAMMA == _ON)
+ 198   2      
+ 199   2              else
+ 200   2      #endif // End of #if(_OCC_SUPPORT == _ON)
+ 201   2              {
+ 202   3                  UserCommonAdjustPCM(_PCM_USER_MODE, tPCM_USER_TABLE[(ucPCM - _PCM_OSD_USER) * 3], tPCM_USER_TA
+             -BLE[((ucPCM - _PCM_OSD_USER) * 3) + 1], tPCM_USER_TABLE[((ucPCM - _PCM_OSD_USER) * 3) + 2], GET_CURRENT_BANK_NUMBER(), _
+             -OCC_COLORMATRIX_TABLE_SIZE);
+ 203   3              }
+ 204   2          }
+ 205   1      #if(_OCC_PCM_GAMMA_SUPPORT == _ON)
+                  else
+                  {
+                      if(GET_OSD_GAMMA() != _GAMMA_OFF)
+                      {
+                          UserCommonAdjustPCM(_PCM_OCC_GAMMA,
+                                              (BYTE *)UserCommonAdjustOCCPCMGammaGetTableAddress(UserAdjustOCCPCMGammaOS
+             -DMapping(GET_OSD_GAMMA())),
+                                              g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10_ADDRESS,
+                                              g_pucDISP_CALIBRATION_FLASH + UserCommonAdjustOCCPCMGammaGetsRGBCTTableAdd
+             -ress(UserAdjustOCCPCMGammaCTOSDMapping(GET_COLOR_TEMP_TYPE()), _OGC_NORMAL_TYPE),
+                                              GET_CURRENT_BANK_NUMBER(), _OCC_COLORMATRIX_TABLE_SIZE);
+                      }
+                  }
+              #endif
+ 218   1      
+ 219   1      }
+ 220          #if(_OCC_PCM_GAMMA_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Mapping User OGC struct to Scaler PCM Gamma struct
+              // Input Value  : EnumGammaType
+              // Output Value : EnumPCMGammaType
+              //--------------------------------------------------
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 5   
+
+              EnumOCCPCMGammaType UserAdjustOCCPCMGammaOSDMapping(EnumGammaType enumGammaType)
+              {
+                  EnumOCCPCMGammaType enumOCCPCMGammaType = _OCC_PCM_GAMMA_OFF;
+              
+                  switch(enumGammaType)
+                  {
+                      case _GAMMA_OFF:
+                          enumOCCPCMGammaType = _OCC_PCM_GAMMA_OFF;
+                          break;
+              
+                      case _GAMMA_18:
+                          enumOCCPCMGammaType = _OCC_PCM_GAMMA_18;
+                          break;
+              
+                      case _GAMMA_20:
+                          enumOCCPCMGammaType = _OCC_PCM_GAMMA_20;
+                          break;
+              
+                      case _GAMMA_22:
+                          enumOCCPCMGammaType = _OCC_PCM_GAMMA_22;
+                          break;
+              
+                      case _GAMMA_24:
+                      default:
+                          enumOCCPCMGammaType = _OCC_PCM_GAMMA_24;
+                          break;
+                  }
+              
+                  return enumOCCPCMGammaType;
+              }
+              
+              //--------------------------------------------------
+              // Description  : Mapping User Temperature struct to Scaler PCM Gamma Temperature struct
+              // Input Value  : EnumGammaType
+              // Output Value : EnumPCMGammaType
+              //--------------------------------------------------
+              EnumOCCPCMGammaCTMatrix UserAdjustOCCPCMGammaCTOSDMapping(EnumColortemptureDef enumColortemptureDef)
+              {
+                  EnumOCCPCMGammaCTMatrix enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_OFF;
+              
+                  switch(enumColortemptureDef)
+                  {
+                      case _CT_9300:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE1;
+                          break;
+              
+                      case _CT_7500:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE2;
+                          break;
+              
+                      case _CT_6500:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE3;
+                          break;
+              
+                      case _CT_5800:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE4;
+                          break;
+              
+                      case _CT_SRGB:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE5;
+                          break;
+              
+C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 6   
+
+                      case _CT_USER:
+                      default:
+                          enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE6;
+                          break;
+                  }
+              
+                  return enumOCCPCMGammaCTMatrix;
+              }
+              #endif
+ 297          
+ 298          #endif  // End of #if(_PCM_FUNCTION == _ON)
+ 299          #endif // End of #if((_OSD_TYPE == _REALTEK_2014_OSD) && (_GAMMA_FUNCTION == _ON))
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    302    ----
+   CONSTANT SIZE    =  37619    ----
+   XDATA SIZE       =   ----       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

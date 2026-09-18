@@ -1,0 +1,1611 @@
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONHDR
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonHDR.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonHDR.c LARGE OPTIMIZE(9,SPEED) IN
+                    -CDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kern
+                    -el\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\
+                    -Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_
+                    -Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\U
+                    -ser Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Facto
+                    -ry\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_P
+                    -ROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCommonHDR.lst) 
+                    -OBJECT(.\Output\RL6432_Project\UserCommonHDR.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : UserCommonHDR.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __USER_COMMON_HDR__
+  18          
+  19          #include "UserCommonInclude.h"
+  20          extern void OsdHdrAdj(void);
+  21          
+  22          #if(_ULTRA_HDR_SUPPORT == _ON)
+  23          
+  24          //****************************************************************************
+  25          // DEFINITIONS / MACROS
+  26          //****************************************************************************
+  27          #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+              #define _LIGHTENHANCE_IAPSGAIN_540NIT           0x160C
+              #define _LIGHTENHANCE_IAPSGAIN_1200NIT          0x18CC
+              #define _LIGHTENHANCE_IAPSGAIN_4000NIT          0x1CEA
+              #define _LIGHTENHANCE_IAPSGAIN_10000NIT         0x2000
+              #endif
+  33          
+  34          BYTE OsdBackupDCRStatus = _DEF_DCR;
+  35          BYTE OsdBackupECOStatus = _DEF_ECO;
+  36          
+  37          //****************************************************************************
+  38          // STRUCT / TYPE / ENUM DEFINITTIONS
+  39          //****************************************************************************
+  40          
+  41          
+  42          //****************************************************************************
+  43          // CODE TABLES
+  44          //****************************************************************************
+  45          #if(_HDR10_SUPPORT == _ON)
+  46          WORD code tusHDR10_IG_ADDRESS_INDEX[] =
+  47          {
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 2   
+
+  48              _OGC_HDR10_IG_540_NOR_ADDRESS,
+  49              _OGC_HDR10_IG_540_DARK_ADDRESS,
+  50              _OGC_HDR10_IG_1200_NOR_ADDRESS,
+  51              _OGC_HDR10_IG_1200_DARK_ADDRESS,
+  52              _OGC_HDR10_IG_4000_NOR_ADDRESS,
+  53              _OGC_HDR10_IG_4000_DARK_ADDRESS,
+  54              _OGC_HDR10_IG_10000_NOR_ADDRESS,
+  55              _OGC_HDR10_IG_10000_DARK_ADDRESS,
+  56              _OGC_HDR10_IG_NOTM_PEAK_NOR_ADDRESS, // PANEL MAX PEAK LV
+  57              _OGC_HDR10_IG_NOTM_PEAK_DARK_ADDRESS,
+  58          };
+  59          
+  60          #if(_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+              WORD code tusHDR10_IG_FIXED_POINT_ADDRESS_INDEX[] =
+              {
+                  _OGC_HDR10_IG_540_FIXED_POINT_NOR_ADDRESS,
+                  _OGC_HDR10_IG_540_FIXED_POINT_DARK_ADDRESS,
+                  _OGC_HDR10_IG_1200_FIXED_POINT_NOR_ADDRESS,
+                  _OGC_HDR10_IG_1200_FIXED_POINT_DARK_ADDRESS,
+                  _OGC_HDR10_IG_4000_FIXED_POINT_NOR_ADDRESS,
+                  _OGC_HDR10_IG_4000_FIXED_POINT_DARK_ADDRESS,
+                  _OGC_HDR10_IG_10000_FIXED_POINT_NOR_ADDRESS,
+                  _OGC_HDR10_IG_10000_FIXED_POINT_DARK_ADDRESS,
+                  _OGC_HDR10_IG_NOTM_PEAK_NOR_ADDRESS, // PANEL MAX PEAK LV
+                  _OGC_HDR10_IG_NOTM_PEAK_DARK_ADDRESS,
+              };
+              #endif
+  75          
+  76          #if(_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+              WORD code tusHDR10_IG_USER_DEFINE_FIXED_POINT_ADDRESS_INDEX[] =
+              {
+                  _OGC_HDR10_IG_540_USER_FIXED_NOR_ADDRESS,
+                  _OGC_HDR10_IG_540_USER_FIXED_DARK_ADDRESS,
+                  _OGC_HDR10_IG_1200_USER_FIXED_NOR_ADDRESS,
+                  _OGC_HDR10_IG_1200_USER_FIXED_DARK_ADDRESS,
+                  _OGC_HDR10_IG_4000_USER_FIXED_NOR_ADDRESS,
+                  _OGC_HDR10_IG_4000_USER_FIXED_DARK_ADDRESS,
+                  _OGC_HDR10_IG_10000_USER_FIXED_NOR_ADDRESS,
+                  _OGC_HDR10_IG_10000_USER_FIXED_DARK_ADDRESS,
+                  _OGC_HDR10_IG_NOTM_PEAK_NOR_ADDRESS, // PANEL MAX PEAK LV
+                  _OGC_HDR10_IG_NOTM_PEAK_DARK_ADDRESS,
+              };
+              #endif
+  91          #endif
+  92          
+  93          //****************************************************************************
+  94          // VARIABLE DECLARATIONS
+  95          //****************************************************************************
+  96          
+  97          
+  98          //****************************************************************************
+  99          // FUNCTION DECLARATIONS
+ 100          //****************************************************************************
+ 101          void UserCommonHDRHandler(void);
+ 102          void UserCommonHDRAdjust(EnumHDRFlowStatus enumHDRFlowStatus);
+ 103          EnumHDRTargetStatus UserCommonHDRGetTargetStatus(EnumHDRFlowStatus enumHDRFlowStatus, EnumHDR10ModeDef enu
+             -mHDR10ModeStatus, EnumFreeSyncSupport enumFreesyncIIModeStatus);
+ 104          void UserCommonHDRAdjustSDRProc(void);
+ 105          
+ 106          #if(_HDR10_SUPPORT == _ON)
+ 107          EnumHDR10Status UserCommonHDRGetHDR10Status(void);
+ 108          EnumHDR10ChangeStatus UserCommonHDRGetHDR10ChangeStatus(void);
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 3   
+
+ 109          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10LvType(void);
+ 110          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10ModifyLvType(EnumHDR10MaxMasteringLvType enumHDR10MaxMast
+             -eringLvType, WORD usMaxPanelLv);
+ 111          void UserCommonHDRAdjustHDR10AutoMode(void);
+ 112          void UserCommonHDRAdjustHDR10ForceMode(EnumHDR10MaxMasteringLvType enumHDR10MaxMasteringLvType, EnumHDR10C
+             -olorMatrix enumHDR10ColorMatrix);
+ 113          void UserCommonHDRAdjustHDR10Proc(void);
+ 114          WORD UserCommonHDRGetHDR10ColorMatrix(void);
+ 115          void UserCommonHDR10SupportSwitch(void);
+ 116          
+ 117          #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+              void UserCommonHDRAdjustHDR10ColorMatrix(void);
+              #endif
+ 120          
+ 121          #if(_CONTRAST_SUPPORT == _ON)
+ 122          void UserCommonHDRAdjustHDR10Contrast(BYTE ucContrast);
+ 123          #endif
+ 124          
+ 125          #if(_DCC_FUNCTION == _ON)
+ 126          EnumHDR10LightEnhanceMaxMasteringLv UserCommonHDRGetHDR10LvTypeForLightEnhance(void);
+ 127          #endif
+ 128          
+ 129          void UserCommonHDRAdjustHDR10ColorEffect(void);
+ 130          WORD UserCommonHDRGetHDR10MaxDisplayLv(void);
+ 131          #endif // End of #if(_HDR10_SUPPORT == _ON)
+ 132          
+ 133          #if(_FREESYNC_II_SUPPORT == _ON)
+              bit UserCommonHDRGetFreesynIIStatus(void);
+              BYTE UserCommonHDRFreeSyncIIChangeStatus(void);
+              void UserCommonHDRFreeSyncIIMode(void);
+              void UserCommonHDRFreeSyncIIProc(void);
+              bit UserCommonHDRGetFreeSyncIILDDisable(void);
+              BYTE UserCommonHDRGetFreeSyncIIEOTFType(void);
+              #endif
+ 141          
+ 142          
+ 143          //****************************************************************************
+ 144          // FUNCTION DEFINITIONS
+ 145          //****************************************************************************
+ 146          //--------------------------------------------------
+ 147          // Description  : HDR Handler
+ 148          // Input Value  : None
+ 149          // Output Value : None
+ 150          //--------------------------------------------------
+ 151          void UserCommonHDRHandler(void)
+ 152          {
+ 153   1          if(GET_ON_LINE_CALIBRATION_STATUS() != _CALIBRATION_ON)
+ 154   1          {
+ 155   2              UserCommonHDRAdjust(_HDR_FLOW_MODE_STATUS_ACTIVE);
+ 156   2          }
+ 157   1      }
+ 158          
+ 159          //--------------------------------------------------
+ 160          // Description  : Integrate HDR Auto Mode FW Flow
+ 161          // Input Value  : EnumDisplayRegion, EnumHDRFlowStatus
+ 162          // Output Value : none
+ 163          //--------------------------------------------------
+ 164          void UserCommonHDRAdjust(EnumHDRFlowStatus enumHDRFlowStatus)
+ 165          {
+ 166   1          EnumHDR10ModeDef enumHDR10ModeStatus = _HDR10_MODE_OFF;
+ 167   1          EnumFreeSyncSupport enumFreesyncIIModeStatus = _FREESYNC_SUPPORT_OFF;
+ 168   1      
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 4   
+
+ 169   1      #if(_HDR10_SUPPORT == _ON)
+ 170   1          enumHDR10ModeStatus = UserInterfaceHDRGetHDR10ModeStatus(SysSourceGetInputPort());
+ 171   1      #endif
+ 172   1      
+ 173   1      #if(_FREESYNC_II_SUPPORT == _ON)
+                  enumFreesyncIIModeStatus = UserInterfaceGetFreeSyncEnable(SysSourceGetInputPort());
+              #endif
+ 176   1      
+ 177   1          switch(enumHDRFlowStatus)
+ 178   1          {
+ 179   2              case _HDR_FLOW_COLOR_PROC_INITIAL:
+ 180   2              case _HDR_FLOW_OSD_MODE_CHANGE:
+ 181   2              case _HDR_FLOW_MODE_STATUS_ACTIVE:
+ 182   2      
+ 183   2                  if(enumHDR10ModeStatus == _HDR10_MODE_FORCE_2084)
+ 184   2                  {
+ 185   3                      if(enumHDRFlowStatus != _HDR_FLOW_MODE_STATUS_ACTIVE)
+ 186   3                      {
+ 187   4      #if(_HDR10_SUPPORT == _ON)
+ 188   4                          UserCommonHDRAdjustHDR10ForceMode(UserInterfaceHDRGetHDR10ForceModeMaxMasteringLv(), U
+             -serInterfaceHDRGetHDR10ForceModeColorMatrix());
+ 189   4                          UserCommonHDRAdjustHDR10Proc();
+ 190   4      #endif
+ 191   4                      }
+ 192   3                  }
+ 193   2                  else// if((enumHDR10ModeStatus == _HDR10_MODE_OFF) || (enumHDR10ModeStatus == _HDR10_MODE_AUTO
+             -))
+ 194   2                  {
+ 195   3                      switch(UserCommonHDRGetTargetStatus(enumHDRFlowStatus, enumHDR10ModeStatus, enumFreesyncII
+             -ModeStatus))
+ 196   3                      {
+ 197   4      #if(_HDR10_SUPPORT == _ON)
+ 198   4      
+ 199   4                          case _HDR_TARGET_STATUS_SMPTE_ST_2084:
+ 200   4                              UserCommonHDRAdjustHDR10AutoMode();
+ 201   4                              UserCommonHDRAdjustHDR10Proc();
+ 202   4                                                      
+ 203   4      #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+                                      SET_HDR10_UPDATE_COLORIMETRY();
+              #endif
+ 206   4      
+ 207   4                              break;
+ 208   4      #endif
+ 209   4      
+ 210   4      #if(_FREESYNC_II_SUPPORT == _ON)
+                                  case _HDR_TARGET_STATUS_FREESYNC_II_NATIVE_COLOR:
+              
+                                      UserCommonHDRFreeSyncIIMode();
+                                      UserCommonHDRFreeSyncIIProc();
+              
+              #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+                                      SET_FREESYNCII_UPDATE_COLORIMETRY();
+              #endif
+              
+                                      break;
+              #endif
+ 222   4      
+ 223   4                          case _HDR_TARGET_STATUS_TRADITIONAL_GAMMA_SDR:
+ 224   4      
+ 225   4                              UserCommonHDRAdjustSDRProc();
+ 226   4      
+ 227   4      #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 5   
+
+                                      SET_SDR_UPDATE_COLORIMETRY();
+              #endif
+ 230   4      
+ 231   4                              break;
+ 232   4      
+ 233   4                          case _HDR_TARGET_STATUS_DO_NOTHING:
+ 234   4                          default:
+ 235   4      
+ 236   4                              break;
+ 237   4                      }
+ 238   3                  }
+ 239   2                  break;
+ 240   2      
+ 241   2      #if(_HDR10_SUPPORT == _ON)
+ 242   2      
+ 243   2              case _HDR_FLOW_OSD_DARK_ENHANCE:
+ 244   2      
+ 245   2                  switch(enumHDR10ModeStatus)
+ 246   2                  {
+ 247   3                      case _HDR10_MODE_AUTO:
+ 248   3      
+ 249   3                          if(GET_HDR10_EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084)
+ 250   3                          {
+ 251   4                              UserCommonHDRAdjustHDR10AutoMode();
+ 252   4                          }
+ 253   3      
+ 254   3                          break;
+ 255   3      
+ 256   3                      case _HDR10_MODE_FORCE_2084:
+ 257   3      
+ 258   3                          UserCommonHDRAdjustHDR10ForceMode(UserInterfaceHDRGetHDR10ForceModeMaxMasteringLv(), U
+             -serInterfaceHDRGetHDR10ForceModeColorMatrix());
+ 259   3      
+ 260   3                          break;
+ 261   3      
+ 262   3                      case _HDR10_MODE_OFF:
+ 263   3      
+ 264   3                          UserCommonHDRAdjustSDRProc();
+ 265   3      
+ 266   3                          break;
+ 267   3      
+ 268   3                      default:
+ 269   3      
+ 270   3                          break;
+ 271   3                  }
+ 272   2      
+ 273   2                  break;
+ 274   2      #endif
+ 275   2              default:
+ 276   2      
+ 277   2                  break;
+ 278   2          }
+ 279   1      }
+ 280          
+ 281          //--------------------------------------------------
+ 282          // Description  : Check HDR target status to set HDR 2084, SDR or do nothing
+ 283          // Input Value  : EnumDisplayRegion
+ 284          // Output Value : EnumHDRTargetStatus
+ 285          //--------------------------------------------------
+ 286          EnumHDRTargetStatus UserCommonHDRGetTargetStatus(EnumHDRFlowStatus enumHDRFlowStatus, EnumHDR10ModeDef enu
+             -mHDR10ModeStatus, EnumFreeSyncSupport enumFreesyncIIModeStatus)
+ 287          {
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 6   
+
+ 288   1          EnumHDRTargetStatus enumHDRTargetStatus = _HDR_TARGET_STATUS_DO_NOTHING;
+ 289   1          EnumHDR10ChangeStatus enumHDR10ChangeStatus = _HDR10_INFO_NO_CHANGE;
+ 290   1          BYTE ucFreeSyncIIChangeStatus = _FREESYNC_II_INFO_NO_CHANGE;
+ 291   1      
+ 292   1          enumHDR10ModeStatus = enumHDR10ModeStatus;
+ 293   1          enumFreesyncIIModeStatus = enumFreesyncIIModeStatus;
+ 294   1      
+ 295   1          switch(enumHDRFlowStatus)
+ 296   1          {
+ 297   2              case _HDR_FLOW_COLOR_PROC_INITIAL:
+ 298   2              case _HDR_FLOW_OSD_MODE_CHANGE:
+ 299   2      
+ 300   2      #if(_FREESYNC_II_SUPPORT == _ON)
+                          SET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING(g_stFreeSyncIIMetadata.b1NativeColorSpaceEnable);
+                          SET_FREESYNC_II_BACKLIGHT_CONTROL_ENABLE_SETTING(g_stFreeSyncIIMetadata.b1BacklightControlEnab
+             -le);
+                          SET_FREESYNC_II_LOCAL_DIMMING_DISABLE_SETTING(g_stFreeSyncIIMetadata.b1LocalDimmingDisable);
+                          SET_FREESYNC_II_EOTF_TYPE_SETTING(g_stFreeSyncIIMetadata.b5EOTFType);
+                          SET_FREESYNC_II_BACKLIGHT_CONTROL_RATIO_SETTING(g_stFreeSyncIIMetadata.ucBacklightControlRatio
+             -);
+              
+                          DebugMessageHDR("Native Color Space Enable", g_stFreeSyncIIMetadata.b1NativeColorSpaceEnable);
+                          DebugMessageHDR("Backlight Control Enable", g_stFreeSyncIIMetadata.b1BacklightControlEnable);
+                          DebugMessageHDR("Local Dimming Disable", g_stFreeSyncIIMetadata.b1LocalDimmingDisable);
+                          DebugMessageHDR("EOTF Type", g_stFreeSyncIIMetadata.b5EOTFType);
+                          DebugMessageHDR("Backlight Control Ratio", g_stFreeSyncIIMetadata.ucBacklightControlRatio);
+              #endif
+ 313   2      
+ 314   2      #if(_HDR10_SUPPORT == _ON)
+ 315   2                  SET_HDR10_EOTF_SETTING(g_stHDR10SaticMetadata.ucEOTF);
+ 316   2                  SET_HDR10_MAX_LV_SETTING(UserCommonHDRGetHDR10LvType());
+ 317   2      
+ 318   2                  DebugMessageHDR("Initial HDR10 Metadata EOTF", (g_stHDR10SaticMetadata.ucEOTF));
+ 319   2      
+ 320   2                  DebugMessageHDR("Initial HDR10 Metadata X0", (g_stHDR10SaticMetadata.usDisplayPrimariesX0));
+ 321   2                  DebugMessageHDR("Initial HDR10 Metadata Y0", (g_stHDR10SaticMetadata.usDisplayPrimariesY0));
+ 322   2      
+ 323   2                  DebugMessageHDR("Initial HDR10 Metadata X1", (g_stHDR10SaticMetadata.usDisplayPrimariesX1));
+ 324   2                  DebugMessageHDR("Initial HDR10 Metadata Y1", (g_stHDR10SaticMetadata.usDisplayPrimariesY1));
+ 325   2      
+ 326   2                  DebugMessageHDR("Initial HDR10 Metadata X2", (g_stHDR10SaticMetadata.usDisplayPrimariesX2));
+ 327   2                  DebugMessageHDR("Initial HDR10 Metadata Y2", (g_stHDR10SaticMetadata.usDisplayPrimariesY2));
+ 328   2      
+ 329   2                  DebugMessageHDR("Initial HDR10 Metadata Wx", (g_stHDR10SaticMetadata.usWhitePointX));
+ 330   2                  DebugMessageHDR("Initial HDR10 Metadata Wy", (g_stHDR10SaticMetadata.usWhitePointY));
+ 331   2      
+ 332   2                  DebugMessageHDR("Initial HDR10 Metadata Max Mastering Lv", (g_stHDR10SaticMetadata.usMaxDispla
+             -yMasteringLv));
+ 333   2                  DebugMessageHDR("Initial HDR10 Metadata Min Mastering Lv", (g_stHDR10SaticMetadata.usMinDispla
+             -yMasteringLv));
+ 334   2      
+ 335   2                  DebugMessageHDR("Initial HDR10 Metadata Max CLL", (g_stHDR10SaticMetadata.usMaxCLL));
+ 336   2                  DebugMessageHDR("Initial HDR10 Metadata Max FALL", (g_stHDR10SaticMetadata.usMaxFALL));
+ 337   2      
+ 338   2                  if((enumHDR10ModeStatus == _HDR10_MODE_AUTO) &&
+ 339   2                     (GET_HDR10_EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084))
+ 340   2                  {
+ 341   3                      
+ 342   3                      DebugMessageHDR("HDR Target Status HDR2084", 0x00);
+ 343   3                      enumHDRTargetStatus = _HDR_TARGET_STATUS_SMPTE_ST_2084;
+ 344   3                      break;
+ 345   3                  }
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 7   
+
+ 346   2                  else
+ 347   2      #endif
+ 348   2                  {
+ 349   3      #if(_FREESYNC_II_SUPPORT == _ON)
+                              if((enumFreesyncIIModeStatus == _FREESYNC_SUPPORT_ON) &&
+                                 (GET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING() == _ON))
+                              {
+                                  DebugMessageHDR("HDR Target Status Freesync2", 0x00);
+                                  enumHDRTargetStatus = _HDR_TARGET_STATUS_FREESYNC_II_NATIVE_COLOR;
+                                  break;
+                              }
+              #endif
+ 358   3                  }
+ 359   2      
+ 360   2                              if(enumHDR10ModeStatus == _HDR10_MODE_AUTO)
+ 361   2                              {
+ 362   3                                      SET_OSD_DCR_STATUS(OsdBackupDCRStatus);
+ 363   3                                      SET_OSD_COLOR_EFFECT(OsdBackupECOStatus);
+ 364   3                              }
+ 365   2                              
+ 366   2                  DebugMessageHDR("HDR Target Status SDR", 0x00);
+ 367   2                  enumHDRTargetStatus = _HDR_TARGET_STATUS_TRADITIONAL_GAMMA_SDR;
+ 368   2                  break;
+ 369   2      
+ 370   2              case _HDR_FLOW_MODE_STATUS_ACTIVE:
+ 371   2      
+ 372   2      #if(_HDR10_SUPPORT == _ON)
+ 373   2                  enumHDR10ChangeStatus = UserCommonHDRGetHDR10ChangeStatus();
+ 374   2      #endif
+ 375   2      
+ 376   2      #if(_FREESYNC_II_SUPPORT == _ON)
+                          ucFreeSyncIIChangeStatus = UserCommonHDRFreeSyncIIChangeStatus();
+              
+                          if((enumFreesyncIIModeStatus == _FREESYNC_SUPPORT_ON) &&
+                             ((ucFreeSyncIIChangeStatus != _FREESYNC_II_INFO_NO_CHANGE) ||
+                              (enumHDR10ChangeStatus != _HDR10_INFO_NO_CHANGE)))
+                          {
+                              DebugMessageHDR("Native Color Space Enable", g_stFreeSyncIIMetadata.b1NativeColorSpaceEnab
+             -le);
+                              DebugMessageHDR("Backlight Control Enable", g_stFreeSyncIIMetadata.b1BacklightControlEnabl
+             -e);
+                              DebugMessageHDR("Local Dimming Disable", g_stFreeSyncIIMetadata.b1LocalDimmingDisable);
+                              DebugMessageHDR("EOTF Type", g_stFreeSyncIIMetadata.b5EOTFType);
+                              DebugMessageHDR("Backlight Control Ratio", g_stFreeSyncIIMetadata.ucBacklightControlRatio)
+             -;
+                              if(GET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING() == _ON)
+                              {
+                                  DebugMessageHDR("HDR Target Status Freesync2", 0x00);
+                                  enumHDRTargetStatus = _HDR_TARGET_STATUS_FREESYNC_II_NATIVE_COLOR;
+                              }
+                              else
+                              {
+                                  DebugMessageHDR("HDR Target Status SDR", 0x00);
+                                  enumHDRTargetStatus = _HDR_TARGET_STATUS_TRADITIONAL_GAMMA_SDR;
+                              }
+                          }
+              #endif
+ 400   2      
+ 401   2      #if(_HDR10_SUPPORT == _ON)
+ 402   2                  if((enumHDR10ModeStatus == _HDR10_MODE_AUTO) &&
+ 403   2                     ((enumHDR10ChangeStatus != _HDR10_INFO_NO_CHANGE) ||
+ 404   2                      (ucFreeSyncIIChangeStatus != _FREESYNC_II_INFO_NO_CHANGE)))
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 8   
+
+ 405   2                  {
+ 406   3                      DebugMessageHDR("HDR10 Metadata EOTF", (g_stHDR10SaticMetadata.ucEOTF));
+ 407   3      
+ 408   3                      DebugMessageHDR("HDR10 Metadata X0", (g_stHDR10SaticMetadata.usDisplayPrimariesX0));
+ 409   3                      DebugMessageHDR("HDR10 Metadata Y0", (g_stHDR10SaticMetadata.usDisplayPrimariesY0));
+ 410   3      
+ 411   3                      DebugMessageHDR("HDR10 Metadata X1", (g_stHDR10SaticMetadata.usDisplayPrimariesX1));
+ 412   3                      DebugMessageHDR("HDR10 Metadata Y1", (g_stHDR10SaticMetadata.usDisplayPrimariesY1));
+ 413   3      
+ 414   3                      DebugMessageHDR("HDR10 Metadata X2", (g_stHDR10SaticMetadata.usDisplayPrimariesX2));
+ 415   3                      DebugMessageHDR("HDR10 Metadata Y2", (g_stHDR10SaticMetadata.usDisplayPrimariesY2));
+ 416   3      
+ 417   3                      DebugMessageHDR("HDR10 Metadata Wx", (g_stHDR10SaticMetadata.usWhitePointX));
+ 418   3                      DebugMessageHDR("HDR10 Metadata Wy", (g_stHDR10SaticMetadata.usWhitePointY));
+ 419   3      
+ 420   3                      DebugMessageHDR("HDR10 Metadata Max Mastering Lv", (g_stHDR10SaticMetadata.usMaxDisplayMas
+             -teringLv));
+ 421   3                      DebugMessageHDR("HDR10 Metadata Min Mastering Lv", (g_stHDR10SaticMetadata.usMinDisplayMas
+             -teringLv));
+ 422   3      
+ 423   3                      DebugMessageHDR("HDR10 Metadata Max CLL", (g_stHDR10SaticMetadata.usMaxCLL));
+ 424   3                      DebugMessageHDR("HDR10 Metadata Max FALL", (g_stHDR10SaticMetadata.usMaxFALL));
+ 425   3      
+ 426   3                      if(GET_HDR10_EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084) // HDR SMPTE ST 2084
+ 427   3                      {
+ 428   4                          DebugMessageHDR("HDR Target Status HDR2084", 0x00);
+ 429   4                          enumHDRTargetStatus = _HDR_TARGET_STATUS_SMPTE_ST_2084;
+ 430   4                                              
+ 431   4                          if(enumHDR10ChangeStatus == _HDR10_INFO_NO_CHANGE)
+ 432   4                          {
+ 433   5                              DebugMessageHDR("HDR Target Status Do Nothing", 0x00);
+ 434   5                              enumHDRTargetStatus = _HDR_TARGET_STATUS_DO_NOTHING;
+ 435   5                          }
+ 436   4                      }
+ 437   3                      else
+ 438   3                      {
+ 439   4                          if(enumHDRTargetStatus != _HDR_TARGET_STATUS_FREESYNC_II_NATIVE_COLOR)
+ 440   4                          {
+ 441   5                              DebugMessageHDR("HDR Target Status SDR", 0x00);
+ 442   5                              enumHDRTargetStatus = _HDR_TARGET_STATUS_TRADITIONAL_GAMMA_SDR;
+ 443   5                          }
+ 444   4                      }
+ 445   3                  }
+ 446   2      #endif
+ 447   2      
+ 448   2                  break;
+ 449   2      
+ 450   2              default:
+ 451   2      
+ 452   2                  break;
+ 453   2          }
+ 454   1      
+ 455   1          return enumHDRTargetStatus;
+ 456   1      }
+ 457          
+ 458          //--------------------------------------------------
+ 459          // Description  : None
+ 460          // Input Value  : None
+ 461          // Output Value : None
+ 462          //--------------------------------------------------
+ 463          void UserCommonHDRAdjustSDRProc(void)
+ 464          {
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 9   
+
+ 465   1      #if((_RGB_QUANTIZATION_RANGE_SUPPORT == _ON) && (_RGB_QUANTIZATION_DEFAULT_RANGE_JUDGE_BY_USER == _ON))
+                  if(ScalerColorGetColorSpaceRGB(UserCommonInterfaceGetColorFormat()) == _TRUE)
+                  {
+                      UserCommonAdjustRGBQuantizationRange();
+              
+                      SysModeColorSpaceConvert(UserCommonInterfaceGetColorFormat(), _DB_APPLY_NO_POLLING);
+                  }
+              #endif
+ 473   1      
+ 474   1      #if(_ULTRA_VIVID_SUPPORT == _ON)
+                  UserInterfaceAdjustUltraVividProc(_DB_APPLY_NO_POLLING);
+              #endif
+ 477   1      
+ 478   1      #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+                  ScalerColorIAPSGainEnable(_FUNCTION_OFF);
+              #endif
+ 481   1      
+ 482   1          UserInterfaceHDRAdjustSDRProc();
+ 483   1      }
+ 484          
+ 485          #if(_HDR10_SUPPORT == _ON)
+ 486          //--------------------------------------------------
+ 487          // Description  : return applying HDR parameter or PCM parameter
+ 488          // Input Value  : None
+ 489          // Output Value : _ON(HDR), _OFF(PCM)
+ 490          //--------------------------------------------------
+ 491          EnumHDR10Status UserCommonHDRGetHDR10Status(void)
+ 492          {
+ 493   1          if(UserInterfaceHDRGetHDR10ModeStatus(SysSourceGetInputPort()) == _HDR10_MODE_FORCE_2084)
+ 494   1          {
+ 495   2                      OsdHdrAdj();
+ 496   2              return _HDR10_ON;
+ 497   2          }
+ 498   1          else
+ 499   1          {
+ 500   2      #if(_HDR10_SUPPORT == _ON)
+ 501   2              if((UserInterfaceHDRGetHDR10ModeStatus(SysSourceGetInputPort()) != _HDR10_MODE_OFF) && (GET_HDR10_
+             -EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084))
+ 502   2              {
+ 503   3                      if(UserInterfaceHDRGetHDR10ModeStatus(SysSourceGetInputPort()) == _HDR10_MODE_AUTO)
+ 504   3                      {
+ 505   4                              OsdBackupDCRStatus = GET_OSD_DCR_STATUS();
+ 506   4                                      OsdBackupECOStatus = GET_OSD_COLOR_EFFECT();
+ 507   4                                      DebugMessageHDR("OsdBackupDCRStatus",OsdBackupDCRStatus);
+ 508   4                                      DebugMessageHDR("OsdBackupECOStatus",OsdBackupECOStatus);
+ 509   4                      }
+ 510   3                              OsdHdrAdj();
+ 511   3                  return _HDR10_ON;
+ 512   3              }
+ 513   2              else
+ 514   2      #endif
+ 515   2              {
+ 516   3                              
+ 517   3                      #if(Project_ID == ID_CHANGJIA_GS24S3F_HK2556E01_1P2H_M236HVR010_FHD144HZ_20210908)||(Project_ID =
+             -= ID_MC_HK2556E01_1P2H_AUO_M250HAN01_8_LVDS_FHD165HZ_20211122)
+                                              SET_OSD_GAMMA(_DEF_GAMMA);
+                                      #endif
+ 520   3                  return _HDR10_OFF;
+ 521   3              }
+ 522   2          }
+ 523   1      
+ 524   1          return _HDR10_OFF;
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 10  
+
+ 525   1      }
+ 526          #if 0
+              BYTE UserCommonHDRGetHDR10Status_1(void)
+              {
+                      return UserCommonHDRGetHDR10Status();
+              }
+              #endif
+ 532          //--------------------------------------------------
+ 533          // Description  : Check HDR change status according to EOTF, (primaries color), max mastering luminance
+ 534          // Input Value  : EnumDisplayRegion
+ 535          // Output Value : HDR chagne status
+ 536          //--------------------------------------------------
+ 537          EnumHDR10ChangeStatus UserCommonHDRGetHDR10ChangeStatus(void)
+ 538          {
+ 539   1          // Check if info changed
+ 540   1          if(GET_HDR10_EOTF_SETTING() != (g_stHDR10SaticMetadata.ucEOTF))
+ 541   1          {
+ 542   2              SET_HDR10_EOTF_SETTING(g_stHDR10SaticMetadata.ucEOTF);
+ 543   2      
+ 544   2              if(GET_HDR10_EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084)
+ 545   2              {
+ 546   3                  SET_HDR10_MAX_LV_SETTING(UserCommonHDRGetHDR10LvType());
+ 547   3              }
+ 548   2      
+ 549   2              return _HDR10_INFO_EOTF_CHANGE;
+ 550   2          }
+ 551   1      
+ 552   1          if((GET_HDR10_EOTF_SETTING() == _HDR_INFO_EOTF_SMPTE_ST_2084) &&
+ 553   1             (GET_HDR10_MAX_LV_SETTING() != (UserCommonHDRGetHDR10LvType())))
+ 554   1          {
+ 555   2              SET_HDR10_MAX_LV_SETTING(UserCommonHDRGetHDR10LvType());
+ 556   2              return _HDR10_INFO_MAX_LV_CHANGE;
+ 557   2          }
+ 558   1      
+ 559   1          return _HDR10_INFO_NO_CHANGE;
+ 560   1      }
+ 561          
+ 562          //--------------------------------------------------
+ 563          // Description  : Return HDR Max Mastering Lv Type by infoframe mastering Lv
+ 564          // Input Value  : EnumDisplayRegion
+ 565          // Output Value : HDR max mastering Lv type
+ 566          //--------------------------------------------------
+ 567          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10LvType(void)
+ 568          {
+ 569   1          BYTE pucTemp[4];
+ 570   1          WORD usHDR10MaxMasteringLvNoTMUB = 0x0000;
+ 571   1          WORD usMaxDisplayLv = UserCommonHDRGetHDR10MaxDisplayLv();
+ 572   1          memset(pucTemp, 0, sizeof(pucTemp));
+ 573   1      
+ 574   1          UserCommonFlashRead(_OGC_FLASH_BANK, ((((WORD)_OGC_FLASH_PAGE) << 12) + _OGC_HDR10_NOTM_BOUND_ADDRESS)
+             -, 4, pucTemp);
+ 575   1          usHDR10MaxMasteringLvNoTMUB = ((WORD)pucTemp[2] << 8) + pucTemp[3];
+ 576   1      
+ 577   1          if(usMaxDisplayLv > 0)
+ 578   1          {
+ 579   2              if(usMaxDisplayLv <= usHDR10MaxMasteringLvNoTMUB)
+ 580   2              {
+ 581   3                  return _HDR10_MAX_MASTERING_LV_TYPE_NOTM;
+ 582   3              }
+ 583   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_540)
+ 584   2              {
+ 585   3                  return _HDR10_MAX_MASTERING_LV_TYPE_540;
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 11  
+
+ 586   3              }
+ 587   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_1200)
+ 588   2              {
+ 589   3                  return _HDR10_MAX_MASTERING_LV_TYPE_1200;
+ 590   3              }
+ 591   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_4000)
+ 592   2              {
+ 593   3                  return _HDR10_MAX_MASTERING_LV_TYPE_4000;
+ 594   3              }
+ 595   2              else
+ 596   2              {
+ 597   3                  return _HDR10_MAX_MASTERING_LV_TYPE_10000;
+ 598   3              }
+ 599   2          }
+ 600   1          else
+ 601   1          {
+ 602   2              return UserCommonHDRGetHDR10ModifyLvType(UserInterfaceHDRGetHDR10MaxMasteringLv0Type(), usHDR10Max
+             -MasteringLvNoTMUB);
+ 603   2          }
+ 604   1      
+ 605   1          return _HDR10_MAX_MASTERING_LV_TYPE_1200;
+ 606   1      }
+ 607          
+ 608          //--------------------------------------------------
+ 609          // Description  : Protect User-assigned Mastering Lv Type from being lower than Panel Max Lv
+ 610          // Input Value  : None
+ 611          // Output Value : EnumHDR10MaxMasteringLvType
+ 612          //--------------------------------------------------
+ 613          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10ModifyLvType(EnumHDR10MaxMasteringLvType enumHDR10MaxMast
+             -eringLvType, WORD usMaxPanelLv)
+ 614          {
+ 615   1          WORD usMateringLv = _HDR10_MAX_MASTERING_LV_540;
+ 616   1      
+ 617   1          if(enumHDR10MaxMasteringLvType != _HDR10_MAX_MASTERING_LV_TYPE_NOTM)
+ 618   1          {
+ 619   2              switch(enumHDR10MaxMasteringLvType)
+ 620   2              {
+ 621   3                  case _HDR10_MAX_MASTERING_LV_TYPE_540:
+ 622   3                      usMateringLv = _HDR10_MAX_MASTERING_LV_540;
+ 623   3                      break;
+ 624   3      
+ 625   3                  case _HDR10_MAX_MASTERING_LV_TYPE_1200:
+ 626   3                      usMateringLv = _HDR10_MAX_MASTERING_LV_1200;
+ 627   3                      break;
+ 628   3      
+ 629   3                  case _HDR10_MAX_MASTERING_LV_TYPE_4000:
+ 630   3                      usMateringLv = _HDR10_MAX_MASTERING_LV_4000;
+ 631   3                      break;
+ 632   3      
+ 633   3                  case _HDR10_MAX_MASTERING_LV_TYPE_10000:
+ 634   3                      usMateringLv = _HDR10_MAX_MASTERING_LV_10000;
+ 635   3                      break;
+ 636   3      
+ 637   3                  default:
+ 638   3                      break;
+ 639   3              }
+ 640   2      
+ 641   2              if(usMateringLv <= usMaxPanelLv)
+ 642   2              {
+ 643   3                  return _HDR10_MAX_MASTERING_LV_TYPE_NOTM;
+ 644   3              }
+ 645   2              else
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 12  
+
+ 646   2              {
+ 647   3                  return enumHDR10MaxMasteringLvType;
+ 648   3              }
+ 649   2          }
+ 650   1      
+ 651   1          return _HDR10_MAX_MASTERING_LV_TYPE_NOTM;
+ 652   1      }
+ 653          
+ 654          //--------------------------------------------------
+ 655          // Description  : Adjust HDR by enumDisplayRegion
+ 656          // Input Value  : EnumDisplayRegion
+ 657          // Output Value : None
+ 658          //--------------------------------------------------
+ 659          void UserCommonHDRAdjustHDR10AutoMode(void)
+ 660          {
+ 661   1          WORD usHDRInputGammaFlashAddress = 0x0000;
+ 662   1          StructHDR10Table stHDR10Table;
+ 663   1          memset(&stHDR10Table, 0, sizeof(StructHDR10Table));
+ 664   1          UserInterfaceHDRGetHDR10UserAssignTable(&stHDR10Table);
+ 665   1      
+ 666   1          if(stHDR10Table.enumHDR10UserAssignTableStatus == _HDR10_USER_ASSIGNED_TABLE_OFF)
+ 667   1          {
+ 668   2              // Input Gamma Setting
+ 669   2      #if((_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON) || (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT
+             - == _ON))
+                      EnumHDR10FixedPointToneMappingStatus enumHDR10FixedPointToneMappingStatus = UserInterfaceHDRGetHDR
+             -10FixedPointTMStatus();
+              #else
+ 672   2              EnumHDR10FixedPointToneMappingStatus enumHDR10FixedPointToneMappingStatus = _HDR10_FIXED_POINT_TM_
+             -OFF;
+ 673   2      #endif
+ 674   2              EnumHDR10MaxMasteringLvType enumHDR10MaxMasteringLvType = UserCommonHDRGetHDR10LvType();
+ 675   2              EnumHDR10DarkEnhanceStatus enumHDR10DarkEnhanceStatus = UserInterfaceHDRGetHDR10DarkEnhanceStatus(
+             -);
+ 676   2      
+ 677   2      #if(_HDR10_EETF_TONEMAPPING_SUPPORT == _ON)
+                      if(enumHDR10MaxMasteringLvType < _HDR10_MAX_MASTERING_LV_TYPE_NOTM)
+                      {
+              #if(_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          if(enumHDR10FixedPointToneMappingStatus == _HDR10_FIXED_POINT_TM_OFF)
+              #endif
+                          {
+                              enumHDR10DarkEnhanceStatus = _HDR10_DARK_ENHANCE_OFF;
+                          }
+                      }
+              #endif
+ 688   2      
+ 689   2              switch(enumHDR10FixedPointToneMappingStatus)
+ 690   2              {
+ 691   3      #if(_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          case _HDR10_FIXED_POINT_TM_ON:
+                              usHDRInputGammaFlashAddress = tusHDR10_IG_FIXED_POINT_ADDRESS_INDEX[enumHDR10MaxMasteringL
+             -vType * 2 + enumHDR10DarkEnhanceStatus];
+                              break;
+              #endif
+ 696   3      
+ 697   3      #if(_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          case _HDR10_FIXED_POINT_TM_USER:
+                              usHDRInputGammaFlashAddress = tusHDR10_IG_USER_DEFINE_FIXED_POINT_ADDRESS_INDEX[enumHDR10M
+             -axMasteringLvType * 2 + enumHDR10DarkEnhanceStatus];
+                              break;
+              #endif
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 13  
+
+ 702   3      
+ 703   3                  case _HDR10_FIXED_POINT_TM_OFF:
+ 704   3                  default:
+ 705   3                      usHDRInputGammaFlashAddress = tusHDR10_IG_ADDRESS_INDEX[enumHDR10MaxMasteringLvType * 2 + 
+             -enumHDR10DarkEnhanceStatus];
+ 706   3                      break;
+ 707   3              }
+ 708   2      
+ 709   2      #if(_DEBUG_MESSAGE_HDR == _ON)
+                      switch(enumHDR10MaxMasteringLvType)
+                      {
+                          case _HDR10_MAX_MASTERING_LV_TYPE_1200:
+                              DebugMessageHDR("HDR apply type 1200 parameter", 0x00);
+                              break;
+              
+                          case _HDR10_MAX_MASTERING_LV_TYPE_4000:
+                              DebugMessageHDR("HDR apply type 4000 parameter", 0x00);
+                              break;
+              
+                          case _HDR10_MAX_MASTERING_LV_TYPE_10000:
+                              DebugMessageHDR("HDR apply type 10000 parameter", 0x00);
+                              break;
+              
+                          case _HDR10_MAX_MASTERING_LV_TYPE_540:
+                              DebugMessageHDR("HDR apply type 540 parameter", 0x00);
+                              break;
+              
+                          case _HDR10_MAX_MASTERING_LV_TYPE_NOTM:
+                              DebugMessageHDR("HDR10 apply type no tone mapping parameter", 0x00);
+                              break;
+              
+                          default:
+                              break;
+                      }
+              
+                      if(enumHDR10DarkEnhanceStatus == _HDR10_DARK_ENHANCE_ON)
+                      {
+                          DebugMessageHDR("HDR apply Dark Enhance parameter", 0x00);
+                      }
+              #endif
+ 741   2      
+ 742   2      #if((_LOCAL_DIMMING_SUPPORT == _ON) && (_DISPLAY_HDR_VERSION == _DISPLAY_HDR_VERSION_1_1))
+                      if((UserCommonLocalDimmingGetEnableStatus() == _LD_ENABLE) && (UserCommonHDRGetHDR10LvType() == _H
+             -DR10_MAX_MASTERING_LV_TYPE_NOTM))
+                      {
+                          usHDRInputGammaFlashAddress = _OGC_HDR10_IG_NOTM_DISPLAY_HDR_1_1_ADDRESS;
+                      }
+              #endif
+ 748   2      
+ 749   2              stHDR10Table.pucIGTable = g_pucDISP_CALIBRATION_FLASH + usHDRInputGammaFlashAddress;
+ 750   2      
+ 751   2              // Color Matrix Setting
+ 752   2              stHDR10Table.pucSRGBMatrix = g_pucDISP_CALIBRATION_FLASH + UserCommonHDRGetHDR10ColorMatrix();
+ 753   2      
+ 754   2              // OutputGamma Setting
+ 755   2              stHDR10Table.pucOGTable = g_pucDISP_CALIBRATION_FLASH + _OCC_HDR10_GAMMA10_ADDRESS;
+ 756   2      
+ 757   2              stHDR10Table.ucBank = _OGC_FLASH_BANK;
+ 758   2          }
+ 759   1          else // User Assign HDR10 PCM Table
+ 760   1          {
+ 761   2              DebugMessageHDR("HDR apply User Assigned PCM Table!!", 0x00);
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 14  
+
+ 762   2          }
+ 763   1      
+ 764   1      #if(_GLOBAL_COLOR_CONVERT_HUE_SATURATION_FUNCTION == _ON)
+                  // recover the color convertion
+                  UserCommonAdjustColorConvertHueSat(0, 100);
+              #endif
+ 768   1      
+ 769   1          UserCommonAdjustPCM(_PCM_HDR_2084, stHDR10Table.pucIGTable, stHDR10Table.pucOGTable, stHDR10Table.pucS
+             -RGBMatrix, stHDR10Table.ucBank, _OCC_COLORMATRIX_TABLE_SIZE);
+ 770   1      }
+ 771          
+ 772          //--------------------------------------------------
+ 773          // Description  : Adjust HDR 2084 force mode
+ 774          // Input Value  : EnumSelRegion, EnumHDR10MaxMasteringLvType, EnumHDR10ColorMatrix
+ 775          // Output Value : None
+ 776          //--------------------------------------------------
+ 777          void UserCommonHDRAdjustHDR10ForceMode(EnumHDR10MaxMasteringLvType enumHDR10MaxMasteringLvType, EnumHDR10C
+             -olorMatrix enumHDR10ColorMatrix)
+ 778          {
+ 779   1          WORD usHDRInputGammaFlashAddress = 0x0000;
+ 780   1          WORD usHDRColorMatrixFlashAddress = 0x0000;
+ 781   1          StructHDR10Table stHDR10Table;
+ 782   1          memset(&stHDR10Table, 0, sizeof(StructHDR10Table));
+ 783   1          UserInterfaceHDRGetHDR10UserAssignTable(&stHDR10Table);
+ 784   1      
+ 785   1          if(stHDR10Table.enumHDR10UserAssignTableStatus == _HDR10_USER_ASSIGNED_TABLE_OFF)
+ 786   1          {
+ 787   2      #if((_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON) || (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT
+             - == _ON))
+                      EnumHDR10FixedPointToneMappingStatus enumHDR10FixedPointToneMappingStatus = UserInterfaceHDRGetHDR
+             -10FixedPointTMStatus();
+              #else
+ 790   2              EnumHDR10FixedPointToneMappingStatus enumHDR10FixedPointToneMappingStatus = _HDR10_FIXED_POINT_TM_
+             -OFF;
+ 791   2      #endif
+ 792   2              EnumHDR10DarkEnhanceStatus enumHDR10DarkEnhanceStatus = UserInterfaceHDRGetHDR10DarkEnhanceStatus(
+             -);
+ 793   2      
+ 794   2      #if(_HDR10_EETF_TONEMAPPING_SUPPORT == _ON)
+                      if(enumHDR10MaxMasteringLvType < _HDR10_MAX_MASTERING_LV_TYPE_NOTM)
+                      {
+              #if(_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          if(enumHDR10FixedPointToneMappingStatus == _HDR10_FIXED_POINT_TM_OFF)
+              #endif
+                          {
+                              enumHDR10DarkEnhanceStatus = _HDR10_DARK_ENHANCE_OFF;
+                          }
+                      }
+              #endif
+ 805   2      
+ 806   2              switch(enumHDR10FixedPointToneMappingStatus)
+ 807   2              {
+ 808   3      #if(_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          case _HDR10_FIXED_POINT_TM_ON:
+                              usHDRInputGammaFlashAddress = tusHDR10_IG_FIXED_POINT_ADDRESS_INDEX[enumHDR10MaxMasteringL
+             -vType * 2 + enumHDR10DarkEnhanceStatus];
+                              break;
+              #endif
+ 813   3      
+ 814   3      #if(_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
+                          case _HDR10_FIXED_POINT_TM_USER:
+                              usHDRInputGammaFlashAddress = tusHDR10_IG_USER_DEFINE_FIXED_POINT_ADDRESS_INDEX[enumHDR10M
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 15  
+
+             -axMasteringLvType * 2 + enumHDR10DarkEnhanceStatus];
+                              break;
+              #endif
+ 819   3      
+ 820   3                  case _HDR10_FIXED_POINT_TM_OFF:
+ 821   3                  default:
+ 822   3                      usHDRInputGammaFlashAddress = tusHDR10_IG_ADDRESS_INDEX[enumHDR10MaxMasteringLvType * 2 + 
+             -enumHDR10DarkEnhanceStatus];
+ 823   3                      break;
+ 824   3              }
+ 825   2      
+ 826   2      #if((_LOCAL_DIMMING_SUPPORT == _ON) && (_DISPLAY_HDR_VERSION == _DISPLAY_HDR_VERSION_1_1))
+                      if((UserCommonLocalDimmingGetEnableStatus() == _LD_ENABLE) && (enumHDR10MaxMasteringLvType == _HDR
+             -10_MAX_MASTERING_LV_TYPE_NOTM))
+                      {
+                          usHDRInputGammaFlashAddress = _OGC_HDR10_IG_NOTM_DISPLAY_HDR_1_1_ADDRESS;
+                      }
+              #endif
+ 832   2              stHDR10Table.pucIGTable = g_pucDISP_CALIBRATION_FLASH + usHDRInputGammaFlashAddress;
+ 833   2      
+ 834   2              // Color Matrix Setting
+ 835   2              switch(enumHDR10ColorMatrix)
+ 836   2              {
+ 837   3                  case _HDR10_COLOR_MATRIX_SRGB:
+ 838   3                      usHDRColorMatrixFlashAddress = _OCC_HDR10_SRGB_MATRIX_ADDRESS;
+ 839   3                      break;
+ 840   3      
+ 841   3                  case _HDR10_COLOR_MATRIX_ADOBE:
+ 842   3                      usHDRColorMatrixFlashAddress = _OCC_HDR10_ADOBE_MATRIX_ADDRESS;
+ 843   3                      break;
+ 844   3      
+ 845   3                  case _HDR10_COLOR_MATRIX_DCIP3_D65:
+ 846   3                      usHDRColorMatrixFlashAddress = _OCC_HDR10_DCIP3_D65_MATRIX_ADDRESS;
+ 847   3                      break;
+ 848   3      
+ 849   3                  case _HDR10_COLOR_MATRIX_BT2020:
+ 850   3                      usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+ 851   3                      break;
+ 852   3      
+ 853   3                  default:
+ 854   3                      usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+ 855   3                      break;
+ 856   3              }
+ 857   2      
+ 858   2              stHDR10Table.pucSRGBMatrix = g_pucDISP_CALIBRATION_FLASH + usHDRColorMatrixFlashAddress;
+ 859   2      
+ 860   2              // OutputGamma Setting
+ 861   2              stHDR10Table.pucOGTable = g_pucDISP_CALIBRATION_FLASH + _OCC_HDR10_GAMMA10_ADDRESS;
+ 862   2      
+ 863   2              stHDR10Table.ucBank = _OGC_FLASH_BANK;
+ 864   2          }
+ 865   1          else
+ 866   1          {
+ 867   2              DebugMessageHDR("HDR apply User Assigned PCM Table!!", 0x00);
+ 868   2          }
+ 869   1      
+ 870   1      #if(_GLOBAL_COLOR_CONVERT_HUE_SATURATION_FUNCTION == _ON)
+                  // recover the color convertion
+                  UserCommonAdjustColorConvertHueSat(0, 100);
+              #endif
+ 874   1      #if(_DEF_HDR_540)
+                      usHDRInputGammaFlashAddress = _OGC_HDR10_IG_540_NOR_ADDRESS;
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 16  
+
+                      usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+              #endif  
+ 878   1          UserCommonAdjustPCM(_PCM_HDR_2084, stHDR10Table.pucIGTable, stHDR10Table.pucOGTable, stHDR10Table.pucS
+             -RGBMatrix, stHDR10Table.ucBank, _OCC_COLORMATRIX_TABLE_SIZE);
+ 879   1      }
+ 880          
+ 881          //--------------------------------------------------
+ 882          // Description  : None
+ 883          // Input Value  : None
+ 884          // Output Value : None
+ 885          //--------------------------------------------------
+ 886          void UserCommonHDRAdjustHDR10Proc(void)
+ 887          {
+ 888   1      #if((_RGB_QUANTIZATION_RANGE_SUPPORT == _ON) && (_RGB_QUANTIZATION_DEFAULT_RANGE_JUDGE_BY_USER == _ON))
+                  if(ScalerColorGetColorSpaceRGB(UserCommonInterfaceGetColorFormat()) == _TRUE)
+                  {
+                      UserCommonAdjustRGBQuantizationRange();
+              
+                      SysModeColorSpaceConvert(UserCommonInterfaceGetColorFormat(), _DB_APPLY_NO_POLLING);
+                  }
+              #endif
+ 896   1      
+ 897   1      #if(_ULTRA_VIVID_SUPPORT == _ON)
+                  UserInterfaceAdjustUltraVividProc(_DB_APPLY_NO_POLLING);
+              #endif
+ 900   1      
+ 901   1          UserCommonHDRAdjustHDR10ColorEffect();
+ 902   1          UserInterfaceHDRAdjustHDR10Proc();
+ 903   1      }
+ 904          
+ 905          //--------------------------------------------------
+ 906          // Description  : Get HDR10 Color Matrix Flash Address
+ 907          // Input Value  : void
+ 908          // Output Value : ColorMatrixFlashAddress
+ 909          //--------------------------------------------------
+ 910          WORD UserCommonHDRGetHDR10ColorMatrix(void)
+ 911          {
+ 912   1          WORD usHDRColorMatrixFlashAddress = 0x0000;
+ 913   1      #if(_FREESYNC_II_FORCE_HDR10_BT2020_SUPPORT == _ON)
+                  usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+                  DebugMessageHDR("FS2 force HDR10 apply BT2020 matrix", 0x00);
+              #else
+ 917   1          switch(ScalerColorGetColorimetry())
+ 918   1          {
+ 919   2              case _COLORIMETRY_RGB_SRGB:
+ 920   2              case _COLORIMETRY_RGB_XRRGB:
+ 921   2              case _COLORIMETRY_RGB_SCRGB:
+ 922   2              case _COLORIMETRY_YCC_SMPTE_170M:
+ 923   2              case _COLORIMETRY_YCC_ITUR_BT601:
+ 924   2              case _COLORIMETRY_YCC_ITUR_BT709:
+ 925   2              case _COLORIMETRY_YCC_XVYCC601:
+ 926   2              case _COLORIMETRY_YCC_XVYCC709:
+ 927   2      
+ 928   2                  usHDRColorMatrixFlashAddress = _OCC_HDR10_SRGB_MATRIX_ADDRESS;
+ 929   2                  DebugMessageHDR("HDR apply SRGB matrix", 0x00);
+ 930   2      
+ 931   2                  break;
+ 932   2      
+ 933   2              case _COLORIMETRY_RGB_ADOBERGB:
+ 934   2      
+ 935   2                  usHDRColorMatrixFlashAddress = _OCC_HDR10_ADOBE_MATRIX_ADDRESS;
+ 936   2                  DebugMessageHDR("HDR apply AdobeRGB matrix", 0x00);
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 17  
+
+ 937   2      
+ 938   2                  break;
+ 939   2      
+ 940   2              case _COLORIMETRY_RGB_DCI_P3:
+ 941   2      
+ 942   2                  usHDRColorMatrixFlashAddress = _OCC_HDR10_DCIP3_D65_MATRIX_ADDRESS;
+ 943   2                  DebugMessageHDR("HDR apply DCIP3_D65 matrix", 0x00);
+ 944   2      
+ 945   2                  break;
+ 946   2      
+ 947   2              case _COLORIMETRY_EXT:
+ 948   2      
+ 949   2                  switch(ScalerColorGetExtColorimetry())
+ 950   2                  {
+ 951   3                      case _COLORIMETRY_EXT_RGB_SRGB:
+ 952   3                      case _COLORIMETRY_EXT_RGB_XRRGB:
+ 953   3                      case _COLORIMETRY_EXT_RGB_SCRGB:
+ 954   3                      case _COLORIMETRY_EXT_YCC_ITUR_BT601:
+ 955   3                      case _COLORIMETRY_EXT_YCC_ITUR_BT709:
+ 956   3                      case _COLORIMETRY_EXT_YCC_XVYCC601:
+ 957   3                      case _COLORIMETRY_EXT_YCC_XVYCC709:
+ 958   3                      case _COLORIMETRY_EXT_YCC_SYCC601:
+ 959   3      
+ 960   3                          usHDRColorMatrixFlashAddress = _OCC_HDR10_SRGB_MATRIX_ADDRESS;
+ 961   3                          DebugMessageHDR("HDR apply SRGB matrix EXT", 0x00);
+ 962   3      
+ 963   3                          break;
+ 964   3      
+ 965   3                      case _COLORIMETRY_EXT_RGB_ADOBERGB:
+ 966   3                      case _COLORIMETRY_EXT_YCC_ADOBEYCC601:
+ 967   3      
+ 968   3                          usHDRColorMatrixFlashAddress = _OCC_HDR10_ADOBE_MATRIX_ADDRESS;
+ 969   3                          DebugMessageHDR("HDR apply AdobeRGB matrix EXT", 0x00);
+ 970   3      
+ 971   3                          break;
+ 972   3      
+ 973   3                      case _COLORIMETRY_EXT_RGB_DCI_P3:
+ 974   3      
+ 975   3                          usHDRColorMatrixFlashAddress = _OCC_HDR10_DCIP3_D65_MATRIX_ADDRESS;
+ 976   3                          DebugMessageHDR("HDR apply DCIP3_D65 matrix EXT", 0x00);
+ 977   3      
+ 978   3                          break;
+ 979   3      
+ 980   3      #if(_COLOR_CONVERSION_TYPE == _COLOR_CONVERSION_GEN_2)
+ 981   3                      case _COLORIMETRY_EXT_RGB_ITUR_BT2020:
+ 982   3                      case _COLORIMETRY_EXT_YCC_ITUR_BT2020_CL:
+ 983   3                      case _COLORIMETRY_EXT_YCC_ITUR_BT2020_NCL:
+ 984   3      
+ 985   3                          usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+ 986   3                          DebugMessageHDR("HDR apply BT2020 matrix", 0x00);
+ 987   3      
+ 988   3                          break;
+ 989   3      #endif
+ 990   3                      default:
+ 991   3      
+ 992   3                          usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+ 993   3                          DebugMessageHDR("HDR apply BT2020 matrix EXT default", 0x00);
+ 994   3      
+ 995   3                          break;
+ 996   3                  }
+ 997   2      
+ 998   2                  break;
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 18  
+
+ 999   2      
+1000   2              default:
+1001   2      
+1002   2                  usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
+1003   2                  DebugMessageHDR("HDR apply BT2020 matrix default", 0x00);
+1004   2      
+1005   2                  break;
+1006   2          }
+1007   1      #endif
+1008   1      
+1009   1          return usHDRColorMatrixFlashAddress;
+1010   1      }
+1011          
+1012          //--------------------------------------------------
+1013          // Description  : HDR Support Switch
+1014          // Input Value  : None
+1015          // Output Value : None
+1016          //--------------------------------------------------
+1017          void UserCommonHDR10SupportSwitch(void)
+1018          {
+1019   1      #if(((_D0_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON)) ||\
+1020   1          ((_D0_INPUT_PORT_TYPE == _D0_DP_PORT) && (_DP_HDR10_SUPPORT == _ON)))
+1021   1          ScalerColorHDR10SupportSwitch(_D0_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D0_INPUT_PORT));
+1022   1      #endif
+1023   1      
+1024   1      #if(((_D1_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON)) ||\
+1025   1          ((_D1_INPUT_PORT_TYPE == _D1_DP_PORT) && (_DP_HDR10_SUPPORT == _ON)))
+                  ScalerColorHDR10SupportSwitch(_D1_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D1_INPUT_PORT));
+              #endif
+1028   1      
+1029   1      #if(((_D2_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON)) ||\
+1030   1          ((_D2_INPUT_PORT_TYPE == _D2_DP_PORT) && (_DP_HDR10_SUPPORT == _ON)))
+                  ScalerColorHDR10SupportSwitch(_D2_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D2_INPUT_PORT));
+              #endif
+1033   1      
+1034   1      #if((_D3_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON))
+1035   1          ScalerColorHDR10SupportSwitch(_D3_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D3_INPUT_PORT));
+1036   1      #endif
+1037   1      
+1038   1      #if((_D4_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON))
+                  ScalerColorHDR10SupportSwitch(_D4_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D4_INPUT_PORT));
+              #endif
+1041   1      
+1042   1      #if((_D5_HDMI_SUPPORT == _ON) && (_HDMI_HDR10_SUPPORT == _ON))
+                  ScalerColorHDR10SupportSwitch(_D5_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D5_INPUT_PORT));
+              #endif
+1045   1      
+1046   1      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_DP_HDR10_SUPPORT == _ON))
+                  ScalerColorHDR10SupportSwitch(_D6_INPUT_PORT, UserInterfaceHDRGetHDR10ModeStatus(_D6_INPUT_PORT));
+              #endif
+1049   1      }
+1050          
+1051          #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Adjust HDR10 Color Matrix
+              // Input Value  : void
+              // Output Value : void
+              //--------------------------------------------------
+              void UserCommonHDRAdjustHDR10ColorMatrix(void)
+              {
+                  WORD usHDRColorMatrixFlashAddress = 0x0000;
+                  usHDRColorMatrixFlashAddress = UserCommonHDRGetHDR10ColorMatrix();
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 19  
+
+                  ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+                  ScalerColorPCMSRGBAdjust(_SRGB_1_BIT_SHIFT_LEFT, (g_pucDISP_CALIBRATION_FLASH + usHDRColorMatrixFlashA
+             -ddress), _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+              }
+              #endif
+1065          
+1066          #if(_CONTRAST_SUPPORT == _ON)
+1067          //--------------------------------------------------
+1068          // Description  : User Adjust HDR Contrast
+1069          // Input Value  : 0~100 , default value is 0
+1070          // Output Value : void
+1071          //--------------------------------------------------
+1072          void UserCommonHDRAdjustHDR10Contrast(BYTE ucContrast)
+1073          {
+1074   1          WORD pusData[4] = {0};
+1075   1      
+1076   1      #if(_CTS_TYPE == _CTS_GEN_1_12BIT)
+1077   1          pusData[3] = 0x800;
+1078   1      
+1079   1      #if(Project_ID == ID_MC_HK255XE05_SN238CS04_1_FHD200HZ_20250903)
+                      pusData[0] = 0x800;
+                  pusData[1] = 0x820;
+                  pusData[2] = 0x890;
+              #elif(Project_ID == ID_MC_HK255XE05_SN238CS04_1_FHD200HZ_20260226_EUROPE)
+                      pusData[0] = 0x800;
+                  pusData[1] = 0x820;
+                  pusData[2] = 0x890; 
+                      
+              #elif(Project_ID == ID_MC_HK255XE05_MV270FHB_NF6_FHD240HZ_20251215)
+                      pusData[0] = 0x810;//0x7F0;
+                  pusData[1] = 0x830;//0x7F0;
+                  pusData[2] = 0x860;//0x800;
+              #else
+1093   1          pusData[0] = (WORD)(((DWORD)pusData[3] * (ucContrast + 200) / 200) > 4095) ? 4095 : (WORD)((DWORD)pusD
+             -ata[3] * (ucContrast + 200) / 200);
+1094   1          pusData[1] = pusData[0];
+1095   1          pusData[2] = pusData[0];
+1096   1      #endif
+1097   1      
+1098   1      #else
+                  pusData[3] = 0x80;
+              
+                  pusData[0] = (WORD)(((DWORD)pusData[3] * (ucContrast + 200) / 200) > 255) ? 255 : (WORD)((DWORD)pusDat
+             -a[3] * (ucContrast + 200) / 200);
+                  pusData[1] = pusData[0];
+                  pusData[2] = pusData[0];
+              
+              #endif
+1106   1      
+1107   1          ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+1108   1          ScalerColorContrastAdjust(_CONTRAST_COEF_A, pusData);
+1109   1          ScalerColorContrastEnable(_FUNCTION_ON);
+1110   1      }
+1111          #endif
+1112          
+1113          #if(_DCC_FUNCTION == _ON)
+1114          //--------------------------------------------------
+1115          // Description  : Return HDR Max Mastering Lv Type for Light Enhance (540/1200/4000/10000/NOTM nit)
+1116          // Input Value  : None
+1117          // Output Value : HDR Max Mastering Lv Type for Light Enhance (540/1200/4000/10000/NOTM nit)
+1118          //--------------------------------------------------
+1119          EnumHDR10LightEnhanceMaxMasteringLv UserCommonHDRGetHDR10LvTypeForLightEnhance(void)
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 20  
+
+1120          {
+1121   1          BYTE pucTemp[2];
+1122   1          WORD usHDR10MaxMasteringLvNoTMUB = 0x0000;
+1123   1          WORD usMaxDisplayLv = UserCommonHDRGetHDR10MaxDisplayLv();
+1124   1          memset(pucTemp, 0, sizeof(pucTemp));
+1125   1      
+1126   1          if(usMaxDisplayLv > 0)
+1127   1          {
+1128   2              if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_540)
+1129   2              {
+1130   3                  return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540;
+1131   3              }
+1132   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_1200)
+1133   2              {
+1134   3                  return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_1200;
+1135   3              }
+1136   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_4000)
+1137   2              {
+1138   3                  return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_4000;
+1139   3              }
+1140   2              else
+1141   2              {
+1142   3                  return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_10000;
+1143   3              }
+1144   2          }
+1145   1          else
+1146   1          {
+1147   2              ScalerFlashRead(_OGC_FLASH_BANK, ((((WORD)_OGC_FLASH_PAGE) << 12) + _OGC_HDR10_NOTM_BOUND_ADDRESS 
+             -+ 2), 2, pucTemp);
+1148   2              usHDR10MaxMasteringLvNoTMUB = ((WORD)pucTemp[0] << 8) + pucTemp[1];
+1149   2      
+1150   2              switch(UserCommonHDRGetHDR10ModifyLvType(UserInterfaceHDRGetHDR10MaxMasteringLv0Type(), usHDR10Max
+             -MasteringLvNoTMUB))
+1151   2              {
+1152   3                  case _HDR10_MAX_MASTERING_LV_TYPE_540:
+1153   3                      return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540;
+1154   3                      break;
+1155   3      
+1156   3                  case _HDR10_MAX_MASTERING_LV_TYPE_1200:
+1157   3                      return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_1200;
+1158   3                      break;
+1159   3      
+1160   3                  case _HDR10_MAX_MASTERING_LV_TYPE_4000:
+1161   3                      return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_4000;
+1162   3                      break;
+1163   3      
+1164   3                  case _HDR10_MAX_MASTERING_LV_TYPE_10000:
+1165   3                      return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_10000;
+1166   3                      break;
+1167   3      
+1168   3                  case _HDR10_MAX_MASTERING_LV_TYPE_NOTM:
+1169   3      
+1170   3                      if(usHDR10MaxMasteringLvNoTMUB <= _HDR10_MAX_MASTERING_LV_540)
+1171   3                      {
+1172   4                          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540;
+1173   4                      }
+1174   3                      else if(usHDR10MaxMasteringLvNoTMUB <= _HDR10_MAX_MASTERING_LV_1200)
+1175   3                      {
+1176   4                          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_1200;
+1177   4                      }
+1178   3                      else if(usHDR10MaxMasteringLvNoTMUB <= _HDR10_MAX_MASTERING_LV_4000)
+1179   3                      {
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 21  
+
+1180   4                          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_4000;
+1181   4                      }
+1182   3                      else
+1183   3                      {
+1184   4                          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_10000;
+1185   4                      }
+1186   3                      break;
+1187   3      
+1188   3                  default:
+1189   3                      return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540;
+1190   3                      break;
+1191   3              }
+1192   2          }
+1193   1      
+1194   1          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_1200;
+1195   1      }
+1196          #endif
+1197          
+1198          //--------------------------------------------------
+1199          // Description  : Integrate HDR10 Light Enhance, HDR10 Color Enhance and ColorEffect Mode FW Flow
+1200          // Input Value  : EnumDisplayRegion
+1201          // Output Value : None
+1202          //--------------------------------------------------
+1203          void UserCommonHDRAdjustHDR10ColorEffect(void)
+1204          {
+1205   1          if(UserCommonHDRGetHDR10Status() == _HDR10_ON)
+1206   1          {
+1207   2              // In the process of color function off, for being effective simultaneously, the order should be I
+             -CM -> IAPS -> DCC.
+1208   2              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+1209   2      
+1210   2      #if(_ICM_SUPPORT == _ON)
+                      ScalerColorICMEnable(_FUNCTION_OFF);
+              #endif
+1213   2      
+1214   2      #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+                      ScalerColorIAPSGainEnable(_FUNCTION_OFF);
+              #endif
+1217   2      
+1218   2      #if(_DCC_FUNCTION == _ON)
+1219   2              ScalerColorDCCEnable(_FUNCTION_OFF);
+1220   2      #endif
+1221   2      
+1222   2      #if(_ICM_SUPPORT == _ON)
+                      ScalerColorICMLoadTable(UserInterfaceHDRGetHDR10ICMTable(), UserInterfaceHDRGetHDR10ICMTableBank()
+             -);
+              #endif
+1225   2      
+1226   2      #if(_DCC_FUNCTION == _ON)
+1227   2              ScalerColorDCCAdjust(UserInterfaceHDRGetHDR10DCCTable(UserCommonHDRGetHDR10LvTypeForLightEnhance()
+             -), UserInterfaceHDRGetHDR10DCCTableBank());
+1228   2      #endif
+1229   2      
+1230   2      #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+                      if(UserInterfaceHDRGetHDR10LightEnhanceStatus() != _HDR10_LIGHTENHANCE_OFF)
+                      {
+                          ScalerColorIAPSGainSoftClampAdjust(0x00);
+              
+                          switch(UserCommonHDRGetHDR10LvTypeForLightEnhance())
+                          {
+                              case _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540:
+                                  ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_540NIT);
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 22  
+
+                                  break;
+              
+                              case _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_1200:
+                                  ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_1200NIT);
+                                  break;
+              
+                              case _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_4000:
+                                  ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_4000NIT);
+                                  break;
+              
+                              case _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_10000:
+                                  ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_10000NIT);
+                                  break;
+              
+                              default:
+                                  ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_540NIT);
+                                  break;
+                          }
+                      }
+              #endif
+1259   2      
+1260   2              // In the process of color function on, for being effective simultaneously, the order should be IC
+             -M -> IAPS -> DCC.
+1261   2              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+1262   2      
+1263   2      #if(_ICM_SUPPORT == _ON)
+                      if(UserInterfaceHDRGetHDR10ICMTable() != NULL)
+                      {
+                          ScalerColorICMEnable(_FUNCTION_ON);
+                      }
+              #endif
+1269   2      
+1270   2      #if(_HDR10_LIGHT_ENHANCE_SUPPORT == _ON)
+                      if(UserInterfaceHDRGetHDR10LightEnhanceStatus() != _HDR10_LIGHTENHANCE_OFF)
+                      {
+                          ScalerColorIAPSGainEnable(_FUNCTION_ON);
+                      }
+              #endif
+1276   2      
+1277   2      #if(_DCC_FUNCTION == _ON)
+1278   2              if(UserInterfaceHDRGetHDR10DCCTable(UserCommonHDRGetHDR10LvTypeForLightEnhance()) != NULL)
+1279   2              {
+1280   3                  ScalerColorDCCEnable(_FUNCTION_ON);
+1281   3              }
+1282   2      #endif
+1283   2          }
+1284   1      }
+1285          
+1286          //--------------------------------------------------
+1287          // Description  : return HDR parameter Max Display Lv
+1288          // Input Value  : None
+1289          // Output Value : HDR Max Display Lv
+1290          //--------------------------------------------------
+1291          WORD UserCommonHDRGetHDR10MaxDisplayLv(void)
+1292          {
+1293   1      #if(_HDR10_TONEMAPPING_BY_MAXCLL_SUPPORT == _ON)
+                  if(g_stHDR10SaticMetadata.usMaxCLL == 0)
+                  {
+                      return (g_stHDR10SaticMetadata.usMaxDisplayMasteringLv);
+                  }
+                  else
+                  {
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 23  
+
+                      return (g_stHDR10SaticMetadata.usMaxCLL);
+                  }
+              #else
+1303   1          return (g_stHDR10SaticMetadata.usMaxDisplayMasteringLv);
+1304   1      #endif
+1305   1      }
+1306          #endif // End of #if(_HDR10_SUPPORT == _ON)
+1307          
+1308          #if(_FREESYNC_II_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : return applying Freesync II parameter or PCM parameter
+              // Input Value  : bit
+              // Output Value : _ON(Freesync II), _OFF(PCM)
+              //--------------------------------------------------
+              bit UserCommonHDRGetFreesynIIStatus(void)
+              {
+                  if((UserInterfaceGetFreeSyncEnable(SysSourceGetInputPort()) != _FREESYNC_SUPPORT_OFF) && (GET_FREESYNC
+             -_II_COLOR_SPACE_ENABLE_SETTING() == _ON))
+                  {
+                      return _ON;
+                  }
+                  else
+                  {
+                      return _OFF;
+                  }
+              }
+              //--------------------------------------------------
+              // Description  : Check AMD HDR change status
+              // Input Value  : EnumSourceSearchPort
+              // Output Value : HDR chagne status
+              //--------------------------------------------------
+              BYTE UserCommonHDRFreeSyncIIChangeStatus(void)
+              {
+                  BYTE ucFreeSyncIIChangeStatus = _FREESYNC_II_INFO_NO_CHANGE;
+              
+                  if(GET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING() != (g_stFreeSyncIIMetadata.b1NativeColorSpaceEnable))
+                  {
+                      SET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING(g_stFreeSyncIIMetadata.b1NativeColorSpaceEnable);
+                      ucFreeSyncIIChangeStatus |= _FREESYNC_II_COLOR_SPACE_CHANGE;
+                  }
+              
+                  if(GET_FREESYNC_II_COLOR_SPACE_ENABLE_SETTING() == _ON)
+                  {
+                      if(GET_FREESYNC_II_BACKLIGHT_CONTROL_ENABLE_SETTING() != (g_stFreeSyncIIMetadata.b1BacklightContro
+             -lEnable))
+                      {
+                          SET_FREESYNC_II_BACKLIGHT_CONTROL_ENABLE_SETTING(g_stFreeSyncIIMetadata.b1BacklightControlEnab
+             -le);
+                          ucFreeSyncIIChangeStatus |= _FREESYNC_II_BACKLIGHT_CONTROL_CHANGE;
+                      }
+              
+                      if(GET_FREESYNC_II_LOCAL_DIMMING_DISABLE_SETTING() != (g_stFreeSyncIIMetadata.b1LocalDimmingDisabl
+             -e))
+                      {
+                          SET_FREESYNC_II_LOCAL_DIMMING_DISABLE_SETTING(g_stFreeSyncIIMetadata.b1LocalDimmingDisable);
+                          ucFreeSyncIIChangeStatus |= _FREESYNC_II_LOCAL_DIMMING_CHANGE;
+                      }
+              
+                      if(GET_FREESYNC_II_EOTF_TYPE_SETTING() != (g_stFreeSyncIIMetadata.b5EOTFType))
+                      {
+                          SET_FREESYNC_II_EOTF_TYPE_SETTING(g_stFreeSyncIIMetadata.b5EOTFType);
+                          ucFreeSyncIIChangeStatus |= _FREESYNC_II_EOTF_TYPE_CHANGE;
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 24  
+
+                      }
+              
+                      if(GET_FREESYNC_II_BACKLIGHT_CONTROL_ENABLE_SETTING() == _ON)
+                      {
+                          if(GET_FREESYNC_II_BACKLIGHT_CONTROL_RATIO_SETTING() != (g_stFreeSyncIIMetadata.ucBacklightCon
+             -trolRatio))
+                          {
+                              SET_FREESYNC_II_BACKLIGHT_CONTROL_RATIO_SETTING(g_stFreeSyncIIMetadata.ucBacklightControlR
+             -atio);
+                              ucFreeSyncIIChangeStatus |= _FREESYNC_II_BACKLIGHT_RATIO_CHANGE;
+                          }
+                      }
+                  }
+              
+                  return ucFreeSyncIIChangeStatus;
+              }
+              
+              //--------------------------------------------------
+              // Description  : Adjust AMD HDR by EOTF Type
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void UserCommonHDRFreeSyncIIMode(void)
+              {
+                  WORD usFreesyncIIInputGammaFlashAddress = 0x0000;
+              
+                  // Input Gamma Setting
+                  switch(GET_FREESYNC_II_EOTF_TYPE_SETTING())
+                  {
+                      case _FREESYNC_II_EOTF_SRGB:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_SRGB_ADDRESS;
+                          break;
+              
+                      case _FREESYNC_II_EOTF_BT709:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_BT709_ADDRESS;
+                          break;
+              
+                      case _FREESYNC_II_EOTF_GAMMA_22:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_GAMMA22_ADDRESS;
+                          break;
+              
+                      case _FREESYNC_II_EOTF_GAMMA_26:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_GAMMA26_ADDRESS;
+                          break;
+              
+                      case _FREESYNC_II_EOTF_PQ_INTERIM:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_PQINTERIM_ADDRESS;
+                          break;
+              
+                      default:
+                          usFreesyncIIInputGammaFlashAddress = _FREESYNC_II_IG_SRGB_ADDRESS;
+                          break;
+                  }
+              
+              #if(_BRIGHTNESS_SUPPORT == _ON)
+                  ScalerColorBrightnessEnable(_FUNCTION_OFF);
+              #endif
+              
+              #if(_CONTRAST_SUPPORT == _ON)
+                  ScalerColorContrastEnable(_FUNCTION_OFF);
+              #endif
+              
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 25  
+
+              #if(_LOCAL_DIMMING_SUPPORT == _ON)
+                  if(UserCommonLocalDimmingGetEnableStatus() == _LD_ENABLE)
+                  {
+                      ScalerColorPanelUniformityEnable(_FUNCTION_OFF);
+                  }
+              #endif // End of #if(_LOCAL_DIMMING_SUPPORT == _ON)
+              
+              #if(_GLOBAL_COLOR_CONVERT_HUE_SATURATION_FUNCTION == _ON)
+                  // recover the color convertion
+                  UserCommonAdjustColorConvertHueSat(0, 100);
+              #endif
+              
+              #if(_PCM_FUNCTION == _ON)
+                  UserCommonAdjustPCM(_PCM_HDR_2084,
+                                      (g_pucDISP_FREESYNC_II_CALIBRATION_FLASH + usFreesyncIIInputGammaFlashAddress),
+                                      (g_pucDISP_FREESYNC_II_CALIBRATION_FLASH + _FREESYNC_II_OCC_GAMMA10_ADDRESS),
+                                      (g_pucDISP_FREESYNC_II_CALIBRATION_FLASH + _FREESYNC_II_PANEL_NATIVE_MATRIX_ADDRES
+             -S),
+                                      _FREESYNC_II_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
+              #endif
+              }
+              
+              //--------------------------------------------------
+              // Description  : None
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void UserCommonHDRFreeSyncIIProc(void)
+              {
+                  UserInterfaceAdjustBacklight(255);
+                  UserInterfaceHDRAdjustFreeSyncIIProc();
+              }
+              
+              //--------------------------------------------------
+              // Description  : Get FreeSync II Local Dimming Support Status
+              // Input Value  : Display Region
+              // Output Value : Local Dimming Support
+              //--------------------------------------------------
+              bit UserCommonHDRGetFreeSyncIILDDisable(void)
+              {
+                  return GET_FREESYNC_II_LOCAL_DIMMING_DISABLE_SETTING();
+              }
+              
+              //--------------------------------------------------
+              // Description  : Get FreeSync II EOTF Type
+              // Input Value  : Display Region
+              // Output Value : EOTF Type
+              //--------------------------------------------------
+              BYTE UserCommonHDRGetFreeSyncIIEOTFType(void)
+              {
+                  EnumFreeSyncIIEOTFType enumFreeSyncIIEOTFType = _FREESYNC_II_EOTF_NO_SUPPORT;
+                  enumFreeSyncIIEOTFType = GET_FREESYNC_II_EOTF_TYPE_SETTING();
+                  return enumFreeSyncIIEOTFType;
+              }
+              #endif // End of #if(_FREESYNC_II_SUPPORT == _ON)
+1472          
+1473          #endif // End of #if(_ULTRA_HDR_SUPPORT == _ON)
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1776    ----
+   CONSTANT SIZE    =     28    ----
+C51 COMPILER V8.12   USERCOMMONHDR                                                         09/16/2026 20:28:45 PAGE 26  
+
+   XDATA SIZE       =      2      67
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

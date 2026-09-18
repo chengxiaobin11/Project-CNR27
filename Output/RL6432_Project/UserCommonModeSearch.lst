@@ -1,0 +1,1289 @@
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONMODESEARCH
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonModeSearch.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonModeSearch.c LARGE OPTIMIZE(9,SP
+                    -EED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header
+                    -;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\He
+                    -ader;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_
+                    -Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\K
+                    -ernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RT
+                    -D Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DE
+                    -FINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCommonMo
+                    -deSearch.lst) OBJECT(.\Output\RL6432_Project\UserCommonModeSearch.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : UserCommonModeSearch.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __USER_COMMON_MODESEARCH__
+  18          
+  19          #include "UserCommonInclude.h"
+  20          
+  21          #if(_VGA_SUPPORT == _ON)
+  22          
+  23          //****************************************************************************
+  24          // DEFINITIONS / MACROS
+  25          //****************************************************************************
+  26          
+  27          //--------------------------------------------------
+  28          // Definitions of FIFO Mode Match Status
+  29          //--------------------------------------------------
+  30          #define _MODE_NOT_EXIST_IN_FIFO                     251
+  31          
+  32          //--------------------------------------------------
+  33          // Definitions of VTotal Tolerance For Preset Mode
+  34          //--------------------------------------------------
+  35          #define _PRESET_MODE_VTOTAL_TOLERANCE               2
+  36          
+  37          //--------------------------------------------------
+  38          // Definitions of V Height Tolerance For Preset Mode
+  39          //--------------------------------------------------
+  40          #define _PRESET_MODE_VHEIGHT_TOLERANCE              2
+  41          
+  42          //--------------------------------------------------
+  43          // Definitions of The Diffrence Between GTF Height and Mode Table Height
+  44          //--------------------------------------------------
+  45          #define _USER_MODE_VHEIGHT_GTF_DIFF_TOL             20
+  46          #define _USER_MODE_VHEIGHT_GTF_DIFF_MIN             3
+  47          
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 2   
+
+  48          //--------------------------------------------------
+  49          // Definitions of H Ratio (IHWidth/IHTotal) Tolerance
+  50          //--------------------------------------------------
+  51          #define _H_RATIO_TOLERANCE                          150
+  52          
+  53          //--------------------------------------------------
+  54          // Marcos for Extracting Mode Table Information
+  55          //--------------------------------------------------
+  56          #define GET_MODE_TABLE_POLARITY(x)                  ((x).ucMiscFlag & 0x0F)
+  57          #define GET_MODE_TABLE_INTERLACED(x)                ((bit)(((x).ucMiscFlag & _INTERLACE_MODE) >> 5))
+  58          #define GET_MODE_TABLE_VIDEO(x)                     ((bit)((x).ucMiscFlag & (_VIDEO_MODE_GROUP1 | _VIDEO_M
+             -ODE_GROUP2 | _VIDEO_MODE_GROUP3)))
+  59          
+  60          //--------------------------------------------------
+  61          // Macro of Mode Search Type
+  62          //--------------------------------------------------
+  63          #define GET_MODE_SEARCH_TYPE()                      ((bit)(g_ucModeCtrl & _BIT0))
+  64          #define SET_MODE_SEARCH_TYPE(x)                     (g_ucModeCtrl = ((g_ucModeCtrl & ~(_BIT0)) | ((x) << 0
+             -)))
+  65          
+  66          //--------------------------------------------------
+  67          // Macro of Input Mode GTF Height
+  68          //--------------------------------------------------
+  69          #define GET_INPUT_MODE_GTF_HEIGHT()                 (g_usCurrGTFValue)
+  70          #define SET_INPUT_MODE_GTF_HEIGHT(x)                (g_usCurrGTFValue = (x))
+  71          
+  72          
+  73          //****************************************************************************
+  74          // STRUCT / TYPE / ENUM DEFINITTIONS
+  75          //****************************************************************************
+  76          
+  77          //--------------------------------------------------
+  78          // Check Mode VGA Result Enum
+  79          //--------------------------------------------------
+  80          typedef enum
+  81          {
+  82              _MODE_INDIRECT_DEFLECTION_PIC = 0,
+  83              _MODE_DIRECT_DEFLECTION_PIC,
+  84              _MODE_INDIRECT_MIN_CLOCK,
+  85              _MODE_DIRECT_MIN_CLOCK,
+  86              _MODE_INDIRECT_SUCCESS,
+  87              _MODE_DIRECT_SUCCESS,
+  88          }EnumModeFrameSyncGradeResult;
+  89          
+  90          
+  91          //****************************************************************************
+  92          // CODE TABLES
+  93          //****************************************************************************
+  94          
+  95          
+  96          //****************************************************************************
+  97          // VARIABLE DECLARATIONS
+  98          //****************************************************************************
+  99          BYTE g_ucModeCtrl;
+ 100          WORD g_usCurrGTFValue;
+ 101          
+ 102          
+ 103          //****************************************************************************
+ 104          // FUNCTION DECLARATIONS
+ 105          //****************************************************************************
+ 106          BYTE UserCommonModeSearchModeVGA(void);
+ 107          bit UserCommonModeSearchOORModeByMeasureInfo(void);
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 3   
+
+ 108          BYTE UserCommonModeSearchPresetMode(void);
+ 109          BYTE UserCommonModeSearchUserMode(void);
+ 110          bit UserCommonModeSearchCheckPresetMode(BYTE ucModeIndex);
+ 111          bit UserCommonModeSearchCheckUserModeMode(BYTE ucModeIndex);
+ 112          BYTE UserCommonModeSearchBestMode(BYTE ucCurrModeIndex, BYTE ucLastModeIndex);
+ 113          bit UserCommonModeSearchCheckModeSetting(BYTE ucModeIndex);
+ 114          bit UserCommonModeSearchPresetModeCheckOOR(BYTE ucModeIndex);
+ 115          BYTE UserCommonModeSearchCompareByMultipleCondition(BYTE ucCurrModeIndex, BYTE ucLastModeIndex);
+ 116          
+ 117          #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+              bit UserCommonModeSearchCompareIVHeight(BYTE ucLastModeIndex, BYTE ucCurrModeIndex, BYTE *pucModeBestInx);
+              #endif // #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+ 120          
+ 121          WORD UserCommonModeSearchGetHeightByGTF(WORD usVTotal, WORD usVFreq);
+ 122          bit UserCommonModeSearchCheckHFreq(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx);
+ 123          bit UserCommonModeSearchCheckVFreq(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx);
+ 124          bit UserCommonModeSearchCheckGTFHeight(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx);
+ 125          bit UserCommonModeSearchHVSyncPulseCheck(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx);
+ 126          bit UserCommonModeSearchCompareByPolarity(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+             -;
+ 127          bit UserCommonModeSearchCompareByInterlace(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx
+             -);
+ 128          bit UserCommonModeSearchCompareByVideoModeFlg(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBest
+             -Inx);
+ 129          void UserCommonModeSearchFIFOSaveModeInfo(BYTE ucIndex);
+ 130          BYTE UserCommonModeSearchCheckFIFOModeSaved(BYTE ucModeIndex);
+ 131          void UserCommonModeSearchInitalUserAndCenterData(BYTE ucIndex);
+ 132          void UserCommonModeSearchUpdateInputDataRefModeTbl(BYTE ucIndex);
+ 133          void UserCommonModeSearchUpdateInputDataRefFIFO(BYTE ucFifoIndex, BYTE ucIndex);
+ 134          BYTE UserCommonModeSearchGetModeVideoType(BYTE ucIndex);
+ 135          bit UserCommonModeSearchCheckFIFOSetting(StructVGAModeUserDataType stFifoUserData, BYTE ucModeIndex);
+ 136          WORD UserCommonModeSearchGetModetableTimingDataItem(BYTE ucModeNumber, EnumTimingInfoSelect enumTimingInfo
+             -);
+ 137          bit UserCommonModeSearchCheckPresetModeTable(BYTE ucMatchmode);
+ 138          
+ 139          
+ 140          //****************************************************************************
+ 141          // FUNCTION DEFINITIONS
+ 142          //****************************************************************************
+ 143          
+ 144          //--------------------------------------------------
+ 145          // Description  : Search mode for VGA
+ 146          // Input Value  : None
+ 147          // Output Value : Mode number
+ 148          //--------------------------------------------------
+ 149          BYTE UserCommonModeSearchModeVGA(void)
+ 150          {
+ 151   1          BYTE ucModeIndex = _MODE_NOSUPPORT;
+ 152   1      
+ 153   1          // Check OOR Mode By Measure Information.
+ 154   1          if(UserCommonModeSearchOORModeByMeasureInfo() == _TRUE)
+ 155   1          {
+ 156   2              return _MODE_NOSUPPORT;
+ 157   2          }
+ 158   1      
+ 159   1          // Search Preset Mode
+ 160   1          ucModeIndex = UserCommonModeSearchPresetMode();
+ 161   1      
+ 162   1          if((ucModeIndex < _MAX_PRESET_MODE) && (UserCommonModeSearchPresetModeCheckOOR(ucModeIndex) == _TRUE))
+ 163   1          {
+ 164   2              DebugMessageAnalog("Pixel Rate Over 220M ", GET_ADC_LIMIT_CLOCK());
+ 165   2      
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 4   
+
+ 166   2              return _MODE_NOSUPPORT;
+ 167   2          }
+ 168   1      
+ 169   1          // Check Result
+ 170   1          if(ucModeIndex >= _MAX_PRESET_MODE)
+ 171   1          {
+ 172   2              // Search User Mode
+ 173   2              ucModeIndex = UserCommonModeSearchUserMode();
+ 174   2      
+ 175   2              DebugMessageAnalog("User Mode Search Mode No. ", ucModeIndex);
+ 176   2          }
+ 177   1      
+ 178   1          if(ucModeIndex < _MAX_PRESET_MODE)
+ 179   1          {
+ 180   2              // User Check ModeIndex
+ 181   2              ucModeIndex = UserInterfaceGetVGAConfuseMode(ucModeIndex);
+ 182   2      
+ 183   2              // Save FIFO Mode
+ 184   2              UserCommonModeSearchFIFOSaveModeInfo(ucModeIndex);
+ 185   2          }
+ 186   1      
+ 187   1          DebugMessageAnalog("3. ucModeIndex_FIFO", ucModeIndex);
+ 188   1      
+ 189   1          return ucModeIndex;
+ 190   1      }
+ 191          
+ 192          //--------------------------------------------------
+ 193          // Description  : Search fit OOR Mode
+ 194          // Input Value  : None
+ 195          // Output Value : _TRUE : is OOR Mode
+ 196          //             _FALSE: not OOR Mode
+ 197          //--------------------------------------------------
+ 198          bit UserCommonModeSearchOORModeByMeasureInfo(void)
+ 199          {
+ 200   1          if((GET_INPUT_TIMING_HFREQ() < _OOR_H_FREQ_LOWER_BOUND) ||
+ 201   1             (GET_INPUT_TIMING_HFREQ() > _OOR_H_FREQ_UPPER_BOUND) ||
+ 202   1             (GET_INPUT_TIMING_VFREQ() < _OOR_V_FREQ_LOWER_BOUND) ||
+ 203   1             (GET_INPUT_TIMING_VFREQ() > _OOR_V_FREQ_UPPER_BOUND))
+ 204   1          {
+ 205   2              return _TRUE;
+ 206   2          }
+ 207   1      
+ 208   1          return _FALSE;
+ 209   1      }
+ 210          
+ 211          //--------------------------------------------------
+ 212          // Description  : Search Preset Mode
+ 213          // Input Value  : None
+ 214          // Output Value : ModeIndex
+ 215          //--------------------------------------------------
+ 216          BYTE UserCommonModeSearchPresetMode(void)
+ 217          {
+ 218   1          BYTE ucCnt = 0;
+ 219   1          BYTE ucBestModeIndex = _MODE_NOSUPPORT;
+ 220   1      
+ 221   1          for(ucCnt = 0; ucCnt < _MAX_PRESET_MODE; ++ucCnt)
+ 222   1          {
+ 223   2              if(UserCommonModeSearchCheckPresetMode(ucCnt) == _TRUE)
+ 224   2              {
+ 225   3                  DebugMessageAnalog("4. PresetMode Number =", ucCnt);
+ 226   3      
+ 227   3                  ucBestModeIndex = UserCommonModeSearchBestMode(ucCnt, ucBestModeIndex);
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 5   
+
+ 228   3              }
+ 229   2          }
+ 230   1      
+ 231   1          return ucBestModeIndex;
+ 232   1      }
+ 233          
+ 234          //--------------------------------------------------
+ 235          // Description  : Search User Mode
+ 236          // Input Value  : None
+ 237          // Output Value : ModeIndex
+ 238          //--------------------------------------------------
+ 239          BYTE UserCommonModeSearchUserMode(void)
+ 240          {
+ 241   1          BYTE ucCnt = 0;
+ 242   1          BYTE ucBestModeIndex = _MODE_NOSUPPORT;
+ 243   1      
+ 244   1          SET_INPUT_MODE_GTF_HEIGHT(UserCommonModeSearchGetHeightByGTF(GET_INPUT_TIMING_VTOTAL(), GET_INPUT_TIMI
+             -NG_VFREQ()));
+ 245   1      
+ 246   1          DebugMessageAnalog("2. GTF Height = ", GET_INPUT_MODE_GTF_HEIGHT());
+ 247   1      
+ 248   1          // Search Best Mode
+ 249   1          for(ucCnt = 0; ucCnt < _MAX_PRESET_MODE; ++ucCnt)
+ 250   1          {
+ 251   2              if(UserCommonModeSearchCheckUserModeMode(ucCnt) == _TRUE)
+ 252   2              {
+ 253   3                  DebugMessageAnalog("4. UserMode Number =", ucCnt);
+ 254   3      
+ 255   3                  ucBestModeIndex = UserCommonModeSearchBestMode(ucCnt, ucBestModeIndex);
+ 256   3              }
+ 257   2          }
+ 258   1      
+ 259   1          return ucBestModeIndex;
+ 260   1      }
+ 261          
+ 262          //--------------------------------------------------
+ 263          // Description  : Preset Mode Flag Initial
+ 264          // Input Value  : ModeIndex
+ 265          // Output Value : _TRUE/_FALSE
+ 266          //--------------------------------------------------
+ 267          bit UserCommonModeSearchCheckPresetMode(BYTE ucModeIndex)
+ 268          {
+ 269   1          if(abs(GET_INPUT_TIMING_VFREQ() - tINPUTMODE_PRESET_TABLE[ucModeIndex].usIVFreq) > tINPUTMODE_PRESET_T
+             -ABLE[ucModeIndex].ucIVFreqTolerance)
+ 270   1          {
+ 271   2              return _FALSE;
+ 272   2          }
+ 273   1      
+ 274   1          if(abs(GET_INPUT_TIMING_HFREQ() - tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHFreq) > tINPUTMODE_PRESET_T
+             -ABLE[ucModeIndex].ucIHFreqTolerance)
+ 275   1          {
+ 276   2              return _FALSE;
+ 277   2          }
+ 278   1      
+ 279   1          if(abs(GET_INPUT_TIMING_VTOTAL() - tINPUTMODE_PRESET_TABLE[ucModeIndex].usIVTotal) > _PRESET_MODE_VTOT
+             -AL_TOLERANCE)
+ 280   1          {
+ 281   2              return _FALSE;
+ 282   2          }
+ 283   1      
+ 284   1          SET_MODE_SEARCH_TYPE(_PRESET_MODE_TYPE);
+ 285   1      
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 6   
+
+ 286   1          return _TRUE;
+ 287   1      }
+ 288          
+ 289          //--------------------------------------------------
+ 290          // Description  : User Mode Flag Initial
+ 291          // Input Value  : ModeIndex
+ 292          // Output Value : _TRUE/_FALSE
+ 293          //--------------------------------------------------
+ 294          bit UserCommonModeSearchCheckUserModeMode(BYTE ucModeIndex)
+ 295          {
+ 296   1          if(abs(GET_INPUT_MODE_GTF_HEIGHT() - UserCommonModeSearchGetHeightByGTF(tINPUTMODE_PRESET_TABLE[ucMode
+             -Index].usIVTotal, tINPUTMODE_PRESET_TABLE[ucModeIndex].usIVFreq)) > _USER_MODE_VHEIGHT_GTF_DIFF_TOL)
+ 297   1          {
+ 298   2              return _FALSE;
+ 299   2          }
+ 300   1      
+ 301   1          // Set User Mode Flag
+ 302   1          SET_MODE_SEARCH_TYPE(_USER_MODE_TYPE);
+ 303   1      
+ 304   1          return _TRUE;
+ 305   1      }
+ 306          
+ 307          //--------------------------------------------------
+ 308          // Description  : Search the Best Mode between two ModeIndex.
+ 309          // Input Value  : ucCurrModeIndex --> Current mode number index
+ 310          //                ucLastModeIndex --> Last mode number index
+ 311          // Output Value : Best mode number index
+ 312          //--------------------------------------------------
+ 313          BYTE UserCommonModeSearchBestMode(BYTE ucCurrModeIndex, BYTE ucLastModeIndex)
+ 314          {
+ 315   1          if(UserCommonModeSearchCheckModeSetting(ucCurrModeIndex) == _FALSE)
+ 316   1          {
+ 317   2              DebugMessageAnalog("2. Current Mode have problem", ucLastModeIndex);
+ 318   2      
+ 319   2              return ucLastModeIndex;
+ 320   2          }
+ 321   1      
+ 322   1          if(ucLastModeIndex >= _MAX_PRESET_MODE)
+ 323   1          {
+ 324   2              DebugMessageAnalog("2. Find Out First Mode", ucCurrModeIndex);
+ 325   2      
+ 326   2              return ucCurrModeIndex;
+ 327   2          }
+ 328   1          else
+ 329   1          {
+ 330   2              return UserCommonModeSearchCompareByMultipleCondition(ucCurrModeIndex, ucLastModeIndex);
+ 331   2          }
+ 332   1      
+ 333   1          return ucLastModeIndex;
+ 334   1      }
+ 335          
+ 336          //--------------------------------------------------
+ 337          // Description  : Check Mode Setting in System
+ 338          // Input Value  : ModeIndex
+ 339          // Output Value : _TRUE: The Mode Setting is ok.
+ 340          //--------------------------------------------------
+ 341          bit UserCommonModeSearchCheckModeSetting(BYTE ucModeIndex)
+ 342          {
+ 343   1          if(ucModeIndex >= _MAX_PRESET_MODE)
+ 344   1          {
+ 345   2              return _FALSE;
+ 346   2          }
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 7   
+
+ 347   1      
+ 348   1          if(GET_MODE_SEARCH_TYPE() == _USER_MODE_TYPE)
+ 349   1          {
+ 350   2              // InputMode.IHTotal should be less than IHTotal Maximum.
+ 351   2              if(tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHTotal > GET_ADC_LIMIT_CLOCK())
+ 352   2              {
+ 353   3                  return _FALSE;
+ 354   3              }
+ 355   2          }
+ 356   1      
+ 357   1          // Measured IVTotal should be greater than ModeTable.IVHeight
+ 358   1          if(GET_INPUT_TIMING_VTOTAL() <= tINPUTMODE_PRESET_TABLE[ucModeIndex].usIVHeight)
+ 359   1          {
+ 360   2              return _FALSE;
+ 361   2          }
+ 362   1      
+ 363   1          // Mode table self cheking condition
+ 364   1          if(tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHTotal <= (tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHStartPo
+             -s + tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHWidth))
+ 365   1          {
+ 366   2              return _FALSE;
+ 367   2          }
+ 368   1      
+ 369   1          return _TRUE;
+ 370   1      }
+ 371          
+ 372          //--------------------------------------------------
+ 373          // Description  : Preset Mode OOR Check
+ 374          // Input Value  : ModeIndex
+ 375          // Output Value : _TRUE --> OOR
+ 376          //--------------------------------------------------
+ 377          bit UserCommonModeSearchPresetModeCheckOOR(BYTE ucModeIndex)
+ 378          {
+ 379   1          // InputMode.IHTotal should be less than IHTotal Maximum.
+ 380   1          if(tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHTotal > GET_ADC_LIMIT_CLOCK())
+ 381   1          {
+ 382   2              return _TRUE;
+ 383   2          }
+ 384   1      
+ 385   1          return _FALSE;
+ 386   1      }
+ 387          
+ 388          //--------------------------------------------------
+ 389          // Description  : Compare IHWidth between two ModeIndex.
+ 390          // Input Value  : ucCurrModeIndex --> Current mode number index
+ 391          //                ucLastModeIndex --> Last mode number index
+ 392          // Output Value : Best mode number index
+ 393          //--------------------------------------------------
+ 394          BYTE UserCommonModeSearchCompareByMultipleCondition(BYTE ucCurrModeIndex, BYTE ucLastModeIndex)
+ 395          {
+ 396   1          BYTE ucBestModeInx = ucLastModeIndex;
+ 397   1      
+ 398   1      #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+                  DWORD ulRatioM = 0;
+              #endif // End of #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+ 401   1      
+ 402   1          DWORD ulRatio1 = 0;
+ 403   1          DWORD ulRatio2 = 0;
+ 404   1      
+ 405   1          if((ucCurrModeIndex >= _MAX_PRESET_MODE) && (ucLastModeIndex >= _MAX_PRESET_MODE))
+ 406   1          {
+ 407   2              return _MODE_NOSUPPORT;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 8   
+
+ 408   2          }
+ 409   1          else if(ucCurrModeIndex >= _MAX_PRESET_MODE)
+ 410   1          {
+ 411   2              return ucLastModeIndex;
+ 412   2          }
+ 413   1          else if(ucLastModeIndex >= _MAX_PRESET_MODE)
+ 414   1          {
+ 415   2              return ucCurrModeIndex;
+ 416   2          }
+ 417   1      
+ 418   1          if(GET_MODE_SEARCH_TYPE() == _USER_MODE_TYPE)
+ 419   1          {
+ 420   2              if(UserCommonModeSearchCheckHFreq(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _TRUE)
+ 421   2              {
+ 422   3                  DebugMessageAnalog("2. User Mode Detect By H-Freq", ucBestModeInx);
+ 423   3      
+ 424   3                  return ucBestModeInx;
+ 425   3              }
+ 426   2              else if(UserCommonModeSearchCheckVFreq(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _TRUE)
+ 427   2              {
+ 428   3                  DebugMessageAnalog("2. User Mode Detect By V-Freq", ucBestModeInx);
+ 429   3      
+ 430   3                  return ucBestModeInx;
+ 431   3              }
+ 432   2              else if(UserCommonModeSearchCheckGTFHeight(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _T
+             -RUE)
+ 433   2              {
+ 434   3                  DebugMessageAnalog("2. User Mode Detect By GTF Height Closer", ucBestModeInx);
+ 435   3      
+ 436   3                  return ucBestModeInx;
+ 437   3              }
+ 438   2      
+ 439   2              DebugMessageAnalog("2. User Mode Continue PK By Muti Condition", ucBestModeInx);
+ 440   2          }
+ 441   1      
+ 442   1      #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+                  //////////////////////////////////////////////////////////////////////
+                  //  Ming-Yen :                                                      //
+                  //                                                                  //
+                  //                     Measured IHWidth (By Active Measurement)     //
+                  //  Measured Ratio = --------------------------------------------   //
+                  //                                g_usAdcClockLimit                 //
+                  //                                                                  //
+                  //                                                                  //
+                  //                             IHWidth 1                            //
+                  //  R1 (Ratio of Mode 1) = -----------------                        //
+                  //                             IHTotal 1                            //
+                  //                                                                  //
+                  //                                                                  //
+                  //                             IHWidth 2                            //
+                  //  R2 (Ratio of Mode 2) = -----------------                        //
+                  //                             IHTotal 2                            //
+                  //                                                                  //
+                  //                                                                  //
+                  //  If IHWidth 1 < IHWidth 2                                        //
+                  //                                                                  //
+                  //  We select Mode 1 if Measured Ration is in the range between     //
+                  //  R1 - (R2 - R1) * 25% and R1 + (R2 - R1) * 25%, otherwise        //
+                  //  Mode 2 will always be the winnner.                              //
+                  //                                                                  //
+                  //////////////////////////////////////////////////////////////////////
+              
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 9   
+
+                  ulRatioM = ((DWORD)GET_INPUT_TIMING_HWIDTH() * 10000 + (GET_INPUT_TIMING_HTOTAL() / 2)) / GET_INPUT_TI
+             -MING_HTOTAL();
+              
+              #endif // End of #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+ 472   1      
+ 473   1          ulRatio1 = ((DWORD)tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIHWidth * 10000 + (tINPUTMODE_PRESET_TAB
+             -LE[ucCurrModeIndex].usIHTotal / 2)) / tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIHTotal;
+ 474   1          ulRatio2 = ((DWORD)tINPUTMODE_PRESET_TABLE[ucLastModeIndex].usIHWidth * 10000 + (tINPUTMODE_PRESET_TAB
+             -LE[ucLastModeIndex].usIHTotal / 2)) / tINPUTMODE_PRESET_TABLE[ucLastModeIndex].usIHTotal;
+ 475   1      
+ 476   1          if(UserCommonModeSearchHVSyncPulseCheck(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _TRUE)
+ 477   1          {
+ 478   2              DebugMessageAnalog("2. Detect By Pulse", ucBestModeInx);
+ 479   2              return ucBestModeInx;
+ 480   2          }
+ 481   1          else if(UserCommonModeSearchCompareByInterlace(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _T
+             -RUE)
+ 482   1          {
+ 483   2              DebugMessageAnalog("2. Detect By Interlace", ucBestModeInx);
+ 484   2              return ucBestModeInx;
+ 485   2          }
+ 486   1          else if(UserCommonModeSearchCompareByPolarity(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _TR
+             -UE)
+ 487   1          {
+ 488   2              DebugMessageAnalog("2. Detect By Polarity", ucBestModeInx);
+ 489   2              return ucBestModeInx;
+ 490   2          }
+ 491   1          else if(UserCommonModeSearchCompareByVideoModeFlg(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) ==
+             - _TRUE)
+ 492   1          {
+ 493   2              DebugMessageAnalog("2. Detect By Video Flag", ucBestModeInx);
+ 494   2              return ucBestModeInx;
+ 495   2          }
+ 496   1      #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+                  else if(UserCommonModeSearchCompareIVHeight(ucLastModeIndex, ucCurrModeIndex, &ucBestModeInx) == _TRUE
+             -)
+                  {
+                      DebugMessageAnalog("2. Detect By IVHeight", ucBestModeInx);
+                      return ucBestModeInx;
+                  }
+                  else if((ABSDWORD(ulRatio1, ulRatio2) > _H_RATIO_TOLERANCE) && (ABSDWORD(ulRatioM, ulRatio1) < ((ABSDW
+             -ORD(ulRatio1, ulRatio2) + 2) / 4)))
+                  {
+                      DebugMessageAnalog("2. Detect By Width 1", ucCurrModeIndex);
+                      return ucCurrModeIndex;
+                  }
+                  else if((ABSDWORD(ulRatio1, ulRatio2) > _H_RATIO_TOLERANCE) && (ABSDWORD(ulRatioM, ulRatio2) < ((ABSDW
+             -ORD(ulRatio1, ulRatio2) + 2) / 4)))
+                  {
+                      DebugMessageAnalog("2. Detect By Width 2", ucLastModeIndex);
+                      return ucLastModeIndex;
+                  }
+              #endif // End of #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+ 513   1          else
+ 514   1          {
+ 515   2              // Common case select the mode which have a bigger width
+ 516   2              if(tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIHWidth > tINPUTMODE_PRESET_TABLE[ucLastModeIndex].u
+             -sIHWidth)
+ 517   2              {
+ 518   3                  DebugMessageAnalog("2. Detect By Bigger Width 1", ucCurrModeIndex);
+ 519   3      
+ 520   3                  return ucCurrModeIndex;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 10  
+
+ 521   3              }
+ 522   2              else
+ 523   2              {
+ 524   3                  DebugMessageAnalog("2. Detect By Bigger Width 2", ucLastModeIndex);
+ 525   3      
+ 526   3                  return ucLastModeIndex;
+ 527   3              }
+ 528   2          }
+ 529   1      
+ 530   1          return ucLastModeIndex;
+ 531   1      }
+ 532          
+ 533          #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Compare IVHeight between two ModeIndex in preset mode group.
+              // Input Value  : ucCurrModeIndex --> Current mode number index
+              //                ucLastModeIndex --> Last mode number index
+              // Output Value : Mode number index
+              //--------------------------------------------------
+              bit UserCommonModeSearchCompareIVHeight(BYTE ucLastModeIndex, BYTE ucCurrModeIndex, BYTE *pucModeBestInx)
+              {
+                  if(tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIVHeight == tINPUTMODE_PRESET_TABLE[ucLastModeIndex].usI
+             -VHeight)
+                  {
+                      return _FALSE;
+                  }
+              
+                  if(tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIVHeight > tINPUTMODE_PRESET_TABLE[ucLastModeIndex].usIV
+             -Height)
+                  {
+                      if(GET_INPUT_TIMING_VHEIGHT() > (tINPUTMODE_PRESET_TABLE[ucLastModeIndex].usIVHeight + _PRESET_MOD
+             -E_VHEIGHT_TOLERANCE))
+                      {
+                          *pucModeBestInx = ucCurrModeIndex;
+              
+                          return _TRUE;
+                      }
+                  }
+                  else
+                  {
+                      if(GET_INPUT_TIMING_VHEIGHT() > (tINPUTMODE_PRESET_TABLE[ucCurrModeIndex].usIVHeight + _PRESET_MOD
+             -E_VHEIGHT_TOLERANCE))
+                      {
+                          *pucModeBestInx = ucLastModeIndex;
+              
+                          return _TRUE;
+                      }
+                  }
+              
+                  return _FALSE;
+              }
+              #endif // End of #if(_MODE_SEARCH_BY_ACTIVE_MEASURE_SUPPORT == _ON)
+ 569          
+ 570          //--------------------------------------------------
+ 571          // Description : Get A Std Mode Height And Check Is Full
+ 572          // Input Value  : Measured Height
+ 573          // Output Value : Verified Height
+ 574          //--------------------------------------------------
+ 575          WORD UserCommonModeSearchGetHeightByGTF(WORD usVTotal, WORD usVFreq)
+ 576          {
+ 577   1          /**********************************************************************************************
+ 578   1          // Cminimum : minimum time of vertical sync + back porch interval, default value is 550 (us) //
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 11  
+
+ 579   1          // Cfrontporch : minimum front porch in lines(vertical),default value is 3 (lines)           //
+ 580   1          // Height = Vtotal / (1 + (Vfreq / (20000 / 11 - Vfreq))) - 3                                //
+ 581   1          // Height = Vtotal - (Vtotal * 11 * Vfreq / 200000) - 3                                      //
+ 582   1          **********************************************************************************************/
+ 583   1          return (usVTotal - (WORD)((DWORD)11 * usVTotal * usVFreq / 200000) - 3);
+ 584   1      }
+ 585          
+ 586          //--------------------------------------------------
+ 587          // Description  : Check Mode By Horizontal Frequency
+ 588          // Input Value  : ucCurrentModeCnt  --> Current ModeIndex
+ 589          //                ucLastModeCnt     --> Last ModeIndex
+ 590          //                pModeBestInx      --> Return ModeIndex Pointer
+ 591          // Output Value : New ModeIndex
+ 592          //--------------------------------------------------
+ 593          bit UserCommonModeSearchCheckHFreq(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+ 594          {
+ 595   1          if((abs(GET_INPUT_TIMING_HFREQ() - tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIHFreq) <= tINPUTMODE_PRES
+             -ET_TABLE[ucLastModeCnt].ucIHFreqTolerance) &&
+ 596   1             (abs(GET_INPUT_TIMING_HFREQ() - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].usIHFreq) > tINPUTMODE_PR
+             -ESET_TABLE[ucCurrentModeCnt].ucIHFreqTolerance))
+ 597   1          {
+ 598   2              *pucModeBestInx = ucLastModeCnt;
+ 599   2      
+ 600   2              return _TRUE;
+ 601   2          }
+ 602   1          else if((abs(GET_INPUT_TIMING_HFREQ() - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].usIHFreq) <= tINPUTM
+             -ODE_PRESET_TABLE[ucCurrentModeCnt].ucIHFreqTolerance) &&
+ 603   1                  (abs(GET_INPUT_TIMING_HFREQ() - tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIHFreq) > tINPUTMODE_
+             -PRESET_TABLE[ucLastModeCnt].ucIHFreqTolerance))
+ 604   1          {
+ 605   2              *pucModeBestInx = ucCurrentModeCnt;
+ 606   2      
+ 607   2              return _TRUE;
+ 608   2          }
+ 609   1      
+ 610   1          return _FALSE;
+ 611   1      }
+ 612          
+ 613          //--------------------------------------------------
+ 614          // Description  : Check Mode By Vertical Frequency
+ 615          // Input Value  : ucCurrentModeCnt  --> Current ModeIndex
+ 616          //                ucLastModeCnt     --> Last ModeIndex
+ 617          //                pModeBestInx      --> Return ModeIndex Pointer
+ 618          // Output Value : New ModeIndex
+ 619          //--------------------------------------------------
+ 620          bit UserCommonModeSearchCheckVFreq(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+ 621          {
+ 622   1          if((abs(GET_INPUT_TIMING_VFREQ() - tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIVFreq) <= tINPUTMODE_PRES
+             -ET_TABLE[ucLastModeCnt].ucIVFreqTolerance) &&
+ 623   1             (abs(GET_INPUT_TIMING_VFREQ() - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].usIVFreq) > tINPUTMODE_PR
+             -ESET_TABLE[ucCurrentModeCnt].ucIVFreqTolerance))
+ 624   1          {
+ 625   2              *pucModeBestInx = ucLastModeCnt;
+ 626   2      
+ 627   2              return _TRUE;
+ 628   2          }
+ 629   1          else if((abs(GET_INPUT_TIMING_VFREQ() - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].usIVFreq) <= tINPUTM
+             -ODE_PRESET_TABLE[ucCurrentModeCnt].ucIVFreqTolerance) &&
+ 630   1                  (abs(GET_INPUT_TIMING_VFREQ() - tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIVFreq) > tINPUTMODE_
+             -PRESET_TABLE[ucLastModeCnt].ucIVFreqTolerance))
+ 631   1          {
+ 632   2              *pucModeBestInx = ucCurrentModeCnt;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 12  
+
+ 633   2      
+ 634   2              return _TRUE;
+ 635   2          }
+ 636   1      
+ 637   1          return _FALSE;
+ 638   1      }
+ 639          
+ 640          //--------------------------------------------------
+ 641          // Description  : Check Mode By GTF Height
+ 642          // Input Value  : ucCurrentModeCnt  --> Current ModeIndex
+ 643          //                ucLastModeCnt     --> Last ModeIndex
+ 644          //                pModeBestInx      --> Return ModeIndex Pointer
+ 645          // Output Value : New ModeIndex
+ 646          //--------------------------------------------------
+ 647          bit UserCommonModeSearchCheckGTFHeight(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+ 648          {
+ 649   1          WORD usDiffCurr = 0;
+ 650   1          WORD usDiffLast = 0;
+ 651   1      
+ 652   1          // Can't be matched by GTF height closer If the PK Mode are Confuse Mode
+ 653   1          if((abs(tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIHFreq - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].us
+             -IHFreq) <= _HFREQ_TOLERANCE) &&
+ 654   1             (abs(tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIVFreq - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].us
+             -IVFreq) <= _VFREQ_TOLERANCE) &&
+ 655   1             (abs(tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIVTotal - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].u
+             -sIVTotal) <= _PRESET_MODE_VTOTAL_TOLERANCE))
+ 656   1          {
+ 657   2              return _FALSE;
+ 658   2          }
+ 659   1      
+ 660   1          usDiffCurr = abs(GET_INPUT_MODE_GTF_HEIGHT() - tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt].usIVHeight);
+ 661   1          usDiffLast = abs(GET_INPUT_MODE_GTF_HEIGHT() - tINPUTMODE_PRESET_TABLE[ucLastModeCnt].usIVHeight);
+ 662   1      
+ 663   1          if((usDiffCurr < _USER_MODE_VHEIGHT_GTF_DIFF_MIN) && (usDiffLast < _USER_MODE_VHEIGHT_GTF_DIFF_MIN))
+ 664   1          {
+ 665   2              return _FALSE;
+ 666   2          }
+ 667   1          else if(usDiffCurr == usDiffLast)
+ 668   1          {
+ 669   2              return _FALSE;
+ 670   2          }
+ 671   1      
+ 672   1          if(usDiffCurr < usDiffLast)
+ 673   1          {
+ 674   2              *pucModeBestInx = ucCurrentModeCnt;
+ 675   2          }
+ 676   1          else
+ 677   1          {
+ 678   2              *pucModeBestInx = ucLastModeCnt;
+ 679   2          }
+ 680   1      
+ 681   1          return _TRUE;
+ 682   1      }
+ 683          
+ 684          //--------------------------------------------------
+ 685          // Description  : Check Mode By H and V Sync Pulse
+ 686          // Input Value  : ucModeCnt --> Current ModeIndex
+ 687          // Output Value : New ModeIndex
+ 688          //--------------------------------------------------
+ 689          bit UserCommonModeSearchHVSyncPulseCheck(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+ 690          {
+ 691   1          BYTE ucCnt = 0;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 13  
+
+ 692   1      
+ 693   1          // Check H-Sync Pulse count condition
+ 694   1          while(tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode != _MODE_NOSUPPORT)
+ 695   1          {
+ 696   2              if(((ucLastModeCnt == tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode) || (ucLastModeCnt == tHSYN
+             -C_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode)) &&
+ 697   2                 ((ucCurrentModeCnt == tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode) || (ucCurrentModeCnt ==
+             - tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode)))
+ 698   2              {
+ 699   3                  if(GET_INPUT_TIMING_HSYNCWIDTH() <= (WORD)((DWORD)tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].usMidSy
+             -ncPulseCount * ScalerSyncProcGetCurrentClockFreq() / 27000))
+ 700   3                  {
+ 701   4                      *pucModeBestInx = tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode;
+ 702   4      
+ 703   4                      DebugMessageAnalog("2. Detect By H-Sync Pulse", *pucModeBestInx);
+ 704   4      
+ 705   4                      return _TRUE;
+ 706   4                  }
+ 707   3                  else
+ 708   3                  {
+ 709   4                      *pucModeBestInx = tHSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode;
+ 710   4      
+ 711   4                      DebugMessageAnalog("2. Detect By H-Sync Pulse", *pucModeBestInx);
+ 712   4      
+ 713   4                      return _TRUE;
+ 714   4                  }
+ 715   3              }
+ 716   2      
+ 717   2              ucCnt++;
+ 718   2          }
+ 719   1      
+ 720   1          // Reset circle counter
+ 721   1          ucCnt = 0;
+ 722   1      
+ 723   1          // Check V-Sync Pulse count condition
+ 724   1          while(tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode != _MODE_NOSUPPORT)
+ 725   1          {
+ 726   2              if(((ucLastModeCnt == tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode) || (ucLastModeCnt == tVSYN
+             -C_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode)) &&
+ 727   2                 ((ucCurrentModeCnt == tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode) || (ucCurrentModeCnt ==
+             - tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode)))
+ 728   2              {
+ 729   3                  // Check H-Sync Pulse condition
+ 730   3                  if(GET_INPUT_TIMING_VSYNCWIDTH() <= tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].usMidSyncPulseCount)
+ 731   3                  {
+ 732   4                      *pucModeBestInx = tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucFirstMode;
+ 733   4      
+ 734   4                      DebugMessageAnalog("2. Detect By V-Sync Pulse", *pucModeBestInx);
+ 735   4      
+ 736   4                      return _TRUE;
+ 737   4                  }
+ 738   3                  else
+ 739   3                  {
+ 740   4                      *pucModeBestInx = tVSYNC_PULSE_COUNT_MODE_TABLE[ucCnt].ucSecondMode;
+ 741   4      
+ 742   4                      DebugMessageAnalog("2. Detect By V-Sync Pulse", *pucModeBestInx);
+ 743   4      
+ 744   4                      return _TRUE;
+ 745   4                  }
+ 746   3              }
+ 747   2      
+ 748   2              ucCnt++;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 14  
+
+ 749   2          }
+ 750   1      
+ 751   1      
+ 752   1          return _FALSE;
+ 753   1      }
+ 754          
+ 755          //--------------------------------------------------
+ 756          // Description  : Check Mode By H and V Sync Palority
+ 757          // Input Value  : ucLastModeCnt --> Last ModeIndex
+ 758          //             ucCurrentModeCnt --> Current ModeIndex
+ 759          // Output Value : _TRUE: Polarity matched
+ 760          //                 pModeBestInx --> Matched successful mode no
+ 761          //--------------------------------------------------
+ 762          bit UserCommonModeSearchCompareByPolarity(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx)
+ 763          {
+ 764   1          BYTE ucCnt = 0;
+ 765   1          BYTE ucPolarity = 0;
+ 766   1      
+ 767   1          if((tINPUTMODE_PRESET_TABLE[ucLastModeCnt].ucMiscFlag & 0x0F) == (tINPUTMODE_PRESET_TABLE[ucCurrentMod
+             -eCnt].ucMiscFlag & 0x0F))
+ 768   1          {
+ 769   2              return _FALSE;
+ 770   2          }
+ 771   1      
+ 772   1          if(GET_INPUT_TIMING_H_POLARITY() == _TRUE)
+ 773   1          {
+ 774   2              if(GET_INPUT_TIMING_V_POLARITY() == _TRUE)
+ 775   2              {
+ 776   3                  ucPolarity = _SYNC_HP_VP;
+ 777   3              }
+ 778   2              else
+ 779   2              {
+ 780   3                  ucPolarity = _SYNC_HP_VN;
+ 781   3              }
+ 782   2          }
+ 783   1          else
+ 784   1          {
+ 785   2              if(GET_INPUT_TIMING_V_POLARITY() == _TRUE)
+ 786   2              {
+ 787   3                  ucPolarity = _SYNC_HN_VP;
+ 788   3              }
+ 789   2              else
+ 790   2              {
+ 791   3                  ucPolarity = _SYNC_HN_VN;
+ 792   3              }
+ 793   2          }
+ 794   1      
+ 795   1          // Once the two Mode in Mode table defines the same polarity will not be able to distinguish between t
+             -hem
+ 796   1          if(((tINPUTMODE_PRESET_TABLE[ucLastModeCnt].ucMiscFlag & 0x0F) & ucPolarity) == ((tINPUTMODE_PRESET_TA
+             -BLE[ucCurrentModeCnt].ucMiscFlag & 0x0F) & ucPolarity))
+ 797   1          {
+ 798   2              return _FALSE;
+ 799   2          }
+ 800   1      
+ 801   1          // Check polarity condition
+ 802   1          while(tPOLARITY_MODEGROUP_TABLE[ucCnt].ucFirstMode != _MODE_NOSUPPORT)
+ 803   1          {
+ 804   2              if(((ucLastModeCnt == tPOLARITY_MODEGROUP_TABLE[ucCnt].ucFirstMode) || (ucLastModeCnt == tPOLARITY
+             -_MODEGROUP_TABLE[ucCnt].ucSecondMode)) &&
+ 805   2                 ((ucCurrentModeCnt == tPOLARITY_MODEGROUP_TABLE[ucCnt].ucFirstMode) || (ucCurrentModeCnt == tPO
+             -LARITY_MODEGROUP_TABLE[ucCnt].ucSecondMode)))
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 15  
+
+ 806   2              {
+ 807   3                  if((bit)((tINPUTMODE_PRESET_TABLE[tPOLARITY_MODEGROUP_TABLE[ucCnt].ucFirstMode].ucMiscFlag & 0
+             -x0F) & ucPolarity) == _TRUE)
+ 808   3                  {
+ 809   4                      *pucModeBestInx = tPOLARITY_MODEGROUP_TABLE[ucCnt].ucFirstMode;
+ 810   4      
+ 811   4                      return _TRUE;
+ 812   4                  }
+ 813   3                  else if((bit)((tINPUTMODE_PRESET_TABLE[tPOLARITY_MODEGROUP_TABLE[ucCnt].ucSecondMode].ucMiscFl
+             -ag & 0x0F) & ucPolarity) == _TRUE)
+ 814   3                  {
+ 815   4                      *pucModeBestInx = tPOLARITY_MODEGROUP_TABLE[ucCnt].ucSecondMode;
+ 816   4      
+ 817   4                      return _TRUE;
+ 818   4                  }
+ 819   3              }
+ 820   2      
+ 821   2              ucCnt++;
+ 822   2          }
+ 823   1      
+ 824   1          return _FALSE;
+ 825   1      }
+ 826          
+ 827          //--------------------------------------------------
+ 828          // Description  : Check Mode By Interlace Flag
+ 829          // Input Value  : ucLastModeCnt --> Current ModeIndex
+ 830          //             ucCurrentModeCnt --> Current ModeIndex
+ 831          // Output Value : _TRUE: Interlace matched
+ 832          //                 pModeBestInx --> Matched successful mode no
+ 833          //--------------------------------------------------
+ 834          bit UserCommonModeSearchCompareByInterlace(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBestInx
+             -)
+ 835          {
+ 836   1          BYTE ucCnt = 0;
+ 837   1      
+ 838   1          if((GET_MODE_TABLE_INTERLACED(tINPUTMODE_PRESET_TABLE[ucLastModeCnt]) == _TRUE) && (GET_MODE_TABLE_INT
+             -ERLACED(tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt]) == _TRUE))
+ 839   1          {
+ 840   2              return _FALSE;
+ 841   2          }
+ 842   1      
+ 843   1          // Check interlace condition
+ 844   1          while(tINTERLACE_MODEGROUP_TABLE[ucCnt].ucFirstMode != _MODE_NOSUPPORT)
+ 845   1          {
+ 846   2              if(((ucLastModeCnt == tINTERLACE_MODEGROUP_TABLE[ucCnt].ucFirstMode) || (ucLastModeCnt == tINTERLA
+             -CE_MODEGROUP_TABLE[ucCnt].ucSecondMode)) &&
+ 847   2                 ((ucCurrentModeCnt == tINTERLACE_MODEGROUP_TABLE[ucCnt].ucFirstMode) || (ucCurrentModeCnt == tI
+             -NTERLACE_MODEGROUP_TABLE[ucCnt].ucSecondMode)))
+ 848   2              {
+ 849   3                  if(GET_MODE_TABLE_INTERLACED(tINPUTMODE_PRESET_TABLE[tINTERLACE_MODEGROUP_TABLE[ucCnt].ucFirst
+             -Mode]) == (bit)GET_INPUT_TIMING_INTERLACE_FLG())
+ 850   3                  {
+ 851   4                      *pucModeBestInx = tINTERLACE_MODEGROUP_TABLE[ucCnt].ucFirstMode;
+ 852   4      
+ 853   4                      return _TRUE;
+ 854   4                  }
+ 855   3                  else if(GET_MODE_TABLE_INTERLACED(tINPUTMODE_PRESET_TABLE[tINTERLACE_MODEGROUP_TABLE[ucCnt].uc
+             -SecondMode]) == (bit)GET_INPUT_TIMING_INTERLACE_FLG())
+ 856   3                  {
+ 857   4                      *pucModeBestInx = tINTERLACE_MODEGROUP_TABLE[ucCnt].ucSecondMode;
+ 858   4      
+ 859   4                      return _TRUE;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 16  
+
+ 860   4                  }
+ 861   3              }
+ 862   2      
+ 863   2              ucCnt++;
+ 864   2          }
+ 865   1      
+ 866   1          return _FALSE;
+ 867   1      }
+ 868          
+ 869          //--------------------------------------------------
+ 870          // Description  : Check Mode By Sync Source Come from
+ 871          // Input Value  : ucLastModeCnt --> Last ModeIndex
+ 872          //             ucCurrentModeCnt --> Current ModeIndex
+ 873          // Output Value : _TRUE: Sync Pad matched
+ 874          //                 pModeBestInx --> Matched successful mode no
+ 875          //--------------------------------------------------
+ 876          bit UserCommonModeSearchCompareByVideoModeFlg(BYTE ucLastModeCnt, BYTE ucCurrentModeCnt, BYTE *pucModeBest
+             -Inx)
+ 877          {
+ 878   1          if((GET_MODE_TABLE_VIDEO(tINPUTMODE_PRESET_TABLE[ucLastModeCnt]) != 0x00) &&
+ 879   1             (GET_MODE_TABLE_VIDEO(tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt]) == 0x00))
+ 880   1          {
+ 881   2              if(ScalerSyncProcGetSyncPad() == _TRUE)
+ 882   2              {
+ 883   3                  *pucModeBestInx = ucLastModeCnt;
+ 884   3              }
+ 885   2              else
+ 886   2              {
+ 887   3                  *pucModeBestInx = ucCurrentModeCnt;
+ 888   3              }
+ 889   2      
+ 890   2              return _TRUE;
+ 891   2          }
+ 892   1          else if((GET_MODE_TABLE_VIDEO(tINPUTMODE_PRESET_TABLE[ucLastModeCnt]) == 0x00) &&
+ 893   1                  (GET_MODE_TABLE_VIDEO(tINPUTMODE_PRESET_TABLE[ucCurrentModeCnt]) != 0x00))
+ 894   1          {
+ 895   2              if(ScalerSyncProcGetSyncPad() == _TRUE)
+ 896   2              {
+ 897   3                  *pucModeBestInx = ucCurrentModeCnt;
+ 898   3              }
+ 899   2              else
+ 900   2              {
+ 901   3                  *pucModeBestInx = ucLastModeCnt;
+ 902   3              }
+ 903   2      
+ 904   2              return _TRUE;
+ 905   2          }
+ 906   1      
+ 907   1          return _FALSE;
+ 908   1      }
+ 909          
+ 910          //--------------------------------------------------
+ 911          // Description  : Check FIFO mode for VGA
+ 912          // Input Value  : ucIndex --> Mode Index
+ 913          // Output Value : None
+ 914          //--------------------------------------------------
+ 915          void UserCommonModeSearchFIFOSaveModeInfo(BYTE ucIndex)
+ 916          {
+ 917   1          BYTE ucFIFOInx = 0;
+ 918   1      
+ 919   1          ucFIFOInx = UserCommonModeSearchCheckFIFOModeSaved(ucIndex);
+ 920   1      
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 17  
+
+ 921   1          // Check Current Mode Saved before.
+ 922   1          if(ucFIFOInx == _MODE_NOT_EXIST_IN_FIFO)
+ 923   1          {
+ 924   2              // Initial User Data For The Mode Which Light Up First Time.
+ 925   2              UserCommonModeSearchInitalUserAndCenterData(ucIndex);
+ 926   2      
+ 927   2              // Save User Data.
+ 928   2              UserCommonNVRamSaveModeUserData();
+ 929   2      
+ 930   2              // Save System Data
+ 931   2              UserCommonNVRamSaveSystemData();
+ 932   2      
+ 933   2              // Update Input Timing Info. by Mode Table.
+ 934   2              UserCommonModeSearchUpdateInputDataRefModeTbl(ucIndex);
+ 935   2          }
+ 936   1          else
+ 937   1          {
+ 938   2              UserCommonModeSearchUpdateInputDataRefFIFO(ucFIFOInx, ucIndex);
+ 939   2          }
+ 940   1      }
+ 941          
+ 942          //--------------------------------------------------
+ 943          // Description  : Check FIFO mode be saved the same mode
+ 944          // Input Value  : pFIFOIndex --> Mode table index of FIFO mode
+ 945          // Output Value : _TRUE: There is a same mode saved in FIFO.
+ 946          //--------------------------------------------------
+ 947          BYTE UserCommonModeSearchCheckFIFOModeSaved(BYTE ucModeIndex)
+ 948          {
+ 949   1          BYTE ucFIFOInx = 0;
+ 950   1      
+ 951   1          // Save Mode data Here.
+ 952   1          for(ucFIFOInx = 0; ucFIFOInx < _MODE_SLOT_AMOUNT; ucFIFOInx++)
+ 953   1          {
+ 954   2              if(UserCommonNVRamLoadModeUserModeNumberData(ucFIFOInx) == ucModeIndex)
+ 955   2              {
+ 956   3                  return ucFIFOInx;
+ 957   3              }
+ 958   2          }
+ 959   1      
+ 960   1          return _MODE_NOT_EXIST_IN_FIFO;
+ 961   1      }
+ 962          
+ 963          //--------------------------------------------------
+ 964          // Description  : Inital User Data
+ 965          // Input Value  : ucIndex --> Mode Index
+ 966          // Output Value : None
+ 967          //--------------------------------------------------
+ 968          void UserCommonModeSearchInitalUserAndCenterData(BYTE ucIndex)
+ 969          {
+ 970   1          // Clear structure
+ 971   1          memset(&g_stVGAModeUserData, 0xFF, sizeof(g_stVGAModeUserData));
+ 972   1      
+ 973   1          SET_VGA_MODE_ADJUST_H_POSITION(50);
+ 974   1          SET_VGA_MODE_ADJUST_V_POSITION(50);
+ 975   1      
+ 976   1      #if(_AUTO_CLOCK_SAVE_VALUE_OPTION == _CLOCK_SAVE_PERCENT_VALUE)
+ 977   1          SET_VGA_MODE_ADJUST_CLOCK(50);
+ 978   1      #else
+                  SET_VGA_MODE_ADJUST_CLOCK(tINPUTMODE_PRESET_TABLE[ucIndex].usIHTotal);
+              #endif
+ 981   1      
+ 982   1          SET_VGA_MODE_ADJUST_PHASE(0);
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 18  
+
+ 983   1          SET_VGA_MODE_DO_FIRST_AUTO(_TRUE);
+ 984   1      
+ 985   1          g_stVGAModeUserData.b1IsPresetMode = GET_MODE_SEARCH_TYPE();
+ 986   1          g_stVGAModeUserData.ucModeNumber = ucIndex;
+ 987   1          g_stVGAModeUserData.usCenterHPosition = tINPUTMODE_PRESET_TABLE[ucIndex].usIHStartPos;
+ 988   1          g_stVGAModeUserData.usCenterVPosition = tINPUTMODE_PRESET_TABLE[ucIndex].usIVStartPos;
+ 989   1          g_stVGAModeUserData.usCenterClock = tINPUTMODE_PRESET_TABLE[ucIndex].usIHTotal;
+ 990   1          g_stVGAModeUserData.ucCenterPhase = 0;
+ 991   1      }
+ 992          
+ 993          //--------------------------------------------------
+ 994          // Description  : Update Input Timing Info By Mode Table
+ 995          // Input Value  : ucIndex --> Mode Index
+ 996          // Output Value : None
+ 997          //--------------------------------------------------
+ 998          void UserCommonModeSearchUpdateInputDataRefModeTbl(BYTE ucIndex)
+ 999          {
+1000   1          // Modify Input Timing Information Reference Modetable Parameters.
+1001   1          SET_INPUT_TIMING_HSTART(tINPUTMODE_PRESET_TABLE[ucIndex].usIHStartPos);
+1002   1          SET_INPUT_TIMING_HWIDTH(tINPUTMODE_PRESET_TABLE[ucIndex].usIHWidth);
+1003   1          SET_INPUT_TIMING_HTOTAL(tINPUTMODE_PRESET_TABLE[ucIndex].usIHTotal);
+1004   1          SET_INPUT_TIMING_VSTART(tINPUTMODE_PRESET_TABLE[ucIndex].usIVStartPos);
+1005   1          SET_INPUT_TIMING_VHEIGHT(tINPUTMODE_PRESET_TABLE[ucIndex].usIVHeight);
+1006   1      }
+1007          
+1008          //--------------------------------------------------
+1009          // Description  : Update Input Timing Info By FIFO Table
+1010          // Input Value  : ucFifoIndex --> Fifo Mode Index
+1011          //                    ucIndex --> Mode Table Index
+1012          // Output Value : None
+1013          //--------------------------------------------------
+1014          void UserCommonModeSearchUpdateInputDataRefFIFO(BYTE ucFifoIndex, BYTE ucIndex)
+1015          {
+1016   1          // Load User Data.
+1017   1          UserCommonNVRamLoadModeUserData(ucFifoIndex);
+1018   1      
+1019   1          if((UserCommonModeSearchCheckFIFOSetting(g_stVGAModeUserData, ucIndex) == _FALSE) || (UserInterfaceGet
+             -LoadModeTableDefaultStatus() == _TRUE))
+1020   1          {
+1021   2              // Load Parameters Reference Modetable.
+1022   2              SET_INPUT_TIMING_HSTART(tINPUTMODE_PRESET_TABLE[ucIndex].usIHStartPos);
+1023   2              SET_INPUT_TIMING_HWIDTH(tINPUTMODE_PRESET_TABLE[ucIndex].usIHWidth);
+1024   2              SET_INPUT_TIMING_HTOTAL(tINPUTMODE_PRESET_TABLE[ucIndex].usIHTotal);
+1025   2              SET_INPUT_TIMING_VSTART(tINPUTMODE_PRESET_TABLE[ucIndex].usIVStartPos);
+1026   2              SET_INPUT_TIMING_VHEIGHT(tINPUTMODE_PRESET_TABLE[ucIndex].usIVHeight);
+1027   2      
+1028   2              // Initial User Data For The Mode Which Light Up First Time.
+1029   2              UserCommonModeSearchInitalUserAndCenterData(ucIndex);
+1030   2          }
+1031   1          else
+1032   1          {
+1033   2              // Modify Input Timing Information Reference Modetable Parameters.
+1034   2              SET_INPUT_TIMING_HSTART(g_stVGAModeUserData.usCenterHPosition);
+1035   2              SET_INPUT_TIMING_HWIDTH(tINPUTMODE_PRESET_TABLE[ucIndex].usIHWidth);
+1036   2              SET_INPUT_TIMING_HTOTAL(g_stVGAModeUserData.usCenterClock);
+1037   2              SET_INPUT_TIMING_VSTART(g_stVGAModeUserData.usCenterVPosition);
+1038   2              SET_INPUT_TIMING_VHEIGHT(tINPUTMODE_PRESET_TABLE[ucIndex].usIVHeight);
+1039   2          }
+1040   1      }
+1041          
+1042          //--------------------------------------------------
+1043          // Description  : Get Modetable Video type flag
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 19  
+
+1044          // Input Value  : ucIndex --> Mode Index
+1045          // Output Value : Return Video type flag.
+1046          //--------------------------------------------------
+1047          BYTE UserCommonModeSearchGetModeVideoType(BYTE ucIndex)
+1048          {
+1049   1          return tINPUTMODE_PRESET_TABLE[ucIndex].ucMiscFlag & (_VIDEO_MODE_GROUP2 | _VIDEO_MODE_GROUP1 | _VIDEO
+             -_MODE_GROUP3);
+1050   1      }
+1051          
+1052          //--------------------------------------------------
+1053          // Description  : Check FIFO Data Validation(Center Data, User Data)
+1054          // Input Value  : ModeIndex
+1055          // Output Value : _TRUE: The FIFO Setting is ok.
+1056          //--------------------------------------------------
+1057          bit UserCommonModeSearchCheckFIFOSetting(StructVGAModeUserDataType stFifoUserData, BYTE ucModeIndex)
+1058          {
+1059   1          WORD usIHCaptureStart = ScalerIDomainVgipIHCaptureMaxEstimate(stFifoUserData.usCenterHPosition);
+1060   1      
+1061   1          if(stFifoUserData.usCenterClock > GET_ADC_LIMIT_CLOCK())
+1062   1          {
+1063   2              return _FALSE;
+1064   2          }
+1065   1      
+1066   1          if(stFifoUserData.usCenterClock < (usIHCaptureStart + tINPUTMODE_PRESET_TABLE[ucModeIndex].usIHWidth))
+1067   1          {
+1068   2              return _FALSE;
+1069   2          }
+1070   1      
+1071   1          // Check CenterVposition Validation
+1072   1          if(GET_INPUT_TIMING_VTOTAL() < (stFifoUserData.usCenterVPosition + (tINPUTMODE_PRESET_TABLE[ucModeInde
+             -x].usIVHeight)))
+1073   1          {
+1074   2              return _FALSE;
+1075   2          }
+1076   1      
+1077   1          return _TRUE;
+1078   1      }
+1079          
+1080          //--------------------------------------------------
+1081          // Description  : Get Mode Table Timing Data Info
+1082          // Input Value  : ucDataType --> Data Type in StructTimingInfo
+1083          //              : ucModeNumber --> Target Mode Number
+1084          // Output Value : ucValue --> Value of the Mode Table Timing Data Type
+1085          //--------------------------------------------------
+1086          WORD UserCommonModeSearchGetModetableTimingDataItem(BYTE ucModeNumber, EnumTimingInfoSelect enumTimingInfo
+             -)
+1087          {
+1088   1          WORD usValue = 0;
+1089   1      
+1090   1          switch(enumTimingInfo)
+1091   1          {
+1092   2              case _IHFREQ:
+1093   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIHFreq);
+1094   2                  break;
+1095   2      
+1096   2              case _IHTOTAL:
+1097   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIHTotal);
+1098   2                  break;
+1099   2      
+1100   2              case _IHWIDTH:
+1101   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIHWidth);
+1102   2                  break;
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 20  
+
+1103   2      
+1104   2              case _IHSTART:
+1105   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIHStartPos);
+1106   2                  break;
+1107   2      
+1108   2              case _IVFREQ:
+1109   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIVFreq);
+1110   2                  break;
+1111   2      
+1112   2              case _IVTOTAL:
+1113   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIVTotal);
+1114   2                  break;
+1115   2      
+1116   2              case _IVHEIGHT:
+1117   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIVHeight);
+1118   2                  break;
+1119   2      
+1120   2              case _IVSTART:
+1121   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].usIVStartPos);
+1122   2                  break;
+1123   2      
+1124   2              case _MISC:
+1125   2                  usValue = (WORD)(tINPUTMODE_PRESET_TABLE[ucModeNumber].ucMiscFlag);
+1126   2                  break;
+1127   2      
+1128   2              default:
+1129   2                  break;
+1130   2          }
+1131   1      
+1132   1          return usValue;
+1133   1      }
+1134          
+1135          //--------------------------------------------------
+1136          // Description  : Get color rimetry
+1137          // Input Value  : ucModeNumber --> Target Mode Number
+1138          // Output Value : _TRUE --> current mode is HD TV Mode
+1139          //--------------------------------------------------
+1140          bit UserCommonModeSearchCheckPresetModeTable(BYTE ucMatchmode)
+1141          {
+1142   1          BYTE ucInx1 = 0;
+1143   1      
+1144   1          if(sizeof(tPRESET_MODE_TABLE) < _MODE_SLOT_AMOUNT)
+1145   1          {
+1146   2              for(ucInx1 = 0; ucInx1 < sizeof(tPRESET_MODE_TABLE); ucInx1++)
+1147   2              {
+1148   3                  if(tPRESET_MODE_TABLE[ucInx1] == ucMatchmode)
+1149   3                  {
+1150   4                      return _TRUE;
+1151   4                  }
+1152   3              }
+1153   2          }
+1154   1      
+1155   1          return _FALSE;
+1156   1      }
+1157          #endif // End of #if(_VGA_SUPPORT == _ON)
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   3542    ----
+   CONSTANT SIZE    =   3125    ----
+   XDATA SIZE       =      3      79
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V8.12   USERCOMMONMODESEARCH                                                  09/16/2026 20:28:46 PAGE 21  
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

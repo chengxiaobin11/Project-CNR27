@@ -1,0 +1,565 @@
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE SCALERIDOMAIN
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerIDomain.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerIDomain.c LARGE OPTIMIZE(9,SPEED) I
+                    -NCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ker
+                    -nel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.
+                    -\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series
+                    -_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\
+                    -User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fact
+                    -ory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_
+                    -PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerIDomain.lst)
+                    - OBJECT(.\Output\RL6432_Project\ScalerIDomain.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : ScalerIDomain.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __SCALER_IDOMAIN__
+  18          
+  19          #include "ScalerFunctionInclude.h"
+  20          
+  21          //****************************************************************************
+  22          // DEFINITIONS / MACROS
+  23          //****************************************************************************
+  24          //#define GET_VGIP_INITIAL_VDELAY()                   (g_usVgipVDelayInitial)
+  25          //#define SET_VGIP_INITIAL_VDELAY(x)                  (g_usVgipVDelayInitial = (x))
+  26          
+  27          //****************************************************************************
+  28          // STRUCT / TYPE / ENUM DEFINITTIONS
+  29          //****************************************************************************
+  30          
+  31          
+  32          //****************************************************************************
+  33          // CODE TABLES
+  34          //****************************************************************************
+  35          
+  36          
+  37          //****************************************************************************
+  38          // VARIABLE DECLARATIONS
+  39          //****************************************************************************
+  40          WORD g_usVgipVDelayInitial;
+  41          
+  42          #if(_UNDERSCAN_SUPPORT == _ON)
+  43          WORD g_usUnderScanIVheight;
+  44          #endif
+  45          
+  46          //****************************************************************************
+  47          // FUNCTION DECLARATIONS
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 2   
+
+  48          //****************************************************************************
+  49          void ScalerIDomainVgipSetInputCapture(void);
+  50          void ScalerIDomainVgipIVDelayIVstStepAdjust(WORD usInitialIVDelay);
+  51          WORD ScalerIDomainVgipIHCaptureMaxEstimate(WORD usHPosition);
+  52          void ScalerIDomainVgipAdjustIHVDelay(void);
+  53          void ScalerIDomainFineTuneHCaptureStart(WORD usDeltaIHCapture);
+  54          void ScalerIDomainScalingDownInitial(void);
+  55          
+  56          #if(_UNDERSCAN_SUPPORT == _ON)
+  57          WORD ScalerIDomainVgipGetVCaptureStartMinValue(void);
+  58          #endif
+  59          
+  60          //****************************************************************************
+  61          // FUNCTION DEFINITIONS
+  62          //****************************************************************************
+  63          //--------------------------------------------------
+  64          // Description  : Set VGIP Capture Window
+  65          // Input Value  : Capture Type, H/V Active and Start
+  66          // Output Value : None
+  67          //--------------------------------------------------
+  68          void ScalerIDomainVgipSetInputCapture(void)
+  69          {
+  70   1          // Enable VGIP capture
+  71   1          ScalerVgipCaptureEnable(_ENABLE);
+  72   1      
+  73   1          SET_VGIP_INITIAL_VDELAY(0);
+  74   1      
+  75   1          if(ScalerIDomainCheckDigitalCapture() == _TRUE)
+  76   1          {
+  77   2              // Set Digital Capture
+  78   2              ScalerVgipSetDigitalCaptureStatus(_ENABLE);
+  79   2      
+  80   2              // Set VGIP H Capture Width
+  81   2              ScalerVgipSetCaptureHWidth(GET_MDOMAIN_INPUT_HWIDTH());
+  82   2      
+  83   2              // Set VGIP V Capture Heigth
+  84   2              ScalerVgipSetCaptureVHeight(GET_MDOMAIN_INPUT_VHEIGHT());
+  85   2      
+  86   2              // Set VGIP H capture start position
+  87   2              if(GET_MDOMAIN_INPUT_HSTART() > GET_INPUT_TIMING_HSTART())
+  88   2              {
+  89   3                  ScalerVgipSetCaptureHStartPosition(GET_MDOMAIN_INPUT_HSTART() - GET_INPUT_TIMING_HSTART());
+  90   3              }
+  91   2              else
+  92   2              {
+  93   3                  ScalerVgipSetCaptureHStartPosition(0x00);
+  94   3              }
+  95   2      
+  96   2              // Set VGIP V capture start position
+  97   2              if(GET_MDOMAIN_INPUT_VSTART() > GET_INPUT_TIMING_VSTART())
+  98   2              {
+  99   3      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                          if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
+                          {
+                              ScalerVgipSetCaptureVStartPosition(GET_MDOMAIN_INPUT_VSTART() - (GET_INPUT_TIMING_VSTART()
+             - - (GET_INPUT_TIMING_VSTART() % 2)));
+                          }
+                          else
+              #endif
+ 106   3                  {
+ 107   4                      ScalerVgipSetCaptureVStartPosition(GET_MDOMAIN_INPUT_VSTART() - GET_INPUT_TIMING_VSTART())
+             -;
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 3   
+
+ 108   4                  }
+ 109   3              }
+ 110   2              else
+ 111   2              {
+ 112   3                  ScalerVgipSetCaptureVStartPosition(0x00);
+ 113   3              }
+ 114   2      
+ 115   2              // Set VGIP H/V capture delay
+ 116   2              ScalerVgipSetCaptureHDelay(0);
+ 117   2              ScalerVgipSetCaptureVDelay(0);
+ 118   2          }
+ 119   1          else
+ 120   1          {
+ 121   2              WORD usIHDelay = 0;
+ 122   2      
+ 123   2              // Set Analog Capture
+ 124   2              ScalerVgipSetDigitalCaptureStatus(_DISABLE);
+ 125   2      
+ 126   2              // Set VGIP H Capture Width
+ 127   2              ScalerVgipSetCaptureHWidth(g_stMDomainInputData.usHWidth);
+ 128   2      
+ 129   2              // Set VGIP V Capture Heigth
+ 130   2              ScalerVgipSetCaptureVHeight(g_stMDomainInputData.usVHeight);
+ 131   2      
+ 132   2              if(g_stMDomainInputData.usHStart <= _VGIP_IH_CAPTURE_MIN_VALUE)
+ 133   2              {
+ 134   3                  g_stMDomainInputData.usHStart = _VGIP_IH_CAPTURE_MIN_VALUE + 1;
+ 135   3              }
+ 136   2      
+ 137   2              usIHDelay = g_stMDomainInputData.usHStart - ScalerIDomainVgipIHCaptureMaxEstimate(g_stMDomainInput
+             -Data.usHStart);
+ 138   2      
+ 139   2              g_stMDomainInputData.usHStart = ScalerIDomainVgipIHCaptureMaxEstimate(g_stMDomainInputData.usHStar
+             -t);
+ 140   2      
+ 141   2              // Set VGIP H Capture Start Position
+ 142   2              ScalerVgipSetCaptureHStartPosition(g_stMDomainInputData.usHStart);
+ 143   2      
+ 144   2              // Check IVst + IVheight < IVtotal, try to modify VGIP V capture start & height
+ 145   2              if((g_stMDomainInputData.usVStart + g_stMDomainInputData.usVHeight) > g_stMDomainInputData.usVTota
+             -l)
+ 146   2              {
+ 147   3                  if(g_stMDomainInputData.usVTotal > (g_stMDomainInputData.usVHeight + _VGIP_V_FRONT_PORCH_MIN_V
+             -ALUE))
+ 148   3                  {
+ 149   4                      g_stMDomainInputData.usVStart = g_stMDomainInputData.usVTotal - (g_stMDomainInputData.usVH
+             -eight + _VGIP_V_FRONT_PORCH_MIN_VALUE);
+ 150   4      
+ 151   4                      if(g_stMDomainInputData.usVStart < _VGIP_IV_CAPTURE_MIN_VALUE)
+ 152   4                      {
+ 153   5                          g_stMDomainInputData.usVHeight -= (_VGIP_IV_CAPTURE_MIN_VALUE - g_stMDomainInputData.u
+             -sVStart);
+ 154   5                          g_stMDomainInputData.usVHeight -= (g_stMDomainInputData.usVHeight % 2);
+ 155   5                          g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MIN_VALUE;
+ 156   5      
+ 157   5                          // Set VGIP V Capture Height
+ 158   5                          ScalerVgipSetCaptureVHeight(g_stMDomainInputData.usVHeight);
+ 159   5                          DebugMessageScaler("[Warning] VGIP V start should >= _VGIP_IV_CAPTURE_MIN_VALUE, try t
+             -o modify VGIP V capture height.", g_stMDomainInputData.usVHeight);
+ 160   5                      }
+ 161   4                  }
+ 162   3                  else
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 4   
+
+ 163   3                  {
+ 164   4                      g_stMDomainInputData.usVHeight = g_stMDomainInputData.usVTotal - _VGIP_IV_CAPTURE_MIN_VALU
+             -E - _VGIP_V_FRONT_PORCH_MIN_VALUE;
+ 165   4                      g_stMDomainInputData.usVHeight -= (g_stMDomainInputData.usVHeight % 2);
+ 166   4                      g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MIN_VALUE;
+ 167   4      
+ 168   4                      // Set VGIP V Capture Height
+ 169   4                      ScalerVgipSetCaptureVHeight(g_stMDomainInputData.usVHeight);
+ 170   4                      DebugMessageScaler("[Warning] VGIP V start should >= _VGIP_IV_CAPTURE_MIN_VALUE, try to mo
+             -dify VGIP V capture height.", g_stMDomainInputData.usVHeight);
+ 171   4                  }
+ 172   3              }
+ 173   2              else if(g_stMDomainInputData.usVStart + g_stMDomainInputData.usVHeight + _VGIP_V_FRONT_PORCH_MIN_V
+             -ALUE >= g_stMDomainInputData.usVTotal)
+ 174   2              // Front Porch is Not Enough
+ 175   2              {
+ 176   3                  // Increase Front Porch by VDelay
+ 177   3                  SET_VGIP_INITIAL_VDELAY(g_stMDomainInputData.usVStart + g_stMDomainInputData.usVHeight + _VGIP
+             -_V_FRONT_PORCH_MIN_VALUE - g_stMDomainInputData.usVTotal);
+ 178   3                  g_stMDomainInputData.usVStart -= GET_VGIP_INITIAL_VDELAY();
+ 179   3              }
+ 180   2              else
+ 181   2              {
+ 182   3                  SET_VGIP_INITIAL_VDELAY(0);
+ 183   3              }
+ 184   2      
+ 185   2              // Check if V capture start exceeds maximum value
+ 186   2              if(g_stMDomainInputData.usVStart > _VGIP_IV_CAPTURE_MAX_VALUE)
+ 187   2              {
+ 188   3                  SET_VGIP_INITIAL_VDELAY(GET_VGIP_INITIAL_VDELAY() + (g_stMDomainInputData.usVStart - _VGIP_IV_
+             -CAPTURE_MAX_VALUE));
+ 189   3                  g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MAX_VALUE;
+ 190   3              }
+ 191   2      
+ 192   2              // Check if V capture delay exceeds maximum value
+ 193   2              if(GET_VGIP_INITIAL_VDELAY() > _HW_VGIP_V_DELAY_BIT_WIDTH)
+ 194   2              {
+ 195   3                  DebugMessageScaler("[Warning] VGIP V Capture Delay exceeds the HW Limit!!! Please define (_VGI
+             -P_IV_CAPTURE_MAX_VALUE_ENLARGE == _ON).", GET_VGIP_INITIAL_VDELAY());
+ 196   3              }
+ 197   2      
+ 198   2              // Set VGIP capture delay
+ 199   2              ScalerVgipSetCaptureHDelay(usIHDelay);
+ 200   2      
+ 201   2              switch(ScalerMDomainGetFrameSyncMode())
+ 202   2              {
+ 203   3      #if(_FRC_SUPPORT == _ON)
+ 204   3      #if(_MN_FRAME_TRACKING_SUPPORT == _ON)
+ 205   3                  case _MN_FRAME_SYNC_MODE:
+ 206   3      
+ 207   3                      break;
+ 208   3      #endif
+ 209   3      #endif
+ 210   3                  case _FRAME_SYNC_MODE:
+ 211   3      
+ 212   3                      ScalerIDomainVgipIVDelayIVstStepAdjust(GET_VGIP_INITIAL_VDELAY());
+ 213   3      
+ 214   3                      break;
+ 215   3      
+ 216   3                  default:
+ 217   3      
+ 218   3                      // Set VGIP V Capture  Start Position
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 5   
+
+ 219   3                      ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
+ 220   3      
+ 221   3                      ScalerVgipSetCaptureVDelay(GET_VGIP_INITIAL_VDELAY());
+ 222   3      
+ 223   3                      break;
+ 224   3              }
+ 225   2          }
+ 226   1      
+ 227   1          DebugMessageScaler("9. Set Capture usHWidth", g_stMDomainInputData.usHWidth);
+ 228   1          DebugMessageScaler("9. Set Capture usHStart", g_stMDomainInputData.usHStart);
+ 229   1          DebugMessageScaler("9. Set Capture usVHeight", g_stMDomainInputData.usVHeight);
+ 230   1          DebugMessageScaler("9. Set Capture usVStart", g_stMDomainInputData.usVStart);
+ 231   1      }
+ 232          
+ 233          //--------------------------------------------------
+ 234          // Description  : IVSdelay need to setting several times
+ 235          // Input Value  : Initial IVS delay
+ 236          // Output Value : N.A.
+ 237          //--------------------------------------------------
+ 238          void ScalerIDomainVgipIVDelayIVstStepAdjust(WORD usInitialIVDelay)
+ 239          {
+ 240   1          WORD usIVDelayStep = 1;
+ 241   1          WORD usIVDelayTemp = 0;
+ 242   1          BYTE ucSettingCounter = 0;
+ 243   1      
+ 244   1          WORD usDVtotal = GET_MDOMAIN_OUTPUT_VTOTAL();
+ 245   1      
+ 246   1          // Measure DVtotal in frame sync mode
+ 247   1          ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
+ 248   1          ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, _BIT7);
+ 249   1      
+ 250   1          GET_DVTOTAL_LASTLINE(usDVtotal);
+ 251   1          SET_MDOMAIN_OUTPUT_VTOTAL(usDVtotal);
+ 252   1      
+ 253   1          if(g_stMDomainOutputData.usVTotal > (g_stMDomainOutputData.usVBackStart + g_stMDomainOutputData.usVBac
+             -kHeight + _PANEL_FRONT_PORCH_LIMIT))
+ 254   1          {
+ 255   2              usIVDelayStep = (g_stMDomainOutputData.usVTotal - g_stMDomainOutputData.usVBackStart - g_stMDomain
+             -OutputData.usVBackHeight - _PANEL_FRONT_PORCH_LIMIT);
+ 256   2              usIVDelayStep = GET_DWORD_MUL_DIV(usIVDelayStep, g_stMDomainInputData.usVTotal, g_stMDomainOutputD
+             -ata.usVTotal);
+ 257   2      
+ 258   2              if(usIVDelayStep < 1)
+ 259   2              {
+ 260   3                  usIVDelayStep = 1;
+ 261   3              }
+ 262   2          }
+ 263   1          else
+ 264   1          {
+ 265   2              DebugMessageFS("warning !!! Aspect ratio/ overscan maybe have garbage", 0);
+ 266   2          }
+ 267   1      
+ 268   1          ucSettingCounter = (abs(usInitialIVDelay - ScalerVgipGetCaptureVDelay()) / usIVDelayStep) + 1;
+ 269   1      
+ 270   1          do
+ 271   1          {
+ 272   2              if(usInitialIVDelay > ScalerVgipGetCaptureVDelay())
+ 273   2              {
+ 274   3                  // Set VGIP V delay
+ 275   3                  ScalerVgipSetCaptureVDelay(usInitialIVDelay);
+ 276   3      
+ 277   3                  // Set VGIP V Capture  Start Position
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 6   
+
+ 278   3                  ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
+ 279   3              }
+ 280   2              else
+ 281   2              {
+ 282   3                  if((ScalerVgipGetCaptureVDelay() - usInitialIVDelay) <= usIVDelayStep)
+ 283   3                  {
+ 284   4                      // Set VGIP V delay
+ 285   4                      ScalerVgipSetCaptureVDelay(usInitialIVDelay);
+ 286   4      
+ 287   4                      // Set VGIP V Capture  Start Position
+ 288   4                      ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
+ 289   4                  }
+ 290   3                  else
+ 291   3                  {
+ 292   4                      usIVDelayTemp = ScalerVgipGetCaptureVDelay() - usIVDelayStep;
+ 293   4      
+ 294   4                      // Step adjust IVdelay
+ 295   4                      ScalerVgipSetCaptureVDelay(usIVDelayTemp);
+ 296   4      
+ 297   4                      // Step adjust IVstart
+ 298   4                      ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart + usInitialIVDelay - usIV
+             -DelayTemp);
+ 299   4                  }
+ 300   3      
+ 301   3                  DebugMessageFS("IVDelay step step", ScalerVgipGetCaptureVDelay());
+ 302   3              }
+ 303   2      
+ 304   2              ScalerGlobalIDomainDBApply(_DB_APPLY_POLLING);
+ 305   2      
+ 306   2              ucSettingCounter--;
+ 307   2          }
+ 308   1          while((usInitialIVDelay != ScalerVgipGetCaptureVDelay()) && (ucSettingCounter > 0));
+ 309   1      }
+ 310          
+ 311          //--------------------------------------------------
+ 312          // Description  : Estimate Max Allowable H Capture Start
+ 313          // Input Value  : Current H Start
+ 314          // Output Value : Max Allowable H Start
+ 315          //--------------------------------------------------
+ 316          WORD ScalerIDomainVgipIHCaptureMaxEstimate(WORD usHPosition)
+ 317          {
+ 318   1          if(usHPosition <= (_VGIP_IH_DELAY_MAX_VALUE + _VGIP_IH_CAPTURE_MIN_VALUE - (_MAX_H_POSITION_RANGE / 2)
+             -))
+ 319   1          {
+ 320   2              return _VGIP_IH_CAPTURE_MIN_VALUE;
+ 321   2          }
+ 322   1          else
+ 323   1          {
+ 324   2              return (usHPosition - (_VGIP_IH_DELAY_MAX_VALUE - (_MAX_H_POSITION_RANGE / 2)));
+ 325   2          }
+ 326   1      }
+ 327          
+ 328          //--------------------------------------------------
+ 329          // Description  : Adjust IVS/IHS Delay to Gain Largest Position-Adjusting Range
+ 330          // Input Value  : None
+ 331          // Output Value : None
+ 332          //--------------------------------------------------
+ 333          void ScalerIDomainVgipAdjustIHVDelay(void)
+ 334          {
+ 335   1          WORD usIV2DVdelay = 0;
+ 336   1          WORD usIVSdelayExtend = 0;
+ 337   1      
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 7   
+
+ 338   1          // Bypass IHV delay in digital capture
+ 339   1          if(ScalerVgipGetDigitalCaptureStatus() == _TRUE)
+ 340   1          {
+ 341   2              return;
+ 342   2          }
+ 343   1      
+ 344   1          if(ScalerGetBit(P0_43_FS_DELAY_FINE_TUNE, _BIT1) == _BIT1)
+ 345   1          {
+ 346   2              usIV2DVdelay = (ScalerMemoryGetIVS2DVSDelayPixel() - (g_stMDomainInputData.usHTotal / 2)) / g_stMD
+             -omainInputData.usHTotal;
+ 347   2          }
+ 348   1          else
+ 349   1          {
+ 350   2              usIV2DVdelay = ScalerMemoryGetIVS2DVSDelayPixel() / g_stMDomainInputData.usHTotal;
+ 351   2          }
+ 352   1      
+ 353   1      #if(_FRC_SUPPORT == _ON)
+ 354   1          if((GET_MEMORY_SELECT() != _FRAME_SYNC_LINE_BUFFER) && (GET_MEMORY_SELECT() != _FREE_RUN_NO_INPUT))
+ 355   1          {
+ 356   2              // Set IVS Delay
+ 357   2              if((g_stMDomainInputData.usVStart + GET_VGIP_INITIAL_VDELAY()) > _VGIP_IV_CAPTURE_MIN_VALUE)
+ 358   2              {
+ 359   3                  ScalerVgipSetCaptureVDelay(g_stMDomainInputData.usVStart - _VGIP_IV_CAPTURE_MIN_VALUE + GET_VG
+             -IP_INITIAL_VDELAY());
+ 360   3                  SET_VGIP_INITIAL_VDELAY(g_stMDomainInputData.usVStart - _VGIP_IV_CAPTURE_MIN_VALUE + GET_VGIP_
+             -INITIAL_VDELAY());
+ 361   3              }
+ 362   2              else
+ 363   2              {
+ 364   3                  ScalerVgipSetCaptureVDelay(0);
+ 365   3                  SET_VGIP_INITIAL_VDELAY(0);
+ 366   3              }
+ 367   2      
+ 368   2              // Set V Start
+ 369   2              g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MIN_VALUE;
+ 370   2              ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
+ 371   2          }
+ 372   1          else
+ 373   1      #endif
+ 374   1          {
+ 375   2      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                      if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
+                      {
+                          if(g_stMDomainInputData.usVStart > usIV2DVdelay)
+                          {
+                              // Remain IVSt = Raw IVSt - IVSDelay
+                              g_stMDomainInputData.usVStart = g_stMDomainInputData.usVStart - usIV2DVdelay;
+              
+                              if(g_stMDomainInputData.usVStart <= (_VGIP_IV_CAPTURE_MIN_VALUE + _VGIP_IV_CAPTURE_MIN_VAL
+             -UE % 2))
+                              {
+                                  DebugMessageScaler("VStart too Small", g_stMDomainInputData.usVStart);
+              
+                                  // Get Difference of Remain IVSt and _VGIP_IV_CAPTURE_MIN_VALUE
+                                  usIVSdelayExtend = (_VGIP_IV_CAPTURE_MIN_VALUE + _VGIP_IV_CAPTURE_MIN_VALUE % 2) - g_s
+             -tMDomainInputData.usVStart;
+                                  g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MIN_VALUE + _VGIP_IV_CAPTURE_MIN_VALU
+             -E % 2;
+                              }
+                              else
+                              {
+                                  usIVSdelayExtend = g_stMDomainInputData.usVStart % 2;
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 8   
+
+                                  g_stMDomainInputData.usVStart += g_stMDomainInputData.usVStart % 2;
+                              }
+                          }
+                      }
+                      else
+              #endif
+ 400   2              {
+ 401   3                  if(g_stMDomainInputData.usVStart > usIV2DVdelay)
+ 402   3                  {
+ 403   4                      // Remain IVSt = Raw IVSt - IVSDelay
+ 404   4                      g_stMDomainInputData.usVStart = g_stMDomainInputData.usVStart - usIV2DVdelay;
+ 405   4      
+ 406   4                      if(g_stMDomainInputData.usVStart <= _VGIP_IV_CAPTURE_MIN_VALUE)
+ 407   4                      {
+ 408   5                          DebugMessageScaler("VStart too Small", g_stMDomainInputData.usVStart);
+ 409   5      
+ 410   5                          // Get Difference of Remain IVSt and _VGIP_IV_CAPTURE_MIN_VALUE
+ 411   5                          usIVSdelayExtend = _VGIP_IV_CAPTURE_MIN_VALUE - g_stMDomainInputData.usVStart;
+ 412   5                          g_stMDomainInputData.usVStart = _VGIP_IV_CAPTURE_MIN_VALUE;
+ 413   5                      }
+ 414   4                      else
+ 415   4                      {
+ 416   5                          usIVSdelayExtend = 0;
+ 417   5                      }
+ 418   4                  }
+ 419   3              }
+ 420   2      
+ 421   2              // Check if V capture delay exceeds maximum value
+ 422   2              if((usIV2DVdelay - usIVSdelayExtend + GET_VGIP_INITIAL_VDELAY()) > _HW_VGIP_V_DELAY_BIT_WIDTH)
+ 423   2              {
+ 424   3                  // Modify IVSDelay = IVSDelay - IVSDelayExtend
+ 425   3                  usIV2DVdelay -= usIVSdelayExtend;
+ 426   3      
+ 427   3                  usIVSdelayExtend = (usIV2DVdelay + GET_VGIP_INITIAL_VDELAY()) - _HW_VGIP_V_DELAY_BIT_WIDTH;
+ 428   3      
+ 429   3      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                          if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
+                          {
+                              usIVSdelayExtend += (usIVSdelayExtend % 2);
+                          }
+              #endif
+ 435   3                  g_stMDomainInputData.usVStart = g_stMDomainInputData.usVStart + usIVSdelayExtend;
+ 436   3              }
+ 437   2      
+ 438   2              // Move Delay to ivs to dvs
+ 439   2              ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
+ 440   2      
+ 441   2              // Set IVS to DVS Delay
+ 442   2              ScalerVgipSetCaptureVDelay((WORD)(usIV2DVdelay - usIVSdelayExtend + GET_VGIP_INITIAL_VDELAY()));
+ 443   2      
+ 444   2              PDATA_DWORD(0) = ScalerMemoryGetIVS2DVSDelayPixel() - (DWORD)(usIV2DVdelay - usIVSdelayExtend) * g
+             -_stMDomainInputData.usHTotal;
+ 445   2              ScalerMemoryUpdateIVS2DVSLineDelay(PDATA_DWORD(0));
+ 446   2          }
+ 447   1      }
+ 448          
+ 449          //--------------------------------------------------
+ 450          // Description  : Modify H Capture
+ 451          // Input Value  : IH Capture Shift
+ 452          // Output Value : None
+ 453          //--------------------------------------------------
+ 454          void ScalerIDomainFineTuneHCaptureStart(WORD usDeltaIHCapture)
+C51 COMPILER V8.12   SCALERIDOMAIN                                                         09/16/2026 20:27:18 PAGE 9   
+
+ 455          {
+ 456   1          ScalerVgipSetCaptureHStartPosition(usDeltaIHCapture + ScalerVgipGetCaptureHStartPosition() - 2);
+ 457   1      
+ 458   1      // What is this?
+ 459   1      //    ScalerSetByte(P0_41_IVS2DVS_DLY_TUNE_ODD, (ScalerGetByte(P0_41_IVS2DVS_DLY_TUNE_ODD) + ((BYTE)(usDel
+             -taIHCapture / 16))));
+ 460   1      //    ScalerSetByte(P0_42_IVS2DVS_DLY_TUNE_EVEN, (ScalerGetByte(P0_42_IVS2DVS_DLY_TUNE_EVEN) + ((BYTE)(usD
+             -eltaIHCapture / 16))));
+ 461   1      }
+ 462          
+ 463          //--------------------------------------------------
+ 464          // Description  : Set Scaling Down Initial
+ 465          // Input Value  : None
+ 466          // Output Value : None
+ 467          //--------------------------------------------------
+ 468          void ScalerIDomainScalingDownInitial(void)
+ 469          {
+ 470   1          // Disable Scaling Down
+ 471   1          ScalerSetBit(P0_23_SCALE_DOWN_CTRL_M1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
+ 472   1      
+ 473   1      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
+                  // Disable Scaling Down
+                  ScalerSetBit(P40_23_SCALE_DOWN_CTRL_M2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
+              #endif
+ 477   1      }
+ 478          
+ 479          #if(_UNDERSCAN_SUPPORT == _ON)
+ 480          //--------------------------------------------------
+ 481          // Description  : Get Vgip VCaptureStart Min Value
+ 482          // Input Value  : None
+ 483          // Output Value : Vgip VCaptureStart Min Value
+ 484          //--------------------------------------------------
+ 485          WORD ScalerIDomainVgipGetVCaptureStartMinValue(void)
+ 486          {
+ 487   1          return _VGIP_IV_CAPTURE_MIN_VALUE;
+ 488   1      }
+ 489          #endif
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1536    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      4      17
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

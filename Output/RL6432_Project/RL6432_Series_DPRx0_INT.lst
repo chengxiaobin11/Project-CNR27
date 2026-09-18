@@ -1,0 +1,1936 @@
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_DPRX0_INT
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_DPRx0_INT.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DPRx0_INT.c LARGE OPT
+                    -IMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sys
+                    -tem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunct
+                    -ion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scal
+                    -er\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\
+                    -Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header
+                    -;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\
+                    -Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL
+                    -6432_Series_DPRx0_INT.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_DPRx0_INT.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   Copyright (c) 2021 Realtek Semiconductor Corp. All rights reserved.        */
+   3          /*                                                                              */
+   4          /*   SPDX-License-Identifier: LicenseRef-Realtek-Proprietary                    */
+   5          /*                                                                              */
+   6          /*   This software component is confidential and proprietary to Realtek         */
+   7          /*   Semiconductor Corp. Disclosure, reproduction, redistribution, in whole     */
+   8          /*   or in part, of this work and its derivatives without express permission    */
+   9          /*   is prohibited.                                                             */
+  10          /********************************************************************************/
+  11          
+  12          //----------------------------------------------------------------------------------------------------
+  13          // ID Code      : RL6432_Series_DPRx0_INT.c No.0000
+  14          // Update Note  :
+  15          //----------------------------------------------------------------------------------------------------
+  16          
+  17          #define __RL6432_SERIES_DPRX0_INT__
+  18          
+  19          #include "ScalerFunctionInclude.h"
+  20          
+  21          #if(_D0_DP_EXIST == _ON)
+  22          
+  23          //****************************************************************************
+  24          // DEFINITIONS / MACROS
+  25          //****************************************************************************
+  26          
+  27          
+  28          //****************************************************************************
+  29          // STRUCT / TYPE / ENUM DEFINITTIONS
+  30          //****************************************************************************
+  31          
+  32          
+  33          //****************************************************************************
+  34          // CODE TABLES
+  35          //****************************************************************************
+  36          
+  37          
+  38          //****************************************************************************
+  39          // VARIABLE DECLARATIONS
+  40          //****************************************************************************
+  41          
+  42          
+  43          //****************************************************************************
+  44          // FUNCTION DECLARATIONS
+  45          //****************************************************************************
+  46          void ScalerDpRx0IntHandler_EXINT0(void);
+  47          void ScalerDpRx0Tp1SetPhy_EXINT0(EnumDpNFCodeRef enumDpNFCodeRef);
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 2   
+
+  48          void ScalerDpRx0Tp2SetPhy_EXINT0(void);
+  49          
+  50          #if(_WD_TIMER_INT_SUPPORT == _ON)
+  51          void ScalerDpRx0RebuildPhy_WDINT(BYTE ucDpLinkRate);
+  52          #endif
+  53          
+  54          //****************************************************************************
+  55          // FUNCTION DEFINITIONS
+  56          //****************************************************************************
+  57          //--------------------------------------------------
+  58          // Description  : DP Interrupt Handler
+  59          // Input Value  : None
+  60          // Output Value : None
+  61          //--------------------------------------------------
+  62          void ScalerDpRx0IntHandler_EXINT0(void) using 1
+  63          {
+  64   1          // _ERROR_PRONE_CODE
+  65   1          // Aux Firmware Control -> Reply Defer
+  66   1      #if(_D1_DP_EXIST == _ON)
+                  SET_DP_RX1_AUX_MANUAL_MODE_EXINT();
+              #endif
+  69   1          SET_DP_RX0_AUX_MANUAL_MODE_EXINT();
+  70   1      
+  71   1          g_pucDpRx0Backup[0] = ScalerGetByte_EXINT(PB7_C1_DPCD_ADDR_PORT_H);
+  72   1          g_pucDpRx0Backup[1] = ScalerGetByte_EXINT(PB7_C2_DPCD_ADDR_PORT_M);
+  73   1          g_pucDpRx0Backup[2] = ScalerGetByte_EXINT(PB7_C3_DPCD_ADDR_PORT_L);
+  74   1      
+  75   1          // Backup Dpcd Auto Inc
+  76   1          g_bDpRx0AutoInc = (ScalerGetBit_EXINT(PB7_C0_DPCD_CTRL, _BIT0) == _BIT0);
+  77   1      
+  78   1          // Disable Dpcd Auto Inc
+  79   1          ScalerSetBit_EXINT(PB7_C0_DPCD_CTRL, ~_BIT0, 0x00);
+  80   1      
+  81   1          // DP Global IRQ Flag
+  82   1          if(ScalerGetBit_EXINT(PB7_DC_AUX_IRQ_STATUS, _BIT7) == _BIT7)
+  83   1          {
+  84   2              // Fifo overflow/ underflow IRQ & flag
+  85   2              if((ScalerGetBit_EXINT(PB6_3A_DP_IRQ_CTRL0, (_BIT1 | _BIT0)) != 0x00) && (ScalerGetBit_EXINT(PB5_2
+             -1_PG_CTRL_1, (_BIT4 | _BIT2)) != 0x00))
+  86   2              {
+  87   3                  // Disable fifo overflwo/ underflwo IRQ
+  88   3                  ScalerSetBit_EXINT(PB6_3A_DP_IRQ_CTRL0, ~(_BIT1 | _BIT0), 0x00);
+  89   3      
+  90   3                  // Set free run & force to BG
+  91   3                  ScalerSetBit_EXINT(P0_28_VIDEO_DISPLAY_CONTROL_REG, ~(_BIT5 | _BIT3), _BIT5);
+  92   3      
+  93   3      #if(_AUDIO_SUPPORT == _ON)
+  94   3                  // Disable Audio Channel
+  95   3                  ScalerAudioDpAudioEnable_EXINT0(_DISABLE, _D0_INPUT_PORT);
+  96   3      #endif
+  97   3      
+  98   3                  // Disable VB-ID[3] Change IRQ
+  99   3                  ScalerSetBit_EXINT(PB6_3B_DP_IRQ_CTRL1, ~_BIT4, 0x00);
+ 100   3      
+ 101   3                  // Set DP Receive Port0 Out of Sync
+ 102   3                  ScalerDpRx0SinkStatusSet_EXINT0(_DP_SINK_REVEICE_PORT0, _DP_SINK_OUT_OF_SYNC);
+ 103   3      
+ 104   3                  // The Judge Handler take much time, It lead to MacBook 720P @50 <---> @60 Timing changing Iss
+             -ue
+ 105   3                  if(((ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x11) & _BIT0) == 0x00) &&
+ 106   3                     (ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT0) &&
+ 107   3                     (ScalerDpRx0DFECheck_EXINT0() == _FALSE))
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 3   
+
+ 108   3                  {
+ 109   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x00);
+ 110   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x03, 0x00);
+ 111   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x04, 0x80);
+ 112   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x05, 0x00);
+ 113   4                  }
+ 114   3      
+ 115   3      #if((_DP_TX_SUPPORT == _ON) || (_EMBEDDED_DP_TX_SUPPORT == _ON))
+                          if(GET_DP_TX_STREAM_SOURCE() == _DP_TX_SOURCE_CLONE)
+                          {
+                              // Set DPTx Force Output Idle Pattern
+                              ScalerDpTxForceIdlePattern_EXINT0();
+                          }
+              #endif
+ 122   3              }
+ 123   2      
+ 124   2              // LLCTS 7.2.1.3 Sink Status
+ 125   2              if((ScalerGetBit_EXINT(PB6_3B_DP_IRQ_CTRL1, _BIT4) == _BIT4) && (ScalerGetBit_EXINT(PB6_36_DP_GLB_
+             -STATUS, _BIT6) == _BIT6))
+ 126   2              {
+ 127   3                  // Disable VB-ID[3] Change IRQ
+ 128   3                  ScalerSetBit_EXINT(PB6_3B_DP_IRQ_CTRL1, ~_BIT4, 0x00);
+ 129   3      
+ 130   3                  // Clear VB-ID[3] Change Flag
+ 131   3                  ScalerSetBit_EXINT(PB6_36_DP_GLB_STATUS, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BI
+             -T1), _BIT6);
+ 132   3      
+ 133   3                  if(ScalerGetBit_EXINT(PB6_01_DP_VBID, _BIT3) == _BIT3)
+ 134   3                  {
+ 135   4                      // Set DP Receive Port0 Out of Sync
+ 136   4                      ScalerDpRx0SinkStatusSet_EXINT0(_DP_SINK_REVEICE_PORT0, _DP_SINK_OUT_OF_SYNC);
+ 137   4                  }
+ 138   3              }
+ 139   2      
+ 140   2              if(ScalerGetBit_EXINT(PB7_DD_AUX_DPCD_IRQ, _BIT0) == _BIT0) // Write 00600h into INT0
+ 141   2              {
+ 142   3                  // Clear Flag
+ 143   3                  ScalerSetBit_EXINT(PB7_DD_AUX_DPCD_IRQ, ~_BIT0, _BIT0);
+ 144   3      
+ 145   3                  if((ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT1) ||
+ 146   3                     (ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == (_BIT2 | _B
+             -IT0)))
+ 147   3                  {
+ 148   4                      // DP Power Down
+ 149   4                      if(GET_DP_RX0_BACKUP_PD_LINK_STATUS_FLG() == _FALSE)
+ 150   4                      {
+ 151   5                          SET_DP_RX0_BACKUP_PD_LINK_STATUS_FLG();
+ 152   5      
+ 153   5                          g_pucDpRx0LinkStatusBackup_INT[0] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x02, 0x02);
+ 154   5                          g_pucDpRx0LinkStatusBackup_INT[1] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x02, 0x03);
+ 155   5                          g_pucDpRx0LinkStatusBackup_INT[2] = ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x02, 0x04,
+             - _BIT0);
+ 156   5                      }
+ 157   4      
+ 158   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x00);
+ 159   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x03, 0x00);
+ 160   4                      ScalerDpRx0SetDpcdBitValue_EXINT0(0x00, 0x02, 0x04, ~(_BIT7 | _BIT0), _BIT7);
+ 161   4                  }
+ 162   3                  else if(ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT0)
+ 163   3                  {
+ 164   4                      // DP Power Normal
+ 165   4                      if(GET_DP_RX0_BACKUP_PD_LINK_STATUS_FLG() == _TRUE)
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 4   
+
+ 166   4                      {
+ 167   5                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, g_pucDpRx0LinkStatusBackup_INT[0]);
+ 168   5                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x03, g_pucDpRx0LinkStatusBackup_INT[1]);
+ 169   5                          ScalerDpRx0SetDpcdBitValue_EXINT0(0x00, 0x02, 0x04, ~(_BIT7 | _BIT0), (_BIT7 | g_pucDp
+             -Rx0LinkStatusBackup_INT[2]));
+ 170   5                      }
+ 171   4      
+ 172   4                      CLR_DP_RX0_BACKUP_PD_LINK_STATUS_FLG();
+ 173   4                      g_pucDpRx0LinkStatusBackup_INT[0] = 0x00;
+ 174   4                      g_pucDpRx0LinkStatusBackup_INT[1] = 0x00;
+ 175   4                      g_pucDpRx0LinkStatusBackup_INT[2] = 0x00;
+ 176   4                  }
+ 177   3      
+ 178   3      #if(_DP_MST_SUPPORT == _ON)
+                          SET_DP_RX0_SOURCE_WRITE_POWER_STATUS_EVENT(_DP_SOURCE_WRITE_POWER_STATUS_EVENT_TRIGGERED);
+              #endif
+ 181   3              }
+ 182   2      
+ 183   2              if(ScalerGetBit_EXINT(PB7_DA_AUX_FIFO_RST, (_BIT2 | _BIT1)) == (_BIT2 | _BIT1)) // Write 68xxxh in
+             -to INT0
+ 184   2              {
+ 185   3                  // Clear Flag
+ 186   3                  ScalerSetBit_EXINT(PB7_DA_AUX_FIFO_RST, ~_BIT1, _BIT1);
+ 187   3      
+ 188   3                  // Clear Integrity Failure Flag
+ 189   3                  ScalerSetBit_EXINT(PB_1B_HDCP_INTGT_VRF, ~_BIT7, 0x00);
+ 190   3                  ScalerSetBit_EXINT(PB_1B_HDCP_INTGT_VRF, ~_BIT7, _BIT7);
+ 191   3      
+ 192   3      #if((_DP_TX_SUPPORT == _ON) && (_D0_DP_MST_PORT_SUPPORT == _ON))
+                          if(ScalerGetBit_EXINT(PB7_FA_DUMMY_0, _BIT3) == _BIT3)
+                          {
+                              // Detect if V'(0x68027) is read by Source
+                              if((ScalerGetByte_EXINT(PB7_D3_AUX_RX_ADDR_M) == 0x80) && (ScalerGetByte_EXINT(PB7_D4_AUX_
+             -RX_ADDR_L) == 0x28))
+                              {
+                                  ScalerDpRx0HDCPResetKsvFifoToFirst_EXINT0();
+                              }
+                          }
+              #endif
+ 202   3                  if(GET_DP_RX0_FAKE_LINK_TRAINING() == _TRUE)
+ 203   3                  {
+ 204   4                      // DP Mac Clock Select to Xtal Clock
+ 205   4                      ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT6, _BIT6);
+ 206   4                  }
+ 207   3              }
+ 208   2      
+ 209   2              // Detect if Aksv(0x6800B) is Written by Source
+ 210   2              if(ScalerGetBit_EXINT(PB7_A5_AUX_RESERVE5, (_BIT6 | _BIT2)) == (_BIT6 | _BIT2))
+ 211   2              {
+ 212   3                  ScalerSetBit_EXINT(PB7_A5_AUX_RESERVE5, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
+ 213   3      
+ 214   3      #if(_DP_HDCP_2_2_SUPPORT == _ON)
+ 215   3                  // Switch HDCP to 1.4 Module from 2.2 Module as receiving AKsv
+ 216   3                  if(GET_DP_RX0_HDCP_MODE_EXINT() == _HDCP_22)
+ 217   3                  {
+ 218   4                      // Select to HDCP 1.4 Module
+ 219   4                      SET_DP_RX0_HDCP_MODE_EXINT(_HDCP_14);
+ 220   4      
+ 221   4                      // Calculate R0' by manual toggle HDCP 1.4 Module
+ 222   4                      ScalerSetBit_EXINT(PB_63_HDCP_OTHER, ~_BIT7, _BIT7);
+ 223   4                      ScalerSetBit_EXINT(PB_63_HDCP_OTHER, ~_BIT7, 0x00);
+ 224   4                  }
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 5   
+
+ 225   3      
+ 226   3      #if(_WD_TIMER_INT_SUPPORT == _ON)
+ 227   3                  ScalerTimerWDCancelTimerEvent_EXINT0(_SCALER_WD_TIMER_EVENT_DP_RX0_HDCP2_SKE);
+ 228   3                  ScalerTimerWDCancelTimerEvent_EXINT0(_SCALER_WD_TIMER_EVENT_DP_RX0_HDCP2_H_PRIME);
+ 229   3      #endif
+ 230   3      #endif
+ 231   3      
+ 232   3      #if((_DP_TX_SUPPORT == _ON) && (_D0_DP_MST_PORT_SUPPORT == _ON))
+                          ScalerDpRx0HDCPResetDpcdInfo_EXINT0();
+              
+                          SET_DP_RX0_HDCP_AUTH_AKSV_WRITTEN();
+              #endif
+ 237   3              }
+ 238   2      
+ 239   2      #if((_DP_TX_SUPPORT == _ON) && (_D0_DP_MST_PORT_SUPPORT == _ON))
+                      // Read 6803A into INT0
+                      if(ScalerGetBit_EXINT(PB7_FA_DUMMY_0, (_BIT1 | _BIT0)) == (_BIT1 | _BIT0))
+                      {
+                          ScalerSetBit_EXINT(PB7_FA_DUMMY_0, ~_BIT0, _BIT0);
+              
+                          ScalerDpRx0HDCPSetKsvFifo_EXINT0();
+                      }
+              #endif
+ 248   2              if(ScalerGetBit_EXINT(PB7_DD_AUX_DPCD_IRQ, _BIT2) == _BIT2) // Write 00270h into INT0
+ 249   2              {
+ 250   3                  // Clear Flag
+ 251   3                  ScalerSetBit_EXINT(PB7_DD_AUX_DPCD_IRQ, ~_BIT2, _BIT2);
+ 252   3      
+ 253   3                  if((GET_DP_RX0_CRC_CALCULATE() == _FALSE) && (ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x02, 0x7
+             -0, _BIT0) == _BIT0))
+ 254   3                  {
+ 255   4                      SET_DP_RX0_CRC_CALCULATE();
+ 256   4                  }
+ 257   3      
+ 258   3                  if(ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x02, 0x70, _BIT0) == 0x00)
+ 259   3                  {
+ 260   4                      CLR_DP_RX0_CRC_CALCULATE();
+ 261   4      
+ 262   4                      // Reset the CRC value of DPCD
+ 263   4                      CLR_DP_RX0_CRC_VALUE_EXINT0();
+ 264   4                  }
+ 265   3      
+ 266   3                  // Clear TEST_CRC_COUNT
+ 267   3      #if(_DP_CRC_TEST_VISUAL_CHECK == _ON)
+                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x46, 0x00);
+              #else
+ 270   3                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x46, 0x20);
+ 271   3      #endif
+ 272   3              }
+ 273   2      
+ 274   2      #if(_DP_MST_SUPPORT == _ON)
+              
+              #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
+                      ScalerDpRx0MstAutoSwitch_EXINT0();
+              #endif
+              
+                      if(g_enumDpMSTCapablePort == _DP_MST_RX0_PORT)
+                      {
+                          ScalerDpRxMstIntHandle_EXINT0();
+                      }
+              #endif
+ 285   2      
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 6   
+
+ 286   2      #if(_AUDIO_SUPPORT == _ON)
+ 287   2              // ---------------------------------
+ 288   2              // LPCM Format Change
+ 289   2              // ---------------------------------
+ 290   2      
+ 291   2              // Check Change Flag
+ 292   2              if(ScalerGetBit_EXINT(PB6_36_DP_GLB_STATUS, _BIT2) == _BIT2)
+ 293   2              {
+ 294   3                  // Disable Audio Coding Type Change INT
+ 295   3                  ScalerSetBit_EXINT(PB6_3B_DP_IRQ_CTRL1, ~_BIT0, 0x00);
+ 296   3      
+ 297   3                  // Clear Audio Coding Type Change Flag
+ 298   3                  ScalerSetBit_EXINT(PB6_36_DP_GLB_STATUS, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BI
+             -T1), _BIT2);
+ 299   3      
+ 300   3                  // Disable Audio Output
+ 301   3                  ScalerSetByte_EXINT(PB6_B3_DP_CHANNEL_EN, 0x00);
+ 302   3      
+ 303   3                  // Set Change Flag
+ 304   3                  SET_DP_D0_AUDIO_CODING_TYPE_CHANGE();
+ 305   3              }
+ 306   2      
+ 307   2      
+ 308   2              // ---------------------------------
+ 309   2              // Fifo Tracking
+ 310   2              // ---------------------------------
+ 311   2      
+ 312   2              // Detect if Auido Sampling is Changed
+ 313   2              if(ScalerGetBit_EXINT(PB6_50_AUD_FREQUENY_DET_0, (_BIT6 | _BIT5)) == (_BIT6 | _BIT5))
+ 314   2              {
+ 315   3                  // Clear Auido Sampling Change Flag
+ 316   3                  ScalerSetBit_EXINT(PB6_50_AUD_FREQUENY_DET_0, ~_BIT5, _BIT5);
+ 317   3      
+ 318   3                  // Set Sampling Change Flag
+ 319   3                  SET_DP_D0_AUDIO_SAMPLING_FREQ_CHANGE();
+ 320   3      
+ 321   3                  // Disable Boundary Tracking Method
+ 322   3                  ScalerSetBit_EXINT(PB6_81_AUD_BDRY_0, ~_BIT7, 0x00);
+ 323   3      
+ 324   3                  // Disable Trend Tracking Method
+ 325   3                  ScalerSetBit_EXINT(PB6_92_AUD_TRND_0, ~_BIT7, 0x00);
+ 326   3      
+ 327   3                  // Reload D code
+ 328   3                  ScalerSetBit_EXINT(PB6_7C_AUD_FSM_CTRL_1, ~_BIT7, _BIT7);
+ 329   3      
+ 330   3      #if(_AUDIO_MANUAL_SAMPLING_FREQ_SUPPORT == _OFF)
+ 331   3                  // No Audio Detect
+ 332   3                  if((ScalerGetBit_EXINT(PB6_61_AUD_SAMPLE_CNT_0, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) >> 4) == 0x00
+             -)
+ 333   3                  {
+ 334   4                      // -----------------------------------------
+ 335   4                      // Set User Define Frequency When No Audio
+ 336   4                      // -----------------------------------------
+ 337   4                      ScalerAudioD0AudioFrequencyMode_EXINT0(_AUDIO_TRACKING_MANNUAL_MODE);
+ 338   4      
+ 339   4                      // Clear Flag
+ 340   4                      CLR_AUDIO_D0_AUTO_LOAD_FREQ();
+ 341   4                  }
+ 342   3      #endif
+ 343   3              }
+ 344   2      #endif
+ 345   2          }
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 7   
+
+ 346   1      
+ 347   1          ScalerSetByte_EXINT(PB7_C1_DPCD_ADDR_PORT_H, g_pucDpRx0Backup[0]);
+ 348   1          ScalerSetByte_EXINT(PB7_C2_DPCD_ADDR_PORT_M, g_pucDpRx0Backup[1]);
+ 349   1          ScalerSetByte_EXINT(PB7_C3_DPCD_ADDR_PORT_L, g_pucDpRx0Backup[2]);
+ 350   1      
+ 351   1          // Restore Dpcd Auto Inc
+ 352   1          ScalerSetBit_EXINT(PB7_C0_DPCD_CTRL, ~_BIT0, g_bDpRx0AutoInc);
+ 353   1      }
+ 354          
+ 355          //--------------------------------------------------
+ 356          // Description  : DP Phy Setting in TP1
+ 357          // Input Value  : FLD Reference Clock
+ 358          // Output Value : None
+ 359          //--------------------------------------------------
+ 360          void ScalerDpRx0Tp1SetPhy_EXINT0(EnumDpNFCodeRef enumDpNFCodeRef) using 1
+ 361          {
+ 362   1          /////////////////////////////
+ 363   1          // MAC Lane Swap Selection //
+ 364   1          /////////////////////////////
+ 365   1      
+ 366   1          // DP Lane Swap Setting
+ 367   1          ScalerSetBit_EXINT(PB_03_LANE_MUX, ~(_BIT7 | _BIT6), _D0_DP_LANE3 << 6);
+ 368   1          ScalerSetBit_EXINT(PB_03_LANE_MUX, ~(_BIT5 | _BIT4), _D0_DP_LANE2 << 4);
+ 369   1          ScalerSetBit_EXINT(PB_03_LANE_MUX, ~(_BIT3 | _BIT2), _D0_DP_LANE1 << 2);
+ 370   1          ScalerSetBit_EXINT(PB_03_LANE_MUX, ~(_BIT1 | _BIT0), _D0_DP_LANE0);
+ 371   1      
+ 372   1          // [1:0] DP Mac Clock Selection
+ 373   1          ScalerSetBit_EXINT(PB_96_DUMMY3, ~(_BIT1 | _BIT0), _D0_DP_LANE0);
+ 374   1      
+ 375   1          // DP Lane PN Swap Setting
+ 376   1          ScalerSetBit_EXINT(PB_06_DECODE_10B8B_ERROR, ~_BIT7, GET_DP_RX0_PCB_LANE3_PN_SWAP() << 7);
+ 377   1          ScalerSetBit_EXINT(PB_06_DECODE_10B8B_ERROR, ~_BIT6, GET_DP_RX0_PCB_LANE2_PN_SWAP() << 6);
+ 378   1          ScalerSetBit_EXINT(PB_06_DECODE_10B8B_ERROR, ~_BIT5, GET_DP_RX0_PCB_LANE1_PN_SWAP() << 5);
+ 379   1          ScalerSetBit_EXINT(PB_06_DECODE_10B8B_ERROR, ~_BIT4, GET_DP_RX0_PCB_LANE0_PN_SWAP() << 4);
+ 380   1      
+ 381   1      
+ 382   1          ///////////////////////////
+ 383   1          // RX CMU EN & Mac Power //
+ 384   1          ///////////////////////////
+ 385   1      
+ 386   1          // Digital PHY Block Power Normal
+ 387   1          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, 0x00);
+ 388   1      
+ 389   1      #if(_SOURCE_BACKGROUND_DETECT_SUPPORT == _OFF)
+ 390   1      
+ 391   1          // [7] cmu_en = 1'b0 --> Disable CMU PLL
+ 392   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, 0x00);
+ 393   1      
+ 394   1          // [7:4] Rx_en = 4'b0000 -> Disable RX_EN
+ 395   1          // [3:0] CDR_en = 4'b0000 -> Disable CDR_EN
+ 396   1          ScalerSetByte_EXINT(P1D_1A_CMU_00, 0x00);
+ 397   1      
+ 398   1          switch(g_ucDpRx0LaneCount)
+ 399   1          {
+ 400   2              case _DP_ONE_LANE:
+ 401   2      
+ 402   2                  if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE0)
+ 403   2                  {
+ 404   3                      // [4] Enable Lane0 Rx_en
+ 405   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT4, _BIT4);
+ 406   3      
+ 407   3                      // [0] Enable Lane0 CDR_en
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 8   
+
+ 408   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT0, _BIT0);
+ 409   3      
+ 410   3                      // [7:6] reg_en_ana_cdr = 4'b0001 --> Enable Lane0 Analog CDR
+ 411   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), 0x00);
+ 412   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), _BIT6);
+ 413   3                  }
+ 414   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE1)
+ 415   2                  {
+ 416   3                      // [5] Enable Lane1 Rx_en
+ 417   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT5, _BIT5);
+ 418   3      
+ 419   3                      // [1] Enable Lane1 CDR_en
+ 420   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT1, _BIT1);
+ 421   3      
+ 422   3                      // [7:6] reg_en_ana_cdr = 4'b0010 --> Enable Lane0 Analog CDR
+ 423   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), 0x00);
+ 424   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), _BIT7);
+ 425   3                  }
+ 426   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE2)
+ 427   2                  {
+ 428   3                      // [6] Enable Lane2 Rx_en
+ 429   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT6, _BIT6);
+ 430   3      
+ 431   3                      // [2] Enable Lane2 CDR_en
+ 432   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT2, _BIT2);
+ 433   3      
+ 434   3                      // [7:6] reg_en_ana_cdr = 4'b0100 --> Enable Lane0 Analog CDR
+ 435   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), _BIT6);
+ 436   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), 0x00);
+ 437   3                  }
+ 438   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE3)
+ 439   2                  {
+ 440   3                      // [7] Enable Lane3 Rx_en
+ 441   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT7, _BIT7);
+ 442   3      
+ 443   3                      // [3] Enable Lane3 CDR_en
+ 444   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT3, _BIT3);
+ 445   3      
+ 446   3                      // [7:6] reg_en_ana_cdr = 4'b1000 --> Enable Lane0 Analog CDR
+ 447   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), _BIT7);
+ 448   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), 0x00);
+ 449   3                  }
+ 450   2      
+ 451   2                  // [4:3] DP Mac Select One Lane
+ 452   2                  ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), _BIT3);
+ 453   2      
+ 454   2                  break;
+ 455   2      
+ 456   2              case _DP_TWO_LANE:
+ 457   2      
+ 458   2                  if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE0)
+ 459   2                  {
+ 460   3                      // [4] Enable Lane0 Rx_en
+ 461   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT4, _BIT4);
+ 462   3      
+ 463   3                      // [0] Enable Lane0 CDR_en
+ 464   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT0, _BIT0);
+ 465   3      
+ 466   3                      // [6] reg_en_ana_cdr[0] = 1 --> Enable Lane0 Analog CDR
+ 467   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~_BIT6, _BIT6);
+ 468   3                  }
+ 469   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE1)
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 9   
+
+ 470   2                  {
+ 471   3                      // [5] Enable Lane1 Rx_en
+ 472   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT5, _BIT5);
+ 473   3      
+ 474   3                      // [1] Enable Lane1 CDR_en
+ 475   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT1, _BIT1);
+ 476   3      
+ 477   3                      // [7] reg_en_ana_cdr[1] = 1 --> Enable Lane1 Analog CDR
+ 478   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~_BIT7, _BIT7);
+ 479   3                  }
+ 480   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE2)
+ 481   2                  {
+ 482   3                      // [6] Enable Lane2 Rx_en
+ 483   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT6, _BIT6);
+ 484   3      
+ 485   3                      // [2] Enable Lane2 CDR_en
+ 486   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT2, _BIT2);
+ 487   3      
+ 488   3                      // [6] reg_en_ana_cdr[2] = 1 --> Enable Lane2 Analog CDR
+ 489   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~_BIT6, _BIT6);
+ 490   3                  }
+ 491   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE3)
+ 492   2                  {
+ 493   3                      // [7] Enable Lane3 Rx_en
+ 494   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT7, _BIT7);
+ 495   3      
+ 496   3                      // [3] Enable Lane3 CDR_en
+ 497   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT3, _BIT3);
+ 498   3      
+ 499   3                      // [7] reg_en_ana_cdr[3] = 1 --> Enable Lane3 Analog CDR
+ 500   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~_BIT7, _BIT7);
+ 501   3                  }
+ 502   2      
+ 503   2                  if(GET_DP_RX0_PCB_LANE1_MAPPING() == _DP_SCALER_LANE0)
+ 504   2                  {
+ 505   3                      // [4] Enable Lane0 Rx_en
+ 506   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT4, _BIT4);
+ 507   3      
+ 508   3                      // [0] Enable Lane0 CDR_en
+ 509   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT0, _BIT0);
+ 510   3      
+ 511   3                      // [6] reg_en_ana_cdr[0] = 1 --> Enable Lane0 Analog CDR
+ 512   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~_BIT6, _BIT6);
+ 513   3                  }
+ 514   2                  else if(GET_DP_RX0_PCB_LANE1_MAPPING() == _DP_SCALER_LANE1)
+ 515   2                  {
+ 516   3                      // [5] Enable Lane1 Rx_en
+ 517   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT5, _BIT5);
+ 518   3      
+ 519   3                      // [1] Enable Lane1 CDR_en
+ 520   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT1, _BIT1);
+ 521   3      
+ 522   3                      // [7] reg_en_ana_cdr[1] = 1 --> Enable Lane1 Analog CDR
+ 523   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~_BIT7, _BIT7);
+ 524   3                  }
+ 525   2                  else if(GET_DP_RX0_PCB_LANE1_MAPPING() == _DP_SCALER_LANE2)
+ 526   2                  {
+ 527   3                      // [6] Enable Lane2 Rx_en
+ 528   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT6, _BIT6);
+ 529   3      
+ 530   3                      // [2] Enable Lane2 CDR_en
+ 531   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT2, _BIT2);
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 10  
+
+ 532   3      
+ 533   3                      // [6] reg_en_ana_cdr[2] = 1 --> Enable Lane2 Analog CDR
+ 534   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~_BIT6, _BIT6);
+ 535   3                  }
+ 536   2                  else if(GET_DP_RX0_PCB_LANE1_MAPPING() == _DP_SCALER_LANE3)
+ 537   2                  {
+ 538   3                      // [7] Enable Lane3 Rx_en
+ 539   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT7, _BIT7);
+ 540   3      
+ 541   3                      // [3] Enable Lane3 CDR_en
+ 542   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT3, _BIT3);
+ 543   3      
+ 544   3                      // [7] reg_en_ana_cdr[3] = 1 --> Enable Lane3 Analog CDR
+ 545   3                      ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~_BIT7, _BIT7);
+ 546   3                  }
+ 547   2      
+ 548   2                  // [4:3] DP Mac Select Two Lane
+ 549   2                  ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), _BIT4);
+ 550   2      
+ 551   2                  break;
+ 552   2      
+ 553   2              case _DP_FOUR_LANE:
+ 554   2              default:
+ 555   2      
+ 556   2                  // [7:4] Enable Lane0~3 Rx_en
+ 557   2                  ScalerSetBit_EXINT(P1D_1A_CMU_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT6 | _BIT5 | _
+             -BIT4));
+ 558   2      
+ 559   2                  // [3:0] Enable Lane0~3 CDR_en
+ 560   2                  ScalerSetBit_EXINT(P1D_1A_CMU_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT0);
+ 561   2                  ScalerSetBit_EXINT(P1D_1A_CMU_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
+ 562   2                  ScalerSetBit_EXINT(P1D_1A_CMU_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT1 | _BIT0));
+ 563   2                  ScalerSetBit_EXINT(P1D_1A_CMU_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _
+             -BIT0));
+ 564   2      
+ 565   2                  // [7:6] reg_en_ana_cdr = 4'b1111 --> Enable Lane0~3 Analog CDR
+ 566   2                  ScalerSetBit_EXINT(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+ 567   2                  ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+ 568   2      
+ 569   2                  // [4:3] DP Mac Select Four Lane
+ 570   2                  ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), (_BIT4 | _BIT3));
+ 571   2      
+ 572   2                  break;
+ 573   2          }
+ 574   1      #else
+                  switch(g_ucDpRx0LaneCount)
+                  {
+                      case _DP_ONE_LANE:
+              
+                          // [4:3] DP MAC Select One Lane
+                          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), _BIT3);
+              
+                          break;
+              
+                      case _DP_TWO_LANE:
+              
+                          // [4:3] DP MAC Select Two Lane
+                          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), _BIT4);
+              
+                          break;
+              
+                      case _DP_FOUR_LANE:
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 11  
+
+                      default:
+              
+                          // [4:3] DP MAC Select Four Lane
+                          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~(_BIT4 | _BIT3), (_BIT4 | _BIT3));
+              
+                          break;
+                  }
+              #endif
+ 600   1      
+ 601   1          ///////////////////////
+ 602   1          // Frequency Setting //
+ 603   1          ///////////////////////
+ 604   1      
+ 605   1          if(g_ucDpRx0LinkRate == _DP_LINK_HBR2)
+ 606   1          {
+ 607   2              // [7:5] rate_sel = 3'b000 --> 3~6GHz
+ 608   2              ScalerSetBit_EXINT(P1D_44_ST_01, ~(_BIT7 | _BIT6 | _BIT5), 0x00);
+ 609   2      
+ 610   2              // [2:0] SEL_DIV = 3'b000 --> 3~6GHz
+ 611   2              ScalerSetBit_EXINT(P1D_21_CMU_07, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
+ 612   2          }
+ 613   1          else
+ 614   1          {
+ 615   2              // [7:5] rate_sel = 3'b001 --> 1.5~3GHz
+ 616   2              ScalerSetBit_EXINT(P1D_44_ST_01, ~(_BIT7 | _BIT6 | _BIT5), _BIT5);
+ 617   2      
+ 618   2              // [2:0] SEL_DIV = 3'b001 --> 1.5~3GHz
+ 619   2              ScalerSetBit_EXINT(P1D_21_CMU_07, ~(_BIT2 | _BIT1 | _BIT0), _BIT0);
+ 620   2          }
+ 621   1      
+ 622   1          if(enumDpNFCodeRef == _DP_NF_REF_XTAL)
+ 623   1          {
+ 624   2              // [3] reg_xtal_en = 1'b1 --> Using 27M Xtal
+ 625   2              ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT3, _BIT3);
+ 626   2      
+ 627   2              if(g_ucDpRx0LinkRate == _DP_LINK_RBR)
+ 628   2              {
+ 629   3                  // Analog CDR Auto FLD Counter
+ 630   3                  // 0x2D[1] 0x2E --> ref_conuter = 25
+ 631   3                  // 0x2D[0] 0x2F --> cdr_counter = 300
+ 632   3                  // 25/300 = 1/12 = 5*(27M/1.62G)
+ 633   3                  ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~(_BIT1 | _BIT0), _BIT0);
+ 634   3                  ScalerSetByte_EXINT(P1D_2E_ANA_CDR_03, 0x18);
+ 635   3                  ScalerSetByte_EXINT(P1D_2F_ANA_CDR_04, 0x2B);
+ 636   3              }
+ 637   2              else
+ 638   2              {
+ 639   3                  // Analog CDR Auto FLD Counter
+ 640   3                  // 0x2D[1] 0x2E --> ref_conuter = 25
+ 641   3                  // 0x2D[0] 0x2F --> cdr_counter = 500
+ 642   3                  // 25/500 = 1/20 = 5*(27M/2.7G)
+ 643   3                  ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~(_BIT1 | _BIT0), _BIT0);
+ 644   3                  ScalerSetByte_EXINT(P1D_2E_ANA_CDR_03, 0x18);
+ 645   3                  ScalerSetByte_EXINT(P1D_2F_ANA_CDR_04, 0xF3);
+ 646   3              }
+ 647   2          }
+ 648   1          else
+ 649   1          {
+ 650   2              // [3] reg_xtal_en = 1'b0 --> Using D10.2 Clock
+ 651   2              ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT3, 0x00);
+ 652   2      
+ 653   2              // Analog CDR Auto FLD Counter
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 12  
+
+ 654   2              // ref_conuter = 125
+ 655   2              // cdr_counter = 250
+ 656   2              // 250/500 = 1/2 = 5*(D10.2_clock / data_rate)
+ 657   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~(_BIT1 | _BIT0), 0x00);
+ 658   2              ScalerSetByte_EXINT(P1D_2E_ANA_CDR_03, 0x7C);
+ 659   2              ScalerSetByte_EXINT(P1D_2F_ANA_CDR_04, 0xF9);
+ 660   2          }
+ 661   1      
+ 662   1      
+ 663   1          /////////////////////
+ 664   1          // Rx Misc Setting //
+ 665   1          /////////////////////
+ 666   1      
+ 667   1          // [4] Disable Comma Detection
+ 668   1          ScalerSetBit_EXINT(PB_05_SAMPLE_EDGE, ~_BIT4, _BIT4);
+ 669   1      
+ 670   1          // [5] Disable De-Scrambling
+ 671   1          ScalerSetBit_EXINT(PB_07_SCRAMBLE_CTRL, ~_BIT5, _BIT5);
+ 672   1      
+ 673   1          if((ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x01) & _BIT7) == _BIT7)
+ 674   1          {
+ 675   2              // [2] Enable Enhancement Control Mode
+ 676   2              ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT2, _BIT2);
+ 677   2          }
+ 678   1          else
+ 679   1          {
+ 680   2              // [2] Disable Enhancement Control Mode
+ 681   2              ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT2, 0x00);
+ 682   2          }
+ 683   1      
+ 684   1          // [4] reg_acdr_l0_en = 1'b1 --> Enable Lane0 ACDR
+ 685   1          // [3] reg_en_data_manual_l0 = 1'b0
+ 686   1          // [2] reg_bypass_data_rdy_l0 = 1'b1
+ 687   1          // [1] reg_en_eqen_manual_l0 = 1'b0
+ 688   1          // [0] reg_bypass_eqen_rdy_l0 = 1'b1
+ 689   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT4 | _BIT2 | _BIT0));
+ 690   1      
+ 691   1          // [7:4] RST_N = 4'b0000 = 4'b1111 --> Digital Circuit Reset Toggle
+ 692   1          // [3:0] CDR_RST_N = 4'b0000 --> Disable DCDR
+ 693   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0x00);
+ 694   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0xF0);
+ 695   1      
+ 696   1      
+ 697   1          //////////////////
+ 698   1          // ACDR Setting //
+ 699   1          //////////////////
+ 700   1      
+ 701   1          if(g_ucDpRx0LinkRate == _DP_LINK_HBR2)
+ 702   1          {
+ 703   2              // [7] reg_sel_CDR_cp = 0 --> Disable CDR Loop's CP (1nF)
+ 704   2              // [6:4] reg_sel_cdr_res = 3'b010 --> Analog CDR Rs = 1.5K
+ 705   2              // [3:0] reg_cdr_cp_in = 4'b0011 --> Analog CDR Icp = 10.5uA
+ 706   2              ScalerSetByte_EXINT(P1D_31_ANA_CDR_06, 0x23);
+ 707   2      
+ 708   2              // [0] Half_PD = 1 --> Half Rate PD
+ 709   2              ScalerSetBit_EXINT(P1D_39_ANA_CDR_14, ~_BIT7, _BIT7);
+ 710   2          }
+ 711   1          else
+ 712   1          {
+ 713   2              // [7] reg_sel_CDR_cp = 0 --> Disable CDR Loop's CP (1nF)
+ 714   2              // [6:4] reg_sel_cdr_res = 3'b100 --> Analog CDR Rs = 4K
+ 715   2              // [3:0] reg_cdr_cp_in = 4'b0101 --> Analog CDR Icp = 16.5uA
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 13  
+
+ 716   2              ScalerSetByte_EXINT(P1D_31_ANA_CDR_06, 0x45);
+ 717   2      
+ 718   2              // [0] Half_PD = 0 --> Full Rate PD
+ 719   2              ScalerSetBit_EXINT(P1D_39_ANA_CDR_14, ~_BIT7, 0x00);
+ 720   2          }
+ 721   1      
+ 722   1      
+ 723   1          /////////////////
+ 724   1          // DFE Setting //
+ 725   1          /////////////////
+ 726   1      
+ 727   1          // [7:3] Tap_EN = 5'b11111 --> Enable Tap0~4
+ 728   1          ScalerSetBit_EXINT(P1D_21_CMU_07, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3), (_BIT7 | _BIT6 | _BIT5 | _
+             -BIT4 | _BIT3));
+ 729   1      
+ 730   1          // Set DFE Initial
+ 731   1          ScalerDpRx0SetDFEInitial_EXINT0();
+ 732   1      
+ 733   1          // [7] ENHANCE_OFFSETADDER_BIAS = 1'b0 --> OffsetAdder Bias = Normal
+ 734   1          ScalerSetBit_EXINT(P1D_1D_CMU_03, ~_BIT7, 0x00);
+ 735   1      
+ 736   1          // [4] en_sumamp_highgain = 0 --> Disable Sumamp High Gain Mode
+ 737   1          ScalerSetBit_EXINT(P1D_1D_CMU_03, ~_BIT4, 0x00);
+ 738   1      
+ 739   1          switch(g_ucDpRx0LinkRate)
+ 740   1          {
+ 741   2              case _DP_LINK_HBR2:
+ 742   2      
+ 743   2                  // LE Peaking = 3GHz
+ 744   2                  // [7:5] LE_RLSEL = 3'b000
+ 745   2                  // [4:2] LE_ISEL = 3'b011
+ 746   2                  ScalerSetBit_EXINT(P1D_23_CMU_09, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BIT3 | _
+             -BIT2));
+ 747   2      
+ 748   2                  break;
+ 749   2      
+ 750   2              case _DP_LINK_HBR:
+ 751   2      
+ 752   2                  // LE Peaking = 1.7GHz
+ 753   2                  // [7:5] LE_RLSEL = 3'b001
+ 754   2                  // [4:2] LE_ISEL = 3'b010
+ 755   2                  ScalerSetBit_EXINT(P1D_23_CMU_09, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BIT5 | _
+             -BIT3));
+ 756   2      
+ 757   2                  break;
+ 758   2      
+ 759   2              case _DP_LINK_RBR:
+ 760   2              default:
+ 761   2      
+ 762   2                  // LE Peaking = 900MHz
+ 763   2                  // [7:5] LE_RLSEL = 3'b011
+ 764   2                  // [4:2] LE_ISEL = 3'b000
+ 765   2                  ScalerSetBit_EXINT(P1D_23_CMU_09, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BIT6 | _
+             -BIT5));
+ 766   2      
+ 767   2                  break;
+ 768   2          }
+ 769   1      
+ 770   1      
+ 771   1          //////////////
+ 772   1          // K Offset //
+ 773   1          //////////////
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 14  
+
+ 774   1      
+ 775   1          // [5] fore_off_autok = 1 --> Enable Foreground Calibration Auto Mode
+ 776   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT5, _BIT5);
+ 777   1      
+ 778   1          // [6] en_fore_offset --> Toggle Foreground Calibration
+ 779   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+ 780   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, 0x00);
+ 781   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+ 782   1      
+ 783   1          // Delay Time us [85,x] Waiting for K Offset
+ 784   1          DELAY_XUS_EXINT(85);
+ 785   1      
+ 786   1      
+ 787   1          /////////////////////
+ 788   1          // Adaptation Loop //
+ 789   1          /////////////////////
+ 790   1      
+ 791   1          // [7] cmu_en = 1'b1 --> Enable CMU PLL
+ 792   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, _BIT7);
+ 793   1      
+ 794   1          // [7] reg_auto_mode = 1'b1 --> FLD Select Auto Mode
+ 795   1          // [4] reg_adp_eq_off = 1'b0 --> Enable Analog CDR DFE Adaptation
+ 796   1          // [0] reg_cp_adj_en = 1'b1 --> Enable Adjust Icp When Tracking
+ 797   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT4 | _BIT0), (_BIT7 | _BIT0));
+ 798   1      
+ 799   1          // [2] reg_rstb_fsm --> FLD Reset
+ 800   1          ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, 0x00);
+ 801   1      
+ 802   1          // [1] reg_en_eqen_manual_l0 = 1'b1
+ 803   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, _BIT1);
+ 804   1      
+ 805   1          // Enable Vth/Tap0 Adaptation
+ 806   1          ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x41);
+ 807   1          ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x41);
+ 808   1          ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x41);
+ 809   1          ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x41);
+ 810   1      
+ 811   1          // [2] reg_rstb_fsm = 1'b1 --> Lock FLD Band, CDR Close Loop, DFE Adaptation Enable
+ 812   1          ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, _BIT2);
+ 813   1      
+ 814   1          // Delay Time us [85,x] Waiting for FLD Lock Band
+ 815   1          DELAY_XUS_EXINT(85);
+ 816   1      
+ 817   1          // Start to Record Tap0 Max/Min
+ 818   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, _BIT0);
+ 819   1      
+ 820   1          // Delay Time us [85,x] Waiting for DFE Adaptation
+ 821   1          DELAY_XUS_EXINT(85);
+ 822   1      
+ 823   1          // Stop To Record Tap0 Max/Min
+ 824   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, 0x00);
+ 825   1      
+ 826   1          // [1] reg_en_eqen_manual_l0 = 1'b0 --> DFE Adaptation Off
+ 827   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, 0x00);
+ 828   1      
+ 829   1          // [4] reg_adp_eq_off = 1'b1 --> Disable Analog CDR DFE Adaptation
+ 830   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT4, _BIT4);
+ 831   1      
+ 832   1          // Disable All Adapation Loop
+ 833   1          ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+ 834   1          ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+ 835   1          ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 15  
+
+ 836   1          ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+ 837   1      
+ 838   1          // Read Back Tap0 Max
+ 839   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), 0x00);
+ 840   1      
+ 841   1          // Reload Max Value of Tap0 (Lane0)
+ 842   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), 0x00);
+ 843   1          ScalerSetByte_EXINT(P1D_A4_L0_INIT_2, (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F));
+ 844   1      
+ 845   1          // Reload Max Value of Tap0 (Lane1)
+ 846   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT6);
+ 847   1          ScalerSetByte_EXINT(P1D_B4_L1_INIT_2, (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F));
+ 848   1      
+ 849   1          // Reload Max Value of Tap0 (Lane2)
+ 850   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT7);
+ 851   1          ScalerSetByte_EXINT(P1D_C4_L2_INIT_2, (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F));
+ 852   1      
+ 853   1          // Reload Max Value of Tap0 (Lane3)
+ 854   1          ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+ 855   1          ScalerSetByte_EXINT(P1D_D4_L3_INIT_2, (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F));
+ 856   1      
+ 857   1          // Reload Tap0
+ 858   1          ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, _BIT0);
+ 859   1          ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, _BIT0);
+ 860   1          ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, _BIT0);
+ 861   1          ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, _BIT0);
+ 862   1          ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, 0x00);
+ 863   1          ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, 0x00);
+ 864   1          ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, 0x00);
+ 865   1          ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, 0x00);
+ 866   1      
+ 867   1          // [3] reg_en_data_manual_l0 = 1'b1 --> Data from PHY to MAC
+ 868   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT3, _BIT3);
+ 869   1      
+ 870   1          // [6] DP Mac Clock Select to Link Clock
+ 871   1          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT6, 0x00);
+ 872   1      
+ 873   1      
+ 874   1          /////////////////////////
+ 875   1          // D10.2 Clock Measure //
+ 876   1          /////////////////////////
+ 877   1      
+ 878   1          // [7:4] reg_en_sigdet_lane = 4'b1111 --> Enable Signal Detection for D10.2
+ 879   1          ScalerSetBit_EXINT(P1D_19_IMPEDANCE_01, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT6 | _BIT5 | _BI
+             -T4));
+ 880   1      
+ 881   1          // [5] ln_ck_sel = 1'b0 -> DP Raw Data
+ 882   1          // [4:0] DP_XTAL_CYCLE = 5'b00011 -> XTAL Counter Cycles = 1000
+ 883   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT
+             -0));
+ 884   1      
+ 885   1          // [1:0] freqdet_lane_sel = 2'b00 -> Lane0
+ 886   1          ScalerSetBit_EXINT(PB_51_DP_SIG_DET_1, ~(_BIT1 | _BIT0), _D0_DP_LANE0);
+ 887   1      
+ 888   1          // [6] LANE_COUNT_CLEAR = 0 -> Keep the LANE_COUNT value
+ 889   1          ScalerSetBit_EXINT(PB_52_DP_SIG_DET_2, ~_BIT6, 0x00);
+ 890   1      
+ 891   1          // [7] DP_SIG_DET_EN = 1'b1 -> Enable Signal Detection
+ 892   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+ 893   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
+ 894   1      
+ 895   1          // Delay Time us [5,150] Polling for Measure Done
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 16  
+
+ 896   1          for(g_ucDpRx0Temp = 0; g_ucDpRx0Temp <= 30; g_ucDpRx0Temp++)
+ 897   1          {
+ 898   2              DELAY_5US_EXINT();
+ 899   2      
+ 900   2              if(ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+ 901   2              {
+ 902   3                  break;
+ 903   3              }
+ 904   2          }
+ 905   1      
+ 906   1          if(ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+ 907   1          {
+ 908   2              g_pusDpRx0ClockCount[0] = ((((WORD)ScalerGetByte_EXINT(PB_53_DP_SIG_DET_3)) << 8) | ScalerGetByte_
+             -EXINT(PB_54_DP_SIG_DET_4));
+ 909   2          }
+ 910   1          else
+ 911   1          {
+ 912   2              switch(g_ucDpRx0LinkRate)
+ 913   2              {
+ 914   3                  case _DP_LINK_HBR2:
+ 915   3      
+ 916   3                      g_pusDpRx0ClockCount[0] = 0x2710;
+ 917   3      
+ 918   3                      break;
+ 919   3      
+ 920   3                  case _DP_LINK_HBR:
+ 921   3      
+ 922   3                      g_pusDpRx0ClockCount[0] = 0x1388;
+ 923   3      
+ 924   3                      break;
+ 925   3      
+ 926   3                  default:
+ 927   3                  case _DP_LINK_RBR:
+ 928   3      
+ 929   3                      g_pusDpRx0ClockCount[0] = 0xBB8;
+ 930   3      
+ 931   3                      break;
+ 932   3              }
+ 933   2          }
+ 934   1      
+ 935   1          // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
+ 936   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+ 937   1      
+ 938   1          g_pusDpRx0ClockCount[3] = g_pusDpRx0ClockCount[0];
+ 939   1          g_pusDpRx0ClockCount[2] = g_pusDpRx0ClockCount[0];
+ 940   1          g_pusDpRx0ClockCount[1] = g_pusDpRx0ClockCount[0];
+ 941   1      }
+ 942          
+ 943          //--------------------------------------------------
+ 944          // Description  : DP Phy Setting in TP2
+ 945          // Input Value  : None
+ 946          // Output Value : None
+ 947          //--------------------------------------------------
+ 948          void ScalerDpRx0Tp2SetPhy_EXINT0(void) using 1
+ 949          {
+ 950   1          WORD usVCOBandDiff = 0;
+ 951   1          WORD usVCOBandScan = 0;
+ 952   1          BYTE ucIcp = (ScalerGetByte_EXINT(P1D_31_ANA_CDR_06) & 0x0F);
+ 953   1      
+ 954   1          /////////////
+ 955   1          // Rx Misc //
+ 956   1          /////////////
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 17  
+
+ 957   1      
+ 958   1          // Digital PHY Block Power Normal
+ 959   1          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT1, 0x00);
+ 960   1      
+ 961   1          // [7] cmu_en = 1'b0 --> Disable CMU PLL
+ 962   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, 0x00);
+ 963   1      
+ 964   1          // [4] Enable Comma Detection
+ 965   1          ScalerSetBit_EXINT(PB_05_SAMPLE_EDGE, ~_BIT4, 0x00);
+ 966   1      
+ 967   1          // [5] Disable De-Scrambling
+ 968   1          ScalerSetBit_EXINT(PB_07_SCRAMBLE_CTRL, ~_BIT5, _BIT5);
+ 969   1      
+ 970   1          if((ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x01) & _BIT7) == _BIT7)
+ 971   1          {
+ 972   2              // [2] Enable Enhancement Control Mode
+ 973   2              ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT2, _BIT2);
+ 974   2          }
+ 975   1          else
+ 976   1          {
+ 977   2              // [2] Disable Enhancement Control Mode
+ 978   2              ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT2, 0x00);
+ 979   2          }
+ 980   1      
+ 981   1          // [4] reg_acdr_l0_en = 1'b1 --> Enable Lane0 ACDR
+ 982   1          // [3] reg_en_data_manual_l0 = 1'b0
+ 983   1          // [2] reg_bypass_data_rdy_l0 = 1'b1
+ 984   1          // [1] reg_en_eqen_manual_l0 = 1'b0
+ 985   1          // [0] reg_bypass_eqen_rdy_l0 = 1'b1
+ 986   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT4 | _BIT2 | _BIT0));
+ 987   1      
+ 988   1          // [7:4] RST_N = 4'b0000 = 4'b1111 -->Digital Circuit Reset Toggle
+ 989   1          // [3:0] CDR_RST_N = 4'b0000 --> Disable DCDR
+ 990   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0x00);
+ 991   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0xF0);
+ 992   1      
+ 993   1          // [4] en_sumamp_highgain = 0 --> Disable Sumamp High Gain Mode
+ 994   1          ScalerSetBit_EXINT(P1D_1D_CMU_03, ~_BIT4, 0x00);
+ 995   1      
+ 996   1          // Set DFE Initial
+ 997   1          ScalerDpRx0SetDFEInitial_EXINT0();
+ 998   1      
+ 999   1      
+1000   1          /////////////////////
+1001   1          // Adaptation Loop //
+1002   1          /////////////////////
+1003   1      
+1004   1          // [7] cmu_en = 1'b1 --> Enable CMU PLL
+1005   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, _BIT7);
+1006   1      
+1007   1          // [7] reg_auto_mode = 1'b1 --> FLD Auto Mode
+1008   1          // [4] reg_adp_eq_off = 1'b0 --> Enable Analog CDR DFE Adaptation
+1009   1          // [0] reg_cp_adj_en = 1'b1 --> Enable Adjust Icp When Tracking
+1010   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT4 | _BIT0), (_BIT7 | _BIT0));
+1011   1      
+1012   1          // [2] reg_rstb_fsm --> FLD Reset
+1013   1          ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, 0x00);
+1014   1      
+1015   1          // [1] reg_en_eqen_manual_l0 = 1'b1 --> DFE Adaptation Enable
+1016   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, _BIT1);
+1017   1      
+1018   1          if(g_ucDpRx0LinkRate == _DP_LINK_HBR2)
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 18  
+
+1019   1          {
+1020   2              // Enable Vth/LE/Tap0~4
+1021   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0xDF);
+1022   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0xDF);
+1023   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0xDF);
+1024   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0xDF);
+1025   2      
+1026   2              // [2] reg_rstb_fsm = 1'b1 --> Lock FLD Band, CDR Close Loop, DFE Adaptation Enable
+1027   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, _BIT2);
+1028   2      
+1029   2              // Delay Time us [150,x] Waiting for FLD Lock Band
+1030   2              DELAY_XUS_EXINT(150);
+1031   2      
+1032   2              // [1] reg_en_eqen_manual_l0 = 1'b0 --> DFE Adaptation Off
+1033   2              ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, 0x00);
+1034   2      
+1035   2              // Disable LE/Vth/Tap0~4
+1036   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+1037   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+1038   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+1039   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+1040   2      
+1041   2              // [4] reg_adp_eq_off = 1'b1 --> Disable Analog CDR DFE Adaptation
+1042   2              ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT4, _BIT4);
+1043   2      
+1044   2      
+1045   2              //////////////
+1046   2              // K Offset //
+1047   2              //////////////
+1048   2      
+1049   2              // [7] ENHANCE_OFFSETADDER_BIAS = 1'b1 --> OffsetAdder Bias = Enhance
+1050   2              ScalerSetBit_EXINT(P1D_1D_CMU_03, ~_BIT7, _BIT7);
+1051   2      
+1052   2              // [5] fore_off_autok = 1 --> Enable Foreground Calibration Auto Mode
+1053   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT5, _BIT5);
+1054   2      
+1055   2              // [6] en_fore_offset --> Toggle Foreground Calibration
+1056   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1057   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, 0x00);
+1058   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1059   2      
+1060   2              // Delay Time us [85,x] Waiting for DFE Adaptation
+1061   2              DELAY_XUS_EXINT(85);
+1062   2          }
+1063   1          else
+1064   1          {
+1065   2              // Enable LE/Vth/Tap0~2 Adaptation
+1066   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0xC7);
+1067   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0xC7);
+1068   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0xC7);
+1069   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0xC7);
+1070   2      
+1071   2              // [2] reg_rstb_fsm = 1'b1 --> Lock FLD Band, CDR Close Loop, DFE Adaptation Enable
+1072   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, _BIT2);
+1073   2      
+1074   2              // Delay Time us [300,x] Waiting for FLD Lock Band
+1075   2              DELAY_XUS_EXINT(300);
+1076   2      
+1077   2              // Disable Adapation
+1078   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+1079   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+1080   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 19  
+
+1081   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+1082   2          }
+1083   1      
+1084   1      
+1085   1          /////////////////////
+1086   1          // FLD Manual Mode //
+1087   1          /////////////////////
+1088   1      
+1089   1          // [6] reg_adp_en_manual = 1'b0 --> CDR Open Loop
+1090   1          // [5] reg_cp_en_manual = 1'b0 --> CDR Open Loop
+1091   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT6 | _BIT5), 0x00);
+1092   1      
+1093   1          // Scan Auto FLD + 4
+1094   1          ScalerSetBit_EXINT(P1D_32_ANA_CDR_07, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((Scal
+             -erGetByte_EXINT(P1D_36_ANA_CDR_11) & 0x7F) + 4));
+1095   1          ScalerSetBit_EXINT(P1D_33_ANA_CDR_08, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((Scal
+             -erGetByte_EXINT(P1D_37_ANA_CDR_12) & 0x7F) + 4));
+1096   1          ScalerSetBit_EXINT(P1D_34_ANA_CDR_09, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((Scal
+             -erGetByte_EXINT(P1D_38_ANA_CDR_13) & 0x7F) + 4));
+1097   1          ScalerSetBit_EXINT(P1D_35_ANA_CDR_10, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((Scal
+             -erGetByte_EXINT(P1D_39_ANA_CDR_14) & 0x7F) + 4));
+1098   1      
+1099   1          // [7] reg_auto_mode = 1'b0 --> FLD Manual Mode
+1100   1          // [6] reg_adp_en_manual = 1'b1 --> Enable VCO Clock Out
+1101   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT6), _BIT6);
+1102   1      
+1103   1          // Delay Time us [25,x] Waiting for VCO Stable
+1104   1          DELAY_25US_EXINT();
+1105   1      
+1106   1      
+1107   1          /////////////////////////
+1108   1          // Scan Auto Band + 4  //
+1109   1          /////////////////////////
+1110   1      
+1111   1          // [5] ln_ck_sel = 1'b1 -> CDR Clock
+1112   1          // [4:0] DP_XTAL_CYCLE = 5'b00011 -> XTAL Counter Cycles = 1000
+1113   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _BIT
+             -1 | _BIT0));
+1114   1      
+1115   1          // [1:0] freqdet_lane_sel = 2'b00 -> Lane0
+1116   1          ScalerSetBit_EXINT(PB_51_DP_SIG_DET_1, ~(_BIT1 | _BIT0), _D0_DP_LANE0);
+1117   1      
+1118   1          // [6] LANE_COUNT_CLEAR = 0 -> Keep the LANE_COUNT value
+1119   1          ScalerSetBit_EXINT(PB_52_DP_SIG_DET_2, ~_BIT6, 0x00);
+1120   1      
+1121   1          // [7] DP_SIG_DET_EN = 1'b1 -> Enable Signal Detection
+1122   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1123   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
+1124   1      
+1125   1          // Delay Time us [5,150] Polling for Measure Done
+1126   1          for(g_ucDpRx0Temp = 0; g_ucDpRx0Temp <= 30; g_ucDpRx0Temp++)
+1127   1          {
+1128   2              DELAY_5US_EXINT();
+1129   2      
+1130   2              if(ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+1131   2              {
+1132   3                  usVCOBandScan = ((((WORD)ScalerGetByte_EXINT(PB_53_DP_SIG_DET_3)) << 8) | ScalerGetByte_EXINT(
+             -PB_54_DP_SIG_DET_4));
+1133   3      
+1134   3                  // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
+1135   3                  ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1136   3      
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 20  
+
+1137   3                  break;
+1138   3              }
+1139   2          }
+1140   1      
+1141   1      
+1142   1          /////////////////////////
+1143   1          // VCO Band Difference //
+1144   1          /////////////////////////
+1145   1      
+1146   1          // Scan Auto FLD
+1147   1          ScalerSetBit_EXINT(P1D_32_ANA_CDR_07, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (Scale
+             -rGetByte_EXINT(P1D_36_ANA_CDR_11) & 0x7F));
+1148   1          ScalerSetBit_EXINT(P1D_33_ANA_CDR_08, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (Scale
+             -rGetByte_EXINT(P1D_37_ANA_CDR_12) & 0x7F));
+1149   1          ScalerSetBit_EXINT(P1D_34_ANA_CDR_09, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (Scale
+             -rGetByte_EXINT(P1D_38_ANA_CDR_13) & 0x7F));
+1150   1          ScalerSetBit_EXINT(P1D_35_ANA_CDR_10, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (Scale
+             -rGetByte_EXINT(P1D_39_ANA_CDR_14) & 0x7F));
+1151   1      
+1152   1          // Delay Time us [25,x] Waiting for VCO Stable
+1153   1          DELAY_25US_EXINT();
+1154   1      
+1155   1          // [6] LANE_COUNT_CLEAR = 0 -> Keep the LANE_COUNT value
+1156   1          ScalerSetBit_EXINT(PB_52_DP_SIG_DET_2, ~_BIT6, 0x00);
+1157   1      
+1158   1          // [7] DP_SIG_DET_EN = 1'b1 -> Enable Signal Detection
+1159   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1160   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
+1161   1      
+1162   1          // Delay Time us [5,150] Polling for Measure Done
+1163   1          for(g_ucDpRx0Temp = 0; g_ucDpRx0Temp <= 30; g_ucDpRx0Temp++)
+1164   1          {
+1165   2              DELAY_5US_EXINT();
+1166   2      
+1167   2              // FLD + 4 Measure Fail or Measure Done
+1168   2              if((usVCOBandScan == 0) || (ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6))
+1169   2              {
+1170   3                  break;
+1171   3              }
+1172   2          }
+1173   1      
+1174   1          // Measure Done
+1175   1          if((usVCOBandScan != 0) && (ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6))
+1176   1          {
+1177   2              g_pusDpRx0ClockCount1[_D0_DP_LANE0] = ((((WORD)ScalerGetByte_EXINT(PB_53_DP_SIG_DET_3)) << 8) | Sc
+             -alerGetByte_EXINT(PB_54_DP_SIG_DET_4));
+1178   2      
+1179   2              usVCOBandDiff = (abs(usVCOBandScan - g_pusDpRx0ClockCount1[_D0_DP_LANE0]) >> 2);
+1180   2          }
+1181   1          else
+1182   1          {
+1183   2              usVCOBandDiff = 0;
+1184   2          }
+1185   1      
+1186   1          // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
+1187   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1188   1      
+1189   1          if(usVCOBandDiff != 0)
+1190   1          {
+1191   2              switch(g_ucDpRx0LaneCount)
+1192   2              {
+1193   3                  case _DP_FOUR_LANE:
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 21  
+
+1194   3      
+1195   3                      // Lane3 VCO Adjust
+1196   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE3, usVCOBandDiff);
+1197   3      
+1198   3                      // Lane2 VCO Adjust
+1199   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE2, usVCOBandDiff);
+1200   3      
+1201   3                      // Lane1 VCO Adjust
+1202   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE1, usVCOBandDiff);
+1203   3      
+1204   3                      // Lane0 VCO Adjust
+1205   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE0, usVCOBandDiff);
+1206   3      
+1207   3                      break;
+1208   3      
+1209   3                  case _DP_TWO_LANE:
+1210   3      
+1211   3                      // Lane1 VCO Adjust
+1212   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE1, usVCOBandDiff);
+1213   3      
+1214   3                      // Lane0 VCO Adjust
+1215   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE0, usVCOBandDiff);
+1216   3      
+1217   3                      break;
+1218   3      
+1219   3                  default:
+1220   3                  case _DP_ONE_LANE:
+1221   3      
+1222   3                      // Lane0 VCO Adjust
+1223   3                      ScalerDpRx0AdjustLaneFLDBand_EXINT0(_D0_DP_LANE0, usVCOBandDiff);
+1224   3      
+1225   3                      break;
+1226   3              }
+1227   2          }
+1228   1      
+1229   1          // [3:0] reg_cdr_cp_in --> Double Icp to Enlarge Locking Range
+1230   1          if(ucIcp > 7)
+1231   1          {
+1232   2              ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _
+             -BIT0));
+1233   2          }
+1234   1          else
+1235   1          {
+1236   2              ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (ucIcp << 1));
+1237   2          }
+1238   1      
+1239   1          // Delay Time us [25,x] Waiting for VCO Stable
+1240   1          DELAY_25US_EXINT();
+1241   1      
+1242   1          // [5] reg_cp_en_manual = 1'b1 --> CDR Close Loop
+1243   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT5, _BIT5);
+1244   1      
+1245   1          // Delay Time us [45,x] Waiting for CDR Close Loop
+1246   1          DELAY_45US_EXINT();
+1247   1      
+1248   1          // [3:0] reg_cdr_cp_in --> Restore Icp to Original Setting
+1249   1          ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), ucIcp);
+1250   1      
+1251   1          // Delay Time us [45,x] Waiting for CDR Close Loop
+1252   1          DELAY_45US_EXINT();
+1253   1      
+1254   1          if(g_ucDpRx0LinkRate <= _DP_LINK_HBR)
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 22  
+
+1255   1          {
+1256   2              // Set Vth Min = 0
+1257   2              ScalerSetBit_EXINT(P1D_F9_LIMIT_10, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
+1258   2      
+1259   2              // Only Enable Vth/Tap0 Adapation
+1260   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x41);
+1261   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x41);
+1262   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x41);
+1263   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x41);
+1264   2          }
+1265   1      
+1266   1          // [3] reg_en_data_manual_l0 = 1'b1 --> Data from PHY to MAC
+1267   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT3, _BIT3);
+1268   1      }
+1269          
+1270          #if(_WD_TIMER_INT_SUPPORT == _ON)
+1271          //--------------------------------------------------
+1272          // Description  : Rebuilding DP PHY in WDINT
+1273          // Input Value  : DPCD Bit Rate and Lane Count
+1274          // Output Value : None
+1275          //--------------------------------------------------
+1276          void ScalerDpRx0RebuildPhy_WDINT(BYTE ucDpLinkRate) using 3
+1277          {
+1278   1          BYTE pucTap0[4];
+1279   1          BYTE ucIcp = 0;
+1280   1      
+1281   1      
+1282   1          /////////////////////
+1283   1          // Rx Misc Setting //
+1284   1          /////////////////////
+1285   1      
+1286   1          // [7] cmu_en = 1'b0 --> Disable CMU PLL
+1287   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, 0x00);
+1288   1      
+1289   1          if((ScalerDpRx0GetDpcdInfo_WDINT(0x00, 0x01, 0x02) & _BIT5) == _BIT5)
+1290   1          {
+1291   2              // [5] Disable De-Scrambling
+1292   2              ScalerSetBit_EXINT(PB_07_SCRAMBLE_CTRL, ~_BIT5, _BIT5);
+1293   2          }
+1294   1          else
+1295   1          {
+1296   2              // [5] Enable De-Scrambling
+1297   2              ScalerSetBit_EXINT(PB_07_SCRAMBLE_CTRL, ~_BIT5, 0x00);
+1298   2          }
+1299   1      
+1300   1          // [4] reg_acdr_l0_en = 1'b1 --> Enable Lane0 ACDR
+1301   1          // [3] reg_en_data_manual_l0 = 1'b0
+1302   1          // [2] reg_bypass_data_rdy_l0 = 1'b1
+1303   1          // [1] reg_en_eqen_manual_l0 = 1'b0
+1304   1          // [0] reg_bypass_eqen_rdy_l0 = 1'b1
+1305   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT4 | _BIT2 | _BIT0));
+1306   1      
+1307   1          // [7:4] RST_N = 4'b0000 = 4'b1111 --> Digital Circuit Reset Toggle
+1308   1          // [3:0] CDR_RST_N = 4'b0000 --> Disable DCDR
+1309   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0x00);
+1310   1          ScalerSetByte_EXINT(P1D_3A_TMDS_RESET, 0xF0);
+1311   1      
+1312   1          ucIcp = (ScalerGetByte_EXINT(P1D_31_ANA_CDR_06) & 0x0F);
+1313   1      
+1314   1      
+1315   1          /////////////////
+1316   1          // DFE Setting //
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 23  
+
+1317   1          /////////////////
+1318   1      
+1319   1          // Tap Divider = 10 for TP2
+1320   1          ScalerSetByte_EXINT(P1D_ED_LOOP_DIV_2, 0xCA);
+1321   1      
+1322   1          if(ucDpLinkRate == _DP_LINK_HBR2)
+1323   1          {
+1324   2              // Set Vth Max = 6, Min = 4
+1325   2              ScalerSetByte_EXINT(P1D_F9_LIMIT_10, 0x64);
+1326   2          }
+1327   1          else
+1328   1          {
+1329   2              // Set Vth Max = 6, Min = 2
+1330   2              ScalerSetByte_EXINT(P1D_F9_LIMIT_10, 0x62);
+1331   2          }
+1332   1      
+1333   1          // LE Max = 20, Initial = 16, Servo Initial = 16
+1334   1          ScalerSetByte_EXINT(P1D_A2_L0_LIMIT_INIT, 0x40);
+1335   1          ScalerSetByte_EXINT(P1D_B2_L1_LIMIT_INIT, 0x40);
+1336   1          ScalerSetByte_EXINT(P1D_C2_L2_LIMIT_INIT, 0x40);
+1337   1          ScalerSetByte_EXINT(P1D_D2_L3_LIMIT_INIT, 0x40);
+1338   1          ScalerSetByte_EXINT(P1D_A3_L0_INIT_1, 0xD0);
+1339   1          ScalerSetByte_EXINT(P1D_B3_L1_INIT_1, 0xD0);
+1340   1          ScalerSetByte_EXINT(P1D_C3_L2_INIT_1, 0xD0);
+1341   1          ScalerSetByte_EXINT(P1D_D3_L3_INIT_1, 0xD0);
+1342   1      
+1343   1          // DFE Loop Normal
+1344   1          ScalerSetBit_EXINT(P1D_EF_RESET_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
+1345   1          ScalerSetBit_EXINT(P1D_EF_RESET_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
+1346   1      
+1347   1          // Disable All Adaptation Loop
+1348   1          ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+1349   1          ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+1350   1          ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+1351   1          ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+1352   1      
+1353   1      
+1354   1          //////////////
+1355   1          // K Offset //
+1356   1          //////////////
+1357   1      
+1358   1          // [5] fore_off_autok = 1 --> Enable Foreground Calibration Auto Mode
+1359   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT5, _BIT5);
+1360   1      
+1361   1          // [6] en_fore_offset --> Toggle Foreground Calibration
+1362   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1363   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, 0x00);
+1364   1          ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1365   1      
+1366   1          // Delay Time us [85,x] Waiting for K Offset
+1367   1          DELAY_XUS_EXINT(85);
+1368   1      
+1369   1      
+1370   1          /////////////////////
+1371   1          // Adaptation Loop //
+1372   1          /////////////////////
+1373   1      
+1374   1          // [7] cmu_en = 1'b1 --> Enable CMU PLL
+1375   1          ScalerSetBit_EXINT(P1D_1B_CMU_01, ~_BIT7, _BIT7);
+1376   1      
+1377   1          // [7] reg_auto_mode = 1'b1 --> FLD Auto Mode
+1378   1          // [4] reg_adp_eq_off = 1'b0 --> Enable Analog CDR DFE Adaptation
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 24  
+
+1379   1          // [0] reg_cp_adj_en = 1'b1 --> Enable Adjust Icp When Tracking
+1380   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT4 | _BIT0), (_BIT7 | _BIT0));
+1381   1      
+1382   1          if(ucDpLinkRate == _DP_LINK_HBR2)
+1383   1          {
+1384   2              // [2] reg_rstb_fsm --> FLD Reset
+1385   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, 0x00);
+1386   2      
+1387   2              // [1] reg_eqen_manual = 1'b1 --> Enable Adaptation
+1388   2              ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, _BIT1);
+1389   2      
+1390   2              // Enable LE/Vth/Tap0~Tap4
+1391   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0xDF);
+1392   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0xDF);
+1393   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0xDF);
+1394   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0xDF);
+1395   2      
+1396   2              // [2] reg_rstb_fsm = 1'b1 --> Lock FLD Band, CDR Close Loop, DFE Adaptation Enable
+1397   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, _BIT2);
+1398   2      
+1399   2              // Delay Time us [85,x] Waiting for DFE Adaptation
+1400   2              DELAY_XUS_EXINT(85);
+1401   2      
+1402   2              // Start to Record Max/Min
+1403   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, _BIT0);
+1404   2      
+1405   2              // Delay Time us [85,x] Waiting for DFE Adaptation
+1406   2              DELAY_XUS_EXINT(85);
+1407   2      
+1408   2              // Stop To Record Max/Min
+1409   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, 0x00);
+1410   2      
+1411   2              // Select to Lane0
+1412   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), 0x00);
+1413   2      
+1414   2              // Read Back LE Max
+1415   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1416   2              g_pucDpRx0LEMax[0] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1417   2      
+1418   2              // Read Back Tap1 Max
+1419   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1420   2              g_pucDpRx0Tap1Max[0] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1421   2      
+1422   2              // Select to Lane1
+1423   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT6);
+1424   2      
+1425   2              // Read Back LE Max
+1426   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1427   2              g_pucDpRx0LEMax[1] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1428   2      
+1429   2              // Read Back Tap1 Max
+1430   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1431   2              g_pucDpRx0Tap1Max[1] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1432   2      
+1433   2              // Select to Lane2
+1434   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT7);
+1435   2      
+1436   2              // Read Back LE Max
+1437   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1438   2              g_pucDpRx0LEMax[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1439   2      
+1440   2              // Read Back Tap1 Max
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 25  
+
+1441   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1442   2              g_pucDpRx0Tap1Max[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1443   2      
+1444   2              // Select to Lane3
+1445   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+1446   2      
+1447   2              // Read Back LE Max
+1448   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1449   2              g_pucDpRx0LEMax[3] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1450   2      
+1451   2              // Read Back Tap1 Max
+1452   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1453   2              g_pucDpRx0Tap1Max[3] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1454   2      
+1455   2              g_pucDpRx0LEBound[0] = 20;
+1456   2              g_pucDpRx0LEBound[1] = 20;
+1457   2              g_pucDpRx0LEBound[2] = 20;
+1458   2              g_pucDpRx0LEBound[3] = 20;
+1459   2      
+1460   2              while(((g_pucDpRx0LEMax[0] > 15) && (g_pucDpRx0Tap1Max[0] < 4) && (g_pucDpRx0LEBound[0] > 15)) ||
+1461   2                    ((g_pucDpRx0LEMax[1] > 15) && (g_pucDpRx0Tap1Max[1] < 4) && (g_pucDpRx0LEBound[1] > 15)) ||
+1462   2                    ((g_pucDpRx0LEMax[2] > 15) && (g_pucDpRx0Tap1Max[2] < 4) && (g_pucDpRx0LEBound[2] > 15)) ||
+1463   2                    ((g_pucDpRx0LEMax[3] > 15) && (g_pucDpRx0Tap1Max[3] < 4) && (g_pucDpRx0LEBound[3] > 15)))
+1464   2              {
+1465   3                  if(g_pucDpRx0Tap1Max[0] < 4)
+1466   3                  {
+1467   4                      g_pucDpRx0LEBound[0]--;
+1468   4                      ScalerSetBit_EXINT(P1D_A2_L0_LIMIT_INIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((g_pucDpRx0LEB
+             -ound[0] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) << 4));
+1469   4                      ScalerSetBit_EXINT(P1D_A3_L0_INIT_1, ~_BIT7, ((g_pucDpRx0LEBound[0] & _BIT4) << 3));
+1470   4                  }
+1471   3      
+1472   3                  if(g_pucDpRx0Tap1Max[1] < 4)
+1473   3                  {
+1474   4                      g_pucDpRx0LEBound[1]--;
+1475   4                      ScalerSetBit_EXINT(P1D_B2_L1_LIMIT_INIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((g_pucDpRx0LEB
+             -ound[1] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) << 4));
+1476   4                      ScalerSetBit_EXINT(P1D_B3_L1_INIT_1, ~_BIT7, ((g_pucDpRx0LEBound[1] & _BIT4) << 3));
+1477   4                  }
+1478   3      
+1479   3                  if(g_pucDpRx0Tap1Max[2] < 4)
+1480   3                  {
+1481   4                      g_pucDpRx0LEBound[2]--;
+1482   4                      ScalerSetBit_EXINT(P1D_C2_L2_LIMIT_INIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((g_pucDpRx0LEB
+             -ound[2] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) << 4));
+1483   4                      ScalerSetBit_EXINT(P1D_C3_L2_INIT_1, ~_BIT7, ((g_pucDpRx0LEBound[2] & _BIT4) << 3));
+1484   4                  }
+1485   3      
+1486   3                  if(g_pucDpRx0Tap1Max[3] < 4)
+1487   3                  {
+1488   4                      g_pucDpRx0LEBound[3]--;
+1489   4                      ScalerSetBit_EXINT(P1D_D2_L3_LIMIT_INIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((g_pucDpRx0LEB
+             -ound[3] & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) << 4));
+1490   4                      ScalerSetBit_EXINT(P1D_D3_L3_INIT_1, ~_BIT7, ((g_pucDpRx0LEBound[3] & _BIT4) << 3));
+1491   4                  }
+1492   3      
+1493   3                  // Start to Record Tap0 Max/Min
+1494   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, _BIT0);
+1495   3      
+1496   3                  // Delay Time us [85,x] Waiting for DFE Adaptation
+1497   3                  DELAY_XUS_EXINT(85);
+1498   3      
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 26  
+
+1499   3                  // Stop To Record Tap0 Max/Min
+1500   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, 0x00);
+1501   3      
+1502   3                  // Select to Lane0
+1503   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), 0x00);
+1504   3      
+1505   3                  // Read Back LE Max
+1506   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1507   3                  g_pucDpRx0LEMax[0] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1508   3      
+1509   3                  // Read Back Tap1 Max
+1510   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1511   3                  g_pucDpRx0Tap1Max[0] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1512   3      
+1513   3                  // Select to Lane1
+1514   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT6);
+1515   3      
+1516   3                  // Read Back LE Max
+1517   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1518   3                  g_pucDpRx0LEMax[1] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1519   3      
+1520   3                  // Read Back Tap1 Max
+1521   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1522   3                  g_pucDpRx0Tap1Max[1] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1523   3      
+1524   3                  // Select to Lane2
+1525   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT7);
+1526   3      
+1527   3                  // Read Back LE Max
+1528   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1529   3                  g_pucDpRx0LEMax[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1530   3      
+1531   3                  // Read Back Tap1 Max
+1532   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1533   3                  g_pucDpRx0Tap1Max[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1534   3      
+1535   3                  // Select to Lane3
+1536   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+1537   3      
+1538   3                  // Read Back LE Max
+1539   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT3);
+1540   3                  g_pucDpRx0LEMax[3] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1541   3      
+1542   3                  // Read Back Tap1 Max
+1543   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
+1544   3                  g_pucDpRx0Tap1Max[3] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
+1545   3              }
+1546   2      
+1547   2              // Disable DFE Adapt
+1548   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+1549   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+1550   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+1551   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+1552   2      
+1553   2              // [1] reg_eqen_manual = 1'b0 --> Disable Adaptation
+1554   2              ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, 0x00);
+1555   2      
+1556   2              // [4] reg_adp_eq_off = 1'b1 --> Disable Analog CDR DFE Adaptation
+1557   2              ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT4, _BIT4);
+1558   2      
+1559   2              // Read Back Tap0
+1560   2              ScalerSetByte_EXINT(P1D_F0_COEF_1, 0x01);
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 27  
+
+1561   2      
+1562   2              // Select to Lane0
+1563   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), 0x00);
+1564   2              pucTap0[0] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x1F);
+1565   2      
+1566   2              // Select to Lane1
+1567   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT6);
+1568   2              pucTap0[1] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x1F);
+1569   2      
+1570   2              // Select to Lane2
+1571   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT7);
+1572   2              pucTap0[2] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x1F);
+1573   2      
+1574   2              // Select to Lane3
+1575   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
+1576   2              pucTap0[3] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x1F);
+1577   2      
+1578   2              if(pucTap0[0] > 15)
+1579   2              {
+1580   3                  // Reload Tap0 to 21 (Max)
+1581   3                  ScalerSetByte_EXINT(P1D_A4_L0_INIT_2, 0x15);
+1582   3                  ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, _BIT0);
+1583   3                  ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, 0x00);
+1584   3              }
+1585   2              else
+1586   2              {
+1587   3                  // Reload Tap0 to Adapt + 6 (Max)
+1588   3                  ScalerSetByte_EXINT(P1D_A4_L0_INIT_2, (pucTap0[0] + 6));
+1589   3                  ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, _BIT0);
+1590   3                  ScalerSetBit_EXINT(P1D_AA_L0_INIT_8, ~_BIT0, 0x00);
+1591   3              }
+1592   2      
+1593   2              if(pucTap0[1] > 15)
+1594   2              {
+1595   3                  // Reload Tap0 to 21 (Max)
+1596   3                  ScalerSetByte_EXINT(P1D_B4_L1_INIT_2, 0x15);
+1597   3                  ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, _BIT0);
+1598   3                  ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, 0x00);
+1599   3              }
+1600   2              else
+1601   2              {
+1602   3                  // Reload Tap0 to Adapt + 6 (Max)
+1603   3                  ScalerSetByte_EXINT(P1D_B4_L1_INIT_2, (pucTap0[1] + 6));
+1604   3                  ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, _BIT0);
+1605   3                  ScalerSetBit_EXINT(P1D_BA_L1_INIT_8, ~_BIT0, 0x00);
+1606   3              }
+1607   2      
+1608   2              if(pucTap0[2] > 15)
+1609   2              {
+1610   3                  // Reload Tap0 to 21 (Max)
+1611   3                  ScalerSetByte_EXINT(P1D_C4_L2_INIT_2, 0x15);
+1612   3                  ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, _BIT0);
+1613   3                  ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, 0x00);
+1614   3              }
+1615   2              else
+1616   2              {
+1617   3                  // Reload Tap0 to Adapt + 6 (Max)
+1618   3                  ScalerSetByte_EXINT(P1D_C4_L2_INIT_2, (pucTap0[2] + 6));
+1619   3                  ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, _BIT0);
+1620   3                  ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, 0x00);
+1621   3              }
+1622   2      
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 28  
+
+1623   2              if(pucTap0[3] > 15)
+1624   2              {
+1625   3                  // Reload Tap0 to 21 (Max)
+1626   3                  ScalerSetByte_EXINT(P1D_D4_L3_INIT_2, 0x15);
+1627   3                  ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, _BIT0);
+1628   3                  ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, 0x00);
+1629   3              }
+1630   2              else
+1631   2              {
+1632   3                  // Reload Tap0 to Adapt + 6 (Max)
+1633   3                  ScalerSetByte_EXINT(P1D_D4_L3_INIT_2, (pucTap0[3] + 6));
+1634   3                  ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, _BIT0);
+1635   3                  ScalerSetBit_EXINT(P1D_DA_L3_INIT_8, ~_BIT0, 0x00);
+1636   3              }
+1637   2      
+1638   2      
+1639   2              //////////////
+1640   2              // K Offset //
+1641   2              //////////////
+1642   2      
+1643   2              // [7] ENHANCE_OFFSETADDER_BIAS = 1'b1 --> OffsetAdder Bias = Enhance
+1644   2              ScalerSetBit_EXINT(P1D_1D_CMU_03, ~_BIT7, _BIT7);
+1645   2      
+1646   2              // [5] fore_off_autok = 1 --> Enable Foreground Calibration Auto Mode
+1647   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT5, _BIT5);
+1648   2      
+1649   2              // [6] en_fore_offset --> Toggle Foreground Calibration
+1650   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1651   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, 0x00);
+1652   2              ScalerSetBit_EXINT(P1D_24_KOFFSET_00, ~_BIT6, _BIT6);
+1653   2      
+1654   2              // Delay Time us [85,x] Waiting for K Offset
+1655   2              DELAY_XUS_EXINT(85);
+1656   2          }
+1657   1          else
+1658   1          {
+1659   2              // [2] reg_rstb_fsm = 1'b0 --> FLD Reset
+1660   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, 0x00);
+1661   2      
+1662   2              // [1] reg_eqen_manual = 1'b1 --> Enable Adaptation
+1663   2              ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, _BIT1);
+1664   2      
+1665   2              // Enable LE/Vth/Tap0/Tap1/Tap2
+1666   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0xC7);
+1667   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0xC7);
+1668   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0xC7);
+1669   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0xC7);
+1670   2      
+1671   2              // [2] reg_rstb_fsm = 1'b1 --> Lock FLD Band, CDR Close Loop, DFE Adaptation Enable
+1672   2              ScalerSetBit_EXINT(P1D_2D_ANA_CDR_02, ~_BIT2, _BIT2);
+1673   2      
+1674   2              // Delay Time us [300,x] Waiting for DFE Adaptation
+1675   2              DELAY_XUS_EXINT(300);
+1676   2      
+1677   2              // Disable Adaptation
+1678   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
+1679   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
+1680   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
+1681   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
+1682   2          }
+1683   1      
+1684   1          // [7] reg_auto_mode = 1'b0 --> FLD Manual Mode
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 29  
+
+1685   1          // [6] reg_adp_en_manual = 1'b1 --> Enable CDR Clock
+1686   1          // [5] reg_cp_en_manual = 1'b0 --> CDR Open Loop
+1687   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT6 | _BIT5), _BIT6);
+1688   1      
+1689   1          // [3:0] reg_cdr_cp_in --> Double Icp to Enlarge Locking Range
+1690   1          if(ucIcp > 7)
+1691   1          {
+1692   2              ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _
+             -BIT0));
+1693   2          }
+1694   1          else
+1695   1          {
+1696   2              ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (ucIcp << 1));
+1697   2          }
+1698   1      
+1699   1          // Delay Time us [25,x] Waiting for VCO Stable
+1700   1          DELAY_25US_EXINT();
+1701   1      
+1702   1          // [5] reg_cp_en_manual = 1'b1 --> CDR Close Loop
+1703   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT5, _BIT5);
+1704   1      
+1705   1          // Delay Time us [45,x] Waiting for CDR Close Loop
+1706   1          DELAY_45US_EXINT();
+1707   1      
+1708   1          // [3:0] reg_cdr_cp_in --> Restore Icp to Original Setting
+1709   1          ScalerSetBit_EXINT(P1D_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), ucIcp);
+1710   1      
+1711   1          // Delay Time us [45,x] Waiting for CDR Close Loop
+1712   1          DELAY_45US_EXINT();
+1713   1      
+1714   1          if(ucDpLinkRate <= _DP_LINK_HBR)
+1715   1          {
+1716   2              // Set Vth Min = 0
+1717   2              ScalerSetBit_EXINT(P1D_F9_LIMIT_10, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
+1718   2      
+1719   2              // Enable Vth/Tap0 Adaptation
+1720   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x41);
+1721   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x41);
+1722   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x41);
+1723   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x41);
+1724   2          }
+1725   1      
+1726   1          // [3] reg_en_data_manual_l0 = 1'b1 --> Data from PHY to MAC
+1727   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT3, _BIT3);
+1728   1      
+1729   1          // [6] DP Mac Clock Select to Link Clock
+1730   1          ScalerSetBit_EXINT(PB_01_PHY_DIG_RESET_CTRL, ~_BIT6, 0x00);
+1731   1      
+1732   1      
+1733   1          ///////////////////////
+1734   1          // CDR Clock Measure //
+1735   1          ///////////////////////
+1736   1      
+1737   1          g_pusDpRx0ClockCount[0] = 0;
+1738   1          g_pusDpRx0ClockCount[1] = 0;
+1739   1          g_pusDpRx0ClockCount[2] = 0;
+1740   1          g_pusDpRx0ClockCount[3] = 0;
+1741   1      
+1742   1          // [5] ln_ck_sel = 1'b1 -> DP CDR Clock
+1743   1          // [4:0] DP_XTAL_CYCLE = 5'b00011 -> XTAL Counter Cycles = 1000
+1744   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _BIT
+             -1 | _BIT0));
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 30  
+
+1745   1      
+1746   1          // [1:0] freqdet_lane_sel = 2'b00 -> Lane0
+1747   1          ScalerSetBit_EXINT(PB_51_DP_SIG_DET_1, ~(_BIT1 | _BIT0), _D0_DP_LANE0);
+1748   1      
+1749   1          // [6] LANE_COUNT_CLEAR = 0 -> Keep the LANE_COUNT value
+1750   1          ScalerSetBit_EXINT(PB_52_DP_SIG_DET_2, ~_BIT6, 0x00);
+1751   1      
+1752   1          // [7] DP_SIG_DET_EN = 1'b1 -> Enable Signal Detection
+1753   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1754   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
+1755   1      
+1756   1          // Delay Time us [5,150] Polling for Measure Done
+1757   1          for(g_ucDpRx0Temp = 0; g_ucDpRx0Temp <= 30; g_ucDpRx0Temp++)
+1758   1          {
+1759   2              DELAY_5US_EXINT();
+1760   2      
+1761   2              if(ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+1762   2              {
+1763   3                  break;
+1764   3              }
+1765   2          }
+1766   1      
+1767   1          if(ScalerGetBit_EXINT(PB_50_DP_SIG_DET_0, _BIT6) == _BIT6)
+1768   1          {
+1769   2              g_pusDpRx0ClockCount[0] = ((((WORD)ScalerGetByte_EXINT(PB_53_DP_SIG_DET_3)) << 8) | ScalerGetByte_
+             -EXINT(PB_54_DP_SIG_DET_4));
+1770   2          }
+1771   1          else
+1772   1          {
+1773   2              switch(ucDpLinkRate)
+1774   2              {
+1775   3                  case _DP_LINK_HBR2:
+1776   3      
+1777   3                      g_pusDpRx0ClockCount[0] = 0x2710;
+1778   3      
+1779   3                      break;
+1780   3      
+1781   3                  case _DP_LINK_HBR:
+1782   3      
+1783   3                      g_pusDpRx0ClockCount[0] = 0x1388;
+1784   3      
+1785   3                      break;
+1786   3      
+1787   3                  default:
+1788   3                  case _DP_LINK_RBR:
+1789   3      
+1790   3                      g_pusDpRx0ClockCount[0] = 0xBB8;
+1791   3      
+1792   3                      break;
+1793   3              }
+1794   2          }
+1795   1      
+1796   1          // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
+1797   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
+1798   1      
+1799   1          g_pusDpRx0ClockCount[3] = g_pusDpRx0ClockCount[0];
+1800   1          g_pusDpRx0ClockCount[2] = g_pusDpRx0ClockCount[0];
+1801   1          g_pusDpRx0ClockCount[1] = g_pusDpRx0ClockCount[0];
+1802   1      }
+1803          #endif
+1804          
+1805          #endif // End of #if(_D0_DP_EXIST == _ON)
+C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 31  
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   4386    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----      12
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

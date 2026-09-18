@@ -1,0 +1,35 @@
+---- _ENABLE_MAIN_MENU_F_ICON Matches (34 in 6 files) ----
+HK_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#ifndef _ENABLE_MAIN_MENU_F_ICON
+HK_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_ON//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+LuoGang_OSD_UserInclude.h (user\rtd series\rtd2014function\header):#define _ENABLE_MAIN_MENU_F_ICON							_OFF//工厂老化模式
+RTD2014Include.h (user\rtd series\rtd2014osd\header):	#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Include.h (user\rtd series\rtd2014osd\header):#if(_ENABLE_MAIN_MENU_F_ICON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):#if(!_ENABLE_MAIN_MENU_F_ICON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):		#if _ENABLE_MAIN_MENU_F_ICON
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):			UpdateOSDMainInterface((BYTE)OsdDisplayDetOverRange(GET_OSD_STATE(), (_OSD_MAIN_END+_ENABLE_MAIN_MENU_F_ICON*GET_OSD_FACTORY_MODE()), _OSD_MAIN_START, _ON));
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):			#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):			#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):		#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):		#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014Osd.c (user\rtd series\rtd2014osd\code):	#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014OsdDisplay.c (user\rtd series\rtd2014osd\code):    #if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014OsdDisplay.c (user\rtd series\rtd2014osd\code):	#if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014OsdDisplay.c (user\rtd series\rtd2014osd\code):    #if(_ENABLE_MAIN_MENU_F_ICON == _ON)
+RTD2014OsdDisplay.c (user\rtd series\rtd2014osd\code):	if( _OSD_MAIN_START<=GET_OSD_STATE() && GET_OSD_STATE()<= (_OSD_MAIN_END+_ENABLE_MAIN_MENU_F_ICON))
+RTD2014OsdFontTable.c (user\rtd series\rtd2014osd\code):#if _ENABLE_MAIN_MENU_F_ICON

@@ -1,0 +1,349 @@
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 1   
+
+
+C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014OSDWINDOW
+OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014OsdWindow.obj
+COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdWindow.c LARGE OPTIMIZE(9,SPEED) 
+                    -INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ke
+                    -rnel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;
+                    -.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Serie
+                    -s_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel
+                    -\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fac
+                    -tory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(
+                    -_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014OsdWindow.
+                    -lst) OBJECT(.\Output\RL6432_Project\RTD2014OsdWindow.obj)
+
+line level    source
+
+   1          /********************************************************************************/
+   2          /*   The  Software  is  proprietary,  confidential,  and  valuable to Realtek   */
+   3          /*   Semiconductor  Corporation  ("Realtek").  All  rights, including but not   */
+   4          /*   limited  to  copyrights,  patents,  trademarks, trade secrets, mask work   */
+   5          /*   rights, and other similar rights and interests, are reserved to Realtek.   */
+   6          /*   Without  prior  written  consent  from  Realtek,  copying, reproduction,   */
+   7          /*   modification,  distribution,  or  otherwise  is strictly prohibited. The   */
+   8          /*   Software  shall  be  kept  strictly  in  confidence,  and  shall  not be   */
+   9          /*   disclosed to or otherwise accessed by any third party.                     */
+  10          /*   c<2003> - <2012>                                                           */
+  11          /*   The Software is provided "AS IS" without any warranty of any kind,         */
+  12          /*   express, implied, statutory or otherwise.                                  */
+  13          /********************************************************************************/
+  14          
+  15          //----------------------------------------------------------------------------------------------------
+  16          // ID Code      : RTD2014OsdWindow.c
+  17          // Update Note  :
+  18          //----------------------------------------------------------------------------------------------------
+  19          
+  20          #define __RTD_OSDWINDOW__
+  21          
+  22          #include "UserCommonInclude.h"
+  23          
+  24          #if(_OSD_TYPE == _REALTEK_2014_OSD)
+  25          
+  26          //****************************************************************************
+  27          // DEFINITIONS / MACROS
+  28          //****************************************************************************
+  29          
+  30          //****************************************************************************
+  31          // STRUCT / TYPE / ENUM DEFINITTIONS
+  32          //****************************************************************************
+  33          
+  34          //****************************************************************************
+  35          // CODE TABLES
+  36          //****************************************************************************
+  37          
+  38          //****************************************************************************
+  39          // VARIABLE DECLARATIONS
+  40          //****************************************************************************
+  41          
+  42          //****************************************************************************
+  43          // FUNCTION DECLARATIONS
+  44          //****************************************************************************
+  45          void OsdWindowDrawing(BYTE ucWindow, WORD usXStart, WORD usYStart, WORD usXEnd, WORD usYEnd, BYTE ucColor)
+             -;
+  46          void OsdWindowDrawingHighlight(BYTE ucWindow, WORD usXStart, WORD usYStart, WORD usXEnd, WORD usYEnd, BYTE
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 2   
+
+             - ucColor, BYTE ucForegroundColor, BYTE ucBackgroundColor, BYTE ucENABLE);
+  47          void OsdWindowDrawingByFont(BYTE ucWindow, BYTE ucRow, BYTE ucCol, BYTE ucWidth, BYTE ucHeight, BYTE ucCol
+             -or);
+  48          void OsdMenuDrawingHighlight(BYTE ucWindow,BYTE ucForegroundColor, BYTE ucBackgroundColor, BYTE ucENABLE);
+  49          void OsdWindowDrawingByFontHighlight(BYTE ucWindow, BYTE ucRow1, BYTE ucCol1, BYTE ucWidth, BYTE ucHeight,
+             - BYTE ucColor, BYTE ucForegroundColor, BYTE ucBackgroundColor);
+  50          void OsdWindowSlider(BYTE ucRow, BYTE ucCol, BYTE ucPercentValue, BYTE ucSliderNumber, bit bSelectState);
+  51          void OsdWindowSliderDisable(void);
+  52          
+  53          //***************************************************************************
+  54          // FUNCTION DEFINITIONS
+  55          //****************************************************************************
+  56          //--------------------------------------------------
+  57          // Description  :
+  58          // Input Value  :
+  59          // Output Value :
+  60          //--------------------------------------------------
+  61          void OsdWindowDrawing(BYTE ucWindow, WORD usXStart, WORD usYStart, WORD usXEnd, WORD usYEnd, BYTE ucColor)
+  62          {
+  63   1      #if(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE)
+                  WORD xdata usTemp = 0;
+                  WORD xdata usTemp1 = 0;
+                  WORD xdata usTemp2 = 0;
+                  usTemp  = usXEnd - usXStart;
+                  usTemp1 = usYEnd - usYStart;
+                  usTemp2 = usXStart;
+              
+                  if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_90)
+                  {
+                      usXEnd = (g_ucOsdWidth * 18 - usYStart);
+                      usXStart = usXEnd - usTemp1;
+                      usYStart = usTemp2;
+                      usYEnd = usYStart + usTemp;
+                  }
+                  else if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_270)
+                  {
+                      usXStart = usYStart;
+                      usYStart = (g_ucOsdHeight * 12) - usXEnd;
+                      usXEnd = usXStart + usTemp1;
+                      usYEnd = usYStart + usTemp;
+                  }
+                  else
+                  {
+                  }
+              
+              #elif(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_HARDWARE)
+  90   1          WORD xdata usTemp = 0;
+  91   1          WORD xdata usTemp1 = 0;
+  92   1          WORD xdata usTemp2 = 0;
+  93   1          usTemp  = usXEnd - usXStart;
+  94   1          usTemp1 = usYEnd - usYStart;
+  95   1          usTemp2 = usXStart;
+  96   1      
+  97   1          if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_90)
+  98   1          {
+  99   2              usXEnd = (g_ucOsdHeight * 18 - usYStart);
+ 100   2              usXStart = usXEnd - usTemp1;
+ 101   2              usYStart = usTemp2;
+ 102   2              usYEnd = usYStart + usTemp;
+ 103   2          }
+ 104   1          else if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_270)
+ 105   1          {
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 3   
+
+ 106   2              usXStart = usYStart;
+ 107   2              usYStart = (g_ucOsdWidth * 12) - usXEnd;
+ 108   2              usXEnd = usXStart + usTemp1;
+ 109   2              usYEnd = usYStart + usTemp;
+ 110   2          }
+ 111   1          else if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_180)
+ 112   1          {
+ 113   2              usXStart = (g_ucOsdWidth * 12) - usTemp - usXStart;
+ 114   2              usXEnd = usXStart + usTemp;
+ 115   2              usYStart = (g_ucOsdHeight * 18) - usTemp1 - usYStart;
+ 116   2              usYEnd = usYStart + usTemp1;
+ 117   2          }
+ 118   1          else
+ 119   1          {
+ 120   2          }
+ 121   1      
+ 122   1      #else // #if(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE)
+              
+              
+              #endif
+ 126   1      
+ 127   1          SET_OSD_WINDOW_NUMBER(ucWindow);
+ 128   1          SET_OSD_WINDOW_COLOR(ucColor);
+ 129   1      
+ 130   1          SET_OSD_WINDOW_BLEND_ENABLE(_ENABLE);
+ 131   1          SET_OSD_WINDOW_ENABLE(_ENABLE);
+ 132   1          ScalerTimerWaitForEvent(_EVENT_DVS);
+ 133   1          ScalerOsdDrawWindow(usXStart, usYStart, usXEnd, usYEnd);
+ 134   1      }
+ 135          
+ 136          //--------------------------------------------------
+ 137          // Description  :
+ 138          // Input Value  :
+ 139          // Output Value :
+ 140          //--------------------------------------------------
+ 141          void OsdWindowDrawingHighlight(BYTE ucWindow, WORD usXStart, WORD usYStart, WORD usXEnd, WORD usYEnd, BYTE
+             - ucColor, BYTE ucForegroundColor, BYTE ucBackgroundColor, BYTE ucENABLE)
+ 142          {
+ 143   1              if(ucENABLE == _DISABLE)
+ 144   1              {
+ 145   2                      ScalerOsdWindowDisable(_OSD_WINDOW_4_8);
+ 146   2                      return;
+ 147   2              }
+ 148   1      
+ 149   1          OsdWindowDrawing(ucWindow, usXStart, usYStart, usXEnd, usYEnd, ucColor);
+ 150   1      
+ 151   1          ScalerOsdWindowHighlightFunction(ucENABLE, ucWindow, ucForegroundColor, ucBackgroundColor, _CP_BG);
+ 152   1      }
+ 153          
+ 154          void OsdMenuDrawingHighlight(BYTE ucWindow,BYTE ucForegroundColor, BYTE ucBackgroundColor, BYTE ucENABLE)
+ 155          {
+ 156   1      
+ 157   1              ScalerOsdWindowHighlightFunction(ucENABLE, ucWindow, ucForegroundColor, ucBackgroundColor, _CP_BG);
+ 158   1      
+ 159   1      }
+ 160          
+ 161          //--------------------------------------------------
+ 162          // Description  :
+ 163          // Input Value  :
+ 164          // Output Value :
+ 165          //--------------------------------------------------
+ 166          void OsdWindowDrawingByFont(BYTE ucWindow, BYTE ucRow, BYTE ucCol, BYTE ucWidth, BYTE ucHeight, BYTE ucCol
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 4   
+
+             -or)
+ 167          {
+ 168   1          WORD usHstart = 0;
+ 169   1          WORD usHend = 0;
+ 170   1          WORD usVstart = 0;
+ 171   1          WORD usVend = 0;
+ 172   1      
+ 173   1          usHstart = ((WORD)ucCol * 12);
+ 174   1          usHend = usHstart + ((WORD)ucWidth * 12);
+ 175   1      
+ 176   1          if(ucRow > 0)
+ 177   1          {
+ 178   2              usVstart = (ucRow * 18);
+ 179   2          }
+ 180   1          usVend = usVstart + (18 * ucHeight);
+ 181   1      
+ 182   1          OsdWindowDrawing(ucWindow, usHstart, usVstart, usHend, usVend, ucColor);
+ 183   1      }
+ 184          
+ 185          //--------------------------------------------------
+ 186          // Description  :
+ 187          // Input Value  :
+ 188          // Output Value :
+ 189          //--------------------------------------------------
+ 190          #if 0
+              void OsdWindowDrawingByFontHighlight(BYTE ucWindow, BYTE ucRow1, BYTE ucCol1, BYTE ucWidth, BYTE ucHeight,
+             - BYTE ucColor, BYTE ucForegroundColor, BYTE ucBackgroundColor)
+              {
+                  WORD usHstart = 0;
+                  WORD usHend = 0;
+                  WORD usVstart = 0;
+                  WORD usVend = 0;
+              
+                  usHstart = ((WORD)ucCol1 * 12);
+                  usHend = usHstart + ((WORD)ucWidth * 12);
+              
+                  if(ucRow1 > 0)
+                  {
+                      usVstart = (ucRow1 * 18);
+                  }
+                  usVend = usVstart + (18 * ucHeight);
+              
+                  OsdWindowDrawing(ucWindow, usHstart, usVstart, usHend, usVend, ucColor);
+              
+                  ScalerOsdWindowHighlightFunction(_ENABLE, ucWindow, ucForegroundColor, ucBackgroundColor, _CP_BG);
+              }
+              //--------------------------------------------------
+              // Description  :
+              // Input Value  :
+              // Output Value :
+              //--------------------------------------------------
+              void OsdWindowSlider(BYTE ucRow, BYTE ucCol, BYTE ucPercentValue, BYTE ucSliderNumber, bit bSelectState)
+              {
+                  WORD usHstart = 0;
+                  WORD usHend = 0;
+                  WORD usVstart = 0;
+                  WORD usVend = 0;
+                  WORD usSliderPixel = 0;
+                  BYTE ucSliderBarWindow = 0;
+                  BYTE ucSliderBoderWindow = 0;
+                  BYTE ucSliderBackgroundWindow = 0;
+                  BYTE ucSliderColor = 0;
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 5   
+
+                  BYTE ucSliderBackgroundColor = 0;
+                  BYTE ucSliderBoderColor = 0;
+              
+                  usSliderPixel = (WORD)(_SLIDER_LENGHT * ucPercentValue) / 100;
+              
+                  usHstart = ((WORD)ucCol * 12) + _SLIDER_OFFSET;
+                  usHend = usHstart + _SLIDER_LENGHT;
+              
+                  usVstart = (ucRow * 18);
+                  usVend = usVstart + _SLIDER_HIGH;
+              
+                  if(ucSliderNumber == _SLIDER_0)
+                  {
+                      ucSliderBarWindow = _SLIDER_0_BAR_WINDOW;
+                      ucSliderBoderWindow = _SLIDER_0_BORDER_WINDOW;
+                      ucSliderBackgroundWindow = _SLIDER_0_BG_WINDOW;
+                  }
+                  else
+                  {
+                      ucSliderBarWindow = _SLIDER_1_BAR_WINDOW;
+                      ucSliderBoderWindow = _SLIDER_1_BORDER_WINDOW;
+                      ucSliderBackgroundWindow = _SLIDER_1_BG_WINDOW;
+                  }
+              
+                  if(bSelectState == _TRUE)
+                  {
+                      ucSliderColor = _SLIDER_SELECT_COLOR;
+                      ucSliderBackgroundColor = _SLIDER_SELECT_BG_COLOR;
+                      ucSliderBoderColor = _SLIDER_SELECT_BORDER_COLOR;
+                  }
+                  else
+                  {
+                      ucSliderColor = _SLIDER_UNSELECT_COLOR;
+                      ucSliderBackgroundColor = _SLIDER_UNSELECT_BG_COLOR;
+                      ucSliderBoderColor = _SLIDER_UNSELECT_BORDER_COLOR;
+                  }
+              
+                  SET_OSD_WINDOW_BUTTON_ENABLE(_DISABLE);
+                  // Slider Boder Window
+                  // Slider BG Color
+                  OsdWindowDrawing(ucSliderBoderWindow, usHstart - _SLIDER_BORDER_PIXEL, usVstart - _SLIDER_BORDER_PIXEL
+             -, usHend + _SLIDER_BORDER_PIXEL, usVend + _SLIDER_BORDER_PIXEL, ucSliderBoderColor);
+              
+                  // Slider BG Window
+                  OsdWindowDrawing(ucSliderBackgroundWindow, usHstart, usVstart, usHend, usVend, ucSliderBackgroundColor
+             -);
+              
+                  if(usSliderPixel == 0)// Slider Window
+                  {
+                      ScalerOsdWindowDisable(ucSliderBarWindow);
+                  }
+                  else
+                  {
+                      OsdWindowDrawing(ucSliderBarWindow, usHstart, usVstart, usHstart + usSliderPixel, usVend, ucSlider
+             -Color);
+                  }
+              }
+              
+              //--------------------------------------------------
+              // Description  :
+              // Input Value  :
+              // Output Value :
+C51 COMPILER V8.12   RTD2014OSDWINDOW                                                      09/16/2026 20:29:10 PAGE 6   
+
+              //--------------------------------------------------
+              void OsdWindowSliderDisable(void)
+              {
+                  ScalerOsdWindowDisable(_SLIDER_0_BAR_WINDOW);
+                  ScalerOsdWindowDisable(_SLIDER_0_BORDER_WINDOW);
+                  ScalerOsdWindowDisable(_SLIDER_0_BG_WINDOW);
+                  ScalerOsdWindowDisable(_SLIDER_1_BAR_WINDOW);
+                  ScalerOsdWindowDisable(_SLIDER_1_BORDER_WINDOW);
+                  ScalerOsdWindowDisable(_SLIDER_1_BG_WINDOW);
+              }
+              #endif
+ 297          #endif//#if(_OSD_TYPE == _REALTEK_2014_OSD)
+ 298          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    731    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----      43
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
