@@ -55,14 +55,14 @@
 
 /*********************RL6432 156Pin**************************************/
 ////////////////////////   0X2101----0X210F   ///////////////////////////////
-#define ID_CS_2556E01_DX                                                                        	0x2101//ÌØÊâÆÁÏß
+#define ID_CS_2556E01_DX                                                                        	0x2101//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 #define ID_MC_HK255XE05_SN238CS04_1_FHD200HZ_20250903                                               0x2102//
 #define ID_MC_HK255XE05_MV270FHB_NF6_FHD240HZ_20251215                                              0x2103
-#define ID_MC_HK255XE05_SN238CS04_1_FHD200HZ_20260226_EUROPE                                        0x2104//Å·ÖÞ¿Í»§ÒªÇó°æ±¾
-///////////////////////////////  Å·ÚÐÌØMNT  ////////////////////////////////////////////////
+#define ID_MC_HK255XE05_SN238CS04_1_FHD200HZ_20260226_EUROPE                                        0x2104//Å·ï¿½Þ¿Í»ï¿½Òªï¿½ï¿½æ±¾
+///////////////////////////////  Å·ï¿½ï¿½ï¿½ï¿½MNT  ////////////////////////////////////////////////
 #define ID_MC_HK2556E01_SG3151B05_8_FHD165HZ_20260612                                        0x2105
-///////////////////////////////  ´´ÀûÆÕ  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define ID_MC_HK255XE05_SG270AB02_5_FHD240HZ_20250903                                               0x2106//
 //#define _ID_MNT_2513BRE03_SG2381B04_1_FHD120HZ_20260629                                            	0x2107
 #define _ID_CLP_2525EQ4_SG2701B08_1_FHD120HZ_20260702                               				0x2108
@@ -72,20 +72,20 @@
 #define ID_MC_HK255XE05_SG270AB02_5_FHD120HZ_20260702												0x210B
 #define ID_MC_HK255XE05_SN270CU01_1_FHD120HZ_370MA_20260702											0x210C
 #define ID_MC_HK255XE05_SN270CU01_1_FHD120HZ_300MA_20260702											0x210D
-/////////////////////////////¿­µÏ///////////////////////////////////////
+/////////////////////////////ï¿½ï¿½ï¿½ï¿½///////////////////////////////////////
 #define ID_KAIDI_HK2557E19_MV270QHM_N30_QHD75HZ_20260319                                             0x2140
 
-/////////////////////////////´´Îï//////////////////////////////////////////
+/////////////////////////////ï¿½ï¿½ï¿½ï¿½//////////////////////////////////////////
 #define ID_CHUANGWU_2557E19_MV238FHM_NG1_FHD144HZ_20260723                                            0x2160
 
 
 #define ID_TEST_HK255XE05_1H2DP_MV270FHB_NF6_FHD240HZ_20260204                                      0x2200// 1HDMI 2DP //255XE06
 /*********************RL6432 216Pin**************************************/
 ////////////////////////   0X3101----0X310F   ///////////////////////////////
-/////////////////////////////¿­µÏ///////////////////////////////////////
-#define ID_KAIDI_HK2785E20_MV315QHM_NX0_QHD75HZ_20260319                                             0x3140//¸Ä2785E20
+/////////////////////////////ï¿½ï¿½ï¿½ï¿½///////////////////////////////////////
+#define ID_KAIDI_HK2785E20_MV315QHM_NX0_QHD75HZ_20260319                                             0x3140//ï¿½ï¿½2785E20
 
-/////////////////////////////ÖÐÖÇÔÆ///////////////////////////////////////
+/////////////////////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½///////////////////////////////////////
 #define _ID_ZZY_2785E06_BOE_MV315QHM_NX0_LVDS_QHD75HZ_20260403                                     	 0x3150
 
 
@@ -97,50 +97,50 @@
 #define ID_SHIQI_2795E12_SG3402H01_1_WQHD100HZ_20251110                                              0x4FD2
 ///////////////////////////////  SQY  ////////////////////////////////////////////////
 #define _ID_SQY_2795E21_N4TA430_VBO_UHD60HZ_20260421                                            	 0x4200
-///////////////////////////////  ´´Îï  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define ID_CHUANGWU_2795E01_2P2H_M250HAN03_5_EDP_FHD300HZ								 			 0x4210//
 #define ID_CHUANGWU_2795E18_2P2H_ME270QHM_NF0_EDP_QHD165HZ								 			 0x4211//
 
 
-///////////////////////////////  ½Ý·É  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½Ý·ï¿½  ////////////////////////////////////////////////
 #define ID_JIEFEI_2795E04_1USB1DP2H_ME270QHB_NF0_EDP_QHD165HZ_20260601								 0x4220
-///////////////////////////////  ´´ÀûÆÕ  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define ID_CLP_2795E01_2P2H_SG2701G02_2_EDP_QHD165HZ								 			 		 0x4221//
-//////////////////////////////////ÐÂºêêÉ //////////////////////////////////////////////////
+//////////////////////////////////ï¿½Âºï¿½ï¿½ï¿½ //////////////////////////////////////////////////
 #define ID_XINHONGSHAN_2795E04_1USB1DP2H_SAMSUNG_LSM315DP01_QHD165HZ_20260713						 	 0x4230
-/////////////////////////////////Í¬ÖÛ/////////////////////////////////////////////////
+/////////////////////////////////Í¬ï¿½ï¿½/////////////////////////////////////////////////
 #define ID_TONGZHOU_RTD2795E01_AUO_M315QAN01_0_20260824													 0x4240		
 
 /*********************RL6463*********************************************/
-//////////6851 2525BRE09 ºÚÆÁµã²»ÁÁÔ­Òò: font×Ö¿â³¬³ö£¬ÐèÒªÖ¸Áî²¿·Öfont·ÅÔÚbank6
+//////////6851 2525BRE09 ï¿½ï¿½ï¿½ï¿½ï¿½ã²»ï¿½ï¿½Ô­ï¿½ï¿½: fontï¿½Ö¿â³¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÖ¸ï¿½î²¿ï¿½ï¿½fontï¿½ï¿½ï¿½ï¿½bank6
 ////////////////////////   0X5101----0X511F   ///////////////////////////////
 #define ID_CS_2513E01_FHD100HZ                                                                    	0x5101
 #define ID_CS_2513E03_GuangGan_FHD60HZ                                                             	0x5102
-//´¨Éý
+//ï¿½ï¿½ï¿½ï¿½
 #define ID_CS_2513E03_M270HAN0_1_FHD10Z                                                             	0x5103
-/////////////////////////////// ¾©Ó®  ////////////////////////////////////////////////
+/////////////////////////////// ï¿½ï¿½Ó®  ////////////////////////////////////////////////
 #define _ID_2313ARE02_PN238CS02_2_FHD100HZ_20260427                                            		0x5104
-/////////////////////////////// Í¬ÁÁ  ////////////////////////////////////////////////
+/////////////////////////////// Í¬ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_2513ARE02_PN238CS02_2_FHD100HZ_20260713                                            		0x5105
 
 /*********************RL6851*********************************************/
 #define ID_CS_2513brE03_FHD144HZ                                                                    0x6102
 #define _ID_RUIDE_2525BREQ4_TM238VFXJ09_FHD144HZ_20250910                                           0x6103
 
-/////////////////////////////////  ÏÊèÖ  ////////////////////////////////////////////////
+/////////////////////////////////  ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_XIANYOU_2525BREQ4_SG2701B05_6_FHD100HZ_20251015                                         0x6104
 #define _ID_XIANYOU_2525BREQ4_PN238CT02_14_FHD100HZ_20251023                                        0x6105
-/////////////////////////////////  ºêÏÄ  ////////////////////////////////////////////////
+/////////////////////////////////  ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_HONGXIA_2525BREQ4_1A1H_SG2701B08_1_LVDS_FHD120HZ_20251107                               0x6106
 #define _ID_HONGXIA_2525BREQ4_1A1H_LD238EU4_SUA1_LVDS_FHD120HZ_20251107                             0x6107
-/////////////////////////////// µ¾ÐË  ////////////////////////////////////////////////
+/////////////////////////////// ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_DX_2525BREQ4_MF238FHB_N50_FHD100HZ_20260616                                           0x6108
 
 
 #define _ID_CHUANGWU_2525BREQ4_1A1H_SG2701B08_1_LVDS_FHD120HZ_20260207                               0x6120
 #define _ID_CHUANGWU_2525BREQ4_1A1H_LD238EU4_SUA1_LVDS_FHD120HZ_20260207                             0x6121
 
-///////////////////////////////  ÃúÐ½µç×Ó  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_MXDZ_2513BRE03_SN238CS08_1_FHD144HZ_20251103                                            0x6150
 #define _ID_MXDZ_2513BRE03_HV400FHB_F11_FHD60HZ_20260321                                            0x6151
 #define _ID_MXDZ_2513BRE03_HV430FHB_F91_FHD60HZ_20260321                                            0x6152
@@ -149,24 +149,24 @@
 #define _ID_MXDZ_2513BRE03_HV320WHB_F73_FHD60HZ_20260321                                            0x6155
 
 
-///////////////////////////////  ÖÐÖÇÔÆ  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_ZZY_2525BRE09_MV238FHM_NX4_FHD100HZ_20251118                                            0x6170
 #define _ID_ZZY_2525BRE09_MV238FHM_N63_FHD100HZ_20251226                                            0x6171
 #define _ID_ZZY_2525BRE09_MV238FHM_NX5_FHD100HZ_20260302                                            0x6172
 
-///////////////////////////////  Å·ÚÐÌØMNT  ////////////////////////////////////////////////
+///////////////////////////////  Å·ï¿½ï¿½ï¿½ï¿½MNT  ////////////////////////////////////////////////
 #define _ID_MNT_2313BRE01_PN238CS02_2_FHD100HZ_20260427                                            	0x6173
 #define _ID_MNT_2513BRE03_SG2381B04_1_FHD120HZ_20260629                                            	0x6174
 
-///////////////////////////////  ÏÊèÖ  ////////////////////////////////////////////////
+///////////////////////////////  ï¿½ï¿½ï¿½ï¿½  ////////////////////////////////////////////////
 #define _ID_XY_2313BRE01_PN238CS02_2_FHD100HZ_20260730                                            	0x6180
 
 
 
 
 ////////////////////////////////////////////////////////////////////////////
-//6463 2513ar¿ÉÒÔ³¬120
-//6851 2525br/2513br hdmi fhd144hz dp 144hz£¬×î¸ß¿É³¬180£¬µ«ÊÇ144ÒÔÉÏÇÐ»»ÓÐÎÊÌâ
+//6463 2513arï¿½ï¿½ï¿½Ô³ï¿½120
+//6851 2525br/2513br hdmi fhd144hz dp 144hzï¿½ï¿½ï¿½ï¿½ß¿É³ï¿½180ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½144ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
@@ -180,12 +180,12 @@
 #define ID_CS_6851                                                                       	0x6FE1
 
 
-///#define _OVERCLOCK												_ON ×îÐÂ°æÒÑ²»Ê¹ÓÃ
+///#define _OVERCLOCK												_ON ï¿½ï¿½ï¿½Â°ï¿½ï¿½Ñ²ï¿½Ê¹ï¿½ï¿½
 
 //#define _HDMI_24C02_SUPPORT                                                                        	_ON
-#define _DEF_OSD_2525   			_OFF//²»±ØÒªÓÃ£¬Î´Íê³É
+#define _DEF_OSD_2525   			_OFF//ï¿½ï¿½ï¿½ï¿½Òªï¿½Ã£ï¿½Î´ï¿½ï¿½ï¿½
 
-//ÇëÔÚÏÂÃæ°´id·ÖÅä
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ°´idï¿½ï¿½ï¿½ï¿½
 #define _IMD_DOMAIN_ULTRA_HIGH_SPEED_SUPPORT					_ON
 #define _DDR2_MEMORY_CLK_1200M_SUPPORT                          _ON
 #define _LVDS_ULTRA_HIGH_SPEED_SUPPORT							_ON
@@ -202,7 +202,7 @@
 #define _DRR_MOTION_BLUR_REDUCTION_SUPPORT                      _ON
 #define _MOTION_BLUR_REDUCTION_MODE_SWITCH_NO_MUTE_SUPPORT      _OFF
 
-//MBR SYNC Ä¿Ç°Ö÷°å¶¼²»¿ÉÓÃ£¬ÏÈ²»¹ÜÁË
+//MBR SYNC Ä¿Ç°ï¿½ï¿½ï¿½å¶¼ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½
 #define _MOTION_BLUR_REDUCTION_SUPPORT                          _ON
 #define _DRR_MOTION_BLUR_REDUCTION_SUPPORT                      _OFF
 #define _RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT             _OFF
@@ -384,7 +384,7 @@
 #define _OD_SUPPORT 											_OFF
 
 #define SG2701B08_1												_OFF
-#define HV320FHB_F41											_ON //ÆÁÊÇ _HKC_PT320CT01_3_LVDS_FHD75HZ
+#define HV320FHB_F41											_ON //ï¿½ï¿½ï¿½ï¿½ _HKC_PT320CT01_3_LVDS_FHD75HZ
 #elif(Project_ID == _ID_XY_2313BRE01_PN238CS02_2_FHD100HZ_20260730)
 #define _PCB_TYPE												_RL6851__76PIN__HKMRT2313BRE01__1A1H__LVDS
 #define _PANEL_TYPE 											_HKC_PN238CT02_14_LVDS_FHD100HZ						 
@@ -413,15 +413,15 @@
 #define _IR_VIRTUAL 											_OFF
 #endif
 
-#define PN270CU01_6 											_OFF//¹ØÁËÊÇPN238CS02_2
-#define SG2701B08_1 											_OFF//¹ØÁËÊÇPN238CS02_2
-#define SG2701B08_1_144 										_OFF//_OFF//¹ØÁËÊÇPN238CS02_2
-#define SG2701B08_1_144_27M56 									_OFF//_ON//¹ØÁËÊÇPN238CS02_2
-#define SG2701B08_1_LONG 										_ON//_OFF//¹ØÁËÊÇPN238CS02_2 ÉÁÆÁ
-#define SG2381B04_1 											_OFF//¹ØÁËÊÇPN238CS02_2
-#define SG2381B04_144 											_OFF//_ON//¹ØÁËÊÇPN238CS02_2
-#define SG2381B04_144_2 										_OFF//_OFF//¹ØÁËÊÇPN238CS02_2
-#define SG2381B04_1_shan 										_OFF//¹ØÁËÊÇPN238CS02_2 ÉÁÆÁ
+#define PN270CU01_6 											_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2701B08_1 											_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2701B08_1_144 										_OFF//_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2701B08_1_144_27M56 									_OFF//_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2701B08_1_LONG 										_ON//_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2 ï¿½ï¿½ï¿½ï¿½
+#define SG2381B04_1 											_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2381B04_144 											_OFF//_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2381B04_144_2 										_OFF//_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2
+#define SG2381B04_1_shan 										_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PN238CS02_2 ï¿½ï¿½ï¿½ï¿½
 
 
 #elif(Project_ID    ==  _ID_MXDZ_2513BRE03_SN238CS08_1_FHD144HZ_20251103)
@@ -539,7 +539,7 @@
     #define _MPRT_SUPPORT                                           _OFF
     #define _OD_SUPPORT                                             _ON
 	#define _HDMI_24C02_SUPPORT 									_OFF		
-	#define NO_SAVE_AC_STATE_SUPPORT								_ON//²»±£´æAC×´Ì¬
+	#define NO_SAVE_AC_STATE_SUPPORT								_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AC×´Ì¬
 	
 	#define _IR_VIRTUAL 									_OFF		
 
@@ -596,8 +596,8 @@
 	#define _HDMI_24C02_SUPPORT 									_OFF
 	#define _HONGXIA_OSD                                            _ON
 	
-#define _IR_MODE_2 											_OFF// 2ºÅÆÁ
-#define _IR_MODE_3 											_ON// 3ºÅÆÁ
+#define _IR_MODE_2 											_OFF// 2ï¿½ï¿½ï¿½ï¿½
+#define _IR_MODE_3 											_ON// 3ï¿½ï¿½ï¿½ï¿½
 #define _IR_VIRTUAL 											_OFF
 #elif(Project_ID    ==  _ID_CLP_2525EQ4_SG2701B08_1_FHD120HZ_20260702)
     #define _PCB_TYPE                                               _RL6851__128PIN__HKMRT2525BREQ4__1A1P1H__LVDS
@@ -664,7 +664,7 @@
 	#define _HDMI_24C02_SUPPORT 									_OFF
 	#define _KEY_LED_INSERVE                                    	_ON
 	#define _FREESYNC_LEFT_RIGHT_EFFECT                        		_ON
-	#define _VERSION_NO_LED                                      	_ON//²»´øµÆÐ§°æ±¾
+	#define _VERSION_NO_LED                                      	_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½æ±¾
 	
 #elif(Project_ID ==ID_MC_HK2556E01_SG3151B05_8_FHD165HZ_20260612)
 #define _PCB_TYPE												_RL6432__156PIN__HKMRT2556E01__2H1DP__LVDS
@@ -682,7 +682,7 @@
 	#define _HDMI_24C02_SUPPORT 									_OFF
 	#define _KEY_LED_INSERVE                                    	_ON
 	#define _FREESYNC_LEFT_RIGHT_EFFECT                        		_ON
-	#define _VERSION_NO_LED                                      	_ON//²»´øµÆÐ§°æ±¾	
+	#define _VERSION_NO_LED                                      	_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½æ±¾	
 	
 #elif(Project_ID ==ID_MC_HK255XE05_SG270AB02_5_FHD240HZ_20250903)
 #define _PCB_TYPE												_RL6432__156PIN__HKMRT255XE05__2H1DP__LVDS
@@ -744,7 +744,7 @@
 	#define _HDMI_24C02_SUPPORT 									_OFF
 	#define _KEY_LED_INSERVE                                    	_ON
 	#define _FREESYNC_LEFT_RIGHT_EFFECT                        		_ON
-	#define _VERSION_NO_LED                                      	_OFF//²»´øµÆÐ§°æ±¾
+	#define _VERSION_NO_LED                                      	_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½æ±¾
 	
 #elif(Project_ID    ==  ID_KAIDI_HK2557E19_MV270QHM_N30_QHD75HZ_20260319)
     #define _PCB_TYPE                                               _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS
@@ -755,7 +755,7 @@
 	#define _HDMI_24C02_SUPPORT 									_OFF
 #elif(Project_ID    ==  ID_CHUANGWU_2557E19_MV238FHM_NG1_FHD144HZ_20260723)
     #define _PCB_TYPE                                             _RL6432__156PIN__HKMRT2557E23__1A1H1DP__LVDS//  _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS
-    #define _PANEL_TYPE                                           _AUO_M238HVN01_2_LVDS_FHD75HZ// _BOE_MV238FHM_NG1_LVDS_FHD144HZ//                       
+    #define _PANEL_TYPE                                           _BOE_MV270QHBN80_LVDS_QHD60HZ//_AUO_M238HVN01_2_LVDS_FHD75HZ// _BOE_MV238FHM_NG1_LVDS_FHD144HZ//                       
     #define _FRC_SUPPORT                                            _ON 
     #define _MPRT_SUPPORT                                           _ON
 	#define _OD_SUPPORT 											_ON
@@ -802,7 +802,7 @@
 #endif
 
 #ifndef _PROJEC_ID_TYPE
-#define _PROJEC_ID_TYPE 											0// 1 ½ðÆ· 0 none
+#define _PROJEC_ID_TYPE 											0// 1 ï¿½ï¿½Æ· 0 none
 #endif
 
 #ifndef _DEF_HDCP_FLASH14
@@ -819,7 +819,7 @@
 
 
 #ifndef _Def_AutoAlign_Type
-#define _Def_AutoAlign_Type											1//o ¾É°æ     1.ÐÂ°æ£¬ÓÃRTDÉÕÂ¼°å
+#define _Def_AutoAlign_Type											1//o ï¿½É°ï¿½     1.ï¿½Â°æ£¬ï¿½ï¿½RTDï¿½ï¿½Â¼ï¿½ï¿½
 #endif
 
 #ifndef _Anjian_EFFECT
@@ -848,11 +848,11 @@
 #endif
 
 #ifndef _KEY_LED_INSERVE
-#define _KEY_LED_INSERVE                                    _OFF //°´¼üµÆ·´×ª
+#define _KEY_LED_INSERVE                                    _OFF //ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½×ª
 #endif
 
 #ifndef NO_SAVE_AC_STATE_SUPPORT
-#define NO_SAVE_AC_STATE_SUPPORT							_OFF//²»±£´æAC×´Ì¬
+#define NO_SAVE_AC_STATE_SUPPORT							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AC×´Ì¬
 #endif
 
 #include "./pcb/User_Pcb_List.h"

@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014OSDPALETTE
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSDPALETTE
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014OsdPalette.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdPalette.c LARGE OPTIMIZE(9,SPEED)
-                    - INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\K
-                    -ernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header
-                    -;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Seri
-                    -es_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kerne
-                    -l\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fa
-                    -ctory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE
-                    -(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014OsdPalett
-                    -e.lst) OBJECT(.\Output\RL6432_Project\RTD2014OsdPalette.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdPalette.c LARGE OPTIMIZE(9,SPE
+                    -ED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;
+                    -.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Hea
+                    -der;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_S
+                    -eries_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Ke
+                    -rnel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD
+                    - Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEF
+                    -INE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014OsdPal
+                    -ette.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014OsdPalette.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          #define _RGB_PINK                               255, 128, 255
   46          
   47          #define _RGB_ORANGE_H                           250, 180,  40
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 2   
 
   48          #define _RGB_ORANGE_DARK                        224, 120,   7
   49          #define _RGB_LIGHT_GRAY                         210, 210, 210
@@ -104,7 +104,7 @@ line level    source
   85          #define _LOGO_GREEN                             0,   255,   0
   86          #endif
   87          
-  88          #if(_LOGO_TYPE == _LOGO_CRK_RUIKE)      
+  88          #if(_LOGO_TYPE == _LOGO_CRK_RUIKE)  
               #define _LOGO_BLUE                              7,     82, 165
               #elif(_LOGO_TYPE ==  _LOGO_Polaroid)
               #define _LOGO_BLUE                              7,     82, 165//38,    133, 201
@@ -126,7 +126,7 @@ line level    source
  107          #define _LOGO_YELLOW                            255, 255,   0
  108          #define _LOGO_GRAY                              96,   96,  96
  109          
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 3   
 
  110          #endif
  111          
@@ -171,7 +171,7 @@ line level    source
               #elif(_LOGO_TYPE == _LOGO_IMAGIC)
               #define _LOGO_BLUE1                             241,129,3  
               #elif(_LOGO_TYPE == _LOGO_HYINGDA)
-              #define _LOGO_BLUE1                                                             60,50,118
+              #define _LOGO_BLUE1               60,50,118
               #elif(_LOGO_TYPE == _LOGO_GENLOVE)
               #define _LOGO_BLUE1                             16,122,222 
               #elif(_LOGO_TYPE == _LOGO_LAPAELO)                     
@@ -186,28 +186,28 @@ line level    source
               #define _LOGO_BLUE1                             255,   33,  39
               #elif(_LOGO_TYPE == _LOGO_ODNA)
               #define _LOGO_BLUE1                             160,   160,  160
-              #elif(_LOGO_TYPE == _LOGO_CRK_RUIKE)    
-              #define _LOGO_BLUE1                                                             254,107,21
+              #elif(_LOGO_TYPE == _LOGO_CRK_RUIKE)  
+              #define _LOGO_BLUE1               254,107,21
               #elif(_LOGO_TYPE == _LOGO_DUAM) 
-              #define _LOGO_BLUE1                                                             0,0,0
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 4   
+              #define _LOGO_BLUE1               0,0,0
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 4   
 
-              //#elif(_LOGO_TYPE == _LOGO_EXAN)       
-              //#define _LOGO_BLUE1                                                           254,107,21
-              #elif(_LOGO_TYPE == _LOGO_XENTA)        
-              #define _LOGO_BLUE1                                                             0,123,193
-              #elif(_LOGO_TYPE == _LOGO_BLAUPUNKT)    
-              #define _LOGO_BLUE1                                                             0,156,223
-              #elif(_LOGO_TYPE == _LOGO_TEROS)        
-              #define _LOGO_BLUE1                                                             223,18,51
-              #elif(_LOGO_TYPE == _LOGO_HAIER)        
-              #define _LOGO_BLUE1                                                             0,78,162
-              #elif(_LOGO_TYPE == _LOGO_DUALSHINE)    
-              #define _LOGO_BLUE1                                                             220, 13, 27
+              //#elif(_LOGO_TYPE == _LOGO_EXAN) 
+              //#define _LOGO_BLUE1               254,107,21
+              #elif(_LOGO_TYPE == _LOGO_XENTA)  
+              #define _LOGO_BLUE1               0,123,193
+              #elif(_LOGO_TYPE == _LOGO_BLAUPUNKT)  
+              #define _LOGO_BLUE1               0,156,223
+              #elif(_LOGO_TYPE == _LOGO_TEROS)  
+              #define _LOGO_BLUE1               223,18,51
+              #elif(_LOGO_TYPE == _LOGO_HAIER)  
+              #define _LOGO_BLUE1               0,78,162
+              #elif(_LOGO_TYPE == _LOGO_DUALSHINE)  
+              #define _LOGO_BLUE1               220, 13, 27
               #elif(_LOGO_TYPE == _LOGO_FUEGO)
-              #define _LOGO_BLUE1                                                             237,87,34
+              #define _LOGO_BLUE1               237,87,34
               #elif(_LOGO_TYPE == _LOGO_GAMEBOOSTER)
-              #define _LOGO_BLUE1                                                             194,39,45
+              #define _LOGO_BLUE1               194,39,45
               #else
  189          #define _LOGO_BLUE1                             1,123,188
  190          #endif
@@ -254,7 +254,7 @@ line level    source
                   _RGB_BLUE1,
                   _RGB_BLUE1,
                   _RGB_BLUE1,
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 5   
 
                   _RGB_BLUE1,
                   _RGB_BLUE1,
@@ -318,26 +318,26 @@ line level    source
  293          
  294          };
  295           #if(_DEF_ECO_ICON)
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 6   
 
               BYTE code tPALETTE_ECO_ICON_MENU[] =
               {
-                              _RGB_BLACK,
-                              _RGB_WHITE,
-                              _RGB_RED,
-                              _RGB_GREEN,
-                              _RGB_BLUE,
-                              _RGB_YELLOW,
-                              _RGB_LIGHTBLUE,
-                              _RGB_DARKBLUE,
-                              _RGB_LIGHTBLUE,
-                              _RGB_GRAY0,
-                              _RGB_BLACK,
-                              _RGB_DARKBLUE,
-                              _RGB_BLUE,      
-                              _RGB_LIGHT_GRAY,
-                              _RGB_BLUE_120,
-                              _RGB_SELECTBOTTOM,    
+                  _RGB_BLACK,
+                  _RGB_WHITE,
+                  _RGB_RED,
+                  _RGB_GREEN,
+                  _RGB_BLUE,
+                  _RGB_YELLOW,
+                  _RGB_LIGHTBLUE,
+                  _RGB_DARKBLUE,
+                  _RGB_LIGHTBLUE,
+                  _RGB_GRAY0,
+                  _RGB_BLACK,
+                  _RGB_DARKBLUE,
+                  _RGB_BLUE,  
+                  _RGB_LIGHT_GRAY,
+                  _RGB_BLUE_120,
+                  _RGB_SELECTBOTTOM,    
               
               };
               #endif
@@ -382,12 +382,12 @@ line level    source
  354   2                  break;
  355   2      
  356   2              case _PALETTE_MAIN_MENU:
-C51 COMPILER V8.12   RTD2014OSDPALETTE                                                     09/16/2026 20:29:10 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/18/2026 20:40:11 PAGE 7   
 
  357   2                  OsdPaletteLoadPigment(_PALETTE_INDEX0, tPALETTE_MAIN_MENU);
  358   2                  break;
  359   2       #if(_DEF_ECO_ICON)
-                               case _PALETTE_ECO_MENU:
+                   case _PALETTE_ECO_MENU:
                           OsdPaletteLoadPigment(_PALETTE_INDEX0, tPALETTE_ECO_ICON_MENU);
                           break;
               #endif
@@ -400,7 +400,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    140    ----
+   CODE SIZE        =    147    ----
    CONSTANT SIZE    =     96    ----
    XDATA SIZE       =   ----       5
    PDATA SIZE       =   ----    ----

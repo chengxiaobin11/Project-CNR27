@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_MHLRX2
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_MHLRX2
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_MHLRx2.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_MHLRx2.c LARGE OPTIMI
-                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
-                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
-                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
-                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
-                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
-                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
-                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL643
-                    -2_Series_MHLRx2.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_MHLRx2.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_MHLRx2.c LARGE OPT
+                    -IMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sys
+                    -tem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunct
+                    -ion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scal
+                    -er\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\
+                    -Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header
+                    -;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\
+                    -Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL
+                    -6432_Series_MHLRx2.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_MHLRx2.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #define GET_MHL_RX2_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx2WriteBurstProcessDone)
               #define SET_MHL_RX2_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx2WriteBurstProcessDone = _TRUE)
               #define CLR_MHL_RX2_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx2WriteBurstProcessDone = _FALSE)
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               //--------------------------------------------------
               // Description  : TMDS Settings when MHL Mode for D2 Port
               // Input Value  : None
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 3   
 
               // Output Value : None
               //--------------------------------------------------
@@ -190,7 +190,7 @@ line level    source
                   ScalerSetBit(P7B_17_BANDGAP_03, ~_BIT1, 0x00);
               
                   // Disable MHL OP
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 4   
 
                   ScalerSetBit(P7B_1B_CMU_01, ~_BIT4, 0x00);
               
@@ -254,7 +254,7 @@ line level    source
                   // Set MHL 1MHz Clk Divider
                   ScalerSetBit(P2A_A1_CBUS_CTRL_01, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1), (_BIT4 | _BIT3 | _BIT2));
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 5   
 
                   // Set MHL 1KHz Clk Divider and Set Stuck Low Time to 150us
                   ScalerSetBit(P2A_A2_CBUS_CTRL_02, ~(_BIT4 | _BIT3 | _BIT1 | _BIT0), _BIT0);
@@ -318,7 +318,7 @@ line level    source
                           if(GET_DIGITAL_PORT_SWITCH_TO_D0() != _TRUE)
                           {
                               // Disable CBUS Phy, LDO, Input Comparator
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 6   
 
                               ScalerSetBit(P27_A0_CBUS_EN_0, ~_BIT6, 0x00);
                           }
@@ -382,7 +382,7 @@ line level    source
                   ScalerSetBit(P2A_A8_CBUS_CTRL_08, ~_BIT7, _BIT7);
               
                   // Enable Discovery Debounce
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 7   
 
                   ScalerSetBit(P2A_A8_CBUS_CTRL_08, ~(_BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
               
@@ -446,7 +446,7 @@ line level    source
                   {
                       DELAY_5US();
                   }
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 8   
 
               
                   if(((bit)ScalerGetBit(P76_B3_MHL_CTRL_13, _BIT0) == _TRUE) ||
@@ -510,7 +510,7 @@ line level    source
                       ScalerSetBit_EXINT(P76_B3_MHL_CTRL_13, ~(_BIT1 | _BIT0), _BIT0);
               
                       if(GET_TMDS_RX2_CLK_MODE() == _TMDS_24BIT_PHY_SETTING)
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 9   
 
                       {
                           usTemp = 500;
@@ -574,7 +574,7 @@ line level    source
                       // Manual Disable CBUS PHY PSM
                       ScalerSetBit_EXINT(P27_A1_CBUS_EN_1, ~_BIT0, 0x00);
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 10  
 
                       // Enable RX_EN
                       ScalerSetBit_EXINT(P7B_1A_CMU_00, ~_BIT7, _BIT7);
@@ -638,7 +638,7 @@ line level    source
                       CLR_MHL_RX2_CBUS_RESET_FOR_HTC_DONE();
                       CLR_MHL_RX2_SENT_MSC_DCAP_RDY();
                       CLR_MHL_RX2_SWITCH_PORT_DISCOVERY_DONE();
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 11  
 
                       SET_MHL_RX2_WRITE_BURST_PROCESS_DONE();
               
@@ -702,7 +702,7 @@ line level    source
               #endif
                               return _FAIL;
                               break;
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 12  
 
               
                           default: // Source Reply No Packet(Timeout) or NACK
@@ -766,7 +766,7 @@ line level    source
               
                               break;
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 13  
 
                           case _MHL_ABORT_FAIL: // Source reply ABORT Packet
               
@@ -830,7 +830,7 @@ line level    source
               #endif
                               return _SUCCESS;
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 14  
 
                               break;
               
@@ -894,7 +894,7 @@ line level    source
                       case _MSC_SET_INT:
                       case _MSC_MSG:
                       case _MSC_WRITE_XSTAT:
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 15  
 
               
                           ucSendType = _MSC_SEND_COM_OFF_DAT;
@@ -958,7 +958,7 @@ line level    source
                       ScalerSetByte(P2A_E0_CBUS_CTRL_40, _MSC_EOF_PACKET);
               
                       // Set MSC Data
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 16  
 
                       for(ucI = 0; ucI < ucDataLength; ucI++)
                       {
@@ -1022,7 +1022,7 @@ line level    source
                           // Clear Flags
                           ScalerSetBit(P2A_F6_CBUS_CTRL_56, ~_BIT7, _BIT7);
                           ScalerSetBit(P2A_F7_CBUS_CTRL_57, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 17  
 
               
                           return _MHL_PROTOCOL_ERROR;
@@ -1086,7 +1086,7 @@ line level    source
                               if(ScalerMHLRx2MscReadDevCapabilities(_MSC_MHL_VERSION_01, &g_ucMHLRx2MhlVersion, _MSC_REA
              -D_DEVCAP) == _TRUE)
                               {
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 18  
 
                                   if((bit)ScalerGetDataPortBit(P2A_AC_CBUS_CTRL_0C, _MSC_RCHANGE_INT, _MSC_DCAP_CHG) == 
              -_TRUE)
@@ -1150,7 +1150,7 @@ line level    source
                       //-----------------------------------------------------------//
                       //-- Check 3D Request and Reply No Support For All Timings --//
                       //-----------------------------------------------------------//
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 19  
 
                       if((bit)ScalerGetDataPortBit(P2A_AC_CBUS_CTRL_0C, _MSC_RCHANGE_INT, _MSC_3D_REQ) == _TRUE)
                       {
@@ -1214,7 +1214,7 @@ line level    source
                                           ScalerTimerDelayXms(5);
                                       }
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 20  
 
                                       if(ScalerMHLRx2MscSendWriteBurst(0x40, ucBirstLength, &pucWriteBurstTmp[ucBirstLen
              -gth], _MHL_WRITE_BURST_WITH_REQ) == _SUCCESS)
@@ -1278,7 +1278,7 @@ line level    source
               
                       ScalerSetByte(P2A_CE_CBUS_CTRL_2E, _BIT5);
                   }
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 21  
 
               
                   if(ScalerGetBit(P2A_CE_CBUS_CTRL_2E, _BIT4) == _BIT4)
@@ -1342,7 +1342,7 @@ line level    source
               
                                   SET_MHL_RX2_PROCESS_STATE(_MHL_STATE_DEV_CAP_RDY);
                               }
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 22  
 
               
                               return _TRUE;
@@ -1406,7 +1406,7 @@ line level    source
                   return _FALSE;
               }
               
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 23  
 
               //--------------------------------------------------
               // Description  : RAP Process for D2 Port
@@ -1470,7 +1470,7 @@ line level    source
                   // Check UCP Command
                   if(((bit)ScalerGetBit(P2A_12_OCBUS_CTRL_12, _BIT4) == _TRUE) && (ScalerGetByte(P2A_D6_CBUS_CTRL_36) ==
              - _MSC_UCP))
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 24  
 
                   {
                       // Clear Flag
@@ -1534,7 +1534,7 @@ line level    source
                   ScalerSetBit(P71_E6_HDMI_FREQDET_CTRL, ~_BIT2, _BIT2);
               
                   // Delay enough time for freq. measure (calculated for measure 5 times)
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 25  
 
                   ScalerTimerDelayXms(5);
               
@@ -1598,7 +1598,7 @@ line level    source
               
                   if(GET_TMDS_RX2_PHY_SET() == _TRUE)
                   {
-C51 COMPILER V8.12   RL6432_SERIES_MHLRX2                                                  09/16/2026 20:28:28 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX2                                              09/18/2026 20:39:21 PAGE 26  
 
                       return _SUCCESS;
                   }

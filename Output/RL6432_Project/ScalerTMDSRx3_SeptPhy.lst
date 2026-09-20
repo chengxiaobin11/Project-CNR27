@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERTMDSRX3_SEPTPHY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERTMDSRX3_SEPTPHY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerTMDSRx3_SeptPhy.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx3_SeptPhy.c LARGE OPTIMIZE(9,
-                    -SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Head
-                    -er;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\
-                    -Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL643
-                    -2_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.
-                    -\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\
-                    -RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) 
-                    -DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerTMDS
-                    -Rx3_SeptPhy.lst) OBJECT(.\Output\RL6432_Project\ScalerTMDSRx3_SeptPhy.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx3_SeptPhy.c LARGE OPTIMIZE
+                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
+                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
+                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
+                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
+                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
+                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
+                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerT
+                    -MDSRx3_SeptPhy.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerTMDSRx3_SeptPhy.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          EnumDeOnlyConfig ScalerTMDSRx3GetDeOnlyModeConfig(void);
   46          void ScalerTMDSRx3PowerOffProc(void);
   47          BYTE ScalerTMDSRx3TMDSVideoDetect(bit bWait);
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 2   
 
   48          void ScalerTMDSRx3TMDSVideoDetectEvent(void);
   49          void ScalerTMDSRx3PSIntHandler_EXINT0(void);
@@ -126,7 +126,7 @@ line level    source
  107          {
  108   1          // Manual Set Color Space and disable pixel repetition
  109   1          ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_51_PORT_PAGE72_HDMI_ACRCR, ~(_BIT6 | _BIT5 | _BIT4 | _
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 3   
 
              -BIT3 | _BIT2), 0x00);
  110   1      
@@ -190,7 +190,7 @@ line level    source
  167          // Output Value : EnumDeOnlyConfig
  168          //--------------------------------------------------
  169          EnumDeOnlyConfig ScalerTMDSRx3GetDeOnlyModeConfig(void)
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 4   
 
  170          {
  171   1          EnumDeOnlyConfig enumDeConfig = _DE_NO_INDICATED;
@@ -254,7 +254,7 @@ line level    source
  229   3                  {
  230   4                      ucTemp = _TMDS_VIDEO_DATA_RGBHV;
  231   4                  }
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 5   
 
  232   3                  else
  233   3                  {
@@ -318,7 +318,7 @@ line level    source
  290          // Output Value : None
  291          //--------------------------------------------------
  292          void ScalerTMDSRx3PSIntHandler_EXINT0(void) using 1
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 6   
 
  293          {
  294   1      #if(_D3_HDMI_2_0_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  351   1          if((ScalerGetBit_EXINT(P72_25_HDMI_CTRL_25, _BIT3) == _BIT3) && (ScalerGetBit_EXINT(P72_26_HDMI_CTRL_2
              -6, _BIT3) == _BIT3))
  352   1          {
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 7   
 
  353   2              // Clear Read Request Flag
  354   2              ScalerSetBit_EXINT(P72_25_HDMI_CTRL_25, ~_BIT3, _BIT3);
@@ -446,7 +446,7 @@ line level    source
               
                           /*
                           // Disable Test Read Request HW Auto Mode
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 8   
 
                           ScalerSetBit_EXINT(P72_1C_HDMI_CTRL_1C, ~_BIT1, 0x00);
               
@@ -510,7 +510,7 @@ line level    source
  471   1          ScalerSetByte_EXINT(P72_C3_HDCP_AP, pucBackUp[2]);
  472   1      
  473   1      #if(_D3_HDMI_2_0_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 9   
 
  474   1          ScalerSetBit_EXINT(P72_38_HDMI_CTRL_38, ~(_BIT2 | _BIT1 | _BIT0), pucBackUp[5]);
  475   1          ScalerSetByte_EXINT(P72_39_HDMI_CTRL_39, pucBackUp[4]);
@@ -574,7 +574,7 @@ line level    source
  533   3      
  534   3                  case _AVI_INFO_PIXEL_REPETITION:
  535   3      
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 10  
 
  536   3                      return (ScalerGetDataPortBit(P72_CD_HDMI_PSAP, 0x08, (_BIT3 | _BIT2 | _BIT1 | _BIT0)));
  537   3      
@@ -638,7 +638,7 @@ line level    source
  594          #if(_HDMI_IDENTIFY_GAME_SRC_SUPPORT == _ON)
               //--------------------------------------------------
               // Description  : HDMI SPD Info Frame Packet Detect
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 11  
 
               // Input Value  : bWait
               // Output Value : None
@@ -702,7 +702,7 @@ line level    source
                   {
                       // Set HPD Debounce = 700 Clock Cycle
                       // Set HPD IRQ Detect Rising to Falling Edge IRQ
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 12  
 
                       ScalerSetBit(P72_23_HDMI_CTRL_23, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), (_BIT5 | _BIT4 | _BIT3
              - | _BIT1));
@@ -766,7 +766,7 @@ line level    source
               
                   ScalerSetByte_EXINT(P72_39_HDMI_CTRL_39, _P72_3A_PT_D7_PORT_PAGE72_HDMI_SCDC_D7);
                   ScalerSetByte_EXINT(P72_3A_HDMI_CTRL_3A, g_stTmdsMacRxScdcInfoSet.pucIdstring[4]);
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 13  
 
               
                   ScalerSetByte_EXINT(P72_39_HDMI_CTRL_39, _P72_3A_PT_D8_PORT_PAGE72_HDMI_SCDC_D8);
@@ -830,7 +830,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 14  
 
                       // Set SCDC Info
                       // Set SCDC Info
@@ -894,7 +894,7 @@ line level    source
  839   1          ScalerTMDSRx3ScrambleDetectDisable();
  840   1      }
  841          
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 15  
 
  842          //--------------------------------------------------
  843          // Description  : TMDS Scramble Detection IRQ Disable
@@ -958,7 +958,7 @@ line level    source
  901   2                  break;
  902   2          }
  903   1      }
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 16  
 
  904          //--------------------------------------------------
  905          // Description  : TMDS Read Request Timer Event Enable
@@ -1022,7 +1022,7 @@ line level    source
  962   2              // Delay for PLL Phase Lock
  963   2              ScalerTimerDelayXms(2);
  964   2      
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 17  
 
  965   2              ucTemp++;
  966   2          }
@@ -1086,7 +1086,7 @@ line level    source
 1023          // Description  : Signal Detection for TMDS(Power Saving)
 1024          // Input Value  : Input Port
 1025          // Output Value : True : TMDS Signal Detected
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 18  
 
 1026          //              : False : No Signal
 1027          //--------------------------------------------------
@@ -1150,7 +1150,7 @@ line level    source
 1084   1          else
 1085   1          {
 1086   2              // Disable Freq. Detection
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 19  
 
 1087   2              ScalerSetBit(P72_E6_HDMI_FREQDET_CTRL, ~_BIT7, 0x00);
 1088   2      
@@ -1214,7 +1214,7 @@ line level    source
 1145          // Output Value :
 1146          //--------------------------------------------------
 1147          void ScalerTMDSRx3HotPlugHighProc(WORD usHpdTime)
-C51 COMPILER V8.12   SCALERTMDSRX3_SEPTPHY                                                 09/16/2026 20:27:42 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3_SEPTPHY                                             09/18/2026 20:38:29 PAGE 20  
 
 1148          {
 1149   1          // MHL mode of MHL PORT can not pull HPD
@@ -1237,10 +1237,11 @@ line level    source
 1165   2          }
 1166   1      }
 1167          #endif
+*** WARNING C294 IN LINE 1092 OF Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx3_SeptPhy.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1425    ----
+   CODE SIZE        =   1444    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       8
    PDATA SIZE       =   ----    ----
@@ -1250,4 +1251,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

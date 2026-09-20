@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLEREMBEDDED                                      09/16/2026 20:28:47 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/18/2026 20:39:44 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONPORTCONTROLLEREMBEDDED
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONPORTCONTROLLEREMBEDDED
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonPortControllerEmbedded.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonPortControllerEmbedded.c LARGE O
-                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
-                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
-                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
-                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
-                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
-                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
-                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
-                    -UserCommonPortControllerEmbedded.lst) OBJECT(.\Output\RL6432_Project\UserCommonPortControllerEmbedded.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonPortControllerEmbedded.c LARG
+                    -E OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kerne
+                    -l\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scaler
+                    -Function\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel
+                    -\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common
+                    -\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\H
+                    -eader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fac
+                    -tory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proje
+                    -ct\UserCommonPortControllerEmbedded.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonPortControllerEmbedded.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               #if(_USB3_RETIMER_SUPPORT == _ON)
               EnumUSBPSSupportStatus UserCommonPortControllerGetUsbPSStatus(void);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLEREMBEDDED                                      09/16/2026 20:28:47 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/18/2026 20:39:44 PAGE 2   
 
               EnumUSBPDSupportStatus UserCommonPortControllerGetUsbPDStatus(void);
               #endif
@@ -126,7 +126,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLEREMBEDDED                                      09/16/2026 20:28:47 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/18/2026 20:39:44 PAGE 3   
 
                   return enumHubInputPort;
               }

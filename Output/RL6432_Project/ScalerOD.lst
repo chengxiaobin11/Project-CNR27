@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALEROD                                                              09/16/2026 20:27:23 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/18/2026 20:38:07 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALEROD
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALEROD
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerOD.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerOD.c LARGE OPTIMIZE(9,SPEED) INCDIR
-                    -(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\S
-                    -caler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kern
-                    -el\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Comm
-                    -on\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User 
-                    -Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\H
-                    -eader;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJE
-                    -CT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerOD.lst) OBJECT(.\
-                    -Output\RL6432_Project\ScalerOD.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerOD.c LARGE OPTIMIZE(9,SPEED) INC
+                    -DIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kerne
+                    -l\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\K
+                    -ernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_C
+                    -ommon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\Us
+                    -er Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factor
+                    -y\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PR
+                    -OJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerOD.lst) TABS(2
+                    -) OBJECT(.\Output\RL6432_Project\ScalerOD.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_OD_SUPPORT == _ON)
   47          BYTE ScalerODGetCompressionBitNum(DWORD ulMemoryRemainSpace, WORD usMemoryRemainBW);
-C51 COMPILER V8.12   SCALEROD                                                              09/16/2026 20:27:23 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/18/2026 20:38:07 PAGE 2   
 
   48          bit ScalerODGetSupportStatus(void);
   49          EnumFunctionOnOFF ScalerODGetStatus(void);
@@ -126,7 +126,7 @@ line level    source
  107   1          //=============================================
  108   1          // Otherwise, OD off
  109   1          //=============================================
-C51 COMPILER V8.12   SCALEROD                                                              09/16/2026 20:27:23 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/18/2026 20:38:07 PAGE 3   
 
  110   1          return _OFF;
  111   1      }
@@ -173,6 +173,7 @@ line level    source
               #endif
  152   1      }
  153          #endif
+*** WARNING C294 IN LINE 74 OF Kernel\Scaler\ScalerFunction\Code\ScalerOD.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
@@ -186,4 +187,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

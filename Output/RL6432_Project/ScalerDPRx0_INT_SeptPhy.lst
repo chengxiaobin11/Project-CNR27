@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERDPRX0_INT_SEPTPHY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDPRX0_INT_SEPTPHY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerDPRx0_INT_SeptPhy.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDPRx0_INT_SeptPhy.c LARGE OPTIMIZE(
-                    -9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\He
-                    -ader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Li
-                    -b\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6
-                    -432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header
-                    -;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Use
-                    -r\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header
-                    -) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerDP
-                    -Rx0_INT_SeptPhy.lst) OBJECT(.\Output\RL6432_Project\ScalerDPRx0_INT_SeptPhy.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDPRx0_INT_SeptPhy.c LARGE OPTIMI
+                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
+                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
+                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
+                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
+                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
+                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
+                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Scale
+                    -rDPRx0_INT_SeptPhy.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerDPRx0_INT_SeptPhy.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   42          void ScalerDpRx0SetDpcdValue_EXINT0(BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdAccessPortL
              -, BYTE ucDpcdValue);
   43          void ScalerDpRx0SinkStatusSet_EXINT0(EnumDpSinkReceivePort enumReceiverPort, EnumDpSinkStatus enumInSync);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 2   
 
   44          BYTE ScalerDpRx0TrainingPattern1_EXINT0(EnumDpLinkTrainingType enumDpLtType);
   45          BYTE ScalerDpRx0TrainingPattern2_EXINT0(EnumDpLinkTrainingType enumDpLtType);
@@ -126,7 +126,7 @@ line level    source
  100          //--------------------------------------------------
  101          // Description  : Get DPCD Table Information in INT0
  102          // Input Value  : ucDpcdAccessPortH --> High Byte of DPCD Address
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 3   
 
  103          //                ucDpcdAccessPortM --> Middle Byte of DPCD Address
  104          //                ucDpcdAccessPortL --> Low Bye of DPCD Adress
@@ -190,7 +190,7 @@ line level    source
  158   3                  if((ucSinkStatusBackup & _BIT0) != _BIT0)
  159   3                  {
  160   4                      // Set Receive Port 0 in Sync
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 4   
 
  161   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x05, (ucSinkStatusBackup | _BIT0));
  162   4                  }
@@ -254,7 +254,7 @@ line level    source
  220   3                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x03, 0x00);
  221   3                  ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x04, 0x80);
  222   3      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 5   
 
  223   3                  return _FALSE;
  224   3              }
@@ -318,7 +318,7 @@ line level    source
  282   1      
  283   1          if(ScalerDpRx0Tp2Check_EXINT0(enumDpLtType) == _TRUE)
  284   1          {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 6   
 
  285   2              return _TRUE;
  286   2          }
@@ -382,7 +382,7 @@ line level    source
  342   1          else
  343   1          {
  344   2              // Enable Scrambling
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 7   
 
  345   2              ScalerSetBit_EXINT(PB_07_SCRAMBLE_CTRL, ~_BIT5, 0x00);
  346   2          }
@@ -446,7 +446,7 @@ line level    source
               //--------------------------------------------------
               void ScalerDpRx0HDCPSetKsvFifo_EXINT0(void) using 1
               {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 8   
 
                   for(pData_EXINT[0] = 0; pData_EXINT[0] < 15; pData_EXINT[0]++)
                   {
@@ -510,7 +510,7 @@ line level    source
  459   1          ScalerSetByte_EXINT(PB7_C3_DPCD_ADDR_PORT_L, ucDpcdAccessPortL);
  460   1          ScalerSetByte_EXINT(PB7_C4_DPCD_DATA_PORT, ucDpcdValue);
  461   1      }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 9   
 
  462          
  463          #endif
@@ -574,7 +574,7 @@ line level    source
  521   2      
  522   2              pucDpPhyLinkTrainingLevel[0] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x03);
  523   2              pucDpPhyLinkTrainingLevel[1] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x04);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 10  
 
  524   2              pucDpPhyLinkTrainingLevel[2] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x05);
  525   2              pucDpPhyLinkTrainingLevel[3] = ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x06);
@@ -638,7 +638,7 @@ line level    source
  581   3      
  582   3                      ScalerSetBit_EXINT(P1D_F0_COEF_1, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
  583   3      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 11  
 
  584   3                      // Lane3 Check
  585   3                      if(((GET_DP_RX0_PCB_LANE3_MAPPING() == _DP_SCALER_LANE0) && (ScalerGetBit_EXINT(PB_14_EQ_C
@@ -702,7 +702,7 @@ line level    source
  631   3                      // Read Back Lane2 Vth
  632   3                      ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_D0_DP_LANE2 << 6));
  633   3      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 12  
 
  634   3                      ScalerSetBit_EXINT(P1D_F0_COEF_1, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
  635   3      
@@ -766,7 +766,7 @@ line level    source
  681   4                      }
  682   3      
  683   3                      // Read Back Lane1 Vth
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 13  
 
  684   3                      ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_D0_DP_LANE1 << 6));
  685   3      
@@ -830,7 +830,7 @@ line level    source
  732   4                          g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xCF) | pucDpPhyLinkTrainingReques
              -t[1]);
  733   4                      }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 14  
 
  734   3      
  735   3                      // Read Back Lane0 Vth
@@ -894,7 +894,7 @@ line level    source
              -] & (_BIT1 | _BIT0)) < (_BIT1 | _BIT0)))
  783   3                      {
  784   4                          g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xFC) | pucDpPhyLinkTrainingReques
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 15  
 
              -t[0]);
  785   4                      }
@@ -958,7 +958,7 @@ line level    source
  832   6                                  g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xCF) | pucDpPhyLinkTraini
              -ngRequest[1]);
  833   6                              }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 16  
 
  834   5                          }
  835   4                          else
@@ -1022,7 +1022,7 @@ line level    source
  882   5                              else
  883   5                              {
  884   6                                  g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xFC) | pucDpPhyLinkTraini
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 17  
 
              -ngRequest[0]);
  885   6                              }
@@ -1086,7 +1086,7 @@ line level    source
  932   6                              }
  933   5                              else if((ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x0F) > 3)
  934   5                              {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 18  
 
  935   6                                  if((GET_DP_RX_D0_LANE0_MARGIN_LINK_HBR_RBR() == _FALSE) &&
  936   6                                     ((pucDpPhyLinkTrainingLevel[0] & (_BIT1 | _BIT0)) >= (g_ucDpRx0LinkRequest0
@@ -1150,7 +1150,7 @@ line level    source
  987   3                  case _DP_TWO_LANE:
  988   3      
  989   3                      if((g_ucDpRx0LinkStatus01 & (_BIT4 | _BIT0)) == (_BIT4 | _BIT0))
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 19  
 
  990   3                      {
  991   4                          return _TRUE;
@@ -1214,7 +1214,7 @@ line level    source
               #endif
 1047   4                  }
 1048   3                  else
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 20  
 
 1049   3                  {
 1050   4                      pucDpPhyLinkTrainingRequest[2 * pData_EXINT[0]] = 0x03;
@@ -1278,7 +1278,7 @@ line level    source
 1101   3      
 1102   3                      if(((pucDpPhyLinkTrainingLevel[0] & _BIT2) == _BIT2) || ((pucDpPhyLinkTrainingLevel[0] & (
              -_BIT1 | _BIT0)) == (ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x02, 0x06, (_BIT1 | _BIT0)))))
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 21  
 
 1103   3                      {
 1104   4                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x01);
@@ -1342,7 +1342,7 @@ line level    source
 1152   4                          {
 1153   5                              ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x11);
 1154   5      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 22  
 
 1155   5                              return _TRUE;
 1156   5                          }
@@ -1406,7 +1406,7 @@ line level    source
              -quest[2]);
 1201   5                          }
 1202   4      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 23  
 
 1203   4                          if(((pucDpPhyLinkTrainingLevel[3] & _BIT2) != _BIT2) && ((pucDpPhyLinkTrainingLevel[3]
              - & (_BIT1 | _BIT0)) < ucTP1RBRHBRFakeLTSwingLevel))
@@ -1470,7 +1470,7 @@ line level    source
 1255   1          BYTE ucEQCRCStatus2 = 0;
 1256   1          BYTE ucFakeLTLaneCount = g_ucDpRx0LaneCount;
 1257   1      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 24  
 
 1258   1      #if(_DP_LT_TP1_TP2_S2P0_PERMIT_PASS == _ON)
                   BYTE ucTP2NormalLTSwingLevel = 2;
@@ -1534,7 +1534,7 @@ line level    source
 1314   2              // Delay Time us [25,x]
 1315   2              DELAY_25US_EXINT();
 1316   2      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 25  
 
 1317   2              ucEQCRCStatus2 = ScalerGetByte_EXINT(PB_12_EQ_CRC_1);
 1318   2      
@@ -1598,7 +1598,7 @@ line level    source
 1375   3                  g_ucDpRx0EQCRC |= (ucEQCRCStatus & 0x04);
 1376   3              }
 1377   2              else if(GET_DP_RX0_PCB_LANE2_MAPPING() == _DP_SCALER_LANE3)
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 26  
 
 1378   2              {
 1379   3                  g_ucDpRx0EQCRC |= ((ucEQCRCStatus & 0x08) >> 1);
@@ -1662,7 +1662,7 @@ line level    source
 1434   4                          {
 1435   5                              g_ucDpRx0LinkStatus23 = g_ucDpRx0LinkStatus23 | 0x07;
 1436   5                          }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 27  
 
 1437   4                      }
 1438   3                      else
@@ -1726,7 +1726,7 @@ line level    source
 1494   5                          }
 1495   4                          else
 1496   4                          {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 28  
 
 1497   5                              g_ucDpRx0LinkStatus23 = g_ucDpRx0LinkStatus23 | 0x70;
 1498   5                          }
@@ -1790,7 +1790,7 @@ line level    source
 1554   6                                  g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xCF) | ((pData_EXINT[1] <
              -< 4) & (_BIT5 | _BIT4))) + 0x10;
 1555   6                              }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 29  
 
 1556   5                          }
 1557   4                          else
@@ -1854,7 +1854,7 @@ line level    source
 1613   6                              }
 1614   5                              else
 1615   5                              {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 30  
 
 1616   6                                  g_ucDpRx0LinkRequest01 = ((g_ucDpRx0LinkRequest01 & 0xFC) | (pData_EXINT[0] & 
              -(_BIT1 | _BIT0))) + 0x01;
@@ -1918,7 +1918,7 @@ line level    source
 1674   3                      {
 1675   4                          if((ucEQCRCStatus & (_BIT1 | _BIT0)) != (_BIT1 | _BIT0))
 1676   4                          {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 31  
 
 1677   5                              ucEQCRCStatus &= ~(_BIT1 | _BIT0);
 1678   5                          }
@@ -1982,7 +1982,7 @@ line level    source
                                           }
               
                                           // S3P0 -> S2P1
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 32  
 
                                           if(((pData_EXINT[1] & (_BIT1 | _BIT0)) == (_BIT1 | _BIT0)) &&
                                              ((pData_EXINT[1] & (_BIT5 | _BIT4 | _BIT3)) == 0x00))
@@ -2046,7 +2046,7 @@ line level    source
                                               g_ucDpRx0LinkRequest01 = 0x03 | (g_ucDpRx0LinkRequest01 & 0xF0);
                                               g_pucDpRx0MaxSwing[0] = 0xFF;
                                           }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 33  
 
               
                                           // S3P0 -> S2P1
@@ -2110,7 +2110,7 @@ line level    source
               #else
 1854   6                                  g_ucDpRx0LinkRequest01 = g_ucDpRx0LinkRequest01 + 0x01;
 1855   6      #endif
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 34  
 
 1856   6                              }
 1857   5                              else if((pData_EXINT[0] & _BIT5) != _BIT5)
@@ -2174,7 +2174,7 @@ line level    source
 1915   3      
 1916   3                      break;
 1917   3      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 35  
 
 1918   3                  case _DP_FOUR_LANE:
 1919   3                  default:
@@ -2238,7 +2238,7 @@ line level    source
 1972   4                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x07);
 1973   4                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x04, 0x81);
 1974   4      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 36  
 
 1975   4                          return _TRUE;
 1976   4                      }
@@ -2302,7 +2302,7 @@ line level    source
 2024   3                  case _DP_FOUR_LANE:
 2025   3                  default:
 2026   3      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 37  
 
 2027   3                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x11);
 2028   3                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x03, 0x11);
@@ -2366,7 +2366,7 @@ line level    source
 2071   5                              g_ucDpRx0LinkRequest23 = ((g_ucDpRx0LinkRequest23 & 0xCF) | ((pData_EXINT[3] & (_B
              -IT1 | _BIT0)) << 4)) + 0x10;
 2072   5                          }
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 38  
 
 2073   4                      }
 2074   3      
@@ -2430,7 +2430,7 @@ line level    source
 2128   2              case _DP_SCALER_LANE3:
 2129   2      
 2130   2                  ucAutoVCOBand = (ScalerGetByte_EXINT(P1D_39_ANA_CDR_14) & 0x7F);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 39  
 
 2131   2      
 2132   2                  break;
@@ -2494,7 +2494,7 @@ line level    source
 2186   2      
 2187   2              case _DP_SCALER_LANE1:
 2188   2      
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 40  
 
 2189   2                  ScalerSetBit_EXINT(P1D_33_ANA_CDR_08, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)
              -, ucBestVCOBand);
@@ -2558,7 +2558,7 @@ line level    source
 2245   2                  // Read Back Tap0
 2246   2                  ScalerSetBit_EXINT(P1D_F0_COEF_1, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT0);
 2247   2                  pData_EXINT[1] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x1F);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 41  
 
 2248   2      
 2249   2                  if(PDATA_WORD_EXINT(0) == 0x0015)
@@ -2622,7 +2622,7 @@ line level    source
 2307   2                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT7 | _BIT6), (_D0_DP_LANE0 << 6));
 2308   2      
 2309   2                  // Read Back Vth
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 42  
 
 2310   2                  ScalerSetBit_EXINT(P1D_F0_COEF_1, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
 2311   2                  pData_EXINT[0] = (ScalerGetByte_EXINT(P1D_F1_COEF_2) & 0x0F);
@@ -2686,7 +2686,7 @@ line level    source
 2369   1          // [7:6] adapt_mode[1:0] = 2'b11 --> Amplitude-based Adaptation with Independent LE Loop(Loop Mode 3)
 2370   1          // [5] edge_det_mode = 1 --> Edge Lag Data
 2371   1          // [4] transition_only = 1 --> Only Transition Bit is Effective
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 43  
 
 2372   1          // [3] le_auto_reload = 0 --> Disable Auto-reload LE Coefficient
 2373   1          // [2:0] tap1_delay[2:0] = 3'b010 --> Tap1+LE Delay 2us after Tap0
@@ -2750,7 +2750,7 @@ line level    source
 2428   1          else
 2429   1          {
 2430   2              // Set Vth Max = 6, Min = 2
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 44  
 
 2431   2              ScalerSetByte_EXINT(P1D_F9_LIMIT_10, 0x62);
 2432   2          }
@@ -2814,7 +2814,7 @@ line level    source
 2490   2              ScalerSetByte_EXINT(P1D_D2_L3_LIMIT_INIT, 0x40);
 2491   2              ScalerSetByte_EXINT(P1D_A3_L0_INIT_1, 0xD0);
 2492   2              ScalerSetByte_EXINT(P1D_B3_L1_INIT_1, 0xD0);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 45  
 
 2493   2              ScalerSetByte_EXINT(P1D_C3_L2_INIT_1, 0xD0);
 2494   2              ScalerSetByte_EXINT(P1D_D3_L3_INIT_1, 0xD0);
@@ -2878,7 +2878,7 @@ line level    source
 2552   2      #if(_DP_LT_TP1_PERMIT_SWING_LEVEL_0_FOR_SPECIFIC_SOURCE_OUI == _ON)
                       case _LT_TP1_PERMIT_SWING_LEVEL_0:
                       {
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 46  
 
                           BYTE pucSrcIeeeOuiUser[9] = _SRC_IEEE_OUI_APPLE_2017_PRO_15INCH_IDENTIFY_STRING;
               
@@ -2942,7 +2942,7 @@ line level    source
                           ScalerSetBit_EXINT(PB7_B3_AUX_SPECIAL_IRQ_FLAG, ~(_BIT7 | _BIT4 | _BIT3), _BIT7);
               
                           if(g_enumDpMSTCapablePort == _DP_MST_RX0_PORT)
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 47  
 
                           {
                               // Rx0 loses MST use right
@@ -3006,7 +3006,7 @@ line level    source
               // Description  : Dp Set Branch Device Specific Field 00500h - 005FFh in INT0
               // Input Value  : _DP_VERSION_1_1 or _DP_VERSION_1_2 or _DP_VERSION_1_4
               // Output Value : None
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 48  
 
               //--------------------------------------------------
               void ScalerDpRx0SetBranchDeviceSpecificField_EXINT0(EnumDpVersionType enumDpVersion) using 1
@@ -3070,7 +3070,7 @@ line level    source
                       ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x05, 0x05, _DP_1_1_BRANCH_RTK_ID_STRING_2);
                       ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x05, 0x06, _DP_1_1_BRANCH_RTK_ID_STRING_3);
                       ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x05, 0x07, _DP_1_1_BRANCH_RTK_ID_STRING_4);
-C51 COMPILER V8.12   SCALERDPRX0_INT_SEPTPHY                                               09/16/2026 20:27:33 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERDPRX0_INT_SEPTPHY                                           09/18/2026 20:38:19 PAGE 49  
 
                       ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x05, 0x08, _DP_1_1_BRANCH_RTK_ID_STRING_5);
               
@@ -3111,7 +3111,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   6395    ----
+   CODE SIZE        =   6501    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----      38
    PDATA SIZE       =   ----    ----

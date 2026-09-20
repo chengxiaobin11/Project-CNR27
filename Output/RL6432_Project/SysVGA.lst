@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SYSVGA                                                                09/16/2026 20:27:02 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/18/2026 20:37:43 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SYSVGA
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSVGA
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\SysVGA.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\System\Code\SysVGA.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;
-                    -.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFunct
-                    -ion\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\ScalerC
-                    -ommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Kerne
-                    -l\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function\H
-                    -eader;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\None
-                    - Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJEC
-                    -T,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysVGA.lst) OBJECT(.\Output\RL6432_Proje
-                    -ct\SysVGA.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\System\Code\SysVGA.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL64
+                    -32;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFu
+                    -nction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\Scal
+                    -erCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Ke
+                    -rnel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Functio
+                    -n\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\N
+                    -one Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PRO
+                    -JECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysVGA.lst) TABS(2) OBJECT(.\Output\R
+                    -L6432_Project\SysVGA.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          // FUNCTION DECLARATIONS
   46          //****************************************************************************
   47          BYTE SysVgaScanInputPort(BYTE ucInputPort);
-C51 COMPILER V8.12   SYSVGA                                                                09/16/2026 20:27:02 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/18/2026 20:37:43 PAGE 2   
 
   48          
   49          #if(_UNDERSCAN_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
  107   2              DebugMessageSystem("Input Timing VFreq", GET_INPUT_TIMING_VFREQ());
  108   2              DebugMessageSystem("Input Timing VTotal", GET_INPUT_TIMING_VTOTAL());
  109   2              DebugMessageSystem("Input Timing VStart", GET_INPUT_TIMING_VSTART());
-C51 COMPILER V8.12   SYSVGA                                                                09/16/2026 20:27:02 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/18/2026 20:37:43 PAGE 3   
 
  110   2              DebugMessageSystem("Input Timing VHeight", GET_INPUT_TIMING_VHEIGHT());
  111   2              DebugMessageSystem("Input Timing VSyncSWidth", GET_INPUT_TIMING_VSYNCWIDTH());
@@ -190,7 +190,7 @@ line level    source
  169   3                  ScalerVgaTopModifyVsLatchEdge(_WAIT);
  170   3      
  171   3                  // Clear Sync Changed Status flag bit.
-C51 COMPILER V8.12   SYSVGA                                                                09/16/2026 20:27:02 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/18/2026 20:37:43 PAGE 4   
 
  172   3                  ScalerSyncProcClearSyncChangeStatus();
  173   3      
@@ -254,7 +254,7 @@ line level    source
  231   2      #endif
  232   2          }
  233   1      }
-C51 COMPILER V8.12   SYSVGA                                                                09/16/2026 20:27:02 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/18/2026 20:37:43 PAGE 5   
 
  234          #endif
  235          #endif // End of #if(_VGA_SUPPORT == _ON)

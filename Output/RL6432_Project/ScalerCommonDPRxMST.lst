@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONDPRXMST
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDPRXMST
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonDPRxMST.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDPRxMST.c LARGE OPTIMIZ
-                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
-                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
-                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
-                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
-                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
-                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
-                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Scaler
-                    -CommonDPRxMST.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonDPRxMST.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDPRxMST.c LARGE OPTI
+                    -MIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syst
+                    -em\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFuncti
+                    -on\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scale
+                    -r\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\H
+                    -eader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;
+                    -.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\H
+                    -eader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Sca
+                    -lerCommonDPRxMST.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonDPRxMST.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 2   
 
               //****************************************************************************
               // CODE TABLES
@@ -126,7 +126,7 @@ line level    source
               void ScalerDpRxMstRx0Rx1switch(EnumDPMSTPort enumMstCapablePort);
               #endif
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 3   
 
               void ScalerDpRxMstInfoBackup(BYTE ucInputPort, EnumDpMstBackup enumDpMstBackup);
               
@@ -190,7 +190,7 @@ line level    source
               void ScalerDpRxMstStreamMuxChangeHandler(void);
               void ScalerDpRxMstBackupInfoReset(void);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 4   
 
               EnumDpVersionType ScalerDpRxMstGetDpVersion(void);
               EnumDPMSTPort ScalerDpRxMstGetCapablePort(void);
@@ -254,7 +254,7 @@ line level    source
                   // Enable MSG Force Ack Address Unexpect
                   SET_REG_DP_RX_DOWN_REQUEST_FORCE_ACK_ADDRESS_UNEXPECT();
                   SET_REG_DP_RX_UP_REPLY_FORCE_ACK_ADDRESS_UNEXPECT();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 5   
 
               
                   // Enable BUF0 / BUF1 MSG Receive Double Buffer
@@ -318,7 +318,7 @@ line level    source
               
                   // Free Reply Buffer
                   SET_DP_RX_REPLY_BUF_FREE();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 6   
 
               
                   ScalerDpRxMstClrStreamMuxBackup();
@@ -382,7 +382,7 @@ line level    source
                       // Reset Rx MSG Block Before Enabling MSG Reception to Clear HW Flags
                       ScalerSetBit(PBA_C0_DPCD_CTRL, ~_BIT6, _BIT6);
                       ScalerSetBit(PBA_C0_DPCD_CTRL, ~_BIT6, 0x00);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 7   
 
               
                       // Enable Buf0 / Buf1 Receive Capability
@@ -446,7 +446,7 @@ line level    source
               #endif
               
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 8   
 
               // Description  : Backup MST Info
               // Input Value  : None
@@ -510,7 +510,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Dp Multi-Stream Handler
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 9   
 
               // Input Value  : None
               // Output Value : None
@@ -574,7 +574,7 @@ line level    source
               
                       case _DP_RX_MST_MODE_STATUS_ALLOCATED_PBN:
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 10  
 
                           break;
               
@@ -638,7 +638,7 @@ line level    source
                       g_pucDpStreamToIdMapping[pData_EXINT[0]] = 0;
                   }
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 11  
 
                   // --- Reset Rx0 ---
                   // Clear Payload ID Table
@@ -702,7 +702,7 @@ line level    source
               
               #if(_DP_TX_SUPPORT == _ON)
                   ScalerDpTxSetStreamSource_EXINT0(_DP_TX_SOURCE_NONE);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 12  
 
               
                   SET_DP_RX_MST2SST_ENABLE(_DISABLE);
@@ -766,7 +766,7 @@ line level    source
               
                               if(g_ucDpDownReplyManualMsgCount == 1)
                               {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 13  
 
                                   // Set Manual Mode Body Length
                                   SET_REG_DP_RX_UPSTREAM_REPLY_LENGTH(g_ucDpDownReplyManualMsgLength);
@@ -830,7 +830,7 @@ line level    source
               
                       // Free Reply Buffer
                       SET_DP_RX_REPLY_BUF_FREE();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 14  
 
               
                       if((GET_REG_DP_RX_DOWN_REPLY_BUFFER_END_FLAG() == _TRUE) && (GET_DP_RX_UP_REQUEST_RETRY_NUM() != 0
@@ -894,7 +894,7 @@ line level    source
                   // DPCD Write 1C2h
                   if((GET_REG_DP_RX_1C2_IRQ() == _ENABLE) &&
                      (GET_REG_DP_RX_1C2_IRQ_FLAG() == _TRUE))
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 15  
 
                   {
                       if((GET_REG_DP_RX_MST_ENABLE() == _FALSE) &&
@@ -958,7 +958,7 @@ line level    source
                   if((GET_REG_DP_RX_DOWN_REQUEST_HEADER_CRC_BACKUP() != GET_REG_DP_RX_DOWN_REQUEST_HEADER_CRC()) ||
                      (GET_REG_DP_RX_DOWN_REQUEST_BODY_CRC_BACKUP() != GET_REG_DP_RX_DOWN_REQUEST_BODY_CRC()))
                   {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 16  
 
                       // Recovery Buff Pointer
                       SET_REG_DP_RX_DOWN_REQUEST_HEADER0_INFO();
@@ -1022,7 +1022,7 @@ line level    source
                       SET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_RECEIVE_ENABLE();
               
                       SET_REG_DP_RX_AUX_TO_AUTO_MODE();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 17  
 
                   }
                   else
@@ -1086,7 +1086,7 @@ line level    source
                   if(GET_DP_RX_DOWN_REQUEST_BUF_PRIORITY() == _DP_DOWN_REQUEST_BUF1)
                   {
                       if((GET_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_FINISH() == _TRUE) && (GET_DP_REQUEST_POOL_FREE() == _TRUE
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 18  
 
              -))
                       {
@@ -1150,7 +1150,7 @@ line level    source
               
                       SET_REG_DP_RX_AUX_TO_AUTO_MODE();
                   }
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 19  
 
               }
               
@@ -1214,7 +1214,7 @@ line level    source
                           // Set Start and End Bit to HW Auto Mode
                           SET_REG_DP_RX_UPSTREAM_HW_AUTO_MODE();
               #else
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 20  
 
               
                           // Body length max = total length max - header length - 1byte body CRC
@@ -1278,7 +1278,7 @@ line level    source
                                   // Cancel Timer Event
                                   ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX_MSG_COUNT_RESET_EVENT);
                               }
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 21  
 
                           }
               #endif
@@ -1342,7 +1342,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Rx Down Request MSG Analysis for DP
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 22  
 
               // Input Value  : None
               // Output Value : None
@@ -1406,7 +1406,7 @@ line level    source
                       // Set LCT
                       SET_REG_DP_TX_DOWNSTREAM_MSG_LCT(1);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 23  
 
                       // Set LCR
                       SET_REG_DP_TX_DOWNSTREAM_MSG_LCR(6);
@@ -1470,7 +1470,7 @@ line level    source
                       CLR_DP_RX_DOWN_REPLY_BYPASS();
               
                       //========== Set Next Action ==============
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 24  
 
               
                       // Set Reply MSG Ready
@@ -1534,7 +1534,7 @@ line level    source
                           for(pData[0] = 0; pData[0] < GET_REG_DP_RX_UPSTREAM_REPLY_LENGTH(); pData[0]++)
                           {
                               // Fill Up Request MSG
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 25  
 
                               SET_REG_DP_RX_UPSTREAM_REPLY_BUF_DATA(GET_DP_MSG_REQUEST_ARRAY(pData[0]));
                           }
@@ -1598,7 +1598,7 @@ line level    source
                                       SET_DP_RX_DFP_DEVICE_DETAIL_CONFIG();
                                   }
                                   else
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 26  
 
                                   {
                                       RST_DP_RX_DFP_DEVICE_DETAIL_CONFIG();
@@ -1662,7 +1662,7 @@ line level    source
                       {
                           // Clear BUF1
                           CLR_REG_DP_RX_UP_REPLY_BUF1();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 27  
 
               
                           // Enable BUF1 to Receive MSG
@@ -1726,7 +1726,7 @@ line level    source
                   }
               
                   // Prevent MSG BUF0 FSM Dead Lock
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 28  
 
                   if((GET_REG_DP_RX_UP_REPLY_BUF0_MSG_ERROR() != _NONE_MSG_ERROR) && (GET_DP_RX_UP_REPLY_ANAL() == _FALS
              -E))
@@ -1790,7 +1790,7 @@ line level    source
                           else
                           {
                               if(GET_DP_TX_SELF_GEN_UP_REQUEST_MSG() == _TRUE)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 29  
 
                               {
                                   CLR_DP_TX_UP_REQUEST_BYPASS_REGEN();
@@ -1854,7 +1854,7 @@ line level    source
               
                           pData[0] = (pData[0] & _BIT6) | (GET_DP_TX_DOWNSTREAM_SINK_COUNT() + 1);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 30  
 
                           SET_REG_DP_DPCD_INFO(0x00, 0x02, 0x00, pData[0]);
               
@@ -1918,7 +1918,7 @@ line level    source
                       // CLR Flag
                       CLR_DP_RX_UP_REPLY_DIRECTLY();
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 31  
 
                       // Occupy Reply Pool
                       CLR_DP_REPLY_POOL_FREE();
@@ -1982,7 +1982,7 @@ line level    source
                               CLR_DP_RX_UP_REQUEST_CRC_FAIL_RETRY_NUM();
               
                               // Set Up Request Bypass Done Flag
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 32  
 
                               SET_DP_RX_UP_REQUEST_BYPASS_DONE();
                           }
@@ -2046,7 +2046,7 @@ line level    source
                   SET_DP_TOTAL_RECEIVED_MSG_COUNT(0);
               
                   // Release Down Request Buffer
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 33  
 
                   ScalerDpRxMstDownRequestBufferRelease();
               
@@ -2110,7 +2110,7 @@ line level    source
                   {
                       // Disable UP_REQ_MSG_RDY INT
                       CLR_REG_DP_RX_UP_REQUEST_READY_BIT_IRQ();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 34  
 
               
                       // Clear UP_REQ_MSG_RDY Bit of DPCD Table
@@ -2174,7 +2174,7 @@ line level    source
                                           break;
               
                                       default:
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 35  
 
                                           SET_DP_DOWN_REPLY_REMOTE_DPCD_READ_MSG_DATA(pData[0]) = GET_REG_DP_DPCD_INFO(0
              -x00, 0x00, pData[0]);
@@ -2238,7 +2238,7 @@ line level    source
                                   // Set Stream Mux Source
                                   ScalerDpRxMstSetSourceMuxBackup(ucTemp, ScalerDpRxMstSearchMatchStream(GET_DP_DOWN_REQ
              -UEST_ALLOCATE_PAYLOAD_MSG_PAYLOAD_ID()));
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 36  
 
                                   break;
                               }
@@ -2302,7 +2302,7 @@ line level    source
               
                               // Set Stream Mux Source for Video
                               ScalerDpRxMstSetSourceMuxBackup(_DP_ST_SOURCE2, ucSTMux);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 37  
 
               
                               // Set Stream Mux Source for Audio
@@ -2366,7 +2366,7 @@ line level    source
                                       for(pData[2] = 1; pData[2] < ucLength; pData[2]++)
                                       {
                                           if(g_unDpRequestPool.pucData[pData[0] + 1 + pData[2]] != 0)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 38  
 
                                           {
                                               bIllegal = _TRUE;
@@ -2430,7 +2430,7 @@ line level    source
                                       SET_DP_RX_EVENT(_DP_RX_NONE_EVENT);
               
                                       return;
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 39  
 
                                   }
               
@@ -2494,7 +2494,7 @@ line level    source
               
                               case _DP_MSG_IIC_DEVICE_DDCCI:
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 40  
 
                                   for(pData[1] = 0; pData[1] < ucLength; pData[1]++)
                                   {
@@ -2558,7 +2558,7 @@ line level    source
                                   {
                                       PDATA_WORD(0) = GET_DP_DOWN_REQUEST_REMOTE_I2C_WRITE_MSG_DATA_TO_WRITE(GET_DP_DOWN
              -_REQUEST_REMOTE_I2C_WRITE_MSG_NUM_OF_WRITE() - 1) * 256;
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 41  
 
               
                                       if(PDATA_WORD(0) < GET_DP_MST_DDCRAM_SIZE())
@@ -2622,7 +2622,7 @@ line level    source
                                   if(pData[1] <= _DDCCI_RXBUF_LENGTH)
                                   {
                                       for(pData[0] = 0; pData[0] < pData[1]; pData[0]++)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 42  
 
                                       {
               #if(_DDCCI_RXBUF_LENGTH > _DP_MST_RX_REQUEST_REMOTE_I2C_WRITE_MSG_DATA_TO_WRITE_MAX_LEN)
@@ -2686,7 +2686,7 @@ line level    source
                   }
               
                   SET_DP_RX_EVENT(_DP_RX_NONE_EVENT);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 43  
 
               }
               
@@ -2750,7 +2750,7 @@ line level    source
                                   // Disable Reply Buffer Free
                                   CLR_DP_RX_REPLY_BUF_FREE();
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 44  
 
                                   // Set Native Reply Message
                                   SET_DP_RX_DOWN_REPLY_DIRECTLY();
@@ -2814,7 +2814,7 @@ line level    source
                               {
                                   // Error Bad Param
                                   SET_DP_RX_ILLEGAL_DOWN_REQUEST_MSG();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 45  
 
                                   SET_DP_REPLY_ILLEGAL_MSG_NACK_REASON(_BAD_PARAM);
                               }
@@ -2878,7 +2878,7 @@ line level    source
                                   }
               
                                   if(GET_DP_DOWN_REQUEST_ALLOCATE_PAYLOAD_MSG_PBN() > 0)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 46  
 
                                   {
                                       SET_DP_RX_EVENT(_DP_RX_NATIVE_DISPLAY_REQUEST);
@@ -2942,7 +2942,7 @@ line level    source
                               // Check RAD[0] = Port 1
                               if((GET_REG_DP_RX_DOWN_REQUEST_MSG_BYPASS_PORT_NUM() == _DP_PORT1) && (GET_DP_TX_DOWNSTREA
              -M_MSGCAP_STATUS() == _DP_MSG_SUPPORT))
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 47  
 
                               {
                                   // Set TX DownReq Analysis
@@ -3006,7 +3006,7 @@ line level    source
               
                                                   // Disable Reply Buffer Free
                                                   CLR_DP_RX_REPLY_BUF_FREE();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 48  
 
               
                                                   // Set Native Reply Message
@@ -3070,7 +3070,7 @@ line level    source
                           // Delete Downward Stream
                           SET_DP_RX_EVENT(_DP_RX_DELETE_REMOTE_DISPLAY_REQUEST);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 49  
 
                           if((GET_REG_DP_RX_DOWN_REQUEST_MSG_LCR() > 0) && (GET_DP_TX_DOWNSTREAM_DPPLUG_STATUS() == _DP_
              -PLUG) &&
@@ -3134,7 +3134,7 @@ line level    source
               
                           if(GET_REG_DP_RX_DOWN_REQUEST_MSG_LCR() > 0)
                           {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 50  
 
               #if(_DP_TX_SUPPORT == _ON)
                               // Check RAD[0] = 1
@@ -3198,7 +3198,7 @@ line level    source
                               if((GET_REG_DP_RX_DOWN_REQUEST_MSG_BYPASS_PORT_NUM() == _DP_PORT1) && (GET_DP_TX_DOWNSTREA
              -M_MSGCAP_STATUS() == _DP_MSG_SUPPORT))
                               {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 51  
 
                                   // Set TX DownReq Analysis
                                   SET_DP_TX_DOWN_REQUEST_ANAL();
@@ -3262,7 +3262,7 @@ line level    source
                               }
                               else
               #endif
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 52  
 
                               {
                                   // Error Bad Param
@@ -3326,7 +3326,7 @@ line level    source
                                   // Error Bad Param
                                   SET_DP_RX_ILLEGAL_DOWN_REQUEST_MSG();
                                   SET_DP_REPLY_ILLEGAL_MSG_NACK_REASON(_BAD_PARAM);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 53  
 
                               }
                           }
@@ -3390,7 +3390,7 @@ line level    source
                           else
                           {
                               if(GET_DP_DOWN_REQUEST_REMOTE_I2C_READ_MSG_PORT_NUM() == _DP_PORT8)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 54  
 
                               {
               #if(_DP_TX_SUPPORT == _ON)
@@ -3454,7 +3454,7 @@ line level    source
                               }
                           }
                           else
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 55  
 
                           {
                               if(GET_DP_DOWN_REQUEST_REMOTE_I2C_WRITE_MSG_PORT_NUM() == _DP_PORT8)
@@ -3518,7 +3518,7 @@ line level    source
                                   SET_DP_TX_DOWN_REQUEST_ANAL();
               
                                   if(GET_DP_RX_DOWN_REQUEST_BUF_PRIORITY() == _DP_DOWN_REQUEST_BUF0)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 56  
 
                                   {
                                       SET_DP_TX_DOWN_REQUEST_BODY_LENGTH(GET_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_LENGTH());
@@ -3582,7 +3582,7 @@ line level    source
               
                           // Set Reply Type
                           SET_DP_DOWN_REPLY_LINK_ADDR_MSG_REPLY_TYPE(_DP_MSG_ACK);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 57  
 
               
                           // Set Request ID
@@ -3646,7 +3646,7 @@ line level    source
                           // Set Logical Port 8 DPCD Revision
                           SET_DP_DOWN_REPLY_LINK_ADDR_MSG_PORT8_DPCD_REV(ScalerDpRxMstGetDpVersion());
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 58  
 
               #if(_DP_SUPPORT == _ON)
                           // Set Logical Port 8 GUID
@@ -3710,7 +3710,7 @@ line level    source
               
                               // Set Physical Port1 Number Of Secondary Streams
                               SET_DP_DOWN_REPLY_LINK_ADDR_MSG_PORT1_NUM_OF_SDP(0);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 59  
 
               
                               // Set Physical Port1 Number Of Secondary Stream Sinks
@@ -3774,7 +3774,7 @@ line level    source
               
                           // Set Reserve Bit to 0
                           SET_DP_DOWN_REPLY_ALLOCATE_PAYLOAD_MSG_ZEROS();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 60  
 
               
                           // Set Reply Type
@@ -3838,7 +3838,7 @@ line level    source
                           }
               #endif
                           if(GET_DP_RX_MST_ST_START_POSITION(pData[0]) != 0)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 61  
 
                           {
                               // Calculate Allocated PBN
@@ -3902,7 +3902,7 @@ line level    source
                           // Set Request ID
                           SET_DP_DOWN_REPLY_POWER_DOWN_MSG_REQ_ID(_DP_MSG_POWER_DOWN_PHY);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 62  
 
                           // Set Port Number
                           SET_DP_DOWN_REPLY_POWER_DOWN_MSG_PORT_NUM(GET_DP_DOWN_REQUEST_POWER_DOWN_MSG_PORT_NUM());
@@ -3966,7 +3966,7 @@ line level    source
                           SET_DP_DOWN_REPLY_REMOTE_I2C_READ_MSG_REQUEST_ID(_DP_MSG_REMOTE_I2C_READ);
               
                           // Set Port Number
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 63  
 
                           SET_DP_DOWN_REPLY_REMOTE_I2C_READ_MSG_PORT_NUM(GET_DP_DOWN_REQUEST_REMOTE_I2C_READ_MSG_PORT_NU
              -M());
@@ -4030,7 +4030,7 @@ line level    source
                               // Set Message Body Length = 36
                               SET_REG_DP_RX_UPSTREAM_REPLY_LENGTH(36);
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 64  
 
                               // Set Stream Repeater Function Present
                               SET_DP_DOWN_REPLY_QUERY_STREAM_ENCRYPTION_STATUS_MSG_STREAM_REPEATER_PRESENT(GET_DP_RX_HDC
@@ -4094,7 +4094,7 @@ line level    source
               
                               // Calculate Signature L'
                               ScalerDpRxMstQueryEncryptionWriteSha256Input(GET_DP_RX_HDCP2_REPEATER_SUPPORTED());
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 65  
 
               
                               // Set Stream State Signature L'
@@ -4158,7 +4158,7 @@ line level    source
                   SET_REG_DP_RX_UPSTREAM_REPLY_PATH(GET_REG_DP_RX_DOWN_REQUEST_MSG_PATH());
               
                   // Set MSN
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 66  
 
                   SET_REG_DP_RX_UPSTREAM_REPLY_MSN(GET_REG_DP_RX_DOWN_REQUEST_MSG_MSN());
               }
@@ -4222,7 +4222,7 @@ line level    source
                   SET_REG_DP_RX_UPSTREAM_REPLY_LCT(GET_REG_DP_RX_DOWN_REQUEST_MSG_LCT());
               
                   // Set LCR
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 67  
 
                   SET_REG_DP_RX_UPSTREAM_REPLY_LCR(GET_REG_DP_RX_DOWN_REQUEST_MSG_LCT() - GET_REG_DP_RX_DOWN_REQUEST_MSG
              -_LCR() - 1);
@@ -4286,7 +4286,7 @@ line level    source
               
                           case _I2C_NAK:
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 68  
 
                               break;
               
@@ -4350,7 +4350,7 @@ line level    source
                   }
                   else if(ucMSGDirection == _DP_UP_REPLY_MSG)
                   {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 69  
 
                       if(GET_DP_RX_UP_REPLY_BUF_PRIORITY() == _DP_DOWN_REQUEST_BUF0)
                       {
@@ -4414,7 +4414,7 @@ line level    source
                       {
                           if(ucLastTimeslot < GET_DP_RX_MST_ST_END_POSITION(enumDpStreamNumAllocated))
                           {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 70  
 
                               ucLastTimeslot = GET_DP_RX_MST_ST_END_POSITION(enumDpStreamNumAllocated);
                           }
@@ -4478,7 +4478,7 @@ line level    source
               
                           // Clear Payload ID Table
                           SET_REG_DP_RX_CLEAR_PAYLOAD_ID_TABLE();
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 71  
 
                           CLR_REG_DP_RX_CLEAR_PAYLOAD_ID_TABLE();
               
@@ -4542,7 +4542,7 @@ line level    source
                   if(!((ucPayloadID == 0x00) && (ucIDStartPosition == 0x00) && (ucTimeslotLength == 0x3F)))
                   {
                       if((enumID2ST != _DP_ST_NONE) && (ucTimeslotLength == 0))
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 72  
 
                       {
                           // Setting Start Position
@@ -4606,7 +4606,7 @@ line level    source
                               }
                           }
                       }
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 73  
 
                   }
               }
@@ -4670,7 +4670,7 @@ line level    source
                   }
               
               #if(_DP_TX_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 74  
 
                   if(GET_DP_TX_RD_BUFFER_STATUS() != _DP_TX_READ_BUF_EMPTY)
                   {
@@ -4734,7 +4734,7 @@ line level    source
                       if(GET_REG_DP_DPCD_INFO_EXINT0(0x00, 0x02, (0xC0 + ucStartPosition + pData_EXINT[0])) == ucPayload
              -ID)
                       {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 75  
 
                           pData_EXINT[1] = pData_EXINT[1] + 1;
                       }
@@ -4798,7 +4798,7 @@ line level    source
                   {
                       // Add New Payload
                       return _TRUE;
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 76  
 
                   }
               
@@ -4862,7 +4862,7 @@ line level    source
                       for(pData_EXINT[1] = ucSearchStartPoint; pData_EXINT[1] <= ucSearchEndPoint; pData_EXINT[1]++)
                       {
                           if(GET_REG_DP_DPCD_INFO_EXINT0(0x00, 0x02, (0xC0 + pData_EXINT[1])) != ucInitialID)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 77  
 
                           {
                               ucInitialID = GET_REG_DP_DPCD_INFO_EXINT0(0x00, 0x02, (0xC0 + pData_EXINT[1]));
@@ -4926,7 +4926,7 @@ line level    source
               // Description  : Set Flag to Generate Clear Payload ID Table MSG
               // Input Value  : _D0_INPUT_PORT or _D1_INPUT_PORT
               // Output Value : None
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 78  
 
               //--------------------------------------------------
               void ScalerDpRxMstCableUnplugReset(BYTE ucInputPort)
@@ -4990,7 +4990,7 @@ line level    source
                       SET_DP_RX_MST_ST_END_POSITION(pData[0], 0x00);
                   }
               }
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 79  
 
               
               //--------------------------------------------------
@@ -5054,7 +5054,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 80  
 
               void ScalerDpRxMstClrStreamMuxBackup(void)
               {
@@ -5118,7 +5118,7 @@ line level    source
               
                           // Set ST_Source4
                           SET_REG_DP_RX_MST_ST4_SOURCE_STATUS(ucValue);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 81  
 
               
                           break;
@@ -5182,7 +5182,7 @@ line level    source
                           SET_REG_DP_RX_MST_ST5_SOURCE_STATUS_EXINT(ucValue);
               
                           break;
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 82  
 
               
                       default:
@@ -5246,7 +5246,7 @@ line level    source
                       ScalerSetByte(PB8_05_STHD_CTRL_4, 0x00);
                       ScalerSetByte(PB8_06_STHD_CTRL_5, 0x00);
                       ScalerSetByte(PB8_07_STHD_CTRL_6, 0x00);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 83  
 
                       ScalerSetByte(PB8_08_STHD_CTRL_7, 0x00);
                       ScalerSetByte(PB8_09_STHD_CTRL_8, 0x00);
@@ -5310,7 +5310,7 @@ line level    source
               // Output Value : EnumDPMSTPort
               //--------------------------------------------------
               EnumDPMSTPort ScalerDpRxMstGetCapablePort(void)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 84  
 
               {
                   return g_enumDpMSTCapablePort;
@@ -5374,7 +5374,7 @@ line level    source
               bit ScalerDpRxMstGetMstCapability(EnumSourceSearchPort enumInputPort)
               {
                   switch(enumInputPort)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 85  
 
                   {
               #if(_D0_DP_EXIST == _ON)
@@ -5438,7 +5438,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 86  
 
                   return _NO_INPUT_PORT;
               }
@@ -5502,7 +5502,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 87  
 
               //--------------------------------------------------
               // Description  : ScalerDpRxMstDownRequestProc
@@ -5566,7 +5566,7 @@ line level    source
                   {
                       switch(GET_DP_MSG_REQUEST_ID())
                       {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 88  
 
                           case _DP_MSG_REMOTE_I2C_WRITE:
               
@@ -5630,7 +5630,7 @@ line level    source
               #endif
                           if(bEn == _ENABLE)
                           {
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 89  
 
                               if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x00, 0x21, _BIT0) == 0x00)
                               {
@@ -5694,7 +5694,7 @@ line level    source
                                       CLR_REG_DP_RX_DOWN_REQUEST_ADDR_WRITTEN_IRQ_ENABLE();
                                   }
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 90  
 
                                   ScalerDpRx0SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
               
@@ -5758,7 +5758,7 @@ line level    source
               #else
                                   // Down Stream Port isn't Present
                                   ScalerDpRx1SetDpcdValue(0x00, 0x00, 0x05, 0x00);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 91  
 
               
                                   ScalerDpRx1ClearBranchDeviceSpecificField();
@@ -5822,7 +5822,7 @@ line level    source
               
                                       // Rx0 Clear DPCD 111 IRQ Flag
                                       ScalerSetBit_EXINT(PB7_B3_AUX_SPECIAL_IRQ_FLAG, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 92  
 
               
                                       // Rx0 Enable DPCD 111 IRQ
@@ -5886,7 +5886,7 @@ line level    source
                                       ScalerDpRx1SetDpcdValue_EXINT0(0x00, 0x00, 0x05, 0x01);
               
                                       ScalerDpRx1SetDpcdValue_EXINT0(0x00, 0x00, 0x21, 0x01);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 93  
 
               
                                       ScalerDpRx1SetBranchDeviceSpecificField_EXINT0(GET_DP_RX_D1_PORT_TARGET_VERSION())
@@ -5950,7 +5950,7 @@ line level    source
               //--------------------------------------------------
               // Description  : DP Rx Msg Initial
               // Input Value  : _DP_MST_RX0_PORT or _DP_MST_RX0_PORT
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 94  
 
               // Output Value : None
               //--------------------------------------------------
@@ -6014,7 +6014,7 @@ line level    source
                       }
                       else
               #endif
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 95  
 
                       {
                           SET_DP_MST_DDCRAM_SIZE(_D0_EMBEDDED_DDCRAM_MAX_SIZE);
@@ -6078,7 +6078,7 @@ line level    source
               #if(_D0_DP_EXIST == _ON)
                       // Rx0 Disable DPCD 1C2 IRQ
                       ScalerSetBit_EXINT(PB7_B2_AUX_SPECIAL_IRQ_EN, ~_BIT4, 0x00);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 96  
 
               #endif
               
@@ -6142,7 +6142,7 @@ line level    source
                   SET_REG_DP_RX_SHA_INPUT_1(GET_DP_RX_HDCP_AN(3));
                   SET_REG_DP_RX_SHA_INPUT_2(GET_DP_RX_HDCP_AN(4));
                   SET_REG_DP_RX_SHA_INPUT_3(GET_DP_RX_HDCP_AN(5));
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 97  
 
               
                   // Enable write 32-bit data to SHA-1 block
@@ -6206,7 +6206,7 @@ line level    source
                   SET_REG_DP_RX_SHA_INPUT_1(GET_REG_DP_RX_HDCP_M0_6());
                   SET_REG_DP_RX_SHA_INPUT_2(GET_REG_DP_RX_HDCP_M0_7());
                   SET_REG_DP_RX_SHA_INPUT_3(0x80);
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 98  
 
               
                   // Enable write 32-bit data to SHA-1 block
@@ -6270,7 +6270,7 @@ line level    source
                       pucHmacSha256Input[pData[0] + 10] = GET_REG_DP_DPCD_INFO(0x06, 0x93, (0x28 + pData[0]));
                   }
               
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 99  
 
                   // Load Link_Pk (40-bits) = Receiver ID
                   for(pData[0] = 0; pData[0] < 5; pData[0]++)
@@ -6334,7 +6334,7 @@ line level    source
                   BYTE ucIndex = 0;
               
                   for(ucIndex = 0; ucIndex < 7; ucIndex++)
-C51 COMPILER V8.12   SCALERCOMMONDPRXMST                                                   09/16/2026 20:27:47 PAGE 100 
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRXMST                                               09/18/2026 20:38:35 PAGE 100 
 
                   {
                       g_pucDPMsgQueryEncryptClientId[ucIndex] = GET_DP_DOWN_REQUEST_QUERY_STREAM_ENCRYPTION_STATUS_MSG_C

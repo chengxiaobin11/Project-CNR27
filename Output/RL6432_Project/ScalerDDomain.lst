@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERDDOMAIN                                                         09/16/2026 20:27:07 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDDOMAIN                                                     09/18/2026 20:37:48 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERDDOMAIN
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDDOMAIN
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerDDomain.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDDomain.c LARGE OPTIMIZE(9,SPEED) I
-                    -NCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ker
-                    -nel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.
-                    -\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series
-                    -_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\
-                    -User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fact
-                    -ory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_
-                    -PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerDDomain.lst)
-                    - OBJECT(.\Output\RL6432_Project\ScalerDDomain.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDDomain.c LARGE OPTIMIZE(9,SPEED
+                    -) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\
+                    -Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Heade
+                    -r;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Ser
+                    -ies_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kern
+                    -el\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD F
+                    -actory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFIN
+                    -E(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerDDomain.l
+                    -st) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerDDomain.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          
   46          //****************************************************************************
   47          // FUNCTION DECLARATIONS
-C51 COMPILER V8.12   SCALERDDOMAIN                                                         09/16/2026 20:27:07 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDDOMAIN                                                     09/18/2026 20:37:48 PAGE 2   
 
   48          //****************************************************************************
   49          void ScalerDDomainPatternGenEnable(bit bEnable);
@@ -126,7 +126,7 @@ line level    source
  107   1          ScalerSetByte(P7_F5_DISP_PG_B_INITIAL, (usBlue >> 2));
  108   1          ScalerSetByte(P7_FC_D_PG_INITIAL_M_STEP_L, ((usRed & 0x03) << 4) | ((usGreen & 0x03) << 2) | (usBlue &
              - 0x03));
-C51 COMPILER V8.12   SCALERDDOMAIN                                                         09/16/2026 20:27:07 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDDOMAIN                                                     09/18/2026 20:37:48 PAGE 3   
 
  109   1          ScalerSetByte(P7_FD_D_PG_INITIAL_L_CTRL, 0x00);
  110   1      }

@@ -1,17 +1,18 @@
-C51 COMPILER V8.12   RTD2014USERINTERFACELOCALDIMMING                                      09/16/2026 20:29:02 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACELOCALDIMMING                                  09/18/2026 20:40:02 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014USERINTERFACELOCALDIMMING
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERINTERFACELOCALDIMMING
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014UserInterfaceLocalDimming.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserInterfaceLocalDimming.c LAR
-                    -GE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kern
-                    -el\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scale
-                    -rFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kerne
-                    -l\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Commo
-                    -n\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\
-                    -Header;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fa
-                    -ctory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proj
-                    -ect\RTD2014UserInterfaceLocalDimming.lst) OBJECT(.\Output\RL6432_Project\RTD2014UserInterfaceLocalDimming.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserInterfaceLocalDimming.c 
+                    -LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\K
+                    -ernel\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Sc
+                    -alerFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Ke
+                    -rnel\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Co
+                    -mmon\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014O
+                    -sd\Header;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None
+                    - Factory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_P
+                    -roject\RTD2014UserInterfaceLocalDimming.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014UserInterfaceLocalDimming.obj
+                    -)
 
 line level    source
 
@@ -61,9 +62,9 @@ line level    source
               // FUNCTION DECLARATIONS
               //****************************************************************************
               EnumLDActionMode UserInterfaceGetLocaldimmingActionMode(void);
-              EnumLDStatus UserInterfaceGetLocalDimmingStatus(void);
-C51 COMPILER V8.12   RTD2014USERINTERFACELOCALDIMMING                                      09/16/2026 20:29:02 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACELOCALDIMMING                                  09/18/2026 20:40:02 PAGE 2   
 
+              EnumLDStatus UserInterfaceGetLocalDimmingStatus(void);
               BYTE UserInterfaceGetLocalDimmingPWMSmoothLevel(void);
               void UserInterfaceLocalDimmingAdjustPCM(void);
               
@@ -125,9 +126,9 @@ line level    source
               // Description  : Adjust PCM in Local Dimming Mode
               // Input Value  : None
               // Output Value : void
-              //--------------------------------------------------
-C51 COMPILER V8.12   RTD2014USERINTERFACELOCALDIMMING                                      09/16/2026 20:29:02 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACELOCALDIMMING                                  09/18/2026 20:40:02 PAGE 3   
 
+              //--------------------------------------------------
               void UserInterfaceLocalDimmingAdjustPCM(void)
               {
               #if(_SDR_TO_HDR_SUPPORT == _ON)
@@ -189,9 +190,9 @@ line level    source
                   {
                       return _PANEL_UNIFORMITY_OFF;
                   }
-              }
-C51 COMPILER V8.12   RTD2014USERINTERFACELOCALDIMMING                                      09/16/2026 20:29:02 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACELOCALDIMMING                                  09/18/2026 20:40:02 PAGE 4   
 
+              }
               #endif
               
               #if(_LD_TUNNEL_DETECT_SUPPORT == _ON)

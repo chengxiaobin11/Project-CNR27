@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014USERADJUST
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERADJUST
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014UserAdjust.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserAdjust.c LARGE OPTIMIZE(9,S
-                    -PEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Heade
-                    -r;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\H
-                    -eader;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432
-                    -_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\
-                    -Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\R
-                    -TD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) D
-                    -EFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014User
-                    -Adjust.lst) OBJECT(.\Output\RL6432_Project\RTD2014UserAdjust.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserAdjust.c LARGE OPTIMIZE(
+                    -9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\He
+                    -ader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Li
+                    -b\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6
+                    -432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header
+                    -;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Use
+                    -r\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header
+                    -) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014U
+                    -serAdjust.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014UserAdjust.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          //----------------------------------------------------------------------------------------------------
   47          // IR TABLE
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 2   
 
   48          //----------------------------------------------------------------------------------------------------
   49          #if(_IR_SUPPORT == _IR_HW_SUPPORT)
@@ -126,7 +126,7 @@ line level    source
  106          void UserAdjustAudioVolume(BYTE ucVolume);
  107          WORD UserAdjustAudioVolumeMapping(BYTE ucVolume);
  108          #endif // End of #if(_AUDIO_SUPPORT == _ON)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 3   
 
  109          
  110          //-------------------------------------------------------
@@ -190,7 +190,7 @@ line level    source
  167          #endif
  168          
  169          //-------------------------------------------------------
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 4   
 
  170          // Highlight window
  171          //-------------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               #endif
  230          
  231          //-------------------------------------------------------
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 5   
 
  232          // HDR
  233          //-------------------------------------------------------
@@ -318,7 +318,7 @@ line level    source
                           ucDpResolution = UserCommonNVRamGetSystemData(_EDID_D0_SELECT);
                           break;
                       case _D1_INPUT_PORT:
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 6   
 
                           ucDpResolution = UserCommonNVRamGetSystemData(_EDID_D1_SELECT);
                           break;
@@ -382,7 +382,7 @@ line level    source
                               break;
               
                           default:
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 7   
 
                               break;
                       }
@@ -446,7 +446,7 @@ line level    source
                                   pstTtsSegment[3].usDataLength = _TTS_LENGTH_OTHER;
               
                                   break;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 8   
 
                           }
               
@@ -510,7 +510,7 @@ line level    source
               
                           // Check Input Port
                           switch(SysSourceGetInputPort())
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 9   
 
                           {
                               case _A0_INPUT_PORT:
@@ -574,7 +574,7 @@ line level    source
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_INPUT_SOURCE;
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_INPUT_SOURCE;
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 10  
 
                           // if((SysSourceGetScanType() != _SOURCE_SWITCH_FIXED_PORT) || (SysSourceGetInputPort() != _A0
              -_INPUT_PORT))
@@ -638,7 +638,7 @@ line level    source
                                       pstTtsSegment[1].usDataLength = _TTS_LENGTH_DIGITAL_PORT_3;
               
                                       pstTtsSegment[2].ulDataAddress = _TTS_ADDRESS_OFF;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 11  
 
                                       pstTtsSegment[2].usDataLength = _TTS_LENGTH_OFF;
               
@@ -702,7 +702,7 @@ line level    source
                           // Set TTS Data Info
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_ON;
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_ON;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 12  
 
               
                           // End command: Data_Length = 0x0000
@@ -766,7 +766,7 @@ line level    source
                           UserCommonAudioTtsSetPlaybackActiveEvent(pstTtsSegment, 1, UserInterfaceAudioGetTtsPlayTextVol
              -ume(), UserInterfaceAudioGetTtsPlayAudioVolume());
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 13  
 
                           break;
               
@@ -830,7 +830,7 @@ line level    source
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_DISPLAY;
               
                           // End command: Data_Length = 0x0000
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 14  
 
                           pstTtsSegment[1].usDataLength = 0x0000;
               
@@ -894,7 +894,7 @@ line level    source
                       case _AUDIO_TTS_EVENT_OSD_AUDIO:
               
                           DebugMessageAudio("[TTS] Set AUDIO event", _AUDIO_TTS_EVENT_OSD_AUDIO);
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 15  
 
               
                           // Set TTS Data Info
@@ -958,7 +958,7 @@ line level    source
                                   pstTtsSegment[2].usDataLength = _TTS_LENGTH_DP_PORT;
               
                                   break;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 16  
 
               
                               case _D1_INPUT_PORT:
@@ -1022,7 +1022,7 @@ line level    source
                           // End command: Data_Length = 0x0000
                           pstTtsSegment[1].usDataLength = 0x0000;
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 17  
 
                           // Active TTS Data Play
                           UserCommonAudioTtsSetPlaybackActiveEvent(pstTtsSegment, 1, UserInterfaceAudioGetTtsPlayTextVol
@@ -1086,7 +1086,7 @@ line level    source
                           DebugMessageAudio("[TTS] Set AUDIO_MODE event", _AUDIO_TTS_EVENT_OSD_AUDIO_MODE);
               
                           // Set TTS Data Info
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 18  
 
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_SOUND_MODE;
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_SOUND_MODE;
@@ -1150,7 +1150,7 @@ line level    source
                           // Active TTS Data Play
                           UserCommonAudioTtsSetPlaybackActiveEvent(pstTtsSegment, 1, UserInterfaceAudioGetTtsPlayTextVol
              -ume(), UserInterfaceAudioGetTtsPlayAudioVolume());
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 19  
 
               
                           break;
@@ -1214,7 +1214,7 @@ line level    source
               
                           DebugMessageAudio("[TTS] Set INPUT_D0 event", _AUDIO_TTS_EVENT_OSD_INPUT_D0);
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 20  
 
                           // Set TTS Data Info
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_DIGITAL_PORT_0;
@@ -1278,7 +1278,7 @@ line level    source
               
                           // Set TTS Data Info
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_DIGITAL_PORT_3;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 21  
 
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_DIGITAL_PORT_3;
               
@@ -1342,7 +1342,7 @@ line level    source
                           pstTtsSegment[0].ulDataAddress = _TTS_ADDRESS_DIGITAL_PORT_6;
                           pstTtsSegment[0].usDataLength = _TTS_LENGTH_DIGITAL_PORT_6;
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 22  
 
                           pstTtsSegment[1].ulDataAddress = _TTS_ADDRESS_OFF;
                           pstTtsSegment[1].usDataLength = _TTS_LENGTH_OFF;
@@ -1396,7 +1396,7 @@ line level    source
 1291          //--------------------------------------------------
 1292          void UserAdjustAudioVolume(BYTE ucVolume)
 1293          {
-1294   1              PCB_AUDIO_VOLUME_PWM(UserCommonAdjustPercentToRealValue(_DEF_VOLUME_PWM, 255, 0, 128));
+1294   1        PCB_AUDIO_VOLUME_PWM(UserCommonAdjustPercentToRealValue(_DEF_VOLUME_PWM, 255, 0, 128));
 1295   1      
 1296   1          ScalerAudioDigitalAdjustVolume(UserAdjustAudioVolumeMapping(ucVolume));
 1297   1      }
@@ -1406,12 +1406,12 @@ line level    source
 1301          // Input Value  : usVolume
 1302          // Output Value : usVolume
 1303          //--------------------------------------------------
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 23  
 
 1304          WORD UserAdjustAudioVolumeMapping(BYTE ucVolume)
 1305          {
-1306   1              DebugMessageOsd("ucVolume", ucVolume);
-1307   1              DebugMessageOsd("Volum",UserCommonAdjustPercentToRealValue(ucVolume, _DEF_DIGITAL_VOL_MAX, _DEF_DIGITAL_V
+1306   1        DebugMessageOsd("ucVolume", ucVolume);
+1307   1        DebugMessageOsd("Volum",UserCommonAdjustPercentToRealValue(ucVolume, _DEF_DIGITAL_VOL_MAX, _DEF_DIGITAL_V
              -OL_MIN, _DEF_DIGITAL_VOL_CENTER));
 1308   1      
 1309   1      #if(_LINE_IN_SUPPORT == _ON)
@@ -1423,7 +1423,7 @@ line level    source
 1314   1          else
 1315   1      #endif // End of #if(_LINE_IN_SUPPORT == _ON)
 1316   1          {   
-1317   2                      return (UserCommonAdjustPercentToRealValue(ucVolume, _DEF_DIGITAL_VOL_MAX, _DEF_DIGITAL_VOL_MIN, _DEF_DI
+1317   2          return (UserCommonAdjustPercentToRealValue(ucVolume, _DEF_DIGITAL_VOL_MAX, _DEF_DIGITAL_VOL_MIN, _DEF_DI
              -GITAL_VOL_CENTER));
 1318   2          }
 1319   1      }
@@ -1470,7 +1470,7 @@ line level    source
                       ScalerColorSCMLoadTable(tSCM_TABLE[ucColorEffect], GET_CURRENT_BANK_NUMBER());
                   }
               }
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 24  
 
               #endif // End of #if(_SCM_SUPPORT == _ON)
 1364          
@@ -1534,7 +1534,7 @@ line level    source
 1421   2                //  UserAdjustDCC(GET_OSD_COLOR_EFFECT());
 1422   2      #endif
 1423   2      
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 25  
 
 1424   2      // Adjust SCM Table, Should before ICM Adjust
 1425   2      #if(_SCM_SUPPORT == _ON)
@@ -1593,38 +1593,38 @@ line level    source
 1478   1      usContrast = GetOsdValue(_MENU_FUN_CONTRAST);
 1479   1      
 1480   1      /*
-1481   1              switch(GET_OSD_COLOR_EFFECT())
-1482   1              {
-1483   1                      case _COLOREFFECT_MOVIE :
-1484   1                              usContrast = _ECO_MOVIE_CONTRAST;
-1485   1                              break;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 26  
+1481   1        switch(GET_OSD_COLOR_EFFECT())
+1482   1        {
+1483   1          case _COLOREFFECT_MOVIE :
+1484   1            usContrast = _ECO_MOVIE_CONTRAST;
+1485   1            break;
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 26  
 
-1486   1                      case _COLOREFFECT_GAME:
-1487   1                              usContrast = _ECO_GAME_CONTRAST;
-1488   1                              break;
-1489   1                              
-1490   1                      case _COLOREFFECT_PHOTO :
-1491   1                              usContrast = _ECO_TEXT_CONTRAST;
-1492   1                              break;
-1493   1                      case _COLOREFFECT_STANDARD :
-1494   1                              usContrast = usContrast;
-1495   1                              break;
+1486   1          case _COLOREFFECT_GAME:
+1487   1            usContrast = _ECO_GAME_CONTRAST;
+1488   1            break;
+1489   1            
+1490   1          case _COLOREFFECT_PHOTO :
+1491   1            usContrast = _ECO_TEXT_CONTRAST;
+1492   1            break;
+1493   1          case _COLOREFFECT_STANDARD :
+1494   1            usContrast = usContrast;
+1495   1            break;
 1496   1      #if(_EOC_RTS_FPS_SUPPORT == _ON)
-1497   1                      case _COLOREFFECT_FPS:
-1498   1                              usContrast = _ECO_FPS_CONTRAST;
-1499   1                              break;
-1500   1                              
-1501   1                      case _COLOREFFECT_RTS :
-1502   1                              usContrast = _ECO_RTS_CONTRAST;
-1503   1                              break;
-1504   1      #endif                  
-1505   1                              
-1506   1                      default:
-1507   1                              break;
-1508   1              }
+1497   1          case _COLOREFFECT_FPS:
+1498   1            usContrast = _ECO_FPS_CONTRAST;
+1499   1            break;
+1500   1            
+1501   1          case _COLOREFFECT_RTS :
+1502   1            usContrast = _ECO_RTS_CONTRAST;
+1503   1            break;
+1504   1      #endif      
+1505   1            
+1506   1          default:
+1507   1            break;
+1508   1        }
 1509   1      */
-1510   1              usContrast = UserCommonAdjustPercentToRealValue(usContrast, _CONTRAST_MAX, _CONTRAST_MIN, _CONTRAST_CENTE
+1510   1        usContrast = UserCommonAdjustPercentToRealValue(usContrast, _CONTRAST_MAX, _CONTRAST_MIN, _CONTRAST_CENTE
              -R);
 1511   1      
 1512   1      #if(_CTS_TYPE == _CTS_GEN_1_12BIT)
@@ -1656,13 +1656,13 @@ line level    source
                   }
               #endif
 1537   1      
-1538   1              pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
+1538   1        pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
 1539   1      
 1540   1      #else
                   pusData[0] = (WORD)(((DWORD)g_stColorProcData.usColorTempR * usContrast / 128) > 255) ? 255 : (WORD)((
              -DWORD)g_stColorProcData.usColorTempR * usContrast / 128);
                   pusData[1] = (WORD)(((DWORD)g_stColorProcData.usColorTempG * usContrast / 128) > 255) ? 255 : (WORD)((
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 27  
 
              -DWORD)g_stColorProcData.usColorTempG * usContrast / 128);
                   pusData[2] = (WORD)(((DWORD)g_stColorProcData.usColorTempB * usContrast / 128) > 255) ? 255 : (WORD)((
@@ -1681,22 +1681,22 @@ line level    source
                       }
                   }
               #endif
-                      //      pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
-                      #if(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)||(Project_ID == ID_XKBH_HK2513E02_1V1H_
+                //  pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
+                #if(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)||(Project_ID == ID_XKBH_HK2513E02_1V1H_
              -HV320FHB_N02_20220927)||(Project_ID == _ID_XIANYOU_2525BREQ4_SG2701B05_6_FHD100HZ_20251015)
-                              pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/4/100);
-                      #else
-                              pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/2/100);
-                      #endif
+                  pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/4/100);
+                #else
+                  pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/2/100);
+                #endif
               
               #endif
 1566   1      
 1567   1      /*
 1568   1      #if(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)||(Project_ID == ID_XKBH_HK2513E02_1V1H_H
              -V320FHB_N02_20220927)||(Project_ID == _ID_XIANYOU_2525BREQ4_SG2701B05_6_FHD100HZ_20251015)
-1569   1                      pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/4/100);
+1569   1          pusData[2] = pusData[2] - (pusData[2]*GET_OSD_LOW_BLUE()/4/100);
 1570   1      #else
-1571   1                      pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
+1571   1          pusData[2] = pusData[2] - (pusData[2]/2 /100*GET_OSD_LOW_BLUE());
 1572   1      #endif
 1573   1      */
 1574   1      
@@ -1726,7 +1726,7 @@ line level    source
                   ScalerColorContrastAdjust(_CONTRAST_COEF_A, pusData);
               #endif
 1600   1      
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 28  
 
 1601   1          ScalerColorContrastEnable(_FUNCTION_ON);
 1602   1      #endif
@@ -1759,41 +1759,41 @@ line level    source
 1629   1      #else
                   WORD pusData[3] = {0};
               #endif
-1632   1              usBrightness=GetOsdValue(_MENU_FUN_BRIGHTNESS);
+1632   1        usBrightness=GetOsdValue(_MENU_FUN_BRIGHTNESS);
 1633   1      
 1634   1      /*
-1635   1                      switch(GET_OSD_COLOR_EFFECT())
-1636   1                      {
-1637   1                              case _COLOREFFECT_MOVIE :
-1638   1                                      usBrightness = _ECO_MOVIE_BLACKLEVEL;
-1639   1                                      break;
-1640   1                              case _COLOREFFECT_GAME:
-1641   1                                      usBrightness = _ECO_GAME_BLACKLEVEL;
-1642   1                                      break;
-1643   1                                      
-1644   1                              case _COLOREFFECT_PHOTO :
-1645   1                                      usBrightness = _ECO_TEXT_BLACKLEVEL;
-1646   1                                      break;
-1647   1                              case _COLOREFFECT_STANDARD :
-1648   1                                      usBrightness = usBrightness;
-1649   1                                      break;
+1635   1          switch(GET_OSD_COLOR_EFFECT())
+1636   1          {
+1637   1            case _COLOREFFECT_MOVIE :
+1638   1              usBrightness = _ECO_MOVIE_BLACKLEVEL;
+1639   1              break;
+1640   1            case _COLOREFFECT_GAME:
+1641   1              usBrightness = _ECO_GAME_BLACKLEVEL;
+1642   1              break;
+1643   1              
+1644   1            case _COLOREFFECT_PHOTO :
+1645   1              usBrightness = _ECO_TEXT_BLACKLEVEL;
+1646   1              break;
+1647   1            case _COLOREFFECT_STANDARD :
+1648   1              usBrightness = usBrightness;
+1649   1              break;
 1650   1      #if(_EOC_RTS_FPS_SUPPORT == _ON)
-1651   1                              case _COLOREFFECT_FPS:
-1652   1                                      usBrightness = _ECO_FPS_BLACKLEVEL;
-1653   1                                      break;
-1654   1                                      
-1655   1                              case _COLOREFFECT_RTS :
-1656   1                                      usBrightness = _ECO_RTS_BLACKLEVEL;
-1657   1                                      break;
-1658   1      #endif                  
-1659   1                                      
-1660   1                              default:
-1661   1                                      break;
-1662   1                      }
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 29  
+1651   1            case _COLOREFFECT_FPS:
+1652   1              usBrightness = _ECO_FPS_BLACKLEVEL;
+1653   1              break;
+1654   1              
+1655   1            case _COLOREFFECT_RTS :
+1656   1              usBrightness = _ECO_RTS_BLACKLEVEL;
+1657   1              break;
+1658   1      #endif      
+1659   1              
+1660   1            default:
+1661   1              break;
+1662   1          }
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 29  
 
 1663   1      */
-1664   1                      usBrightness = UserCommonAdjustPercentToRealValue(usBrightness, _BRIGHTNESS_MAX, _BRIGHTNESS_MIN, _BRIGH
+1664   1          usBrightness = UserCommonAdjustPercentToRealValue(usBrightness, _BRIGHTNESS_MAX, _BRIGHTNESS_MIN, _BRIGH
              -TNESS_CENTER);
 1665   1      
 1666   1          pusData[0] = usBrightness;
@@ -1854,7 +1854,7 @@ line level    source
 1721          // Output Value : None
 1722          //--------------------------------------------------
 1723          void UserAdjustOD(void)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 30  
 
 1724          {
 1725   1      #if(_FREESYNC_SUPPORT == _ON)
@@ -1918,7 +1918,7 @@ line level    source
 1783   2                  g_usHLWinVHeight = GET_MDOMAIN_OUTPUT_VHEIGHT() - _HL_WIN_BORDER_SIZE;
 1784   2      
 1785   2                  break;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 31  
 
 1786   2      
 1787   2              case _HL_WIN_3:
@@ -1982,7 +1982,7 @@ line level    source
 1844   2      
 1845   2              if((GET_MDOMAIN_OUTPUT_HWIDTH() + usNonFullScreenOffset) <= (g_usHLWinHPos + g_usHLWinHWidth + _HL
              -_WIN_BORDER_SIZE))
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 32  
 
 1846   2              {
 1847   3                  g_bHLWinRLMove = _LEFT;
@@ -2046,7 +2046,7 @@ line level    source
                   ScalerColorHLWUltraVividAdjust(_HLW_INSIDE_WINDOW, _DB_APPLY_NO_POLLING);
               #endif
 1905   1      
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 33  
 
 1906   1      #if(_YPEAKING_SUPPORT == _ON)
                   ScalerColorHLWYpeakingAdjust(_HLW_INSIDE_WINDOW, _DB_APPLY_NO_POLLING);
@@ -2110,7 +2110,7 @@ line level    source
 1964   1          ScalerIRHWModeDecoder(tIR_INITIAL_TABLE, GET_CURRENT_BANK_NUMBER());
 1965   1      }
 1966          #endif // End of #if(_IR_SUPPORT == _IR_HW_SUPPORT)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 34  
 
 1967          
 1968          #if(_DP_EMBEDDED_SWITCH_SUPPORT_TYPE == _DP_EMBEDDED_SWITCH_2_DP)
@@ -2174,7 +2174,7 @@ line level    source
               //--------------------------------------------------
               void UserAdjustPixelShifting(void)
               {
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 35  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 35  
 
               #if(_PIXEL_SHIFT_MODE == _PIXEL_SHIFT_IN_IDOMAIN)
                   BYTE ucPixelShift = 0;
@@ -2238,7 +2238,7 @@ line level    source
                           case 4: // _PIXEL1_TURN_DOWN:
                               if(usVdelay >= ucVstep)
                               {
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 36  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 36  
 
                                   usVdelay -= ucVstep;
                               }
@@ -2302,7 +2302,7 @@ line level    source
                   for(ucPixelShift = 0; ucPixelShift < 8; ucPixelShift++)
                   {
                       ScalerTimerDelayXms(200);
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 37  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 37  
 
                       switch(ucPixelShift)
                       {
@@ -2366,7 +2366,7 @@ line level    source
                           case 2: // _PIXEL0_TURN_RIGHT:
                           case 5: // _PIXEL1_TURN_RIGHT:
                           case 7: // _PIXEL1_TURN_LEFT:
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 38  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 38  
 
                               // Display H active start setting
                               ScalerMDomainSetDisplayTimingGenActiveRegionHStart(HIBYTE(usDisplayHstart), LOBYTE(usDispl
@@ -2430,7 +2430,7 @@ line level    source
                   }
               }
               #endif // End of #if(_SDR_TO_HDR_SUPPORT == _ON)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 39  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 39  
 
 2270          
 2271          #if(_DCR_SUPPORT == _ON)
@@ -2494,7 +2494,7 @@ line level    source
               #elif((_D1_INPUT_PORT_TYPE != _D1_NO_PORT) && ((_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_S
              -ERIES) || (_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER )))
                           if(SysSourceGetCableDetect(_D1_INPUT_PORT) == _FALSE)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 40  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 40  
 
               #elif((_D6_INPUT_PORT_TYPE != _D6_NO_PORT) && ((_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_S
              -ERIES) || (_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER )))
@@ -2558,7 +2558,7 @@ line level    source
               #endif
 2386   2      
 2387   2      #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 41  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 41  
 
                       if(GET_OSD_DP_D2_VERSION() <= _DP_VER_1_DOT_2)
                       {
@@ -2622,7 +2622,7 @@ line level    source
                           {
                               SET_OSD_DP_D2_VERSION(enumOSDDpPortVersionDef);
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 42  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 42  
 
                               UserCommonInterfaceDpVersionSwitch(_D2_INPUT_PORT, UserInterfaceGetDPVersion(_D2_INPUT_POR
              -T), UserCommonInterfaceGetDpMstCapablePort());
@@ -2686,7 +2686,7 @@ line level    source
               #define _OSD_SPOT_WIDTH                            132//(11 font*12 = 132)
               #define _OSD_SPOT_HEIGHT                           126
               
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 43  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 43  
 
               void OsdMenuDiaPointNFrameCounter(void)
               {
@@ -2714,8 +2714,8 @@ line level    source
                       ScalerOsdWindowDisable(_OSD_WINDOW_ALL);
                       // Adjust Color Palette
                       ScalerOsdSetTransparencyType(_OSD_TRANSPARENCY_ALL);
-                              OsdPaletteSelectPalette(_PALETTE_HOT_DIALPOINT);
-                              ScalerOsdSetTransparency(GET_OSD_TRANSPARENCY_STATUS());
+                  OsdPaletteSelectPalette(_PALETTE_HOT_DIALPOINT);
+                  ScalerOsdSetTransparency(GET_OSD_TRANSPARENCY_STATUS());
                       // Load Font & Icon
                       ScalerOsd2BitFontOffset(0);
                       ScalerOsd4BitFontOffset(0);
@@ -2741,7 +2741,7 @@ line level    source
               
                       ScalerOsdPosition(_OSD_POSITION_GLOBAL_A,  0,  0);
                       ScalerOsdPosition(_OSD_POSITION_GLOBAL_B,  0,  0);
-                      if(SysSourceGetSourceType() == _SOURCE_VGA)
+                    if(SysSourceGetSourceType() == _SOURCE_VGA)
                       {
                           usHCenter = GET_MDOMAIN_OUTPUT_HSTART()-GET_MDOMAIN_OUTPUT_HBSTART()+(GET_MDOMAIN_OUTPUT_HWIDT
              -H()/2)-(_OSD_SPOT_WIDTH/2)+_ANALOG_H_DIALPOINT_OFFSET;
@@ -2750,7 +2750,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 44  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 44  
 
                           usHCenter = GET_MDOMAIN_OUTPUT_HSTART()-GET_MDOMAIN_OUTPUT_HBSTART()+(GET_MDOMAIN_OUTPUT_HWIDT
              -H()/2)-(_OSD_SPOT_WIDTH/2)+_DIGITAL_H_DIALPOINT_OFFSET;
@@ -2814,7 +2814,7 @@ line level    source
               BYTE UserAdjustCheckValue(SDWORD shValue)
               {
                   if(shValue < 0)
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 45  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 45  
 
                   {
                       return 0;
@@ -2872,19 +2872,19 @@ line level    source
                   BYTE ucMGValue=128;
                   BYTE ucMBValue=128;
                   BYTE ucResult = 0;
-                      static bit bInitial = _FALSE;
+                static bit bInitial = _FALSE;
                   static BYTE setRGB = 0;
               
                   if(SysModeGetModeState() != _MODE_STATUS_ACTIVE)
                   {
                       bInitial = _FALSE;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 46  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 46  
 
-                              setRGB=0;
+                  setRGB=0;
                       return;
                   }
-                      //DebugMessageOsd("3.1UserAdjustSmartCrosshairHandler",GET_OSD_DIAL_POINT_STYLE());
-                      //DebugMessageOsd("3.2UserAdjustSmartCrosshairHandler",g_stOsdInfo.b1DynamicDiapointStatus);
+                //DebugMessageOsd("3.1UserAdjustSmartCrosshairHandler",GET_OSD_DIAL_POINT_STYLE());
+                //DebugMessageOsd("3.2UserAdjustSmartCrosshairHandler",g_stOsdInfo.b1DynamicDiapointStatus);
               
                   if((GET_OSD_DIAL_POINT_STYLE() == _ON) && (GET_OSD_STATE() == _HOT_KEY_LOS_TYPE1 || GET_OSD_STATE() ==
              - _HOT_KEY_LOS_TYPE2/* || GET_OSD_STATE() == _HOT_KEY_LOS_TYPE3 */) && (g_stOsdInfo.b1DynamicDiapointStatus == _TRUE))
@@ -2893,10 +2893,10 @@ line level    source
                       if(bInitial == _FALSE)
                       {
                           bInitial = _TRUE;
-                                      setRGB=0;
+                    setRGB=0;
                           UserAdjustSmartCrosshairInit();
                       }
-                              DebugMessageOsd("3.2UserAdjustSmartCrosshairHandler",UserCommonAdjustColorGetDynamicColorMeasureResult(&
+                  DebugMessageOsd("3.2UserAdjustSmartCrosshairHandler",UserCommonAdjustColorGetDynamicColorMeasureResult(&
              -ucResult, _NOT_WAIT));
               
                       if(UserCommonAdjustColorGetDynamicColorMeasureResult(&ucResult, _NOT_WAIT) == _TRUE)
@@ -2916,10 +2916,10 @@ line level    source
                               g_stOsdInfo.ucDcrMeasureB = ucResult;
                               g_stOsdInfo.ucDcrMeasureType =(_AUTO_RED_CHANNEL);
                           }
-                                      if(ScalerOsdGetOsdEnable()      != _TRUE && setRGB<=10)
-                                      {
-                                              setRGB++;
-                                      }
+                    if(ScalerOsdGetOsdEnable()  != _TRUE && setRGB<=10)
+                    {
+                      setRGB++;
+                    }
               
                           DebugMessageOsd("9. g_stOsdInfo.ucDcrMeasureR", g_stOsdInfo.ucDcrMeasureR);
                           DebugMessageOsd("9. g_stOsdInfo.ucDcrMeasureG", g_stOsdInfo.ucDcrMeasureG);
@@ -2942,7 +2942,7 @@ line level    source
                           }
                           else
                           {
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 47  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 47  
 
                               DebugMessageOsd("9. _COLOR_SPACE_RGB", ScalerColorGetColorSpace());
                               ucMRValue = g_stOsdInfo.ucDcrMeasureR;
@@ -2982,7 +2982,7 @@ line level    source
                               ucCtG = 0;
                               ucCtB = 255;
                           }
-                                      /*
+                    /*
                           else if((((ucCtR + ucCtG +ucCtB)/3) >= 127) && (ucCtG > 200))
                           {
                               ucCtR = 255;
@@ -3006,7 +3006,7 @@ line level    source
                           {
                               ucCtR = 255;
                               ucCtG = 255;
-C51 COMPILER V8.12   RTD2014USERADJUST                                                     09/16/2026 20:28:58 PAGE 48  
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST                                                 09/18/2026 20:39:57 PAGE 48  
 
                               ucCtB = 255;
                           }
@@ -3020,18 +3020,19 @@ line level    source
                           UserCommonAdjustColorSetAutoMeasure(g_stOsdInfo.ucDcrMeasureType);
               
                       }
-                              if(setRGB>4)
-                                      OsdFuncEnableOsd();
+                  if(setRGB>4)
+                    OsdFuncEnableOsd();
                   }
               }
               
               #endif
 2819          
 2820          #endif//#if(_OSD_TYPE == _REALTEK_2014_OSD)
+*** WARNING C294 IN LINE 1520 OF User\RTD Series\RTD2014Function\Code\RTD2014UserAdjust.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1533    ----
+   CODE SIZE        =   1529    ----
    CONSTANT SIZE    =   3072    ----
    XDATA SIZE       =      8      36
    PDATA SIZE       =   ----    ----
@@ -3041,4 +3042,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

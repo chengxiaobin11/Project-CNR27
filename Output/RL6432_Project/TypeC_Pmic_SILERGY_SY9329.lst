@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE TYPEC_PMIC_SILERGY_SY9329
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_SILERGY_SY9329
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\TypeC_Pmic_SILERGY_SY9329.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\Device\Code\TypeC_Pmic_SILERGY_SY9329.c LARGE OPTIMIZE(9,SPEED) INCDIR
-                    -(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\S
-                    -caler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kern
-                    -el\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Comm
-                    -on\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User 
-                    -Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\H
-                    -eader;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJE
-                    -CT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\TypeC_Pmic_SILERGY_SY93
-                    -29.lst) OBJECT(.\Output\RL6432_Project\TypeC_Pmic_SILERGY_SY9329.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\Device\Code\TypeC_Pmic_SILERGY_SY9329.c LARGE OPTIMIZE(9,SPEED) INC
+                    -DIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kerne
+                    -l\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\K
+                    -ernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_C
+                    -ommon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\Us
+                    -er Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factor
+                    -y\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PR
+                    -OJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\TypeC_Pmic_SILERGY_S
+                    -Y9329.lst) TABS(2) OBJECT(.\Output\RL6432_Project\TypeC_Pmic_SILERGY_SY9329.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #define _VBUS_VOLTAGE_15V                           1500
               #define _VBUS_VOLTAGE_20V                           2000
               
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 2   
 
               //--------------------------------------------------
               // Definitions of Pmic SY9329 Control
@@ -126,7 +126,7 @@ line level    source
                   BYTE b2UVPSetting : 2;
                   BYTE b2OVPSetting : 2;
                   BYTE b3VOCPSetting : 3;
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 3   
 
               
                   BYTE b2PS2Reserved : 2;
@@ -190,7 +190,7 @@ line level    source
               
                   0x00,                               // Reserved
                   0x00,                               // OTP Flag (Read Only)
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 4   
 
                   0x00,                               // UVP Flag (Read Only)
                   0x00,                               // LOCP Flag (Read Only)
@@ -254,7 +254,7 @@ line level    source
               // FUNCTION DEFINITIONS
               //****************************************************************************
               //--------------------------------------------------
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 5   
 
               // Description  : PMIC Initial Settings
               // Input Value  : ucSlaveAddr : I2C Slave Address
@@ -318,7 +318,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 6   
 
               // Description  : Control PMIC to Directed Voltage
               // Input Value  : bPowerDirection : _PD_POWER_SNK / _PD_POWER_SRC
@@ -382,7 +382,7 @@ line level    source
                   else if(usCurrent <= 150)
                   {
                       g_stPMICData.b3VOCPSetting = 0x01;
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 7   
 
                   }
                   else if(usCurrent <= 200)
@@ -446,7 +446,7 @@ line level    source
                   }
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 8   
 
               }
               
@@ -510,7 +510,7 @@ line level    source
                   {
                       g_stPMICData.b3VOCPSetting = 0x00;
                   }
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 9   
 
                   else if(usCurrent <= 150)
                   {
@@ -574,7 +574,7 @@ line level    source
              -ENGTH, 1, (BYTE *)(&g_stPMICData) + _SY9329_CTRL_REG1) == _FAIL)
                   {
                       return _TYPE_C_PMIC_CONTROL_FAIL;
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 10  
 
                   }
               
@@ -638,7 +638,7 @@ line level    source
               
                   // Set VBUS Current Limit
                   if(usCurrent <= 100)
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 11  
 
                   {
                       g_stPMICData.b3VOCPSetting = 0x00;
@@ -702,7 +702,7 @@ line level    source
               
                   // Disable PMIC
                   if(ScalerTypeCPmicIICWrite_WDINT(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _SY9329_CTRL_REG1, _SY9329_SUBADDR_LE
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 12  
 
              -NGTH, 1, (BYTE *)(&g_stPMICData) + _SY9329_CTRL_REG1) == _FAIL)
                   {
@@ -766,7 +766,7 @@ line level    source
                   {
                       PCB_VBUS_DISCHARGE_CONTROL(_VBUS_DISCHARGE_OFF);
                   }
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 13  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 13  
 
               
                   // Disable Pmic VBUS Discharge
@@ -830,7 +830,7 @@ line level    source
                           PCB_PMIC_VBUS_SINK_CONTROL(_VBUS_SINK_SWITCH_OFF);
                           PCB_PMIC_VBUS_SOURCE_CONTROL(_VBUS_SOURCE_SWITCH_ON);
                       }
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 14  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 14  
 
                       else
                       {
@@ -894,7 +894,7 @@ line level    source
                       {
                           PCB_PMIC_VBUS_SOURCE_CONTROL(_VBUS_SOURCE_SWITCH_OFF);
                           PCB_PMIC_VBUS_SINK_CONTROL(_VBUS_SINK_SWITCH_ON);
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 15  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 15  
 
                       }
                   }
@@ -958,7 +958,7 @@ line level    source
               {
                   return _TYPE_C_PMIC_NONE_MODE_OPERATION;
               }
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 16  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 16  
 
               #endif // End of #if(_TYPE_C_EMB_PD3_PPS_SUPPORT == _ON)
               
@@ -1022,7 +1022,7 @@ line level    source
               }
               #endif // End of #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_POLLING_PMIC)
               #endif // End of #if(_TYPE_C_PMIC_TYPE == _PMIC_SY9329)
-C51 COMPILER V8.12   TYPEC_PMIC_SILERGY_SY9329                                             09/16/2026 20:29:22 PAGE 17  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9329                                         09/18/2026 20:40:26 PAGE 17  
 
  936          
  937          

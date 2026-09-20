@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONGLOBALDIMMING
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONGLOBALDIMMING
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonGlobalDimming.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonGlobalDimming.c LARGE OPTIMIZE(9
-                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
-                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
-                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
-                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
-                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
-                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
-                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCommo
-                    -nGlobalDimming.lst) OBJECT(.\Output\RL6432_Project\UserCommonGlobalDimming.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonGlobalDimming.c LARGE OPTIMIZ
+                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
+                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
+                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
+                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
+                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
+                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
+                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCo
+                    -mmonGlobalDimming.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonGlobalDimming.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #include _GD_HDR_2084_LV
               };
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 2   
 
               #if(_GLOBAL_DIMMING_HDR_FINE_TUNE_MODE_SUPPORT == _ON)
               WORD code tGDHDR2084Lv_PWM[256] =
@@ -126,7 +126,7 @@ line level    source
               #include _GD_STEP_R_TABLE
               };
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 3   
 
               #if((_DEVICE_LED_DRIVER_TYPE == _DEVICE_LED_DRIVER_NONE) || (_GLOBAL_DIMMING_ONLINE_CALIBRATION_SUPPORT ==
              - _ON))
@@ -190,7 +190,7 @@ line level    source
               
               //****************************************************************************
               // FUNCTION DEFINITIONS
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 4   
 
               //****************************************************************************
               //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
                           if(UserInterfaceSDROCCOGCMode() == _SDR_CALIBRATION_BY_OGC_TOOL)
                           {
                               return _GD_ENABLE;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 5   
 
                           }
                           else
@@ -318,7 +318,7 @@ line level    source
              -== _ON))
               #if(_GLOBAL_DIMMING_OCC_TOOL_SUPPORT == _ON)
                   if(GET_ON_LINE_GD_HDR_CALIBRATION_STATUS() == _ON)
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 6   
 
                   {
                       *pusDCRToLV = tGDHDR2084Lv[usDCRMaxY];
@@ -382,7 +382,7 @@ line level    source
                                   *pusDCRToLV = tGDSDRGamma22Lv[usDCRMaxY];
                                   break;
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 7   
 
                               case _SDR_EBU_MODE:
                               case _SDR_REC_709:
@@ -446,7 +446,7 @@ line level    source
               //--------------------------------------------------
               // Description  :
               // Input Value  :
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 8   
 
               // Output Value :
               //--------------------------------------------------
@@ -510,7 +510,7 @@ line level    source
                       if((*pusApplyLv > *pusTargetLv) && (*pusApplyLv != 0))
                       {
                           *pusApplyLv = *pusApplyLv - 1;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 9   
 
                       }
                       else if(*pusApplyLv < *pusTargetLv)
@@ -574,7 +574,7 @@ line level    source
                       if(usPWM > usMaxDelPWM)
                       {
                           usPWM = usMaxDelPWM;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 10  
 
                       }
                   }
@@ -638,7 +638,7 @@ line level    source
                                   ucDecimalNum = 12;
                                   break;
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 11  
 
                               case _SDR_REC_709:
                                   UserCommonFlashRead(_OGC_FLASH_BANK, _OCC_REC709_ADDRESS, 18, pucSRGBMatrixOriginal);
@@ -702,7 +702,7 @@ line level    source
                           if((ucI % 4) == 0)
                           {
                               shDiagoanlValueHalf = ((shSRGBValueOriginal + 0x201) >> 1) - 0x200;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 12  
 
                           }
                           else
@@ -766,7 +766,7 @@ line level    source
                           g_usGDApplyLV = _GD_DARK_MODE_MIN;
                       }
                       usGainValue = (1 + 4 * (g_usGDApplyLV - _GD_DARK_MODE_MIN) / (usGap)) << 9;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 13  
 
                   }
                   else
@@ -830,7 +830,7 @@ line level    source
                   ScalerColorSRGBAdjust(pucSRGBMatrix, _SRGB_3_BIT_SHIFT_LEFT);
               }
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 14  
 
               //--------------------------------------------------
               // Description  : Enable Global Dimming Function in OSD
@@ -894,7 +894,7 @@ line level    source
               #endif
               
               
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 15  
 
               //--------------------------------------------------
               // Description  : Cacualte black percentage for current frame and last frmae
@@ -958,7 +958,7 @@ line level    source
               {
                   BYTE pucData[2] = {0};
                   WORD usCombineData = 0;
-C51 COMPILER V8.12   USERCOMMONGLOBALDIMMING                                               09/16/2026 20:28:52 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONGLOBALDIMMING                                           09/18/2026 20:39:49 PAGE 16  
 
                   UserCommonFlashRead(ucBank, ((WORD)ucPage << 12) | (usStartAddress + 2 * usIndex), 2, pucData);
                   if(ucSwap == _TRUE)

@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014USERADJUSTOUTPUTGAMMA
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERADJUSTOUTPUTGAMMA
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014UserAdjustOutputGamma.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserAdjustOutputGamma.c LARGE O
-                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
-                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
-                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
-                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
-                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
-                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
-                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
-                    -RTD2014UserAdjustOutputGamma.lst) OBJECT(.\Output\RL6432_Project\RTD2014UserAdjustOutputGamma.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Function\Code\RTD2014UserAdjustOutputGamma.c LARG
+                    -E OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kerne
+                    -l\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scaler
+                    -Function\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel
+                    -\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common
+                    -\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\H
+                    -eader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fac
+                    -tory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proje
+                    -ct\RTD2014UserAdjustOutputGamma.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014UserAdjustOutputGamma.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_GAMMA_FUNCTION == _ON)
   47          void UserAdjustGamma(BYTE ucGamma);
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 2   
 
   48          #endif
   49          
@@ -115,54 +115,54 @@ line level    source
                       ScalerColorRGBOutputGammaEnable(_FUNCTION_OFF);
               #endif
   98   2      #if(Project_ID == ID_HHT_HK2795E041DP2HDMI__M280DCA_UHD60HZ__20201214)
-                              if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_GAME)
+                  if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_GAME)
               
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
               
-                              }
-                      #if (_EOC_RTS_FPS_SUPPORT == _ON)
-                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
+                  }
+                #if (_EOC_RTS_FPS_SUPPORT == _ON)
+                  else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
               
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 3   
 
-                              }
-                      #endif
-                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_MOVIE)
-                              {
-                              
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
-                              }
-                              else
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
-                              }
+                  }
+                #endif
+                  else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_MOVIE)
+                  {
+                  
+                    UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
+                  }
+                  else
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
+                  }
               #elif(Project_ID==ID_HHT_HK2785E06_1P2H_AUO_P320HVN05_6_FDH180HZ_20210106)
               
                       if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_GAME)
               
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[0], GET_CURRENT_BANK_NUMBER());
               
-                              }
-                      #if (_EOC_RTS_FPS_SUPPORT == _ON)
-                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
+                  }
+                #if (_EOC_RTS_FPS_SUPPORT == _ON)
+                  else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_FPS)
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
               
-                              }
-                      #endif
-                              else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_RTS)
-                              {
-                              
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
-                              }
-                              else
-                              {
-                                      UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
-                              }
+                  }
+                #endif
+                  else if(GET_OSD_COLOR_EFFECT() == _COLOREFFECT_RTS)
+                  {
+                  
+                    UserCommonAdjustGamma(tGAMMA_TABLE[3] , GET_CURRENT_BANK_NUMBER());
+                  }
+                  else
+                  {
+                    UserCommonAdjustGamma(tGAMMA_TABLE[2], GET_CURRENT_BANK_NUMBER());
+                  }
               
               #else
  147   2              UserCommonAdjustGamma(tGAMMA_TABLE[ucGamma - 1], GET_CURRENT_BANK_NUMBER());
@@ -190,7 +190,7 @@ line level    source
  169          //--------------------------------------------------
  170          // Description  : Adjust PCM
  171          // Input Value  : ucPCM
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 4   
 
  172          // Output Value : None
  173          //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               // Input Value  : EnumGammaType
               // Output Value : EnumPCMGammaType
               //--------------------------------------------------
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 5   
 
               EnumOCCPCMGammaType UserAdjustOCCPCMGammaOSDMapping(EnumGammaType enumGammaType)
               {
@@ -318,7 +318,7 @@ line level    source
                           enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE5;
                           break;
               
-C51 COMPILER V8.12   RTD2014USERADJUSTOUTPUTGAMMA                                          09/16/2026 20:28:59 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 6   
 
                       case _CT_USER:
                       default:

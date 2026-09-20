@@ -1,16 +1,16 @@
-C51 COMPILER V8.12   TEST_CODE                                                             09/16/2026 20:29:25 PAGE 1   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE TEST_CODE
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TEST_CODE
 NO OBJECT MODULE REQUESTED
-COMPILER INVOKED BY: C:\Keil\C51\bin\C51.exe .\Output\RL6432_Project\test_code.c INCDIR(.\Output\RL6432;.\Project\Header
-                    -;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Ker
-                    -nel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Li
-                    -b\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_
-                    -Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD
-                    - Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\None Series\NoneFunc
-                    -tion\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_
-                    -RL6432_SERIES) PRINT(.\Output\RL6432_Project\test_code.lst) PREPRINT(.\Output\RL6432_Project\test_code.src) NOOBJECT
+COMPILER INVOKED BY: C:\Keil_v5\C51\bin\C51.exe .\Output\RL6432_Project\test_code.c INCDIR(.\Output\RL6432;.\Project\Hea
+                    -der;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\
+                    -Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction
+                    -\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL64
+                    -32_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function\Header;.\User\
+                    -RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\None Series\NoneF
+                    -unction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYP
+                    -E=_RL6432_SERIES) PRINT(.\Output\RL6432_Project\test_code.lst) PREPRINT(.\Output\RL6432_Project\test_code.src) NOOBJECT
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
              -_FLAG_MODE))
                   BANK0("SYSMAIN");
                   FUNC("?PR?SYSMAINSTARTUSERCODE?SYSMAIN",0x4000);
-C51 COMPILER V8.12   TEST_CODE                                                             09/16/2026 20:29:25 PAGE 2   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 2   
 
                   BANK_LIMIT(_DUAL_BANK_USER_FW_CODE_SIZE);
               #else
@@ -126,7 +126,7 @@ line level    source
  107   1      #if((_DP_SUPPORT == _ON) && (_DP_IRQ_HPD_MODE == _DP_IRQ_HPD_T2_MODE))
  108   1          COMM_SEG("?PR?SCALERSYNCDPHPDIRQASSERTTIMER2EVENTPROC_EXINT?SCALERCOMMONSYNC");
  109   1      #endif
-C51 COMPILER V8.12   TEST_CODE                                                             09/16/2026 20:29:25 PAGE 3   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 3   
 
  110   1      #if((_DP_SUPPORT == _ON) && (_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON))
  111   1          COMM_SEG("?PR?SCALERDPRXAUXTIMER2PREINTHANDLER_EXINT?SCALERDP_SEPTPHY");

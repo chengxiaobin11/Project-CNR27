@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONDDCCIFUNCTION
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONDDCCIFUNCTION
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonDdcciFunction.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonDdcciFunction.c LARGE OPTIMIZE(9
-                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
-                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
-                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
-                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
-                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
-                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
-                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCommo
-                    -nDdcciFunction.lst) OBJECT(.\Output\RL6432_Project\UserCommonDdcciFunction.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonDdcciFunction.c LARGE OPTIMIZ
+                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
+                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
+                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
+                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
+                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
+                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
+                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\UserCo
+                    -mmonDdcciFunction.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonDdcciFunction.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          #endif
   46          #if(_D5_INPUT_PORT_TYPE == _D5_DVI_PORT)
   47              _DVI_D5,
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 2   
 
   48          #endif
   49          
@@ -107,26 +107,26 @@ line level    source
   88          /////////////////////////////////////////////////////Project_ID///////////////////////////////////////////
              -/////////////////////////////////////
   89          
-  90          #define _DEF_STRING_PORT                                                                                "(prot(monitor) "
-  91          #define _DEF_STRING_tYPE                                                                                "type(LCD) "
-  92          #define _DEF_STRING_MODEL                                                                               "model(RTK) "
-  93          #define _DEF_STRING_CMD                                                                                 "cmds(01 02 03 07 0C E3 F3) "
+  90          #define _DEF_STRING_PORT                    "(prot(monitor) "
+  91          #define _DEF_STRING_tYPE                    "type(LCD) "
+  92          #define _DEF_STRING_MODEL                   "model(RTK) "
+  93          #define _DEF_STRING_CMD                     "cmds(01 02 03 07 0C E3 F3) "
   94          #if (_A0_INPUT_PORT_TYPE==_A0_VGA_PORT)
-  95          #define _DEF_STRING_INPUT_vga                                                                   "01 "
+  95          #define _DEF_STRING_INPUT_vga                 "01 "
   96          #else
-              #define _DEF_STRING_INPUT_vga                                                                   ""
+              #define _DEF_STRING_INPUT_vga                 ""
               #endif
   99          
  100          #if (((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
              -ORT))>=2)
-              #define _DEF_STRING_INPUT_DP                                                                    "F 10 "
+              #define _DEF_STRING_INPUT_DP                  "F 10 "
               #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
              -ORT)==1)
- 103          #define _DEF_STRING_INPUT_DP                                                                    "E "
+ 103          #define _DEF_STRING_INPUT_DP                  "E "
  104          #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
              -ORT)==0)
-              #define _DEF_STRING_INPUT_DP                                                                    ""
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 3   
+              #define _DEF_STRING_INPUT_DP                  ""
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 3   
 
               #else
               #warning "zhe is DDCCI error!!"
@@ -134,108 +134,108 @@ line level    source
  109          
  110          #if 0//(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_
              -D2_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==3)
-              #define _DEF_STRING_INPUT_HDMI                                                                  "11 12 "
+              #define _DEF_STRING_INPUT_HDMI                  "11 12 "
               #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
              -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))>=2)
-              #define _DEF_STRING_INPUT_HDMI                                                                  "11 12 "
+              #define _DEF_STRING_INPUT_HDMI                  "11 12 "
               #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
              -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==1)
- 115          #define _DEF_STRING_INPUT_HDMI                                                                  "11 "
+ 115          #define _DEF_STRING_INPUT_HDMI                  "11 "
  116          #elif(((_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)+(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2
              -_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT))==0)
-              #define _DEF_STRING_INPUT_HDMI                                                                  ""
+              #define _DEF_STRING_INPUT_HDMI                  ""
               #else
               #warning "zhe is DDCCI error!!"
               #endif
  121          
- 122          #define _DEF_STRING_INPUT                                                                               "60("_DEF_STRING_INPUT_vga _DEF_STRING_INPUT_DP _DEF_STRING_INPUT_HDMI"
+ 122          #define _DEF_STRING_INPUT                   "60("_DEF_STRING_INPUT_vga _DEF_STRING_INPUT_DP _DEF_STRING_INPUT_HDMI"
              -)"
  123          
  124          #if _CT_sRGB_SUPPRT
- 125          #define _DEF_STRING_CT1                                                                                 "01 "//SRGB
+ 125          #define _DEF_STRING_CT1                     "01 "//SRGB
  126          #else
-              #define _DEF_STRING_CT1                                                                                 ""//SRGB
+              #define _DEF_STRING_CT1                     ""//SRGB
               #endif
  129          #if _CT_5800_SUPPRT
-              #define _DEF_STRING_CT2                                                                                 "04 "//5800
+              #define _DEF_STRING_CT2                     "04 "//5800
               #else
- 132          #define _DEF_STRING_CT2                                                                                 ""//5800
+ 132          #define _DEF_STRING_CT2                     ""//5800
  133          #endif
  134          
- 135          #define _DEF_STRING_CT3                                                                                 "05 "//6500
+ 135          #define _DEF_STRING_CT3                     "05 "//6500
  136          
  137          #if _CT_7500_SUPPRT
-              #define _DEF_STRING_CT4                                                                                 "06 "//7500
+              #define _DEF_STRING_CT4                     "06 "//7500
               #else
- 140          #define _DEF_STRING_CT4                                                                                 ""//7500
+ 140          #define _DEF_STRING_CT4                     ""//7500
  141          #endif
  142          
- 143          #define _DEF_STRING_CT5                                                                                 "08 "//9300
- 144          #define _DEF_STRING_CT6                                                                                 "0B "//SRGB
+ 143          #define _DEF_STRING_CT5                     "08 "//9300
+ 144          #define _DEF_STRING_CT6                     "0B "//SRGB
  145          
  146          
- 147          #define _DEF_STRING_CT                                                                                  _DEF_STRING_CT1 _DEF_STRING_CT2  _DEF_STRING_CT3 _DEF_STRING_CT4 _DEF_STR
+ 147          #define _DEF_STRING_CT                      _DEF_STRING_CT1 _DEF_STRING_CT2  _DEF_STRING_CT3 _DEF_STRING_CT4 _DEF_STR
              -ING_CT5 _DEF_STRING_CT6
  148          
  149          
  150          /*
- 151          Chinesse_S      0x01
- 152          Engish          0x02
- 153          French          0x03
- 154          German          0x04
- 155          Italian         0x05
- 156          Japanese                0x06
- 157          Korean          0x07
- 158          Portuguese      0x08
- 159          Russian         0x09
- 160          Spanish         0x0A
- 161          Swedish         0x0B
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 4   
+ 151          Chinesse_S  0x01
+ 152          Engish    0x02
+ 153          French    0x03
+ 154          German    0x04
+ 155          Italian   0x05
+ 156          Japanese    0x06
+ 157          Korean    0x07
+ 158          Portuguese  0x08
+ 159          Russian   0x09
+ 160          Spanish   0x0A
+ 161          Swedish   0x0B
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 4   
 
- 162          Turkish         0x0C
- 163          Chineses_T      0x0D
- 164          Brzil           0x0E
- 165           Arabic         0x0F
- 166          Bulgarian               0x10
- 167          Croaian         0x11
- 168          Czech           0x12
- 169          Danish          0x13
- 170          Dutch           0x14
- 171          Estonian                0x15
- 172          Finnish         0x16
- 173          Greek           0x17
- 174          Hebrew          0x18
- 175          Hindi           0x19
- 176          Hungrian                0x1A
- 177          Norwegian       0x1B
- 178          Polish          0x1C
- 179          Romanian                0x1D
- 180          Serbian         0x1E
- 181          Slovak          0x1F
- 182          Slovenian               0x20
- 183          Thai            0x21
- 184          Ukranian                0x22
- 185          Vietnamese      0x23
+ 162          Turkish   0x0C
+ 163          Chineses_T  0x0D
+ 164          Brzil   0x0E
+ 165           Arabic   0x0F
+ 166          Bulgarian   0x10
+ 167          Croaian   0x11
+ 168          Czech   0x12
+ 169          Danish    0x13
+ 170          Dutch   0x14
+ 171          Estonian    0x15
+ 172          Finnish   0x16
+ 173          Greek   0x17
+ 174          Hebrew    0x18
+ 175          Hindi   0x19
+ 176          Hungrian    0x1A
+ 177          Norwegian 0x1B
+ 178          Polish    0x1C
+ 179          Romanian    0x1D
+ 180          Serbian   0x1E
+ 181          Slovak    0x1F
+ 182          Slovenian   0x20
+ 183          Thai    0x21
+ 184          Ukranian    0x22
+ 185          Vietnamese  0x23
  186          
  187          */
  188          //BYTE code tLANGUAGEDEFINE[] = {0x02,0x03,0x0A, 0x08,0x04,0x05,0x14, 0x0B,0x16,0x1C  ,0x12,0x09 ,0x07,0x0
              -1,0x0D, 0x06,0x17,0x1A,0x0C};
  189          
- 190          #define _DEF_STRING_LANGUAGE                                                                    "CC(02 03 0A 08 04 05 14 0B 16 1C 12 09 07 01 0D 06 17 1A 0C)"
+ 190          #define _DEF_STRING_LANGUAGE                  "CC(02 03 0A 08 04 05 14 0B 16 1C 12 09 07 01 0D 06 17 1A 0C)"
  191          
  192          
  193          
- 194          #define _DEF_STRING_VCP                                                                                 "vcp(04 05 06 08 0C 10 12 14( " _DEF_STRING_CT ") 16 18 1A 52 " _DEF_STR
+ 194          #define _DEF_STRING_VCP                     "vcp(04 05 06 08 0C 10 12 14( " _DEF_STRING_CT ") 16 18 1A 52 " _DEF_STR
              -ING_INPUT "87 AC AE B2 B6 C6 C8 CA " _DEF_STRING_LANGUAGE " D6(01 04 05) DF FD FF)"
- 195          #define _DEF_STRING_VCP_VGA                                                                             "vcp(04 05 06 08 0C 0E 10 12 14( " _DEF_STRING_CT ") 16 18 1A 1E 1F 2
+ 195          #define _DEF_STRING_VCP_VGA                   "vcp(04 05 06 08 0C 0E 10 12 14( " _DEF_STRING_CT ") 16 18 1A 1E 1F 2
              -0 30 3E 52 "_DEF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA " _DEF_STRING_LANGUAGE " D6(01 04 05) DF FD FF)"
  196          //
- 197          //#define _DEF_STRING_VCP                                                                                       "vcp(02 04 05 06 08 0B 0C 10 12 14(" _DEF_STRING_CT ") 16 18 1A 52" _D
+ 197          //#define _DEF_STRING_VCP                     "vcp(02 04 05 06 08 0B 0C 10 12 14(" _DEF_STRING_CT ") 16 18 1A 52" _D
              -EF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)"
- 198          //#define _DEF_STRING_VCP_VGA                                                                           "vcp(02 04 05 06 08 0B 0C 0E 10 12 14(" _DEF_STRING_CT ") 16 18 1A 
+ 198          //#define _DEF_STRING_VCP_VGA                   "vcp(02 04 05 06 08 0B 0C 0E 10 12 14(" _DEF_STRING_CT ") 16 18 1A 
              -1E 1F 20 30 3E 52" _DEF_STRING_INPUT "87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)"
  199          
- 200          #define _DEF_STRING_END                                                                                 "mswhql(1)asset_eep(40)mccs_ver(2.2))"
+ 200          #define _DEF_STRING_END                     "mswhql(1)asset_eep(40)mccs_ver(2.2))"
  201          
  202          
  203          
@@ -254,7 +254,7 @@ line level    source
              -ver(2.2))"
  209          #define _CAPABILITIES_STRING_HDMI                              _DEF_CAPABILITIES_STRING_DDCCI// "(prot(mon
              -itor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 10 12 14(01 02 04 05 06 08 0B) 16 18 1A 52 60
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 5   
 
              -(01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswhql(1)asset_eep(40)mccs
              -_ver(2.2))"
@@ -318,7 +318,7 @@ line level    source
  264          // VARIABLE DECLARATIONS
  265          //****************************************************************************
  266          
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 6   
 
  267          //****************************************************************************
  268          // FUNCTION DECLARATIONS
@@ -382,7 +382,7 @@ line level    source
  324   1          UserDdcciHandler();
  325   1      }
  326          //--------------------------------------------------
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 7   
 
  327          // Description  : Initial TX variables and Send Null-Message
  328          // Input Value  : None
@@ -446,7 +446,7 @@ line level    source
  386          {
  387   1          g_pucDdcciTxBuf[_DDCCI_TYPE_CODE] = ucTypeOpcode;
  388   1          g_pucDdcciTxBuf[_DDCCI_MAX_HIGH_BYTE] = HIBYTE(usMax);
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 8   
 
  389   1          g_pucDdcciTxBuf[_DDCCI_MAX_LOW_BYTE] = LOBYTE(usMax);
  390   1          g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE] = HIBYTE(usPresent);
@@ -510,7 +510,7 @@ line level    source
  448   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
                   if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_MST)
                   {
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 9   
 
                       enumPortType = GET_PORT_TYPE(SysSourceGetInputPortType(ScalerDpRxMstGetInputPort(ScalerDpRxMstGetC
              -apablePort())));
@@ -574,7 +574,7 @@ line level    source
                   UserInterfaceDdcciGetCpStringData(pucDest, enumPortType, usStartIndex, usLength);
               
               #else
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 10  
 
  509   1      
  510   1          switch(enumPortType)
@@ -638,7 +638,7 @@ line level    source
                       case _PORT_DUAL_DVI:
                           return (sizeof(tCP_STRING_DVI) - 1);
               #endif
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 11  
 
  571   2      
  572   2      #if(_HDMI_PORT_EXIST == _ON)
@@ -702,7 +702,7 @@ line level    source
  630   2      
  631   2                  // Dual bank Type
  632   2                  g_pucDdcciTxBuf[5] = 0xFF;
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 12  
 
  633   2      
  634   2                  // Active User(1)
@@ -766,7 +766,7 @@ line level    source
  692   5                              UserCommonDdcciGetFwInfoRequest();
  693   5                              break;
  694   5      #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 13  
 
                                   case _DDCCI_CMD_SWITCH_DEBUG_SALVE_REQUEST:
                                       ScalerDebugSetDdcciSwitchState();
@@ -830,7 +830,7 @@ line level    source
                   BYTE ucSendLen = 0;
               
                   if(g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE] != 0)
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 14  
 
                   {
                       SET_SMBUS_BLOCK_RW_STATUS(_TRUE);
@@ -887,14 +887,14 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    768    ----
+   CODE SIZE        =    775    ----
    CONSTANT SIZE    =    840    ----
    XDATA SIZE       =   ----      14
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V8.12   USERCOMMONDDCCIFUNCTION                                               09/16/2026 20:28:42 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/18/2026 20:39:38 PAGE 15  
 
 END OF MODULE INFORMATION.
 

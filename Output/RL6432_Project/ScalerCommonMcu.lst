@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONMCU
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONMCU
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonMcu.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonMcu.c LARGE OPTIMIZE(9,
-                    -SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Head
-                    -er;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\
-                    -Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL643
-                    -2_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.
-                    -\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\
-                    -RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) 
-                    -DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerComm
-                    -onMcu.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonMcu.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonMcu.c LARGE OPTIMIZE
+                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
+                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
+                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
+                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
+                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
+                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
+                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerC
+                    -ommonMcu.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonMcu.obj)
 
 line level    source
 
@@ -44,7 +44,7 @@ line level    source
   27          //--------------------------------------------------
   28          #define _DDCCI_LENGTH                       1
   29          #if  _Def_AutoAlign_Type==1
-  30          #define _DDCCI_OPCODE_VCP_AUTOALIGN                                     0x7B
+  30          #define _DDCCI_OPCODE_VCP_AUTOALIGN         0x7B
   31          #endif
   32          
   33          //--------------------------------------------------
@@ -62,7 +62,7 @@ line level    source
               #error "Instant Timer1 cannot be used when UART is supported"
               #endif
   47          
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 2   
 
   48          //--------------------------------------------------
   49          // Definitions DDCCI Protocol Items
@@ -126,7 +126,7 @@ line level    source
  107          BYTE g_pucDdcciRxBackBuf[16];
  108          
  109          BYTE g_ucDdcciCmdLengthBack;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 3   
 
  110          
  111          BYTE g_ucMcuDdcciRetry;
@@ -190,7 +190,7 @@ line level    source
               BYTE ScalerMcuIICGetAck(void);
               void ScalerMcuIICSendAck(void);
               void ScalerMcuIICSendNoAck(void);
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 4   
 
               BYTE ScalerMcuIICGetByte(void);
               BYTE ScalerMcuIICSendByte(BYTE ucValue);
@@ -254,7 +254,7 @@ line level    source
  227          void ScalerMcuDdcciSendData(BYTE *pucWriteArray)
  228          {
  229   1          WORD usTimeOutCnt = _DDCCI_TIMEOUT_LIMIT;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 5   
 
  230   1          BYTE ucDdcciCount = 0;
  231   1      
@@ -318,7 +318,7 @@ line level    source
  289          //--------------------------------------------------
  290          // Description  : Get InputPort by checking Active DDC Channel for Ddccci
  291          // Input Value  : None
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 6   
 
  292          // Output Value : InputPort
  293          //--------------------------------------------------
@@ -382,7 +382,7 @@ line level    source
               #elif(((_D3_INPUT_PORT_TYPE != _D3_NO_PORT) && (_D3_DDC_CHANNEL_SEL == _DDC2)) ||\
                     ((_D3_INPUT_PORT_TYPE == _D3_DUAL_DVI_PORT) && (_D4_DDC_CHANNEL_SEL == _DDC2)))
                           ucInput = _D3_INPUT_PORT;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 7   
 
               #elif(((_D4_INPUT_PORT_TYPE != _D4_NO_PORT) && (_D4_DDC_CHANNEL_SEL == _DDC2)) ||\
                     ((_D4_INPUT_PORT_TYPE == _D4_DUAL_DVI_PORT) && (_D5_DDC_CHANNEL_SEL == _DDC2)))
@@ -446,7 +446,7 @@ line level    source
                           ucInput = _D4_INPUT_PORT;
               #elif((_D5_INPUT_PORT_TYPE != _D5_NO_PORT) && (_D5_DDC_CHANNEL_SEL == _DDC5))
                           ucInput = _D5_INPUT_PORT;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 8   
 
               #endif
  417   2                  break;
@@ -510,7 +510,7 @@ line level    source
                               // Ignore SMBUS byte count.
                               g_ucDdcciCountEXINT--;
                           }
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 9   
 
               #endif
  478   3      
@@ -574,7 +574,7 @@ line level    source
  535   4                      MCU_FF2A_IIC_IRQ_CONTROL2 &= ~_BIT5;
  536   4      
  537   4                      g_bSrcReadDdcciAlready = _FALSE;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 10  
 
  538   4      
  539   4      #if((_OGC_SUPPORT == _ON) || (_OCC_SUPPORT == _ON) || (_OGC_DICOM_SUPPORT == _ON))
@@ -586,30 +586,30 @@ line level    source
  545   4      #endif
  546   4      
  547   4      #if  _Def_AutoAlign_Type==1
- 548   4                                      if((pucReadArray[3] == _DDCCI_OPCODE_VCP_AUTOALIGN)&& (pucReadArray[2] == 0x03))
- 549   4                                      {
- 550   5                                              ScalerMcuDdcciHoldScl_EXINT1();
- 551   5                                      }
- 552   4                                      
- 553   4                                      // 因为工具没有检测checksum，所以要加一个检测
- 554   4                                      if((pucReadArray[3] == 0xfe))
- 555   4                                      {
- 556   5                                              BYTE checksum = 0xC1;
- 557   5                                              BYTE i;
- 558   5                                              checksum = checksum^pucReadArray[1];
- 559   5                                              checksum = checksum^pucReadArray[2];
+ 548   4              if((pucReadArray[3] == _DDCCI_OPCODE_VCP_AUTOALIGN)&& (pucReadArray[2] == 0x03))
+ 549   4              {
+ 550   5                ScalerMcuDdcciHoldScl_EXINT1();
+ 551   5              }
+ 552   4              
+ 553   4              // 因为工具没有检测checksum，所以要加一个检测
+ 554   4              if((pucReadArray[3] == 0xfe))
+ 555   4              {
+ 556   5                BYTE checksum = 0xC1;
+ 557   5                BYTE i;
+ 558   5                checksum = checksum^pucReadArray[1];
+ 559   5                checksum = checksum^pucReadArray[2];
  560   5      
- 561   5                                              for(i = 0;i<(ucDdcciCmdLength-1);i++)
- 562   5                                              {
- 563   6                                                      checksum = checksum ^ pucReadArray[4+i];
- 564   6                                              }
+ 561   5                for(i = 0;i<(ucDdcciCmdLength-1);i++)
+ 562   5                {
+ 563   6                  checksum = checksum ^ pucReadArray[4+i];
+ 564   6                }
  565   5      
- 566   5                                              if(checksum ==0)
- 567   5                                              // Hold Scl for Display Calibration Process
- 568   5                                                      ScalerMcuDdcciHoldScl_EXINT1();
- 569   5                                              else                                            
- 570   5                                                      return _FAIL;
- 571   5                                      }
+ 566   5                if(checksum ==0)
+ 567   5                // Hold Scl for Display Calibration Process
+ 568   5                  ScalerMcuDdcciHoldScl_EXINT1();
+ 569   5                else            
+ 570   5                  return _FAIL;
+ 571   5              }
  572   4      #endif
  573   4      
  574   4      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
@@ -638,7 +638,7 @@ line level    source
  597          
  598          #if(_FLASH_CLK_SPEED == _FLASH_LOW_SPEED)
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 11  
 
               // Description  : Set Flash Clock Divider.
               // Input Value  : ClkDiv --> Flash Clock Divider
@@ -702,7 +702,7 @@ line level    source
                   PCON |= _BIT0;
               }
               #endif
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 12  
 
  662          
  663          #if(_LOW_SPEED_ADC_SUPPORT == _ON)
@@ -766,7 +766,7 @@ line level    source
                   else
                   {
                       usFrequency = (((DWORD)_INTERNAL_OSC_XTAL * 1000) / (0x01 << _IOSC_DIV)) / usCLKDiv / _PWM_DUT_RES
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 13  
 
              -OLUTION;
                   }
@@ -830,7 +830,7 @@ line level    source
  777   1      
  778   1      #if((_PWM2_EN == _ON) || (_PWM2_PSAV_EN == _ON) || (_PWM2_PDOW_EN == _ON))
               
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 14  
 
                   // Get PWM2 M and N Value
                   // PWM CLK divider = 2^M * (N + 1)
@@ -894,7 +894,7 @@ line level    source
               #endif
                   }
                   else
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 15  
 
                   {
                       usFrequency = (((DWORD)_INTERNAL_OSC_XTAL * 1000) / (0x01 << _IOSC_DIV)) / usCLKDiv / _PWM_DUT_RES
@@ -958,7 +958,7 @@ line level    source
               
               #endif // End of #if((_PWM4_EN == _ON) || (_PWM4_PSAV_EN == _ON) || (_PWM4_PDOW_EN == _ON))
  894   1      
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 16  
 
  895   1      #if((_PWM5_EN == _ON) || (_PWM5_PSAV_EN == _ON) || (_PWM5_PDOW_EN == _ON))
  896   1      
@@ -1022,7 +1022,7 @@ line level    source
  951   2                  ucMask = _BIT1;
  952   2                  break;
  953   2              case _PWM2:
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 17  
 
  954   2                  ucMask = _BIT2;
  955   2                  break;
@@ -1086,7 +1086,7 @@ line level    source
 1013   1          else
 1014   1          {
 1015   2              // Set limit for Pwm frequency
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 18  
 
 1016   2              if(usFrequency < _PWM_PSPD_MODE_FREQ_LOW_BOUND)
 1017   2              {
@@ -1150,7 +1150,7 @@ line level    source
 1075   2      #endif
 1076   2          }
 1077   1      #endif
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 19  
 
 1078   1      
 1079   1          // Check if PWM clk is M2PLL or IOSC
@@ -1214,7 +1214,7 @@ line level    source
                           MCU_FF3F_PWM1_N_LSB = (BYTE)usPWM_N;
                           MCU_FF49_PWM_CK |= _BIT1;
               
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 20  
 
                           break;
               #endif
@@ -1278,7 +1278,7 @@ line level    source
 1196          // Description  : 5us Delay Calculation
 1197          // Input Value  : Clock --> _M2PLL_CLK/_IOSC_CLK
 1198          // Output Value : ucValue --> N
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 21  
 
 1199          //--------------------------------------------------
 1200          void ScalerMcu5usDelayCalc(EnumClkSel enumClock)
@@ -1342,7 +1342,7 @@ line level    source
 1240   1      }
 1241          
 1242          #if(_SW_IIC_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 22  
 
               //--------------------------------------------------
               // Description  : Software IIC Start
@@ -1406,7 +1406,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Software IIC Get Acknowledge
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 23  
 
               // Input Value  : None
               // Output Value : ucAck --> 0: Ack / 1: Nack
@@ -1470,7 +1470,7 @@ line level    source
               // Input Value  : None
               // Output Value : ucValue --> Received Byte
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 24  
 
               #pragma save
               #pragma OT(8)
@@ -1534,7 +1534,7 @@ line level    source
                       PCB_SW_IIC_SCL_SET();
               
                       SW_IIC_DELAY_TIME();
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 25  
 
               
                       PCB_SW_IIC_SCL_CLR();
@@ -1598,7 +1598,7 @@ line level    source
                           }
                           else
                           {
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 26  
 
                               if(ScalerMcuIICSendByte((BYTE)(ulSubAddr)) == _FAIL)
                               {
@@ -1662,7 +1662,7 @@ line level    source
                       return _FAIL;
                   }
               
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 27  
 
                   if(ucSubAddrLength != 0)
                   {
@@ -1726,7 +1726,7 @@ line level    source
                       if(ScalerMcuIICSendByte(*pucWriteArray++) == _FAIL)
                       {
                           return _FAIL;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 28  
 
                       }
                   }
@@ -1790,7 +1790,7 @@ line level    source
 1672   1          MCU_FF59_I2CM_STR0 = _HW_IIC_FTPC;
 1673   1      
 1674   1          // Set STA setup time period count
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 29  
 
 1675   1          MCU_FF5A_I2CM_STR1 = _HW_IIC_STA_SUGPIO_C;
 1676   1      
@@ -1854,7 +1854,7 @@ line level    source
 1734   1          BYTE ucTimeOutCnt = _IIC_POLLING_TIME;
 1735   1      
 1736   1          ScalerPinshareHwIICPin(ucHwIICPinNum);
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 30  
 
 1737   1      
 1738   1          // Reset(Block) IIC module
@@ -1918,7 +1918,7 @@ line level    source
 1796   2      
 1797   2                  // Load First Sub-Address to IIC Buffer
 1798   2                  MCU_FF5E_I2CM_TD = ucSubAddress;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 31  
 
 1799   2      
 1800   2                  // Load Sub-Address to IIC Buffer
@@ -1982,7 +1982,7 @@ line level    source
 1857   2              return _FAIL;
 1858   2          }
 1859   1      
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 32  
 
 1860   1          ScalerPinshareHwIICPin(ucHwIICPinNum);
 1861   1      
@@ -2046,7 +2046,7 @@ line level    source
 1919   2                  MCU_FF5E_I2CM_TD = (BYTE)(usSubAddr);
 1920   2      
 1921   2                  // Load Slave Address to receive data
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 33  
 
 1922   2                  MCU_FF5E_I2CM_TD = ucSlaveAddr | _READ;
 1923   2      
@@ -2110,7 +2110,7 @@ line level    source
 1981   3                  DELAY_5US();
 1982   3              }
 1983   2          }
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 34  
 
 1984   1      
 1985   1          // Wait I2C Fifo Clk Switch to Mcu Clk
@@ -2174,7 +2174,7 @@ line level    source
 2042   1          // Enable IIC module
 2043   1          MCU_FF55_I2CM_CR0 |= _BIT7;
 2044   1      
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 35  
 
 2045   1          // Set 1 byte for FRSIB
 2046   1          MCU_FF57_I2CM_CR2 &= ~(_BIT1 | _BIT0);
@@ -2238,7 +2238,7 @@ line level    source
 2104   2      
 2105   2                  break;
 2106   2      
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 36  
 
 2107   2              case 2:
 2108   2      
@@ -2302,7 +2302,7 @@ line level    source
 2166   5                          MCU_FF57_I2CM_CR2 &= ~_BIT6;
 2167   5      
 2168   5                          return _FAIL;
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 37  
 
 2169   5                      }
 2170   4                      else
@@ -2366,7 +2366,7 @@ line level    source
 2228   4                      {
 2229   5                          DebugMessageScaler("- IIC Write Time Out: Burst Mode", 0xA3);
 2230   5      
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 38  
 
 2231   5                          // Reset(Block) IIC module
 2232   5                          MCU_FF55_I2CM_CR0 &= ~_BIT7;
@@ -2430,7 +2430,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Write data to the selected device by UART
               // Input Value  : ucValue --> Data to be send
-C51 COMPILER V8.12   SCALERCOMMONMCU                                                       09/16/2026 20:27:53 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONMCU                                                   09/18/2026 20:38:41 PAGE 39  
 
               // Output Value : Write result (Fail/Success)
               //--------------------------------------------------
@@ -2474,7 +2474,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   3028    ----
+   CODE SIZE        =   3114    ----
    CONSTANT SIZE    =     18    ----
    XDATA SIZE       =    164      53
    PDATA SIZE       =   ----    ----

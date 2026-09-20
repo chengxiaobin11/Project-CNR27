@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_DUALLINKDVI                                             09/16/2026 20:28:20 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/18/2026 20:39:12 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_DUALLINKDVI
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DUALLINKDVI
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_DualLinkDVI.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DualLinkDVI.c LARGE O
-                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
-                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
-                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
-                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
-                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
-                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
-                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
-                    -RL6432_Series_DualLinkDVI.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_DualLinkDVI.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DualLinkDVI.c LARG
+                    -E OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kerne
+                    -l\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scaler
+                    -Function\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel
+                    -\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common
+                    -\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\H
+                    -eader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fac
+                    -tory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proje
+                    -ct\RL6432_Series_DualLinkDVI.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_DualLinkDVI.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_D2_INPUT_PORT_TYPE == _D2_DUAL_DVI_PORT)
               //--------------------------------------------------
-C51 COMPILER V8.12   RL6432_SERIES_DUALLINKDVI                                             09/16/2026 20:28:20 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/18/2026 20:39:12 PAGE 2   
 
               // Description  : Get Whehter Current Mode is Dual DVI Mode
               // Input Value  : None

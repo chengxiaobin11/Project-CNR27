@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_DPRX0_INT
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DPRX0_INT
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_DPRx0_INT.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DPRx0_INT.c LARGE OPT
-                    -IMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sys
-                    -tem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunct
-                    -ion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scal
-                    -er\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\
-                    -Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header
-                    -;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\
-                    -Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL
-                    -6432_Series_DPRx0_INT.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_DPRx0_INT.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DPRx0_INT.c LARGE 
+                    -OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\
+                    -System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFu
+                    -nction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\S
+                    -caler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\L
+                    -ib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Hea
+                    -der;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Facto
+                    -ry\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project
+                    -\RL6432_Series_DPRx0_INT.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_DPRx0_INT.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          void ScalerDpRx0IntHandler_EXINT0(void);
   47          void ScalerDpRx0Tp1SetPhy_EXINT0(EnumDpNFCodeRef enumDpNFCodeRef);
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 2   
 
   48          void ScalerDpRx0Tp2SetPhy_EXINT0(void);
   49          
@@ -126,7 +126,7 @@ line level    source
  105   3                  if(((ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x11) & _BIT0) == 0x00) &&
  106   3                     (ScalerDpRx0GetDpcdBitInfo_EXINT0(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT0) &&
  107   3                     (ScalerDpRx0DFECheck_EXINT0() == _FALSE))
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 3   
 
  108   3                  {
  109   4                      ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, 0x00);
@@ -190,7 +190,7 @@ line level    source
  163   3                  {
  164   4                      // DP Power Normal
  165   4                      if(GET_DP_RX0_BACKUP_PD_LINK_STATUS_FLG() == _TRUE)
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 4   
 
  166   4                      {
  167   5                          ScalerDpRx0SetDpcdValue_EXINT0(0x00, 0x02, 0x02, g_pucDpRx0LinkStatusBackup_INT[0]);
@@ -254,7 +254,7 @@ line level    source
  222   4                      ScalerSetBit_EXINT(PB_63_HDCP_OTHER, ~_BIT7, _BIT7);
  223   4                      ScalerSetBit_EXINT(PB_63_HDCP_OTHER, ~_BIT7, 0x00);
  224   4                  }
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 5   
 
  225   3      
  226   3      #if(_WD_TIMER_INT_SUPPORT == _ON)
@@ -318,7 +318,7 @@ line level    source
                       }
               #endif
  285   2      
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 6   
 
  286   2      #if(_AUDIO_SUPPORT == _ON)
  287   2              // ---------------------------------
@@ -382,7 +382,7 @@ line level    source
  343   3              }
  344   2      #endif
  345   2          }
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 7   
 
  346   1      
  347   1          ScalerSetByte_EXINT(PB7_C1_DPCD_ADDR_PORT_H, g_pucDpRx0Backup[0]);
@@ -446,7 +446,7 @@ line level    source
  405   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT4, _BIT4);
  406   3      
  407   3                      // [0] Enable Lane0 CDR_en
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 8   
 
  408   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT0, _BIT0);
  409   3      
@@ -510,7 +510,7 @@ line level    source
  467   3                      ScalerSetBit_EXINT(P1D_2B_KOFFSET_07, ~_BIT6, _BIT6);
  468   3                  }
  469   2                  else if(GET_DP_RX0_PCB_LANE0_MAPPING() == _DP_SCALER_LANE1)
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 9   
 
  470   2                  {
  471   3                      // [5] Enable Lane1 Rx_en
@@ -574,7 +574,7 @@ line level    source
  529   3      
  530   3                      // [2] Enable Lane2 CDR_en
  531   3                      ScalerSetBit_EXINT(P1D_1A_CMU_00, ~_BIT2, _BIT2);
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 10  
 
  532   3      
  533   3                      // [6] reg_en_ana_cdr[2] = 1 --> Enable Lane2 Analog CDR
@@ -638,7 +638,7 @@ line level    source
                           break;
               
                       case _DP_FOUR_LANE:
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 11  
 
                       default:
               
@@ -702,7 +702,7 @@ line level    source
  651   2              ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~_BIT3, 0x00);
  652   2      
  653   2              // Analog CDR Auto FLD Counter
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 12  
 
  654   2              // ref_conuter = 125
  655   2              // cdr_counter = 250
@@ -766,7 +766,7 @@ line level    source
  713   2              // [7] reg_sel_CDR_cp = 0 --> Disable CDR Loop's CP (1nF)
  714   2              // [6:4] reg_sel_cdr_res = 3'b100 --> Analog CDR Rs = 4K
  715   2              // [3:0] reg_cdr_cp_in = 4'b0101 --> Analog CDR Icp = 16.5uA
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 13  
 
  716   2              ScalerSetByte_EXINT(P1D_31_ANA_CDR_06, 0x45);
  717   2      
@@ -830,7 +830,7 @@ line level    source
  771   1          //////////////
  772   1          // K Offset //
  773   1          //////////////
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 14  
 
  774   1      
  775   1          // [5] fore_off_autok = 1 --> Enable Foreground Calibration Auto Mode
@@ -894,7 +894,7 @@ line level    source
  833   1          ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
  834   1          ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
  835   1          ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 15  
 
  836   1          ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
  837   1      
@@ -958,7 +958,7 @@ line level    source
  893   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, _BIT7);
  894   1      
  895   1          // Delay Time us [5,150] Polling for Measure Done
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 16  
 
  896   1          for(g_ucDpRx0Temp = 0; g_ucDpRx0Temp <= 30; g_ucDpRx0Temp++)
  897   1          {
@@ -1022,7 +1022,7 @@ line level    source
  954   1          /////////////
  955   1          // Rx Misc //
  956   1          /////////////
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 17  
 
  957   1      
  958   1          // Digital PHY Block Power Normal
@@ -1086,7 +1086,7 @@ line level    source
 1016   1          ScalerSetBit_EXINT(P1D_12_ANA_CDR, ~_BIT1, _BIT1);
 1017   1      
 1018   1          if(g_ucDpRx0LinkRate == _DP_LINK_HBR2)
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 18  
 
 1019   1          {
 1020   2              // Enable Vth/LE/Tap0~4
@@ -1150,7 +1150,7 @@ line level    source
 1078   2              ScalerSetByte_EXINT(P1D_A1_L0_DFE_EN_2, 0x00);
 1079   2              ScalerSetByte_EXINT(P1D_B1_L1_DFE_EN_2, 0x00);
 1080   2              ScalerSetByte_EXINT(P1D_C1_L2_DFE_EN_2, 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 19  
 
 1081   2              ScalerSetByte_EXINT(P1D_D1_L3_DFE_EN_2, 0x00);
 1082   2          }
@@ -1214,7 +1214,7 @@ line level    source
 1134   3                  // [7] DP_SIG_DET_EN = 0 -> Disable Signal Detection
 1135   3                  ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~_BIT7, 0x00);
 1136   3      
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 20  
 
 1137   3                  break;
 1138   3              }
@@ -1278,7 +1278,7 @@ line level    source
 1191   2              switch(g_ucDpRx0LaneCount)
 1192   2              {
 1193   3                  case _DP_FOUR_LANE:
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 21  
 
 1194   3      
 1195   3                      // Lane3 VCO Adjust
@@ -1342,7 +1342,7 @@ line level    source
 1252   1          DELAY_45US_EXINT();
 1253   1      
 1254   1          if(g_ucDpRx0LinkRate <= _DP_LINK_HBR)
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 22  
 
 1255   1          {
 1256   2              // Set Vth Min = 0
@@ -1406,7 +1406,7 @@ line level    source
 1314   1      
 1315   1          /////////////////
 1316   1          // DFE Setting //
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 23  
 
 1317   1          /////////////////
 1318   1      
@@ -1470,7 +1470,7 @@ line level    source
 1376   1      
 1377   1          // [7] reg_auto_mode = 1'b1 --> FLD Auto Mode
 1378   1          // [4] reg_adp_eq_off = 1'b0 --> Enable Analog CDR DFE Adaptation
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 24  
 
 1379   1          // [0] reg_cp_adj_en = 1'b1 --> Enable Adjust Icp When Tracking
 1380   1          ScalerSetBit_EXINT(P1D_2C_ANA_CDR_01, ~(_BIT7 | _BIT4 | _BIT0), (_BIT7 | _BIT0));
@@ -1534,7 +1534,7 @@ line level    source
 1438   2              g_pucDpRx0LEMax[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
 1439   2      
 1440   2              // Read Back Tap1 Max
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 25  
 
 1441   2              ScalerSetBit_EXINT(P1D_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), _BIT2);
 1442   2              g_pucDpRx0Tap1Max[2] = (ScalerGetByte_EXINT(P1D_F3_COEF_4) & 0x1F);
@@ -1598,7 +1598,7 @@ line level    source
 1496   3                  // Delay Time us [85,x] Waiting for DFE Adaptation
 1497   3                  DELAY_XUS_EXINT(85);
 1498   3      
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 26  
 
 1499   3                  // Stop To Record Tap0 Max/Min
 1500   3                  ScalerSetBit_EXINT(P1D_F2_COEF_3, ~_BIT0, 0x00);
@@ -1662,7 +1662,7 @@ line level    source
 1558   2      
 1559   2              // Read Back Tap0
 1560   2              ScalerSetByte_EXINT(P1D_F0_COEF_1, 0x01);
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 27  
 
 1561   2      
 1562   2              // Select to Lane0
@@ -1726,7 +1726,7 @@ line level    source
 1620   3                  ScalerSetBit_EXINT(P1D_CA_L2_INIT_8, ~_BIT0, 0x00);
 1621   3              }
 1622   2      
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 28  
 
 1623   2              if(pucTap0[3] > 15)
 1624   2              {
@@ -1790,7 +1790,7 @@ line level    source
 1682   2          }
 1683   1      
 1684   1          // [7] reg_auto_mode = 1'b0 --> FLD Manual Mode
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 29  
 
 1685   1          // [6] reg_adp_en_manual = 1'b1 --> Enable CDR Clock
 1686   1          // [5] reg_cp_en_manual = 1'b0 --> CDR Open Loop
@@ -1854,7 +1854,7 @@ line level    source
 1743   1          // [4:0] DP_XTAL_CYCLE = 5'b00011 -> XTAL Counter Cycles = 1000
 1744   1          ScalerSetBit_EXINT(PB_50_DP_SIG_DET_0, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _BIT
              -1 | _BIT0));
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 30  
 
 1745   1      
 1746   1          // [1:0] freqdet_lane_sel = 2'b00 -> Lane0
@@ -1918,12 +1918,12 @@ line level    source
 1803          #endif
 1804          
 1805          #endif // End of #if(_D0_DP_EXIST == _ON)
-C51 COMPILER V8.12   RL6432_SERIES_DPRX0_INT                                               09/16/2026 20:28:16 PAGE 31  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPRX0_INT                                           09/18/2026 20:39:08 PAGE 31  
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   4386    ----
+   CODE SIZE        =   4473    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----      12
    PDATA SIZE       =   ----    ----

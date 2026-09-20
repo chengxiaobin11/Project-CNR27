@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONIOSC                                                      09/16/2026 20:27:52 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONIOSC                                                  09/18/2026 20:38:41 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONIOSC
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONIOSC
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonIOSC.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonIOSC.c LARGE OPTIMIZE(9
-                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
-                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
-                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
-                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
-                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
-                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
-                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerCom
-                    -monIOSC.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonIOSC.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonIOSC.c LARGE OPTIMIZ
+                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
+                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
+                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
+                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
+                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
+                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
+                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Scaler
+                    -CommonIOSC.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonIOSC.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          
   47          //--------------------------------------------------
-C51 COMPILER V8.12   SCALERCOMMONIOSC                                                      09/16/2026 20:27:52 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONIOSC                                                  09/18/2026 20:38:41 PAGE 2   
 
   48          // Description  : Internal Oscillator Triming.
   49          // Input Value  : None
@@ -126,7 +126,7 @@ line level    source
  107   1          pData[0] = (ScalerGetBit(P6_A2_OSC_TRIM_CTRL2, (_BIT5 | _BIT4 | _BIT3)) >> 3) | (ScalerGetBit(P6_A2_OS
              -C_TRIM_CTRL2, (_BIT2 | _BIT1 | _BIT0)) << 3);
  108   1          pData[3] = ((pData[0] & 0x38) >> 3) | ((pData[0] & 0x07) << 3);
-C51 COMPILER V8.12   SCALERCOMMONIOSC                                                      09/16/2026 20:27:52 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONIOSC                                                  09/18/2026 20:38:41 PAGE 3   
 
  109   1      
  110   1          // Get target iosc cycle counter
@@ -181,7 +181,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    410    ----
+   CODE SIZE        =    440    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       1
    PDATA SIZE       =   ----    ----

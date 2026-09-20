@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERTMDSRX1_SEPTPHY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERTMDSRX1_SEPTPHY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerTMDSRx1_SeptPhy.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx1_SeptPhy.c LARGE OPTIMIZE(9,
-                    -SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Head
-                    -er;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\
-                    -Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL643
-                    -2_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.
-                    -\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\
-                    -RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) 
-                    -DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerTMDS
-                    -Rx1_SeptPhy.lst) OBJECT(.\Output\RL6432_Project\ScalerTMDSRx1_SeptPhy.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx1_SeptPhy.c LARGE OPTIMIZE
+                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
+                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
+                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
+                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
+                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
+                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
+                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerT
+                    -MDSRx1_SeptPhy.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerTMDSRx1_SeptPhy.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               void ScalerTMDSRx1PowerOffProc(void);
               void ScalerTMDSRx1TMDSVideoDetectEvent(void);
               
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 2   
 
               #if(_D1_HDMI_SUPPORT == _ON)
               bit ScalerTMDSRx1HdmiAviPixelRepInfoChanged(void);
@@ -126,7 +126,7 @@ line level    source
                   else if((enumDeonlyConfig & _DE_ONLY_ENABLE) == _DE_ONLY_ENABLE)
                   {
                       ScalerSetBit(P71_A7_TMDS_PWDCTL, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 3   
 
                   }
               
@@ -190,7 +190,7 @@ line level    source
               //--------------------------------------------------
               // Description  : TMDS video Detect Event
               // Input Value  : None
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 4   
 
               // Output Value : None
               //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTMDSRx1SpdInfoPacketDetect(bit bWait)
               {
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 5   
 
                   if(bWait == _WAIT)
                   {
@@ -318,7 +318,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTMDSRx1ScrambleStatusReset(void)
               {
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 6   
 
                   // Set Scramble Detect Manual Mode
                   ScalerSetBit(P71_38_HDMI_CTRL_38, ~(_BIT4 | _BIT2 | _BIT1), 0x00);
@@ -382,7 +382,7 @@ line level    source
               
                   ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_D5_PORT_PAGE71_HDMI_SCDC_D5);
                   ScalerSetByte_EXINT(P71_3A_HDMI_CTRL_3A, g_stTmdsMacRxScdcInfoSet.pucIdstring[2]);
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 7   
 
               
                   ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_D6_PORT_PAGE71_HDMI_SCDC_D6);
@@ -446,7 +446,7 @@ line level    source
               
                       ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_E6_PORT_PAGE71_HDMI_SCDC_E6);
                       ScalerSetByte_EXINT(P71_3A_HDMI_CTRL_3A, g_stDrrHdmiAmdAupiInfo.ucScalerDeviceIdL);
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 8   
 
               
                       ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_E7_PORT_PAGE71_HDMI_SCDC_E7);
@@ -510,7 +510,7 @@ line level    source
                           ScalerTMDSRx1SwitchHdcpSlaveAddr();
                       }
               
-C51 COMPILER V8.12   SCALERTMDSRX1_SEPTPHY                                                 09/16/2026 20:27:40 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/18/2026 20:38:26 PAGE 9   
 
               #if(_DELL_HDMI_HPD_DDC_STYLE_SUPPORT == _ON)
                       g_ucTmdsD1DdcramNackStatus = ScalerSyncGetDdcForceNackStatus(_D1_INPUT_PORT);

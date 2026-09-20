@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONSPI
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONSPI
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonSpi.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonSpi.c LARGE OPTIMIZE(9,
-                    -SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Head
-                    -er;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\
-                    -Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL643
-                    -2_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.
-                    -\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\
-                    -RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) 
-                    -DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerComm
-                    -onSpi.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonSpi.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonSpi.c LARGE OPTIMIZE
+                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
+                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
+                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
+                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
+                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
+                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
+                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerC
+                    -ommonSpi.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonSpi.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
                   _SPI0_RX_XRAM_ADDRESS_F300,
               } EnumSpi0RxXramAddress;
               
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               #pragma save
               #pragma OT(8)
               bit ScalerSpiData(bit bReadWrite, WORD usDataLength, BYTE *pucDataBuf)
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 3   
 
               {
                   BYTE ucIndex = 0;
@@ -190,7 +190,7 @@ line level    source
               
                       if(bReadWrite == _WRITE)
                       {
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 4   
 
                           // Set data
                           for(ucIndex = 0; ucIndex < ucCommandLength; ucIndex++)
@@ -254,7 +254,7 @@ line level    source
                   BYTE ucTimeOut = _SPI_TRANSACTION_FINISH_COUNT;
               
                   if((bReadWrite == _READ) && (usDataLength > _SPI0_RX_BUFFER_MAX_LENGTH))
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 5   
 
                   {
                       DebugMessageScaler("SPI Read DataLength > _SPI0_RX_BUFFER_MAX_LENGTH", usDataLength);
@@ -318,7 +318,7 @@ line level    source
                       }
               
                       // Start SPI transaction
-C51 COMPILER V8.12   SCALERCOMMONSPI                                                       09/16/2026 20:28:01 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/18/2026 20:38:48 PAGE 6   
 
                       ScalerSetByte(P22_A0_SPI_TRANSACTION_EN, 0x01);
               

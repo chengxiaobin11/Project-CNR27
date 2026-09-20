@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONDEBUG
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDEBUG
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonDebug.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c LARGE OPTIMIZE(
-                    -9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\He
-                    -ader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Li
-                    -b\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6
-                    -432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header
-                    -;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Use
-                    -r\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header
-                    -) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerCo
-                    -mmonDebug.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonDebug.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c LARGE OPTIMI
+                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
+                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
+                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
+                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
+                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
+                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
+                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Scale
+                    -rCommonDebug.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonDebug.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          
   46          #if(_DEBUG_MESSAGE_SUPPORT == _ON)
               #warning "NOTE: DEBUG MESSAGE SUPPORT ON!!"
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 2   
 
               #endif
   49          
@@ -126,7 +126,7 @@ line level    source
  106          void ScalerDebugIntProc_EXINT1(void);
  107          void ScalerDebug(void);
  108          
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 3   
 
  109          #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
               #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
@@ -190,7 +190,7 @@ line level    source
                   BYTE ucCheckSum = 0;
                   BYTE ucIndex = 0;
               
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 4   
 
                   if(g_pucDdcciData[0] == 0x55)
                   {
@@ -254,7 +254,7 @@ line level    source
                                       }
                                       while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 5   
 
                                   }
                                   else if(g_pucDdcciData[1] == 0xA5)
@@ -318,7 +318,7 @@ line level    source
              -geBUF[1] + g_pucDebugMessageBUF[2] + g_pucDebugMessageBUF[3];
               
                                           g_pucDebugMessageBUF[0] = ucCheckSum + ucIndex; // Save checksum for all strin
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 6   
 
              -g and data
                                           MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[0]; // Checksum for all string an
@@ -382,7 +382,7 @@ line level    source
                                   while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUNT));
               
                                   g_bDebugMessageEven = 0;
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 7   
 
                                   g_bFwHalt = 0;
                                   MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xBF;
@@ -446,7 +446,7 @@ line level    source
               
                           return _TRUE;
               #endif
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 8   
 
               
               #if(((_D2_TMDS_SUPPORT == _ON) || (_D2_INPUT_PORT_TYPE == _D2_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
@@ -510,7 +510,7 @@ line level    source
  465   2              if((ucTempBuf & 0x04) != 0x00)
  466   2              {
  467   3                  while((MCU_FF29_IIC_STATUS2 & _BIT1) == 0)
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 9   
 
  468   3                  {
  469   4      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
@@ -574,7 +574,7 @@ line level    source
                               if(g_pucDdcciData[0] == 0x55)
                               {
                                   if(g_pucDdcciData[1] == 0x00)
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 10  
 
                                   {
                                       g_usFilterPro = 0;
@@ -638,7 +638,7 @@ line level    source
  588          void ScalerDebug(void)
  589          {
  590   1          BYTE ucHalt = 0;
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 11  
 
  591   1          BYTE ucCnt = 0;
  592   1          BYTE ucResult = 0;
@@ -702,7 +702,7 @@ line level    source
              -_SYS_EEPROM_IIC);
  647   6      #elif((_EEPROM_TYPE == _EEPROM_24WC64) || (_EEPROM_TYPE == _EEPROM_CAT24M01) || (_EEPROM_TYPE == _EEPROM_2
              -4256))
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 12  
 
                                           ScalerMcuHwIICRead(g_pucDdcciData[2], 2, ((g_pucDdcciData[4] << 8) & 0xFF00) +
              - (((WORD)g_pucDdcciData[1]) & 0x00FF), 1, &ucResult, _PCB_SYS_EEPROM_IIC);
@@ -766,7 +766,7 @@ line level    source
                                       g_bDebugMessageEven = 0;
                                       break;
               #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 13  
 
  703   5      
  704   5                          case 0x3A:
@@ -830,7 +830,7 @@ line level    source
  759   5                              switch(g_pucDdcciData[0] & 0x0F) // Write command
  760   5                              {
  761   6                                  case 0x00:
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 14  
 
  762   6      
  763   6                                      // ScalerSetByte(g_pucDdcciData[2], g_pucDdcciData[1]);
@@ -894,7 +894,7 @@ line level    source
  815   7      
  816   7      #endif  // End of #if(_PCB_SYS_EEPROM_IIC == _SW_IIC_PIN_GPIO)
  817   7      
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 15  
 
  818   7                                          // Enable EEPROM Write Protect
  819   7                                          PCB_EEPROM_WRITE_PROTECT(_EEPROM_WP_ENABLE);
@@ -958,7 +958,7 @@ line level    source
               #endif
  875   4                  }
  876   3              }
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 16  
 
  877   2              while(ucHalt != 0);
  878   2          }
@@ -1022,7 +1022,7 @@ line level    source
               }
               #endif // End of #if((_DUAL_BANK_SUPPORT == _ON) || (_DIGITAL_SIGNATURE_SUPPORT == _ON))
  938          
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 17  
 
  939          //--------------------------------------------------
  940          // Description  : Scaler Debug Send Data
@@ -1086,7 +1086,7 @@ line level    source
  998   2          }
  999   1      
 1000   1          MCU_FF2A_IIC_IRQ_CONTROL2 &= ~_BIT5;
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 18  
 
 1001   1      
 1002   1      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
@@ -1150,7 +1150,7 @@ line level    source
 1059   1          {
 1060   2              pucDdcciOutData[2 + ucIndex] = ScalerGetByte(usAddress);
 1061   2              ucChecksum += pucDdcciOutData[2 + ucIndex];
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 19  
 
 1062   2              if(bAutoIncrease == _TRUE)
 1063   2              {
@@ -1214,7 +1214,7 @@ line level    source
 1121   2              {
 1122   3                  usAddress++;
 1123   3              }
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 20  
 
 1124   2          }
 1125   1      
@@ -1278,7 +1278,7 @@ line level    source
 1183   2      
 1184   2              // Dual bank Type
 1185   2              pucDdcciOutData[3] = 0xFF;
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 21  
 
 1186   2      
 1187   2              // Active User(1)
@@ -1342,7 +1342,7 @@ line level    source
                   ScalerFlashErasePage(_DUAL_BANK_BUNDLE_VERSION_LOCATE_BANK, _DUAL_BANK_BUNDLE_VERSION_LOCATE_SECTOR);
               
                   // Recovery sign flag
-C51 COMPILER V8.12   SCALERCOMMONDEBUG                                                     09/16/2026 20:27:44 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 22  
 
                   if(ScalerFlashWrite(_DUAL_BANK_BUNDLE_VERSION_LOCATE_BANK, ((WORD)(_DUAL_BANK_BUNDLE_VERSION_LOCATE_SE
              -CTOR << 12)), _DUAL_BANK_BUNDLE_VERSION_COUNT, &g_pucDdcciData[3]) == _FALSE)
@@ -1388,7 +1388,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1564    ----
+   CODE SIZE        =   1583    ----
    CONSTANT SIZE    =     32    ----
    XDATA SIZE       =     34     118
    PDATA SIZE       =   ----    ----

@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014KEY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014KEY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014Key.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014Key.c LARGE OPTIMIZE(9,SPEED) INCDIR
-                    -(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\S
-                    -caler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kern
-                    -el\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Comm
-                    -on\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User 
-                    -Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\H
-                    -eader;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJE
-                    -CT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014Key.lst) OBJECT(
-                    -.\Output\RL6432_Project\RTD2014Key.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014Key.c LARGE OPTIMIZE(9,SPEED) INC
+                    -DIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kerne
+                    -l\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\K
+                    -ernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_C
+                    -ommon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\Us
+                    -er Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factor
+                    -y\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PR
+                    -OJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014Key.lst) TABS
+                    -(2) OBJECT(.\Output\RL6432_Project\RTD2014Key.obj)
 
 line level    source
 
@@ -39,17 +39,17 @@ line level    source
   22          code char KeyFlag[] = {"This is Keyboardflag Flag!"}; 
   23          BYTE code KeyDefault[10] = 
   24          {
-  25                  POWER_KEY,
-  26                  MENU_KEY,       
-  27                  EXIT_KEY,
-  28                  RIGHT_KEY,
-  29                  LEFT_KEY,
-  30                  
-  31                  POWER_REG,
-  32                  MENU_REG,       
-  33                  EXIT_REG,
-  34                  RIGHT_REG,
-  35                  LEFT_REG,
+  25            POWER_KEY,
+  26            MENU_KEY, 
+  27            EXIT_KEY,
+  28            RIGHT_KEY,
+  29            LEFT_KEY,
+  30            
+  31            POWER_REG,
+  32            MENU_REG, 
+  33            EXIT_REG,
+  34            RIGHT_REG,
+  35            LEFT_REG,
   36          };
   37          
   38          //****************************************************************************
@@ -62,7 +62,7 @@ line level    source
   45          #define _POWER_KEY_MASK                             0x01
   46          #if 1//_DEF_OSD_KEY_2   KeyDefault和下面的对齐
   47          #define _MENU_KEY_MASK                              0x02
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 2   
 
   48          #define _EXIT_KEY_MASK                              0x04 
   49          #define _RIGHT_KEY_MASK                             0x08
@@ -101,7 +101,7 @@ line level    source
   82          #define _IR_CODE_KEY_EXIT                           0xF2FD
   83          
   84          
-  85          #define _IR_CODE_KEY_UP                                 0xB7FD
+  85          #define _IR_CODE_KEY_UP                           0xB7FD
   86          #define _IR_CODE_KEY_DOWN                           0xB2FD
   87          
   88          
@@ -109,13 +109,13 @@ line level    source
   90          #define _IR_CODE_KEY_MUTE                           0xA3FD
   91          #define _IR_CODE_KEY_SCALE                          0xA0FD
   92          
-  93          #define _IR_CODE_KEY_OK                                  0xB5FD
-  94          #define _IR_CODE_KEY_F1                                  0xEDFD
-  95          #define _IR_CODE_KEY_P                                   0xA1FD
-  96          #define _IR_CODE_KEY_F2                                  0xA2FD
+  93          #define _IR_CODE_KEY_OK                            0xB5FD
+  94          #define _IR_CODE_KEY_F1                            0xEDFD
+  95          #define _IR_CODE_KEY_P                             0xA1FD
+  96          #define _IR_CODE_KEY_F2                            0xA2FD
   97          
-  98          #define _IR_CODE_KEY_CHECK0                                                     0X02
-  99          #define _IR_CODE_KEY_CHECK1                                                     0XFD
+  98          #define _IR_CODE_KEY_CHECK0             0X02
+  99          #define _IR_CODE_KEY_CHECK1             0XFD
  100          
  101          #elif(_IR_PROTOCAL == _IR_SW_LGTV)
               
@@ -126,21 +126,21 @@ line level    source
               #define _IR_CODE_KEY_MENU                           0x43FB
               #define _IR_CODE_KEY_EXIT                           0x5BFB
               #define _IR_CODE_KEY_MUTE                           0x09FB
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 3   
 
               
               #define _IR_CODE_KEY_RIGHT                          0x02FB
               #define _IR_CODE_KEY_LEFT                           0x03FB
               
               
-              #define _IR_CODE_KEY_UP                                 0x00FB
+              #define _IR_CODE_KEY_UP                           0x00FB
               #define _IR_CODE_KEY_DOWN                           0x01FB
-              #define _IR_CODE_KEY_OK                                  0x44FB
+              #define _IR_CODE_KEY_OK                            0x44FB
               
-              #define _IR_CODE_KEY_F1                                  0xCEFB
-              #define _IR_CODE_KEY_F2                                  0xCCFB
+              #define _IR_CODE_KEY_F1                            0xCEFB
+              #define _IR_CODE_KEY_F2                            0xCCFB
               
-              //#define _IR_CODE_KEY_P                                 0x0000
+              //#define _IR_CODE_KEY_P                             0x0000
               
               
               #elif(_IR_PROTOCAL == _IR_SONY_B102P)
@@ -157,143 +157,143 @@ line level    source
               #define _IR_CODE_KEY_LEFT                           0x005A
               #define _IR_CODE_KEY_EXIT                           0x000A
               #elif(_IR_PROTOCAL == _IR_HHT_NEC)
-                      #define _IR_CODE_KEY_POWER                          0x09CA
-                      #define _IR_CODE_KEY_MUTE                           0x46CA
+                #define _IR_CODE_KEY_POWER                          0x09CA
+                #define _IR_CODE_KEY_MUTE                           0x46CA
               
-                      #define _IR_CODE_KEY_MENU                           0x0ECA
-                      #define _IR_CODE_KEY_RIGHT                          0x45CA
-                      #define _IR_CODE_KEY_LEFT                           0x0CCA
-                      #define _IR_CODE_KEY_EXIT                           0x52CA
-              
-              
-                      #define _IR_CODE_KEY_UP                                 0x0DCA
-                      #define _IR_CODE_KEY_DOWN                           0x5DCA
-              
-                      #define _IR_CODE_KEY_P                                   0x1BCA
+                #define _IR_CODE_KEY_MENU                           0x0ECA
+                #define _IR_CODE_KEY_RIGHT                          0x45CA
+                #define _IR_CODE_KEY_LEFT                           0x0CCA
+                #define _IR_CODE_KEY_EXIT                           0x52CA
               
               
-                      #define _IR_CODE_KEY_SOURCE                         0x1ECA
-                      #define _IR_CODE_KEY_SCALE                          0x17CA
+                #define _IR_CODE_KEY_UP                           0x0DCA
+                #define _IR_CODE_KEY_DOWN                           0x5DCA
               
-                      #define _IR_CODE_KEY_F1                                  0x1DCA
-                      #define _IR_CODE_KEY_F2                                  0x07CA
+                #define _IR_CODE_KEY_P                             0x1BCA
               
-                      #define _IR_CODE_KEY_OK                                  0xB2FD
+              
+                #define _IR_CODE_KEY_SOURCE                         0x1ECA
+                #define _IR_CODE_KEY_SCALE                          0x17CA
+              
+                #define _IR_CODE_KEY_F1                            0x1DCA
+                #define _IR_CODE_KEY_F2                            0x07CA
+              
+                #define _IR_CODE_KEY_OK                            0xB2FD
               #elif(_IR_PROTOCAL == _IR_HHT_DZ_X5_147)
-                      #define _IR_CODE_KEY_POWER                          0x8716
-                      #define _IR_CODE_KEY_MUTE                           0xC816
+                #define _IR_CODE_KEY_POWER                          0x8716
+                #define _IR_CODE_KEY_MUTE                           0xC816
               
-                      #define _IR_CODE_KEY_MENU                           0xB516
-                      #define _IR_CODE_KEY_RIGHT                          0x8E16
-                      #define _IR_CODE_KEY_LEFT                           0xBB16
-                      #define _IR_CODE_KEY_EXIT                           0x8916
+                #define _IR_CODE_KEY_MENU                           0xB516
+                #define _IR_CODE_KEY_RIGHT                          0x8E16
+                #define _IR_CODE_KEY_LEFT                           0xBB16
+                #define _IR_CODE_KEY_EXIT                           0x8916
               
               
-                      #define _IR_CODE_KEY_UP                                 0x8416
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 4   
+                #define _IR_CODE_KEY_UP                           0x8416
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 4   
 
-                      #define _IR_CODE_KEY_DOWN                           0x8D16
+                #define _IR_CODE_KEY_DOWN                           0x8D16
               
-                      #define _IR_CODE_KEY_P                                   0x8B16
+                #define _IR_CODE_KEY_P                             0x8B16
               
               
-                      #define _IR_CODE_KEY_SOURCE                         0xDC16
-                      #define _IR_CODE_KEY_SCALE                          0x8A16
+                #define _IR_CODE_KEY_SOURCE                         0xDC16
+                #define _IR_CODE_KEY_SCALE                          0x8A16
               
-                      #define _IR_CODE_KEY_F1                                  0xB416
-                      #define _IR_CODE_KEY_F2                                  0x8616
+                #define _IR_CODE_KEY_F1                            0xB416
+                #define _IR_CODE_KEY_F2                            0x8616
               
-                      #define _IR_CODE_KEY_OK                                  0xB216
+                #define _IR_CODE_KEY_OK                            0xB216
               #elif(_IR_PROTOCAL == _IR_TAISHUO_NEC)
-                      
-                      #define _IR_CODE_KEY_POWER                          0x52DF
-                      #define _IR_CODE_KEY_SOURCE                                             0x42DF
+                
+                #define _IR_CODE_KEY_POWER                          0x52DF
+                #define _IR_CODE_KEY_SOURCE             0x42DF
               
-                      #define _IR_CODE_KEY_OK                                                         0x4ADF
-                      #define _IR_CODE_KEY_UP                                 0x47DF
-                      #define _IR_CODE_KEY_DOWN                           0x4DDF
-                      #define _IR_CODE_KEY_RIGHT                          0x4BDF
-                      #define _IR_CODE_KEY_LEFT                           0x49DF
+                #define _IR_CODE_KEY_OK               0x4ADF
+                #define _IR_CODE_KEY_UP                           0x47DF
+                #define _IR_CODE_KEY_DOWN                           0x4DDF
+                #define _IR_CODE_KEY_RIGHT                          0x4BDF
+                #define _IR_CODE_KEY_LEFT                           0x49DF
               
-                      #define _IR_CODE_KEY_EXIT                           0x53DF
-                      //#define _IR_CODE_KEY_AUTO_POWER                     0x48DF
+                #define _IR_CODE_KEY_EXIT                           0x53DF
+                //#define _IR_CODE_KEY_AUTO_POWER                     0x48DF
               
-                      #define _IR_CODE_KEY_MENU                           0x0ADF
-                                      
-                      #define _IR_CODE_KEY_F1                                         0x02DF 
-                      #define _IR_CODE_KEY_F2                                         0x09DF
+                #define _IR_CODE_KEY_MENU                           0x0ADF
+                    
+                #define _IR_CODE_KEY_F1                     0x02DF 
+                #define _IR_CODE_KEY_F2                     0x09DF
               
-                      #define _IR_CODE_KEY_MUTE                                                       0x48DF
-                      #define _IR_CODE_KEY_SCALE                                                      0x8A16
+                #define _IR_CODE_KEY_MUTE             0x48DF
+                #define _IR_CODE_KEY_SCALE              0x8A16
               #elif(_IR_PROTOCAL == _IR_MXDZ_NEC)
-                      #define _IR_CODE_KEY_POWER                          0x15EA
-                      /////eco
-                      #define _IR_CODE_KEY_SOURCE                                             0x11EE
-                      #define _IR_CODE_KEY_MUTE                                                       0x12ED
-                      
-                      #define _IR_CODE_KEY_OK                                                         0x37C8
-                      #define _IR_CODE_KEY_UP                                 0x4CB3
-                      #define _IR_CODE_KEY_DOWN                           0x4DB2
-                      //40bf 4Eb1     
-                      #define _IR_CODE_KEY_RIGHT                          0x4EB1
-                      #define _IR_CODE_KEY_LEFT                           0x4FB0
-                      
-                      #define _IR_CODE_KEY_F1                                                         0X14EB//0x22DD 
-                      #define _IR_CODE_KEY_F2                                                         0X13EC
+                #define _IR_CODE_KEY_POWER                          0x15EA
+                /////eco
+                #define _IR_CODE_KEY_SOURCE             0x11EE
+                #define _IR_CODE_KEY_MUTE             0x12ED
+                
+                #define _IR_CODE_KEY_OK               0x37C8
+                #define _IR_CODE_KEY_UP                           0x4CB3
+                #define _IR_CODE_KEY_DOWN                           0x4DB2
+                //40bf 4Eb1   
+                #define _IR_CODE_KEY_RIGHT                          0x4EB1
+                #define _IR_CODE_KEY_LEFT                           0x4FB0
+                
+                #define _IR_CODE_KEY_F1               0X14EB//0x22DD 
+                #define _IR_CODE_KEY_F2               0X13EC
               
-                      #define _IR_CODE_KEY_EXIT                           0x3CC3
-                      #define _IR_CODE_KEY_EXIT2                                                      0x38C7
-                      #define _IR_CODE_KEY_MENU                           0x22DD
-                                              
+                #define _IR_CODE_KEY_EXIT                           0x3CC3
+                #define _IR_CODE_KEY_EXIT2              0x38C7
+                #define _IR_CODE_KEY_MENU                           0x22DD
                       
-                      //#define _IR_CODE_KEY_SCALE                                                    0x3CC3
+                
+                //#define _IR_CODE_KEY_SCALE              0x3CC3
               #elif(_IR_PROTOCAL == _IR_SQY_YS14C)
-                      #define _IR_CODE_KEY_POWER                          0xE31C
-                      
-                      #define _IR_CODE_KEY_AUDIO                                                      0xAB54
-                      #define _IR_CODE_KEY_ECO                                                        0xA55A
-                      
-                      
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 5   
+                #define _IR_CODE_KEY_POWER                          0xE31C
+                
+                #define _IR_CODE_KEY_AUDIO              0xAB54
+                #define _IR_CODE_KEY_ECO              0xA55A
+                
+                
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 5   
 
-                      #define _IR_CODE_KEY_OK                                                         0xF906
-                      #define _IR_CODE_KEY_UP                                 0xE51A
-                      #define _IR_CODE_KEY_DOWN                           0xB748      
-                      #define _IR_CODE_KEY_RIGHT                          0xF807
-                      #define _IR_CODE_KEY_LEFT                           0xB847
-                      
+                #define _IR_CODE_KEY_OK               0xF906
+                #define _IR_CODE_KEY_UP                           0xE51A
+                #define _IR_CODE_KEY_DOWN                           0xB748  
+                #define _IR_CODE_KEY_RIGHT                          0xF807
+                #define _IR_CODE_KEY_LEFT                           0xB847
+                
               
-                      #define _IR_CODE_KEY_MENU                                                       0X9A65
-                      #define _IR_CODE_KEY_EXIT                                                       0XF50A
-                      #define _IR_CODE_KEY_SOURCE                                                     0xE718
+                #define _IR_CODE_KEY_MENU               0X9A65
+                #define _IR_CODE_KEY_EXIT               0XF50A
+                #define _IR_CODE_KEY_SOURCE             0xE718
               
-                      #define _IR_CODE_KEY_MINUS                                                      0xB04F
-                      #define _IR_CODE_KEY_ADD                            0xB44B
-                      
-                      #define _IR_CODE_KEY_MUTE                                                       0xF708
+                #define _IR_CODE_KEY_MINUS              0xB04F
+                #define _IR_CODE_KEY_ADD                            0xB44B
+                
+                #define _IR_CODE_KEY_MUTE             0xF708
               
               #elif(_IR_PROTOCAL == _IR_SQY_XHK_0827)
-                      #define _IR_CODE_KEY_POWER                          0xDC
-                              
-                      #define _IR_CODE_KEY_AUDIO                                                      0xAB54
-                      #define _IR_CODE_KEY_ECO                                                        0xA55A
-                              
-                              
-                      #define _IR_CODE_KEY_OK                                                         0xCE
-                      #define _IR_CODE_KEY_UP                                 0xCA
-                      #define _IR_CODE_KEY_DOWN                           0xD2        
-                      #define _IR_CODE_KEY_RIGHT                          0x99
-                      #define _IR_CODE_KEY_LEFT                           0xC1
-                              
-                      
-                      #define _IR_CODE_KEY_MENU                                                       0X82
-                      #define _IR_CODE_KEY_EXIT                                                       0x95
-                      #define _IR_CODE_KEY_SOURCE                                                     0x88
-                      
-                      #define _IR_CODE_KEY_MINUS                                                      0x81
-                      #define _IR_CODE_KEY_ADD                            0x80
-                              
-                      #define _IR_CODE_KEY_MUTE                                                       0xF708
+                #define _IR_CODE_KEY_POWER                          0xDC
+                  
+                #define _IR_CODE_KEY_AUDIO              0xAB54
+                #define _IR_CODE_KEY_ECO              0xA55A
+                  
+                  
+                #define _IR_CODE_KEY_OK               0xCE
+                #define _IR_CODE_KEY_UP                           0xCA
+                #define _IR_CODE_KEY_DOWN                           0xD2  
+                #define _IR_CODE_KEY_RIGHT                          0x99
+                #define _IR_CODE_KEY_LEFT                           0xC1
+                  
+                
+                #define _IR_CODE_KEY_MENU               0X82
+                #define _IR_CODE_KEY_EXIT               0x95
+                #define _IR_CODE_KEY_SOURCE             0x88
+                
+                #define _IR_CODE_KEY_MINUS              0x81
+                #define _IR_CODE_KEY_ADD                            0x80
+                  
+                #define _IR_CODE_KEY_MUTE             0xF708
               
               
               #endif
@@ -318,14 +318,14 @@ line level    source
               #define _IR_CODE_KEY_EXIT                           0xF2FD
               #endif
  295          
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 6   
 
  296          #ifndef _IR_CODE_KEY_EXIT2
  297          #define _IR_CODE_KEY_EXIT2                           0x0000
  298          #endif
  299          
  300          #ifndef _IR_CODE_KEY_UP
-              #define _IR_CODE_KEY_UP                                 0xB7FD
+              #define _IR_CODE_KEY_UP                           0xB7FD
               #endif
  303          
  304          #ifndef _IR_CODE_KEY_DOWN
@@ -345,51 +345,51 @@ line level    source
               #endif
  319          
  320          #ifndef _IR_CODE_KEY_OK
-              #define _IR_CODE_KEY_OK                                  0xB5FD
+              #define _IR_CODE_KEY_OK                            0xB5FD
               #endif
  323          
  324          #ifndef _IR_CODE_KEY_F1
-              #define _IR_CODE_KEY_F1                                  0xEDFD
+              #define _IR_CODE_KEY_F1                            0xEDFD
               #endif
  327          
  328          #ifndef _IR_CODE_KEY_P
-              #define _IR_CODE_KEY_P                                   0xA1FD
+              #define _IR_CODE_KEY_P                             0xA1FD
               #endif
  331          
  332          #ifndef _IR_CODE_KEY_F2
-              #define _IR_CODE_KEY_F2                                  0xA2FD
+              #define _IR_CODE_KEY_F2                            0xA2FD
               #endif
  335          
  336          
  337          
  338          #ifndef _IR_CODE_KEY_CHECK0
-              #define _IR_CODE_KEY_CHECK0                                                     0X20
+              #define _IR_CODE_KEY_CHECK0             0X20
               #endif
  341          
  342          #ifndef _IR_CODE_KEY_CHECK1
-              #define _IR_CODE_KEY_CHECK1                                                     0XDF
+              #define _IR_CODE_KEY_CHECK1             0XDF
               #endif
  345          
  346          #ifndef _IR_CODE_KEY_MINUS
- 347          #define _IR_CODE_KEY_MINUS                                                      0X0F
+ 347          #define _IR_CODE_KEY_MINUS              0X0F
  348          #endif
  349          
  350          #ifndef _IR_CODE_KEY_ADD
- 351          #define _IR_CODE_KEY_ADD                                                        0X1F
+ 351          #define _IR_CODE_KEY_ADD              0X1F
  352          #endif
  353          
  354          #ifndef _IR_CODE_KEY_SETTING
- 355          #define _IR_CODE_KEY_SETTING                                            0X2F
+ 355          #define _IR_CODE_KEY_SETTING            0X2F
  356          #endif
  357          
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 7   
 
- 358          #ifndef _IR_CODE_KEY_AUDIO      
- 359          #define _IR_CODE_KEY_AUDIO                                                      0X3F
+ 358          #ifndef _IR_CODE_KEY_AUDIO  
+ 359          #define _IR_CODE_KEY_AUDIO              0X3F
  360          #endif
  361          
- 362          #ifndef _IR_CODE_KEY_ECO        
- 363          #define _IR_CODE_KEY_ECO                                                        0X4F
+ 362          #ifndef _IR_CODE_KEY_ECO  
+ 363          #define _IR_CODE_KEY_ECO              0X4F
  364          #endif
  365          
  366          
@@ -441,34 +441,34 @@ line level    source
               void UserGuangGanHandler(void)
               {
               
-              #define _DEF_GuangGan_Bank_20           0x90//0xD0
-              #define _DEF_GuangGan_Bank_21           0x10//0x08
-                      if(GET_OSD_GuangGan())
-                      {
-                              //BYTE back=g_ucGuangGan;
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 8   
+              #define _DEF_GuangGan_Bank_20   0x90//0xD0
+              #define _DEF_GuangGan_Bank_21   0x10//0x08
+                if(GET_OSD_GuangGan())
+                {
+                  //BYTE back=g_ucGuangGan;
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 8   
 
               #if 1
-                              WORD back1=PCB_ADKEY3();
-                              if(back1>_DEF_GuangGan_Bank_20)
-                                      back1=100;
-                              else 
-                              if(back1<=_DEF_GuangGan_Bank_21)
-                                      back1=0;
-                              else
-                                      back1=(back1-_DEF_GuangGan_Bank_21)*100/(_DEF_GuangGan_Bank_20-_DEF_GuangGan_Bank_21);
+                  WORD back1=PCB_ADKEY3();
+                  if(back1>_DEF_GuangGan_Bank_20)
+                    back1=100;
+                  else 
+                  if(back1<=_DEF_GuangGan_Bank_21)
+                    back1=0;
+                  else
+                    back1=(back1-_DEF_GuangGan_Bank_21)*100/(_DEF_GuangGan_Bank_20-_DEF_GuangGan_Bank_21);
               #else
-                              BYTE back1=(PCB_ADKEY3())*100/255;
-              #endif          
-                      //      DebugMessageOsd("3.back",g_ucGuangGan);
-                      //      DebugMessageOsd("3.back1",back1);
-                              if(g_ucGuangGan>back1)
-                                      g_ucGuangGan--;
-                              else if(g_ucGuangGan<back1)
-                                      g_ucGuangGan++;
-                              //SET_OSD_BACKLIGHT(back);
-                              PCB_BACKLIGHT_PWM(Get_tBacklight_Table_Value(g_ucGuangGan));
-                      }
+                  BYTE back1=(PCB_ADKEY3())*100/255;
+              #endif    
+                //  DebugMessageOsd("3.back",g_ucGuangGan);
+                //  DebugMessageOsd("3.back1",back1);
+                  if(g_ucGuangGan>back1)
+                    g_ucGuangGan--;
+                  else if(g_ucGuangGan<back1)
+                    g_ucGuangGan++;
+                  //SET_OSD_BACKLIGHT(back);
+                  PCB_BACKLIGHT_PWM(Get_tBacklight_Table_Value(g_ucGuangGan));
+                }
               }
               #endif
  443          
@@ -495,7 +495,7 @@ line level    source
  464   2              SET_KEYMESSAGE(_NONE_KEY_MESSAGE);
  465   2          }
  466   1      #if _DEF_GuangGan_FUN
-                      UserGuangGanHandler();
+                UserGuangGanHandler();
               #endif
  469   1      
  470   1          if(RTDKeyScanReady() == _TRUE)
@@ -507,36 +507,36 @@ line level    source
  476   2              g_ucKeyStateCurr = RTDKeyScan();
  477   2      #if(Project_ID == ID_ZQ_HK255XE03_1T1P1H_MV270QHBN50_LVDS_QHD75HZ_20230522)
               
-              #else                           
- 480   2                      if(( SysPowerGetPowerStatus() == _POWER_STATUS_AC_ON) && (RTDKeyScan() == _MENU_KEY_MASK))
- 481   2                      {
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 9   
+              #else       
+ 480   2          if(( SysPowerGetPowerStatus() == _POWER_STATUS_AC_ON) && (RTDKeyScan() == _MENU_KEY_MASK))
+ 481   2          {
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 9   
 
- 482   3                                      SET_OSD_FACTORY_MODE(_ON);                              
- 483   3                                      SET_OSD_BURNING_MODE(_ON);
- 484   3                                      RTDNVRamSaveOSDData();
- 485   3                      }
+ 482   3              SET_OSD_FACTORY_MODE(_ON);        
+ 483   3              SET_OSD_BURNING_MODE(_ON);
+ 484   3              RTDNVRamSaveOSDData();
+ 485   3          }
  486   2      #endif
  487   2      
- 488   2      #if(_OSD_5_KEY_SUPPROT)         
+ 488   2      #if(_OSD_5_KEY_SUPPROT)   
               
               
               #elif(_DEF_POWER_LONG_KEY)
-                      if(SysPowerGetPowerStatus() != _POWER_STATUS_OFF)
-                      {
-                              if(RTDKeyPowerKeyProc() == _TRUE)
-                              {
-                                      return;
-                              }
-                      }
+                if(SysPowerGetPowerStatus() != _POWER_STATUS_OFF)
+                {
+                  if(RTDKeyPowerKeyProc() == _TRUE)
+                  {
+                    return;
+                  }
+                }
               
               #else
  501   2      
- 502   2                      // Power key process, return if power key is pressed
- 503   2                      if(RTDKeyPowerKeyProc() == _TRUE)
- 504   2                      {
- 505   3                              return;
- 506   3                      }
+ 502   2          // Power key process, return if power key is pressed
+ 503   2          if(RTDKeyPowerKeyProc() == _TRUE)
+ 504   2          {
+ 505   3            return;
+ 506   3          }
  507   2      
  508   2      #endif
  509   2              // Convert key state to key message, store in (ucKeyNotify)
@@ -574,13 +574,13 @@ line level    source
  541   2      
  542   2              // SET_KEYSCANREADY();
  543   2              // Wait 0.02 sec in order to keep the keypad debounce
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 10  
 
  544   2              
  545   2      #if(Project_ID == ID_TAISHUO_2795E06_1T1P1H_M280DCA_E3B_EDP4LAN_UHD60HZ_20211116)
-                      ScalerTimerReactiveTimerEvent(SEC(0.005), _USER_TIMER_EVENT_KEY_SCAN_READY);
+                ScalerTimerReactiveTimerEvent(SEC(0.005), _USER_TIMER_EVENT_KEY_SCAN_READY);
               #else
- 548   2              ScalerTimerReactiveTimerEvent(SEC(0.01), _USER_TIMER_EVENT_KEY_SCAN_READY);
+ 548   2        ScalerTimerReactiveTimerEvent(SEC(0.01), _USER_TIMER_EVENT_KEY_SCAN_READY);
  549   2      #endif
  550   2      
  551   2              return _FALSE;
@@ -601,7 +601,7 @@ line level    source
  566   1          BYTE ucVoltage1 = 0;
  567   1          BYTE ucVoltage2 = 0;
  568   1          BYTE ucVoltage3 = 0;
- 569   1              BYTE retry_Key=0,temp=0;
+ 569   1        BYTE retry_Key=0,temp=0;
  570   1      
  571   1      
  572   1      #if(_AD_KEY_SUPPORT == _ON)
@@ -610,104 +610,104 @@ line level    source
  575   1          ucVoltage2 = PCB_ADKEY2();
  576   1          ucVoltage3 = PCB_ADKEY3();
  577   1      
- 578   1              retry_Key=3;
- 579   1              while(retry_Key)
- 580   1              {
- 581   2                      ucVoltage0 = PCB_ADKEY0();
- 582   2                      ScalerTimerDelayXms(3);
- 583   2                      temp = PCB_ADKEY0();
- 584   2                      if(abs(ucVoltage0-temp)<5)
- 585   2                              break;
- 586   2                      retry_Key--;
- 587   2              }
+ 578   1        retry_Key=3;
+ 579   1        while(retry_Key)
+ 580   1        {
+ 581   2          ucVoltage0 = PCB_ADKEY0();
+ 582   2          ScalerTimerDelayXms(3);
+ 583   2          temp = PCB_ADKEY0();
+ 584   2          if(abs(ucVoltage0-temp)<5)
+ 585   2            break;
+ 586   2          retry_Key--;
+ 587   2        }
  588   1      
- 589   1              retry_Key=3;
- 590   1              while(retry_Key)
- 591   1              {
- 592   2                      ucVoltage1 = PCB_ADKEY1();
- 593   2                      ScalerTimerDelayXms(3);
- 594   2                      temp = PCB_ADKEY1();
- 595   2                      if(abs(ucVoltage1-temp)<5)
- 596   2                              break;
- 597   2                      retry_Key--;
- 598   2              }
+ 589   1        retry_Key=3;
+ 590   1        while(retry_Key)
+ 591   1        {
+ 592   2          ucVoltage1 = PCB_ADKEY1();
+ 593   2          ScalerTimerDelayXms(3);
+ 594   2          temp = PCB_ADKEY1();
+ 595   2          if(abs(ucVoltage1-temp)<5)
+ 596   2            break;
+ 597   2          retry_Key--;
+ 598   2        }
  599   1      
- 600   1              retry_Key=3;
- 601   1              while(retry_Key)
- 602   1              {
- 603   2                      ucVoltage2 = PCB_ADKEY2();
- 604   2                      ScalerTimerDelayXms(3);
- 605   2                      temp = PCB_ADKEY2();
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 11  
+ 600   1        retry_Key=3;
+ 601   1        while(retry_Key)
+ 602   1        {
+ 603   2          ucVoltage2 = PCB_ADKEY2();
+ 604   2          ScalerTimerDelayXms(3);
+ 605   2          temp = PCB_ADKEY2();
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 11  
 
- 606   2                      if(abs(ucVoltage2-temp)<5)
- 607   2                              break;
- 608   2                      retry_Key--;
- 609   2              }
+ 606   2          if(abs(ucVoltage2-temp)<5)
+ 607   2            break;
+ 608   2          retry_Key--;
+ 609   2        }
  610   1      
- 611   1              retry_Key=3;
- 612   1              while(retry_Key)
- 613   1              {
- 614   2                      ucVoltage3 = PCB_ADKEY3();
- 615   2                      ScalerTimerDelayXms(3);
- 616   2                      temp = PCB_ADKEY3();
- 617   2                      if(abs(ucVoltage3-temp)<5)
- 618   2                              break;
- 619   2                      retry_Key--;
- 620   2              }
- 621   1              //DebugMessageOsd("3.ucVoltage0",ucVoltage0);
+ 611   1        retry_Key=3;
+ 612   1        while(retry_Key)
+ 613   1        {
+ 614   2          ucVoltage3 = PCB_ADKEY3();
+ 615   2          ScalerTimerDelayXms(3);
+ 616   2          temp = PCB_ADKEY3();
+ 617   2          if(abs(ucVoltage3-temp)<5)
+ 618   2            break;
+ 619   2          retry_Key--;
+ 620   2        }
+ 621   1        //DebugMessageOsd("3.ucVoltage0",ucVoltage0);
  622   1      #if 0
               #undef    PCB_KEY_STATE
               #define PCB_KEY_STATE(ucV0, ucV1, ucV2, ucV3, ucKeyState)   {\
-                                                                                                                                              BYTE i;\
-                                                                                                                                              for( i=0;i<5;i++)\
-                                                                                                                                              {\
-                                                                                                                                                      if((KeyDefault[i+5]>=0x80)?(!AD_KEY3):\
-                                                                                                                                                              ((KeyDefault[i]<DEF_KEY_SIZE ? 0 : KeyDefault[i]-DEF_KEY_SIZE)<=(KeyDefault[i+5]==1 ? AD
+                                              BYTE i;\
+                                              for( i=0;i<5;i++)\
+                                              {\
+                                                if((KeyDefault[i+5]>=0x80)?(!AD_KEY3):\
+                                                  ((KeyDefault[i]<DEF_KEY_SIZE ? 0 : KeyDefault[i]-DEF_KEY_SIZE)<=(KeyDefault[i+5]==1 ? AD
              -_KEY1 : AD_KEY2))&&\
-                                                                                                                                                              ((KeyDefault[i]>(247-DEF_KEY_SIZE)? 247: KeyDefault[i]+DEF_KEY_SIZE)>((KeyDefault[i+5]==
+                                                  ((KeyDefault[i]>(247-DEF_KEY_SIZE)? 247: KeyDefault[i]+DEF_KEY_SIZE)>((KeyDefault[i+5]==
              -1)? AD_KEY1 : AD_KEY2)))\
-                                                                                                                                                      {\
-                                                                                                                                                              (ucKeyState) |= 1<<i;/*_LEFT_KEY_MASK*/ ;\
-                                                                                                                                                      }\
-                                                                                                                                              }\
-                                                                                                                                      }
+                                                {\
+                                                  (ucKeyState) |= 1<<i;/*_LEFT_KEY_MASK*/ ;\
+                                                }\
+                                              }\
+                                            }
               #endif
  637   1      
  638   1      #if 0//_DEF_OSD_KEY_2
               /*
               BYTE code KeyDefault[10] = 
               {
-                      POWER_KEY,
-                      MENU_KEY,       
-                      EXIT_KEY,
-                      RIGHT_KEY,
-                      LEFT_KEY,
-                      
-                      POWER_REG,
-                      MENU_REG,       
-                      EXIT_REG,
-                      RIGHT_REG,
-                      LEFT_REG,
+                POWER_KEY,
+                MENU_KEY, 
+                EXIT_KEY,
+                RIGHT_KEY,
+                LEFT_KEY,
+                
+                POWER_REG,
+                MENU_REG, 
+                EXIT_REG,
+                RIGHT_REG,
+                LEFT_REG,
               };
               */
               #if 1
               {
-                      //BYTE i;
+                //BYTE i;
                   PCB_KEY_STATE(ucVoltage0, ucVoltage1, ucVoltage2, ucVoltage3, ucKeyState);
               }
               
               #else
               {
-                      BYTE i,x,y1,y2;
+                BYTE i,x,y1,y2;
                   PCB_KEY_STATE(ucVoltage0, ucVoltage1, ucVoltage2, ucVoltage3, ucKeyState);
               }
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 12  
 
               #endif
               #else
- 668   1              //DebugMessageOsd("3.ucVoltage0",ucVoltage0);
- 669   1              PCB_KEY_STATE(ucVoltage0, ucVoltage1, ucVoltage2, ucVoltage3, ucKeyState);
+ 668   1        //DebugMessageOsd("3.ucVoltage0",ucVoltage0);
+ 669   1        PCB_KEY_STATE(ucVoltage0, ucVoltage1, ucVoltage2, ucVoltage3, ucKeyState);
  670   1      #endif
  671   1          if(g_ucBackupKeyState == ucKeyState)
  672   1          {
@@ -751,7 +751,7 @@ line level    source
  710          bit RTDKeyPowerKeyProc(void)
  711          {
  712   1      #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)
-              #if(_PROJEC_ID_TYPE ==1)        
+              #if(_PROJEC_ID_TYPE ==1)  
               
                   if((g_ucKeyStateCurr & _EXIT_KEY_MASK) != 0)
                   {
@@ -761,12 +761,12 @@ line level    source
                           if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
                           {
                           
-                                              Cross_flag = 0;
+                      Cross_flag = 0;
                               SET_OSD_STATE(_MENU_NONE);
                               SET_OSD_IN_FACTORY_MENU_STATUS(_FALSE);
                               SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
               
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 13  
 
                               
                               return _TRUE;
@@ -786,65 +786,65 @@ line level    source
  743   3                  if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
  744   3                  {
  745   4                  
- 746   4                                      Cross_flag = 0;
+ 746   4              Cross_flag = 0;
  747   4                      SET_OSD_STATE(_MENU_NONE);
  748   4                      SET_OSD_IN_FACTORY_MENU_STATUS(_FALSE);
  749   4                      SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
  750   4      #if(_PCB_TYPE == _RL6432__216PIN__HKM_RT2785E17_1T1P2H_LVDS)
-                                      ScalerTimerDelayXms(40);
-                                      PCB_USB_HUB_RESET(_USB_POWER_ON);
-                                      PCB_USB_SWITCH_SET(_USB_SWTICH_PC);
-                                      PCB_USB_POWER(_USB_POWER_ON);
-                                      PCB_LAN_POWER_EN(_PCB_LAN_POWER_ON);//网络芯片上电
+                    ScalerTimerDelayXms(40);
+                    PCB_USB_HUB_RESET(_USB_POWER_ON);
+                    PCB_USB_SWITCH_SET(_USB_SWTICH_PC);
+                    PCB_USB_POWER(_USB_POWER_ON);
+                    PCB_LAN_POWER_EN(_PCB_LAN_POWER_ON);//网络芯片上电
               #endif
  757   4      #if(_PCB_TYPE == _RL6449__216PIN__HK_M_RTD2795E18_1DP2H1T_EDP)
-                                      _TYPE_C_VCC_POWER_ON();
+                    _TYPE_C_VCC_POWER_ON();
               #endif
  760   4                  }
  761   3                  else
  762   3                  {
- 763   4                              
+ 763   4            
  764   4                  #if(_LONG_PRESS_POWER_DOWN == _ON)
               
-                                              return _FALSE;
+                      return _FALSE;
               
-                                      #endif
- 769   4                              
- 770   4                              SET_OSD_AUTO_POWEROFF(_AutoPowerOff_OFF);
- 771   4                              ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_AUTO_POWER_DOWN);
- 772   4                              
+                    #endif
+ 769   4            
+ 770   4            SET_OSD_AUTO_POWEROFF(_AutoPowerOff_OFF);
+ 771   4            ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_AUTO_POWER_DOWN);
+ 772   4            
  773   4      #if(_MPRT_SUPPORT == _ON)
- 774   4                                      UserAdjustLowMotionBlurDisplay(_OFF);
+ 774   4              UserAdjustLowMotionBlurDisplay(_OFF);
  775   4      #endif
- 776   4                              #if(_NAVIGAT_MENU_SURPPORT)                     
-                                              if(((GET_OSD_STATE() == _MENU_NONE))&&(SysModeGetModeState() == _MODE_STATUS_ACTIVE) && (GET_OSD_FACTO
+ 776   4            #if(_NAVIGAT_MENU_SURPPORT)     
+                      if(((GET_OSD_STATE() == _MENU_NONE))&&(SysModeGetModeState() == _MODE_STATUS_ACTIVE) && (GET_OSD_FACTO
              -RY_MODE() == _OFF))
-                                              {
-                                                      SET_OSD_STATE(_MENU_NAVIGAT_NONE);
-                                                      OsdDispNavigatMenu();                      
-                                              }
-                                              else if((GET_OSD_STATE() == _MENU_NAVIGAT_NONE)||(SysModeGetModeState() != _MODE_STATUS_ACTIVE) || (GE
+                      {
+                        SET_OSD_STATE(_MENU_NAVIGAT_NONE);
+                        OsdDispNavigatMenu();        
+                      }
+                      else if((GET_OSD_STATE() == _MENU_NAVIGAT_NONE)||(SysModeGetModeState() != _MODE_STATUS_ACTIVE) || (GE
              -T_OSD_FACTORY_MODE() == _ON))
-                                              {
-                                                      SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);                                        
-                                                      SET_OSD_FACTORY_MODE(_OFF);
-                                                      SET_OSD_BURNING_MODE(_OFF);
-                                                      
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 14  
+                      {
+                        SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);          
+                        SET_OSD_FACTORY_MODE(_OFF);
+                        SET_OSD_BURNING_MODE(_OFF);
+                        
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 14  
 
-                                                      RTDNVRamSaveOSDData();
-                                              }
-                                                      
-                                      #else
- 792   4                                      #if(Project_ID == ID_SHUNWEI_HK25561DP2HDMI_M270DAN09V0_QHD60HZ__20210319)
-                                                      ScalerTimerDelayXms(1500);
-                                              #endif
- 795   4                                              SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);
- 796   4                                              SET_OSD_FACTORY_MODE(_OFF);                                     
- 797   4                                              SET_OSD_BURNING_MODE(_OFF);
- 798   4                                              
- 799   4                                              RTDNVRamSaveOSDData();
- 800   4                                      #endif                          
+                        RTDNVRamSaveOSDData();
+                      }
+                        
+                    #else
+ 792   4              #if(Project_ID == ID_SHUNWEI_HK25561DP2HDMI_M270DAN09V0_QHD60HZ__20210319)
+                        ScalerTimerDelayXms(1500);
+                      #endif
+ 795   4                SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);
+ 796   4                SET_OSD_FACTORY_MODE(_OFF);         
+ 797   4                SET_OSD_BURNING_MODE(_OFF);
+ 798   4                
+ 799   4                RTDNVRamSaveOSDData();
+ 800   4              #endif                
  801   4                  }
  802   3      
  803   3              return _TRUE;
@@ -867,19 +867,19 @@ line level    source
  820   2                  break;
  821   2      
  822   2              case _POWER_MENU_KEY_MASK:
- 823   2                              
- 824   2                              SET_OSD_FACTORY_MODE(_ON);                              
- 825   2                              SET_OSD_BURNING_MODE(_ON);
- 826   2                              
+ 823   2            
+ 824   2            SET_OSD_FACTORY_MODE(_ON);        
+ 825   2            SET_OSD_BURNING_MODE(_ON);
+ 826   2            
  827   2                  RTDNVRamSaveOSDData();
  828   2                  break;
  829   2      #if(Project_ID == ID_ZQ_HK255XE03_1T1P1H_MV270QHBN50_LVDS_QHD75HZ_20230522)
-              #else                   
+              #else     
  831   2              case _POWER_EXIT_KEY_MASK:
- 832   2                              
- 833   2                              SET_OSD_FACTORY_MODE(_ON);                              
- 834   2                              SET_OSD_BURNING_MODE(_ON);
- 835   2                              
+ 832   2            
+ 833   2            SET_OSD_FACTORY_MODE(_ON);        
+ 834   2            SET_OSD_BURNING_MODE(_ON);
+ 835   2            
  836   2                  RTDNVRamSaveOSDData();
  837   2                  break;
  838   2      #endif
@@ -894,7 +894,7 @@ line level    source
  847          
  848          //--------------------------------------------------
  849          // Description  : Convert keypad status into key message, stores in ucKeyNotify
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 15  
 
  850          // Input Value  : None
  851          // Output Value : None
@@ -903,68 +903,68 @@ line level    source
  854          {
  855   1          switch(g_ucKeyStateCurr)
  856   1          {
- 857   2      #if(!_OSD_5_KEY_SUPPROT)        
- 858   2                      case _POWER_KEY_MASK:
- 859   2                              
+ 857   2      #if(!_OSD_5_KEY_SUPPROT)  
+ 858   2          case _POWER_KEY_MASK:
+ 859   2            
  860   2                  CLR_KEYREPEATENABLE();
  861   2                  RTDKeyMessageConvert(_POWER_KEY_MASK, _POWER_KEY_MASK);
- 862   2                              break;
+ 862   2            break;
  863   2      #endif
  864   2              case _MENU_KEY_MASK:
- 865   2                              
- 866   2                              CLR_KEYREPEATENABLE();
- 867   2                              RTDKeyMessageConvert(_MENU_KEY_MASK, _MENU_KEY_MESSAGE);
+ 865   2            
+ 866   2            CLR_KEYREPEATENABLE();
+ 867   2            RTDKeyMessageConvert(_MENU_KEY_MASK, _MENU_KEY_MESSAGE);
  868   2      
  869   2                  break;
  870   2      
  871   2              case _RIGHT_KEY_MASK:
- 872   2      #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)            
-                                      RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);      
+ 872   2      #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)    
+                    RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);  
               #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)||(Project_ID == ID_XKBH_HK2513E02_1V1H
-             -_HV320FHB_N02_20220927)       
+             -_HV320FHB_N02_20220927) 
                       if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))         
                           RTDKeyMessageConvert(_RIGHT_KEY_MASK, _NONE_KEY_MESSAGE);
                       else
                           RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);  
-              #elif(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)     
-              #if(_PROJEC_ID_TYPE ==1)        
-                                      RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);      
+              #elif(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908) 
+              #if(_PROJEC_ID_TYPE ==1)  
+                    RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);  
               #else
                       if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))         
                           RTDKeyMessageConvert(_RIGHT_KEY_MASK, _EXIT_KEY_MESSAGE);
                       else
                           RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);  
               #endif
-              #elif(_OSD_7_KEY_SUPPROT)               
-                                      if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))                     
-                                  RTDKeyMessageConvert(_RIGHT_KEY_MASK, _MENU_KEY_MESSAGE);
-                                      else
-                                              RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);      
-                                                                      
-              #else                   
+              #elif(_OSD_7_KEY_SUPPROT)   
+                    if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))     
+                            RTDKeyMessageConvert(_RIGHT_KEY_MASK, _MENU_KEY_MESSAGE);
+                    else
+                      RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);  
+                            
+              #else     
  895   2                  RTDKeyMessageConvert(_RIGHT_KEY_MASK, _RIGHT_KEY_MESSAGE);
  896   2      #endif
  897   2                  break;
  898   2      
  899   2              case _LEFT_KEY_MASK:
- 900   2      #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)    
-                              RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
-              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)     ||(Project_ID == ID_XKBH_HK2513E02_1V1
+ 900   2      #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)  
+                        RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
+              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218) ||(Project_ID == ID_XKBH_HK2513E02_1V1
              -H_HV320FHB_N02_20220927)
                           if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))         
                               RTDKeyMessageConvert(_LEFT_KEY_MASK, _NONE_KEY_MESSAGE);
                           else
                               RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
-              #elif(_OSD_7_KEY_SUPPROT)       
-                                      if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))             
-                                              RTDKeyMessageConvert(_LEFT_KEY_MASK, _EXIT_KEY_MESSAGE);
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 16  
+              #elif(_OSD_7_KEY_SUPPROT) 
+                    if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))     
+                      RTDKeyMessageConvert(_LEFT_KEY_MASK, _EXIT_KEY_MESSAGE);
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 16  
 
-                                      else
-                                              RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);        
-                                                                      
-              #else                   
- 914   2                              RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
+                    else
+                      RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);  
+                            
+              #else     
+ 914   2            RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
  915   2      #endif
  916   2                  break;
  917   2      
@@ -973,95 +973,95 @@ line level    source
  920   2                  RTDKeyMessageConvert(_EXIT_KEY_MASK, _EXIT_KEY_MESSAGE);
  921   2                  break;
  922   2      
- 923   2      #if(_OSD_6_KEY_SUPPROT)         
-                              case _UP_KEY_MASK:
-                                      RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);    
-                                      break;
+ 923   2      #if(_OSD_6_KEY_SUPPROT)   
+                  case _UP_KEY_MASK:
+                    RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);  
+                    break;
               #endif
  928   2      
- 929   2      #if(_OSD_7_KEY_SUPPROT)         
-                              case _UP_KEY_MASK:
-                              
-              #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)    
-                                      RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);
-              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)     ||(Project_ID == ID_XKBH_HK2513E02_1V1
+ 929   2      #if(_OSD_7_KEY_SUPPROT)   
+                  case _UP_KEY_MASK:
+                  
+              #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)  
+                    RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);
+              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218) ||(Project_ID == ID_XKBH_HK2513E02_1V1
              -H_HV320FHB_N02_20220927)
                           if(_MENU_FUN_LANGUAGE == GET_OSD_STATE())
-                              RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);    
+                              RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);  
                           else if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))      
              -   
                               RTDKeyMessageConvert(_UP_KEY_MASK, _LEFT_KEY_MESSAGE);
                           else
                               RTDKeyMessageConvert(_UP_KEY_MASK, _NONE_KEY_MESSAGE);  
               #else
-                                      if(GET_OSD_STATE() == _MENU_NONE)
-                                              RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);
-                                      else if(((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))||(GET_OSD_STA
+                    if(GET_OSD_STATE() == _MENU_NONE)
+                      RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);
+                    else if(((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))||(GET_OSD_STA
              -TE() == _MENU_FUN_SOURCE_HOTKEY))
-                                              RTDKeyMessageConvert(_UP_KEY_MASK, _LEFT_KEY_MESSAGE);                                                  
-                                      else
-                                              RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);    
+                      RTDKeyMessageConvert(_UP_KEY_MASK, _LEFT_KEY_MESSAGE);              
+                    else
+                      RTDKeyMessageConvert(_UP_KEY_MASK, _UP_KEY_MESSAGE);  
               #endif
-                                      break;
+                    break;
               
-                              case _DOWN_KEY_MASK:
-              #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)    
-                                              RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);        
-              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218)     ||(Project_ID == ID_XKBH_HK2513E02_1V1
+                  case _DOWN_KEY_MASK:
+              #if(Project_ID == ID_XINKEKEJI_2795E04_M280DCA_E3B_20201210)  
+                      RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);  
+              #elif(Project_ID == ID_XKBH_HK2513E02_1V1H__HV320FHB_N02__20201218) ||(Project_ID == ID_XKBH_HK2513E02_1V1
              -H_HV320FHB_N02_20220927)
                               if(_MENU_FUN_LANGUAGE == GET_OSD_STATE())
-                                  RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);    
+                                  RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);  
                               else if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))  
              -       
                                   RTDKeyMessageConvert(_DOWN_KEY_MASK, _RIGHT_KEY_MESSAGE);
                               
                               else
-                                  RTDKeyMessageConvert(_DOWN_KEY_MASK, _NONE_KEY_MESSAGE);    
+                                  RTDKeyMessageConvert(_DOWN_KEY_MASK, _NONE_KEY_MESSAGE);  
               #else
               
-                                      if(GET_OSD_STATE() == _MENU_NONE)
-                                              RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);
-                                      else if(((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))||(GET_OSD_STA
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 17  
+                    if(GET_OSD_STATE() == _MENU_NONE)
+                      RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);
+                    else if(((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))||(GET_OSD_STA
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 17  
 
              -TE() == _MENU_FUN_SOURCE_HOTKEY))
-                                              RTDKeyMessageConvert(_DOWN_KEY_MASK, _RIGHT_KEY_MESSAGE );
-                                      else
-                                              RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);        
+                      RTDKeyMessageConvert(_DOWN_KEY_MASK, _RIGHT_KEY_MESSAGE );
+                    else
+                      RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);  
               #endif
-                                      break;
+                    break;
               #endif
  973   2      
  974   2      #if(_OSD_5_KEY_SUPPROT) 
               
-                              case _POWER_KEY_MASK:
-                              if(GET_OSD_STATE() == _MENU_NONE)
-                              {
-                                      CLR_KEYREPEATENABLE();
-                                      RTDKeyMessageConvert(_POWER_KEY_MASK, _NONE_KEY_MESSAGE);
+                  case _POWER_KEY_MASK:
+                  if(GET_OSD_STATE() == _MENU_NONE)
+                  {
+                    CLR_KEYREPEATENABLE();
+                    RTDKeyMessageConvert(_POWER_KEY_MASK, _NONE_KEY_MESSAGE);
               
-                              }
-                              else
-                              {
-                                      CLR_KEYREPEATENABLE();
-                                      RTDKeyMessageConvert(_POWER_KEY_MASK, _MENU_KEY_MESSAGE);
-                              }
-                                      break;
+                  }
+                  else
+                  {
+                    CLR_KEYREPEATENABLE();
+                    RTDKeyMessageConvert(_POWER_KEY_MASK, _MENU_KEY_MESSAGE);
+                  }
+                    break;
               /*
-                              case _OK_KEY_MASK:
-                              if(GET_OSD_STATE() == _MENU_NONE)
-                              {
-                                      CLR_KEYREPEATENABLE();
-                                      RTDKeyMessageConvert(_OK_KEY_MASK, _NONE_KEY_MESSAGE);
+                  case _OK_KEY_MASK:
+                  if(GET_OSD_STATE() == _MENU_NONE)
+                  {
+                    CLR_KEYREPEATENABLE();
+                    RTDKeyMessageConvert(_OK_KEY_MASK, _NONE_KEY_MESSAGE);
               
-                              }
-                              else
-                              {
-                                      CLR_KEYREPEATENABLE();
-                                      RTDKeyMessageConvert(_OK_KEY_MASK, _MENU_KEY_MESSAGE);
-                              }
-                                      break;
-                                      */
+                  }
+                  else
+                  {
+                    CLR_KEYREPEATENABLE();
+                    RTDKeyMessageConvert(_OK_KEY_MASK, _MENU_KEY_MESSAGE);
+                  }
+                    break;
+                    */
               #endif
 1005   2      
 1006   2              default:
@@ -1086,7 +1086,7 @@ line level    source
 1025          //--------------------------------------------------
 1026          void RTDKeyMessageConvert(BYTE ucKeyMask, BYTE ucKeyMsg)
 1027          {
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 18  
 
 1028   1          // Key different
 1029   1          if((g_ucKeyStatePrev != g_ucKeyStateCurr) && (ucKeyMask == g_ucKeyStateCurr))
@@ -1123,7 +1123,7 @@ line level    source
 1060          //--------------------------------------------------
 1061          bit RTDKeySpecialProc(BYTE ucKeyMask)
 1062          {
-1063   1              ucKeyMask = ucKeyMask;
+1063   1        ucKeyMask = ucKeyMask;
 1064   1      
 1065   1      #if(_DEF_MENU_LOCK)
                   if((ucKeyMask == _MENU_KEY_MASK)&&(GET_OSD_STATE()==_MENU_NONE || GET_OSD_STATE()==_MENU_FUN_MENU_LOCK
@@ -1141,56 +1141,56 @@ line level    source
               #endif
 1078   1          
 1079   1      #if(_LONG_PRESS_POWER_DOWN == _ON)
-                      
-                              if(ucKeyMask == _POWER_KEY_MASK)
-                              {
-                                      ScalerTimerActiveTimerEvent(SEC(1.5), _USER_TIMER_EVENT_DO_POWER_DOWN);
-                               
-                                       SET_KEY_HOLD();
-                                       CLR_KEYREPEATENABLE(); 
-                                       return _TRUE;
-                              }
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 19  
+                
+                  if(ucKeyMask == _POWER_KEY_MASK)
+                  {
+                    ScalerTimerActiveTimerEvent(SEC(1.5), _USER_TIMER_EVENT_DO_POWER_DOWN);
+                   
+                     SET_KEY_HOLD();
+                     CLR_KEYREPEATENABLE(); 
+                     return _TRUE;
+                  }
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 19  
 
-                      
+                
               #endif
 1091   1      
 1092   1      
 1093   1      #if(_DEF_POWER_LONG_KEY)
               
-                      if(ucKeyMask == _POWER_KEY_MASK)
-                      {
-                              if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
-                              {
-                                      ScalerTimerActiveTimerEvent(SEC(1.6), _USER_TIMER_EVENT_DO_POWER_DOWN);
-                               
-                                       SET_KEY_HOLD();
-                                       CLR_KEYREPEATENABLE(); 
-                                       return _TRUE;
-                              }
-                      }
+                if(ucKeyMask == _POWER_KEY_MASK)
+                {
+                  if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
+                  {
+                    ScalerTimerActiveTimerEvent(SEC(1.6), _USER_TIMER_EVENT_DO_POWER_DOWN);
+                   
+                     SET_KEY_HOLD();
+                     CLR_KEYREPEATENABLE(); 
+                     return _TRUE;
+                  }
+                }
               
               #endif
 1108   1      
 1109   1      
 1110   1      #if(_DEF_HOTKEY_LONG)
               
-                      if((ucKeyMask == _RIGHT_KEY_MASK)&&(GET_OSD_STATE()==_MENU_NONE))
-                              {
-                                      ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_RIGHT_LONG);
-                               
-                                       SET_KEY_HOLD();
-                                       CLR_KEYREPEATENABLE(); 
-                                       return _TRUE;
-                              }
-                      if((ucKeyMask == _LEFT_KEY_MASK)&&(GET_OSD_STATE()==_MENU_NONE))
-                              {
-                                      ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_LEFT_LONG);
-                               
-                                       SET_KEY_HOLD();
-                                       CLR_KEYREPEATENABLE(); 
-                                       return _TRUE;
-                              }       
+                if((ucKeyMask == _RIGHT_KEY_MASK)&&(GET_OSD_STATE()==_MENU_NONE))
+                  {
+                    ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_RIGHT_LONG);
+                   
+                     SET_KEY_HOLD();
+                     CLR_KEYREPEATENABLE(); 
+                     return _TRUE;
+                  }
+                if((ucKeyMask == _LEFT_KEY_MASK)&&(GET_OSD_STATE()==_MENU_NONE))
+                  {
+                    ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_LEFT_LONG);
+                   
+                     SET_KEY_HOLD();
+                     CLR_KEYREPEATENABLE(); 
+                     return _TRUE;
+                  } 
               
               
               #endif
@@ -1198,39 +1198,39 @@ line level    source
 1132   1      
 1133   1      #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)
               
-              #if(_PROJEC_ID_TYPE ==1)                                                                                        
+              #if(_PROJEC_ID_TYPE ==1)                      
                   if(ucKeyMask == _EXIT_KEY_MASK)
                   {
-                              ScalerTimerActiveTimerEvent(SEC(1.2), _USER_TIMER_EVENT_DO_POWER_DOWN);
-                       
-                               SET_KEY_HOLD();
-                               CLR_KEYREPEATENABLE(); 
-                               return _TRUE;
+                  ScalerTimerActiveTimerEvent(SEC(1.2), _USER_TIMER_EVENT_DO_POWER_DOWN);
+                   
+                   SET_KEY_HOLD();
+                   CLR_KEYREPEATENABLE(); 
+                   return _TRUE;
                   }
               #else
                   if(ucKeyMask == _MENU_KEY_MASK)
                   {
-                              ScalerTimerActiveTimerEvent(SEC(1.2), _USER_TIMER_EVENT_DO_POWER_DOWN);
-                       
-                               SET_KEY_HOLD();
-                               CLR_KEYREPEATENABLE(); 
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 20  
+                  ScalerTimerActiveTimerEvent(SEC(1.2), _USER_TIMER_EVENT_DO_POWER_DOWN);
+                   
+                   SET_KEY_HOLD();
+                   CLR_KEYREPEATENABLE(); 
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 20  
 
-                               return _TRUE;
+                   return _TRUE;
                   }
               #endif
               
               #endif
 1156   1      
-1157   1      #if(_OSD_5_KEY_SUPPROT)         
+1157   1      #if(_OSD_5_KEY_SUPPROT)   
                   //if(ucKeyMask == _MENU_KEY_MASK)
-                      if(ucKeyMask == _POWER_KEY_MASK)
+                if(ucKeyMask == _POWER_KEY_MASK)
                   {
-                              ScalerTimerActiveTimerEvent(SEC(2.5), _USER_TIMER_EVENT_DO_POWER_DOWN);
-                       
-                               SET_KEY_HOLD();
-                               CLR_KEYREPEATENABLE(); 
-                               return _TRUE;
+                  ScalerTimerActiveTimerEvent(SEC(2.5), _USER_TIMER_EVENT_DO_POWER_DOWN);
+                   
+                   SET_KEY_HOLD();
+                   CLR_KEYREPEATENABLE(); 
+                   return _TRUE;
                   }
               #endif
 1168   1      #if(_VGA_SUPPORT == _ON)
@@ -1260,7 +1260,7 @@ line level    source
 1192   1          if(GET_KEY_HOLD() == _TRUE)
 1193   1          {
 1194   2              CLR_KEY_HOLD();
-1195   2                      
+1195   2          
 1196   2      
 1197   2              // list all off hold key timer event here!!!
 1198   2              ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_DO_AUTO_COLOR);
@@ -1269,21 +1269,21 @@ line level    source
 1201   2      #if(_DP_SUPPORT == _ON)
 1202   2              ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_OSD_SHOW_DP_VERSION_SELECT);
 1203   2      #endif
-1204   2                      #if(_DEF_HOTKEY_LONG)   
+1204   2          #if(_DEF_HOTKEY_LONG) 
               
-                      ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_RIGHT_LONG);      
+                      ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_RIGHT_LONG);  
                       ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_LEFT_LONG);
-                              
-                              #endif          
-1210   2              #if(_DEF_MENU_LOCK)     
+                  
+                  #endif    
+1210   2              #if(_DEF_MENU_LOCK) 
               
-                      ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_MENU_LOCK);       
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 21  
+                      ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_MENU_LOCK); 
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 21  
 
-                              
-                              #endif
+                  
+                  #endif
 1215   2      #if 0//_DEF_GuangGan_FUN
-                              ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_GuangGan_Back);   
+                  ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_GuangGan_Back); 
               #endif
 1218   2          }
 1219   1      }
@@ -1312,12 +1312,12 @@ line level    source
 1242   3                  case _LEFT_KEY_MASK:
 1243   3                      SET_KEYMESSAGE(_LEFT_KEY_MESSAGE);
 1244   3                      break;
-1245   3      #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)                       
-                                      case _POWER_KEY_MASK:
-                                              SET_KEYMESSAGE(_EXIT_KEY_MESSAGE);
-                                      break;
+1245   3      #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)     
+                    case _POWER_KEY_MASK:
+                      SET_KEYMESSAGE(_EXIT_KEY_MESSAGE);
+                    break;
               #endif  
-1250   3                                      
+1250   3              
 1251   3                  default:
 1252   3                      break;
 1253   3              }
@@ -1342,114 +1342,114 @@ line level    source
 1272          {
 1273   1          BYTE pucIRCodeBuffer[8] = {0};
 1274   1          WORD usKeyCode = 0;
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 22  
 
 1275   1          BYTE ucKeyState = 0;
-1276   1              static BYTE ucin_factarystate=0;
-1277   1              
+1276   1        static BYTE ucin_factarystate=0;
+1277   1        
 1278   1      #if(_DEF_IR_TEST)
                   BYTE i = 0;
               #endif
 1281   1      #if(_IR_VIRTUAL==_ON)
                   if(f_resaveok)
-                      
+                
               #elif(_IR_SUPPORT == _IR_HW_SUPPORT)
-1285   1              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+1285   1        ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
 1286   1      
-1287   1              if(ScalerIRHWModeGetData(pucIRCodeBuffer) == _TRUE)
+1287   1        if(ScalerIRHWModeGetData(pucIRCodeBuffer) == _TRUE)
 1288   1      #endif
 1289   1          {
-1290   2              #if(_IR_VIRTUAL==_ON)
-                              {
-                                      DebugMessageIR("r_data", r_data);
-                                      pucIRCodeBuffer[0] =(r_data>>24)&0xff;
-                                      pucIRCodeBuffer[1] =(r_data>>16)&0xff;
-                                      pucIRCodeBuffer[2] =(r_data>>8)&0xff;
-                                      pucIRCodeBuffer[3] =(r_data)&0xff;
-                                      r_data = 0;
-                                      f_resaveok = 0;
-                              }
-                      #endif
-1301   2              
+1290   2        #if(_IR_VIRTUAL==_ON)
+                  {
+                    DebugMessageIR("r_data", r_data);
+                    pucIRCodeBuffer[0] =(r_data>>24)&0xff;
+                    pucIRCodeBuffer[1] =(r_data>>16)&0xff;
+                    pucIRCodeBuffer[2] =(r_data>>8)&0xff;
+                    pucIRCodeBuffer[3] =(r_data)&0xff;
+                    r_data = 0;
+                    f_resaveok = 0;
+                  }
+                #endif
+1301   2        
 1302   2      #if(!_DEF_IR_TEST&&_DEF_IR_SHOW)
-                      ir_show_data[0] =pucIRCodeBuffer[0];                                            
-                      ir_show_data[1] =pucIRCodeBuffer[1];                                            
-                      ir_show_data[2] =pucIRCodeBuffer[2];                                            
-                      ir_show_data[3] =pucIRCodeBuffer[3];                                            
-                                                      
+                ir_show_data[0] =pucIRCodeBuffer[0];            
+                ir_show_data[1] =pucIRCodeBuffer[1];            
+                ir_show_data[2] =pucIRCodeBuffer[2];            
+                ir_show_data[3] =pucIRCodeBuffer[3];            
+                        
               #endif
 1309   2      
 1310   2      #if(_DEF_IR_TEST)
-                              if(ir_test)
-                              {
-                                      for(i=0;i<8;i++)
-                                      {
-                                              if(pucIRCodeBuffer[i] ==0)
-                                      {
-                                      }
-                                              else if(pucIRCodeBuffer[i] ==_IR_CODE_KEY_CHECK0)
-                                      {
-                                                      ir_code[0]=i;
-                                      }
-                                              else if(pucIRCodeBuffer[i] ==_IR_CODE_KEY_CHECK1)
-                                      {
-                                                      ir_code[1]=i;
-                                      }
-                                              else 
-                                              {
-                                                      switch(pucIRCodeBuffer[i])
-                                                      {
-                                                              case (_IR_CODE_KEY_POWER>>8):
-                                                              case (_IR_CODE_KEY_MENU>>8):
-                                                              case (_IR_CODE_KEY_RIGHT>>8):
-                                                              case (_IR_CODE_KEY_LEFT>>8):
-                                                              case (_IR_CODE_KEY_EXIT>>8):
-                                                              case (_IR_CODE_KEY_UP>>8):
-                                                              case (_IR_CODE_KEY_DOWN>>8):
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 23  
+                  if(ir_test)
+                  {
+                    for(i=0;i<8;i++)
+                    {
+                      if(pucIRCodeBuffer[i] ==0)
+                          {
+                          }
+                      else if(pucIRCodeBuffer[i] ==_IR_CODE_KEY_CHECK0)
+                          {
+                        ir_code[0]=i;
+                          }
+                      else if(pucIRCodeBuffer[i] ==_IR_CODE_KEY_CHECK1)
+                          {
+                        ir_code[1]=i;
+                          }
+                      else 
+                      {
+                        switch(pucIRCodeBuffer[i])
+                        {
+                          case (_IR_CODE_KEY_POWER>>8):
+                          case (_IR_CODE_KEY_MENU>>8):
+                          case (_IR_CODE_KEY_RIGHT>>8):
+                          case (_IR_CODE_KEY_LEFT>>8):
+                          case (_IR_CODE_KEY_EXIT>>8):
+                          case (_IR_CODE_KEY_UP>>8):
+                          case (_IR_CODE_KEY_DOWN>>8):
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 23  
 
-                                                              case (_IR_CODE_KEY_SOURCE>>8):
-                                                              case (_IR_CODE_KEY_MUTE>>8):
-                                                              case (_IR_CODE_KEY_SCALE>>8):
-                                                              case (_IR_CODE_KEY_OK>>8):
-                                                              case (_IR_CODE_KEY_F1>>8):
-                                                              case (_IR_CODE_KEY_P>>8):
-                                                              case (_IR_CODE_KEY_F2>>8):
-                                                                      ir_test=0;
-                                                                      ir_code[2]=i;
-                                                              #if(_DEF_IR_SHOW)
-                                                                      ir_show_data[0] =pucIRCodeBuffer[0];                                            
-                                                                      ir_show_data[1] =pucIRCodeBuffer[1];                                            
-                                                                      ir_show_data[2] =pucIRCodeBuffer[2];                                            
-                                                                      ir_show_data[3] =pucIRCodeBuffer[3];
-                                                                      
-                                                                      DebugMessageIR("ir_show_data", ir_show_data[0]);
-                                                                      DebugMessageIR("ir_show_data", ir_show_data[1]);
-                                                                      DebugMessageIR("ir_show_data", ir_show_data[2]);
-                                                                      DebugMessageIR("ir_show_data", ir_show_data[3]);
-                                                              #endif
-                                                                      break;
-                                                                      
-                                                              default:
-                                                                      break;
-                                                      }
+                          case (_IR_CODE_KEY_SOURCE>>8):
+                          case (_IR_CODE_KEY_MUTE>>8):
+                          case (_IR_CODE_KEY_SCALE>>8):
+                          case (_IR_CODE_KEY_OK>>8):
+                          case (_IR_CODE_KEY_F1>>8):
+                          case (_IR_CODE_KEY_P>>8):
+                          case (_IR_CODE_KEY_F2>>8):
+                            ir_test=0;
+                            ir_code[2]=i;
+                          #if(_DEF_IR_SHOW)
+                            ir_show_data[0] =pucIRCodeBuffer[0];            
+                            ir_show_data[1] =pucIRCodeBuffer[1];            
+                            ir_show_data[2] =pucIRCodeBuffer[2];            
+                            ir_show_data[3] =pucIRCodeBuffer[3];
+                            
+                            DebugMessageIR("ir_show_data", ir_show_data[0]);
+                            DebugMessageIR("ir_show_data", ir_show_data[1]);
+                            DebugMessageIR("ir_show_data", ir_show_data[2]);
+                            DebugMessageIR("ir_show_data", ir_show_data[3]);
+                          #endif
+                            break;
+                            
+                          default:
+                            break;
+                        }
               
-                                              }
-                                      }
-                              }
-                              
-                              usKeyCode = (((WORD)pucIRCodeBuffer[ir_code[2]]) << 8) + pucIRCodeBuffer[ir_code[1]];
-                      
+                      }
+                    }
+                  }
+                  
+                  usKeyCode = (((WORD)pucIRCodeBuffer[ir_code[2]]) << 8) + pucIRCodeBuffer[ir_code[1]];
+                
               #elif(_IR_PROTOCAL == _IR_NEC_DTV328)
-1370   2                      if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
-1371   2                      {
-1372   3                              usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[2];
-1373   3                      }
+1370   2          if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
+1371   2          {
+1372   3            usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[2];
+1373   3          }
 1374   2      #elif(_IR_PROTOCAL == _IR_SW_LGTV)
-                              if((pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
-                              {
-                                      usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[3];
-                              }
+                  if((pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
+                  {
+                    usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[3];
+                  }
               
               #elif(_IR_PROTOCAL == _IR_SONY_B102P)
                       usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[1];
@@ -1470,538 +1470,538 @@ line level    source
                           usKeyCode = (((WORD)pucIRCodeBuffer[1]) << 8) + pucIRCodeBuffer[2];
                       }
               #elif(_IR_PROTOCAL == _IR_MXDZ_NEC)
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 24  
 
-                              if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
-                              {
-                                      usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[1];
-                              }
+                  if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
+                  {
+                    usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[1];
+                  }
               #elif(_IR_PROTOCAL == _IR_TAISHUO_NEC)
-                      
-                      if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
-                      {
-                              usKeyCode = (((WORD)pucIRCodeBuffer[1]) << 8) + pucIRCodeBuffer[2];
-                      }
+                
+                if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[2] == ~(pucIRCodeBuffer[3])))
+                {
+                  usKeyCode = (((WORD)pucIRCodeBuffer[1]) << 8) + pucIRCodeBuffer[2];
+                }
               #elif(_IR_PROTOCAL == _IR_SQY_YS14C)
-                              if((pucIRCodeBuffer[2] == 0x7F) && (pucIRCodeBuffer[3] == 0))
-                              {
-                                      usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[1];
-                              }
+                  if((pucIRCodeBuffer[2] == 0x7F) && (pucIRCodeBuffer[3] == 0))
+                  {
+                    usKeyCode = (((WORD)pucIRCodeBuffer[0]) << 8) + pucIRCodeBuffer[1];
+                  }
               #elif(_IR_PROTOCAL == _IR_SQY_XHK_0827)
-                      if((pucIRCodeBuffer[0] == 0x23)&&(pucIRCodeBuffer[2] == 0xAE) && (pucIRCodeBuffer[3] == 0x51))
-                      {
-                              usKeyCode = _IR_CODE_KEY_POWER;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x31)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_OK;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x35)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_UP;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x2D)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_DOWN;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x66)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_LEFT;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x3E)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_RIGHT;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x7D)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_MENU;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x6A)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_EXIT;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x7F)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_ADD;
-                      }
-                      else if((pucIRCodeBuffer[0] == 0x7E)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
-                      {
-                              usKeyCode = _IR_CODE_KEY_MINUS;
-                      }
+                if((pucIRCodeBuffer[0] == 0x23)&&(pucIRCodeBuffer[2] == 0xAE) && (pucIRCodeBuffer[3] == 0x51))
+                {
+                  usKeyCode = _IR_CODE_KEY_POWER;
+                }
+                else if((pucIRCodeBuffer[0] == 0x31)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_OK;
+                }
+                else if((pucIRCodeBuffer[0] == 0x35)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_UP;
+                }
+                else if((pucIRCodeBuffer[0] == 0x2D)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_DOWN;
+                }
+                else if((pucIRCodeBuffer[0] == 0x66)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_LEFT;
+                }
+                else if((pucIRCodeBuffer[0] == 0x3E)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_RIGHT;
+                }
+                else if((pucIRCodeBuffer[0] == 0x7D)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_MENU;
+                }
+                else if((pucIRCodeBuffer[0] == 0x6A)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_EXIT;
+                }
+                else if((pucIRCodeBuffer[0] == 0x7F)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_ADD;
+                }
+                else if((pucIRCodeBuffer[0] == 0x7E)&&(pucIRCodeBuffer[2] == 0xC5) && (pucIRCodeBuffer[3] == 0x3A))
+                {
+                  usKeyCode = _IR_CODE_KEY_MINUS;
+                }
               
-              #endif // End of #if(_IR_PROTOCAL == _IR_NEC_DTV328)            
+              #endif // End of #if(_IR_PROTOCAL == _IR_NEC_DTV328)    
 1457   2      
-1458   2                      DebugMessageIR("usKeyCode", usKeyCode);
-1459   2                      DebugMessageOsd("usKeyCode", usKeyCode);
+1458   2          DebugMessageIR("usKeyCode", usKeyCode);
+1459   2          DebugMessageOsd("usKeyCode", usKeyCode);
 1460   2      
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 25  
 
 1461   2      
 1462   2      #if(_IR_SUPPORT == _IR_HW_SUPPORT)
-1463   2                      if(usKeyCode == _IR_CODE_KEY_POWER)
-1464   2                      {
-1465   3                              if(GET_IRSCANREADY())
-1466   3                              {
-1467   4                                      CLR_IRSCANREADY();
-1468   4                                      ScalerTimerReactiveTimerEvent(SEC(2.5),_USER_TIMER_EVENT_IR_PROC);
-1469   4                              }
-1470   3                              else
-1471   3                              {
-1472   4                                      usKeyCode = 0;
-1473   4                              }
-1474   3                      }
+1463   2          if(usKeyCode == _IR_CODE_KEY_POWER)
+1464   2          {
+1465   3            if(GET_IRSCANREADY())
+1466   3            {
+1467   4              CLR_IRSCANREADY();
+1468   4              ScalerTimerReactiveTimerEvent(SEC(2.5),_USER_TIMER_EVENT_IR_PROC);
+1469   4            }
+1470   3            else
+1471   3            {
+1472   4              usKeyCode = 0;
+1473   4            }
+1474   3          }
 1475   2      #endif
-1476   2                      
+1476   2          
 1477   2              switch(usKeyCode)
 1478   2              {
 1479   3                  case _IR_CODE_KEY_POWER:
 1480   3      
 1481   3      
-1482   3                                      
-1483   3                                      if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
-1484   3                                      {
-1485   4                                      
-1486   4                                              Cross_flag = 0;
-1487   4                                              SET_OSD_STATE(_MENU_NONE);
-1488   4                                              SET_OSD_IN_FACTORY_MENU_STATUS(_FALSE);
-1489   4                                              SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
-1490   4                                              
-1491   4                                              DebugMessageIR("on", SysPowerGetPowerStatus());
-1492   4                                      }
-1493   3                                      else
-1494   3                                      {
-1495   4                                      
+1482   3              
+1483   3              if(SysPowerGetPowerStatus() == _POWER_STATUS_OFF)
+1484   3              {
+1485   4              
+1486   4                Cross_flag = 0;
+1487   4                SET_OSD_STATE(_MENU_NONE);
+1488   4                SET_OSD_IN_FACTORY_MENU_STATUS(_FALSE);
+1489   4                SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
+1490   4                
+1491   4                DebugMessageIR("on", SysPowerGetPowerStatus());
+1492   4              }
+1493   3              else
+1494   3              {
+1495   4              
 1496   4      #if(_MPRT_SUPPORT == _ON)
-1497   4                                              UserAdjustLowMotionBlurDisplay(_OFF);
+1497   4                UserAdjustLowMotionBlurDisplay(_OFF);
 1498   4      #endif
-1499   4              #if(_NAVIGAT_MENU_SURPPORT)                     
-                                                      if(((GET_OSD_STATE() == _MENU_NONE))&&(SysModeGetModeState() == _MODE_STATUS_ACTIVE) && (GET_OSD_FACT
+1499   4        #if(_NAVIGAT_MENU_SURPPORT)     
+                        if(((GET_OSD_STATE() == _MENU_NONE))&&(SysModeGetModeState() == _MODE_STATUS_ACTIVE) && (GET_OSD_FACT
              -ORY_MODE() == _OFF))
-                                                      {
-                                                              SET_OSD_STATE(_MENU_NAVIGAT_NONE);
-                                                              OsdDispNavigatMenu();                      
-                                                      }
-                                                      else if((GET_OSD_STATE() == _MENU_NAVIGAT_NONE)||(SysModeGetModeState() != _MODE_STATUS_ACTIVE) || (G
+                        {
+                          SET_OSD_STATE(_MENU_NAVIGAT_NONE);
+                          OsdDispNavigatMenu();        
+                        }
+                        else if((GET_OSD_STATE() == _MENU_NAVIGAT_NONE)||(SysModeGetModeState() != _MODE_STATUS_ACTIVE) || (G
              -ET_OSD_FACTORY_MODE() == _ON))
-                                                      {
-                                                              SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);                                        
-                                                              SET_OSD_FACTORY_MODE(_OFF);
-                                                              SET_OSD_BURNING_MODE(_OFF);
-                                                              
-                                                              RTDNVRamSaveOSDData();
-                                                      }
-                                                              
-                      #else
-1515   4                                              
-1516   4                                                      SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);
-1517   4                                                      SET_OSD_FACTORY_MODE(_OFF);                             
-1518   4                                                      SET_OSD_BURNING_MODE(_OFF);
-1519   4                                                      ucin_factarystate=0;
-1520   4                                                      RTDNVRamSaveOSDData();
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 26  
+                        {
+                          SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);          
+                          SET_OSD_FACTORY_MODE(_OFF);
+                          SET_OSD_BURNING_MODE(_OFF);
+                          
+                          RTDNVRamSaveOSDData();
+                        }
+                          
+                #else
+1515   4                
+1516   4                  SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);
+1517   4                  SET_OSD_FACTORY_MODE(_OFF);         
+1518   4                  SET_OSD_BURNING_MODE(_OFF);
+1519   4                  ucin_factarystate=0;
+1520   4                  RTDNVRamSaveOSDData();
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 26  
 
-1521   4                                                      
-1522   4                                                      DebugMessageIR("off", SysPowerGetPowerStatus());
-1523   4              #endif                          
-1524   4                                      }
+1521   4                  
+1522   4                  DebugMessageIR("off", SysPowerGetPowerStatus());
+1523   4        #endif                
+1524   4              }
 1525   3      
 1526   3      
 1527   3                      break;
 1528   3      
 1529   3                  case _IR_CODE_KEY_MENU:
 1530   3                      ucKeyState = _MENU_KEY_MASK;
-1531   3                                      DebugMessageOsd("IR_MENU GET_OSD_VOLUME_MUTE()", GET_OSD_VOLUME_MUTE());
+1531   3              DebugMessageOsd("IR_MENU GET_OSD_VOLUME_MUTE()", GET_OSD_VOLUME_MUTE());
 1532   3                      break;
-1533   3                                      
-1534   3                              case _IR_CODE_KEY_OK:
-1535   3                                      if(0 < GET_OSD_STATE())
-1536   3                                      ucKeyState = _MENU_KEY_MASK;
-1537   3                                      if(SysModeGetModeState() != _MODE_STATUS_ACTIVE && ucin_factarystate == 0)
-1538   3                                      {
-1539   4                                              ucin_factarystate=1;
-1540   4                                              DebugMessageIR("Infac", ucin_factarystate);
-1541   4                                      }
-1542   3                                      break;
-1543   3                                      
-1544   3                              case _IR_CODE_KEY_EXIT:
-1545   3                                      if(0 < GET_OSD_STATE())
-1546   3                                              ucKeyState = _EXIT_KEY_MASK;
-1547   3                                      break;
-1548   3                                      
-1549   3                              case _IR_CODE_KEY_EXIT2:
-1550   3                                      if(0 < GET_OSD_STATE())
-1551   3                                              OsdDispDisableOsd();
-1552   3                                      break;
+1533   3              
+1534   3            case _IR_CODE_KEY_OK:
+1535   3              if(0 < GET_OSD_STATE())
+1536   3              ucKeyState = _MENU_KEY_MASK;
+1537   3              if(SysModeGetModeState() != _MODE_STATUS_ACTIVE && ucin_factarystate == 0)
+1538   3              {
+1539   4                ucin_factarystate=1;
+1540   4                DebugMessageIR("Infac", ucin_factarystate);
+1541   4              }
+1542   3              break;
+1543   3              
+1544   3            case _IR_CODE_KEY_EXIT:
+1545   3              if(0 < GET_OSD_STATE())
+1546   3                ucKeyState = _EXIT_KEY_MASK;
+1547   3              break;
+1548   3              
+1549   3            case _IR_CODE_KEY_EXIT2:
+1550   3              if(0 < GET_OSD_STATE())
+1551   3                OsdDispDisableOsd();
+1552   3              break;
 1553   3      
-1554   3                              case _IR_CODE_KEY_AUDIO:
-1555   3                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1556   3                              {
-1557   4                                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
+1554   3            case _IR_CODE_KEY_AUDIO:
+1555   3            if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1556   3            {
+1557   4              if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
              -FUN_AUDOIVOLUME)&&(OSD_SubMenuCur!= _MENU_FUN_LOWBLUE))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1558   4                                      {
-1559   5                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_BACKLIGHT-_MENU_FUN_BACKLIGHT);
-1560   5                                      }
-1561   4                              }
-1562   3                              break;
-1563   3                              case _IR_CODE_KEY_ECO:
-1564   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1565   3                                      {
-1566   4                                              if(_MENU_NONE == GET_OSD_STATE())
-1567   4                                              {
-1568   5                                                      RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
-1569   5                                              }
-1570   4                                              else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ECO))
-1571   4                                              {
-1572   5                                                      ucKeyState = _RIGHT_KEY_MASK;
-1573   5                                              }
-1574   4                                      }       
-1575   3                                      
-1576   3                                      ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1577   3                                      break;
-1578   3                                      
+1558   4              {
+1559   5                RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_BACKLIGHT-_MENU_FUN_BACKLIGHT);
+1560   5              }
+1561   4            }
+1562   3            break;
+1563   3            case _IR_CODE_KEY_ECO:
+1564   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1565   3              {
+1566   4                if(_MENU_NONE == GET_OSD_STATE())
+1567   4                {
+1568   5                  RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
+1569   5                }
+1570   4                else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ECO))
+1571   4                {
+1572   5                  ucKeyState = _RIGHT_KEY_MASK;
+1573   5                }
+1574   4              } 
+1575   3              
+1576   3              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1577   3              break;
+1578   3              
 1579   3                  case _IR_CODE_KEY_RIGHT:
-1580   3                              case _IR_CODE_KEY_ADD:  
-1581   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 27  
+1580   3            case _IR_CODE_KEY_ADD:  
+1581   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 27  
 
-1582   3                                      {
-1583   4                                      
-1584   4                                              if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))
-1585   4                                      ucKeyState = _MENU_KEY_MASK;
-1586   4                                              #if(_DEF_IR_PROTOCAL == _IR_SQY_YS14C)||(_DEF_IR_PROTOCAL == _IR_SQY_XHK_0827)
-                                                      else if(_MENU_NONE == GET_OSD_STATE() && usKeyCode == _IR_CODE_KEY_ADD)
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      #else
-1590   4                                              else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= 
+1582   3              {
+1583   4              
+1584   4                if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))
+1585   4                          ucKeyState = _MENU_KEY_MASK;
+1586   4                #if(_DEF_IR_PROTOCAL == _IR_SQY_YS14C)||(_DEF_IR_PROTOCAL == _IR_SQY_XHK_0827)
+                        else if(_MENU_NONE == GET_OSD_STATE() && usKeyCode == _IR_CODE_KEY_ADD)
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        #else
+1590   4                else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= 
              -_MENU_FUN_AUDOIVOLUME)&&(OSD_SubMenuCur!= _MENU_FUN_LOWBLUE))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1591   4                                              {
-1592   5                                                      RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-1593   5              
-1594   5                                              }
-1595   4                                              #endif
-1596   4                                              else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())                          
-1597   4                                                      ucKeyState = _RIGHT_KEY_MASK;
-1598   4                                              else if((_MENU_FUN_BACKLIGHT <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_NULL))                             
-1599   4                                                      ucKeyState = _RIGHT_KEY_MASK;
+1591   4                {
+1592   5                  RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+1593   5        
+1594   5                }
+1595   4                #endif
+1596   4                else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())        
+1597   4                  ucKeyState = _RIGHT_KEY_MASK;
+1598   4                else if((_MENU_FUN_BACKLIGHT <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_NULL))       
+1599   4                  ucKeyState = _RIGHT_KEY_MASK;
 1600   4      
-1601   4                                              
-1602   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1603   4                                      }
-1604   3                                      else if(ucin_factarystate == 2 && usKeyCode == _IR_CODE_KEY_RIGHT)
-1605   3                                      {
-1606   4                                              ucin_factarystate=3;
-1607   4                                              DebugMessageIR("Infac", ucin_factarystate);
-1608   4                                              ucin_factarystate=0;
-1609   4                                              SET_OSD_FACTORY_MODE(_ON);                              
-1610   4                                              SET_OSD_BURNING_MODE(_ON);
-1611   4                                              RTDNVRamSaveOSDData();
-1612   4                                      }
-1613   3                      break;                  
+1601   4                
+1602   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1603   4              }
+1604   3              else if(ucin_factarystate == 2 && usKeyCode == _IR_CODE_KEY_RIGHT)
+1605   3              {
+1606   4                ucin_factarystate=3;
+1607   4                DebugMessageIR("Infac", ucin_factarystate);
+1608   4                ucin_factarystate=0;
+1609   4                SET_OSD_FACTORY_MODE(_ON);        
+1610   4                SET_OSD_BURNING_MODE(_ON);
+1611   4                RTDNVRamSaveOSDData();
+1612   4              }
+1613   3                      break;      
 1614   3      
 1615   3                  case _IR_CODE_KEY_LEFT:
-1616   3                              case _IR_CODE_KEY_MINUS:        
-1617   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1618   3                                      {
-1619   4                                              if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_MISC_TATE5))
-1620   4                                      ucKeyState = _EXIT_KEY_MASK;    
-1621   4                                              #if(_DEF_IR_PROTOCAL == _IR_SQY_YS14C)||(_DEF_IR_PROTOCAL == _IR_SQY_XHK_0827)
-                                                      else if(_MENU_NONE == GET_OSD_STATE() && usKeyCode == _IR_CODE_KEY_MINUS)
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      #else
-1625   4                                              else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= 
+1616   3            case _IR_CODE_KEY_MINUS:  
+1617   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1618   3              {
+1619   4                if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_MISC_TATE5))
+1620   4                          ucKeyState = _EXIT_KEY_MASK;  
+1621   4                #if(_DEF_IR_PROTOCAL == _IR_SQY_YS14C)||(_DEF_IR_PROTOCAL == _IR_SQY_XHK_0827)
+                        else if(_MENU_NONE == GET_OSD_STATE() && usKeyCode == _IR_CODE_KEY_MINUS)
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        #else
+1625   4                else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= 
              -_MENU_FUN_AUDOIVOLUME)&&(OSD_SubMenuCur!= _MENU_FUN_LOWBLUE))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1626   4                                              {
-1627   5                                                      RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-1628   5                                                      
-1629   5                                              }
-1630   4                                              #endif
-1631   4                                              else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())                          
-1632   4                                                      ucKeyState = _LEFT_KEY_MASK;                    
-1633   4                                              else if((_MENU_FUN_BACKLIGHT <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_NULL))                             
-1634   4                                                      ucKeyState = _LEFT_KEY_MASK;
+1626   4                {
+1627   5                  RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+1628   5                  
+1629   5                }
+1630   4                #endif
+1631   4                else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())        
+1632   4                  ucKeyState = _LEFT_KEY_MASK;      
+1633   4                else if((_MENU_FUN_BACKLIGHT <= GET_OSD_STATE()) && (GET_OSD_STATE() < _MENU_NULL))       
+1634   4                  ucKeyState = _LEFT_KEY_MASK;
 1635   4      
-1636   4                                      
-1637   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1638   4                                      }
-1639   3                                      else if(ucin_factarystate == 1 && usKeyCode == _IR_CODE_KEY_LEFT)
-1640   3                                      {
-1641   4                                              ucin_factarystate=2;
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 28  
+1636   4              
+1637   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1638   4              }
+1639   3              else if(ucin_factarystate == 1 && usKeyCode == _IR_CODE_KEY_LEFT)
+1640   3              {
+1641   4                ucin_factarystate=2;
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 28  
 
-1642   4                                              DebugMessageIR("Infac", ucin_factarystate);
-1643   4                                      }
+1642   4                DebugMessageIR("Infac", ucin_factarystate);
+1643   4              }
 1644   3                      break;
 1645   3      
-1646   3                              case _IR_CODE_KEY_UP:
-1647   3                                      if(0 < GET_OSD_STATE())
-1648   3                                              ucKeyState = _RIGHT_KEY_MASK;
-1649   3                                      else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE1
+1646   3            case _IR_CODE_KEY_UP:
+1647   3              if(0 < GET_OSD_STATE())
+1648   3                ucKeyState = _RIGHT_KEY_MASK;
+1649   3              else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE1
              - != OSD_SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1650   3                                              {
-1651   4                                                      RTDOsdDispHotkeyFuncAdjust(_HOT_KEY_LOS_TYPE1-_MENU_FUN_BACKLIGHT);
-1652   4                                              }
-1653   3                                      break;
+1650   3                {
+1651   4                  RTDOsdDispHotkeyFuncAdjust(_HOT_KEY_LOS_TYPE1-_MENU_FUN_BACKLIGHT);
+1652   4                }
+1653   3              break;
 1654   3      
-1655   3                              case _IR_CODE_KEY_DOWN:
-1656   3                                      
-1657   3                                              if(_MENU_NONE < GET_OSD_STATE())
-1658   3                                              ucKeyState = _LEFT_KEY_MASK;
-1659   3                                              else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE
+1655   3            case _IR_CODE_KEY_DOWN:
+1656   3              
+1657   3                if(_MENU_NONE < GET_OSD_STATE())
+1658   3                ucKeyState = _LEFT_KEY_MASK;
+1659   3                else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE
              -1 != OSD_SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1660   3                                              {
-1661   4                                                      RTDOsdDispHotkeyFuncAdjust(_HOT_KEY_LOS_TYPE1-_MENU_FUN_BACKLIGHT);
-1662   4                                              }
-1663   3                                              
-1664   3                                              ScalerTimerCancelTimerEvent( _USER_TIMER_EVENT_OSD_DISABLE);
-1665   3                                      break;
+1660   3                {
+1661   4                  RTDOsdDispHotkeyFuncAdjust(_HOT_KEY_LOS_TYPE1-_MENU_FUN_BACKLIGHT);
+1662   4                }
+1663   3                
+1664   3                ScalerTimerCancelTimerEvent( _USER_TIMER_EVENT_OSD_DISABLE);
+1665   3              break;
 1666   3      
-1667   3                              case _IR_CODE_KEY_SOURCE:
+1667   3            case _IR_CODE_KEY_SOURCE:
 1668   3      #if(_IR_PROTOCAL == _IR_MXDZ_NEC)
-                                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-                                              {
-                                                      if(_MENU_NONE < GET_OSD_STATE())
-                                                              ucKeyState = _RIGHT_KEY_MASK;
-                                                      else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE
+                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+                      {
+                        if(_MENU_NONE < GET_OSD_STATE())
+                          ucKeyState = _RIGHT_KEY_MASK;
+                        else if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_HOT_KEY_LOS_TYPE
              -1 != OSD_SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-                                                      {
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
-                                                      }
-                                                      
-                                                      ScalerTimerCancelTimerEvent( _USER_TIMER_EVENT_OSD_DISABLE);
-                                              }
+                        {
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
+                        }
+                        
+                        ScalerTimerCancelTimerEvent( _USER_TIMER_EVENT_OSD_DISABLE);
+                      }
               
               #else
-1682   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1683   3                                      {
-1684   4                                              if((_MENU_NONE == GET_OSD_STATE())||(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()))
-1685   4                                              {
-1686   5                                                      //OsdInputSourceHotkey();
-1687   5                                                      RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_SOURCE_HOTKEY-_MENU_FUN_BACKLIGHT);
-1688   5                                              }
-1689   4                                              else if(_MENU_FUN_SOURCE_HOTKEY == GET_OSD_STATE())
-1690   4                                              {
-1691   5                                                      ucKeyState = _RIGHT_KEY_MASK;
-1692   5                                              }
-1693   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1694   4                                      }
-1695   3                                      
+1682   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1683   3              {
+1684   4                if((_MENU_NONE == GET_OSD_STATE())||(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()))
+1685   4                {
+1686   5                  //OsdInputSourceHotkey();
+1687   5                  RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_SOURCE_HOTKEY-_MENU_FUN_BACKLIGHT);
+1688   5                }
+1689   4                else if(_MENU_FUN_SOURCE_HOTKEY == GET_OSD_STATE())
+1690   4                {
+1691   5                  ucKeyState = _RIGHT_KEY_MASK;
+1692   5                }
+1693   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1694   4              }
+1695   3              
 1696   3      #if(_SOURCE_AUTO_ON)
-1697   3                                       if(SysModeGetModeState() == _MODE_STATUS_POWER_SAVING)
-1698   3                                       {
-1699   4                                              PCB_OFF_REGION_GPIO_SETTING_POWER_AC_PD_PS_ON();
-1700   4                                              SET_OSD_POWER_SAVING_SHOW_SOURCE(_TRUE);
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 29  
+1697   3               if(SysModeGetModeState() == _MODE_STATUS_POWER_SAVING)
+1698   3               {
+1699   4                PCB_OFF_REGION_GPIO_SETTING_POWER_AC_PD_PS_ON();
+1700   4                SET_OSD_POWER_SAVING_SHOW_SOURCE(_TRUE);
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 29  
 
-1701   4                                              if((SysPowerGetPowerStatus() == _POWER_STATUS_SAVING))
-1702   4                                              {
-1703   5                                                      SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
-1704   5                                              }
-1705   4                                       }
+1701   4                if((SysPowerGetPowerStatus() == _POWER_STATUS_SAVING))
+1702   4                {
+1703   5                  SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
+1704   5                }
+1705   4               }
 1706   3      #endif  
 1707   3      #endif
-1708   3                                      break;
+1708   3              break;
 1709   3      
 1710   3      #if(_IR_PROTOCAL == _IR_SW_LGTV)
               
-                                      case _IR_CODE_KEY_F1:
-                                      case _IR_CODE_KEY_F2:
-                                              #if(_PCB_TYPE==_RL6432__156PIN__HKMRT2556E01__2H1DP__LVDS)
-                                              if((usKeyCode==_IR_CODE_KEY_F1 ?  _OSD_INPUT_D1: _OSD_INPUT_D3) == OsdFuncGetOsdItemFlag())
-                                              {
-                                                      OsdDispOsdMessage(_OSD_DISP_INPUT_SIGNAL_MSG);
-                                                      ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-                                              }
-                                              else
-                                              {       SET_OSD_INPUT_PORT_OSD_ITEM((usKeyCode==_IR_CODE_KEY_F1 ? _OSD_INPUT_D1 : _OSD_INPUT_D3));
-                                                      SET_FORCE_POW_SAV_STATUS(_FALSE);
-                                                      SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
-                                                      SysSourceSwitchInputPort(OsdFuncGetOsdItemFlag());
-                                                      SysSourceSetScanType(_SOURCE_SWITCH_FIXED_PORT);
-                                                      if((UserCommonNVRamGetSystemData(_SEARCH_PORT) != SysSourceGetInputPort()) ||
-                                                         (UserCommonNVRamGetSystemData(_SOURCE_SCAN_TYPE) != SysSourceGetScanType()))
-                                                      {
-                                                              UserCommonNVRamSetSystemData(_SEARCH_PORT, SysSourceGetInputPort());
-                                                              UserCommonNVRamSetSystemData(_SOURCE_SCAN_TYPE, SysSourceGetScanType());
-                                                              SET_OSD_EVENT_MESSAGE(_OSDEVENT_SAVE_NVRAM_SYSTEMDATA_MSG);
-                                                      }                                               
-                              
+                    case _IR_CODE_KEY_F1:
+                    case _IR_CODE_KEY_F2:
+                      #if(_PCB_TYPE==_RL6432__156PIN__HKMRT2556E01__2H1DP__LVDS)
+                      if((usKeyCode==_IR_CODE_KEY_F1 ?  _OSD_INPUT_D1: _OSD_INPUT_D3) == OsdFuncGetOsdItemFlag())
+                      {
+                        OsdDispOsdMessage(_OSD_DISP_INPUT_SIGNAL_MSG);
+                        ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+                      }
+                      else
+                      { SET_OSD_INPUT_PORT_OSD_ITEM((usKeyCode==_IR_CODE_KEY_F1 ? _OSD_INPUT_D1 : _OSD_INPUT_D3));
+                        SET_FORCE_POW_SAV_STATUS(_FALSE);
+                        SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
+                        SysSourceSwitchInputPort(OsdFuncGetOsdItemFlag());
+                        SysSourceSetScanType(_SOURCE_SWITCH_FIXED_PORT);
+                        if((UserCommonNVRamGetSystemData(_SEARCH_PORT) != SysSourceGetInputPort()) ||
+                           (UserCommonNVRamGetSystemData(_SOURCE_SCAN_TYPE) != SysSourceGetScanType()))
+                        {
+                          UserCommonNVRamSetSystemData(_SEARCH_PORT, SysSourceGetInputPort());
+                          UserCommonNVRamSetSystemData(_SOURCE_SCAN_TYPE, SysSourceGetScanType());
+                          SET_OSD_EVENT_MESSAGE(_OSDEVENT_SAVE_NVRAM_SYSTEMDATA_MSG);
+                        }           
+                  
               
               
-                                              }
-                                              #endif
-                                              break;
-                                              
+                      }
+                      #endif
+                      break;
+                      
               #elif(_IR_PROTOCAL == _IR_TAISHUO_NEC)
-                                              
-                                              case _IR_CODE_KEY_F1:
-                                                      if(_MENU_NONE == GET_OSD_STATE())
-                                                      {
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      }
-                                                      else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()&&OSD_SubMenuCur==_MENU_FUN_AUDOIVOLUME)
-                                                      {
-                                                              ucKeyState = _RIGHT_KEY_MASK;
-                                                      }
-                                                      ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-                                                      break;
-                                                      
-                                              case _IR_CODE_KEY_F2:
-                                                      if(_MENU_NONE == GET_OSD_STATE())
-                                                      {
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      }
-                                                      else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()&&OSD_SubMenuCur==_MENU_FUN_AUDOIVOLUME)
-                                                      {
-                                                              ucKeyState = _LEFT_KEY_MASK;
-                                                      }
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 30  
+                      
+                      case _IR_CODE_KEY_F1:
+                        if(_MENU_NONE == GET_OSD_STATE())
+                        {
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        }
+                        else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()&&OSD_SubMenuCur==_MENU_FUN_AUDOIVOLUME)
+                        {
+                          ucKeyState = _RIGHT_KEY_MASK;
+                        }
+                        ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+                        break;
+                        
+                      case _IR_CODE_KEY_F2:
+                        if(_MENU_NONE == GET_OSD_STATE())
+                        {
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        }
+                        else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()&&OSD_SubMenuCur==_MENU_FUN_AUDOIVOLUME)
+                        {
+                          ucKeyState = _LEFT_KEY_MASK;
+                        }
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 30  
 
-                                                      ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-                                                      break;
+                        ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+                        break;
               #elif(_IR_PROTOCAL == _IR_MXDZ_NEC)
-                                      case _IR_CODE_KEY_F1:
-                                              
-                                              if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
+                    case _IR_CODE_KEY_F1:
+                      
+                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
              -FUN_AUDOIVOLUME)&&(OSD_SubMenuCur!= _MENU_FUN_LOWBLUE))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-                                                      {
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      }
-                                                      else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())                          
-                                                      {
-                                                              ucKeyState = _LEFT_KEY_MASK;
-                                                      }
-                                              
-                                              break;
-                                              
-                                      case _IR_CODE_KEY_F2:
-                                              
-                                              if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
+                        {
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        }
+                        else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())        
+                        {
+                          ucKeyState = _LEFT_KEY_MASK;
+                        }
+                      
+                      break;
+                      
+                    case _IR_CODE_KEY_F2:
+                      
+                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur!= _MENU_
              -FUN_AUDOIVOLUME)&&(OSD_SubMenuCur!= _MENU_FUN_LOWBLUE))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-                                                      {
-                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
-                                                      }
-                                                      else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())                          
-                                                      {
-                                                              ucKeyState = _RIGHT_KEY_MASK;
-                                                      }
-                                              
-                                              break;                                          
+                        {
+                          RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
+                        }
+                        else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE())        
+                        {
+                          ucKeyState = _RIGHT_KEY_MASK;
+                        }
+                      
+                      break;            
               #else
-1792   3                      case _IR_CODE_KEY_F1:
-1793   3                                      
-1794   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1795   3                                      {
-1796   4                                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1797   4                                              {
-1798   5                                                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_LOWBLUE != 
+1792   3          case _IR_CODE_KEY_F1:
+1793   3              
+1794   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1795   3              {
+1796   4                if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1797   4                {
+1798   5                  if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_LOWBLUE != 
              -OSD_SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1799   5                                                      {
-1800   6                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_LOWBLUE-_MENU_FUN_BACKLIGHT);
-1801   6                                                      }
-1802   5                                              }               
-1803   4                                              
-1804   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1805   4                                      }
-1806   3                                      
-1807   3                                      break;
-1808   3                                      
-1809   3                              case _IR_CODE_KEY_F2:
-1810   3                                      
-1811   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1812   3                                      {
-1813   4                                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1814   4                                              {
-1815   5                                                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_OD != OSD_S
+1799   5                  {
+1800   6                    RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_LOWBLUE-_MENU_FUN_BACKLIGHT);
+1801   6                  }
+1802   5                }   
+1803   4                
+1804   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1805   4              }
+1806   3              
+1807   3              break;
+1808   3              
+1809   3            case _IR_CODE_KEY_F2:
+1810   3              
+1811   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1812   3              {
+1813   4                if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1814   4                {
+1815   5                  if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_OD != OSD_S
              -ubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1816   5                                                      {
-1817   6                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_OD-_MENU_FUN_BACKLIGHT);
-1818   6                                                      }
-1819   5                                                      else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_OD))
-1820   5                                                      {
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 31  
+1816   5                  {
+1817   6                    RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_OD-_MENU_FUN_BACKLIGHT);
+1818   6                  }
+1819   5                  else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_OD))
+1820   5                  {
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 31  
 
-1821   6                                                              ucKeyState = _RIGHT_KEY_MASK;
-1822   6                                                      }
-1823   5                                              }       
-1824   4                                              
-1825   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1826   4                                      }
-1827   3                                      
-1828   3                                      break;
+1821   6                    ucKeyState = _RIGHT_KEY_MASK;
+1822   6                  }
+1823   5                } 
+1824   4                
+1825   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1826   4              }
+1827   3              
+1828   3              break;
 1829   3      
 1830   3      
 1831   3      
 1832   3      
 1833   3      #endif
-1834   3                              case _IR_CODE_KEY_P:
-1835   3                                      
-1836   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1837   3                                      {
-1838   4                                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1839   4                                              {
-1840   5                                                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_ECO != OSD_
+1834   3            case _IR_CODE_KEY_P:
+1835   3              
+1836   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1837   3              {
+1838   4                if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1839   4                {
+1840   5                  if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_ECO != OSD_
              -SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1841   5                                                      {
-1842   6                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
-1843   6                                                      }
-1844   5                                                      else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ECO))
-1845   5                                                      {
-1846   6                                                              ucKeyState = _RIGHT_KEY_MASK;
-1847   6                                                      }
-1848   5                                              }       
-1849   4                                              
-1850   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1851   4                                      }
-1852   3                                      
-1853   3                                      break;
+1841   5                  {
+1842   6                    RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ECO-_MENU_FUN_BACKLIGHT);
+1843   6                  }
+1844   5                  else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ECO))
+1845   5                  {
+1846   6                    ucKeyState = _RIGHT_KEY_MASK;
+1847   6                  }
+1848   5                } 
+1849   4                
+1850   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1851   4              }
+1852   3              
+1853   3              break;
 1854   3      
-1855   3                              case _IR_CODE_KEY_MUTE:
-1856   3                                      
-1857   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1858   3                                      {
-1859   4                                              if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())))
-1860   4                                              {                       
-1861   5                                                      SET_OSD_VOLUME_MUTE((GET_OSD_VOLUME_MUTE()? 0:1));
+1855   3            case _IR_CODE_KEY_MUTE:
+1856   3              
+1857   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1858   3              {
+1859   4                if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())))
+1860   4                {     
+1861   5                  SET_OSD_VOLUME_MUTE((GET_OSD_VOLUME_MUTE()? 0:1));
 1862   5      
-1863   5                                                      RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_SOURCE_MUTEICON-_MENU_FUN_BACKLIGHT);
-1864   5                                                      RTDNVRamSaveOSDData();
-1865   5                                                      DebugMessageOsd("IR GET_OSD_VOLUME_MUTE()", GET_OSD_VOLUME_MUTE());
-1866   5                                              }
-1867   4                                              else if((_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1868   4                                              {
-1869   5                                                      ucKeyState = _RIGHT_KEY_MASK;
-1870   5                                              }
-1871   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1872   4                                      }
-1873   3                                      break;
-1874   3                              
+1863   5                  RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_SOURCE_MUTEICON-_MENU_FUN_BACKLIGHT);
+1864   5                  RTDNVRamSaveOSDData();
+1865   5                  DebugMessageOsd("IR GET_OSD_VOLUME_MUTE()", GET_OSD_VOLUME_MUTE());
+1866   5                }
+1867   4                else if((_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
+1868   4                {
+1869   5                  ucKeyState = _RIGHT_KEY_MASK;
+1870   5                }
+1871   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1872   4              }
+1873   3              break;
+1874   3            
 1875   3      
-1876   3                              case _IR_CODE_KEY_SCALE:
-1877   3                                      
-1878   3                                      if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1879   3                                      {
-1880   4                                              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-1881   4                                              {
-C51 COMPILER V8.12   RTD2014KEY                                                            09/16/2026 20:29:05 PAGE 32  
+1876   3            case _IR_CODE_KEY_SCALE:
+1877   3              
+1878   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1879   3              {
+1880   4                if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
+1881   4                {
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/18/2026 20:40:06 PAGE 32  
 
-1882   5                                                      if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_ASPECT != O
+1882   5                  if((_MENU_NONE == GET_OSD_STATE())||((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(_MENU_FUN_ASPECT != O
              -SD_SubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
-1883   5                                                      {
-1884   6                                                              RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ASPECT-_MENU_FUN_BACKLIGHT);
-1885   6                                                      }
-1886   5                                                      else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ASPECT))
-1887   5                                                      {
-1888   6                                                              ucKeyState = _RIGHT_KEY_MASK;
-1889   6                                                      }
-1890   5                                              }       
-1891   4                                              
-1892   4                                              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-1893   4                                      }
-1894   3                                      
-1895   3                                      break;
+1883   5                  {
+1884   6                    RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_ASPECT-_MENU_FUN_BACKLIGHT);
+1885   6                  }
+1886   5                  else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_ASPECT))
+1887   5                  {
+1888   6                    ucKeyState = _RIGHT_KEY_MASK;
+1889   6                  }
+1890   5                } 
+1891   4                
+1892   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
+1893   4              }
+1894   3              
+1895   3              break;
 1896   3      
-1897   3                                      
-1898   3                              
+1897   3              
+1898   3            
 1899   3      
 1900   3      
 1901   3                  default:
@@ -2018,7 +2018,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2916    ----
+   CODE SIZE        =   2947    ----
    CONSTANT SIZE    =     45    ----
    XDATA SIZE       =      5      20
    PDATA SIZE       =   ----    ----

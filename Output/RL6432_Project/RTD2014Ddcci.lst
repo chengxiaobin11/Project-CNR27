@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014DDCCI
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014DDCCI
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014Ddcci.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014Ddcci.c LARGE OPTIMIZE(9,SPEED) INCD
-                    -IR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel
-                    -\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Ke
-                    -rnel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Co
-                    -mmon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\Use
-                    -r Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory
-                    -\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PRO
-                    -JECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014Ddcci.lst) OBJ
-                    -ECT(.\Output\RL6432_Project\RTD2014Ddcci.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014Ddcci.c LARGE OPTIMIZE(9,SPEED) I
+                    -NCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ker
+                    -nel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.
+                    -\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series
+                    -_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\
+                    -User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fact
+                    -ory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_
+                    -PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014Ddcci.lst) 
+                    -TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014Ddcci.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
              -COLORTEMP_USER_MIN)
   45          
   46          //--------------------------------------------------
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 2   
 
   47          // For DDCCI Set Input Port
   48          //--------------------------------------------------
@@ -86,47 +86,47 @@ line level    source
   66          //BYTE code tLANGUAGEDEFINE[] = {0x02, 0x03, 0x04, 0x0a, 0x01, 0x0d, 0x06};
   67          //BYTE code tLANGUAGEDEFINE[] = {0x02, 0x03};
   68          /*
-  69          Chinesse_S      0x01
-  70          Engish          0x02
-  71          French          0x03
-  72          German          0x04
-  73          Italian         0x05
-  74          Japanese                0x06
-  75          Korean          0x07
-  76          Portuguese      0x08
-  77          Russian         0x09
-  78          Spanish         0x0A
-  79          Swedish         0x0B
-  80          Turkish         0x0C
-  81          Chineses_T      0x0D
-  82          Brzil           0x0E
-  83           Arabic         0x0F
-  84          Bulgarian               0x10
-  85          Croaian         0x11
-  86          Czech           0x12
-  87          Danish          0x13
-  88          Dutch           0x14
-  89          Estonian                0x15
-  90          Finnish         0x16
-  91          Greek           0x17
-  92          Hebrew          0x18
-  93          Hindi           0x19
-  94          Hungrian                0x1A
-  95          Norwegian       0x1B
-  96          Polish          0x1C
-  97          Romanian                0x1D
-  98          Serbian         0x1E
-  99          Slovak          0x1F
- 100          Slovenian               0x20
- 101          Thai            0x21
- 102          Ukranian                0x22
- 103          Vietnamese      0x23
+  69          Chinesse_S  0x01
+  70          Engish    0x02
+  71          French    0x03
+  72          German    0x04
+  73          Italian   0x05
+  74          Japanese    0x06
+  75          Korean    0x07
+  76          Portuguese  0x08
+  77          Russian   0x09
+  78          Spanish   0x0A
+  79          Swedish   0x0B
+  80          Turkish   0x0C
+  81          Chineses_T  0x0D
+  82          Brzil   0x0E
+  83           Arabic   0x0F
+  84          Bulgarian   0x10
+  85          Croaian   0x11
+  86          Czech   0x12
+  87          Danish    0x13
+  88          Dutch   0x14
+  89          Estonian    0x15
+  90          Finnish   0x16
+  91          Greek   0x17
+  92          Hebrew    0x18
+  93          Hindi   0x19
+  94          Hungrian    0x1A
+  95          Norwegian 0x1B
+  96          Polish    0x1C
+  97          Romanian    0x1D
+  98          Serbian   0x1E
+  99          Slovak    0x1F
+ 100          Slovenian   0x20
+ 101          Thai    0x21
+ 102          Ukranian    0x22
+ 103          Vietnamese  0x23
  104          
  105          */
  106          BYTE code tLANGUAGEDEFINE[] = {0x02,0x03,0x0A, 0x08,0x04,0x05,0x14, 0x0B,0x16,0x1C  ,0x12,0x09 ,0x07,0x01,
              -0x0D, 0x06,0x17,0x1A,0x0C};
  107          
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 3   
 
  108          
  109          //****************************************************************************
@@ -190,7 +190,7 @@ line level    source
  167          #if((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT) || (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT))
                   _HDMI_D2,
               #endif
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 4   
 
  170          #if((_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT) || (_D3_INPUT_PORT_TYPE == _D3_MHL_PORT))
  171              _HDMI_D3,
@@ -254,7 +254,7 @@ line level    source
  229   2      
  230   2      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
                       case _D1_INPUT_PORT:
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 5   
 
               #if(_D1_INPUT_PORT_TYPE == _D1_DVI_PORT)
                           ucOsdSourcePort = _DVI_D1;
@@ -318,7 +318,7 @@ line level    source
                           {
                               ucOsdSourcePort = _DVI_D3;
                           }
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 6   
 
               #endif
  295   2      
@@ -382,7 +382,7 @@ line level    source
                           else
                           {
                               ucOsdSourcePort = _HDMI_D5;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 7   
 
                           }
               #endif
@@ -420,22 +420,22 @@ line level    source
  389          void RTDDdccireply(BYTE Flag)
  390          {
  391   1      #if  _Def_AutoAlign_Type==1
- 392   1                      g_pucDdcciTxBuf[0]=0x6E;
- 393   1                      g_pucDdcciTxBuf[1]=0x82;
- 394   1                      g_pucDdcciTxBuf[2]=0x02;
- 395   1                      g_pucDdcciTxBuf[3]=Flag;
- 396   1                      g_pucDdcciTxBuf[4] = UserCommonDdcciCalCheckSum();
- 397   1                      ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
- 398   1                      ScalerMcuDdcciReleaseScl();
- 399   1              
- 400   1              
+ 392   1          g_pucDdcciTxBuf[0]=0x6E;
+ 393   1          g_pucDdcciTxBuf[1]=0x82;
+ 394   1          g_pucDdcciTxBuf[2]=0x02;
+ 395   1          g_pucDdcciTxBuf[3]=Flag;
+ 396   1          g_pucDdcciTxBuf[4] = UserCommonDdcciCalCheckSum();
+ 397   1          ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 398   1          ScalerMcuDdcciReleaseScl();
+ 399   1        
+ 400   1        
  401   1      #else
-                              g_pucDdcciTxBuf[0]=0x6F;
-                              g_pucDdcciTxBuf[1]=0x82;
-                              g_pucDdcciTxBuf[2]=0x02;
-                              g_pucDdcciTxBuf[3]=Flag;
-                              g_pucDdcciTxBuf[4] = UserCommonDdcciCalCheckSum();
-                              ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+                  g_pucDdcciTxBuf[0]=0x6F;
+                  g_pucDdcciTxBuf[1]=0x82;
+                  g_pucDdcciTxBuf[2]=0x02;
+                  g_pucDdcciTxBuf[3]=Flag;
+                  g_pucDdcciTxBuf[4] = UserCommonDdcciCalCheckSum();
+                  ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
               #endif
  409   1      }
  410          
@@ -446,7 +446,7 @@ line level    source
                   WORD ucChksum = 0;
                   BYTE usCount = 0;
               
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 8   
 
                   for(usCount = 0; usCount < 127; usCount++)
                   {
@@ -454,7 +454,7 @@ line level    source
                   }
               
                   ucChksum = (256- ucChksum%256)%256; 
-                      
+                
                   // Checksum Check & EDID Header Check
                   if((ucChksum != pucDDCRAM[127])
                   || (pucDDCRAM[0] != 0x00) || (pucDDCRAM[1] != 0xFF)
@@ -468,17 +468,17 @@ line level    source
                   ucChksum = 0;
                   if(usSize == 256)
                   {
-                          for(usCount = 0; usCount < 127; usCount++)
-                          {
-                              ucChksum += pucDDCRAM[128+usCount];
-                          }
+                    for(usCount = 0; usCount < 127; usCount++)
+                        {
+                        ucChksum += pucDDCRAM[128+usCount];
+                        }
               
-                          ucChksum = (256- ucChksum%256)%256; 
-                              
-                          if(ucChksum != pucDDCRAM[255])
-                          {
-                                      return _FALSE;
-                          }
+                    ucChksum = (256- ucChksum%256)%256; 
+                  
+                    if(ucChksum != pucDDCRAM[255])
+                    {
+                    return _FALSE;
+                    }
                   }
               
                   return _TRUE;
@@ -510,7 +510,7 @@ line level    source
  477   4                          break;
  478   4      
  479   4                      case _DDCCI_CMD_CAPABILITIES_REQUEST:
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 9   
 
  480   4                          UserCommonDdcciGetCapabilitiesRequest();
  481   4                          break;
@@ -519,11 +519,11 @@ line level    source
  484   4                          UserCommonDdcciInitTx();
  485   4                          break;
  486   4                  }
- 487   3                              
+ 487   3            
  488   3      #if  _Def_AutoAlign_Type==1
- 489   3                              if(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE] == _DDCCI_OPCODE_VCP_AUTOALIGN  || g_pucDdcciRxBuf[_DDCCI_SOUR
+ 489   3            if(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE] == _DDCCI_OPCODE_VCP_AUTOALIGN  || g_pucDdcciRxBuf[_DDCCI_SOUR
              -CE_OPCODE] == _DDCCI_OPCODE_VCP_DISP_CALIBRATION)
- 490   3                                      ScalerMcuDdcciReleaseScl();
+ 490   3              ScalerMcuDdcciReleaseScl();
  491   3      #endif
  492   3                  UserCommonDdcciInitRx();
  493   3      
@@ -574,7 +574,7 @@ line level    source
                   return 0;
               }
               #endif
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 10  
 
  539          
  540          //--------------------------------------------------
@@ -595,66 +595,66 @@ line level    source
  555   1          switch(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE])
  556   1          {
  557   2      
- 558   2              case _DDCCI_OPCODE_VCP_DDCPROC:
- 559   2              {
- 560   3                              //      WORD udAddress;
- 561   3                              //      udAddress=((WORD)(256*g_pucDdcciRxBuf[4])+g_pucDdcciRxBuf[5]);
- 562   3                                      
- 563   3                                      
- 564   3              ///**/flash area 
- 565   3              /*
- 566   3                                      UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+127, 1, &g_pucDdcciTxB
+ 558   2        case _DDCCI_OPCODE_VCP_DDCPROC:
+ 559   2        {
+ 560   3            //  WORD udAddress;
+ 561   3            //  udAddress=((WORD)(256*g_pucDdcciRxBuf[4])+g_pucDdcciRxBuf[5]);
+ 562   3              
+ 563   3              
+ 564   3        ///**/flash area 
+ 565   3        /*
+ 566   3              UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+127, 1, &g_pucDdcciTxB
              -uf[3]);
- 567   3                                      UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+255, 1, &g_pucDdcciTxB
+ 567   3              UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+255, 1, &g_pucDdcciTxB
              -uf[4]);
- 568   3                                      UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+383, 1, &g_pucDdcciTxB
+ 568   3              UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+383, 1, &g_pucDdcciTxB
              -uf[5]);
- 569   3                                      UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+511, 1, &g_pucDdcciTxB
+ 569   3              UserCommonFlashRead(_EEPROM_HDCP_KEY_FLASH_BANK,(_MISC_PAGE) * _FLASH_PAGE_SIZE+511, 1, &g_pucDdcciTxB
              -uf[6]);
- 570   3              */      
+ 570   3        */  
  571   3      #if((_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH))
               #if(_A0_INPUT_PORT_TYPE != _A0_NO_PORT)
-                                              g_pucDdcciTxBuf[3] = MCU_DDCRAM_A0[127];
+                      g_pucDdcciTxBuf[3] = MCU_DDCRAM_A0[127];
               #endif
               #endif
- 576   3              
+ 576   3        
  577   3      #if((_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH))
               #if(_D0_INPUT_PORT_TYPE == _D0_DVI_PORT)
-                                              g_pucDdcciTxBuf[4] = MCU_DDCRAM_D0[127];
-                      
+                      g_pucDdcciTxBuf[4] = MCU_DDCRAM_D0[127];
+                
               #elif(_D0_INPUT_PORT_TYPE >_D0_DVI_PORT)
-                                              g_pucDdcciTxBuf[5] = MCU_DDCRAM_D0[127];
-                                              g_pucDdcciTxBuf[6] = MCU_DDCRAM_D0[255];
+                      g_pucDdcciTxBuf[5] = MCU_DDCRAM_D0[127];
+                      g_pucDdcciTxBuf[6] = MCU_DDCRAM_D0[255];
               #endif
               #endif
- 586   3              
+ 586   3        
  587   3      #if((_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH))
               #if(_D1_INPUT_PORT_TYPE == _D1_DVI_PORT)
-                                              g_pucDdcciTxBuf[4] = MCU_DDCRAM_D1[127];
+                      g_pucDdcciTxBuf[4] = MCU_DDCRAM_D1[127];
               #elif(_D1_INPUT_PORT_TYPE > _D1_DVI_PORT)
-                                              g_pucDdcciTxBuf[5] = MCU_DDCRAM_D1[127];
-                                              g_pucDdcciTxBuf[6] = MCU_DDCRAM_D1[255];
+                      g_pucDdcciTxBuf[5] = MCU_DDCRAM_D1[127];
+                      g_pucDdcciTxBuf[6] = MCU_DDCRAM_D1[255];
               #endif
               #endif
- 595   3              
- 596   3                                      g_pucDdcciTxBuf[7]=0;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 11  
+ 595   3        
+ 596   3              g_pucDdcciTxBuf[7]=0;
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 11  
 
- 597   3                                      g_pucDdcciTxBuf[8]=0;
- 598   3                                      g_pucDdcciTxBuf[9]=0;
- 599   3                                      g_pucDdcciTxBuf[10]=0;
- 600   3                                      
- 601   3                                      g_pucDdcciTxBuf[_DDCCI_LENGTH]=9;
- 602   3                                      g_pucDdcciTxBuf[11] = UserCommonDdcciCalCheckSum();
- 603   3                                      ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
- 604   3                                      //ScalerTimerActiveTimerEvent(SEC(0.5), _USER_TIMER_EVENT_OSD_DISABLE);
- 605   3                                      //OsdDispDisableOsd();
- 606   3                                      return;
- 607   3              }
- 608   2                              break;
+ 597   3              g_pucDdcciTxBuf[8]=0;
+ 598   3              g_pucDdcciTxBuf[9]=0;
+ 599   3              g_pucDdcciTxBuf[10]=0;
+ 600   3              
+ 601   3              g_pucDdcciTxBuf[_DDCCI_LENGTH]=9;
+ 602   3              g_pucDdcciTxBuf[11] = UserCommonDdcciCalCheckSum();
+ 603   3              ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
+ 604   3              //ScalerTimerActiveTimerEvent(SEC(0.5), _USER_TIMER_EVENT_OSD_DISABLE);
+ 605   3              //OsdDispDisableOsd();
+ 606   3              return;
+ 607   3        }
+ 608   2            break;
  609   2      
  610   2      
- 611   2              
+ 611   2        
  612   2              case _DDCCI_OPCODE_VCP_NEW_CONTROL_VALUE:
  613   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 0x0002, g_ucDdcciNewContro
              -lValue);
@@ -702,7 +702,7 @@ line level    source
  652   3                          UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, (93 - 30), (65 - 3
              -0));
  653   3                          break;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 12  
 
  654   3      
  655   3                      case _CT_5800:
@@ -766,7 +766,7 @@ line level    source
  709   2      
  710   2                  pucTemp[1] = UserCommonAdjustRealValueToPercent(GET_COLOR_TEMP_TYPE_USER_R(),
  711   2                                                                  _COLORTEMP_USER_MAX,
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 13  
 
  712   2                                                                  _COLORTEMP_USER_MIN,
  713   2                                                                  _COLORTEMP_USER_CENTER);
@@ -830,7 +830,7 @@ line level    source
  771   2              case _DDCCI_OPCODE_VCP_AUTO_COLOR:
  772   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 0x01, 0x01);
  773   2                  break;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 14  
 
  774   2      #endif
  775   2      
@@ -894,7 +894,7 @@ line level    source
  826   2              case _DDCCI_OPCODE_VCP_GREEN_BLACK_LEVEL:
  827   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 100, g_ucDdcciGreenBlackLe
              -vel);
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 15  
 
  828   2                  break;
  829   2      
@@ -958,7 +958,7 @@ line level    source
  883   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 0x20, tLANGUAGEDEFINE[GET_
              -OSD_LANGUAGE()]);
  884   2                  break;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 16  
 
  885   2      
  886   2              case _DDCCI_OPCODE_VCP_POWER_MODE:
@@ -1005,7 +1005,7 @@ line level    source
  926          //--------------------------------------------------
  927          bit RTDDdcciSetVCPFeatureCheck(void)
  928          {
- 929   1              
+ 929   1        
  930   1          switch(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE])
  931   1          {
  932   2              case _DDCCI_OPCODE_VCP_FACTORY_RESET:
@@ -1022,7 +1022,7 @@ line level    source
  943   2      
  944   2              case _DDCCI_OPCODE_VCP_NEW_CONTROL_VALUE:
  945   2              case _DDCCI_OPCODE_VCP_AUTO_SET_UP:
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 17  
 
  946   2              case _DDCCI_OPCODE_VCP_AUTO_COLOR:
  947   2      
@@ -1086,26 +1086,26 @@ line level    source
 1002   1          else
 1003   1          {
 1004   2          
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 18  
 
 1005   2              switch(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE])
 1006   2              {
 1007   3      
-1008   3                      case _DDCCI_OPCODE_VCP_AUTOALIGN:
+1008   3          case _DDCCI_OPCODE_VCP_AUTOALIGN:
 1009   3      
 1010   3      
 1011   3      
-1012   3                              RTDDdcciAutoAlignPro();
+1012   3            RTDDdcciAutoAlignPro();
 1013   3      
 1014   3      
 1015   3      
-1016   3                      break;
+1016   3          break;
 1017   3      
-1018   3                      case _DDCCI_OPCODE_VCP_DDCPROC:
-1019   3                              RTDDdcciEdidProc();
+1018   3          case _DDCCI_OPCODE_VCP_DDCPROC:
+1019   3            RTDDdcciEdidProc();
 1020   3      
-1021   3                              break;
-1022   3                      
+1021   3            break;
+1022   3          
 1023   3                  case _DDCCI_OPCODE_VCP_NEW_CONTROL_VALUE:
 1024   3      
 1025   3                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0x01)
@@ -1150,7 +1150,7 @@ line level    source
 1064   3                      {
 1065   3                          SET_FORCE_POW_SAV_STATUS(_FALSE);
 1066   3                          SysSourceSetScanType(_SOURCE_SWITCH_FIXED_PORT);
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 19  
 
 1067   3                          SysSourceSwitchInputPort(_DVI_2);
 1068   3                          SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
@@ -1184,77 +1184,77 @@ line level    source
 1096   3                          SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
 1097   3                      }*/
 1098   3      
-1099   3                                      
-1100   3                                      SET_FORCE_POW_SAV_STATUS(_FALSE);
+1099   3              
+1100   3              SET_FORCE_POW_SAV_STATUS(_FALSE);
 1101   3      ///////////////////////////////////////vga////////////////////////////////////////////////////////////////
-             -///////////////                          
+             -///////////////        
 1102   3      #if(_A0_INPUT_PORT_TYPE==_A0_VGA_PORT)
-1103   3                                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X01)
-1104   3                                              SysSourceSwitchInputPort(_A0_INPUT_PORT);
+1103   3              if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X01)
+1104   3                SysSourceSwitchInputPort(_A0_INPUT_PORT);
 1105   3      #endif
 1106   3      ///////////////////////////////////////dp1////////////////////////////////////////////////////////////////
-             -///////////////                          
-1107   3                                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X0F)
+             -///////////////        
+1107   3              if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X0F)
 1108   3      #if(_D0_INPUT_PORT_TYPE==_D0_DP_PORT)
-1109   3                                              SysSourceSwitchInputPort(_D0_INPUT_PORT);
+1109   3                SysSourceSwitchInputPort(_D0_INPUT_PORT);
 1110   3      #elif(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)
-                                                      SysSourceSwitchInputPort(_D1_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D1_INPUT_PORT);
               #elif(_D2_INPUT_PORT_TYPE==_D2_DP_PORT)
-                                                      SysSourceSwitchInputPort(_D2_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D2_INPUT_PORT);
               #else
-                                                      ;
+                        ;
               #endif
 1117   3      ///////////////////////////////////////dp2////////////////////////////////////////////////////////////////
-             -///////////////                          
-1118   3                                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X10)
+             -///////////////        
+1118   3              if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X10)
 1119   3      #if(_D0_INPUT_PORT_TYPE==_D0_DP_PORT)&&(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)
-                                                      SysSourceSwitchInputPort(_D1_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D1_INPUT_PORT);
               #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)||(_D1_INPUT_PORT_TYPE==_D1_DP_PORT))&&(_D2_INPUT_PORT_TYPE==_D2_D
              -P_PORT)
-                                                      SysSourceSwitchInputPort(_D2_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D2_INPUT_PORT);
               #else
-1124   3                                              ;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 20  
+1124   3                ;
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 20  
 
 1125   3      #endif
 1126   3      
 1127   3      ///////////////////////////////////////HDMI1//////////////////////////////////////////////////////////////
-             -/////////////////                        
-1128   3                                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X11)
+             -/////////////////        
+1128   3              if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X11)
 1129   3      #if(_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D0_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D0_INPUT_PORT);
               #elif(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D1_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D1_INPUT_PORT);
               #elif(_D2_INPUT_PORT_TYPE==_D2_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D2_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D2_INPUT_PORT);
               #elif(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)
-1136   3                                              SysSourceSwitchInputPort(_D3_INPUT_PORT);
+1136   3                SysSourceSwitchInputPort(_D3_INPUT_PORT);
 1137   3      #elif(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D4_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D4_INPUT_PORT);
               #else
-                                                      ;
+                        ;
               #endif
 1142   3      ///////////////////////////////////////HDMI2//////////////////////////////////////////////////////////////
              -///////////////// 
-1143   3                                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X12)
+1143   3              if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 0X12)
 1144   3      #if(_D4_INPUT_PORT_TYPE==_D4_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D4_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D4_INPUT_PORT);
               #elif(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)
-1147   3                                              SysSourceSwitchInputPort(_D3_INPUT_PORT);
+1147   3                SysSourceSwitchInputPort(_D3_INPUT_PORT);
 1148   3      #elif(_D2_INPUT_PORT_TYPE==_D2_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D2_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D2_INPUT_PORT);
               #elif(_D1_INPUT_PORT_TYPE==_D1_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D1_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D1_INPUT_PORT);
               #elif(_D0_INPUT_PORT_TYPE==_D0_HDMI_PORT)
-                                                      SysSourceSwitchInputPort(_D0_INPUT_PORT);
+                        SysSourceSwitchInputPort(_D0_INPUT_PORT);
               #else
-                                                      ;
+                        ;
               #endif
 1157   3      
 1158   3      ///////////////////////////////////////ENDIF//////////////////////////////////////////////////////////////
-             -/////////////////                
+             -/////////////////        
 1159   3      
-1160   3                                      SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
+1160   3              SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
 1161   3                      break;
 1162   3      
 1163   3                  case _DDCCI_OPCODE_VCP_FACTORY_RESET:
@@ -1278,7 +1278,7 @@ line level    source
 1181   3                      break;
 1182   3      
 1183   3                  case _DDCCI_OPCODE_VCP_RECAL_BRI_CON:
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 21  
 
 1184   3      
 1185   3                      RTDNVRamRestoreBriCon();
@@ -1342,7 +1342,7 @@ line level    source
 1243   3                      else
 1244   3                      {
 1245   4                          SET_COLOR_TEMP_TYPE(_CT_SRGB);
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 22  
 
 1246   4                      }
 1247   3      
@@ -1406,7 +1406,7 @@ line level    source
 1304   3       
 1305   3                       
 1306   3                       ucTemp=g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE];
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 23  
 
 1307   3                        
 1308   3                        if(ucTemp > 100)
@@ -1470,7 +1470,7 @@ line level    source
 1366   4                              break;
 1367   4                      }
 1368   3      
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 24  
 
 1369   3                      RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
 1370   3      
@@ -1534,7 +1534,7 @@ line level    source
 1424   4                          SET_COLOR_TEMP_TYPE_USER_G(UserCommonAdjustPercentToRealValue(g_pucDdcciRxBuf[_DDCCI_S
              -ET_LOW_BYTE],
 1427   4                                                                                        _COLORTEMP_USER_MAX,
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 25  
 
 1427   4                                                                                        _COLORTEMP_USER_MIN,
 1427   4                                                                                        _COLORTEMP_USER_CENTER))
@@ -1598,7 +1598,7 @@ line level    source
 1478   4                          UserAdjustContrast(GET_OSD_CONTRAST());
 1479   4      #endif
 1480   4      
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 26  
 
 1481   4                          SET_OSD_EVENT_MESSAGE(_OSDEVENT_SAVE_NVRAM_COLORPROC_MSG);
 1482   4                      }
@@ -1662,7 +1662,7 @@ line level    source
 1540   3                      if(SysSourceGetSourceType() == _SOURCE_VGA)
 1541   3                      {
 1542   4                          if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] > 100)
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 27  
 
 1543   4                          {
 1544   5                              g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] = 100;
@@ -1726,7 +1726,7 @@ line level    source
 1599   3                  case _DDCCI_OPCODE_VCP_POWER_MODE:
 1600   3      
 1601   3                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 4)
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 28  
 
 1602   3                      {
 1603   4                          SET_FORCE_POW_SAV_STATUS(_FALSE);
@@ -1744,7 +1744,7 @@ line level    source
 1615   4                      }
 1616   3      
 1617   3                      break;
-1618   3                                      
+1618   3              
 1619   3                  case _DDCCI_OPCODE_VCP_OSD_LANGUAGE:
 1620   3      
 1621   3                      switch(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE])
@@ -1790,7 +1790,7 @@ line level    source
 1661   4                              break;
 1662   4                          case 0x01:
 1663   4                              ucTemp=_CHINESE_F;
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 29  
 
 1664   4                              break;
 1665   4                          case 0x0D:
@@ -1830,7 +1830,7 @@ line level    source
 1699   4                      }
 1700   3                      else if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 2)
 1701   3                      {
-1702   4                              OsdDispMainMenu();
+1702   4                        OsdDispMainMenu();
 1703   4      //                    OsdFuncEnableOsd();
 1704   4                      }
 1705   3      
@@ -1854,7 +1854,7 @@ line level    source
 1723   1      }
 1724          
 1725          //--------------------------------------------------
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 30  
 
 1726          // Description  : Reset monitor
 1727          // Input Value  : None
@@ -1911,111 +1911,111 @@ line level    source
 1778          
 1779          void RTDDdcciEdidProc(void)
 1780          {
-1781   1              BYTE udAddress = 0;
-1782   1              BYTE ucFlag = 0;
+1781   1        BYTE udAddress = 0;
+1782   1        BYTE ucFlag = 0;
 1783   1      
-1784   1              ucFlag = (g_pucDdcciRxBuf[4]);
-1785   1              udAddress = (g_pucDdcciRxBuf[5]);
+1784   1        ucFlag = (g_pucDdcciRxBuf[4]);
+1785   1        udAddress = (g_pucDdcciRxBuf[5]);
 1786   1      
-1787   1              switch(ucFlag)
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 31  
+1787   1        switch(ucFlag)
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 31  
 
 1788   1      
-1789   1              {
-1790   2                      case 0xff:
-1791   2                              if(UserCommonFlashErasePage(_EDID_FLASH_BANK, _EDID_ADDRESS_FLASH))
-1792   2                                      RTDDdccireply(_TRUE);                           
-1793   2                              break;
-1794   2                              
-1795   2                      case 1:                         
+1789   1        {
+1790   2          case 0xff:
+1791   2            if(UserCommonFlashErasePage(_EDID_FLASH_BANK, _EDID_ADDRESS_FLASH))
+1792   2              RTDDdccireply(_TRUE);       
+1793   2            break;
+1794   2            
+1795   2          case 1:       
 1796   2      #if(_A0_INPUT_PORT_TYPE != _A0_NO_PORT)
 1797   2      #if(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      memcpy(&MCU_DDCRAM_A0[udAddress], &g_pucDdcciRxBuf[6], 8);
-                                      RTDDdccireply(_TRUE);   
+                    memcpy(&MCU_DDCRAM_A0[udAddress], &g_pucDdcciRxBuf[6], 8);
+                    RTDDdccireply(_TRUE); 
               #elif(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
 1803   2      #else
-                                      RTDDdccireply(_FALSE);  
+                    RTDDdccireply(_FALSE);  
               #endif
-1806   2                              break;
+1806   2            break;
 1807   2      
 1808   2      
-1809   2                      case 2:                         
+1809   2          case 2:       
 1810   2      #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT)
 1811   2      #if(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      memcpy(&MCU_DDCRAM_D0[udAddress], &g_pucDdcciRxBuf[6], 8);
-                                      RTDDdccireply(_TRUE);           
-              #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)       
+                    memcpy(&MCU_DDCRAM_D0[udAddress], &g_pucDdcciRxBuf[6], 8);
+                    RTDDdccireply(_TRUE);   
+              #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM) 
               #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
 1817   2      #else
-                              RTDDdccireply(_FALSE);  
+                  RTDDdccireply(_FALSE);  
               #endif
-1820   2                              break;
-1821   2                              
+1820   2            break;
+1821   2            
 1822   2      
-1823   2                      case 3:                 
+1823   2          case 3:     
 1824   2      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
               #if(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      memcpy(&MCU_DDCRAM_D1[udAddress], &g_pucDdcciRxBuf[6], 8);
-                                      RTDDdccireply(_TRUE);           
+                    memcpy(&MCU_DDCRAM_D1[udAddress], &g_pucDdcciRxBuf[6], 8);
+                    RTDDdccireply(_TRUE);   
               #elif(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
               #else
-1832   2                      RTDDdccireply(_FALSE);  
+1832   2          RTDDdccireply(_FALSE);  
 1833   2      #endif
-1834   2                              break;
+1834   2            break;
 1835   2      
-1836   2                      case 4:                         
+1836   2          case 4:       
 1837   2      #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT)
               #if(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      memcpy(&MCU_DDCRAM_D2[udAddress], &g_pucDdcciRxBuf[6], 8);
-                                      RTDDdccireply(_TRUE);
+                    memcpy(&MCU_DDCRAM_D2[udAddress], &g_pucDdcciRxBuf[6], 8);
+                    RTDDdccireply(_TRUE);
               #elif(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
               #else
-1845   2                      RTDDdccireply(_FALSE);  
+1845   2          RTDDdccireply(_FALSE);  
 1846   2      #endif
-1847   2                              break;
+1847   2            break;
 1848   2      
-1849   2                      case 5:                 
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 32  
+1849   2          case 5:     
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 32  
 
 1850   2      #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT)
 1851   2      #if(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      memcpy(&MCU_DDCRAM_D3[udAddress], &g_pucDdcciRxBuf[6], 8);
-                                      RTDDdccireply(_TRUE);   
+                    memcpy(&MCU_DDCRAM_D3[udAddress], &g_pucDdcciRxBuf[6], 8);
+                    RTDDdccireply(_TRUE); 
               #elif(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
 1857   2      #else
-                              RTDDdccireply(_FALSE);  
+                  RTDDdccireply(_FALSE);  
               #endif
-1860   2                              break;
+1860   2            break;
 1861   2      
-1862   2                      case 0x80:
+1862   2          case 0x80:
 1863   2      #if(_A0_INPUT_PORT_TYPE != _A0_NO_PORT)
 1864   2      #if(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_A0_ADDRESS_FLASH, _A0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_A0_ADDRESS_FLASH, _A0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_A0))
-                                      {
-                                              if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_A0_ADDRESS_FLASH, _A0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    {
+                      if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_A0_ADDRESS_FLASH, _A0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_A0))
-                                              {
-                                                      if(!RTDDdcciDdcCheck(MCU_DDCRAM_A0,_A0_EMBEDDED_DDCRAM_MAX_SIZE))
-                                                      {
-                                                              RTDDdccireply(_FALSE);                          
-                                                              return;
-                                                      }
-                                              }
-                                      }
-                                      else
-                                      {               
-                                              return;
-                                      }
+                      {
+                        if(!RTDDdcciDdcCheck(MCU_DDCRAM_A0,_A0_EMBEDDED_DDCRAM_MAX_SIZE))
+                        {
+                          RTDDdccireply(_FALSE);        
+                          return;
+                        }
+                      }
+                    }
+                    else
+                    {   
+                      return;
+                    }
               #elif(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_A0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
@@ -2024,128 +2024,129 @@ line level    source
 1885   2      
 1886   2      #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT)
 1887   2      #if(_D0_INPUT_PORT_TYPE ==_D0_DVI_PORT )
-                                      udAddress = 128;
+                    udAddress = 128;
               #else
-1890   2                              udAddress = 256;
+1890   2            udAddress = 256;
 1891   2      #endif
 1892   2      #if(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D0_ADDRESS_FLASH, _D0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D0_ADDRESS_FLASH, _D0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D0))
-                                      {
-                                              if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D0_ADDRESS_FLASH, _D0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    {
+                      if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D0_ADDRESS_FLASH, _D0_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D0))
-                                              {
-                                                      if(!RTDDdcciDdcCheck(MCU_DDCRAM_D0,_D0_EMBEDDED_DDCRAM_MAX_SIZE))
-                                                      {
-                                                              RTDDdccireply(_FALSE);                          
-                                                              return;
-                                                      }
-                                              }
-                                      }
-                                      else
-                                      {
-                                              return;
-                                      }
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 33  
+                      {
+                        if(!RTDDdcciDdcCheck(MCU_DDCRAM_D0,_D0_EMBEDDED_DDCRAM_MAX_SIZE))
+                        {
+                          RTDDdccireply(_FALSE);        
+                          return;
+                        }
+                      }
+                    }
+                    else
+                    {
+                      return;
+                    }
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 33  
 
               #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
-1911   2                              
+1911   2            
 1912   2      #endif
-1913   2                              
+1913   2            
 1914   2      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
               #if(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D1_ADDRESS_FLASH, _D1_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D1_ADDRESS_FLASH, _D1_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D1))
-                                      {
-                                              if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D1_ADDRESS_FLASH, _D1_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    {
+                      if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D1_ADDRESS_FLASH, _D1_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D1))
-                                              {
-                                                      if(!RTDDdcciDdcCheck(MCU_DDCRAM_D1,_D1_EMBEDDED_DDCRAM_MAX_SIZE))
-                                                      {
-                                                              RTDDdccireply(_FALSE);                          
-                                                              return;
-                                                      }
-                                              }
-                                      }
-                                      else 
-                                      {
-                                              return;
-                                      }
+                      {
+                        if(!RTDDdcciDdcCheck(MCU_DDCRAM_D1,_D1_EMBEDDED_DDCRAM_MAX_SIZE))
+                        {
+                          RTDDdccireply(_FALSE);        
+                          return;
+                        }
+                      }
+                    }
+                    else 
+                    {
+                      return;
+                    }
               #elif(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D1_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
               #endif
-1935   2                                                              
+1935   2                    
 1936   2      
 1937   2      #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT)
-              #if(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)                         
-                                      if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D2_ADDRESS_FLASH, _D2_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+              #if(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)       
+                    if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D2_ADDRESS_FLASH, _D2_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D2))
-                                      {
-                                              if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D2_ADDRESS_FLASH, _D2_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    {
+                      if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D2_ADDRESS_FLASH, _D2_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D2))
-                                              {
-                                                      if(!RTDDdcciDdcCheck(MCU_DDCRAM_D2,_D2_EMBEDDED_DDCRAM_MAX_SIZE))
-                                                      {
-                                                              RTDDdccireply(_FALSE);                          
-                                                              return;
-                                                      }
-                                              }
-                                      }
-                                      else
-                                      {
-                                              return;
-                                      }
+                      {
+                        if(!RTDDdcciDdcCheck(MCU_DDCRAM_D2,_D2_EMBEDDED_DDCRAM_MAX_SIZE))
+                        {
+                          RTDDdccireply(_FALSE);        
+                          return;
+                        }
+                      }
+                    }
+                    else
+                    {
+                      return;
+                    }
               #elif(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D2_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
               #endif
-                                      
-                                                                      
+                    
+                            
               #endif
 1960   2      
 1961   2      #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT)
 1962   2      #if(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
-                                      if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                    if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D3))
-                                      {
-C51 COMPILER V8.12   RTD2014DDCCI                                                          09/16/2026 20:29:05 PAGE 34  
+                    {
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/18/2026 20:40:06 PAGE 34  
 
-                                              if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
+                      if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D3))
-                                              {
-                                                      if(!RTDDdcciDdcCheck(MCU_DDCRAM_D3,_D3_EMBEDDED_DDCRAM_MAX_SIZE))
-                                                      {
-                                                              RTDDdccireply(_FALSE);                          
-                                                              return;
-                                                      } 
-                                              }
-                                      }
-                                      else
-                                      {
-                                              return;
-                                      }
+                      {
+                        if(!RTDDdcciDdcCheck(MCU_DDCRAM_D3,_D3_EMBEDDED_DDCRAM_MAX_SIZE))
+                        {
+                          RTDDdccireply(_FALSE);        
+                          return;
+                        } 
+                      }
+                    }
+                    else
+                    {
+                      return;
+                    }
               #elif(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
-              #endif                                                                                          
+              #endif                        
 1981   2      #endif
-1982   2                              RTDDdccireply(_TRUE);                           
+1982   2            RTDDdccireply(_TRUE);       
 1983   2      
-1984   2                              break;
+1984   2            break;
 1985   2      
-1986   2                      default:
-1987   2                              break;
+1986   2          default:
+1987   2            break;
 1988   2      
-1989   2              }
+1989   2        }
 1990   1      
 1991   1      }
 1992          
 1993          #endif // End of #if(_OSD_TYPE == _REALTEK_2014_OSD)
+*** WARNING C294 IN LINE 299 OF User\RTD Series\RTD2014Osd\Code\RTD2014Ddcci.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2807    ----
+   CODE SIZE        =   2884    ----
    CONSTANT SIZE    =     28    ----
    XDATA SIZE       =      6       5
    PDATA SIZE       =   ----    ----
@@ -2155,4 +2156,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

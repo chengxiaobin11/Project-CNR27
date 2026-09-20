@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_MEMORY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_MEMORY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_Memory.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Memory.c LARGE OPTIMI
-                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
-                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
-                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
-                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
-                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
-                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
-                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL643
-                    -2_Series_Memory.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_Memory.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Memory.c LARGE OPT
+                    -IMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sys
+                    -tem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunct
+                    -ion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scal
+                    -er\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\
+                    -Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header
+                    -;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\
+                    -Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL
+                    -6432_Series_Memory.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_Memory.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          void ScalerMemoryFrameSyncSetDt(BYTE ucNum);
   46          DWORD ScalerMemoryGetIVS2DVSDelayPixel(void);
   47          void ScalerMemorySetFIFOFreq(EnumScalerFIFOFreq enumFIFOFreq);
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 2   
 
   48          
   49          #if(_FRC_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
  102   1      
  103   1          // FRC display double buffer apply
  104   1          ScalerSetBit(P5_D0_MN_SDR_STATUS, ~_BIT4, _BIT4);
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 3   
 
  105   1      }
  106          
@@ -190,7 +190,7 @@ line level    source
  158   1          else
  159   1          {
  160   2              if(GET_V_SCALE_DOWN() == _TRUE)    // Vertical Scaling Down
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 4   
 
  161   2              {
  162   3                  ulDt_percent = g_stMDomainInputData.usHTotal * 2 + ((DWORD)g_stMDomainInputData.usHTotal * g_s
@@ -254,7 +254,7 @@ line level    source
  215   2              {
  216   3                  if(ulIVStoDVSPixels > usCheckDVstRising)
  217   3                  {
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 5   
 
  218   4                      g_stMDomainOutputData.usVStart += 1;
  219   4      
@@ -318,7 +318,7 @@ line level    source
  270   3                  DebugMessageFS("2. No Further IVS2DVSDelay Can Be Added", 0x00);
  271   3      
  272   3                  // Enlarge IVSt for insufficient lines
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 6   
 
  273   3                  g_stMDomainInputData.usVStart += usInsufficientLines;
  274   3      
@@ -382,7 +382,7 @@ line level    source
  327   2      
  328   2              // Calculate current frame sync fine-tune value
  329   2              PDATA_WORD(1) = (ulIVStoDVSPixels / g_stMDomainInputData.usHTotal);
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 7   
 
  330   2      
  331   2              // IVS2DVS Change Limit (Convert DVline limit to IVline)
@@ -446,7 +446,7 @@ line level    source
  386          // Input Value  : Target FIFO Clock
  387          // Output Value : None
  388          //--------------------------------------------------
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 8   
 
  389          void ScalerMemorySetFIFOFreq(EnumScalerFIFOFreq enumFIFOFreq)
  390          {
@@ -510,7 +510,7 @@ line level    source
  447   1          else
  448   1          {
  449   2              // Disable M Domain FREESYNC Enable for VGIP IVS Event to be triggered
-C51 COMPILER V8.12   RL6432_SERIES_MEMORY                                                  09/16/2026 20:28:26 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MEMORY                                              09/18/2026 20:39:19 PAGE 9   
 
  450   2              ScalerSetBit(P0_26_SD_FILTER_CONTROL_REG_M1, ~_BIT1, 0x00);
  451   2          }
@@ -521,7 +521,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2529    ----
+   CODE SIZE        =   2493    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =     12      34
    PDATA SIZE       =   ----    ----

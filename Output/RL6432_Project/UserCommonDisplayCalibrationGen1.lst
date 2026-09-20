@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONDISPLAYCALIBRATIONGEN1
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONDISPLAYCALIBRATIONGEN1
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonDisplayCalibrationGen1.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonDisplayCalibrationGen1.c LARGE O
-                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
-                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
-                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
-                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
-                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
-                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
-                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
-                    -UserCommonDisplayCalibrationGen1.lst) OBJECT(.\Output\RL6432_Project\UserCommonDisplayCalibrationGen1.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonDisplayCalibrationGen1.c LARG
+                    -E OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kerne
+                    -l\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scaler
+                    -Function\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel
+                    -\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common
+                    -\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\H
+                    -eader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fac
+                    -tory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proje
+                    -ct\UserCommonDisplayCalibrationGen1.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonDisplayCalibrationGen1.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   44          //--------------------------------------------------
   45          //Calibration Type
   46          #define _OGC_CAL_TYPE               0
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 2   
 
   47          #define _OCC_CAL_TYPE               1
   48          #define _DICOM_CAL_TYPE             2
@@ -126,7 +126,7 @@ line level    source
  104          #if(_DISP_CALIBRATION_PCM_END + _OGC_SUPPORT * _OGC_TOTAL_GAMMA * _OGC_GAMMA_TABLE_SIZE + (_TWO_BRI_CALIBR
              -ATION_TYPE == _TWO_BRI_CALIBRATION_OGC_OCC_DICOM_HDR ? 1 : 0) * _OGC_SUPPORT * _OGC_TOTAL_GAMMA * _OGC_GAMMA_TABLE_SIZE 
              -> 0xFFFF)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 3   
 
               #if(_FREESYNC_II_SUPPORT == _ON)
               #warning "NOTE: Please check whether _FREESYNC_II_FLASH_BANK is lager than _OGC_FLASH_BANK + 1!"
@@ -190,7 +190,7 @@ line level    source
                   _DICOM3_POSITION,
               #if(_OGC_TOTAL_DICOM > 3)
                   _DICOM4_POSITION,
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 4   
 
               #endif
               #endif
@@ -254,7 +254,7 @@ line level    source
  223          };
  224          //--------------------------------------------------
  225          // sRGB Table for OCC
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 5   
 
  226          //--------------------------------------------------
  227          #if(_OCC_LUT_MODE == _OFF)
@@ -318,7 +318,7 @@ line level    source
               #endif
               #endif
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 6   
 
  288          
  289          #if(_OCC_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  346              _OGC_NONE_ADDRESS,
  347              _OGC_NONE_ADDRESS,
  348              _OGC_NONE_ADDRESS,
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 7   
 
  349              _OGC_NONE_ADDRESS,
  350              _OGC_NONE_ADDRESS,
@@ -446,7 +446,7 @@ line level    source
               #if(_OGC_TOTAL_GAMMA > 1)
                   {2052, 2052, 2052},
               #if(_OGC_TOTAL_GAMMA > 2)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 8   
 
                   {2052, 2052, 2052},
               #if(_OGC_TOTAL_GAMMA > 3)
@@ -510,7 +510,7 @@ line level    source
               #endif
  471          #if(_OCC_GAMUT_NO_COMPRESSION_SUPPORT == _ON)
               BYTE g_ucOCCMatrixType;
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 9   
 
               #endif
  474          #if(_OCC_USER_DEFINE_SHIFT_1_BIT_SUPPORT == _ON)
@@ -574,7 +574,7 @@ line level    source
               void UserCommonDdcciDispCalibSetPWMValue(void);
               #endif
  533          
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 10  
 
  534          #if(_OCC_PCM_GAMMA_SUPPORT == _ON)
               void UserCommonDdcciDispCalibSetOCCPCMGamma(void);
@@ -638,7 +638,7 @@ line level    source
                   WORD pusBriTemp[3] = {0x200, 0x200, 0x200};
               #else
                   WORD pusBriTemp[3] = {0x80, 0x80, 0x80};
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 11  
 
               #endif
               #endif
@@ -702,7 +702,7 @@ line level    source
  654   3                  return;
  655   3              }
  656   2              /////////////////////////////////////////////////////////////////
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 12  
 
  657   2              /////////////////////TOOL GET FW INFO////////////////////////////
  658   2              /////////////////////////////////////////////////////////////////
@@ -766,7 +766,7 @@ line level    source
  713   3      
  714   3                  UserCommonDdcciDispCalibCalibPatternEnable(_ENABLE);
  715   3                  UserCommonDdcciDispCalibShowCalibPattern(_PATTERN_TOP, 0, 0);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 13  
 
  716   3      
  717   3                  g_usCTGainSavePos = 0;
@@ -830,7 +830,7 @@ line level    source
  775   3              }
  776   2      
  777   2              /////////////////////////////////////////////////////////////////
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 14  
 
  778   2              //////////////DISPLAY CALIBRATION: MEASURE GRAY1~7///////////////
  779   2              /////////////////////////////////////////////////////////////////
@@ -894,7 +894,7 @@ line level    source
              -_OGC_MEASURE_GRAY1],
  829   3                                                           tOGC_GRAY_TABLE[ucCalibrationStep - _DDCCI_DISP_CALIB
              -_OGC_MEASURE_GRAY1]);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 15  
 
  830   3      
  831   3                  if(g_ucBacklightFlag == _NORMAL_BACKLIGHT_CAL)
@@ -958,7 +958,7 @@ line level    source
  880   5                          /************************************************************/
  881   5      
  882   5      #if(_OGC_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 16  
 
                                   if(g_ucBacklightFlag == _NORMAL_BACKLIGHT_CAL)
                                   {
@@ -1022,7 +1022,7 @@ line level    source
  937   3                  UserCommonFlashWrite(_OGC_FLASH_BANK, tHDR10IGAMMA_INDEX[g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_IGL
              -UT_INDEX]] + g_ucIGLUTSavePos, (g_pucDdcciRxBuf[_DDCCI_LENGTH] & 0x7F) - 5, &g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_IGLUT_STA
              -RT]);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 17  
 
  938   3                  g_ucIGLUTSavePos += (g_pucDdcciRxBuf[_DDCCI_LENGTH] & 0x7F) - 5;
  939   3              }
@@ -1086,7 +1086,7 @@ line level    source
  993   3              }
  994   2              else if(ucCalibrationStep == _DDCCI_DISP_CALIB_SAVE_EDID_INFO)
  995   2              {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 18  
 
  996   3                  UserCommonDdcciDispCalibSaveEDIDInfo();
  997   3              }
@@ -1150,7 +1150,7 @@ line level    source
               #if(_OGC_SUPPORT == _ON)
                           else if((g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_IGLUT_INDEX] >> 4) == _DIMMING_COMMAND_SET_GAMMMA)
                           {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 19  
 
                               ucGammaIndex = (g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_IGLUT_START] >> 4) & 0x0F;
                               ucColorTempIndex = g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_IGLUT_START] & 0x0F;
@@ -1214,7 +1214,7 @@ line level    source
                           {
                               UserInterfaceAdjustLDBoostCalibration(_OFF);
                           }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 20  
 
                       }
               #endif
@@ -1278,7 +1278,7 @@ line level    source
                           ScalerColorOutputGammaEnable(_FUNCTION_ON);
               
                           ScalerColorBrightnessAdjust(_BRIGHTNESS_COEF_A, pusBriTemp);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 21  
 
                           ScalerColorBrightnessAdjust(_BRIGHTNESS_COEF_B, pusBriTemp);
               
@@ -1342,7 +1342,7 @@ line level    source
                               ScalerColorPCMInputGammaLoadTable(_PCM_ADOBE_RGB);
                           }
                           else
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 22  
 
               #endif
 1229   3                  {
@@ -1406,7 +1406,7 @@ line level    source
 1277   4                  }
 1278   3                  else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_USER_DEFINE_3)
 1279   3                  {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 23  
 
 1280   4                      ScalerColorPCMSRGBAdjust(_USER_DEFINE_PRECISION, g_pucDISP_CALIBRATION_FLASH + _OCC_USERDE
              -FINE3_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
@@ -1470,7 +1470,7 @@ line level    source
                           {
                               ScalerColorPCMSRGBAdjust(_SRGB_0_BIT_SHIFT_LEFT, g_pucDISP_CALIBRATION_FLASH + _OCC_REC709
              -_ADDRESS + (g_ucBacklightFlag * _OCC_COLOR_MATRIX_TOTAL_SPACE), _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 24  
 
                           }
                           else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_DCI_P3)
@@ -1534,7 +1534,7 @@ line level    source
 1379   3      
 1380   3      #if(_RGB_3D_GAMMA == _ON)
                           ScalerColorRGB3DGammaEnable(_FUNCTION_OFF);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 25  
 
               #endif
 1383   3      
@@ -1598,7 +1598,7 @@ line level    source
 1441   2              /////////////////////////////////////////////////////////////////
 1442   2      #if(_FREESYNC_II_SUPPORT == _ON)
                       else if(ucCalibrationStep == _DDCCI_DISP_CALIB_SET_FREESYNC_II)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 26  
 
                       {
                           ucGammaIndex = g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_INDEX] & 0x0F;
@@ -1662,7 +1662,7 @@ line level    source
               #if(_COLOR_IP_COLOR_CONVERT == _ON)
                           ScalerColorSpaceConvertIDomainEnable(_OFF);
                           ScalerColorSpaceConvertDDomainEnable(_OFF);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 27  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 27  
 
               #endif
               
@@ -1726,7 +1726,7 @@ line level    source
                           return;
                       }
                       else if(ucCalibrationStep == _DDCCI_DISP_CALIB_UNIFORMITY_GET_NEWLVRATIO)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 28  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 28  
 
                       {
                           UserCommonDdcciDispCalibReplyOGCNEWLvRatio();
@@ -1790,7 +1790,7 @@ line level    source
                           ucGammaBankNum = UserCommonAdjustOGCBank(ucGammaIndex, _OGC_MAX_BACKLIGHT_TYPE);
                           pucGammaBankAddr = UserCommonAdjustOGCAddr(ucGammaIndex, _OGC_MAX_BACKLIGHT_TYPE);
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 29  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 29  
 
                           ScalerColorOutputGammaAdjust(pucGammaBankAddr, ucGammaBankNum);
                           ScalerColorOutputGammaEnable(_FUNCTION_ON);
@@ -1854,7 +1854,7 @@ line level    source
                                   UserCommonDdcciDispCalibReplyOCCMatrix(_PCM_USER_DEFINE_5);
                                   break;
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 30  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 30  
 
                               case 12:
                                   UserCommonDdcciDispCalibReplyOCCMatrix(_PCM_USER_DEFINE_6);
@@ -1918,7 +1918,7 @@ line level    source
              -tyTypeIndex));
                               }
                               ScalerColorPanelUniformityOffsetEnable(ucUniformityLevel0Enable);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 31  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 31  
 
               #endif
                               ScalerColorPanelUniformityAdjust(g_pucDISP_CALIBRATION_FLASH + usGainTableAddr, _PANEL_UNI
@@ -1982,7 +1982,7 @@ line level    source
                           return;
                       }
                       else if(ucCalibrationStep == _DDCCI_DISP_CALIB_UNIFORMITY_GET_FM_DATA)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 32  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 32  
 
                       {
                           UserCommonDdcciDispCalibReplyFastModeData();
@@ -2046,7 +2046,7 @@ line level    source
                           }
                           else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_USER_DEFINE)
                           {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 33  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 33  
 
                               ScalerColorPCMSRGBAdjust(_USER_DEFINE_PRECISION, g_pucDISP_CALIBRATION_FLASH + _OCC_USERDE
              -FINE_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
@@ -2110,7 +2110,7 @@ line level    source
                           {
                               ScalerColorPCMSRGBAdjust(_SRGB_0_BIT_SHIFT_LEFT, g_pucDISP_CALIBRATION_FLASH + _OCC_SRGBMA
              -TRIX_MAX_BRI_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 34  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 34  
 
                           }
                           else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_ADOBE_RGB)
@@ -2174,7 +2174,7 @@ line level    source
              -P3_MAX_BRI_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
                           }
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 35  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 35  
 
                           ScalerColorOutputGammaEnable(_FUNCTION_ON);
                           ScalerColorSRGBEnable(_FUNCTION_ON);
@@ -2238,7 +2238,7 @@ line level    source
              -ciRxBuf[_DDCCI_LENGTH] & 0x7F) - 4, &g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_UNIFORMITY_INDEX]);
                           g_usUniformityLUTSavePos += (g_pucDdcciRxBuf[_DDCCI_LENGTH] & 0x7F) - 4;
                       }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 36  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 36  
 
                       else if(ucCalibrationStep == _DDCCI_DISP_CALIB_UNIFORMITY_W_DECAY_END)
                       {
@@ -2302,7 +2302,7 @@ line level    source
                           ScalerColorSRGBEnable(_FUNCTION_OFF);
               
                           // Set Output Gamma
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 37  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 37  
 
                           ScalerColorOutputGammaEnable(_FUNCTION_OFF);
                           ScalerColorPCMOutputGammaAdjust(g_pucDISP_CALIBRATION_FLASH + _DIMMING_OCC_GAMMA10_ADDRESS, _O
@@ -2366,7 +2366,7 @@ line level    source
                                       ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
               
                                       ScalerColorPCMInputGammaEnable(_FUNCTION_OFF);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 38  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 38  
 
                                       ScalerColorSRGBEnable(_FUNCTION_OFF);
                                       ScalerColorOutputGammaEnable(_FUNCTION_OFF);
@@ -2430,7 +2430,7 @@ line level    source
              -RxBuf[_DDCCI_DISP_CALIB_GENERAL_DPG_B_CODE_L]);
 2174   3                  ScalerDDomainPatternGenAdjustColor10bit(usR, usG, usB);
 2175   3                  ScalerDDomainPatternGenEnable(_ENABLE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 39  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 39  
 
 2176   3                  ScalerDDomainBackgroundEnable(_DISABLE);
 2177   3              }
@@ -2494,7 +2494,7 @@ line level    source
 2234   1      #if(_OGC_SUPPORT == _ON)
                   for(ucCnt = 0; ucCnt < _OGC_TOTAL_GAMMA; ucCnt++)
                   {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 40  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 40  
 
                       g_ppusGammaCount[ucCnt][0] = 2052;
                       g_ppusGammaCount[ucCnt][1] = 2052;
@@ -2558,7 +2558,7 @@ line level    source
 2296   1      #if(_OGC_SUPPORT == _OFF)
 2297   1          if(((g_ucCalibrationType >> _OGC_CAL_TYPE) & _BIT0) == _TRUE)
 2298   1          {
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 41  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 41  
 
 2299   2              ucFlag = 0;
 2300   2          }
@@ -2622,7 +2622,7 @@ line level    source
              -);
 2358   2              ScalerDDomainPatternGenEnable(_ENABLE);
 2359   2          }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 42  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 42  
 
 2360   1          else
 2361   1      #endif  // End of #if(_OCC_SUPPORT == _ON)
@@ -2686,7 +2686,7 @@ line level    source
 2418   2              ScalerDDomainPatternGenAdjustColor10bit(tOCC_SRGB_TABLE[(ucStep - _DDCCI_DISP_CALIB_OCC_MEASURE_SR
              -GB1 + 1) * 3],
 2419   2                                                      tOCC_SRGB_TABLE[(ucStep - _DDCCI_DISP_CALIB_OCC_MEASURE_SR
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 43  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 43  
 
              -GB1 + 1) * 3 + 1],
 2420   2                                                      tOCC_SRGB_TABLE[(ucStep - _DDCCI_DISP_CALIB_OCC_MEASURE_SR
@@ -2750,7 +2750,7 @@ line level    source
                           {
                               ScalerColorPCMSRGBAdjust(_DCIP3_SRGB_PRECISION, g_pucDISP_CALIBRATION_FLASH + _OCC_DCIP3_M
              -AX_BRI_ADDRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 44  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 44  
 
                           }
                           else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_SMPTE_C)
@@ -2814,7 +2814,7 @@ line level    source
              -DRESS, _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
 2518   4                  }
 2519   3                  else if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_PCM_COLOR_DOMAIN] == _PCM_SOFT_PROFT)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 45  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 45  
 
 2520   3                  {
 2521   4                      ScalerColorPCMSRGBAdjust(_SRGB_0_BIT_SHIFT_LEFT, g_pucDISP_CALIBRATION_FLASH + _OCC_SOFTPR
@@ -2878,7 +2878,7 @@ line level    source
 2569   1          {
 2570   2              UserCommonFlashWrite(_OGC_FLASH_BANK, _OCC_HDR10_SRGB_MATRIX_ADDRESS, (g_pucDdcciRxBuf[_DDCCI_LENG
              -TH] & 0x7F) - 4, &g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_HDRMATRIX_START]);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 46  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 46  
 
 2571   2          }
 2572   1      #endif
@@ -2942,7 +2942,7 @@ line level    source
 2628   1          {
 2629   2              ucSum += g_pucDdcciRxBuf[ucI];
 2630   2          }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 47  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 47  
 
 2631   1      
 2632   1          ucChecksum = g_pucDdcciRxBuf[ucLength + 1];
@@ -3006,7 +3006,7 @@ line level    source
 2689   2              UserCommonFlashWrite(ucBank, usAddr, usLength, pucData);
 2690   2          }
 2691   1      }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 48  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 48  
 
 2692          
 2693          //--------------------------------------------------
@@ -3070,7 +3070,7 @@ line level    source
                       }
                       else
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 49  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 49  
 
 2754   2              {
 2755   3                  ucGammaBankNum = UserCommonAdjustOGCBank(ucGammaIndex, _OGC_NORMAL_TYPE);
@@ -3134,7 +3134,7 @@ line level    source
                           usStartAddr = tGAMMA_INDEX[_OCC_FREESYNC_II_POSITION] + (ucRGB) * 2200;
                       }
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 50  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 50  
 
 2815   2      #endif
 2816   2      #if(_OGC_DICOM_SUPPORT == _ON)
@@ -3198,7 +3198,7 @@ line level    source
 2874   3      #endif
 2875   3                  {
 2876   4                      shRemain = ucLUTLength * 4;
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 51  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 51  
 
 2877   4                  }
 2878   3              }
@@ -3262,7 +3262,7 @@ line level    source
 2934   6                              pucIntoLUT[shCnt--] = usInto & 0xFF;
 2935   6                              pucIntoLUT[shCnt--] = (usInto >> 8);
 2936   6                          }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 52  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 52  
 
 2937   5      
 2938   5                          bIsLastLUT = _FALSE;
@@ -3326,7 +3326,7 @@ line level    source
              -hSaveLength;
 2991   5                          bWriteDirectly = _FALSE;
 2992   5                          break;
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 53  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 53  
 
 2993   5                      }
 2994   4                      else if(g_ppusGammaCount[ucGammaIndex][ucRGB] <= 164) // add 16 0s
@@ -3390,7 +3390,7 @@ line level    source
                               ucCurPointer -= 2;
               
               #if(_OCC_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 54  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 54  
 
                               if(bOCCMode == _TRUE)
                               {
@@ -3454,7 +3454,7 @@ line level    source
                   usStep = 2;
               #endif
 3103   1      
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 55  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 55  
 
 3104   1          if(ucCheckType != _UNIFORMITY_GAIN_TYPE)
 3105   1          {
@@ -3518,7 +3518,7 @@ line level    source
 3161   3                      {
 3162   4                          UserCommonFlashRead(ucGammaBankNum, ((WORD)pucGammaBankAddr + usJ * 2052 + usI), 2, pD
              -ata + 2);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 56  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 56  
 
 3163   4                          pData[0] += pData[2];
 3164   4                          pData[0] += pData[3];
@@ -3582,7 +3582,7 @@ line level    source
 3219   3                  }
 3220   2      
 3221   2      #if(_OGC_TOTAL_GAMMA == 6)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 57  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 57  
 
                           MCU_FFFE_XDATA_BANK_SEL = ucBank;
                           return pData[0];
@@ -3646,7 +3646,7 @@ line level    source
                           return pData[0];
               #endif
 3280   2      
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 58  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 58  
 
 3281   2                  ucGammaBankNum = UserCommonAdjustOGCBank(_OGC_GAMMA4_TYPE, _OGC_MAX_BACKLIGHT_TYPE);
 3282   2                  pucGammaBankAddr = UserCommonAdjustOGCAddr(_OGC_GAMMA4_TYPE, _OGC_MAX_BACKLIGHT_TYPE);
@@ -3710,7 +3710,7 @@ line level    source
 3337   2                  for(usJ = 0; usJ < 3; usJ++)
 3338   2                  {
 3339   3                      for(usI = 0; usI < 148; usI++)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 59  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 59  
 
 3340   3                      {
 3341   4                          UserCommonFlashRead(_OGC_FLASH_BANK, ((((WORD)_OGC_FLASH_PAGE) << 12) + _OCC_GAMMA10_A
@@ -3774,7 +3774,7 @@ line level    source
 3394   4                          UserCommonFlashRead(_OGC_FLASH_BANK, ((((WORD)_OGC_FLASH_PAGE) << 12) + _OGC_DICOM2_AD
              -DRESS + usJ * 2052 + usI), 2, pData + 2);
 3395   4                          pData[0] += pData[2];
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 60  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 60  
 
 3396   4                          pData[0] += pData[3];
 3397   4                      }
@@ -3838,7 +3838,7 @@ line level    source
 3449   2                  break;
 3450   2      
 3451   2              case _HEADER_TYPE:
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 61  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 61  
 
 3452   2      
 3453   2                  //==========Calculate OGC Header============
@@ -3902,7 +3902,7 @@ line level    source
 3501   2      
 3502   2                  break;
 3503   2      
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 62  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 62  
 
 3504   2              case _COLOR_MATRIX_MAX_BRI_TYPE:
 3505   2      
@@ -3966,7 +3966,7 @@ line level    source
 3554   2      #endif
 3555   2      
 3556   2      #if(_BACKLIGHT_DIMMING_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 63  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 63  
 
                       case _DIMMING_OG_TYPE:
               
@@ -4030,7 +4030,7 @@ line level    source
 3610   2                  for(usI = 0; usI < _NOTM_DCR_THD_LENGTH; usI++)
 3611   2                  {
 3612   3                      UserCommonFlashRead(_OGC_FLASH_BANK, ((((WORD)_OGC_FLASH_PAGE) << 12) + _DIMMING_NOTM_DCR_
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 64  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 64  
 
              -THD_ADDRESS + usI), 1, pData + 2);
 3613   3                      pData[0] += pData[2];
@@ -4094,7 +4094,7 @@ line level    source
                               }
                           }
                           break;
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 65  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 65  
 
               #endif
 3670   2      
@@ -4158,7 +4158,7 @@ line level    source
                           pucGammaBankAddr = UserCommonAdjustOGCAddr(ucGammaIndex, _OGC_NORMAL_TYPE);
                       }
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 66  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 66  
 
                       ScalerColorOutputGammaAdjust(pucGammaBankAddr, ucGammaBankNum);
                       ScalerColorBrightnessAdjust(_BRIGHTNESS_COEF_A, pusBriTemp);
@@ -4222,7 +4222,7 @@ line level    source
 3785   2              ScalerColorPCMInputGammaEnable(_FUNCTION_ON);
 3786   2      
 3787   2              ScalerColorBrightnessEnable(_FUNCTION_OFF);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 67  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 67  
 
 3788   2              ScalerColorContrastEnable(_FUNCTION_OFF);
 3789   2      
@@ -4286,7 +4286,7 @@ line level    source
                   WORD usDecayCheckSumAddr = 0;
               #endif
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 68  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 68  
 
 3848   1      
 3849   1          if(g_ucBacklightFlag == _NORMAL_BACKLIGHT_CAL)
@@ -4350,7 +4350,7 @@ line level    source
 3902   2      
 3903   2          }
 3904   1      
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 69  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 69  
 
 3905   1      #if(_TWO_BRI_CALIBRATION_TYPE == _TWO_BRI_CALIBRATION_OGC_OCC_DICOM_HDR)
                   if(g_ucBacklightFlag == _MAX_BACKLIGHT_CAL)
@@ -4414,7 +4414,7 @@ line level    source
                           {
                               UserCommonFlashWrite(_OGC_FLASH_BANK, (((WORD)_OGC_FLASH_PAGE) << 12) + _OCC_HDR_CHKSUM_AD
              -DRESS, 1, &pData[2]);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 70  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 70  
 
                           }
                           else
@@ -4478,7 +4478,7 @@ line level    source
                               UserCommonFlashWrite(_UNIFORMITY_FLASH_BANK0, _UNIFORMITY_FINISH_ADDRESS, 1, &pData[4]);
                           }
                       }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 71  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 71  
 
                       else
                       {
@@ -4542,7 +4542,7 @@ line level    source
                       }
                   }
               #endif
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 72  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 72  
 
               #endif  // End of #if(_UNIFORMITY_SUPPORT == _ON)
 4084   1      
@@ -4606,7 +4606,7 @@ line level    source
 4139   2                  {
 4140   3                      ucFlag |= _BIT2;
 4141   3                  }
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 73  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 73  
 
 4142   2      
 4143   2                  break;
@@ -4670,7 +4670,7 @@ line level    source
               
                           pucTemp[0] = UserCommonDdcciDispCalibCalCheckSum(_DIMMING_IG_TYPE);
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 74  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 74  
 
                           if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_COLORMATRIX_CHECKSUM] == pucTemp[0])
                           {
@@ -4734,7 +4734,7 @@ line level    source
 4255   2              case _EDID_INFO_TYPE:
 4256   2      
 4257   2                  pucTemp[0] = UserCommonDdcciDispCalibCalCheckSum(_EDID_INFO_TYPE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 75  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 75  
 
 4258   2      
 4259   2                  if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_COLORMATRIX_CHECKSUM] == pucTemp[0])
@@ -4798,7 +4798,7 @@ line level    source
 4313   2      #if(_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
                       case _HDR_USER_DEFINE_FIXED_POINT_TYPE:
                           pucTemp[0] = UserCommonDdcciDispCalibCalCheckSum(_HDR_USER_DEFINE_FIXED_POINT_TYPE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 76  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 76  
 
               
                           if(g_pucDdcciRxBuf[_DDCCI_DISP_CALIB_COLORMATRIX_CHECKSUM] == pucTemp[0])
@@ -4862,7 +4862,7 @@ line level    source
 4373   2                      (_HDR10_SUPPORT << 4) |
 4374   2                      (_OGC_DICOM_SUPPORT << 2) |
 4375   2                      (_OCC_SUPPORT << 1) |
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 77  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 77  
 
 4376   2                      (_OGC_SUPPORT);
 4377   2                  g_pucDdcciTxBuf[_DDCCI_DISP_CALIB_OGC_TOTAL_GAMMA] = ((_DISP_CALIB_VERSION << 3) | _OGC_TOTAL_
@@ -4926,7 +4926,7 @@ line level    source
 4431   2                  g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | 0x05;
 4432   2                  g_pucDdcciTxBuf[_DDCCI_DISP_CALIB_ADVANCE_1] = ((_OCC_PCM_GAMMA_SUPPORT << 5) | (_OCC_DISPLAY_
              -P3_GAMMA_22_SUPPORT << 4) | (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT << 3) | (_HDR10_EETF_TONEMAPPING_SUPPORT
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 78  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 78  
 
              - << 2));
 4433   2                  g_pucDdcciTxBuf[_DDCCI_DISP_CALIB_ADVANCE_2] = ((_OCC_GAMUT_NO_COMPRESSION_SUPPORT << 3) | (_O
@@ -4990,7 +4990,7 @@ line level    source
 4489   2                  g_pucDdcciTxBuf[_DDCCI_DISP_CALIB_STRING_4] = 'E';
 4490   2                  g_pucDdcciTxBuf[_DDCCI_DISP_CALIB_STRING_4 + 1] = UserCommonDdcciCalCheckSum();
 4491   2      
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 79  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 79  
 
 4492   2                  break;
 4493   2      
@@ -5054,7 +5054,7 @@ line level    source
 4547   1          pData[2] = _WHITE_LV_HEADER_LENGTH;
 4548   1          pData[3] = g_pucDdcciRxBuf[_WHITE_LV_HEADER];
 4549   1          pData[4] = g_pucDdcciRxBuf[_WHITE_LV_HEADER + 1];
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 80  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 80  
 
 4550   1          UserCommonFlashWrite(_OGC_FLASH_BANK, _WHITE_LV_HEADER_ADDRESS, 5, pData);
 4551   1      }
@@ -5118,7 +5118,7 @@ line level    source
              -SH_BANK);
                   }
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 81  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 81  
 
                   ScalerColorPCMSRGBAdjust(_SRGB_1_BIT_SHIFT_LEFT, tSRGBByPass, GET_CURRENT_BANK_NUMBER(), 18);
               
@@ -5182,7 +5182,7 @@ line level    source
                           g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLength;
                           UserCommonFlashRead(_OGC_FLASH_BANK, ((WORD)_OGC_FLASH_PAGE << 12) + _OCC_SRGBMATRIX_MAX_BRI_A
              -DDRESS + (WORD)usReadStartPos, ucSendLength, g_pucDdcciTxBuf + _DDCCI_COMMAND);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 82  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 82  
 
                           g_pucDdcciTxBuf[_DDCCI_COMMAND + ucSendLength] = UserCommonDdcciCalCheckSum();
               
@@ -5246,7 +5246,7 @@ line level    source
               
                           g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLength;
                           UserCommonFlashRead(_OGC_FLASH_BANK, ((WORD)_OGC_FLASH_PAGE << 12) + _OCC_SMPTEC_MAX_BRI_ADDRE
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 83  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 83  
 
              -SS + (WORD)usReadStartPos, ucSendLength, g_pucDdcciTxBuf + _DDCCI_COMMAND);
                           g_pucDdcciTxBuf[_DDCCI_COMMAND + ucSendLength] = UserCommonDdcciCalCheckSum();
@@ -5310,7 +5310,7 @@ line level    source
                           UserCommonFlashRead(_OGC_FLASH_BANK, ((WORD)_OGC_FLASH_PAGE << 12) + _OCC_SRGBMATRIX_ADDRESS +
              - (WORD)usReadStartPos, ucSendLength, g_pucDdcciTxBuf + _DDCCI_COMMAND);
                           g_pucDdcciTxBuf[_DDCCI_COMMAND + ucSendLength] = UserCommonDdcciCalCheckSum();
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 84  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 84  
 
               
                           break;
@@ -5374,7 +5374,7 @@ line level    source
                           g_pucDdcciTxBuf[_DDCCI_LENGTH] = _DDCCI_CONTROL_STATUS_FLAG | ucSendLength;
                           UserCommonFlashRead(_OGC_FLASH_BANK, ((WORD)_OGC_FLASH_PAGE << 12) + _OCC_SMPTEC_ADDRESS + (WO
              -RD)usReadStartPos, ucSendLength, g_pucDdcciTxBuf + _DDCCI_COMMAND);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 85  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 85  
 
                           g_pucDdcciTxBuf[_DDCCI_COMMAND + ucSendLength] = UserCommonDdcciCalCheckSum();
               
@@ -5438,7 +5438,7 @@ line level    source
                   EX1 = 1;
               }
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 86  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 86  
 
               //--------------------------------------------------
               // Description  : Display Calibration Reply OGC Header
@@ -5502,7 +5502,7 @@ line level    source
                   EX1 = 1;
               }
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 87  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 87  
 
               //--------------------------------------------------
               // Description  : Reply the OGCOCC LV ratio to uniformity tool
@@ -5566,7 +5566,7 @@ line level    source
               
                   g_pucDdcciTxBuf[10] = UserCommonDdcciCalCheckSum();// 8
               
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 88  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 88  
 
                   ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
                   // ScalerMcuDdcciSendData(GET_RUN_DDCCI_HANDLE_CHANNEL(), g_pucDdcciTxBuf);
@@ -5630,7 +5630,7 @@ line level    source
                   BYTE pucTemp[14] = {0};
               
                   UserCommonFlashRead(_OGC_FLASH_BANK, ((WORD)_OGC_FLASH_PAGE << 12 | _EDID_INFO_ADDRESS), 14, pucTemp);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 89  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 89  
 
               
                   g_pucDdcciTxBuf[_DDCCI_SOURCE] = _DDCCI_DEST_ADDRESS;
@@ -5694,7 +5694,7 @@ line level    source
                       g_pucDdcciTxBuf[4] = (BYTE)(_PANEL_DV_HEIGHT / 256);
                       g_pucDdcciTxBuf[5] = (BYTE)_PANEL_DV_HEIGHT;
                       g_pucDdcciTxBuf[6] = (BYTE)(_DEVICE_LED_DRIVER_PWM_MAX / 256);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 90  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 90  
 
                       g_pucDdcciTxBuf[7] = (BYTE)_DEVICE_LED_DRIVER_PWM_MAX;
                       g_pucDdcciTxBuf[8] = (BYTE)(_DEVICE_LED_DRIVER_PWM_MIN / 256);
@@ -5758,7 +5758,7 @@ line level    source
               #endif
                   }
               #endif // endif(_GLOBAL_DIMMING_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 91  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 91  
 
                   ScalerMcuDdcciSendData(g_pucDdcciTxBuf);
                   EX1 = 1;
@@ -5822,7 +5822,7 @@ line level    source
               
               #if(_TWO_BRI_CALIBRATION_TYPE != _TWO_BRI_CALIBRATION_OGC_OCC_DICOM_HDR)
                   ScalerColorPCMOutputGammaAdjust(g_pucDISP_CALIBRATION_FLASH + _OCC_GAMMA10_ADDRESS, _OCC_GAMMA_FLASH_B
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 92  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 92  
 
              -ANK);
                   // Set PCM Color Matrix
@@ -5886,7 +5886,7 @@ line level    source
                   {
                       ScalerColorPCMSRGBAdjust(_SRGB_1_BIT_SHIFT_LEFT, g_pucDISP_CALIBRATION_FLASH + _OCC_USERDEFINE5_AD
              -DRESS + (g_ucBacklightFlag * _OCC_COLOR_MATRIX_TOTAL_SPACE), _OGC_FLASH_BANK, _OCC_COLORMATRIX_TABLE_SIZE);
-C51 COMPILER V8.12   USERCOMMONDISPLAYCALIBRATIONGEN1                                      09/16/2026 20:28:43 PAGE 93  
+C51 COMPILER V9.60.0.0   USERCOMMONDISPLAYCALIBRATIONGEN1                                  09/18/2026 20:39:39 PAGE 93  
 
                   }
                   else // _PCM_GAMMA_CT_MODE6
@@ -5909,10 +5909,13 @@ line level    source
              -IFORMITY_SUPPORT == _ON))
 5319          
 5320          #endif // end if #if(_OGC_GEN_TYPE == _OGC_GEN_1)
+*** WARNING C294 IN LINE 3208 OF Kernel\User Common Function\Code\UserCommonDisplayCalibrationGen1.c: unreachable code
+*** WARNING C294 IN LINE 3316 OF Kernel\User Common Function\Code\UserCommonDisplayCalibrationGen1.c: unreachable code
+*** WARNING C294 IN LINE 3390 OF Kernel\User Common Function\Code\UserCommonDisplayCalibrationGen1.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   8440    ----
+   CODE SIZE        =   8517    ----
    CONSTANT SIZE    =    334    ----
    XDATA SIZE       =     22     225
    PDATA SIZE       =   ----    ----
@@ -5922,4 +5925,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  4 WARNING(S),  0 ERROR(S)

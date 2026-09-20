@@ -115,11 +115,11 @@
 #if(_LVDS_OUTPUT_PORT == _LVDS_2_PORT)
 #define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
 #define _LVDS_PORT_MIRROR                       _ENABLE
-#define _LVDS_PORT_AB_SWAP                    	_ENABLE
-#define _LVDS_PORT_CD_SWAP                    	_ENABLE
+#define _LVDS_PORT_AB_SWAP                    	_DISABLE
+#define _LVDS_PORT_CD_SWAP                    	_DISABLE
 #define _LVDS_PORT_EF_SWAP                      _DISABLE
 #define _LVDS_PORT_GH_SWAP                     	_DISABLE
-#define _LVDS_PN_SWAP                         	_ENABLE //Need Check
+#define _LVDS_PN_SWAP                         	_DISABLE //Need Check
 
 #elif(_LVDS_OUTPUT_PORT == _LVDS_4_PORT)
 
@@ -161,10 +161,10 @@
 // LVDS Driving Config
 //--------------------------------------------------
 #define _LVDS_DRIV_CONTROL                      _LVDS_DRIV_CONTROL_3_5
-#define _LVDS_VCM_CONTROL                       _LVDS_VCM_NORMAL
+#define _LVDS_VCM_CONTROL                       _LVDS_VCM_HIGH//_LVDS_VCM_NORMAL
 #define _LVDS_SR_CONTROL                        _LVDS_SR_CONTROL_0
 #define _LVDS_PRE_EMPHASIS_CONTROL              _LVDS_PRE_EMPHASIS_0
-#define _LVDS_TERMINATION_CONTROL               _DISABLE
+#define _LVDS_TERMINATION_CONTROL               _ENABLE//_DISABLE
 
 //--------------------------------------------------
 // LVDS SSC Config
@@ -172,7 +172,7 @@
 
 
 
-#define _LVDS_SPREAD_RANGE                 		0
+#define _LVDS_SPREAD_RANGE                 		3//0
 #define _LVDS_SPREAD_SPEED                      _SPEED_33K
 
 
@@ -216,7 +216,7 @@
 //#define _AUDIO_VOLUMN_PWM						_PWM3
 //#define _AUDIO_VOLUMN_PWM_INVERSE				_OFF
 //BY QS   TBD
-//  ×¢ÒâÈç¹û±³¹âPWMµ÷ÓÃ 5¿ÚÊ±£¬_AUDIO_VOLUMN_PWM ²»ÄÜÉèÎª_NO_PWM, ·ñÔò_AUDIO_VOLUMN_PWMÒ²»áÍ¬Ê±µ÷ÓÃµ½±³¹âPWM 5
+//  ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PWMï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½Ê±ï¿½ï¿½_AUDIO_VOLUMN_PWM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª_NO_PWM, ï¿½ï¿½ï¿½ï¿½_AUDIO_VOLUMN_PWMÒ²ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½PWM 5
 #define _BACKLIGHT_PWM                          _PWM5
 #define _BACKLIGHT_PWM_INVERSE                  _OFF
 
@@ -715,10 +715,10 @@
 // Macro of VCCK_OFF Power Control
 //-----------------------------------------------
 
-//½â¹¦ÂÊÎÊÌâ
-#if 0 //ÐÂÖ÷°å  FÏµÁÐµÄÖ÷°å
+//ï¿½â¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#if 0 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  FÏµï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 #define bVCCKOFFPOWER                         	(MCU_FE22_PORT82_PIN_REG) // _156PIN_PIN_70, P8D2
-#elif 0	//ÀÏÖ÷°å CÏµÁÐµÄÖ÷°å
+#elif 0	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CÏµï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 #define bVCCKOFFPOWER                         (MCU_FE2B_PORT93_PIN_REG) // _156PIN_PIN_78, P9D3
 #else
 #define bVCCKOFFPOWER                         	(MCU_FE1F_PORT77_PIN_REG)// _156PIN_PIN_66 //(MCU_EMPTY_PIN_ASSIGN_ADDRESS)//(MCU_FE1F_PORT77_PIN_REG)// _156PIN_PIN_66

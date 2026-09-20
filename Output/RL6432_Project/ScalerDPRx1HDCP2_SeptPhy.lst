@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERDPRX1HDCP2_SEPTPHY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDPRX1HDCP2_SEPTPHY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerDPRx1HDCP2_SeptPhy.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDPRx1HDCP2_SeptPhy.c LARGE OPTIMIZE
-                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
-                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
-                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
-                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
-                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
-                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
-                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerD
-                    -PRx1HDCP2_SeptPhy.lst) OBJECT(.\Output\RL6432_Project\ScalerDPRx1HDCP2_SeptPhy.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerDPRx1HDCP2_SeptPhy.c LARGE OPTIM
+                    -IZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syste
+                    -m\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunctio
+                    -n\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler
+                    -\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\He
+                    -ader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.
+                    -\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\He
+                    -ader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\Scal
+                    -erDPRx1HDCP2_SeptPhy.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerDPRx1HDCP2_SeptPhy.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               
               #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
               void ScalerDpRx1Hdcp2AesOnlineCtrlErrata(BYTE *pucInputArray, BYTE *pucCipherArray);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 2   
 
               #endif
               
@@ -126,7 +126,7 @@ line level    source
                       g_pucDpRx1Hdcp2Rrx[0] = 0x3b;
                       g_pucDpRx1Hdcp2Rrx[1] = 0xa0;
                       g_pucDpRx1Hdcp2Rrx[2] = 0xbe;
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 3   
 
                       g_pucDpRx1Hdcp2Rrx[3] = 0xde;
                       g_pucDpRx1Hdcp2Rrx[4] = 0x0c;
@@ -190,7 +190,7 @@ line level    source
                       }
                   }
               
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 4   
 
                   if(GET_DP_RX1_HDCP2_AKE_STORED_KM_RECEIVED() == _TRUE)
                   {
@@ -254,7 +254,7 @@ line level    source
                       // Calculate Dkey 2
                       ScalerHdcp2DkeyCalculate(_HDCP_2_2_DKEY_2, g_pucDpRx1Hdcp2Rtx, g_pucDpRx1Hdcp2Rrx, g_pucDpRx1Hdcp2
              -Km, g_pucDpRx1Hdcp2Rn);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 5   
 
               
                       pucEDkeyKs[0] = 0x4c;
@@ -318,7 +318,7 @@ line level    source
                       CLR_DP_RX1_HDCP2_SKE_SEND_EKS_RECEIVED();
               
               #if(_DP_TX_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 6   
 
                       if(GET_DP_RX1_HDCP2_REPEATER_CAPABLE() == _TRUE)
                       {
@@ -382,7 +382,7 @@ line level    source
               
                       if(ucMessageId == _HDCP_2_2_NONE)
                       {
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 7   
 
                           ScalerSetByte_EXINT(PBA_C1_DPCD_ADDR_PORT_H, g_pucDpRx1Backup[0]);
                           ScalerSetByte_EXINT(PBA_C2_DPCD_ADDR_PORT_M, g_pucDpRx1Backup[1]);
@@ -446,7 +446,7 @@ line level    source
                               break;
               
                           case _HDCP_2_2_AKE_NO_STORED_KM:
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 8   
 
               
                               SET_DP_RX1_HDCP2_AKE_NO_STORED_KM_RECEIVED();
@@ -510,7 +510,7 @@ line level    source
                               break;
               
                           case _HDCP_2_2_AKE_STORED_KM:
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 9   
 
               
                               // Save Ekh[km] From Transmitter to FW
@@ -574,7 +574,7 @@ line level    source
                                   ScalerTimerWDCancelTimerEvent_EXINT0(_SCALER_WD_TIMER_EVENT_DP_RX1_HDCP2_AKE_INIT);
               
                                   ScalerDpRx1Hdcp2ClearDpcdReadValue_EXINT0(_HDCP_2_2_RX_L_PRIME, 32);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 10  
 
                               }
               
@@ -638,7 +638,7 @@ line level    source
                                   SET_DP_RX1_HDCP2_AUTHENTICATION_DONE();
                               }
               
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 11  
 
                               break;
               
@@ -702,7 +702,7 @@ line level    source
                   {
                       // Disable HDCP2.2 Auth. Done
                       ScalerSetBit(PB0_20_HDCP_DEBUG, ~_BIT4, 0x00);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 12  
 
               
                       // Clear Type Value
@@ -766,7 +766,7 @@ line level    source
               
               #if(_DP_TX_SUPPORT == _ON)
                   CLR_DP_RX1_HDCP2_REPEATER_AUTH_1_START();
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 13  
 
                   CLR_DP_RX1_HDCP2_REPEATER_AUTH_2_START();
               
@@ -830,7 +830,7 @@ line level    source
                   CLR_DP_RX1_HDCP2_AKE_NO_STORED_KM_RECEIVED();
                   CLR_DP_RX1_HDCP2_AKE_STORED_KM_RECEIVED();
                   CLR_DP_RX1_HDCP2_LC_INIT_RECEIVED();
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 14  
 
                   CLR_DP_RX1_HDCP2_SKE_SEND_EKS_RECEIVED();
                   CLR_DP_RX1_HDCP2_AUTHENTICATION_ACTIVE();
@@ -894,7 +894,7 @@ line level    source
              -P_AES_OUT_15 + pData_EXINT[0]));
                   }
               
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 15  
 
                   for(pData_EXINT[0] = 8; pData_EXINT[0] < 16; ++pData_EXINT[0])
                   {
@@ -958,7 +958,7 @@ line level    source
                   }
               
                   ScalerDpRx1Hdcp2CpIRQ_WDINT(_DP_HDCP2_H_PRIME_AVAILABLE);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 16  
 
               
                   SET_DP_RX1_HDCP2_AKE_STORED_KM_RECEIVED();
@@ -1022,7 +1022,7 @@ line level    source
               
                           pData_EXINT[1] = 0x06;
                           pData_EXINT[2] = 0x92;
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 17  
 
                           pData_EXINT[3] = 0xF8;
               
@@ -1086,7 +1086,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Download HDCP Receiver Public Key Certificate
               // Input Value  : Public Key / Write Length
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 18  
 
               // Output Value : None
               //--------------------------------------------------
@@ -1150,7 +1150,7 @@ line level    source
               
                   ucBackUp = ScalerGetByte_EXINT(PBA_D0_AUX_MODE_SET);
               
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 19  
 
                   switch(enumBStatusType)
                   {
@@ -1214,7 +1214,7 @@ line level    source
                       {
                           case 55:
                               DELAY_XUS_EXINT(500);
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 20  
 
                               break;
               
@@ -1278,7 +1278,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-C51 COMPILER V8.12   SCALERDPRX1HDCP2_SEPTPHY                                              09/16/2026 20:27:36 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDPRX1HDCP2_SEPTPHY                                          09/18/2026 20:38:22 PAGE 21  
 
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

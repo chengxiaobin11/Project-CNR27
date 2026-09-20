@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SYSINT                                                                09/16/2026 20:26:58 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSINT                                                            09/18/2026 20:37:37 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SYSINT
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSINT
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\SysInt.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\System\Code\SysInt.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;
-                    -.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFunct
-                    -ion\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\ScalerC
-                    -ommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Kerne
-                    -l\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Function\H
-                    -eader;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\None
-                    - Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PROJEC
-                    -T,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysInt.lst) OBJECT(.\Output\RL6432_Proje
-                    -ct\SysInt.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\System\Code\SysInt.c LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL64
+                    -32;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Scaler\ScalerFu
+                    -nction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel\Scaler\Scal
+                    -erCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common\Header;.\Ke
+                    -rnel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Common Functio
+                    -n\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Header;.\User\N
+                    -one Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT=_RL6432_PRO
+                    -JECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\SysInt.lst) TABS(2) OBJECT(.\Output\R
+                    -L6432_Project\SysInt.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          #if(_USB3_RETIMER_SUPPORT == _ON)
               void SysEXINT3(void);
               #endif
-C51 COMPILER V8.12   SYSINT                                                                09/16/2026 20:26:58 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSINT                                                            09/18/2026 20:37:37 PAGE 2   
 
   48          void SysUartSerialPortIntProc(void);
   49          
@@ -126,7 +126,7 @@ line level    source
               #endif
  108   1      
  109   1      #if((_DVI_SUPPORT == _ON) || (_HDMI_SUPPORT == _ON))
-C51 COMPILER V8.12   SYSINT                                                                09/16/2026 20:26:58 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSINT                                                            09/18/2026 20:37:37 PAGE 3   
 
  110   1      
  111   1      #if(_HDMI_CEC_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
  169          // Output Value : None
  170          //--------------------------------------------------
  171          void SysEXINT1(void)    interrupt 2 using 2
-C51 COMPILER V8.12   SYSINT                                                                09/16/2026 20:26:58 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSINT                                                            09/18/2026 20:37:37 PAGE 4   
 
  172          {
  173   1          // Backup for Burst Write Bug
@@ -254,7 +254,7 @@ line level    source
               void SysEXINT3(void)    interrupt 9
               {
                   ScalerUSB3RetimerIntHandler_EXINT3();
-C51 COMPILER V8.12   SYSINT                                                                09/16/2026 20:26:58 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSINT                                                            09/18/2026 20:37:37 PAGE 5   
 
               
                   EXIF &= ~_BIT5;
@@ -290,7 +290,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    173    ----
+   CODE SIZE        =    175    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      3    ----
    PDATA SIZE       =   ----    ----

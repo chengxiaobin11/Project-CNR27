@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_TCON                                                    09/16/2026 20:28:35 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TCON                                                09/18/2026 20:39:29 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_TCON
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_TCON
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_TCON.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_TCON.c LARGE OPTIMIZE
-                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
-                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
-                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
-                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
-                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
-                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
-                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432_
-                    -Series_TCON.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_TCON.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_TCON.c LARGE OPTIM
+                    -IZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syste
+                    -m\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunctio
+                    -n\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler
+                    -\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\He
+                    -ader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.
+                    -\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\He
+                    -ader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL64
+                    -32_Series_TCON.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_TCON.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #endif
               void ScalerTconLogicalOpEnable(EnumTconLogicalOpSet enumTconLogicalOpSet, EnumTconLogicalOp enumTconLogica
              -lOp, bit bEnable);
-C51 COMPILER V8.12   RL6432_SERIES_TCON                                                    09/16/2026 20:28:35 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TCON                                                09/18/2026 20:39:29 PAGE 2   
 
               #endif
   48          
@@ -126,7 +126,7 @@ line level    source
                           case _TCON_LOGICAL_OP_XOR:
                               ScalerSetDataPortBit(P15_A3_TCON_ADDR, _P15_A4_PT_18_TC0_CTRL + (BYTE)(enumTconLogicalOpSe
              -t << 4), ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
-C51 COMPILER V8.12   RL6432_SERIES_TCON                                                    09/16/2026 20:28:35 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TCON                                                09/18/2026 20:39:29 PAGE 3   
 
                               break;
                           case _TCON_TOGGLE_OP_NORMAL:

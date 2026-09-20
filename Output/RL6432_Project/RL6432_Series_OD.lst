@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_OD
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_OD
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_OD.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_OD.c LARGE OPTIMIZE(9
-                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
-                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
-                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
-                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
-                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
-                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
-                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432_Se
-                    -ries_OD.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_OD.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_OD.c LARGE OPTIMIZ
+                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
+                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
+                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
+                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
+                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
+                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
+                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432
+                    -_Series_OD.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_OD.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          void ScalerODIntHandler_EXINT0(void);
   46          #endif
   47          
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 2   
 
   48          //****************************************************************************
   49          // FUNCTION DEFINITIONS
@@ -126,7 +126,7 @@ line level    source
  107   2              SET_OD_CURR_DYNAMIC_STATUS(_DISABLE);
  108   2              ScalerGlobalSetInterrupt(_IRQ_DEN_START, _DISABLE);
  109   2      #endif
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 3   
 
  110   2              // Disable OD function
  111   2              ScalerSetBit(P3_A1_LS_CTRL0, ~(_BIT7 | _BIT6), 0x00);
@@ -190,7 +190,7 @@ line level    source
  168   2              BYTE ucFreerunDVSCount = 0;
  169   2      
  170   2              // Set DEN_START flag
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 4   
 
  171   2              SET_EVENT_DEN_START_INT(_TRUE);
  172   2      
@@ -254,7 +254,7 @@ line level    source
  227   3                  // <OD control>:             |___on__|__off__|___on__|__off__|__off__|___on__|__off__|___on__|
              -__off__|__off__|
  228   3                  // OD actual(DB effective):  |_______|___ON__|__OFF__|___ON__|__OFF__|__OFF__|___ON__|__OFF__|
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 5   
 
              -___ON__|__OFF__|
  229   3                  // OD memory access:         |_______|_______|___R___|___W___|___R___|_______|___W___|___R___|
@@ -318,7 +318,7 @@ line level    source
              -__F3___|
  276   3                  // <Free run DVS count>:     |___0___|___1___|___2___|___0___|___1___|___2___|___0___|___1___|
              -___2___|
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 6   
 
  277   3                  // <OD control>:             |___on__|__off__|__off__|___on__|__off__|__off__|___on__|__off__|
              -__off__|
@@ -382,14 +382,14 @@ line level    source
  324   3              }// End of switch(GET_MEMORY_DVF_SELECT())
  325   2          }// End of if(ScalerGetBit_EXINT(P0_05_IRQ_CTRL1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
  326   1      } // End of void ScalerODIntHandler_EXINT0()
-C51 COMPILER V8.12   RL6432_SERIES_OD                                                      09/16/2026 20:28:29 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/18/2026 20:39:23 PAGE 7   
 
  327          #endif // End of #if(_FRC_SUPPORT == _ON)
  328          #endif  // End of #if(_OD_SUPPORT == _ON)
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    657    ----
+   CODE SIZE        =    660    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       3
    PDATA SIZE       =   ----    ----

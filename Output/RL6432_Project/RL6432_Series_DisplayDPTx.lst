@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_DISPLAYDPTX
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DISPLAYDPTX
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_DisplayDPTx.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DisplayDPTx.c LARGE O
-                    -PTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\S
-                    -ystem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFun
-                    -ction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sc
-                    -aler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Li
-                    -b\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Head
-                    -er;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factor
-                    -y\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\
-                    -RL6432_Series_DisplayDPTx.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_DisplayDPTx.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_DisplayDPTx.c LARG
+                    -E OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kerne
+                    -l\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scaler
+                    -Function\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel
+                    -\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common
+                    -\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\H
+                    -eader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fac
+                    -tory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Proje
+                    -ct\RL6432_Series_DisplayDPTx.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_DisplayDPTx.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // CODE TABLES
               //****************************************************************************
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 2   
 
               BYTE code tVBY1_DRV_TABLE[32] =
               {
@@ -126,7 +126,7 @@ line level    source
                   do
                   {
                       bHPCheck = _SUCCESS;
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 3   
 
               
                       if(ScalerGetBit(P9C_70_HPD_CTRL, _BIT2) == _BIT2)
@@ -190,7 +190,7 @@ line level    source
               
                       ucLTRetryNum += 1;
               
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 4   
 
                       ScalerTimerDelayXms(5);
                   }
@@ -254,7 +254,7 @@ line level    source
               }
               
               #if(_PANEL_DPTX_FORCE_OUTPUT_SUPPORT == _ON)
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 5   
 
               //--------------------------------------------------
               // Description  : DP Tx Link TSignal Force Output
@@ -318,7 +318,7 @@ line level    source
                   // Lane Skew Setting
                   ScalerSetBit(P38_85_PHY0_TXBIST_00_H2, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((_DISPLAY_DP
              -_TX_SKEW_LANE0 << 3) | _DISPLAY_DP_TX_SKEW_LANE1));
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 6   
 
                   ScalerSetBit(P38_86_PHY0_TXBIST_00_H1, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), ((_DISPLAY_DP
              -_TX_SKEW_LANE2 << 5) | (_DISPLAY_DP_TX_SKEW_LANE3 << 2)));
@@ -382,7 +382,7 @@ line level    source
                       // Set Dp Tx Digital Phy
                       ScalerSetBit(P38_91_PHY_RST, ~_BIT0, _BIT0);
               
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 7   
 
                       // Enable Digital Phy output
                       ScalerSetByte(P38_8E_PHY0_TXBIST_02_H1, 0xFF);
@@ -446,7 +446,7 @@ line level    source
               
                   else
                   {
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 8   
 
                       // Disable Dp Tx LDO Power
                       ScalerSetBit(P55_73_DPTX_CMU3, ~_BIT6, 0x00);
@@ -510,7 +510,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 9   
 
                       // Set Aux Tx LDO, Rx Common Mode
                       ScalerSetBit(P9D_61_AUX_1, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((_PANEL_DPTX_AUX_SWING_LEVEL << 5) |
@@ -574,7 +574,7 @@ line level    source
               
                           // Driving current
                           ScalerSetBit(P55_58_DPTX_SWING_CURRENT_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), ((tVBY1_DRV_TABLE[
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 10  
 
              -ucIndex + 0] & 0x0F) << 4));
               
@@ -638,7 +638,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 11  
 
               //--------------------------------------------------
               // Description  : Dp Tx Main Link Power on
@@ -702,7 +702,7 @@ line level    source
                           // Dig PHY Set
                           ScalerSetBit(P9C_00_DP_PHY_CTRL, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), _BIT4);
               
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 12  
 
                           // Reset Small FIFO Before Output Enable
                           ScalerSetBit(P9C_10_DPTX_SFIFO_CTRL0, ~_BIT7, 0x00);
@@ -766,7 +766,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-C51 COMPILER V8.12   RL6432_SERIES_DISPLAYDPTX                                             09/16/2026 20:28:14 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAYDPTX                                         09/18/2026 20:39:04 PAGE 13  
 
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

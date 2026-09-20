@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_TMDSRX1
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_TMDSRX1
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_TMDSRx1.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_TMDSRx1.c LARGE OPTIM
-                    -IZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syste
-                    -m\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunctio
-                    -n\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler
-                    -\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\He
-                    -ader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.
-                    -\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\He
-                    -ader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL64
-                    -32_Series_TMDSRx1.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_TMDSRx1.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_TMDSRx1.c LARGE OP
+                    -TIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sy
+                    -stem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunc
+                    -tion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sca
+                    -ler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib
+                    -\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Heade
+                    -r;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory
+                    -\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\R
+                    -L6432_Series_TMDSRx1.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_TMDSRx1.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               // VARIABLE DECLARATIONS
               //****************************************************************************
               StructTMDSCtrlInfo g_stTMDSRx1CtrlInfo;
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 2   
 
               WORD g_usTMDSRx1ClkCount;
               
@@ -126,7 +126,7 @@ line level    source
               void ScalerTMDSRx1FreqDetectDisable(void);
               
               #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 3   
 
               bit ScalerTMDSRx1TMDSPSPreDetect(void);
               bit ScalerTMDSRx1TMDSNormalPreDetect(void);
@@ -190,7 +190,7 @@ line level    source
               
                   // Enable BCH Detection
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_02_PORT_PAGE71_HDMI_BCHCR, ~(_BIT6 | _BIT3 | _BIT2 | _
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 4   
 
              -BIT1), (_BIT6 | _BIT3 | _BIT2 | _BIT1));
               
@@ -254,7 +254,7 @@ line level    source
                   ScalerSetBit(P71_1A_HDMI_CTRL_1A, ~_BIT3, 0x00);
               
                   // Set time interval form bus free to Read Request(4.7us~500us)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 5   
 
                   ScalerSetBit(P71_1B_HDMI_CTRL_1B, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
               
@@ -318,7 +318,7 @@ line level    source
                   ScalerSetBit(P71_AD_TMDS_CPS, ~_BIT1, 0x00);
               
                   // Enable MAC Input
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 6   
 
                   ScalerSetBit(P71_A7_TMDS_PWDCTL, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _B
              -IT0));
@@ -382,7 +382,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTMDSRx1InterruptInitial(void)
               {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 7   
 
                   if(ScalerGetBit(P71_E6_HDMI_FREQDET_CTRL, _BIT1) == 0x00)
                   {
@@ -446,7 +446,7 @@ line level    source
               
                   // Clear IRQ Pending Flag
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_60_PORT_PAGE71_HDMI_INTCR, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 8   
 
               
                   // Internal IRQ Enable (Global)
@@ -510,7 +510,7 @@ line level    source
                   ScalerSetBit_EXINT(P7A_E3_GAIN_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BIT5 | _BIT2));
               
                   // Tap4_Gain = 1/512; Servo_Gain = 1/256
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 9   
 
                   ScalerSetBit_EXINT(P7A_E4_GAIN_3, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BIT5 | _BIT3));
               
@@ -574,7 +574,7 @@ line level    source
                   ScalerSetByte_EXINT(P7A_EC_LOOP_DIV_1, 0xA3);
                   ScalerSetByte_EXINT(P7A_ED_LOOP_DIV_2, 0xCA);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 10  
 
                   // [5] servo_notrans = 1'b1 --> Transition Bits are not Effective in Servo
                   // [4] tap0_notrans = 1'b1 --> Transition Bits are not Effective in Tap0
@@ -638,7 +638,7 @@ line level    source
                           ScalerSetByte_EXINT(P7A_A5_L0_INIT_3, 0x00);
                           ScalerSetByte_EXINT(P7A_B5_L1_INIT_3, 0x00);
                           ScalerSetByte_EXINT(P7A_C5_L2_INIT_3, 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 11  
 
                       }
                       else
@@ -702,7 +702,7 @@ line level    source
               
                   // DFE Loop Normal
                   ScalerSetBit_EXINT(P7A_EF_RESET_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 12  
 
                   ScalerSetBit_EXINT(P7A_EF_RESET_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
               
@@ -766,7 +766,7 @@ line level    source
                           if(ScalerGetBit_EXINT(P71_E6_HDMI_FREQDET_CTRL, _BIT6) == _BIT6)
                           {
                               // POP Result
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 13  
 
                               ScalerSetBit_EXINT(P71_EC_HDMI_FREQDET_STABLE, ~_BIT7, _BIT7);
               
@@ -830,7 +830,7 @@ line level    source
               
                   //////////////
                   // CDR Mode //
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 14  
 
                   //////////////
               
@@ -894,7 +894,7 @@ line level    source
                           // [3:0] cdr_en = 4'b0101 --> Enable CDREX for Lane0, 2
                           ScalerSetBit_EXINT(P7A_1A_CMU_00, ~_BIT7, _BIT7);
                           DELAY_5US_EXINT();
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 15  
 
                           ScalerSetBit_EXINT(P7A_1A_CMU_00, ~_BIT6, _BIT6);
                           DELAY_5US_EXINT();
@@ -958,7 +958,7 @@ line level    source
                           // [7:4] rx_en = 4'b1001 --> Enable RXEN for Lane0, 3
                           ScalerSetBit_EXINT(P7A_1A_CMU_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT4));
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 16  
 
                           // [3:0] cdr_en = 4'b0001 --> Enable CDREX for Lane0
                           ScalerSetBit_EXINT(P7A_1A_CMU_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT0);
@@ -1022,7 +1022,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 17  
 
                       // [5:4] reg_cmu_sel_cp = 2'b00 --> Analog CDR Cp = 0pF
                       // [3] reg_en_largers_forcmu = 1'b0 --> Analog CDR Rs Increase 0K
@@ -1086,7 +1086,7 @@ line level    source
                       else
                       {
                           // KP = 0x0F --> KP = 3.75
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 18  
 
                           ScalerSetByte_EXINT(P7A_5A_KP_L0, 0x0F);
                           ScalerSetByte_EXINT(P7A_5B_KP_L1, 0x0F);
@@ -1150,7 +1150,7 @@ line level    source
                           }
                       }
                       else  // MHL 24bit Mode
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 19  
 
                       {
                           if(GET_INPUT_PIXEL_CLK() <= 750)
@@ -1214,7 +1214,7 @@ line level    source
                               // [5:4] CMU_SELPREDIV = 2'b00 --> /1
                               ScalerSetBit_EXINT(P7A_1F_CMU_05, ~(_BIT5 | _BIT4), 0x00);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 20  
 
                               // [7:0] N_CODE = 8'b0001 1010 --> 26 + 4 = 30
                               ScalerSetByte_EXINT(P7A_20_CMU_06, 0x1A);
@@ -1278,7 +1278,7 @@ line level    source
               
                               // [2:0] SEL_DIV = 3'b100 --> 187.5MHz ~ 375MHz
                               ScalerSetBit_EXINT(P7A_21_CMU_07, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 21  
 
               
               #if(_ERROR_PRONE_CODE == _TRUE)
@@ -1342,7 +1342,7 @@ line level    source
                               // 250/500 = 1/2 = 5*(1/10 clock rate)
                               ScalerSetBit_EXINT(P7A_2D_ANA_CDR_02, ~(_BIT1 | _BIT0), _BIT0);
                               ScalerSetByte_EXINT(P7A_2E_ANA_CDR_03, 0xF9);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 22  
 
                               ScalerSetByte_EXINT(P7A_2F_ANA_CDR_04, 0xF3);
               
@@ -1406,7 +1406,7 @@ line level    source
               
                   // [0] en_clkout_manual = 0 --> Disable Clkout
                   ScalerSetBit_EXINT(P7A_0E_SDM_03, ~_BIT0, 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 23  
 
               
                   // [0] en_eqen_manual = 0 --> Disable Clkout
@@ -1470,7 +1470,7 @@ line level    source
              -));
                   }
                   else if(GET_INPUT_PIXEL_CLK() <= 3400)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 24  
 
                   {
                       // [7:5] LE_RLSEL = 3'b001
@@ -1534,7 +1534,7 @@ line level    source
               #if(_ERROR_PRONE_CODE == _TRUE)
                   // [7] en_wide_temp = 1'b1 --> Enable Wide Temp VCO Band
                   ScalerSetBit_EXINT(P7A_35_ANA_CDR_10, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 25  
 
               
                   // [1:0] en_vcm_tune = 2'b11 --> Vc = Vdd/2
@@ -1598,7 +1598,7 @@ line level    source
                       ScalerSetBit_EXINT(P7A_1B_CMU_01, ~_BIT7, _BIT7);
               
                       // [4] reg_acdr_l0_en = 1'b1 --> Enable Lane0 ACDR
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 26  
 
                       // [1] reg_en_eqen_manual_l0 = 1'b1
                       ScalerSetBit_EXINT(P7A_12_ANA_CDR, ~(_BIT4 | _BIT1), (_BIT4 | _BIT1));
@@ -1662,7 +1662,7 @@ line level    source
                               DELAY_XUS_EXINT(150);
               
                               // Stop to Record LE Max/Min
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 27  
 
                               ScalerSetBit_EXINT(P7A_F2_COEF_3, ~_BIT0, 0x00);
               
@@ -1726,7 +1726,7 @@ line level    source
                                   ScalerSetBit_EXINT(P7A_B5_L1_INIT_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0),
              - g_pucTMDSRx1LEMax[1]);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 28  
 
                                   // Reload LE/Tap1~2
                                   ScalerSetBit_EXINT(P7A_BA_L1_INIT_8, ~(_BIT2 | _BIT1), (_BIT2 | _BIT1));
@@ -1790,7 +1790,7 @@ line level    source
               
                       // Waiting for DFE Adaptation
                       DELAY_XUS_EXINT(150);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 29  
 
               
                       // Stop to Record Tap0 Max/Min
@@ -1854,7 +1854,7 @@ line level    source
                       // Read Back LE Min
                       ScalerSetBit_EXINT(P7A_F2_COEF_3, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), (_BIT3 | _BIT1));
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 30  
 
                       // Read Back Lane0
                       ScalerSetBit_EXINT(P7A_F2_COEF_3, ~(_BIT7 | _BIT6), 0x00);
@@ -1918,7 +1918,7 @@ line level    source
                       // Disable Adaptation
                       ScalerSetByte_EXINT(P7A_A1_L0_DFE_EN_2, 0x00);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 31  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 31  
 
                       // [4] reg_adp_eq_off = 1'b1 --> Disable Adaptation for Analog CDR
                       ScalerSetBit_EXINT(P7A_2C_ANA_CDR_01, ~_BIT4, _BIT4);
@@ -1982,7 +1982,7 @@ line level    source
                   else
               #endif
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 32  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 32  
 
                       if(ScalerGetBit_EXINT(P7A_1B_CMU_01, _BIT0) == _BIT0) // DCDR
                       {
@@ -2046,7 +2046,7 @@ line level    source
                           else if((ScalerGetByte_EXINT(P7A_28_KOFFSET_04) & 0x1F) < 8)
                           {
                               // Set Servo = 8
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 33  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 33  
 
                               ScalerSetBit_EXINT(P7A_B3_L1_INIT_1, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT3);
                           }
@@ -2110,7 +2110,7 @@ line level    source
                           // [3:0] reg_cdr_cp_in --> Restore Icp to Original Setting
                           ScalerSetBit_EXINT(P7A_31_ANA_CDR_06, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), ucIcp);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 34  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 34  
 
                           // Waiting for VCO Stable
                           DELAY_XUS_EXINT(80);
@@ -2174,7 +2174,7 @@ line level    source
                   pucBackUp[4] = ScalerGetByte_EXINT(P71_39_HDMI_CTRL_39);
                   pucBackUp[5] = (ScalerGetByte_EXINT(P71_38_HDMI_CTRL_38) & 0x01);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 35  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 35  
 
                   // Set 3A Port non-auto increase
                   ScalerSetBit_EXINT(P71_38_HDMI_CTRL_38, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
@@ -2238,7 +2238,7 @@ line level    source
                           // TMDS_FREQ(MHz) = GDI_CLK(MHz) * CLK_COUNT * _TMDS_MEASURE_CLOCK_DIVIDER / _TMDS_MEASURE_CLO
              -CK_COUNTER
                           SET_INPUT_PIXEL_CLK((((DWORD)_GDI_CLK_KHZ * usCount + 50000) / 100000));
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 36  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 36  
 
               
               #if(_D1_HDMI_2_0_SUPPORT == _ON)
@@ -2302,7 +2302,7 @@ line level    source
               
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
                               if(GET_D1_TMDS_MODE() == _TMDS_MHL_MODE)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 37  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 37  
 
                               {
                                   ScalerSetByte_EXINT(P71_C9_HDMI_AP, _P71_CA_PT_00_PORT_PAGE71_HDMI_SCR);
@@ -2366,7 +2366,7 @@ line level    source
                                       {
                                           bMHLFail = _TRUE;
                                       }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 38  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 38  
 
                                   }
                               }
@@ -2430,7 +2430,7 @@ line level    source
                           ScalerSetBit_EXINT(P71_0B_HDMI_CTRL_0B, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2), (_BI
              -T7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2));
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 39  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 39  
 
                           // Enable Character Error Detction Function Lock Transition IRQ
                           ScalerSetBit_EXINT(P71_18_HDMI_CTRL_18, ~(_BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT1 | _BIT0));
@@ -2494,7 +2494,7 @@ line level    source
                               // Disable Freq. Unstable IRQ
                               ScalerSetBit_EXINT(P71_E6_HDMI_FREQDET_CTRL, ~_BIT1, 0x00);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 40  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 40  
 
                               // Set HDMI/DVI switch to Auto Mode
                               ScalerSetByte_EXINT(P71_C9_HDMI_AP, _P71_CA_PT_00_PORT_PAGE71_HDMI_SCR);
@@ -2558,7 +2558,7 @@ line level    source
                   if((ScalerGetBit_EXINT(P71_26_HDMI_CTRL_26, _BIT4) == _BIT4) && (ScalerGetBit_EXINT(P71_25_HDMI_CTRL_2
              -5, _BIT4) == _BIT4))
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 41  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 41  
 
                       // Clear SCDC 0x20 Change Flag
                       ScalerSetByte_EXINT(P71_25_HDMI_CTRL_25, _BIT4);
@@ -2622,7 +2622,7 @@ line level    source
                       if(ScalerGetBit_EXINT(P71_3A_HDMI_CTRL_3A, _BIT0) == 0x00)
                       {
                           ScalerSetBit_EXINT(P71_3A_HDMI_CTRL_3A, ~_BIT0, _BIT0);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 42  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 42  
 
               
                           if(GET_HDMI_2_0_RX1_RR_ENABLE() == _TRUE)
@@ -2686,7 +2686,7 @@ line level    source
                       if(ScalerGetBit_EXINT(P71_17_HDMI_CTRL_17, _BIT3) == _BIT3)
                       {
                           // Set CED Lock Flag in SCDC Port
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 43  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 43  
 
                           ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_40_PORT_PAGE71_HDMI_SCDC_40);
                           ScalerSetBit_EXINT(P71_3A_HDMI_CTRL_3A, ~_BIT1, _BIT1);
@@ -2750,7 +2750,7 @@ line level    source
               
                           /*
                           // Disable Test Read Request HW Auto Mode
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 44  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 44  
 
                           ScalerSetBit_EXINT(P71_1C_HDMI_CTRL_1C, ~_BIT1, 0x00);
               
@@ -2814,7 +2814,7 @@ line level    source
                       ScalerSetByte_EXINT(P71_C3_HDCP_AP, _P71_C4_PT_C1_PORT_PAGE71_HDCP_SIR);
                       ScalerSetBit_EXINT(P71_C4_HDCP_DP, ~_BIT4, 0x00);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 45  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 45  
 
                       // Clear TimerEvenet
                       ScalerTimerCancelTimerEvent_EXINT0(_SCALER_TIMER_EVENT_RX1_TMDS_HDCP14_BCH_ERR_CHK);
@@ -2878,7 +2878,7 @@ line level    source
               
                           // Set S code User Define
                           ScalerSetByte_EXINT(P71_C9_HDMI_AP, _P71_CA_PT_12_PORT_PAGE71_HDMI_SCAPR);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 46  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 46  
 
                           ScalerSetByte_EXINT(P71_CA_HDMI_DP, ScalerAudioGetUserSamplingFreqSCode_EXINT0(_PORT_HDMI, GET
              -_D1_SAMPLING_FREQ_USER_DEFINE()));
@@ -2942,7 +2942,7 @@ line level    source
               
                   // Set CA Port non-auto increase
                   ScalerSetBit_EXINT(P71_C8_HDMI_APC, ~_BIT0, 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 47  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 47  
 
               
                   pucBackUp[2] = ScalerGetByte_EXINT(P71_C3_HDCP_AP);
@@ -3006,7 +3006,7 @@ line level    source
                       // Enable CED Update Read Request Auto Mode
                       ScalerSetBit_EXINT(P71_24_HDMI_CTRL_24, ~_BIT0, _BIT0);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 48  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 48  
 
                       // Enable Read Request Done IRQ
                       ScalerSetBit_EXINT(P71_1F_HDMI_CTRL_1F, ~_BIT3, _BIT3);
@@ -3070,7 +3070,7 @@ line level    source
                               ScalerSetBit_EXINT(P71_23_HDMI_CTRL_23, ~_BIT6, _BIT6);
                           }
                           */
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 49  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 49  
 
                       }
                       else
@@ -3134,7 +3134,7 @@ line level    source
                   ScalerSetBit(P71_E6_HDMI_FREQDET_CTRL, ~(_BIT6 | _BIT2 | _BIT1), 0x00);
               
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 50  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 50  
 
               
                   if(GET_D1_TMDS_MODE() == _TMDS_MHL_MODE)
@@ -3198,7 +3198,7 @@ line level    source
                               ScalerSetBit(P71_E6_HDMI_FREQDET_CTRL, ~(_BIT6 | _BIT2 | _BIT1), (ucUnstableIrq & _BIT1));
               
                               return _FALSE;
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 51  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 51  
 
                           }
               
@@ -3262,7 +3262,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Check CDR Locked (EXINT0 Only)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 52  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 52  
 
               // Input Value  : Measured Clk Count to be compared
               // Output Value : _TRUE => Stable
@@ -3326,7 +3326,7 @@ line level    source
                           // Check Current Measured Freq. is the same as previously locked
                           if(abs(usClkCount - ScalerTMDSRx1MeasureClk_EXINT0(_CLK_SOURCE_TMDS)) > (usClkCount >> 6))
                           {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 53  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 53  
 
                               return _FALSE;
                           }
@@ -3390,7 +3390,7 @@ line level    source
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
                   if(GET_D1_TMDS_MODE() == _TMDS_MHL_MODE)
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 54  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 54  
 
                       // Enable Rx_EN (Lane0,3)
                       ScalerSetBit(P7A_1A_CMU_00, ~(_BIT7 | _BIT4), (_BIT7 | _BIT4));
@@ -3454,7 +3454,7 @@ line level    source
                   else
               #endif
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 55  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 55  
 
                       // Enable Rx_EN (Lane3)
                       ScalerSetBit_EXINT(P7A_1A_CMU_00, ~_BIT7, _BIT7);
@@ -3518,7 +3518,7 @@ line level    source
               
                   SET_COLOR_SPACE(_COLOR_SPACE_RGB);
                   SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_FULL_RANGE);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 56  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 56  
 
               
                   ScalerTMDSRx1SetPorchColor(GET_COLOR_SPACE());
@@ -3582,7 +3582,7 @@ line level    source
                   //
                   // note 1.   According A, Icp = 2.5 ~ 20 --> 14 <= M <= 111
                   // note 2.   According B and note 1. --> 3 <= (Fin / N) <= 42
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 57  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 57  
 
                   // note 3.   According C and note 2. --> 7 <= (Fin / N) <= 42
                   // note 4_a. 10bit : (M / N / Divs) = (4 / 5 * Ratio) --> M = N * Divs * (4 / 5 * Ratio), N or Divs: m
@@ -3646,7 +3646,7 @@ line level    source
                       return _FALSE;
                   }
                   else if(PDATA_WORD(0) >= ucFactor)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 58  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 58  
 
                   {
                       // N: Multiple of factor
@@ -3710,7 +3710,7 @@ line level    source
                   {
                       pData[5] = 0x07;
                   }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 59  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 59  
 
               
                   DebugMessageRx1("Deep Color Charge Pump icp =", pData[5]);
@@ -3774,7 +3774,7 @@ line level    source
                   ScalerSetBit(P2D_BD_MN_SCLKG_PLL_PWR, ~_BIT2, _BIT2);
               
                   ScalerTimerDelayXms(2);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 60  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 60  
 
               
                   // Reg DPLL_CALLCH
@@ -3838,7 +3838,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 61  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 61  
 
               // Description  : Wait for Deep Color PLL Phase Lock
               // Input Value  : None
@@ -3902,7 +3902,7 @@ line level    source
                               {
                                   CLR_HDMI_RX1_GCP_RECEIVED();
                               }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 62  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 62  
 
                           }
                           // Only GCP Packet have been received
@@ -3966,7 +3966,7 @@ line level    source
                       }
               #endif
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 63  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 63  
 
                       // Wait at least 3 frame for HW auto update color depth value
                       ScalerTimerDelayXms(130);
@@ -4030,7 +4030,7 @@ line level    source
               #else
                       if(ScalerGetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_00_PORT_PAGE71_HDMI_SCR, _BIT7) == _BIT7)
               #endif
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 64  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 64  
 
                       {
                           SET_TMDS_RX1_SPD_INFO_FRAME_RECEIVED();
@@ -4094,7 +4094,7 @@ line level    source
               
                           case _AVI_INFO_RGB_QUANTIZATION:
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 65  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 65  
 
                               return (ScalerGetDataPortBit(P71_CD_HDMI_PSAP, 0x06, (_BIT3 | _BIT2)) >> 2);
               
@@ -4158,7 +4158,7 @@ line level    source
                       {
                           return _COLOR_DEPTH_16_BITS;
                       }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 66  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 66  
 
                   }
               
@@ -4222,7 +4222,7 @@ line level    source
               
                       if((ucWDType & _HDMI_AV_MUTE_WD) == _HDMI_AV_MUTE_WD)
                       {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 67  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 67  
 
                           if(ScalerGetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_31_PORT_PAGE71_HDMI_WDCR0, _BIT7) == 0x00)
                           {
@@ -4286,7 +4286,7 @@ line level    source
                           if(GET_HDMI_2_0_RX1_RR_ENABLE() == _TRUE)
                           {
                               // Enable Read Request Retry
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 68  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 68  
 
                               ScalerTimerWDActivateTimerEvent_EXINT0(10, _SCALER_WD_TIMER_EVENT_RX1_HDMI_RR_RETRY);
                           }
@@ -4350,7 +4350,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerTMDSRx1ReadRequestTimerEventEnable_WDINT(bit bEnable) using 3
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 69  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 69  
 
               {
                   if(bEnable == _ENABLE)
@@ -4414,7 +4414,7 @@ line level    source
                   // Set Lower Bound
                   ScalerSetByte(P71_EA_HDMI_FREQDET_LOWER_M, HIBYTE(_TMDS_FREQ_PS_LOWER_BOUND));
                   ScalerSetByte(P71_EB_HDMI_FREQDET_LOWER_L, LOBYTE(_TMDS_FREQ_PS_LOWER_BOUND));
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 70  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 70  
 
               }
               
@@ -4478,7 +4478,7 @@ line level    source
                   {
                       // DDC handshake Detected
                       if(GET_TMDS_RX1_DDC_DETECTED() == _TRUE)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 71  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 71  
 
                       {
                           DebugMessageRx1("7. PowerSaving D1 DDC", 0);
@@ -4542,7 +4542,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Signal PreDetection for TMDS(Power Normal)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 72  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 72  
 
               // Input Value  : Input Port
               // Output Value : True : TMDS Signal Detected
@@ -4606,7 +4606,7 @@ line level    source
                   if(GET_TMDS_RX1_HPD_TRIGGER_EVENT() != _TMDS_HPD_NONE)
                   {
                       return _SOURCE_NONE;
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 73  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 73  
 
                   }
               
@@ -4670,7 +4670,7 @@ line level    source
              -));
                               ScalerSetByte(P71_E9_HDMI_FREQDET_UPPER_L, LOBYTE(_TMDS_FREQ_NORMAL_HIGH_SPEED_UPPER_BOUND
              -));
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 74  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 74  
 
                           }
               
@@ -4734,7 +4734,7 @@ line level    source
                       CLR_FREESYNC_ENABLED();
               #endif
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 75  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 75  
 
               #if((_HDMI_FREESYNC_SUPPORT == _ON) || (_HDMI_FREESYNC_II_SUPPORT == _ON))
                       // Clear SPD infoframe
@@ -4798,7 +4798,7 @@ line level    source
                       }
               
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 76  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 76  
 
                       // Mute ASUS Padfone until Source Read Ri Done (Incase of Color Format Error)
                       if(((GET_MHL_RX1_ADOPTER_ID_HBYTE() == _ASUS_PADFONE2_ADOPTER_ID_HBYTE) && (GET_MHL_RX1_ADOPTER_ID
@@ -4862,7 +4862,7 @@ line level    source
                       {
               #if(_HDMI_HDCP14_BCH_ERROR_CHECK == _ON)
                           BYTE ucBchErrorCount = 0x00;
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 77  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 77  
 
                           BYTE ucBchCheck = 0x00;
               
@@ -4926,7 +4926,7 @@ line level    source
                           else
                           {
                               // Turn off Deep Color Block
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 78  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 78  
 
                               ScalerSetBit(P71_B5_TMDS_UDC0, ~_BIT7, 0x00);
               
@@ -4990,7 +4990,7 @@ line level    source
                       return ucTMDSType;
                   }
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 79  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 79  
 
                   return _SOURCE_NONE;
               }
@@ -5054,7 +5054,7 @@ line level    source
               #endif
                           // Set Format Detect HW Auto Mode
                           ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_00_PORT_PAGE71_HDMI_SCR, ~(_BIT7 | _BIT6 | _BI
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 80  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 80  
 
              -T3 | _BIT2), 0x00);
                       }
@@ -5118,7 +5118,7 @@ line level    source
                       }
                   }
                   else
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 81  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 81  
 
                   {
                       return _FALSE;
@@ -5182,7 +5182,7 @@ line level    source
                       {
                           ucTemp = _TMDS_VIDEO_DATA_NONE;
                       }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 82  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 82  
 
               
                       // Clear video Detection Flag
@@ -5246,7 +5246,7 @@ line level    source
               
                   return _TRUE;
               }
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 83  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 83  
 
               
               //--------------------------------------------------
@@ -5310,7 +5310,7 @@ line level    source
                                   {
                                       DebugMessageRx1("TMDS Format Changed", ucSourceType);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 84  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 84  
 
                                       return _FALSE;
                                   }
@@ -5374,7 +5374,7 @@ line level    source
                           {
                               SET_TMDS_RX1_HPD_TRIGGER_EVENT(_TMDS_HPD_NORMAL);
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 85  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 85  
 
                               CLR_TMDS_RX1_Z0_ASSERTED();
               
@@ -5438,7 +5438,7 @@ line level    source
                               if(ScalerTMDSRx1HdmiAviPixelRepInfoChanged() == _TRUE)
                               {
                                   DebugMessageRx1("Pixel Repetition Info Changed", ucSourceType);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 86  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 86  
 
                                   return _FALSE;
                               }
@@ -5502,7 +5502,7 @@ line level    source
                           }
               
               #if(_HDMI_FREESYNC_SUPPORT == _ON)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 87  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 87  
 
                           if(GET_TMDS_RX1_SPD_INFO_FRAME_RECEIVED() == _TRUE)
                           {
@@ -5566,7 +5566,7 @@ line level    source
               
               #endif // End of #if(_DP_HDMI_COMPATIBLE_MODE == _ON)
               
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 88  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 88  
 
                   return _TRUE;
               }
@@ -5630,7 +5630,7 @@ line level    source
                           ScalerTMDSRx1HotPlugHighProc(_TMDS_HDCP_2_2_HPD_TIME);
                       }
                       else if(GET_TMDS_RX1_HPD_TRIGGER_EVENT() == _TMDS_HPD_ACER)
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 89  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 89  
 
                       {
                           ScalerTMDSRx1HotPlugHighProc(_TMDS_ACER_HPD_TIME);
@@ -5694,7 +5694,7 @@ line level    source
               //--------------------------------------------------
               // Description  : TMDS Before Hot Plug Event Process
               // Input Value  : bDisableZ0
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 90  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 90  
 
               // Output Value :
               //--------------------------------------------------
@@ -5758,7 +5758,7 @@ line level    source
                   if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && (GET_D1_CABLE_STATUS() == _TRUE))
               #endif
                   {
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 91  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 91  
 
                       // Restore Slave Address
                       ScalerSetDataPortByte(P71_C3_HDCP_AP, _P71_C4_PT_C2_PORT_PAGE71_HDCP_SLAVE_ADD, g_ucTMDSRx1SlaveAd
@@ -5822,7 +5822,7 @@ line level    source
                       case _HDMI_HDCP14_BCH_CHK_WINDOW_END:
               
                           SET_TMDS_RX1_HDCP14_BCH_CHK_STATE(_HDMI_HDCP14_BCH_NONE);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 92  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 92  
 
               
                           // Clr BCH Error Flag
@@ -5886,7 +5886,7 @@ line level    source
                   {
                       ScalerTimerDelayXms(ucCheckTime);
                       usRemainTime -= ucCheckTime;
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 93  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 93  
 
                       if((GET_TMDS_RX1_HDCP14_BCH_CHK_STATE() == _HDMI_HDCP14_BCH_AUTH_START) || (usRemainTime < ucCheck
              -Time))
@@ -5950,7 +5950,7 @@ line level    source
               
                               // Disable RGB/clock Output to avoid garbage
                               ScalerSetBit(P71_A6_TMDS_OUTCTL, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3), 0x00);
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 94  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 94  
 
               
                               SET_TMDS_RX1_HDCP14_BCH_CHK_STATE(_HDMI_HDCP14_BCH_1ST_ACT_ENC_CHK_FAIL);
@@ -6014,7 +6014,7 @@ line level    source
                   SET_TMDS_RX1_HDCP14_BCH_CHK_STATE(_HDMI_HDCP14_BCH_NONE);
               }
               #endif
-C51 COMPILER V8.12   RL6432_SERIES_TMDSRX1                                                 09/16/2026 20:28:36 PAGE 95  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDSRX1                                             09/18/2026 20:39:31 PAGE 95  
 
               #endif
               #endif // End of #if(_HDMI_HDCP14_BCH_ERROR_CHECK == _ON)

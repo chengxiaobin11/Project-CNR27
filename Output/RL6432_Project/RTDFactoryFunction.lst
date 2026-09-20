@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 1   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTDFACTORYFUNCTION
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTDFACTORYFUNCTION
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTDFactoryFunction.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Factory\Code\RTDFactoryFunction.c LARGE OPTIMIZE(9,SPEED) INCDIR(.
-                    -\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\Sca
-                    -ler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Kernel
-                    -\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Common
-                    -\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User Co
-                    -mmon Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\Hea
-                    -der;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJECT
-                    -=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTDFactoryFunction.lst) O
-                    -BJECT(.\Output\RL6432_Project\RTDFactoryFunction.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Factory\Code\RTDFactoryFunction.c LARGE OPTIMIZE(9,SPEED) INCDI
+                    -R(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kernel\
+                    -Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\Ker
+                    -nel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_Com
+                    -mon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\User
+                    - Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factory\
+                    -Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PROJ
+                    -ECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTDFactoryFunction.lst
+                    -) TABS(2) OBJECT(.\Output\RL6432_Project\RTDFactoryFunction.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 2   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 2   
 
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
@@ -100,7 +100,7 @@ line level    source
   80          //#define _BURNIN_STR_IC_NAME                 _M__,_o__,_d__,_e__,_l__,__,_COLON__,__,_2__,_5__,_5__,_6__
   81          
   82          #ifndef _BURNIN_STR_IC_NAME
-              #define _BURNIN_STR_IC_NAME                       _R__,_T__,_D__
+              #define _BURNIN_STR_IC_NAME                   _R__,_T__,_D__
               #endif
   85          #ifndef _MAIN_PAGE_MODEL_NAME
   86          #define _MAIN_PAGE_MODEL_NAME               _M__,_o__,_d__,_e__,_l__,__,_COLON__,__,_2__,_3__,_1__,_3__
@@ -126,7 +126,7 @@ line level    source
               #define _FACTORY_COLORTEMP_TEXT4            _5__,_6__,_0__,_0__
               #else
  108          #define _FACTORY_COLORTEMP_TEXT4            _5__,_8__,_0__,_0__
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 3   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 3   
 
  109          #endif
  110          #define _FACTORY_COLORTEMP_TEXT5            _s__,_R__,_G__,_B__
@@ -190,7 +190,7 @@ line level    source
  163              _SEPERATE__,             // ;
  164              _QUERY__,                // ?
  165          }EnumOSDfFontDef;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 4   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 4   
 
  166          
  167          //****************************************************************************
@@ -254,7 +254,7 @@ line level    source
  225          
  226              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_R_NUMBER_COL - 2), LENGTH(3)},
  227              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_G_NUMBER_COL - 2), LENGTH(3)},
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 5   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 5   
 
  228              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_B_NUMBER_COL - 2), LENGTH(3)},
  229          
@@ -318,7 +318,7 @@ line level    source
  287              {ROW(_FACTORY_COLORIMETRY_SEAMLESS_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
  288              {ROW(_FACTORY_DP_AUX_ADJR_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
  289              {ROW(_FACTORY_DP_IRQ_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 6   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 6   
 
  290          
  291              {ROW(_FACTORY_OSD_PAGE_ROW), COL(_FACTORY_OSD_PAGE_NUMBER_COL), LENGTH(2)},
@@ -382,7 +382,7 @@ line level    source
  348          };
  349          
  350          BYTE code tsOSD_FACTORY_COLORTEMP1[] =
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 7   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 7   
 
  351          {
  352              _FACTORY_COLORTEMP_TEXT2,_END_,
@@ -446,7 +446,7 @@ line level    source
  410              tsOSD_FACTORY_PANEL_TIME,
  411              tsOSD_FACTORY_COLORTEMP,
  412              tsOSD_FACTORY_COLORTEMP0,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 8   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 8   
 
  413              tsOSD_FACTORY_COLORTEMP1,
  414              tsOSD_FACTORY_COLORTEMP2,
@@ -510,7 +510,7 @@ line level    source
  471          {
  472              _O__,_S__,_D__,__,_S__,_i__,_z__,_e__,_X__,_2__,_END_,
  473          };
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 9   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 9   
 
  474          
  475          BYTE code tsCOLORIMETRY_SEAMLESS[] =
@@ -574,7 +574,7 @@ line level    source
  531          BYTE code tsOSD_FACTORY_ON[] =
  532          {
  533              _O__, _n__, _END_,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 10  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 10  
 
  534          };
  535          
@@ -638,7 +638,7 @@ line level    source
  593          };
  594          BYTE code tsOSD_FACTORY_ASCII_0[] =
  595          {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 11  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 11  
 
  596              _0__, _END_,
  597          };
@@ -702,7 +702,7 @@ line level    source
  655          {
  656              _F__, _END_,
  657          };
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 12  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 12  
 
  658          
  659          code BYTE *tsOSD_FACTORY_ASCII_TABLE[] =
@@ -742,10 +742,10 @@ line level    source
  693          code BYTE *tOSD_BURNIN_PAGE_TABLE[] =
  694          {
  695              tsOSD_BURNIN_IC_NAME,
- 696                  tsOSD_FACTORY_VERSION,
- 697                  tsOSD_BURNIN_DATE,
- 698                  tsOSD_FACTORY_PANNEL_NAME,
- 699                  tsOSD_FACTORY_CHKSUM,
+ 696            tsOSD_FACTORY_VERSION,
+ 697            tsOSD_BURNIN_DATE,
+ 698            tsOSD_FACTORY_PANNEL_NAME,
+ 699            tsOSD_FACTORY_CHKSUM,
  700          };
  701          
  702          
@@ -766,7 +766,7 @@ line level    source
  717              0x00,0x00,0x00,
  718              0x03,0x08,0x00,
  719              0x7e,0xce,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 13  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 13  
 
  720              0xcc,0x66,0x00,
  721              0xcc,0x66,0x00,
@@ -830,7 +830,7 @@ line level    source
  779              0x30,0x80,0x00,
  780              0x00,0x00,0x00,
  781          
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 14  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 14  
 
  782              //========Address -- (07),
  783              0x00,0x00,0x00,
@@ -894,7 +894,7 @@ line level    source
  841              0xcc,0x33,0x00,
  842              0xff,0xee,0x00,
  843              0xcc,0x33,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 15  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 15  
 
  844              0xcf,0x3f,0x00,
  845              0xf0,0xe0,0x00,
@@ -958,7 +958,7 @@ line level    source
  903              //========Address -- (12),
  904              0x00,0x00,0x00,
  905              0x0c,0x03,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 16  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 16  
 
  906              0xcc,0x33,0x00,
  907              0xcc,0x33,0x00,
@@ -1022,7 +1022,7 @@ line level    source
  965              0xcc,0xee,0x66,
  966              0xc0,0xe0,0x60,
  967              0x00,0x00,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 17  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 17  
 
  968          
  969              //========Address -- (18),
@@ -1086,7 +1086,7 @@ line level    source
 1027              0x7c,0xe7,0x00,
 1028              0xce,0x30,0x00,
 1029              0x73,0xce,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 18  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 18  
 
 1030              0x0c,0x73,0x00,
 1031              0xe7,0x3e,0x00,
@@ -1150,7 +1150,7 @@ line level    source
 1089          
 1090              //========Address -- (23),
 1091              0x00,0x00,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 19  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 19  
 
 1092              0x0c,0x03,0x00,
 1093              0xc6,0x36,0x00,
@@ -1214,7 +1214,7 @@ line level    source
 1151              0xcc,0x66,0x00,
 1152              0xe7,0xee,0x00,
 1153              0x30,0x60,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 20  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 20  
 
 1154              0x00,0x00,0x00,
 1155          
@@ -1278,7 +1278,7 @@ line level    source
 1213              0x06,0x00,0x00,
 1214              0x60,0x00,0x00,
 1215              0x66,0x00,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 21  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 21  
 
 1216              0x66,0x00,0x00,
 1217              0x66,0x00,0x00,
@@ -1342,7 +1342,7 @@ line level    source
 1275              0x00,0x00,0x00,
 1276          
 1277              //========Address -- (34),
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 22  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 22  
 
 1278              0x00,0x00,0x00,
 1279              0x00,0x00,0x00,
@@ -1406,7 +1406,7 @@ line level    source
 1337              0xcc,0x66,0x00,
 1338              0xcc,0x66,0x00,
 1339              0xcf,0xee,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 23  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 23  
 
 1340              0x70,0x60,0x00,
 1341              0x00,0x00,0x00,
@@ -1470,7 +1470,7 @@ line level    source
 1399              0x33,0x66,0x00,
 1400              0x01,0x0c,0x00,
 1401              0x11,0xcc,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 24  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 24  
 
 1402              0x33,0x66,0x00,
 1403              0x36,0x63,0x00,
@@ -1534,7 +1534,7 @@ line level    source
 1461              0x60,0xe0,0x00,
 1462              0x00,0x00,0x00,
 1463          
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 25  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 25  
 
 1464              //========Address -- (45),
 1465              0x00,0x00,0x00,
@@ -1598,7 +1598,7 @@ line level    source
 1523              0xdf,0xce,0x00,
 1524              0xec,0x66,0x00,
 1525              0xcc,0x66,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 26  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 26  
 
 1526              0xcc,0x66,0x00,
 1527              0xc0,0x60,0x00,
@@ -1662,7 +1662,7 @@ line level    source
 1585              //========Address -- (50),
 1586              0x00,0x00,0x00,
 1587              0x06,0x0c,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 27  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 27  
 
 1588              0x60,0xc0,0x00,
 1589              0x37,0x8c,0x00,
@@ -1726,7 +1726,7 @@ line level    source
 1647              0x46,0x00,0x00,
 1648              0x62,0x00,0x00,
 1649              0x10,0x00,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 28  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 28  
 
 1650          
 1651              //========Address -- (56),
@@ -1790,7 +1790,7 @@ line level    source
 1709              0x00,0x00,0x00,
 1710              0x00,0x00,0x00,
 1711              0xff,0x00,0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 29  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 29  
 
 1712              0x00,0x00,0x00,
 1713              0x00,0x00,0x00,
@@ -1854,7 +1854,7 @@ line level    source
 1769              {_K__, 10}, {_L__,  8}, {_M__, 12}, {_N__,  9}, {_O__, 10}, {_P__,  9}, {_Q__, 11}, {_R__, 10}, {_S__,
              -  9}, {_T__,  9},
 1770              {_U__,  9}, {_V__, 10}, {_W__, 11}, {_X__, 11}, {_Y__,  9}, {_Z__,  9},
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 30  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 30  
 
 1771          
 1772              {_a__,  8}, {_b__,  8}, {_c__,  8}, {_d__,  8}, {_e__,  8}, {_f__,  6}, {_g__,  8}, {_h__,  8}, {_i__,
@@ -1918,7 +1918,7 @@ line level    source
              -ICON(0x1F), 0x00, 0x90, ICON(0x20), 0x00, 0x90, ICON(0x21), 0x00, 0x90, ICON(0x22), 0x00, 0x90, ICON(0x23), 0x00, 0x90, 
              -ICON(0x24), 0x00, 0x90, ICON(0x25), 0x00, 0x90, ICON(0x26), 0x00, 0x90, ICON(0x27), 0x00, 0x90, ICON(0x28), 0x00, 0x90, 
              -ICON(0x29), 0x00,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 31  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 31  
 
               };
               
@@ -1982,7 +1982,7 @@ line level    source
              -cb,0xfb,0x96,0xee,0xd5,0xbd,0x06,0xcf,0x4e,0x92,0xe4,0x75,0x27,0xf9,0x7b,0xaf,0xe4,0xba,0xaf,0xbf,0x73,0x2e,0x2d,0xf1,0x
              -f9,0x26,0x79,0x7a,0xff,0x92,0xcf,0x4e,0x92,0x24,0x39,0xe7,0x06,0x00,0x1e,0xca,0x5a,0x14,0x28,0xf9,0x83,0xbc,0xe0,0xc0,0x
              -82,0x05,0xeb,0x0f,0xd6,0xb7,0x37,0xbf,0x6f,0xff,0x78,0x56,0xe3,0x57,0xe7,0xcb,0x78,0x50,0xf2,0xc7,0xda,0x4f,0x4a,0x81,0x
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 32  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 32  
 
              -f5,0x13,0x3c,0x9f,0x8b,0xe7,0xd9,0xa7,0x6a,0x72,0x87,0xb3,0x35,0xeb,0xf6,0x63,0x2e,0x30,0x54,0xfd,0x72,0x72,0x4e,0x72,0x
              -3e,0xfb,0xb9,0x73,0xd2,0x77,0xee,0x7c,0xf2,0xdc,0x27,0xe7,0xfd,0xe6,0x93,0x7c,0xee,0x9c,0x64,0xfe,0x72,0xfb,0x5d,0xc9,0x
@@ -2046,7 +2046,7 @@ line level    source
              -cf,0xe7,0x9b,0xe4,0x7e,0x92,0x93,0xfb,0x77,0x27,0xdf,0xec,0x4f,0x92,0x3c,0x4f,0x72,0xf2,0x97,0xdc,0xe7,0xca,0x7b,0x53,0x
              -86,0x02,0x7b,0x6b,0xee,0x17,0x9e,0x1b,0xf6,0x0d,0x0a,0x00,0x05,0x55,0xf9,0x30,0xfb,0x13,0x96,0xda,0x74,0xcd,0xf0,0xe9,0x
              -1e,0xea,0xd7,0x17,0xb5,0xbb,0xe1,0x6a,0x54,0xe8,0xa1,0xf4,0xaa,0xc1,0x5a,0xf3,0x87,0x5e,0x94,0x7e,0x9b,0xe5,0xfa,0xc2,0x
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 33  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 33  
 
              -ba,0x28,0x5f,0xba,0xe6,0xfb,0x6b,0xbb,0xbe,0x77,0x5f,0xf7,0x9d,0xf4,0x9d,0x9d,0xec,0xe4,0x7c,0x4e,0x92,0xe4,0x49,0x92,0x
              -9d,0xe4,0x9c,0xfd,0xc4,0x9d,0xa9,0x28,0x16,0x53,0xb9,0xae,0x27,0x27,0x7b,0xa9,
@@ -2110,7 +2110,7 @@ line level    source
 1866          //void RTDFactoryOsdLoadHardwareVLCFont(BYTE *pucArray, WORD usOffset, WORD usFontTableStart, bit bOsdRota
              -te);
 1867          void RTDFactoryOsdFuncClearOsdFont(BYTE ucRow, BYTE ucCol, BYTE ucWidth, BYTE ucHeight, BYTE ucChar);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 34  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 34  
 
 1868          void RTDFactoryOsdFuncPutStringProp(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE *pucFontTable, BYTE *p
              -ucArray, BYTE ucLanguage);
@@ -2174,7 +2174,7 @@ line level    source
                   }
               #endif
 1927   1          // Row Command
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 35  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 35  
 
 1928   1          for(ucI = 0; ucI < ucHeight; ucI++)
 1929   1          {
@@ -2238,7 +2238,7 @@ line level    source
 1983              ScalerOsdBurstWriteDataPort(pucArray, 8, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_
              -FROM_FLASH);
 1984          
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 36  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 36  
 
 1985              usNum = ((WORD) * (pucArray + 8) << 8) | *(pucArray + 9);
 1986          
@@ -2302,7 +2302,7 @@ line level    source
 2042   3                  ScalerOsdCharCommandByteSeries(usOsdAddr, _OSD_BYTE0, 0x4C, ucWidth);
 2043   3                  ScalerOsdCharCommandByteSeries(usOsdAddr, _OSD_BYTE1, ucChar, ucWidth);
 2044   3                  usOsdAddr += g_ucOsdWidth;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 37  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 37  
 
 2045   3              }
 2046   2          }
@@ -2366,7 +2366,7 @@ line level    source
 2103   3                      break;
 2104   3              }
 2105   2      
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 38  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 38  
 
 2106   2              if(pData[3] == 0)
 2107   2              {
@@ -2430,7 +2430,7 @@ line level    source
 2160   5                              bEndFlag = 1;
 2161   5                              break;
 2162   5      
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 39  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 39  
 
 2163   5                          default:
 2164   5                              pData[6] = *(pucArray + pData[0]);
@@ -2494,7 +2494,7 @@ line level    source
                       else
               #endif
 2223   2              {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 40  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 40  
 
 2224   3                  ScalerOsdFontRotateCtrl(_OSD_ROTATE_DEGREE_0, _DISABLE, _DISABLE);
 2225   3                  ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
@@ -2558,7 +2558,7 @@ line level    source
 2280   3                  ScalerOsdCommandByte(PDATA_WORD(7) + g_usFontSelectStart, _OSD_BYTE0, 0x4C);
 2281   3              }
 2282   2      
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 41  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 41  
 
 2283   2              ScalerOsdCommandByte(PDATA_WORD(7) + g_usFontSelectStart, _OSD_BYTE1, PDATA_WORD(5));
 2284   2              pData[8] ++; // Record the length of prop string
@@ -2586,272 +2586,272 @@ line level    source
               void RTDFactoryOsdFuncPutStringProp(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE *pucFontTable, BYTE *p
              -ucArray, BYTE ucLanguage)
               {
-                      bit bEndFlag = 0;
-                      BYTE ucI = 0;
-                      BYTE ucLength = 0; // Record the actual string number
-                      BYTE ucCharPos = 0; // Get the String enum index in string table
-                      BYTE ucStringCnt = 0; // Get the length of the chars in string table
-                      BYTE ucCharWidth = 0; // Get the character width
-                      BYTE ucAccBitCnt = 0; // Get the accumulate string width
-                      BYTE ucBankupAccBitCnt = 0; // Bank up the accumulate bit
-                      BYTE ucLShiftCnt = 0; // The first char left shift count
-                      BYTE ucStringStart = 0; // Bank up the string count for loop
-                      BYTE ucBankupFontPointer = 0; // Bank up the sram font pointer
-                      BYTE pucTemp[27] = {0};
+                bit bEndFlag = 0;
+                BYTE ucI = 0;
+                BYTE ucLength = 0; // Record the actual string number
+                BYTE ucCharPos = 0; // Get the String enum index in string table
+                BYTE ucStringCnt = 0; // Get the length of the chars in string table
+                BYTE ucCharWidth = 0; // Get the character width
+                BYTE ucAccBitCnt = 0; // Get the accumulate string width
+                BYTE ucBankupAccBitCnt = 0; // Bank up the accumulate bit
+                BYTE ucLShiftCnt = 0; // The first char left shift count
+                BYTE ucStringStart = 0; // Bank up the string count for loop
+                BYTE ucBankupFontPointer = 0; // Bank up the sram font pointer
+                BYTE pucTemp[27] = {0};
               
-                      WORD usOffset = 0;      // Temp variable for calculate the bytes address of font data table
-                      WORD usAddr = 0;
-                      // BYTE ucBlinking = 0;
+                WORD usOffset = 0;  // Temp variable for calculate the bytes address of font data table
+                WORD usAddr = 0;
+                // BYTE ucBlinking = 0;
               
-                      while(ucLanguage != 0)
-                      {
-                              if(*pucArray == _END_)
-                              {
-                                      ucLanguage--;
-                              }
-                              pucArray++;
-                      }
+                while(ucLanguage != 0)
+                {
+                  if(*pucArray == _END_)
+                  {
+                    ucLanguage--;
+                  }
+                  pucArray++;
+                }
               
-                      ucBankupFontPointer = RTDFactoryOsdFuncGetOsdFontPointer(ucFptsSelect);
+                ucBankupFontPointer = RTDFactoryOsdFuncGetOsdFontPointer(ucFptsSelect);
               
-                      // reorder
-                      SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT6);
-                      SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() & (~(_BIT7 | _BIT5)));
+                // reorder
+                SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT6);
+                SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() & (~(_BIT7 | _BIT5)));
               
-                      while(*(pucArray + ucStringCnt) != _END_)
-                      {
-                              switch(*(pucArray + ucStringCnt))
-                              {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 42  
+                while(*(pucArray + ucStringCnt) != _END_)
+                {
+                  switch(*(pucArray + ucStringCnt))
+                  {
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 42  
 
-                                      case _END_:
-                                              bEndFlag = 1;
-                                              break;
+                    case _END_:
+                      bEndFlag = 1;
+                      break;
               
-                                      default:
+                    default:
               
-                                              ucLShiftCnt = *(pucArray + ucStringCnt);
+                      ucLShiftCnt = *(pucArray + ucStringCnt);
               
-                                              if(pucFontTable == tFONT_FACTORY_EUROPE)
-                                              {
-                                                      ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucLShiftCnt][1];
-                                              }
-                                              else
-                                              {
-                                                      ucCharWidth = 12;
-                                              }
-                                              ucStringCnt++;
-                                              break;
-                              }
-              
-                              if(ucAccBitCnt == 0)
-                              {
-                                      ucAccBitCnt = ucCharWidth;
-                              }
-              
-                              SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT3);    // first bits shift d
-             -irection: left shift
-                              SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() & (~_BIT2)); // left bits shift di
-             -rection: rigth shift
-                              SCALEROSD_FONT_ROTATE_1_2_BITS_SHIFT_SET(((ucCharWidth - ucAccBitCnt) << 4) | ucAccBitCnt); // first bit
-             -s shift and second bits shift
-              
-                              ucStringStart = ucStringCnt;
-                              ucBankupAccBitCnt = ucAccBitCnt;
-              
-                              for(ucI = 0; ucI < 9; ucI++)
-                              {
-                                      SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT0); // restart from last th
-             -ree bytes
-              
-                                      usOffset = ucLShiftCnt * 27 + ucI * 3;
-              
-                                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
-                                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
-                                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
-              
-                                      ucStringCnt = ucStringStart;
-                                      ucAccBitCnt = ucBankupAccBitCnt;
-              
-              
-                                      if((ucAccBitCnt == 12) || (*(pucArray + ucStringCnt) == _END_))
-                                      {
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
-                                      }
-                                      else
-                                      {
-                                              ucCharPos = *(pucArray + ucStringCnt);
-                                              ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucCharPos][1];
-                                              ucStringCnt ++;
-              
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 43  
-
-                                              usOffset = ucCharPos * 27 + ucI * 3;
-              
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
-              
-                                              ucAccBitCnt += ucCharWidth;
-                                      }
-              
-                                      while((ucAccBitCnt < 12) && (*(pucArray + ucStringCnt) != _END_))
-                                      {
-                                              SCALEROSD_FONT_ROTATE_3_L_BITS_SHIFT_SET((ucAccBitCnt << 4) | ucAccBitCnt); // third bits shift and le
-             -ft bits shift
-              
-                                              switch(*(pucArray + ucStringCnt))
-                                              {
-                                                      case _END_:
-                                                              bEndFlag = 1;
-                                                              break;
-              
-                                                      default:
-                                                              ucCharPos = *(pucArray + ucStringCnt);
-              
-                                                              if(pucFontTable == tFONT_FACTORY_EUROPE)
-                                                              {
-                                                                      ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucCharPos][1];
-                                                              }
-                                                              else
-                                                              {
-                                                                      ucCharWidth = 12;
-                                                              }
-                                                              ucStringCnt ++;
-                                                              break;
-                                              }
-              
-                                              ucAccBitCnt += ucCharWidth;
-              
-                                              usOffset = ucCharPos * 27 + ucI * 3;
-              
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
-                                              SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
-                                      }
-              
-                                      pucTemp[ucI * 3 + 2] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
-                                      pucTemp[ucI * 3 + 1] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
-                                      pucTemp[ucI * 3] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
-                              }
-              
-                              if(ucAccBitCnt <= 12)
-                              {
-                                      ucAccBitCnt = 0;
-                              }
-                              else
-                              {
-                                      ucAccBitCnt = ucAccBitCnt - 12;
-                                      ucStringCnt--;
-                              }
-              
-                              // Write the pro font data to sram
-                              // COsdFxLoadFontDataAddrCal(ucBankupFontPointer);
-                              if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect < _PFONT_FACTORY_PAGE_ITEM_END))
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 44  
-
-                              {
-                                      // select 1bit font form 256-511
-                                      usAddr = ((WORD)ucBankupFontPointer + 0x100) * 9;
-                              }
-                              else
-                              {
-                                      usAddr = (WORD)ucBankupFontPointer * 9;
-                              }
-                              usAddr += g_usFontTableStart;
-              
-              #if((_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE) || (_OSD_ROTATE_FUNCTION == _OSD_ROTATE_HARDWARE))
-                      if(GET_OSD_ROTATE_STATUS() != _OSD_ROTATE_DEGREE_0)
+                      if(pucFontTable == tFONT_FACTORY_EUROPE)
                       {
-                      
-                              ScalerOsdFontRotateCtrl(GET_OSD_ROTATE_STATUS(), _ENABLE, _ENABLE);
-                              ScalerOsdCompressionCtrl(_OSD_DECODE_NON_COMPRESSED, _OSD_COMPRESSION_ENABLE);
+                        ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucLShiftCnt][1];
                       }
                       else
-              #endif
-                              {
-                                      ScalerOsdFontRotateCtrl(_OSD_ROTATE_DEGREE_0, _DISABLE, _DISABLE);
-                                      ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
-                              }
+                      {
+                        ucCharWidth = 12;
+                      }
+                      ucStringCnt++;
+                      break;
+                  }
               
-                              if(usAddr > 4095)
-                              {
-                                      ScalerOsdScrambleLoadFontAddrHsbSet();
-                              }
-                              else
-                              {
-                                      ScalerOsdScrambleLoadFontAddrHsbClr();
-                              }
+                  if(ucAccBitCnt == 0)
+                  {
+                    ucAccBitCnt = ucCharWidth;
+                  }
               
-                              ScalerOsdAddrSet(_OSD_SRAM, _OSD_BYTEALL, usAddr, _DISABLE);
+                  SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT3);    // first bits shift d
+             -irection: left shift
+                  SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() & (~_BIT2)); // left bits shift di
+             -rection: rigth shift
+                  SCALEROSD_FONT_ROTATE_1_2_BITS_SHIFT_SET(((ucCharWidth - ucAccBitCnt) << 4) | ucAccBitCnt); // first bit
+             -s shift and second bits shift
               
-                              ScalerOsdBurstWriteDataPort(pucTemp, 27, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_FR
-             -OM_XRAM);
+                  ucStringStart = ucStringCnt;
+                  ucBankupAccBitCnt = ucAccBitCnt;
               
-                              // OSD HW needs time to process it and then write decompressed data into SRAM.
-                              // The value 1ms is enough at all.
-                              ScalerTimerDelayXms(1);
+                  for(ucI = 0; ucI < 9; ucI++)
+                  {
+                    SCALEROSD_FONT_ROTATE_SETTING_SET(SCALEROSD_FONT_ROTATE_SETTING_GET() | _BIT0); // restart from last th
+             -ree bytes
               
-                              ScalerOsdBurstWriteDataPort(pucTemp, 27, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_FR
-             -OM_XRAM);
+                    usOffset = ucLShiftCnt * 27 + ucI * 3;
               
-                              // OSD HW needs time to process it and then write decompressed data into SRAM.
-                              // The value 1ms is enough at all.
-                              ScalerTimerDelayXms(1);
+                    SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
+                    SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
+                    SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
               
-                              ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
+                    ucStringCnt = ucStringStart;
+                    ucAccBitCnt = ucBankupAccBitCnt;
+              
+              
+                    if((ucAccBitCnt == 12) || (*(pucArray + ucStringCnt) == _END_))
+                    {
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(0x00);
+                    }
+                    else
+                    {
+                      ucCharPos = *(pucArray + ucStringCnt);
+                      ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucCharPos][1];
+                      ucStringCnt ++;
+              
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 43  
+
+                      usOffset = ucCharPos * 27 + ucI * 3;
+              
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
+              
+                      ucAccBitCnt += ucCharWidth;
+                    }
+              
+                    while((ucAccBitCnt < 12) && (*(pucArray + ucStringCnt) != _END_))
+                    {
+                      SCALEROSD_FONT_ROTATE_3_L_BITS_SHIFT_SET((ucAccBitCnt << 4) | ucAccBitCnt); // third bits shift and le
+             -ft bits shift
+              
+                      switch(*(pucArray + ucStringCnt))
+                      {
+                        case _END_:
+                          bEndFlag = 1;
+                          break;
+              
+                        default:
+                          ucCharPos = *(pucArray + ucStringCnt);
+              
+                          if(pucFontTable == tFONT_FACTORY_EUROPE)
+                          {
+                            ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucCharPos][1];
+                          }
+                          else
+                          {
+                            ucCharWidth = 12;
+                          }
+                          ucStringCnt ++;
+                          break;
+                      }
+              
+                      ucAccBitCnt += ucCharWidth;
+              
+                      usOffset = ucCharPos * 27 + ucI * 3;
+              
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset));
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 1));
+                      SCALEROSD_FONT_ROTATE_INPUT_SET(*(pucFontTable + usOffset + 2));
+                    }
+              
+                    pucTemp[ucI * 3 + 2] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
+                    pucTemp[ucI * 3 + 1] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
+                    pucTemp[ucI * 3] = SCALEROSD_FONT_ROTATE_ONPUT_GET();
+                  }
+              
+                  if(ucAccBitCnt <= 12)
+                  {
+                    ucAccBitCnt = 0;
+                  }
+                  else
+                  {
+                    ucAccBitCnt = ucAccBitCnt - 12;
+                    ucStringCnt--;
+                  }
+              
+                  // Write the pro font data to sram
+                  // COsdFxLoadFontDataAddrCal(ucBankupFontPointer);
+                  if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect < _PFONT_FACTORY_PAGE_ITEM_END))
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 44  
+
+                  {
+                    // select 1bit font form 256-511
+                    usAddr = ((WORD)ucBankupFontPointer + 0x100) * 9;
+                  }
+                  else
+                  {
+                    usAddr = (WORD)ucBankupFontPointer * 9;
+                  }
+                  usAddr += g_usFontTableStart;
               
               #if((_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE) || (_OSD_ROTATE_FUNCTION == _OSD_ROTATE_HARDWARE))
-                      if(GET_OSD_ROTATE_STATUS() != _OSD_ROTATE_DEGREE_0)
-                      {       
-                              ScalerOsdFontRotateCtrl(GET_OSD_ROTATE_STATUS(), _DISABLE, _ENABLE);
-                      }
+                if(GET_OSD_ROTATE_STATUS() != _OSD_ROTATE_DEGREE_0)
+                {
+                
+                  ScalerOsdFontRotateCtrl(GET_OSD_ROTATE_STATUS(), _ENABLE, _ENABLE);
+                  ScalerOsdCompressionCtrl(_OSD_DECODE_NON_COMPRESSED, _OSD_COMPRESSION_ENABLE);
+                }
+                else
               #endif
-                              ScalerOsdScrambleLoadFontAddrHsbClr();
+                  {
+                    ScalerOsdFontRotateCtrl(_OSD_ROTATE_DEGREE_0, _DISABLE, _DISABLE);
+                    ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
+                  }
+              
+                  if(usAddr > 4095)
+                  {
+                    ScalerOsdScrambleLoadFontAddrHsbSet();
+                  }
+                  else
+                  {
+                    ScalerOsdScrambleLoadFontAddrHsbClr();
+                  }
+              
+                  ScalerOsdAddrSet(_OSD_SRAM, _OSD_BYTEALL, usAddr, _DISABLE);
+              
+                  ScalerOsdBurstWriteDataPort(pucTemp, 27, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_FR
+             -OM_XRAM);
+              
+                  // OSD HW needs time to process it and then write decompressed data into SRAM.
+                  // The value 1ms is enough at all.
+                  ScalerTimerDelayXms(1);
+              
+                  ScalerOsdBurstWriteDataPort(pucTemp, 27, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_FR
+             -OM_XRAM);
+              
+                  // OSD HW needs time to process it and then write decompressed data into SRAM.
+                  // The value 1ms is enough at all.
+                  ScalerTimerDelayXms(1);
+              
+                  ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
+              
+              #if((_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE) || (_OSD_ROTATE_FUNCTION == _OSD_ROTATE_HARDWARE))
+                if(GET_OSD_ROTATE_STATUS() != _OSD_ROTATE_DEGREE_0)
+                { 
+                  ScalerOsdFontRotateCtrl(GET_OSD_ROTATE_STATUS(), _DISABLE, _ENABLE);
+                }
+              #endif
+                  ScalerOsdScrambleLoadFontAddrHsbClr();
               
               #if 0// (_OSD_ROTATE_FUNCTION == _ON)
-                              if(GET_OSD_ROTATE_STATUS() == _TRUE)
-                              {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 45  
+                  if(GET_OSD_ROTATE_STATUS() == _TRUE)
+                  {
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 45  
 
-                                      usAddr = (WORD)(g_ucOsdHeight - 1 - ucCol - ucLength) * g_ucOsdWidth + ucRow;
-                              }
-                              else
+                    usAddr = (WORD)(g_ucOsdHeight - 1 - ucCol - ucLength) * g_ucOsdWidth + ucRow;
+                  }
+                  else
               #endif
-                              {
-                                      usAddr = (WORD)ucRow * g_ucOsdWidth + ucCol + ucLength;
-                              }
-                              if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect < _PFONT_FACTORY_PAGE_ITEM_END))
-                              {
-                                      // select 1bit font form 256-511
-                                      ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE0, 0x6C);
-                              }
-                              else
-                              {
-                                      ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE0, 0x4C);
-                              }
+                  {
+                    usAddr = (WORD)ucRow * g_ucOsdWidth + ucCol + ucLength;
+                  }
+                  if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect < _PFONT_FACTORY_PAGE_ITEM_END))
+                  {
+                    // select 1bit font form 256-511
+                    ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE0, 0x6C);
+                  }
+                  else
+                  {
+                    ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE0, 0x4C);
+                  }
               
-                              ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE1, ucBankupFontPointer);
-                              ucLength ++; // Record the length of prop string
+                  ScalerOsdCommandByte(usAddr + g_usFontSelectStart, _OSD_BYTE1, ucBankupFontPointer);
+                  ucLength ++; // Record the length of prop string
               
-                              // Increase the sram address pointer
-                              ucBankupFontPointer = RTDFactoryOsdFuncSetOsdFontPointer(ucFptsSelect, ucBankupFontPointer);
-                      }// End of while(*(pucArray + stringcnt) != _END_)
+                  // Increase the sram address pointer
+                  ucBankupFontPointer = RTDFactoryOsdFuncSetOsdFontPointer(ucFptsSelect, ucBankupFontPointer);
+                }// End of while(*(pucArray + stringcnt) != _END_)
               
-                      if(ucFptsSelect == _PFONT_FACTORY_PAGE_0)
-                      {
-                              g_ucFontPointer0 = ucBankupFontPointer;
-                      }
-                      else if((ucFptsSelect == _PFONT_FACTORY_PAGE_1))
-                      {
-                              g_ucFontPointer1 = ucBankupFontPointer;
-                      }
-                      else if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect <= _PFONT_FACTORY_PAGE_ITEM_30))
-                      {
-                              g_ucFontPointer2 = ucBankupFontPointer;
-                      }
+                if(ucFptsSelect == _PFONT_FACTORY_PAGE_0)
+                {
+                  g_ucFontPointer0 = ucBankupFontPointer;
+                }
+                else if((ucFptsSelect == _PFONT_FACTORY_PAGE_1))
+                {
+                  g_ucFontPointer1 = ucBankupFontPointer;
+                }
+                else if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect <= _PFONT_FACTORY_PAGE_ITEM_30))
+                {
+                  g_ucFontPointer2 = ucBankupFontPointer;
+                }
               }
               #endif
 2560          
@@ -2878,7 +2878,7 @@ line level    source
 2581   2              g_ucFontPointer2 = _FACTORY_ITEM_1_START;
 2582   2              ucPointer = g_ucFontPointer2;
 2583   2          }
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 46  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 46  
 
 2584   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_2)
 2585   1          {
@@ -2942,7 +2942,7 @@ line level    source
 2643   2          }
 2644   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_14)
 2645   1          {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 47  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 47  
 
 2646   2              g_ucFontPointer2 = _FACTORY_ITEM_14_START;
 2647   2              ucPointer = g_ucFontPointer2;
@@ -3006,7 +3006,7 @@ line level    source
 2705   1          {
 2706   2              g_ucFontPointer2 = _FACTORY_ITEM_26_START;
 2707   2              ucPointer = g_ucFontPointer2;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 48  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 48  
 
 2708   2          }
 2709   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_27)
@@ -3070,7 +3070,7 @@ line level    source
 2767   1          if(ucPointerSelect == _PFONT_FACTORY_PAGE_0)
 2768   1          {
 2769   2              if(ucPointer >= _FACTORY_PAGE_0_END)
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 49  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 49  
 
 2770   2              {
 2771   3                  ucPointer = _FACTORY_PAGE_0_START;
@@ -3134,7 +3134,7 @@ line level    source
 2829   2          }
 2830   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_8)
 2831   1          {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 50  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 50  
 
 2832   2              if(ucPointer >= _FACTORY_ITEM_8_END)
 2833   2              {
@@ -3198,7 +3198,7 @@ line level    source
 2891   3              }
 2892   2          }
 2893   1      
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 51  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 51  
 
 2894   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_17)
 2895   1          {
@@ -3262,7 +3262,7 @@ line level    source
 2953   2              if(ucPointer >= _FACTORY_ITEM_25_END)
 2954   2              {
 2955   3                  ucPointer = _FACTORY_ITEM_25_START;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 52  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 52  
 
 2956   3              }
 2957   2          }
@@ -3326,7 +3326,7 @@ line level    source
 3015   1          {
 3016   2              if(ucPointer >= _FACTORY_ITEM_34_END)
 3017   2              {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 53  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 53  
 
 3018   3                  ucPointer = _FACTORY_ITEM_34_START;
 3019   3              }
@@ -3390,7 +3390,7 @@ line level    source
               
                       usXStart = 10 + usYStart;
               
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 54  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 54  
 
                       if((_FACTORY_OSD_WIDTH + _ROTATE_FACTORY_OSD_WINDOW_OFFSET) > usXEnd)
                       {
@@ -3454,7 +3454,7 @@ line level    source
 3134          {
 3135   1          BYTE ucIndex = 0;
 3136   1          BYTE ucTemp = 0;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 55  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 55  
 
 3137   1          BYTE ucI = 0;
 3138   1          BYTE pucDataSN[16] = {0};
@@ -3518,7 +3518,7 @@ line level    source
 3196   1          // Align Right
 3197   1          if((bit)(ucPar & 0x01) == _TRUE)
 3198   1          {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 56  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 56  
 
 3199   2              RTDFactoryOsdFuncPutStringProp(ucRow, ROW(ucCol - ucTemp), ucFontPoint, tFONT_FACTORY_EUROPE, &puc
              -DataSN[8], _ENGLISH);
@@ -3582,7 +3582,7 @@ line level    source
 3254   2              usOsdItem = usOsdState - _MENU_FACTORY_AUTOCOLOR;
 3255   2              RTDFactoryOsdFuncChangeColor1Bit(tFACTORY_PAGE_SELECT_ITEM_TABLE[usOsdItem][0], tFACTORY_PAGE_SELE
              -CT_ITEM_TABLE[usOsdItem][1], tFACTORY_PAGE_SELECT_ITEM_TABLE[usOsdItem][2], 1, COLOR(_CP_RED, _CP_BG));
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 57  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 57  
 
 3256   2          }
 3257   1          /*else if(g_ucFactoryPage == 1)
@@ -3646,7 +3646,7 @@ line level    source
 3313   2              default:
 3314   2                  break;
 3315   2          }
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 58  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 58  
 
 3316   1      
 3317   1          return usValue;
@@ -3678,12 +3678,12 @@ line level    source
 3341   2      
 3342   2              case _MENU_FACTORY_BURNIN_ON_OFF:
 3343   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange(g_usAdjustValue, _ON, _OFF, _ON);
-3344   2                              SET_OSD_BURNING_MODE(g_usAdjustValue);
-3345   2                              RTDNVRamSaveOSDData();
-3346   2                              RTDFactoryOsdFuncPutStringProp(_FACTORY_BURNIN_ROW, _FACTORY_ON_OFF_COL, _PFONT_FACTORY_BURNIN, tFONT_F
+3344   2            SET_OSD_BURNING_MODE(g_usAdjustValue);
+3345   2            RTDNVRamSaveOSDData();
+3346   2            RTDFactoryOsdFuncPutStringProp(_FACTORY_BURNIN_ROW, _FACTORY_ON_OFF_COL, _PFONT_FACTORY_BURNIN, tFONT_F
              -ACTORY_EUROPE, tOSD_FACTORY_ON_OFF_TABLE[g_usAdjustValue], _ENGLISH);
 3347   2                  break;
-3348   2                              
+3348   2            
 3349   2      #if(_CTS_TYPE == _CTS_GEN_1_12BIT)
 3350   2              case _MENU_FACTORY_CT1_RED_ADJ:
 3351   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange((g_usAdjustValue >> 4), _FACTORY_RBG_MAX, _FACT
@@ -3710,7 +3710,7 @@ line level    source
 3369   2                  RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP1_ROW), COL(_FACTORY_G_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP1_G);
 3370   2                  break;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 59  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 59  
 
 3371   2      
 3372   2              case _MENU_FACTORY_CT1_BLUE_ADJ:
@@ -3774,7 +3774,7 @@ line level    source
 3421   2      #if(_CONTRAST_SUPPORT == _ON)
 3422   2                  UserAdjustContrast(GET_OSD_CONTRAST());
 3423   2      #endif
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 60  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 60  
 
 3424   2                  RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_R_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP3_R);
@@ -3838,7 +3838,7 @@ line level    source
 3473   2                  g_stColorProcData.usColorTempB = g_usAdjustValue;
 3474   2                  g_stColorProcData.usColorTempB = (g_stColorProcData.usColorTempB << 4);
 3475   2      
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 61  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 61  
 
 3476   2      #if(_CONTRAST_SUPPORT == _ON)
 3477   2                  UserAdjustContrast(GET_OSD_CONTRAST());
@@ -3902,7 +3902,7 @@ line level    source
 3526   2              case _MENU_FACTORY_CT6_GREEN_ADJ:
 3527   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange((g_usAdjustValue >> 4), _FACTORY_RBG_MAX, _FACT
              -ORY_RBG_MIN, _OFF);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 62  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 62  
 
 3528   2                  g_stColorProcData.usColorTempG = g_usAdjustValue;
 3529   2                  g_stColorProcData.usColorTempG = (g_stColorProcData.usColorTempG << 4);
@@ -3966,7 +3966,7 @@ line level    source
               #endif
                           RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP1_ROW), COL(_FACTORY_B_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP1_B);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 63  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 63  
 
                           break;
               
@@ -4030,7 +4030,7 @@ line level    source
               
               #if(_CONTRAST_SUPPORT == _ON)
                           UserAdjustContrast(GET_OSD_CONTRAST());
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 64  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 64  
 
               #endif
                           RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_G_NUMBER_COL), g_usAdju
@@ -4094,7 +4094,7 @@ line level    source
              -BG_MIN, _OFF);
                           g_stColorProcData.usColorTempR = g_usAdjustValue;
                           g_stColorProcData.usColorTempR = (g_stColorProcData.usColorTempR);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 65  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 65  
 
               
               #if(_CONTRAST_SUPPORT == _ON)
@@ -4158,7 +4158,7 @@ line level    source
               
                       case _MENU_FACTORY_CT6_BLUE_ADJ:
                           g_usAdjustValue = (BYTE)RTDFactoryDetOverRange((g_usAdjustValue), _FACTORY_RBG_MAX, _FACTORY_R
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 66  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 66  
 
              -BG_MIN, _OFF);
                           g_stColorProcData.usColorTempB = g_usAdjustValue;
@@ -4222,7 +4222,7 @@ line level    source
 3786   2      
 3787   2              case _MENU_FACTORY_OFFSET_BLUE_ADJ:
 3788   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange(g_usAdjustValue, _FACTORY_RBG_MAX, _FACTORY_RBG
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 67  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 67  
 
              -_MIN, _OFF);
 3789   2                  g_stAdcData.pucAdcOffsetMSB[_AUTO_BLUE_CHANNEL] = g_usAdjustValue;
@@ -4286,7 +4286,7 @@ line level    source
 3844          //--------------------------------------------------
 3845          void RTDFactoryOsdChangColorTemp(BYTE ucColorTemp)
 3846          {
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 68  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 68  
 
 3847   1          SET_COLOR_TEMP_TYPE(ucColorTemp);
 3848   1          RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
@@ -4304,39 +4304,39 @@ line level    source
 3860          void RTDFactoryPanelUsedTimer(void)
 3861          {
 3862   1          SET_PANEL_TIME_MIN(GET_PANEL_TIME_MIN() + 1);
-3863   1              if((SysModeGetModeState() == _MODE_STATUS_NOSIGNAL)&&(GET_OSD_BURNING_MODE() == _ON))
-3864   1              {       
-3865   2                      SET_PANEL_BURN_TIME_MIN(GET_PANEL_BURN_TIME_MIN() + 1);
+3863   1        if((SysModeGetModeState() == _MODE_STATUS_NOSIGNAL)&&(GET_OSD_BURNING_MODE() == _ON))
+3864   1        { 
+3865   2          SET_PANEL_BURN_TIME_MIN(GET_PANEL_BURN_TIME_MIN() + 1);
 3866   2      
-3867   2                      
-3868   2                      if((GET_PANEL_BURN_TIME_HOUR() >= 65535) && (GET_PANEL_BURN_TIME_MIN() >= 59))
-3869   2                      {
-3870   3                              SET_PANEL_BURN_TIME_HOUR(65535);
-3871   3                              SET_PANEL_BURN_TIME_MIN(59);
-3872   3                              return;
-3873   3                      }
-3874   2                      
-3875   2                      if(GET_PANEL_BURN_TIME_MIN() >= 60)
-3876   2                      {
-3877   3                              SET_PANEL_BURN_TIME_HOUR(GET_PANEL_BURN_TIME_HOUR() + 1);
-3878   3                              SET_PANEL_BURN_TIME_MIN(0);
-3879   3                      }
-3880   2                      
-3881   2                  if((GET_PANEL_BURN_TIME_MIN() % 30) == 0)
-3882   2                  {
-3883   3                      RTDNVRamSavePanelUsedTimeData();
-3884   3                  }
-3885   2              
-3886   2              }
+3867   2          
+3868   2          if((GET_PANEL_BURN_TIME_HOUR() >= 65535) && (GET_PANEL_BURN_TIME_MIN() >= 59))
+3869   2          {
+3870   3            SET_PANEL_BURN_TIME_HOUR(65535);
+3871   3            SET_PANEL_BURN_TIME_MIN(59);
+3872   3            return;
+3873   3          }
+3874   2          
+3875   2          if(GET_PANEL_BURN_TIME_MIN() >= 60)
+3876   2          {
+3877   3            SET_PANEL_BURN_TIME_HOUR(GET_PANEL_BURN_TIME_HOUR() + 1);
+3878   3            SET_PANEL_BURN_TIME_MIN(0);
+3879   3          }
+3880   2          
+3881   2            if((GET_PANEL_BURN_TIME_MIN() % 30) == 0)
+3882   2            {
+3883   3                RTDNVRamSavePanelUsedTimeData();
+3884   3            }
+3885   2        
+3886   2        }
 3887   1      
 3888   1      
-3889   1              
-3890   1              
+3889   1        
+3890   1        
 3891   1          if((GET_PANEL_TIME_HOUR() >= 65535) && (GET_PANEL_TIME_MIN() >= 59))
 3892   1          {
 3893   2              SET_PANEL_TIME_HOUR(65535);
 3894   2              SET_PANEL_TIME_MIN(59);
-3895   2                      return;
+3895   2          return;
 3896   2          }
 3897   1      
 3898   1          if(GET_PANEL_TIME_MIN() >= 60)
@@ -4350,7 +4350,7 @@ line level    source
 3906   2              if((GET_PANEL_TIME_MIN() % 30) == 0)
 3907   2              {
 3908   3                  RTDNVRamSavePanelUsedTimeData();
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 69  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 69  
 
 3909   3              }
 3910   2          }
@@ -4401,39 +4401,39 @@ line level    source
 3950          //--------------------------------------------------
 3951          void FactoryBurnInEvent(void)
 3952          {
-3953   1              static BYTE cnt = 0;
-3954   1              static BYTE pos = 0;    
-3955   1              BYTE code colortable[5][3] ={{0xff,0x00,0x00},{0x00,0xff,0x00},{0x00,0x00,0xff},{0x00,0x00,0x00},{0xff,0x
+3953   1        static BYTE cnt = 0;
+3954   1        static BYTE pos = 0;  
+3955   1        BYTE code colortable[5][3] ={{0xff,0x00,0x00},{0x00,0xff,0x00},{0x00,0x00,0xff},{0x00,0x00,0x00},{0xff,0x
              -ff,0xff}};
 3956   1      
-3957   1              (++cnt>4)?(cnt = 0, pos++):cnt;
-3958   1              //UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
-3959   1              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
-3960   1              ScalerDDomainBackgroundSetColor(colortable[cnt][0], colortable[cnt][1], colortable[cnt][2]);
-3961   1              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
-3962   1              
-3963   1              ScalerDDomainBackgroundEnable(_ON);
-3964   1              ScalerTimerActiveTimerEvent(SEC(2), _USER_TIMER_EVENT_BUININ_MSG);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 70  
+3957   1        (++cnt>4)?(cnt = 0, pos++):cnt;
+3958   1        //UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
+3959   1        ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+3960   1        ScalerDDomainBackgroundSetColor(colortable[cnt][0], colortable[cnt][1], colortable[cnt][2]);
+3961   1        ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
+3962   1        
+3963   1        ScalerDDomainBackgroundEnable(_ON);
+3964   1        ScalerTimerActiveTimerEvent(SEC(2), _USER_TIMER_EVENT_BUININ_MSG);
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 70  
 
-3965   1              (pos>4)?(pos = 0):pos;
-3966   1              
+3965   1        (pos>4)?(pos = 0):pos;
+3966   1        
 3967   1          OsdDispSetPosition(_POS_PERCENT, _OSD_POSITION_GLOBAL_A, (pos == 0 || pos == 3)?20:((pos == 1 || pos =
              -= 4)?80:50), (pos == 0 || pos == 1)?80:((pos == 3 || pos == 4)?20:50));
 3968   1      #if(Project_ID == ID_DATONG_HK2513E02_1V1H__238FHD75_AXMT248__20201024)||(Project_ID == ID_DATONG_HK25561D
              -P1HDMI__AUO_M270R01_2_FHD165HZ__202001204)||(Project_ID == ID_DATONG_HK25561DP1HDMI__AUO_M270R01_2_FHD165HZ__202001204)|
              -|(Project_ID == ID_DATONG_HK25561DP1HDMI__AUO_M215HTN03_0_FHD165HZ__202001026)
-                                              
-                      bLED1 = ~bLED1;
+                      
+                bLED1 = ~bLED1;
               
-                      bLED2 = ~bLED2;
+                bLED2 = ~bLED2;
               #elif _DEF_DX_KEY_LED
-                      bLED1 = ~bLED1;
+                bLED1 = ~bLED1;
               
-                      bLED2 = ~bLED2;
+                bLED2 = ~bLED2;
               
               #else
-3979   1              PCB_LED_TYPE_FLASH();
+3979   1        PCB_LED_TYPE_FLASH();
 3980   1      
 3981   1      #endif
 3982   1      }
@@ -4442,53 +4442,53 @@ line level    source
 3985          
 3986          void GetEDIDPanelSize(BYTE *pDDCRAMData)
 3987          {
-3988   1              WORD xdata inch,Hor,Ver;                
-3989   1              DWORD xdata  xx;
+3988   1        WORD xdata inch,Hor,Ver;    
+3989   1        DWORD xdata  xx;
 3990   1          BYTE xdata H_Low8,V_Low8,H_high4,V_high4;
 3991   1          BYTE xdata pData[16] = {0};
-3992   1              //------VGA------------------------------
-3993   1              //------VGA------------------------------
-3994   1              H_Low8 = pDDCRAMData[0x42];
-3995   1              V_Low8 = pDDCRAMData[0x43];
+3992   1        //------VGA------------------------------
+3993   1        //------VGA------------------------------
+3994   1        H_Low8 = pDDCRAMData[0x42];
+3995   1        V_Low8 = pDDCRAMData[0x43];
 3996   1      
-3997   1              H_high4 = pDDCRAMData[0x44]>>4;
-3998   1              V_high4 = pDDCRAMData[0x44]&0x0F;
-3999   1              
-4000   1              Hor = ((H_high4 << 8) + H_Low8);
-4001   1              Ver = ((V_high4 << 8) + V_Low8);
+3997   1        H_high4 = pDDCRAMData[0x44]>>4;
+3998   1        V_high4 = pDDCRAMData[0x44]&0x0F;
+3999   1        
+4000   1        Hor = ((H_high4 << 8) + H_Low8);
+4001   1        Ver = ((V_high4 << 8) + V_Low8);
 4002   1      
-4003   1              xx =(float)(Hor) * (float)(Hor)+(float)(Ver) * (float) (Ver);
-4004   1                 
-4005   1                      
-4006   1                 inch= sqrt(xx)/0.254;        
+4003   1        xx =(float)(Hor) * (float)(Hor)+(float)(Ver) * (float) (Ver);
+4004   1           
+4005   1          
+4006   1           inch= sqrt(xx)/0.254;  
 4007   1      
-4008   1               if(inch%10>=5)
-4009   1                      inch=inch/10+1;
-4010   1               else
-4011   1                      inch=inch/10;           
+4008   1         if(inch%10>=5)
+4009   1          inch=inch/10+1;
+4010   1         else
+4011   1          inch=inch/10;   
 4012   1      
-4013   1                      if(inch==241)
-4014   1                      inch=240;
-4015   1                      
-4016   1              pData[0]=_S__;
-4017   1              pData[1]=_I__;
-4018   1              pData[2]=_Z__;
-4019   1              pData[3]=_E__;
-4020   1              pData[4]=_COLON__;
-4021   1              pData[5]=__;
-4022   1              pData[6]=inch/100+_0__;
-4023   1              pData[7]=inch%100/10+_0__;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 71  
+4013   1          if(inch==241)
+4014   1          inch=240;
+4015   1          
+4016   1        pData[0]=_S__;
+4017   1        pData[1]=_I__;
+4018   1        pData[2]=_Z__;
+4019   1        pData[3]=_E__;
+4020   1        pData[4]=_COLON__;
+4021   1        pData[5]=__;
+4022   1        pData[6]=inch/100+_0__;
+4023   1        pData[7]=inch%100/10+_0__;
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 71  
 
-4024   1              pData[8]=_DOT__;
-4025   1              pData[9]=inch%10+_0__;
-4026   1              pData[10]=__;
-4027   1              pData[11]=_I__;
-4028   1              pData[12]=_n__;
-4029   1              pData[13]=_c__;
-4030   1              pData[14]=_h__;
-4031   1              pData[15]=_END_;
-4032   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SIZE_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFO
+4024   1        pData[8]=_DOT__;
+4025   1        pData[9]=inch%10+_0__;
+4026   1        pData[10]=__;
+4027   1        pData[11]=_I__;
+4028   1        pData[12]=_n__;
+4029   1        pData[13]=_c__;
+4030   1        pData[14]=_h__;
+4031   1        pData[15]=_END_;
+4032   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SIZE_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFO
              -NT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4033   1      
 4034   1      }
@@ -4500,61 +4500,61 @@ line level    source
 4040          
 4041          void GetEDIDPanelResolution(BYTE *pDDCRAMData)
 4042          {
-4043   1              BYTE i;
-4044   1              BYTE H_Low8,V_Low8,H_high4,V_high4;
+4043   1        BYTE i;
+4044   1        BYTE H_Low8,V_Low8,H_high4,V_high4;
 4045   1          BYTE xdata pData[10] = {0};
-4046   1              
-4047   1              H_Low8 = pDDCRAMData[0x38];
-4048   1              V_Low8 = pDDCRAMData[0x3B];
-4049   1              
-4050   1              H_high4 = (pDDCRAMData[0x3A]>>4)&0x0F;
-4051   1              V_high4 = (pDDCRAMData[0x3D]>>4)&0x0F;
+4046   1        
+4047   1        H_Low8 = pDDCRAMData[0x38];
+4048   1        V_Low8 = pDDCRAMData[0x3B];
+4049   1        
+4050   1        H_high4 = (pDDCRAMData[0x3A]>>4)&0x0F;
+4051   1        V_high4 = (pDDCRAMData[0x3D]>>4)&0x0F;
 4052   1      
-4053   1              Hactive = H_high4 ;
-4054   1              Hactive = ((Hactive *256))+ H_Low8;
+4053   1        Hactive = H_high4 ;
+4054   1        Hactive = ((Hactive *256))+ H_Low8;
 4055   1      
-4056   1              Vactive = V_high4 ;
-4057   1              Vactive = ((Vactive *256))+ V_Low8;
+4056   1        Vactive = V_high4 ;
+4057   1        Vactive = ((Vactive *256))+ V_Low8;
 4058   1      
-4059   1              for(i=0;i<9;i++)
-4060   1              {
-4061   2                pData[i]=__;
-4062   2              }
-4063   1                      
-4064   1              if (Hactive<1000)
-4065   1              {
-4066   2                      pData[1]=Hactive/100+_0__;
-4067   2                      pData[2]=(Hactive%100)/10+_0__;
-4068   2                      pData[3]=Hactive%10+_0__;
-4069   2              }
-4070   1              else
-4071   1              {
-4072   2                      pData[0]=Hactive/1000+_0__;
-4073   2                      pData[1]=(Hactive%1000)/100+_0__;
-4074   2                      pData[2]=(Hactive%100)/10+_0__;
-4075   2                      pData[3]=Hactive%10+_0__;
-4076   2              }
-4077   1              
-4078   1              pData[4]=_X__;
-4079   1               
-4080   1              if (Vactive<1000)
-4081   1              {
-4082   2                      pData[5]=Vactive/100+_0__;
-4083   2                      pData[6]=(Vactive%100)/10+_0__;
-4084   2                      pData[7]=Vactive%10+_0__;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 72  
+4059   1        for(i=0;i<9;i++)
+4060   1        {
+4061   2          pData[i]=__;
+4062   2        }
+4063   1          
+4064   1        if (Hactive<1000)
+4065   1        {
+4066   2          pData[1]=Hactive/100+_0__;
+4067   2          pData[2]=(Hactive%100)/10+_0__;
+4068   2          pData[3]=Hactive%10+_0__;
+4069   2        }
+4070   1        else
+4071   1        {
+4072   2          pData[0]=Hactive/1000+_0__;
+4073   2          pData[1]=(Hactive%1000)/100+_0__;
+4074   2          pData[2]=(Hactive%100)/10+_0__;
+4075   2          pData[3]=Hactive%10+_0__;
+4076   2        }
+4077   1        
+4078   1        pData[4]=_X__;
+4079   1         
+4080   1        if (Vactive<1000)
+4081   1        {
+4082   2          pData[5]=Vactive/100+_0__;
+4083   2          pData[6]=(Vactive%100)/10+_0__;
+4084   2          pData[7]=Vactive%10+_0__;
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 72  
 
-4085   2              }
-4086   1              else
-4087   1              {
-4088   2                      pData[5]=Vactive/1000+_0__;
-4089   2                      pData[6]=(Vactive%1000)/100+_0__;
-4090   2                      pData[7]=(Vactive%100)/10+_0__;
-4091   2                      pData[8]=Vactive%10+_0__;
-4092   2              }
-4093   1                
-4094   1              pData[9]=_END_;
-4095   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_RESOLUT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _
+4085   2        }
+4086   1        else
+4087   1        {
+4088   2          pData[5]=Vactive/1000+_0__;
+4089   2          pData[6]=(Vactive%1000)/100+_0__;
+4090   2          pData[7]=(Vactive%100)/10+_0__;
+4091   2          pData[8]=Vactive%10+_0__;
+4092   2        }
+4093   1          
+4094   1        pData[9]=_END_;
+4095   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_RESOLUT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _
              -PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4096   1      
 4097   1      }
@@ -4566,47 +4566,47 @@ line level    source
 4103          
 4104          void GetEDIDCheckSum(BYTE *pDDCRAMData)
 4105          {
-4106   1              BYTE xdata temp;
-4107   1              BYTE checksum2=0;
+4106   1        BYTE xdata temp;
+4107   1        BYTE checksum2=0;
 4108   1          BYTE xdata pData[12] = {0};
-4109   1              
-4110   1              for(temp=0;temp<3;temp++)
-4111   1              {
-4112   2                pData[temp]=__;
-4113   2              }       
-4114   1              
-4115   1              pData[0]=_C__;
-4116   1              pData[1]=_H__;
-4117   1              pData[2]=_K__;
-4118   1              pData[3]=_S__;
-4119   1              pData[4]=_U__;
-4120   1              pData[5]=_M__;
-4121   1              pData[6]=_COLON__;
-4122   1              pData[7]=__;
-4123   1              pData[8]=__;
-4124   1              
-4125   1              temp=pDDCRAMData[127];
-4126   1              
-4127   1              pData[9]=temp/16;
-4128   1              if(pData[9]<10)
-4129   1                      pData[9]+=_0__;
-4130   1              else
-4131   1                      pData[9]+=(_A__-10);
+4109   1        
+4110   1        for(temp=0;temp<3;temp++)
+4111   1        {
+4112   2          pData[temp]=__;
+4113   2        } 
+4114   1        
+4115   1        pData[0]=_C__;
+4116   1        pData[1]=_H__;
+4117   1        pData[2]=_K__;
+4118   1        pData[3]=_S__;
+4119   1        pData[4]=_U__;
+4120   1        pData[5]=_M__;
+4121   1        pData[6]=_COLON__;
+4122   1        pData[7]=__;
+4123   1        pData[8]=__;
+4124   1        
+4125   1        temp=pDDCRAMData[127];
+4126   1        
+4127   1        pData[9]=temp/16;
+4128   1        if(pData[9]<10)
+4129   1          pData[9]+=_0__;
+4130   1        else
+4131   1          pData[9]+=(_A__-10);
 4132   1      
-4133   1              
-4134   1              pData[10]=temp%16;
-4135   1              if(pData[10]<10)
-4136   1                      pData[10]+=_0__;
-4137   1              else
-4138   1                      pData[10]+=(_A__-10);
-4139   1              
-4140   1              pData[11]=_END_;
-4141   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_CSK_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFON
+4133   1        
+4134   1        pData[10]=temp%16;
+4135   1        if(pData[10]<10)
+4136   1          pData[10]+=_0__;
+4137   1        else
+4138   1          pData[10]+=(_A__-10);
+4139   1        
+4140   1        pData[11]=_END_;
+4141   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_CSK_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFON
              -T_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4142   1      
 4143   1      }
 4144          //--------------------------------------------------
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 73  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 73  
 
 4145          // Description  :
 4146          // Input Value  :
@@ -4615,97 +4615,97 @@ line level    source
 4149          
 4150          void GetOSDEDIDResult(BYTE *pDDCRAMData,BYTE PortType)
 4151          {
-4152   1              BYTE index=0;
-4153   1              BYTE CheckSum=0;
-4154   1              BYTE CheckSum_ok=0;
+4152   1        BYTE index=0;
+4153   1        BYTE CheckSum=0;
+4154   1        BYTE CheckSum_ok=0;
 4155   1          BYTE xdata pData[4] = {0};
-4156   1              
-4157   1              for(index=0;index<127;index++)
-4158   1              {
-4159   2                      CheckSum+=pDDCRAMData[index];
-4160   2              }
+4156   1        
+4157   1        for(index=0;index<127;index++)
+4158   1        {
+4159   2          CheckSum+=pDDCRAMData[index];
+4160   2        }
 4161   1      
-4162   1              CheckSum = ~CheckSum +1;
-4163   1              
-4164   1              if(PortType==_PORT_VGA)//VGA
-4165   1              {
-4166   2                      if ((pDDCRAMData[127] == CheckSum)&&(pDDCRAMData[0x7E]==0)/*&&((pDDCRAMData[0x14]&0x80)==0)*/)//&&(( _PA
+4162   1        CheckSum = ~CheckSum +1;
+4163   1        
+4164   1        if(PortType==_PORT_VGA)//VGA
+4165   1        {
+4166   2          if ((pDDCRAMData[127] == CheckSum)&&(pDDCRAMData[0x7E]==0)/*&&((pDDCRAMData[0x14]&0x80)==0)*/)//&&(( _PA
              -NEL_DH_WIDTH == Hactive||(_PANEL_DH_WIDTH == (Hactive+6))) && ( _PANEL_DV_HEIGHT== Vactive)))
-4167   2                      {
-4168   3                              CheckSum_ok=1;
-4169   3                      }
-4170   2                      else
-4171   2                      {
-4172   3                              CheckSum_ok=0;
-4173   3                      }
-4174   2              }
-4175   1              else if((PortType==_PORT_DVI)||(PortType==_PORT_DUAL_DVI))//Digital Port
-4176   1              {
-4177   2                      if ((pDDCRAMData[127] == CheckSum)&&((pDDCRAMData[0x14]&0x80)==0x80))//&&(( _PANEL_DH_WIDTH == Hactive||
+4167   2          {
+4168   3            CheckSum_ok=1;
+4169   3          }
+4170   2          else
+4171   2          {
+4172   3            CheckSum_ok=0;
+4173   3          }
+4174   2        }
+4175   1        else if((PortType==_PORT_DVI)||(PortType==_PORT_DUAL_DVI))//Digital Port
+4176   1        {
+4177   2          if ((pDDCRAMData[127] == CheckSum)&&((pDDCRAMData[0x14]&0x80)==0x80))//&&(( _PANEL_DH_WIDTH == Hactive||
              -(_PANEL_DH_WIDTH == (Hactive+6))) && ( _PANEL_DV_HEIGHT== Vactive)))
-4178   2                      {
-4179   3                              CheckSum_ok=1;
-4180   3                      }
-4181   2                      else
-4182   2                      {
-4183   3                              CheckSum_ok=0;
-4184   3                      }
+4178   2          {
+4179   3            CheckSum_ok=1;
+4180   3          }
+4181   2          else
+4182   2          {
+4183   3            CheckSum_ok=0;
+4184   3          }
 4185   2      
-4186   2              }
-4187   1              else if((PortType==_PORT_HDMI)||(PortType==_PORT_HDMI20)||(PortType==_PORT_DP))//Digital Port
-4188   1              {
-4189   2                      DebugMessageOsd("3.--------------",0);
+4186   2        }
+4187   1        else if((PortType==_PORT_HDMI)||(PortType==_PORT_HDMI20)||(PortType==_PORT_DP))//Digital Port
+4188   1        {
+4189   2          DebugMessageOsd("3.--------------",0);
 4190   2      
-4191   2              DebugMessageOsd("3.1",pDDCRAMData[127]);
-4192   2              DebugMessageOsd("3.1",CheckSum);
-4193   2                      if (((pDDCRAMData[127] == CheckSum && pDDCRAMData[126] == 0x01)||(pDDCRAMData[127] == (CheckSum) && pDDC
+4191   2        DebugMessageOsd("3.1",pDDCRAMData[127]);
+4192   2        DebugMessageOsd("3.1",CheckSum);
+4193   2          if (((pDDCRAMData[127] == CheckSum && pDDCRAMData[126] == 0x01)||(pDDCRAMData[127] == (CheckSum) && pDDC
              -RAMData[126] == 0x02))/*&&((pDDCRAMData[0x14]&0x80)==0x80)&&(( _PANEL_DH_WIDTH == Hactive||(_PANEL_DH_WIDTH == (Hactive+
              -6))) && ( _PANEL_DV_HEIGHT== Vactive))*/)
-4194   2                      {
-4195   3                              DebugMessageOsd("3.2",PortType);
-4196   3                              DebugMessageOsd("3.2",pDDCRAMData[0x13]);
-4197   3                              
-4198   3                              if(((PortType==_PORT_HDMI)||(PortType==_PORT_HDMI20)) && pDDCRAMData[0x13]==0x3)
-4199   3                                      CheckSum_ok=1;
-4200   3                              else if((PortType==_PORT_DP) && pDDCRAMData[0x13]==0x4)
-4201   3                                      CheckSum_ok=1;
-4202   3                              else
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 74  
+4194   2          {
+4195   3            DebugMessageOsd("3.2",PortType);
+4196   3            DebugMessageOsd("3.2",pDDCRAMData[0x13]);
+4197   3            
+4198   3            if(((PortType==_PORT_HDMI)||(PortType==_PORT_HDMI20)) && pDDCRAMData[0x13]==0x3)
+4199   3              CheckSum_ok=1;
+4200   3            else if((PortType==_PORT_DP) && pDDCRAMData[0x13]==0x4)
+4201   3              CheckSum_ok=1;
+4202   3            else
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 74  
 
-4203   3                                      CheckSum_ok=0;
-4204   3                              
-4205   3                              //DebugMessageOsd("3.3",CheckSum_ok);
-4206   3                      }
-4207   2                      #if(_DEF_GAME_MODE)
-                              if ((pDDCRAMData[127] == CheckSum)&&(pDDCRAMData[126] == 0x01)&&(GET_OSD_OVERCLOCK()==_ON))
-                                      {
-                                      CheckSum_ok=1;
-                                      }
-                              #endif
-4213   2                      else
-4214   2                      {
-4215   3                              CheckSum_ok=0;
-4216   3                      }
+4203   3              CheckSum_ok=0;
+4204   3            
+4205   3            //DebugMessageOsd("3.3",CheckSum_ok);
+4206   3          }
+4207   2          #if(_DEF_GAME_MODE)
+                  if ((pDDCRAMData[127] == CheckSum)&&(pDDCRAMData[126] == 0x01)&&(GET_OSD_OVERCLOCK()==_ON))
+                    {
+                    CheckSum_ok=1;
+                    }
+                  #endif
+4213   2          else
+4214   2          {
+4215   3            CheckSum_ok=0;
+4216   3          }
 4217   2      
-4218   2              }
-4219   1              if(CheckSum_ok==1)
-4220   1              {
-4221   2                      pData[0]=_O__;
-4222   2                      pData[1]=_K__;
-4223   2                      pData[2]=_END_;
-4224   2                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_ST
+4218   2        }
+4219   1        if(CheckSum_ok==1)
+4220   1        {
+4221   2          pData[0]=_O__;
+4222   2          pData[1]=_K__;
+4223   2          pData[2]=_END_;
+4224   2          RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_ST
              -A_COL), _PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-4225   2              }
-4226   1              else
-4227   1              {
-4228   2                      pData[0]=_N__;
-4229   2                      pData[1]=_G__;
-4230   2                      pData[2]=_END_;
-4231   2                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_ST
+4225   2        }
+4226   1        else
+4227   1        {
+4228   2          pData[0]=_N__;
+4229   2          pData[1]=_G__;
+4230   2          pData[2]=_END_;
+4231   2          RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_ST
              -A_COL), _PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4232   2              RTDFactoryOsdFuncChangeColor1Bit(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), _BURNIN_EDID0_POR
              -T_STA_COL, 4, 1, COLOR(_CP_RED, _CP_BG));
-4233   2              }
+4233   2        }
 4234   1      }
 4235          //--------------------------------------------------
 4236          // Description  :
@@ -4716,10 +4716,10 @@ line level    source
 4241          void GetOSDEDIDWeek(BYTE *pDDCRAMData)
 4242          {
 4243   1          BYTE xdata pData[16] = {0};
-4244   1              pData[0]=GetEDIDWeek0(pDDCRAMData[_EDID_WEEK_INDEX]);
-4245   1              pData[1]=GetEDIDWeek1(pDDCRAMData[_EDID_WEEK_INDEX]);
-4246   1              pData[2]=_END_;
-4247   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID_WEEK_C
+4244   1        pData[0]=GetEDIDWeek0(pDDCRAMData[_EDID_WEEK_INDEX]);
+4245   1        pData[1]=GetEDIDWeek1(pDDCRAMData[_EDID_WEEK_INDEX]);
+4246   1        pData[2]=_END_;
+4247   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID_WEEK_C
              -OL), _PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4248   1      
 4249   1      }
@@ -4732,14 +4732,14 @@ line level    source
 4256          void GetOSDEDIDYear(BYTE *pDDCRAMData)
 4257          {
 4258   1          BYTE xdata pData[5] = {0};
-4259   1              pData[0]=GetEDIDYear0(pDDCRAMData[_EDID_YEAR_INDEX]);
-4260   1              pData[1]=GetEDIDYear1(pDDCRAMData[_EDID_YEAR_INDEX]);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 75  
+4259   1        pData[0]=GetEDIDYear0(pDDCRAMData[_EDID_YEAR_INDEX]);
+4260   1        pData[1]=GetEDIDYear1(pDDCRAMData[_EDID_YEAR_INDEX]);
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 75  
 
-4261   1              pData[2]=GetEDIDYear2(pDDCRAMData[_EDID_YEAR_INDEX]);
-4262   1              pData[3]=GetEDIDYear3(pDDCRAMData[_EDID_YEAR_INDEX]);
-4263   1              pData[4]=_END_;
-4264   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID_YEAR_C
+4261   1        pData[2]=GetEDIDYear2(pDDCRAMData[_EDID_YEAR_INDEX]);
+4262   1        pData[3]=GetEDIDYear3(pDDCRAMData[_EDID_YEAR_INDEX]);
+4263   1        pData[4]=_END_;
+4264   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID_YEAR_C
              -OL), _PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4265   1      
 4266   1      }
@@ -4752,11 +4752,11 @@ line level    source
 4273          void GetOSDEDIDManufactName(WORD ManVal)
 4274          {
 4275   1          BYTE xdata pData[4] = {0};
-4276   1              pData[0]=GetManufactNameC1(ManVal);
-4277   1              pData[1]=GetManufactNameC2(ManVal);
-4278   1              pData[2]=GetManufactNameC3(ManVal);
-4279   1              pData[3]=_END_;
-4280   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _
+4276   1        pData[0]=GetManufactNameC1(ManVal);
+4277   1        pData[1]=GetManufactNameC2(ManVal);
+4278   1        pData[2]=GetManufactNameC3(ManVal);
+4279   1        pData[3]=_END_;
+4280   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_ID_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _
              -PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
 4281   1      }
 4282          
@@ -4766,103 +4766,103 @@ line level    source
 4286          #if(_DEF_FACTORY_EDIDINFO)||_DEF_BURN_EDID2
               void GetOSDEDID_STR1(BYTE *pDDCRAMData,BYTE index)
               {
-                      BYTE i,ok,lenght=5;
-                      BYTE xdata pData[16];
+                BYTE i,ok,lenght=5;
+                BYTE xdata pData[16];
               
-                      if(index==1 || index==2)//sn / NAME
+                if(index==1 || index==2)//sn / NAME
+                {
+              
+                  pData[0] = 0;
+                  pData[1] = 0;
+                  pData[2] = 0;
+                  if(index==1)//SN
+                    pData[3] = 0XFF;
+                  else if(index==2)//SN
+                    pData[3] = 0XFC;
+                  else
+                    pData[3] = 0;
+                  pData[4] = 0;
+                  pData[5] = _END_;
+                  for(i=0x40,ok=0;i<0X80;i++) 
+                  {
+                  
+                    if((*(pDDCRAMData + i) != pData[ok])) 
+                    {
+                      ok = 0;
+                      continue;
+                    }
+                    else
+                    { 
+                      if(++ok > (lenght-1)) 
                       {
-              
-                              pData[0] = 0;
-                              pData[1] = 0;
-                              pData[2] = 0;
-                              if(index==1)//SN
-                                      pData[3] = 0XFF;
-                              else if(index==2)//SN
-                                      pData[3] = 0XFC;
-                              else
-                                      pData[3] = 0;
-                              pData[4] = 0;
-                              pData[5] = _END_;
-                              for(i=0x40,ok=0;i<0X80;i++) 
-                              {
-                              
-                                      if((*(pDDCRAMData + i) != pData[ok])) 
-                                      {
-                                              ok = 0;
-                                              continue;
-                                      }
-                                      else
-                                      {       
-                                              if(++ok > (lenght-1)) 
-                                              {
-                                                      ++i;
-                                                      break;
-                                              }
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 76  
-
-                                      }
-                              }
-                              DebugMessageOsd("3.edid str 0",i);
-                              if(i>0x80)
-                                      return ;
-                              DebugMessageOsd("3.edid str 1",1);
-                              if(index==1)//SN
-                              {
-                                      pData[0] = _S__;
-                                      pData[1] = _N__;
-                                      pData[2] = _COLON__;
-                                      pData[3] = _END_;
-                                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SN_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFO
-             -NT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                                      DebugMessageOsd("3.edid str 1",2);
-                              }
-                              else if(index==2)//NAME
-                              {
-                                      pData[0] = _N__;
-                                      pData[1] = _A__;
-                                      pData[2] = _M__;
-                                      pData[3] = _E__;
-                                      pData[4] = _COLON__;
-                                      pData[5] = _END_;
-                                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _P
-             -FONT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                                      DebugMessageOsd("3.edid str 1",3);
-                              }
-                              ok=i;
-                              
-                              for(i=0;i<13;i++)
-                              {
-                                      if(pDDCRAMData[ok+i]>=0x30&&pDDCRAMData[ok+i]<=0x39)
-                                              pData[i]=pDDCRAMData[ok+i]-0x30+_0__;
-                                      else if(pDDCRAMData[ok+i]>=0x41&&pDDCRAMData[ok+i]<=0x5A)
-                                              pData[i]=pDDCRAMData[ok+i]-0x41+_A__;           
-                                      else if(pDDCRAMData[ok+i]>=0x61&&pDDCRAMData[ok+i]<=0x7A)
-                                              pData[i]=pDDCRAMData[ok+i]-0x61+_a__;           
-                                      else if(pDDCRAMData[ok+i]==0x20||pDDCRAMData[ok+i]==0x0A)
-                                              pData[i]=__;    
-                                      else if(pDDCRAMData[ok+i]==0x2F)
-                                              pData[i]=_AND__;                
-                              
-                              
-                              DebugMessageOsd("3.edid str 40",(ok+i));
-                              DebugMessageOsd("3.edid str 41",pDDCRAMData[ok+i]);
-                              DebugMessageOsd("3.edid str 42",pData[i]);
-                              }
-                              
-                              pData[13]=_END_;                
-                              if(index==1)//SN
-                                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SN_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_SN_COL), _PFON
-             -T_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                              else if(index==2)//NAME
-                                      RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_NAME_COL), _
-             -PFONT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                              
-                              DebugMessageOsd("3.edid str 1",4);
+                        ++i;
+                        break;
                       }
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 76  
+
+                    }
+                  }
+                  DebugMessageOsd("3.edid str 0",i);
+                  if(i>0x80)
+                    return ;
+                  DebugMessageOsd("3.edid str 1",1);
+                  if(index==1)//SN
+                  {
+                    pData[0] = _S__;
+                    pData[1] = _N__;
+                    pData[2] = _COLON__;
+                    pData[3] = _END_;
+                    RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SN_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _PFO
+             -NT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
+                    DebugMessageOsd("3.edid str 1",2);
+                  }
+                  else if(index==2)//NAME
+                  {
+                    pData[0] = _N__;
+                    pData[1] = _A__;
+                    pData[2] = _M__;
+                    pData[3] = _E__;
+                    pData[4] = _COLON__;
+                    pData[5] = _END_;
+                    RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_MSG_COL), _P
+             -FONT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
+                    DebugMessageOsd("3.edid str 1",3);
+                  }
+                  ok=i;
+                  
+                  for(i=0;i<13;i++)
+                  {
+                    if(pDDCRAMData[ok+i]>=0x30&&pDDCRAMData[ok+i]<=0x39)
+                      pData[i]=pDDCRAMData[ok+i]-0x30+_0__;
+                    else if(pDDCRAMData[ok+i]>=0x41&&pDDCRAMData[ok+i]<=0x5A)
+                      pData[i]=pDDCRAMData[ok+i]-0x41+_A__;   
+                    else if(pDDCRAMData[ok+i]>=0x61&&pDDCRAMData[ok+i]<=0x7A)
+                      pData[i]=pDDCRAMData[ok+i]-0x61+_a__;   
+                    else if(pDDCRAMData[ok+i]==0x20||pDDCRAMData[ok+i]==0x0A)
+                      pData[i]=__;  
+                    else if(pDDCRAMData[ok+i]==0x2F)
+                      pData[i]=_AND__;    
+                  
+                  
+                  DebugMessageOsd("3.edid str 40",(ok+i));
+                  DebugMessageOsd("3.edid str 41",pDDCRAMData[ok+i]);
+                  DebugMessageOsd("3.edid str 42",pData[i]);
+                  }
+                  
+                  pData[13]=_END_;    
+                  if(index==1)//SN
+                    RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_SN_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_SN_COL), _PFON
+             -T_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
+                  else if(index==2)//NAME
+                    RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_NAME_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_NAME_COL), _
+             -PFONT_FACTORY_PAGE_1, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
+                  
+                  DebugMessageOsd("3.edid str 1",4);
+                }
               
               }
               #endif
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 77  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 77  
 
 4379          //--------------------------------------------------
 4380          // Description  :
@@ -4872,11 +4872,11 @@ line level    source
 4384          
 4385          BYTE code tsIN_VGA[] =
 4386          {
-4387                  _V__,_G__,_A__,_END_,
+4387            _V__,_G__,_A__,_END_,
 4388          };
 4389          BYTE code tsIN_DVI[] =
 4390          {
-4391                  _D__,_V__,_I__,_END_,
+4391            _D__,_V__,_I__,_END_,
 4392          };
 4393          BYTE code tsIN_HDMI[] =
 4394          {
@@ -4926,7 +4926,7 @@ line level    source
 4438          BYTE code tsIN_HDMI2[] =
 4439          {
 4440              _H__,_D__,_M__,_I__,_2__,_END_,
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 78  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 78  
 
 4441          };
 4442          
@@ -4938,7 +4938,7 @@ line level    source
 4448          
 4449          BYTE code tsIN_AUTO[] =
 4450          {
-4451                  _A__,_u__,_t__,_o__,_END_,
+4451            _A__,_u__,_t__,_o__,_END_,
 4452          };
 4453          
 4454          #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)
@@ -4955,7 +4955,7 @@ line level    source
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
-                      tsIN_TYPEC,tsIN_HDMI,tsIN_LINUX,
+                tsIN_TYPEC,tsIN_HDMI,tsIN_LINUX,
               };
               #elif(_PCB_TYPE == _RL6449__216PIN__HK_M_RTD2795E02__1T1DP1H__eDPVB1)||(_PCB_TYPE == _RL6449__216PIN__HK_M
              -_RTD2795E06__1T1DP1H__eDPVB1)
@@ -4968,7 +4968,7 @@ line level    source
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
-                      tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
+                tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
               };
               #elif(Project_ID == ID_ZQ_HK255XE03_1T1P1H_MV270QHBN50_LVDS_QHD75HZ_20230522)
                BYTE code tsIN_TYPEC[] =
@@ -4980,7 +4980,7 @@ line level    source
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
-                      tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
+                tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
               };
               
               #elif(Project_ID == ID_HHT_2795E06_1T1P1H_M280DCA_E3B_20210330)||(Project_ID == ID_HUIXIONG_CROSSOVER_2795
@@ -4990,12 +4990,12 @@ line level    source
                   _T__,_Y__,_P__,_E__,_C__,_END_,
               };
               
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 79  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 79  
 
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
-                      tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
+                tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
               };
               #elif(_PCB_TYPE == _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS)
               BYTE code tsIN_TYPEC[] =
@@ -5006,25 +5006,25 @@ line level    source
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
-                      tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
+                tsIN_TYPEC,tsIN_DP,tsIN_HDMI,
               };
               
               #elif(_PCB_TYPE == _RL6432__156PIN__HKMRT2556E01__2H1DP__LVDS)
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
               #if(_SOURCE_AUTO_ON)
-                              tsIN_AUTO,
+                  tsIN_AUTO,
               #endif
               #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT) 
-                      tsIN_DP,
+                tsIN_DP,
               #endif
               
               #if(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #endif
               
               #if(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)
-                      tsIN_HDMI1,
+                tsIN_HDMI1,
               #endif
               
               };
@@ -5032,18 +5032,18 @@ line level    source
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
               #if(_SOURCE_AUTO_ON)
-                              tsIN_AUTO,
+                  tsIN_AUTO,
               #endif
               #if(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT)
                   tsIN_VGA,
               #endif
               
-              #if(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT)       
-                      tsIN_HDMI1,
+              #if(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT) 
+                tsIN_HDMI1,
               #endif
               
               #if(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #endif
               
               
@@ -5052,20 +5052,20 @@ line level    source
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
               {
               #if(_SOURCE_AUTO_ON)
-                              tsIN_AUTO,
+                  tsIN_AUTO,
               #endif
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 80  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 80  
 
               #if(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT)
                   tsIN_VGA,
               #endif
               
-              #if(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT)       
-                      tsIN_HDMI2,
+              #if(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT) 
+                tsIN_HDMI2,
               #endif
               
               #if(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
-                      tsIN_HDMI1,
+                tsIN_HDMI1,
               #endif
               
               
@@ -5077,7 +5077,7 @@ line level    source
 4581          {
 4582          #if(_SOURCE_AUTO_ON)
 4583          
-4584                  tsIN_AUTO,
+4584            tsIN_AUTO,
 4585          #endif
 4586          #if(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT)
 4587              tsIN_VGA,
@@ -5090,9 +5090,9 @@ line level    source
               #elif(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT)
                   tsIN_HDMI,
               #elif(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
-                      tsIN_DP1,
+                tsIN_DP1,
               #elif(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_DP_PORT) 
-4599                  tsIN_DP,
+4599            tsIN_DP,
 4600          #endif
 4601          
 4602          #if (_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
@@ -5101,14 +5101,14 @@ line level    source
                   tsIN_DVI,
               #elif(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)||(_D3_INPUT_PORT_TYPE
              - == _D3_HDMI_PORT)||(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT))
-                      tsIN_HDMI1,
+                tsIN_HDMI1,
               #elif(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&((_D2_INPUT_PORT_TYPE != _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE
              - != _D3_HDMI_PORT)&&(_D4_INPUT_PORT_TYPE != _D4_HDMI_PORT))
-                      tsIN_HDMI,
+                tsIN_HDMI,
               #elif(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)&&(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
-                      tsIN_DP2,
+                tsIN_DP2,
               #elif(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)&&(_D0_INPUT_PORT_TYPE != _D0_DP_PORT) 
-                      tsIN_DP,
+                tsIN_DP,
               #endif
 4615          
 4616          #if (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
@@ -5118,13 +5118,13 @@ line level    source
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
                   tsIN_HDMI2,
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&((_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)||(_D4_INPUT_PORT_TYPE
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 81  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 81  
 
              - == _D4_HDMI_PORT))
-                      tsIN_HDMI1,   
+                tsIN_HDMI1,   
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&((_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT)&&(_D4_INPUT_PORT_TYPE
              - != _D4_HDMI_PORT))
-                      tsIN_HDMI,   
+                tsIN_HDMI,   
               #elif (_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
                   tsIN_DP,
               #endif
@@ -5135,18 +5135,18 @@ line level    source
                   tsIN_DVI,
               #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -== _D2_HDMI_PORT)
-                      tsIN_HDMI3,
+                tsIN_HDMI3,
               #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -== _D2_HDMI_PORT)
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -!= _D2_HDMI_PORT)
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)
-                      tsIN_HDMI1,
+                tsIN_HDMI1,
               #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_D4_INPUT_PORT_TYPE != _D4_HDMI_PORT)
-4643                  tsIN_HDMI,
-4644                  
+4643            tsIN_HDMI,
+4644            
 4645          #endif
 4646          
 4647          #if (_D4_INPUT_PORT_TYPE == _D4_MHL_PORT)
@@ -5158,31 +5158,31 @@ line level    source
                   tsIN_HDMI4,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -== _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)   
-                      tsIN_HDMI3,
+                tsIN_HDMI3,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -!= _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)   
-                      tsIN_HDMI3,
+                tsIN_HDMI3,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -== _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT)   
-                      tsIN_HDMI3,
+                tsIN_HDMI3,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -!= _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)   
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -!= _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT)   
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -== _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT)   
-                      tsIN_HDMI2,
+                tsIN_HDMI2,
               #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE != _D1_HDMI_PORT)&&(_D2_INPUT_PORT_TYPE 
              -!= _D2_HDMI_PORT)&&(_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT)   
-                      tsIN_HDMI,
-                      
+                tsIN_HDMI,
+                
               #endif
 4669          
 4670          
 4671          
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 82  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 82  
 
 4672          #if (_D5_INPUT_PORT_TYPE == _D5_MHL_PORT)
                   tsIN_MHL,
@@ -5209,34 +5209,34 @@ line level    source
 4694          
 4695          void DrawEDIDInfo(BYTE *pDDCRAMData,WORD ManVal,BYTE PortNameInedx,BYTE PortTyp)
 4696          {
-4697   1              //EDID Port name
-4698   1               RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_CO
+4697   1        //EDID Port name
+4698   1         RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_EDID0_PORT_ROW+(cnt*EDID_ROW_NUM)), COL(_BURNIN_EDID0_PORT_CO
              -L), _PFONT_FACTORY_PAGE_0, tFONT_FACTORY_EUROPE, tIN_SOURCE_TYPE_STATUS[PortNameInedx], _ENGLISH);
 4699   1      
-4700   1               //EDID Manufact Name
-4701   1               GetOSDEDIDManufactName(ManVal);
-4702   1               //EDID week
-4703   1               GetOSDEDIDWeek(pDDCRAMData);
-4704   1               //EDID year
-4705   1               GetOSDEDIDYear(pDDCRAMData);
-4706   1               
-4707   1               //Panel Size
-4708   1               GetEDIDPanelSize(pDDCRAMData);
-4709   1               //Panel Resolution
-4710   1               GetEDIDPanelResolution(pDDCRAMData);
-4711   1               //获取hv
-4712   1               // EDID Port Status
-4713   1               GetOSDEDIDResult(pDDCRAMData,PortTyp);
+4700   1         //EDID Manufact Name
+4701   1         GetOSDEDIDManufactName(ManVal);
+4702   1         //EDID week
+4703   1         GetOSDEDIDWeek(pDDCRAMData);
+4704   1         //EDID year
+4705   1         GetOSDEDIDYear(pDDCRAMData);
+4706   1         
+4707   1         //Panel Size
+4708   1         GetEDIDPanelSize(pDDCRAMData);
+4709   1         //Panel Resolution
+4710   1         GetEDIDPanelResolution(pDDCRAMData);
+4711   1         //获取hv
+4712   1         // EDID Port Status
+4713   1         GetOSDEDIDResult(pDDCRAMData,PortTyp);
 4714   1       
-4715   1               //EDID CheckSum
-4716   1               GetEDIDCheckSum(pDDCRAMData);
+4715   1         //EDID CheckSum
+4716   1         GetEDIDCheckSum(pDDCRAMData);
 4717   1      
 4718   1       #if _DEF_BURN_EDID2
                    GetOSDEDID_STR1(pDDCRAMData,1);//SN
-                       GetOSDEDID_STR1(pDDCRAMData,2);//NAME
+                 GetOSDEDID_STR1(pDDCRAMData,2);//NAME
                #endif
 4722   1      
-4723   1               cnt++;
+4723   1         cnt++;
 4724   1      
 4725   1      }
 4726          
@@ -5244,39 +5244,39 @@ line level    source
               
               void FactoryEDIDInfo(BYTE *pDDCRAMData,WORD ManVal,BYTE PortTyp)
               {
-                       //EDID Manufact Name
-                       GetOSDEDIDManufactName(ManVal);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 83  
+                 //EDID Manufact Name
+                 GetOSDEDIDManufactName(ManVal);
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 83  
 
-                       RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
+                 RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
              -PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       //EDID week
-                      // GetOSDEDIDWeek(pDDCRAMData);
-                      // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL+6), _PFONT_FACT
+                 //EDID week
+                // GetOSDEDIDWeek(pDDCRAMData);
+                // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL+6), _PFONT_FACT
              -ORY_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       //EDID year
-                      // GetOSDEDIDYear(pDDCRAMData);
-                      // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTOR
+                 //EDID year
+                // GetOSDEDIDYear(pDDCRAMData);
+                // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTOR
              -Y_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       //Panel Size
-                      // GetEDIDPanelSize(pDDCRAMData);
-                      // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTOR
+                 //Panel Size
+                // GetEDIDPanelSize(pDDCRAMData);
+                // RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTOR
              -Y_PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       
-                       //Panel Resolution
+                 
+                 //Panel Resolution
                    GetEDIDProductName(pDDCRAMData);
-                       RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
+                 RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
              -PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       // EDID Port Status
-                       GetOSDEDIDResult(pDDCRAMData,PortTyp);
-                       RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
+                 // EDID Port Status
+                 GetOSDEDIDResult(pDDCRAMData,PortTyp);
+                 RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
              -PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       
-                       //EDID CheckSum
-                       GetEDIDCheckSum(pDDCRAMData);
-                       RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
+                 
+                 //EDID CheckSum
+                 GetEDIDCheckSum(pDDCRAMData);
+                 RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
              -PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
-                       cnt++;
+                 cnt++;
               
               }
               #endif
@@ -5291,230 +5291,230 @@ line level    source
               #if(_HDMI_24C02_SUPPORT)
                   BYTE xdata pucBuffer[256] = {0};
               #endif
-                      WORD ManVal=0;
-                      
-                      switch(Port)
-                      {
-                      
-                      #if(_A0_INPUT_PORT_TYPE != _A0_NO_PORT )
-                          case _OSD_INPUT_A0:
-                              #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_VGA,_ManValue_VGA,_OSD_INPUT_A0,((_A0_INPUT_PORT_TYPE)&0x0F));
-                              #elif(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT && _A0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _A0_EMB
+                WORD ManVal=0;
+                
+                switch(Port)
+                {
+                
+                #if(_A0_INPUT_PORT_TYPE != _A0_NO_PORT )
+                    case _OSD_INPUT_A0:
+                  #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_VGA,_ManValue_VGA,_OSD_INPUT_A0,((_A0_INPUT_PORT_TYPE)&0x0F));
+                  #elif(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT && _A0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _A0_EMB
              -EDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 128);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_VGA_DDC,_SW_IIC_PIN_GPIO)==
+                      memset(pucBuffer, 0, 128);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_VGA_DDC,_SW_IIC_PIN_GPIO)==
              -_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_VGA_DDC,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_A0,((_A0_INPUT_PORT_TYPE)&0x0F));
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 84  
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_VGA_DDC,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_A0,((_A0_INPUT_PORT_TYPE)&0x0F));
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 84  
 
-                              #endif
-                              break;
-                      #endif
-                      
-                      #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT )
-                          case _OSD_INPUT_D0:
-                                      #if(_D0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D0,_ManValue_D0,_OSD_INPUT_D0,((_D0_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT && _D0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D0_E
+                  #endif
+                        break;
+                #endif
+                
+                #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT )
+                    case _OSD_INPUT_D0:
+                    #if(_D0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D0,_ManValue_D0,_OSD_INPUT_D0,((_D0_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT && _D0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D0_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC0_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC0,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC0_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC0,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC0,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC0_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D0,((_D0_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT )
-                          case _OSD_INPUT_D1:
-                                      #if(_D1_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D1,_ManValue_D1,_OSD_INPUT_D1,((_D1_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT && _D1_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D1_E
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC0,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC0_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D0,((_D0_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT )
+                    case _OSD_INPUT_D1:
+                    #if(_D1_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D1,_ManValue_D1,_OSD_INPUT_D1,((_D1_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT && _D1_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D1_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC1_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC1,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC1_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC1,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC1,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC1_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D1,((_D1_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT )
-                          case _OSD_INPUT_D2:
-                                      #if(_D2_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D2,_ManValue_D2,_OSD_INPUT_D2,((_D2_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT && _D2_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D2_E
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC1,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC1_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D1,((_D1_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT )
+                    case _OSD_INPUT_D2:
+                    #if(_D2_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D2,_ManValue_D2,_OSD_INPUT_D2,((_D2_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT && _D2_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D2_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC2_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC2,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC2_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC2,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC2,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC2_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D2,((_D2_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT )
-                          case _OSD_INPUT_D3:
-                                      #if(_D3_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D3,_ManValue_D3,_OSD_INPUT_D3,((_D3_INPUT_PORT_TYPE)&0x0F));
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 85  
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC2,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC2_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D2,((_D2_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT )
+                    case _OSD_INPUT_D3:
+                    #if(_D3_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D3,_ManValue_D3,_OSD_INPUT_D3,((_D3_INPUT_PORT_TYPE)&0x0F));
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 85  
 
-                                      #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT && _D3_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D3_E
+                    #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT && _D3_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D3_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC3,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC3,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC3,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D3,((_D3_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D4_INPUT_PORT_TYPE != _D4_NO_PORT )
-                          case _OSD_INPUT_D4:
-                                      #if(_D4_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D4,_ManValue_D4,_OSD_INPUT_D4,((_D4_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT && _D4_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D4_E
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC3,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D3,((_D3_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D4_INPUT_PORT_TYPE != _D4_NO_PORT )
+                    case _OSD_INPUT_D4:
+                    #if(_D4_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D4,_ManValue_D4,_OSD_INPUT_D4,((_D4_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT && _D4_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D4_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC4_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC4,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC4_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC4,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC4,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC4_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D4,((_D4_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D5_INPUT_PORT_TYPE != _D5_NO_PORT )
-                          case _OSD_INPUT_D5:
-                                      #if(_D5_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D5,_ManValue_D5,_OSD_INPUT_D5,((_D5_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D5_INPUT_PORT_TYPE == _D5_HDMI_PORT && _D5_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D5_E
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC4,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC4_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D4,((_D4_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D5_INPUT_PORT_TYPE != _D5_NO_PORT )
+                    case _OSD_INPUT_D5:
+                    #if(_D5_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D5,_ManValue_D5,_OSD_INPUT_D5,((_D5_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D5_INPUT_PORT_TYPE == _D5_HDMI_PORT && _D5_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D5_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC5_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC5,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC5_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC5,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC5,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC5_SWITCH_DDC);
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D5,((_D5_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      #if(_D6_INPUT_PORT_TYPE != _D6_NO_PORT )
-                          case _OSD_INPUT_D6:
-                                      #if(_D6_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-                                              DrawEDIDInfo(_DDCRAM_D6,_ManValue_D6,_OSD_INPUT_D6,((_D6_INPUT_PORT_TYPE)&0x0F));
-                                      #elif(_D6_INPUT_PORT_TYPE == _D6_HDMI_PORT && _D6_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D6_E
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC5,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC5_SWITCH_DDC);
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D5,((_D5_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                #if(_D6_INPUT_PORT_TYPE != _D6_NO_PORT )
+                    case _OSD_INPUT_D6:
+                    #if(_D6_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
+                      DrawEDIDInfo(_DDCRAM_D6,_ManValue_D6,_OSD_INPUT_D6,((_D6_INPUT_PORT_TYPE)&0x0F));
+                    #elif(_D6_INPUT_PORT_TYPE == _D6_HDMI_PORT && _D6_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D6_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
-                                              memset(pucBuffer, 0, 256);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC6_SWITCH_GPIO);
-                                              if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC6,_SW_IIC_PIN_GPIO)=
+                      memset(pucBuffer, 0, 256);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC6_SWITCH_GPIO);
+                      if(UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC6,_SW_IIC_PIN_GPIO)=
              -=_FAIL)
-                                                      UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC6,_SW_IIC_PIN_GPIO);
-                                              ScalerPinshareGpioDdcPinSwitch(_DDC6_SWITCH_DDC);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 86  
+                        UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC6,_SW_IIC_PIN_GPIO);
+                      ScalerPinshareGpioDdcPinSwitch(_DDC6_SWITCH_DDC);
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 86  
 
-                                              ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
-                                              DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D6,((_D6_INPUT_PORT_TYPE)&0x0F));
-                                      #endif
-                              break;
-                      #endif
-                      
-                      
-                      default:
-                              break;
-                              }       
+                      ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
+                      DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D6,((_D6_INPUT_PORT_TYPE)&0x0F));
+                    #endif
+                        break;
+                #endif
+                
+                
+                default:
+                  break;
+                  } 
               
               
               
-                      
+                
               }
               
               void RTDBurnInEdidMenu(void)
               {
-                      BYTE Port=0;
-                      cnt=0;//must set to 0
+                BYTE Port=0;
+                cnt=0;//must set to 0
               #if(Project_ID == ID_DX_HK2556E01_1P2H_SG2361B023_FHD60HZ_20240118)
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
               #elif(_PCB_TYPE == _RL6432__156PIN__HKMRT2556E01__2H1DP__LVDS)
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
+                  RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
               #elif(_PCB_TYPE == _RL6463__128PIN__HKMRT2525E02__1A2H__LVDS && _DEF_HDMI_SWAP)
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_A0);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_A0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
               #elif(_PCB_TYPE == _RL6463__128PIN__HKMRT2525E02__1A2H__LVDS)
               #if _VGA1_SUPPORT
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_A0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_A0);
               #endif
               #if _HDMI1_SUPPORT
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
               #endif
               #if _HDMI0_SUPPORT
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
               #endif
               #elif 0//(_PCB_TYPE == _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS)
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
-                      RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
-                      //RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D0);
+                RTDBurnInGetEdidInfo(_OSD_INPUT_D1);
+                //RTDBurnInGetEdidInfo(_OSD_INPUT_D3);
               #else
-                      for(Port=0;Port<=(_OSD_INPUT_AMOUNT-_SOURCE_AUTO_ON);Port++)
-                      {
-                              RTDBurnInGetEdidInfo(Port);
-                      }
+                for(Port=0;Port<=(_OSD_INPUT_AMOUNT-_SOURCE_AUTO_ON);Port++)
+                {
+                  RTDBurnInGetEdidInfo(Port);
+                }
               
               #endif
               
-                      
+                
               }
               #endif
 4952          
 4953          void RTDBurnInMenu(void)
 4954          {
 4955   1          BYTE ucRowCount = 0;
-4956   1              BYTE i=0;
-4957   1              WORD usCheckSum=0;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 87  
+4956   1        BYTE i=0;
+4957   1        WORD usCheckSum=0;
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 87  
 
-4958   1              
+4958   1        
 4959   1          g_ucFontPointer0 = _FACTORY_PAGE_0_START;
 4960   1          g_ucFontPointer1 = _FACTORY_PAGE_1_START;
 4961   1          g_ucFactoryPage = 0;
-4962   1              
+4962   1        
 4963   1          OsdPaletteSelectPalette(_PALETTE_MAIN_MENU);
 4964   1          RTDFactoryOsdFuncDisableOsd();
 4965   1          SET_OSD_STATE(_MENU_NULL);
 4966   1          RTDFactoryOsdFuncApplyMap(WIDTH(_BURNIN_OSD_COL), HEIGHT(_BURNIN_OSD_ROW), COLOR(_CP_WHITE, _CP_BG));
 4967   1      #if(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_HARDWARE)
-4968   1              ScalerOsdMapRotation(GET_OSD_ROTATE_STATUS(), _ENABLE, HEIGHT(_BURNIN_OSD_ROW), _DISABLE, 0, _ENABLE);
+4968   1        ScalerOsdMapRotation(GET_OSD_ROTATE_STATUS(), _ENABLE, HEIGHT(_BURNIN_OSD_ROW), _DISABLE, 0, _ENABLE);
 4969   1      #endif
 4970   1          ScalerOsdHardwareVLC(tFONT_FACTORY_GLOBAL, VLC_TABLE_SIZE(tFONT_FACTORY_GLOBAL), GET_CURRENT_BANK_NUMB
              -ER(), 0x00, g_usFontTableStart, _OSD_ROTATE_DEGREE_0);
@@ -5534,18 +5534,18 @@ line level    source
 4980   1          RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_PANEL_NAME_ROW), COL(_BURNIN_MSG_COL), _PFONT_FACTORY_PAGE_
              -1, tFONT_FACTORY_EUROPE, tOSD_BURNIN_PAGE_TABLE[_BURNIN_PANNEL_NAME], _ENGLISH);
 4981   1          //Checksum
-4982   1              RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_FW_CSK_ROW),COL(_BURNIN_MSG_COL),_PFONT_FACTORY_PAGE_1,tFONT_F
+4982   1        RTDFactoryOsdFuncPutStringProp(ROW(_BURNIN_FW_CSK_ROW),COL(_BURNIN_MSG_COL),_PFONT_FACTORY_PAGE_1,tFONT_F
              -ACTORY_EUROPE, tOSD_BURNIN_PAGE_TABLE[_FACTORY_CHKSUM], _ENGLISH);
-4983   1              RTDFactoryOsdFuncShowChecksum(ROW(_BURNIN_FW_CSK_ROW), COL(_BURNIN_MSG_COL + 10), (_ALIGN_LEFT | _FORCE_S
+4983   1        RTDFactoryOsdFuncShowChecksum(ROW(_BURNIN_FW_CSK_ROW), COL(_BURNIN_MSG_COL + 10), (_ALIGN_LEFT | _FORCE_S
              -HOW_NUMBER_OFF | _SHOW_5), _PFONT_FACTORY_PAGE_1);
 4984   1      
 4985   1      #if(_DEF_BURN_EDID)
-                      RTDBurnInEdidMenu();
+                RTDBurnInEdidMenu();
               #endif
 4988   1          
 4989   1          OsdDispSetPosition(_POS_PERCENT, _OSD_POSITION_GLOBAL_A, 20, 80);
 4990   1          RTDFactoryOsdFuncEnableOsd();
-4991   1              
+4991   1        
 4992   1      }
 4993          
 4994          
@@ -5564,11 +5564,11 @@ line level    source
 5007   1          BYTE idata ucTemp = 0;
 5008   1          BYTE idata i = 0;
 5009   1          BYTE xdata pData[7] = {0};
-5010   1              WORD usValue =  0;
-5011   1              UserCommonFlashRead(1, 0xfffe, 2, (BYTE *)&usValue);
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 88  
+5010   1        WORD usValue =  0;
+5011   1        UserCommonFlashRead(1, 0xfffe, 2, (BYTE *)&usValue);
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 88  
 
-5012   1              ucPar= ucPar;
+5012   1        ucPar= ucPar;
 5013   1      
 5014   1          pData[0]=_0__ ;
 5015   1          pData[1]=_x__;
@@ -5601,7 +5601,7 @@ line level    source
 5042   1          pData[4]=h;
 5043   1          pData[3]=l1 ;
 5044   1          pData[2]=h1 ;
-5045   1              
+5045   1        
 5046   1             pData[6] = _END_;
 5047   1      
 5048   1              RTDFactoryOsdFuncPutStringProp(ucRow, ucCol, ucFontPoint, tFONT_FACTORY_EUROPE, pData, _ENGLISH); 
@@ -5612,25 +5612,25 @@ line level    source
               
               void RTDFactoryOsdFuncShowHexNumber(BYTE ucRow, BYTE ucCol, BYTE ucFontPoint)
               {
-                      BYTE i=0,sum=0,ir_add=0;
+                BYTE i=0,sum=0,ir_add=0;
                   BYTE pucDataSN[32] = {0};
-                      ir_add=3+2;//IR:0X
-                      sum+=ir_add;
-                      sum+=4*3;//ir_show_data
-                      //0EF1FD02
-                      pucDataSN[0]=_I__;
-                      pucDataSN[1]=_R__;
-                      pucDataSN[2]=_COLON__;
-                      pucDataSN[3]=_0__;
-                      pucDataSN[4]=_X__;
-                      for(i=0;i<4;i++)
-                      {
-                              pucDataSN[ir_add+i*3]=_0__+(ir_show_data[i]>>4);
-                              pucDataSN[ir_add+i*3+1]=_0__+(ir_show_data[i]&0XF);
-                              pucDataSN[ir_add+i*3+1]=_0__+(ir_show_data[i]&0XF);
-                      }
-                      pucDataSN[sum+1]=_END_;
-C51 COMPILER V8.12   RTDFACTORYFUNCTION                                                    09/16/2026 20:29:16 PAGE 89  
+                ir_add=3+2;//IR:0X
+                sum+=ir_add;
+                sum+=4*3;//ir_show_data
+                //0EF1FD02
+                pucDataSN[0]=_I__;
+                pucDataSN[1]=_R__;
+                pucDataSN[2]=_COLON__;
+                pucDataSN[3]=_0__;
+                pucDataSN[4]=_X__;
+                for(i=0;i<4;i++)
+                {
+                  pucDataSN[ir_add+i*3]=_0__+(ir_show_data[i]>>4);
+                  pucDataSN[ir_add+i*3+1]=_0__+(ir_show_data[i]&0XF);
+                  pucDataSN[ir_add+i*3+1]=_0__+(ir_show_data[i]&0XF);
+                }
+                pucDataSN[sum+1]=_END_;
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/18/2026 20:40:19 PAGE 89  
 
                  
                   RTDFactoryOsdFuncPutStringProp(ucRow, ucCol, ucFontPoint, tFONT_FACTORY_EUROPE, &pucDataSN[0], _ENGLIS
@@ -5641,7 +5641,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   8484    ----
+   CODE SIZE        =   8955    ----
    CONSTANT SIZE    =   4023    ----
    XDATA SIZE       =      7     241
    PDATA SIZE       =   ----    ----

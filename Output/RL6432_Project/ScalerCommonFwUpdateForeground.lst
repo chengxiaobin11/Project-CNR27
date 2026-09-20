@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERCOMMONFWUPDATEFOREGROUND                                        09/16/2026 20:28:10 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/18/2026 20:38:59 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERCOMMONFWUPDATEFOREGROUND
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONFWUPDATEFOREGROUND
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerCommonFwUpdateForeground.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonFwUpdateForeground.c LA
-                    -RGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Ker
-                    -nel\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\Scal
-                    -erFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kern
-                    -el\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Comm
-                    -on\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd
-                    -\Header;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None F
-                    -actory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Pro
-                    -ject\ScalerCommonFwUpdateForeground.lst) OBJECT(.\Output\RL6432_Project\ScalerCommonFwUpdateForeground.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonFwUpdateForeground.c
+                    - LARGE OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\
+                    -Kernel\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\S
+                    -calerFunction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\K
+                    -ernel\Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_C
+                    -ommon\Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014
+                    -Osd\Header;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\Non
+                    -e Factory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_
+                    -Project\ScalerCommonFwUpdateForeground.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerCommonFwUpdateForeground.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               #endif
               
               // Reserved Xdata for isp program Sram
-C51 COMPILER V8.12   SCALERCOMMONFWUPDATEFOREGROUND                                        09/16/2026 20:28:10 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/18/2026 20:38:59 PAGE 2   
 
               #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE)
               BYTE xdata g_pucProgamBuffer[128]              _at_ _HW_FLASH_PROG_USING_XRAM_START_ADDR;
@@ -126,7 +126,7 @@ line level    source
               void ScalerFwUpdateForegroundSceneBackup(void)
               {
               #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-C51 COMPILER V8.12   SCALERCOMMONFWUPDATEFOREGROUND                                        09/16/2026 20:28:10 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/18/2026 20:38:59 PAGE 3   
 
                   // Backup DDC status
                   g_bFwUpdateForegroundDdcciStatus = ScalerSyncGetDdcForceNackStatus(_A0_INPUT_PORT);

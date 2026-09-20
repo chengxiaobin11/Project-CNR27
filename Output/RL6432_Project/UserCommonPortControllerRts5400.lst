@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONPORTCONTROLLERRTS5400
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONPORTCONTROLLERRTS5400
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonPortControllerRts5400.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonPortControllerRts5400.c LARGE OP
-                    -TIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sy
-                    -stem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunc
-                    -tion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sca
-                    -ler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib
-                    -\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Heade
-                    -r;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory
-                    -\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\U
-                    -serCommonPortControllerRts5400.lst) OBJECT(.\Output\RL6432_Project\UserCommonPortControllerRts5400.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonPortControllerRts5400.c LARGE
+                    - OPTIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel
+                    -\System\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerF
+                    -unction\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\
+                    -Scaler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\
+                    -Lib\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\He
+                    -ader;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Fact
+                    -ory\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Projec
+                    -t\UserCommonPortControllerRts5400.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonPortControllerRts5400.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               
               #define GET_TYPE_C_5400_DETECT_STATUS(x)                    (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -b1DetectStatusFlag)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 2   
 
               #define SET_TYPE_C_5400_DETECT_STATUS(x)                    (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -b1DetectStatusFlag = _TRUE)
@@ -126,7 +126,7 @@ line level    source
              -ucReqInfo0 = (y))
               #define CLR_TYPE_C_5400_NEGOTIATED_REQ_INFO_0(x)            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -ucReqInfo0 = 0)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 3   
 
               
               #define GET_TYPE_C_5400_NEGOTIATED_REQ_INFO_1(x)            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
@@ -190,7 +190,7 @@ line level    source
               #define GET_TYPE_C_5400_UNCHK(x)                            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -b1UnchkSupport)
               #define SET_TYPE_C_5400_UNCHK(x, y)                         (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 4   
 
              -b1UnchkSupport = (y))
               #define CLR_TYPE_C_5400_UNCHK(x)                            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
@@ -254,7 +254,7 @@ line level    source
               
               #define GET_TYPE_C_5400_SNK_CAP_VOL_MAX(x, y)               (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -pstSnkPdo[y].usMaxVoltage)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 5   
 
               #define SET_TYPE_C_5400_SNK_CAP_VOL_MAX(x, y, z)            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
              -pstSnkPdo[y].usMaxVoltage = (z))
@@ -318,7 +318,7 @@ line level    source
               
               // Rts Target Request Info Macro
               #define GET_TYPE_C_5400_TARGET_REQ_OBJ_POS(x)               ((BYTE)(g_pstTypeC5400Info[SysTypeCGetTypeCInd
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 6   
 
              -ex(x)].stTargetRdo.enumObjPos))
               #define SET_TYPE_C_5400_TARGET_REQ_OBJ_POS(x, y)            (g_pstTypeC5400Info[SysTypeCGetTypeCIndex(x)].
@@ -382,7 +382,7 @@ line level    source
               #endif
               
               //****************************************************************************
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 7   
 
               // STRUCT / TYPE / ENUM DEFINITTIONS
               //****************************************************************************
@@ -446,7 +446,7 @@ line level    source
               code StructSMBusWRSetPDO tSMBusWrCmdSetSnkPDO[1] = {{0x08, 0x1F, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
              - 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
              - 0x00, 0x00, 0x00, 0x00}};
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 8   
 
               code StructSMBusWRSetRDO tSMBusWrCmdSetRDO[1] = {{0x08, 0x06, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00}};
               #if(_PORT_CONTROLLER_PD3_1_EPR_SUPPORT == _ON)
@@ -510,7 +510,7 @@ line level    source
               bit UserCommonPortControllerEnable5400VenderCommand(BYTE ucInputPort);
               
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 9   
 
               #if(_D0_DP_TYPE_C_DISCRETE_PORT_CTRL_LINK == _DISCRETE_PORT_CTRL_USE_SMBUS)
               EnumTypeCAttachStatus UserCommonPortControllerGetD0CcAttachByI2C(void);
@@ -574,7 +574,7 @@ line level    source
               bit UserCommonPortControllerGet5400PinAssignment(BYTE ucInputPort, EnumTypeCPinCfgType *penumPinAssignment
              -);
               StructTypeCCableInfoForDpcd UserCommonPortControllerGet5400CableInfoForDpcd(BYTE ucInputPort);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 10  
 
               bit UserCommonPortControllerGet5400FwVersion(BYTE ucInputPort, StructTypeCPortCtrlFwVersion *pstTypeCFwVer
              -sion);
@@ -638,7 +638,7 @@ line level    source
                           return GET_TYPE_C_5400_I2C_ENABLED_FLG(_D1_INPUT_PORT);
               
                           break;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 11  
 
               #endif
               
@@ -702,7 +702,7 @@ line level    source
               // Description  : Clr 5400 Port Controller I2C Communication Enabled Flag
               // Input Value  : ucInputPort --> Input Port
               // Output Value : None
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 12  
 
               //--------------------------------------------------
               void UserCommonPortControllerClr5400I2CEnabledFlag(BYTE ucInputPort)
@@ -766,7 +766,7 @@ line level    source
               
               #if(_TYPE_C_RTS5400_SERIES_SMBUS_MODE == _RTS5400_SERIES_INT_MODE)
                   // Get Rts Notification Enable From User
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 13  
 
                   UserCommonPortControllerGet5400UserNotifyEn(ucInputPort, &st5400NotifyEn);
               
@@ -830,7 +830,7 @@ line level    source
                       else
                       {
                           return _TYPE_C_UNATTACH;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 14  
 
                       }
                   }
@@ -894,7 +894,7 @@ line level    source
                       return _TYPE_C_ALT_MODE_NOT_READY;
                   }
               }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 15  
 
               
               #endif  // End of #if(_D0_DP_TYPE_C_DISCRETE_PORT_CTRL_LINK == _DISCRETE_PORT_CTRL_USE_SMBUS)
@@ -958,7 +958,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Get D1 Alt Mode Ready Info Through I2C
               // Input Value  : None
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 16  
 
               // Output Value : CC Attach (_TRUE / _FALSE)
               //--------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
               //--------------------------------------------------
               EnumTypeCAttachStatus UserCommonPortControllerGetD6CcAttachByI2C(void)
               {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 17  
 
                   BYTE ucReadInfo = 0x00;
               
@@ -1086,7 +1086,7 @@ line level    source
                   }
               
                   // Use I2C to Update Alt. Mode Status Every 500ms, Otherwise Return Status in Source Handler
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 18  
 
                   if(GET_D6_DP_TYPE_C_DETECT_ALT_MODE() == _FALSE)
                   {
@@ -1150,7 +1150,7 @@ line level    source
                   CLR_TYPE_C_5400_EXPLICIT_CONTRACT(ucInputPort);
                   SET_TYPE_C_5400_PARTNER_SPR_SRC_CAP_CNT(ucInputPort, 0);
                   SET_TYPE_C_5400_PARTNER_EPR_SRC_CAP_CNT(ucInputPort, 0);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 19  
 
                   SET_TYPE_C_5400_PDO_STATUS_VOL(ucInputPort, 0);
                   SET_TYPE_C_5400_PDO_STATUS_CUR(ucInputPort, 0);
@@ -1214,7 +1214,7 @@ line level    source
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 20  
 
                       case _D1_INPUT_PORT:
               
@@ -1278,7 +1278,7 @@ line level    source
                           // Update 5400 SRC PDO and Set to Macro
                           if(UserCommonPortControllerUpdate5400SrcPdo(ucInputPort) == _FAIL)
                           {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 21  
 
                               return;
                           }
@@ -1342,7 +1342,7 @@ line level    source
              -StatusLen + 1, &(g_unSMBusRdDataPool.stRdGetStatus.ucByte3), ucInputPort) == _FAIL)
               #endif
                   {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 22  
 
                       return _FAIL;
                   }
@@ -1406,7 +1406,7 @@ line level    source
                   }
               
               #if(_TYPE_C_RTS5400_SERIES_PDO_INFO_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 23  
 
                   // Byte4[7] Connect Status (Attached:1 / Unattached:0), Byte4[3:1] Port Operation Mode (PD:3)
                   if((g_unSMBusRdDataPool.stRdGetStatus.ucByte4 & (_BIT7)) == _BIT7)
@@ -1470,7 +1470,7 @@ line level    source
               EnumTypeCDataRole UserCommonPortControllerGet5400DataRole(BYTE ucInputPort)
               {
                   return GET_TYPE_C_5400_DATA_ROLE(ucInputPort);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 24  
 
               }
               
@@ -1534,7 +1534,7 @@ line level    source
                           ucI2CPinNum = _D0_DP_TYPE_C_RTK_PC_SMBUS_IIC;
               
                           break;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 25  
 
               #endif
               
@@ -1598,7 +1598,7 @@ line level    source
                           return _FAIL;
                       }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 26  
 
                       // Set Number Of RTS SRC PDO
                       SET_TYPE_C_5400_SPR_SRC_CAP_CNT(ucInputPort, g_unSMBusRdDataPool.stRdGetPdo.ucDataLength / 4);
@@ -1662,7 +1662,7 @@ line level    source
               
                           // Put PDO 6~7 into pucGetData array
                           memcpy(&pucGetData[2 + (5 * 4)], &g_unSMBusRdDataPool.stRdGetPdo.ucByte0, g_unSMBusRdDataPool.
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 27  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 27  
 
              -stRdGetPdo.ucDataLength);
                       }
@@ -1726,7 +1726,7 @@ line level    source
                           SET_TYPE_C_5400_SRC_CAP_PEAK_CUR(ucInputPort, ucIndex, 0x00);
                           SET_TYPE_C_5400_SRC_CAP_VOL_MAX(ucInputPort, ucIndex, 0x00);
                           SET_TYPE_C_5400_SRC_CAP_VOL_MIN(ucInputPort, ucIndex, 0x00);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 28  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 28  
 
                           SET_TYPE_C_5400_SRC_CAP_CUR(ucInputPort, ucIndex, 0x00);
               
@@ -1790,7 +1790,7 @@ line level    source
                           SET_TYPE_C_5400_SRC_CAP_PEAK_CUR(ucInputPort, ucIndex, 0x00);
               
                           // Set PDO Voltage (Unit 100mV) and Current (Unit 50mA)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 29  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 29  
 
                           SET_TYPE_C_5400_SRC_CAP_VOL_MAX(ucInputPort, ucIndex, (((pucGetData[ucGetDataIndex * 4 + 5] & 
              -0x01) << 7) | ((pucGetData[ucGetDataIndex * 4 + 4] & 0xFE) >> 1)));
@@ -1854,7 +1854,7 @@ line level    source
                           return _FAIL;
                       }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 30  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 30  
 
                       if(UserCommonTypecCommunicationPollingPDReady(ucSlaveAddr, 100, ucInputPort) == _FAIL)
                       {
@@ -1918,7 +1918,7 @@ line level    source
                           {
                               return _FAIL;
                           }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 31  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 31  
 
               
                           if(UserCommonTypecCommunicationPollingPDReady(ucSlaveAddr, 100, ucInputPort) == _FAIL)
@@ -1982,7 +1982,7 @@ line level    source
                           // If the EPR Source_Cap contains fewer than 4 PDOs, the unused Related Macros Shall be zero f
              -illed
                           SET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, ucIndex, 0x00);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 32  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 32  
 
                           SET_TYPE_C_5400_PARTNER_SRC_CAP_PEAK_CUR(ucInputPort, ucIndex, 0x00);
                           SET_TYPE_C_5400_PARTNER_SRC_CAP_VOL_MAX(ucInputPort, ucIndex, 0x00);
@@ -2046,7 +2046,7 @@ line level    source
                       }
                       else if(GET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, ucIndex) == _PD_3_PROGRAMMABLE_PDO)
                       {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 33  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 33  
 
                           SET_TYPE_C_5400_PARTNER_SRC_CAP_PEAK_CUR(ucInputPort, ucIndex, 0x00);
               
@@ -2110,7 +2110,7 @@ line level    source
               
                       // Check if Object Position is Valid
                       if((GET_TYPE_C_5400_NEGOTIATED_REQ_OBJ_POS(ucInputPort) > 0) && (GET_TYPE_C_5400_NEGOTIATED_REQ_OB
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 34  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 34  
 
              -J_POS(ucInputPort) <= ucTotalPdoCount))
                       {
@@ -2174,7 +2174,7 @@ line level    source
                               // Current in 10mA
                               SET_TYPE_C_5400_PDO_STATUS_CUR(ucInputPort, ((((WORD)(GET_TYPE_C_5400_NEGOTIATED_REQ_INFO_
              -1(ucInputPort) & 0x03)) << 8) | ((WORD)GET_TYPE_C_5400_NEGOTIATED_REQ_INFO_0(ucInputPort))));
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 35  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 35  
 
                           }
                           else if(GET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, GET_TYPE_C_5400_NEGOTIATED_REQ_OBJ_P
@@ -2238,7 +2238,7 @@ line level    source
                   }
                   else if(enumPowerRole == _TYPE_C_POWER_SNK)
                   {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 36  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 36  
 
                       *pucSPRPdoCnt = GET_TYPE_C_5400_SPR_SNK_CAP_CNT(ucInputPort);
                       *pucEPRPdoCnt = GET_TYPE_C_5400_EPR_SNK_CAP_CNT(ucInputPort);
@@ -2302,7 +2302,7 @@ line level    source
               
                   return stTypeCPdo;
               }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 37  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 37  
 
               
               //--------------------------------------------------
@@ -2366,7 +2366,7 @@ line level    source
                           else if(GET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, ucPdoIndex - 1) == _PD_3_PROGRAMMABL
              -E_PDO)
                           {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 38  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 38  
 
                               // Get Current in Macro (Unit = 50mA), and Convert to 10mA
                               stTypeCPartnerPdo.usMaxCurrent = (GET_TYPE_C_5400_PARTNER_SRC_CAP_CUR(ucInputPort, ucPdoIn
@@ -2430,7 +2430,7 @@ line level    source
                           ucTotalPdoCount = GET_TYPE_C_5400_SPR_SRC_CAP_CNT(ucInputPort);
                       }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 39  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 39  
 
                       if((GET_TYPE_C_5400_NEGOTIATED_REQ_OBJ_POS(ucInputPort) > 0) && (GET_TYPE_C_5400_NEGOTIATED_REQ_OB
              -J_POS(ucInputPort) <= ucTotalPdoCount))
@@ -2494,7 +2494,7 @@ line level    source
               
                               // Get Current in Macro (Unit = 10mA)
                               stTypeCSrcPdo.usMaxCurrent = GET_TYPE_C_5400_PARTNER_SRC_CAP_CUR(ucInputPort, GET_TYPE_C_5
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 40  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 40  
 
              -400_NEGOTIATED_REQ_OBJ_POS(ucInputPort) - 1);
                           }
@@ -2558,7 +2558,7 @@ line level    source
                       SET_TYPE_C_5400_SPR_SRC_CAP_CNT(ucInputPort, ucSPRPdoCnt);
                       SET_TYPE_C_5400_EPR_SRC_CAP_CNT(ucInputPort, ucEPRPdoCnt);
                   }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 41  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 41  
 
                   else if(enumPowerRole == _TYPE_C_POWER_SNK)
                   {
@@ -2622,7 +2622,7 @@ line level    source
                       SET_TYPE_C_5400_SNK_CAP_TYPE(ucInputPort, (ucPdoIndex - 1), stTypeCUserPdo.enumPdoType);
               
                       if(GET_TYPE_C_5400_SNK_CAP_TYPE(ucInputPort, (ucPdoIndex - 1)) == _PD_3_PROGRAMMABLE_PDO)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 42  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 42  
 
                       {
                           // Set PDO Voltage (Unit 100mV) and Current (Unit 50mA)
@@ -2686,7 +2686,7 @@ line level    source
                       // RDO[6:0] : PPS RDO (Op. Cur in 50mA)
                       SET_TYPE_C_5400_TARGET_REQ_INFO_2(ucInputPort, (stTypeCUserRdo.usReqInfo2) & 0x7F);
                   }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 43  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 43  
 
                   else if(GET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, GET_TYPE_C_5400_TARGET_REQ_OBJ_POS(ucInputPo
              -rt) - 1) == _PD_3_1_ADJUSTABLE_PDO)
@@ -2750,7 +2750,7 @@ line level    source
              -)
               {
                   BYTE ucDataRole = 0x00;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 44  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 44  
 
                   BYTE ucPinAssignment = _TYPE_C_PIN_ASSIGNMENT_NONE;
               
@@ -2814,7 +2814,7 @@ line level    source
               // Input Value  : ucInputPort
               //                *pstTypeCFwVersion --> TypeC FW Version
               // Output Value : _SUCCESS / _FAIL
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 45  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 45  
 
               //--------------------------------------------------
               bit UserCommonPortControllerGet5400FwVersion(BYTE ucInputPort, StructTypeCPortCtrlFwVersion *pstTypeCFwVer
@@ -2878,7 +2878,7 @@ line level    source
                       DebugMessageTypeC("5400 Port Ctrl Notification Enable Write fail", 1);
               
                       return _FAIL;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 46  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 46  
 
                   }
               
@@ -2942,7 +2942,7 @@ line level    source
               {
                   switch(ucInputPort)
                   {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 47  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 47  
 
                       case _D0_INPUT_PORT:
                           return _D0_DP_TYPE_C_PORT_CTRL_SLAVE_ADDR;
@@ -3006,7 +3006,7 @@ line level    source
               // Output Value : Reading result (Fail/Success)
               //--------------------------------------------------
               bit UserCommonPortControllerGet5400InfoByI2C(BYTE ucInputPort, Enum5400InfoType enum5400InfoType, BYTE *pu
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 48  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 48  
 
              -cReadInfo)
               {
@@ -3070,7 +3070,7 @@ line level    source
                       case _GET_5400_ALT_MODE_READY:
               
                           if((g_unSMBusRdDataPool.stRdGetStatus.ucByte13_AltModeStatus & 0x07) == 0x06)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 49  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 49  
 
                           {
                               *pucReadInfo = _TYPE_C_ALT_MODE_READY;
@@ -3134,7 +3134,7 @@ line level    source
                           {
                               *pucReadInfo = _TYPE_C_LENOVO_ALT_MODE_READY;
                           }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 50  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 50  
 
                           else
                           {
@@ -3198,7 +3198,7 @@ line level    source
                               {
                                   SET_TYPE_C_5400_CBL_ACTIVE_COMPONENT(ucInputPort, _PD_CBL_COMPONENT_ACTIVE_REDRIVER);
                               }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 51  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 51  
 
                               else if((g_unSMBusRdDataPool.stRdDPlanesCfg.ucDPCfgVDOByte3 & (_BIT5 | _BIT4)) == (_BIT5 |
              - _BIT4))
@@ -3262,7 +3262,7 @@ line level    source
                           // BYTE ucVidInfo[2] = {0x00, 0x00};
                           // UserCommonPortControllerGet5400InfoByI2C(_D0_INPUT_PORT, _GET_5400_CABLE_VID, &ucVidInfo);
                           // ucVidInfo[0] = Vid_High / ucVidInfo[1] = Vid_Low
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 52  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 52  
 
                           // =============================================================
                           *pucReadInfo = g_unSMBusRdDataPool.stRdGetCableInfo.ucVid_High;
@@ -3326,7 +3326,7 @@ line level    source
                           break;
               
               #if(_EXT_PORT_CTRL_LANE_SWAP_BY_SCALER_SUPPORT == _ON)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 53  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 53  
 
                       case _GET_5400_ORIENTATION:
               
@@ -3390,7 +3390,7 @@ line level    source
               #if(_PORT_CONTROLLER_PD3_1_EPR_SUPPORT == _ON)
                           if(((ucInputPort == _D0_INPUT_PORT) && (_D0_DP_TYPE_C_EXT_PD3_1_EPR_SUPPORT == _ON)) ||
                              ((ucInputPort == _D1_INPUT_PORT) && (_D1_DP_TYPE_C_EXT_PD3_1_EPR_SUPPORT == _ON)) ||
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 54  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 54  
 
                              ((ucInputPort == _D6_INPUT_PORT) && (_D6_DP_TYPE_C_EXT_PD3_1_EPR_SUPPORT == _ON)))
                           {
@@ -3454,7 +3454,7 @@ line level    source
                                   pucData[(ucIndex * 4) + 8] = pucData[(ucIndex * 4) + 8] | ((GET_TYPE_C_5400_SRC_CAP_VO
              -L_MAX(ucInputPort, ucRealIndex) >> 7) & (_BIT1 | _BIT0));
                                   pucData[(ucIndex * 4) + 7] = pucData[(ucIndex * 4) + 7] | ((BYTE)(GET_TYPE_C_5400_SRC_
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 55  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 55  
 
              -CAP_VOL_MAX(ucInputPort, ucRealIndex) << 1) & (~_BIT0));
               
@@ -3518,7 +3518,7 @@ line level    source
                           // | PDO Type| DRP| HC | UP | UC | DRD| FR |
                           pucData[8] = pucData[8] | (GET_TYPE_C_5400_DRP(ucInputPort) << 5);
                           pucData[8] = pucData[8] | (GET_TYPE_C_5400_EXT_PWR(ucInputPort) << 3);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 56  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 56  
 
                           pucData[8] = pucData[8] | (GET_TYPE_C_5400_USB_CAP(ucInputPort) << 2);
                           pucData[8] = pucData[8] | (GET_TYPE_C_5400_DRD(ucInputPort) << 1);
@@ -3582,7 +3582,7 @@ line level    source
               
                                   // Get PDO Voltage (Unit 100mV to 50mv) and Current (Unit 10mA)
                                   // | 23 | 22 | 21 | 20 | 19 .. 16 | 15 .. 10 | 09 | 08 | 07 .. 00 |
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 57  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 57  
 
                                   // | FR | Reserved(0)  | Voltage(50mV)[9:0]  |   Max.Cur [9:0]    |
                                   pucData[(ucIndex * 4) + 7] = pucData[(ucIndex * 4) + 7] | ((((GET_TYPE_C_5400_SNK_CAP_
@@ -3646,7 +3646,7 @@ line level    source
                           }
                           else if(GET_TYPE_C_5400_PARTNER_SRC_CAP_TYPE(ucInputPort, GET_TYPE_C_5400_TARGET_REQ_OBJ_POS(u
              -cInputPort) - 1) == _PD_3_PROGRAMMABLE_PDO)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 58  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 58  
 
                           {
                               // RDO[20:9] : PPS RDO (Vol in 20mV)
@@ -3710,7 +3710,7 @@ line level    source
              -ollerGetCapVdoSrc (tSMBusWrCmdReadDPCfgVdoPartner)
                           if(GET_TYPE_C_5400_DATA_ROLE(ucInputPort) == _TYPE_C_DFP_U)
                           {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 59  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 59  
 
                               bResult = UserCommonTypecCommunicationWrite(ucSlaveAddr, tSMBusWrCmdReadDPCfgVdoSelf[0].uc
              -CommandCode, 1, tSMBusWrCmdReadDPCfgVdoSelf[0].ucDataLength + 1, ((BYTE *)&tSMBusWrCmdReadDPCfgVdoSelf[0].ucDataLength),
@@ -3774,7 +3774,7 @@ line level    source
                       case _GET_5400_DATA_ROLE:
                       case _GET_5400_CONNECT_FUJITSU:
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 60  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 60  
 
                           // UserCommonPortControllerGetStatus : tSMBusWrGetStatus
                           bResult = UserCommonTypecCommunicationRead(ucSlaveAddr, tSMBusRDGetStatus[0].ucCommandCode, 1,
@@ -3838,7 +3838,7 @@ line level    source
                           g_unSMBusRdDataPool.stRdDPlanesCfg.ucCommandCode = tSMBusRdCmdReadDPCfgVdo[0].ucCommandCode;
               
                           break;
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 61  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 61  
 
               
                       case _GET_5400_FW_VERSION:
@@ -3902,7 +3902,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Ask User Port Controller to Reconnect
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 62  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 62  
 
               // Input Value  : ucInputPort --> Input Port
               // Output Value : Operation result (Fail/Success)
@@ -3966,7 +3966,7 @@ line level    source
                   // Polling Write Command Operation Status
                   if(UserCommonTypecCommunicationPollingPDReady(ucSlaveAddr, 100, ucInputPort) == _FAIL)
                   {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 63  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 63  
 
                       return _FAIL;
                   }
@@ -4030,7 +4030,7 @@ line level    source
               #endif  // End of #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 64  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 64  
 
                       case _D6_INPUT_PORT:
               
@@ -4094,7 +4094,7 @@ line level    source
               //--------------------------------------------------
               EnumTypeCLenovoAltModeStatus UserCommonPortControllerGet5400LenovoAltModeReady(BYTE ucInputPort)
               {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 65  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 65  
 
                   BYTE pucModeInfo[2] = {0x00, 0x00};
               
@@ -4158,7 +4158,7 @@ line level    source
                           // Update Lenovo Alt. Mode Status Every 50ms, Otherwise Return Last Status
                           if(GET_TYPE_C_5400_DETECT_LENOVO_ALT_MODE(_D1_INPUT_PORT) == _FALSE)
                           {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 66  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 66  
 
                               return SysTypeCGetLenovoAltModeReady(_D1_INPUT_PORT);
                           }
@@ -4222,7 +4222,7 @@ line level    source
                               CLR_TYPE_C_5400_DETECT_LENOVO_ALT_MODE(_D6_INPUT_PORT);
                               ScalerTimerActiveTimerEvent(50, _SYSTEM_TIMER_EVENT_D6_TYPE_C_LENOVO_ALT_MODE_DETECT);
                           }
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 67  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 67  
 
               
                           // Read 5400 Info Via IIC Command
@@ -4286,7 +4286,7 @@ line level    source
               
                           // Detect Port Partner Lenovo Device Type Every 100ms, Otherwise Return _TYPE_C_LENOVO_DEVICE_
              -TYPE_NONE
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 68  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 68  
 
                           if(GET_TYPE_C_5400_DETECT_LENOVO_DEVICE_TYPE(_D0_INPUT_PORT) == _FALSE)
                           {
@@ -4350,7 +4350,7 @@ line level    source
              -TYPE_NONE
                           if(GET_TYPE_C_5400_DETECT_LENOVO_DEVICE_TYPE(_D6_INPUT_PORT) == _FALSE)
                           {
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 69  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 69  
 
                               return _TYPE_C_LENOVO_DEVICE_TYPE_NONE;
                           }
@@ -4414,7 +4414,7 @@ line level    source
                               pucSystemInfo[1] = 0x00;
                           }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 70  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 70  
 
                           stLenovoSysEvent.b1SystemEvent = (bit)(pucSystemInfo[0] & _BIT0);
                           stLenovoSysEvent.enumSystemState = (pucSystemInfo[0] & (_BIT3 | _BIT2 | _BIT1)) >> 1;
@@ -4478,7 +4478,7 @@ line level    source
                               }
                           }
               
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 71  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 71  
 
                           memcpy(&stAckCCCI, &tSMBusWrCmdAckCCCI[0], tSMBusWrCmdAckCCCI[0].ucDataLength + 2);
               
@@ -4542,7 +4542,7 @@ line level    source
                       SET_TYPE_C_5400_DETECT_LENOVO_ALT_MODE(ucInputPort);
                       SET_TYPE_C_5400_LENOVO_ALT_MODE_URGENT_EVENT();
                       ScalerTimerActiveTimerEvent(300, _SYSTEM_TIMER_EVENT_TYPE_C_LENOVO_ALT_MODE_URGENT_EVENT_TIMEOUT);
-C51 COMPILER V8.12   USERCOMMONPORTCONTROLLERRTS5400                                       09/16/2026 20:28:48 PAGE 72  
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERRTS5400                                   09/18/2026 20:39:45 PAGE 72  
 
                   }
               }

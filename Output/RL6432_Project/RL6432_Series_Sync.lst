@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_SYNC
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_SYNC
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_Sync.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Sync.c LARGE OPTIMIZE
-                    -(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\H
-                    -eader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\L
-                    -ib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL
-                    -6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Heade
-                    -r;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Us
-                    -er\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Heade
-                    -r) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432_
-                    -Series_Sync.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_Sync.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Sync.c LARGE OPTIM
+                    -IZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syste
+                    -m\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunctio
+                    -n\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler
+                    -\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\He
+                    -ader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.
+                    -\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\He
+                    -ader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL64
+                    -32_Series_Sync.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_Sync.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          #if(_DIGITAL_PORT_SUPPORT == _ON)
   46          void ScalerSyncHdcpEnableDownLoadKey(bit bEnable);
   47          void ScalerSyncHdcpDownLoadBKsv(BYTE ucSubAddr, BYTE ucLength, BYTE *pucReadArray);
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 2   
 
   48          void ScalerSyncHdcpDownLoadKey(WORD usLength, BYTE *pucReadArray);
   49          #if(_HDCP_1_4_KEY_LOCATION == _TABLE_LOCATION_EFUSE)
@@ -126,7 +126,7 @@ line level    source
  107   2              // Enable HDCP Block and Key download port
  108   2              ScalerSetBit(PB_17_DP_HDCP_CONTROL, ~(_BIT7 | _BIT0), (_BIT7 | _BIT0));
  109   2      
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 3   
 
  110   2              // Set Km Clock to Xtal Clock
  111   2              ScalerSetBit(PB_1A_HDCP_IRQ, ~_BIT3, 0x00);
@@ -190,7 +190,7 @@ line level    source
  169   2              ScalerSetBit(P72_AE_TMDS_RPS, ~(_BIT1 | _BIT0), _BIT0);
  170   2      
  171   2              // Manual Select Key SRAM Access Right
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 4   
 
  172   2              ScalerSetBit(P72_A9_TMDS_ABC0, ~_BIT4, 0x00);
  173   2      
@@ -254,7 +254,7 @@ line level    source
               #endif
  231   2      
  232   2      #if(_D3_TMDS_SUPPORT == _ON)
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 5   
 
  233   2      
  234   2              // Disable Key download port
@@ -318,7 +318,7 @@ line level    source
  292   2          }
  293   1      
  294   1          DebugMessageDigital("8. HDCP Bksv Backup", g_pucHdcpBksvBackup[0]);
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 6   
 
  295   1          DebugMessageDigital("8. HDCP Bksv Backup", g_pucHdcpBksvBackup[1]);
  296   1          DebugMessageDigital("8. HDCP Bksv Backup", g_pucHdcpBksvBackup[2]);
@@ -382,7 +382,7 @@ line level    source
               {
                   WORD usIndex = 0;
               
-C51 COMPILER V8.12   RL6432_SERIES_SYNC                                                    09/16/2026 20:28:33 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SYNC                                                09/18/2026 20:39:28 PAGE 7   
 
                   ScalerSetByte(P24_A1_EFUSE_BURN_IN_1, (usSubAddr + 320) / 2);
               

@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_EFUSE                                                   09/16/2026 20:28:40 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/18/2026 20:39:35 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_EFUSE
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_EFUSE
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_Efuse.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Efuse.c LARGE OPTIMIZ
-                    -E(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\
-                    -Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\
-                    -Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\R
-                    -L6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Head
-                    -er;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\U
-                    -ser\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Head
-                    -er) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432
-                    -_Series_Efuse.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_Efuse.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Efuse.c LARGE OPTI
+                    -MIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syst
+                    -em\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFuncti
+                    -on\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scale
+                    -r\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\H
+                    -eader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;
+                    -.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\H
+                    -eader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6
+                    -432_Series_Efuse.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_Efuse.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          // Description  : M2PLL Power COntrol.
   46          // Input Value  : enumEfuseDataState, pucEfuseData
   47          // Output Value : None
-C51 COMPILER V8.12   RL6432_SERIES_EFUSE                                                   09/16/2026 20:28:40 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/18/2026 20:39:35 PAGE 2   
 
   48          //--------------------------------------------------
   49          void ScalerEfuseGetData(EnumEfuseDataState enumEfuseDataState, BYTE ucEfuseLength, BYTE *pucEfuseData)

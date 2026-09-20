@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RL6432_SERIES_OSD
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_OSD
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RL6432_Series_Osd.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Osd.c LARGE OPTIMIZE(
-                    -9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\He
-                    -ader;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Li
-                    -b\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6
-                    -432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header
-                    -;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\Use
-                    -r\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header
-                    -) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL6432_S
-                    -eries_Osd.lst) OBJECT(.\Output\RL6432_Project\RL6432_Series_Osd.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Osd.c LARGE OPTIMI
+                    -ZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System
+                    -\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction
+                    -\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\
+                    -RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Hea
+                    -der;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\
+                    -User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Hea
+                    -der) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RL643
+                    -2_Series_Osd.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RL6432_Series_Osd.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
              -dDoubleHeightType);
   45          void ScalerOsdMapRotation(EnumOsdRotateType enumOsdRotateType, EnumOsdRotateMapA enumOsdRotateMapA, BYTE u
              -cMapARowSize, EnumOsdRotateMapB enumOsdRotateMapB, BYTE ucMapBRowSize, EnumOsdRotateFontLib enumOsdRotateFontLib);
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 2   
 
   46          
   47          //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
   98   1      
   99   1          ucTemp = ScalerGetByte(P3A_41_FRAME_CTRL_41);
  100   1      
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 3   
 
  101   1          // _BIT2 : Enable Font A Remapping, _BIT1 : Enable Font B Remapping.
  102   1          ScalerSetBit(P3A_41_FRAME_CTRL_41, ~(_BIT2 | _BIT1), ((enumOsdRotateMapA << 2) | (enumOsdRotateMapB <<
@@ -190,7 +190,7 @@ line level    source
  159   3                      ScalerSetByte(P3A_41_FRAME_CTRL_41, (_BIT3)); // _OSD_ROTATE_CW
  160   3                      ScalerOsdFontLibraryRotation();
  161   3                      break;
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 4   
 
  162   3      
  163   3                  case _OSD_ROTATE_DEGREE_180:
@@ -254,7 +254,7 @@ line level    source
  218   1          {
  219   2              ScalerOsdPositionOffset(_OSD_POSITION_OFFSET_WINDOW, X_POS(10), Y_POS(0));
  220   2          }
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 5   
 
  221   1      
  222   1          // correct offset
@@ -318,7 +318,7 @@ line level    source
                           ScalerOsdPositionOffset(_OSD_POSITION_OFFSET_GLOBAL, X_POS(_OSD_POSITION_OFFSET_H - 1), Y_POS(
              -_OSD_POSITION_OFFSET_V));
                       }
-C51 COMPILER V8.12   RL6432_SERIES_OSD                                                     09/16/2026 20:28:29 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/18/2026 20:39:23 PAGE 6   
 
                       else
                       {
@@ -359,7 +359,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    326    ----
+   CODE SIZE        =    333    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       6
    PDATA SIZE       =   ----    ----

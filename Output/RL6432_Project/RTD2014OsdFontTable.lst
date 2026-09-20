@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE RTD2014OSDFONTTABLE
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSDFONTTABLE
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\RTD2014OsdFontTable.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdFontTable.c LARGE OPTIMIZE(9,SPEE
-                    -D) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.
-                    -\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Head
-                    -er;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Se
-                    -ries_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Ker
-                    -nel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD 
-                    -Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFI
-                    -NE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014OsdFont
-                    -Table.lst) OBJECT(.\Output\RL6432_Project\RTD2014OsdFontTable.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE User\RTD Series\RTD2014Osd\Code\RTD2014OsdFontTable.c LARGE OPTIMIZE(9,S
+                    -PEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Heade
+                    -r;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\H
+                    -eader;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432
+                    -_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\
+                    -Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\R
+                    -TD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) D
+                    -EFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\RTD2014OsdF
+                    -ontTable.lst) TABS(2) OBJECT(.\Output\RL6432_Project\RTD2014OsdFontTable.obj)
 
 line level    source
 
@@ -56,111 +56,111 @@ line level    source
   39          
   40          BYTE code tOSD_BOARD_UP_LEFT[] =
   41          {
-  42                   _iHKC_14, _iHKC_21,_REPEAT_,39,_iHKC_15,_END_,
+  42             _iHKC_14, _iHKC_21,_REPEAT_,39,_iHKC_15,_END_,
   43          };
   44          
   45          BYTE code tOSD_BOARD_DOWN_LEFT[] =
   46          {
-  47                   _iHKC_12, _iHKC_20,_REPEAT_,39,_iHKC_13,_END_,
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 2   
+  47             _iHKC_12, _iHKC_20,_REPEAT_,39,_iHKC_13,_END_,
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 2   
 
   48          };
   49          
   50          BYTE code tOSD_BOARD_UP_LEFT_MSG[] =
   51          {
-  52                   _iHKC_14, _iHKC_21,_REPEAT_,24,_iHKC_15,_END_,
+  52             _iHKC_14, _iHKC_21,_REPEAT_,24,_iHKC_15,_END_,
   53          };
   54          
   55          BYTE code tOSD_BOARD_DOWN_LEFT_MSG[] =
   56          {
-  57                   _iHKC_12, _iHKC_20,_REPEAT_,24,_iHKC_13,_END_,
+  57             _iHKC_12, _iHKC_20,_REPEAT_,24,_iHKC_13,_END_,
   58          };
   59          
   60          BYTE code tOSD_BOARD_UP_LEFT_INPUT_MSG[] =
   61          {
-  62                   _iHKC_14, _iHKC_21,_REPEAT_,11,_iHKC_15,_END_,
+  62             _iHKC_14, _iHKC_21,_REPEAT_,11,_iHKC_15,_END_,
   63          };
   64          
   65          BYTE code tOSD_BOARD_DOWN_LEFT_INPUT_MSG[] =
   66          {
-  67                   _iHKC_12, _iHKC_20,_REPEAT_,11,_iHKC_13,_END_,
+  67             _iHKC_12, _iHKC_20,_REPEAT_,11,_iHKC_13,_END_,
   68          };
   69          
   70          BYTE code tOSD_BOARD_UP_LEFT_MSG_HOTHEY[] =
   71          {
-  72                   _iHKC_14, _iHKC_21,_REPEAT_,28,_iHKC_15,_END_,
+  72             _iHKC_14, _iHKC_21,_REPEAT_,28,_iHKC_15,_END_,
   73          };
   74          
   75          BYTE code tOSD_BOARD_DOWN_LEFT_MSG_HOTHEY[] =
   76          {
-  77                   _iHKC_12, _iHKC_20,_REPEAT_,28,_iHKC_13,_END_,
+  77             _iHKC_12, _iHKC_20,_REPEAT_,28,_iHKC_13,_END_,
   78          };
   79          
   80          BYTE code tOSD_BOARD_UP_LEFT_MSG_HOTHEY1[] =
   81          {
-  82                   _iHKC_14, _iHKC_21,_REPEAT_,34,_iHKC_15,_END_,
+  82             _iHKC_14, _iHKC_21,_REPEAT_,34,_iHKC_15,_END_,
   83          };
   84          
   85          BYTE code tOSD_BOARD_DOWN_LEFT_MSG_HOTHEY1[] =
   86          {
-  87                   _iHKC_12, _iHKC_20,_REPEAT_,34,_iHKC_13,_END_,
+  87             _iHKC_12, _iHKC_20,_REPEAT_,34,_iHKC_13,_END_,
   88          };
   89          
   90          
   91          
   92          BYTE code tiOSD_MAIN_BIR_ICON[] =
   93          {
-  94          ___,_iHKC_01,_iHKC_02,_iHKC_03,_iHKC_04,___,_NEXT_,                             
-  95          ___,_iHKC_05,_iHKC_06,_iHKC_07,_iHKC_08,___,_END_,                              
+  94          ___,_iHKC_01,_iHKC_02,_iHKC_03,_iHKC_04,___,_NEXT_,       
+  95          ___,_iHKC_05,_iHKC_06,_iHKC_07,_iHKC_08,___,_END_,        
   96          };
   97          
   98          BYTE code tiOSD_MAIN_IMAGE_ICON[] =
   99          {
- 100          ___,_iHKC_09,_iHKC_0A,_iHKC_0B,_iHKC_0C,___,_NEXT_,                             
- 101          ___,_iHKC_0D,_iHKC_0E,_iHKC_0F,_iHKC_10,___,_END_,                              
+ 100          ___,_iHKC_09,_iHKC_0A,_iHKC_0B,_iHKC_0C,___,_NEXT_,       
+ 101          ___,_iHKC_0D,_iHKC_0E,_iHKC_0F,_iHKC_10,___,_END_,        
  102          };
  103          
  104          BYTE code tiOSD_MAIN_COLORTEMP_ICON[] =
  105          {
- 106          ___,_iHKC_11,_iHKC_12,_iHKC_13,_iHKC_14,___,_NEXT_,                             
- 107          ___,_iHKC_15,_iHKC_16,_iHKC_17,_iHKC_18,___,_END_,                              
+ 106          ___,_iHKC_11,_iHKC_12,_iHKC_13,_iHKC_14,___,_NEXT_,       
+ 107          ___,_iHKC_15,_iHKC_16,_iHKC_17,_iHKC_18,___,_END_,        
  108          };
  109          
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 3   
 
  110          BYTE code tiOSD_MAIN_OSDSETTING_ICON[] =
  111          {
- 112          ___,_iHKC_19,_iHKC_1A,_iHKC_1B,_iHKC_1C,___,_NEXT_,                             
- 113          ___,_iHKC_1D,_iHKC_1E,_iHKC_1F,_iHKC_20,___,_END_,                              
+ 112          ___,_iHKC_19,_iHKC_1A,_iHKC_1B,_iHKC_1C,___,_NEXT_,       
+ 113          ___,_iHKC_1D,_iHKC_1E,_iHKC_1F,_iHKC_20,___,_END_,        
  114          };
  115          BYTE code tiOSD_MAIN_RESET_ICON[] =
  116          {
- 117          ___,_iHKC_21,_iHKC_22,_iHKC_23,_iHKC_24,___,_NEXT_,                             
- 118          ___,_iHKC_25,_iHKC_26,_iHKC_27,_iHKC_28,___,_END_,                              
+ 117          ___,_iHKC_21,_iHKC_22,_iHKC_23,_iHKC_24,___,_NEXT_,       
+ 118          ___,_iHKC_25,_iHKC_26,_iHKC_27,_iHKC_28,___,_END_,        
  119          };
  120          
  121          BYTE code tiOSD_MAIN_MISC_ICON[] =
  122          {
- 123          ___,_iHKC_29,_iHKC_2A,_iHKC_2B,_iHKC_2C,___,_NEXT_,                             
- 124          ___,_iHKC_2D,_iHKC_2E,_iHKC_2F,_iHKC_30,___,_END_,                              
+ 123          ___,_iHKC_29,_iHKC_2A,_iHKC_2B,_iHKC_2C,___,_NEXT_,       
+ 124          ___,_iHKC_2D,_iHKC_2E,_iHKC_2F,_iHKC_30,___,_END_,        
  125          };
  126          
  127          BYTE code tOSD_MUTE_ICON[] =
  128          {
- 129                   0XBD, 0XBE,0XBF,0XC0,0XC1,_NEXT_,
- 130                   0XC2, 0XC3,0XC4,0XC5,0XC6,_NEXT_,
- 131                   0XC7, 0XC8,0XC9,0XCA,0XCB,_END_,
+ 129             0XBD, 0XBE,0XBF,0XC0,0XC1,_NEXT_,
+ 130             0XC2, 0XC3,0XC4,0XC5,0XC6,_NEXT_,
+ 131             0XC7, 0XC8,0XC9,0XCA,0XCB,_END_,
  132          };
  133          BYTE code tOSD_MUTE_ICON1[] =
  134          {
- 135                   0XCC, 0XCD,0XCE,0XCF,0XD0,_NEXT_,
- 136                   0XD1, 0XD2,0XD3,0XD4,0XD5,_NEXT_,
- 137                   0XD6, 0XD7,0XD8,0XD9,0XDA,_END_,
+ 135             0XCC, 0XCD,0XCE,0XCF,0XD0,_NEXT_,
+ 136             0XD1, 0XD2,0XD3,0XD4,0XD5,_NEXT_,
+ 137             0XD6, 0XD7,0XD8,0XD9,0XDA,_END_,
  138          };
  139          #if _ENABLE_MAIN_MENU_F_ICON
               BYTE code tOSD_Factory_F[] =
               {
-                       _iHKC_18,_END_,
+                 _iHKC_18,_END_,
               };
               
               #endif
@@ -168,48 +168,48 @@ line level    source
               
               BYTE code tOSD_ECO_STANDART_ICON[] =
               {
-                       0x04, 0X05,0X06,0X07,_NEXT_,
-                       0x14, 0X15,0X16,0X17,_NEXT_,
-                       0x24, 0X25,0X26,0X27,_END_,
-                       
+                 0x04, 0X05,0X06,0X07,_NEXT_,
+                 0x14, 0X15,0X16,0X17,_NEXT_,
+                 0x24, 0X25,0X26,0X27,_END_,
+                 
               };
               
               BYTE code tOSD_ECO_MOVIE_ICON[] =
               {
-                       0x0c, 0X0d,0X0e,0X0f,_NEXT_,
-                       0x1c, 0X1d,0X1e,0X1f,_NEXT_,
-                       0x2c, 0X2d,0X2e,0X2f,_END_,
+                 0x0c, 0X0d,0X0e,0X0f,_NEXT_,
+                 0x1c, 0X1d,0X1e,0X1f,_NEXT_,
+                 0x2c, 0X2d,0X2e,0X2f,_END_,
               };
               
               BYTE code tOSD_ECO_GAME_ICON[] =
               {
-                       0x08, 0X09,0X0a,0X0b,_NEXT_,
-                       0x18, 0X19,0X1a,0X1b,_NEXT_,
-                       0x28, 0X29,0X2a,0X2b,_END_,
+                 0x08, 0X09,0X0a,0X0b,_NEXT_,
+                 0x18, 0X19,0X1a,0X1b,_NEXT_,
+                 0x28, 0X29,0X2a,0X2b,_END_,
               };
               
               BYTE code tOSD_ECO_TEXT_ICON[] =
               {
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 4   
 
-                       0x30, 0X31,0X32,0X33,_NEXT_,
-                       0x38, 0X39,0X3a,0X3b,_NEXT_,
-                       0x40, 0X41,0X42,0X43,_END_,
+                 0x30, 0X31,0X32,0X33,_NEXT_,
+                 0x38, 0X39,0X3a,0X3b,_NEXT_,
+                 0x40, 0X41,0X42,0X43,_END_,
               };
               
               
               BYTE code tOSD_ECO_FPS_ICON[] =
               {
-                       0x00, 0X01,0X02,0X03,_NEXT_,
-                       0x10, 0X11,0X12,0X13,_NEXT_,
-                       0x20, 0X21,0X22,0X23,_END_,
+                 0x00, 0X01,0X02,0X03,_NEXT_,
+                 0x10, 0X11,0X12,0X13,_NEXT_,
+                 0x20, 0X21,0X22,0X23,_END_,
               };
               
               BYTE code tOSD_ECO_RTS_ICON[] =
               {
-                       0x34, 0X35,0X36,0X37,_NEXT_,
-                       0x3c, 0X3d,0X3e,0X3f,_NEXT_,
-                       0x44, 0X45,0X46,0X47,_END_,
+                 0x34, 0X35,0X36,0X37,_NEXT_,
+                 0x3c, 0X3d,0X3e,0X3f,_NEXT_,
+                 0x44, 0X45,0X46,0X47,_END_,
               };
               #endif
  192          #if(_NAVIGAT_MENU_SURPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
               {
                   _iHKC_1B, _iHKC_1C, _END_,
               };
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 5   
 
               
               BYTE code tOSD_iFACTORY_F_MAIN_OSD_ICON[] =
@@ -267,80 +267,80 @@ line level    source
  241          
  242          BYTE code tOSD_TYPE1_ICON[]=
  243          {
- 244                  0x11,0x12,0x13,0x14,_NEXT_,
- 245                  0x15,0x16,0x17,0x18,_END_,
+ 244            0x11,0x12,0x13,0x14,_NEXT_,
+ 245            0x15,0x16,0x17,0x18,_END_,
  246          };
  247          
  248          
  249          BYTE code tOSD_TYPE1_ICON1[]=
  250          {
- 251                  0x19,0x1A,0x1B,0x1C,_NEXT_,
- 252                  0x1D,0x1E,0x1F,0x20,_END_,
+ 251            0x19,0x1A,0x1B,0x1C,_NEXT_,
+ 252            0x1D,0x1E,0x1F,0x20,_END_,
  253          };
  254          
  255          BYTE code tOSD_TYPE2_ICON1[]=
  256          {
- 257                  0x00,0x00,0x00,0x21,0x22,0x00,0x00,0x00,_NEXT_,
- 258                  0x00,0x00,0x00,0x23,0x24,0x00,0x00,0x00,_NEXT_,
- 259                  0x25,0x26,0x27,0x28,0x29,0x2A,0x2B,0x2C,_NEXT_,
- 260                  0x2D,0x2E,0x2F,0x30,0x31,0x32,0x33,0x34,_NEXT_,
- 261                  0x00,0x00,0x00,0x35,0x36,0x00,0x00,0x00,_NEXT_,
- 262                  0x00,0x00,0x00,0x37,0x38,0x00,0x00,0x00,_END_,
+ 257            0x00,0x00,0x00,0x21,0x22,0x00,0x00,0x00,_NEXT_,
+ 258            0x00,0x00,0x00,0x23,0x24,0x00,0x00,0x00,_NEXT_,
+ 259            0x25,0x26,0x27,0x28,0x29,0x2A,0x2B,0x2C,_NEXT_,
+ 260            0x2D,0x2E,0x2F,0x30,0x31,0x32,0x33,0x34,_NEXT_,
+ 261            0x00,0x00,0x00,0x35,0x36,0x00,0x00,0x00,_NEXT_,
+ 262            0x00,0x00,0x00,0x37,0x38,0x00,0x00,0x00,_END_,
  263          };
  264          
  265          
  266          BYTE code tOSD_TYPE2_ICON2[]=
  267          {
- 268                  0x00,0x39,0x3A,0x3B,0x3C,0x3D,0x3E,0x00,_NEXT_,
- 269                  0x3F,0x40,0x41,0x42,0x43,0x44,0x45,0x46,_NEXT_,
- 270                  0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,_NEXT_,
- 271                  0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,_NEXT_,
- 272                  0x57,0x58,0x59,0x5A,0x5B,0x5C,0x5D,0x5E,_NEXT_,
- 273                  0x00,0x5F,0x60,0x61,0x62,0x63,0x64,0x00,_END_,
+ 268            0x00,0x39,0x3A,0x3B,0x3C,0x3D,0x3E,0x00,_NEXT_,
+ 269            0x3F,0x40,0x41,0x42,0x43,0x44,0x45,0x46,_NEXT_,
+ 270            0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,_NEXT_,
+ 271            0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,_NEXT_,
+ 272            0x57,0x58,0x59,0x5A,0x5B,0x5C,0x5D,0x5E,_NEXT_,
+ 273            0x00,0x5F,0x60,0x61,0x62,0x63,0x64,0x00,_END_,
  274          };
  275          
  276          BYTE code tOSD_TYPE2_ICON3[]=
  277          {
- 278                  0x00,0x00,0x00,0x65,0x66,0x00,0x00,0x00,_NEXT_,
- 279                  0x00,0x67,0x68,0x69,0x6A,0x6B,0x6C,0x00,_NEXT_,
- 280                  0x6D,0x6E,0x6F,0x70,0x71,0x72,0x73,0x74,_NEXT_,
- 281                  0x75,0x76,0x77,0x78,0x79,0x7A,0x7B,0x7C,_NEXT_,
- 282                  0x00,0x7D,0x7E,0x7F,0x80,0x81,0x82,0x00,_NEXT_,
- 283                  0x00,0x00,0x00,0x83,0x84,0x00,0x00,0x00,_END_,
+ 278            0x00,0x00,0x00,0x65,0x66,0x00,0x00,0x00,_NEXT_,
+ 279            0x00,0x67,0x68,0x69,0x6A,0x6B,0x6C,0x00,_NEXT_,
+ 280            0x6D,0x6E,0x6F,0x70,0x71,0x72,0x73,0x74,_NEXT_,
+ 281            0x75,0x76,0x77,0x78,0x79,0x7A,0x7B,0x7C,_NEXT_,
+ 282            0x00,0x7D,0x7E,0x7F,0x80,0x81,0x82,0x00,_NEXT_,
+ 283            0x00,0x00,0x00,0x83,0x84,0x00,0x00,0x00,_END_,
  284          };
  285          
  286          
  287          BYTE code tOSD_TYPE2_ICON4[]=
  288          {
- 289                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
- 290                  0x00,0x00,0x00,0x85,0x86,0x00,0x00,0x00,_NEXT_,
- 291                  0x00,0x87,0x88,0x89,0x8A,0x8B,0x8C,0x00,_NEXT_,
- 292                  0x00,0x8D,0x8E,0x8F,0x90,0x91,0x92,0x00,_NEXT_,
- 293                  0x00,0x00,0x00,0x93,0x94,0x00,0x00,0x00,_NEXT_,
- 294                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 6   
+ 289            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
+ 290            0x00,0x00,0x00,0x85,0x86,0x00,0x00,0x00,_NEXT_,
+ 291            0x00,0x87,0x88,0x89,0x8A,0x8B,0x8C,0x00,_NEXT_,
+ 292            0x00,0x8D,0x8E,0x8F,0x90,0x91,0x92,0x00,_NEXT_,
+ 293            0x00,0x00,0x00,0x93,0x94,0x00,0x00,0x00,_NEXT_,
+ 294            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 6   
 
  295          };
  296          
  297          BYTE code tOSD_TYPE2_ICON5[]=
  298          {
- 299                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
- 300                  0x00,0x95,0x96,0x97,0x98,0x99,0x9A,0x00,_NEXT_,
- 301                  0x00,0x9B,0x9C,0x9D,0x9E,0x9F,0xA0,0x00,_NEXT_,
- 302                  0x00,0xA1,0xA2,0xA3,0xA4,0xA5,0xA6,0x00,_NEXT_,
- 303                  0x00,0xA7,0xA8,0xA9,0xAA,0xAB,0xAC,0x00,_NEXT_,
- 304                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
+ 299            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
+ 300            0x00,0x95,0x96,0x97,0x98,0x99,0x9A,0x00,_NEXT_,
+ 301            0x00,0x9B,0x9C,0x9D,0x9E,0x9F,0xA0,0x00,_NEXT_,
+ 302            0x00,0xA1,0xA2,0xA3,0xA4,0xA5,0xA6,0x00,_NEXT_,
+ 303            0x00,0xA7,0xA8,0xA9,0xAA,0xAB,0xAC,0x00,_NEXT_,
+ 304            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
  305          };
  306          
  307          
  308          BYTE code tOSD_TYPE2_ICON6[]=
  309          {
- 310                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
- 311                  0x00,0x00,0x00,0xAD,0xAE,0x00,0x00,0x00,_NEXT_,
- 312                  0x00,0xAF,0xB0,0xB1,0xB2,0xB3,0xB4,0x00,_NEXT_,
- 313                  0x00,0xB5,0xB6,0xB7,0xB8,0xB9,0xBA,0x00,_NEXT_,
- 314                  0x00,0x00,0x00,0xBB,0xBC,0x00,0x00,0x00,_NEXT_,
- 315                  0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
+ 310            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_NEXT_,
+ 311            0x00,0x00,0x00,0xAD,0xAE,0x00,0x00,0x00,_NEXT_,
+ 312            0x00,0xAF,0xB0,0xB1,0xB2,0xB3,0xB4,0x00,_NEXT_,
+ 313            0x00,0xB5,0xB6,0xB7,0xB8,0xB9,0xBA,0x00,_NEXT_,
+ 314            0x00,0x00,0x00,0xBB,0xBC,0x00,0x00,0x00,_NEXT_,
+ 315            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
  316          };
  317          #if(_DEF_MENU_LOCK)
               BYTE code tOSD_MENULOCK_ICON0[]=
@@ -382,7 +382,7 @@ line level    source
  352          //****************************************************************************
  353          //--------------------------------------------------
  354          // Description  :
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 7   
 
  355          // Input Value  : None
  356          // Output Value : None
@@ -391,10 +391,10 @@ line level    source
  359          {
  360   1          WORD xdata usOsdAddr = (WORD)ucRow * g_ucOsdWidth + ucCol;
  361   1          BYTE xdata ucByte0 = 0x4C;
- 362   1              if(ucPage == 1)
- 363   1              {
- 364   2                      ucByte0 = 0x6C;
- 365   2              }
+ 362   1        if(ucPage == 1)
+ 363   1        {
+ 364   2          ucByte0 = 0x6C;
+ 365   2        }
  366   1      #if(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE)
                   if(GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_90)
                   {
@@ -446,7 +446,7 @@ line level    source
  414   2              {
  415   3                  ucHTemp++;
  416   3                  pucArray++;
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 8   
 
  417   3              }
  418   2              else if(*pucArray == _REPEAT_)
@@ -510,7 +510,7 @@ line level    source
  476   1          ScalerOsdCommandAllByte(usOsdAddr + g_usFontSelectStart, ucByte0, ucIcon, ucByte2);
  477   1      }
  478          
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 9   
 
  479          
  480          void OsdFontPut4BitTable(BYTE ucRow, BYTE ucCol, BYTE *pucArray)
@@ -574,7 +574,7 @@ line level    source
  538   3                  if((ucHTemp == ucOsdWidth) && (*(pucArray + 1) != _NEXT_))
  539   3                  {
  540   4                      ucRow++;
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 10  
 
  541   4                      ucHTemp = ucCol;
  542   4                  }
@@ -588,43 +588,43 @@ line level    source
               
               void OsdFontPut1BitTable_LOGO(BYTE ucRow, BYTE ucCol, BYTE *pucArray, BYTE ucColor, BYTE ucPage)
               {
-                      BYTE ucOsdWidth = 0;
-                      BYTE ucCount = 0;
-                      BYTE ucHTemp = ucCol;
+                BYTE ucOsdWidth = 0;
+                BYTE ucCount = 0;
+                BYTE ucHTemp = ucCol;
               
               #if(_OSD_ROTATE_FUNCTION == _OSD_ROTATE_SOFTWARE)
-                      if((GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_90) ||
-                         (GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_270))
-                      {
-                              ucOsdWidth = g_ucOsdHeight;
-                      }
-                      else
+                if((GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_90) ||
+                   (GET_OSD_ROTATE_STATUS() == _OSD_ROTATE_DEGREE_270))
+                {
+                  ucOsdWidth = g_ucOsdHeight;
+                }
+                else
               #endif
-                      {
-                              ucOsdWidth = g_ucOsdWidth;
-                      }
+                {
+                  ucOsdWidth = g_ucOsdWidth;
+                }
               
-                      while(*pucArray != _END_)
-                      {
-                              if(*pucArray == _NEXT_)
-                              {
-                                      ucRow++;
-                                      ucHTemp =ucCol;
-                                      pucArray++;
-                              }
-                              else
-                              {
-                                      OsdFontPut1Bit(ucRow, ucHTemp, *pucArray, ucColor, ucPage);
-                                      ucHTemp++;
+                while(*pucArray != _END_)
+                {
+                  if(*pucArray == _NEXT_)
+                  {
+                    ucRow++;
+                    ucHTemp =ucCol;
+                    pucArray++;
+                  }
+                  else
+                  {
+                    OsdFontPut1Bit(ucRow, ucHTemp, *pucArray, ucColor, ucPage);
+                    ucHTemp++;
               
-                                      if((ucHTemp == ucOsdWidth) && (*(pucArray + 1) != _NEXT_))
-                                      {
-                                              ucRow++;
-                                              ucHTemp =ucCol;
-                                      }
-                                      pucArray++;
-                              }
-                      }
+                    if((ucHTemp == ucOsdWidth) && (*(pucArray + 1) != _NEXT_))
+                    {
+                      ucRow++;
+                      ucHTemp =ucCol;
+                    }
+                    pucArray++;
+                  }
+                }
               }
               #endif
  592          
@@ -638,7 +638,7 @@ line level    source
  599          {
  600   1          WORD xdata usOsdAddr = (WORD)ucRow * g_ucOsdWidth + ucCol;
  601   1          BYTE xdata ucByte0 = 0;
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 11  
 
  602   1          BYTE xdata ucByte2 = 0;
  603   1      
@@ -702,7 +702,7 @@ line level    source
  659   2              {
  660   3                  ucCount = *(pucArray + 1) - 1;
  661   3      
-C51 COMPILER V8.12   RTD2014OSDFONTTABLE                                                   09/16/2026 20:29:08 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/18/2026 20:40:09 PAGE 12  
 
  662   3                  while(ucCount > 0)
  663   3                  {
@@ -751,7 +751,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1009    ----
+   CODE SIZE        =   1025    ----
    CONSTANT SIZE    =    574    ----
    XDATA SIZE       =   ----      44
    PDATA SIZE       =   ----    ----

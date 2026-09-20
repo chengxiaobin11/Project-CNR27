@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERAUDIO
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERAUDIO
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerAudio.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerAudio.c LARGE OPTIMIZE(9,SPEED) INC
-                    -DIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Kerne
-                    -l\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;.\K
-                    -ernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Series_C
-                    -ommon\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel\Us
-                    -er Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Factor
-                    -y\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(_PR
-                    -OJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerAudio.lst) OBJ
-                    -ECT(.\Output\RL6432_Project\ScalerAudio.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerAudio.c LARGE OPTIMIZE(9,SPEED) 
+                    -INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header;.\Ke
+                    -rnel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\Header;
+                    -.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_Serie
+                    -s_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\Kernel
+                    -\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RTD Fac
+                    -tory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DEFINE(
+                    -_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerAudio.lst) 
+                    -TABS(2) OBJECT(.\Output\RL6432_Project\ScalerAudio.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   45          
   46          #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
               StructAudioGenFreqParameter g_stAudioGenFreq;
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 2   
 
               #endif
   49          
@@ -126,7 +126,7 @@ line level    source
              -;
  102          #endif
  103          
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 3   
 
  104          void ScalerAudioDVCInitial(void);
  105          void ScalerAudioDVCVolumeAdjustType(bit bAdjustType);
@@ -190,7 +190,7 @@ line level    source
  163   1          ScalerAudioDigitalVolumeMute(bMute, usVolume);
  164   1      }
  165          
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 4   
 
  166          //--------------------------------------------------
  167          // Description  : Smooth adjust digital volume for mute/unmute
@@ -254,7 +254,7 @@ line level    source
  225          //--------------------------------------------------
  226          // Description  : Switch Audio Input Port For Each Audio Output
  227          // Input Value  : ucAudioOutput, ucAudioInput
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 5   
 
  228          // Output Value : None
  229          //--------------------------------------------------
@@ -318,7 +318,7 @@ line level    source
  286          // Description  : Get Audio Sampling Freq Packet
  287          // Input Value  : EnumAudioSamplingFreqType
  288          // Output Value : EnumAudioSamplingFreqPacket
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 6   
 
  289          //--------------------------------------------------
  290          EnumAudioSamplingFreqPacket ScalerAudioGetSamplingFreqPacket(EnumAudioSamplingFreqType enumSamplingFreqTyp
@@ -382,7 +382,7 @@ line level    source
                               }
                           }
               #else
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 7   
 
  348   2              case _AUDIO_FREQ_176_4K:
  349   2                  return _AUDIO_FREQ_PACKET_176_4K;
@@ -446,7 +446,7 @@ line level    source
  406   2                  break;
  407   2      
  408   2              case _AUDIO_FREQ_48K:
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 8   
 
  409   2              case _AUDIO_FREQ_96K:
  410   2              case _AUDIO_FREQ_192K:
@@ -510,7 +510,7 @@ line level    source
  467   2      
  468   2              case _AUDIO_FREQ_44_1K:
  469   2      
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 9   
 
  470   2                  if(enumPortType == _PORT_DP)
  471   2                  {
@@ -574,7 +574,7 @@ line level    source
  529   2      
  530   2                  break;
  531   2      
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 10  
 
  532   2              case _AUDIO_FREQ_128K:
  533   2      
@@ -638,7 +638,7 @@ line level    source
  591   2                  {
  592   3                      ucSCode = _HDMI_SAMPLING_FREQ_44K_GROUP_S_CODE >> 3;
  593   3                  }
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 11  
 
  594   2      
  595   2                  break;
@@ -702,7 +702,7 @@ line level    source
  653   2                  {
  654   3                      ucSCode = _DP_SAMPLING_FREQ_48K_GROUP_S_CODE;
  655   3                  }
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 12  
 
  656   2                  else if(enumPortType == _PORT_HDMI)
  657   2                  {
@@ -766,7 +766,7 @@ line level    source
  714   2              case _AUDIO_FREQ_96K:
  715   2              case _AUDIO_FREQ_192K:
  716   2              case _AUDIO_FREQ_384K:
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 13  
 
  717   2              case _AUDIO_FREQ_768K:
  718   2      
@@ -830,7 +830,7 @@ line level    source
  775   2                  if(enumPortType == _PORT_DP)
  776   2                  {
  777   3                      ucSCode = _DP_SAMPLING_FREQ_44K_GROUP_S_CODE;
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 14  
 
  778   3                  }
  779   2                  else if(enumPortType == _PORT_HDMI)
@@ -894,7 +894,7 @@ line level    source
  837   2              case _AUDIO_FREQ_128K:
  838   2      
  839   2                  if(enumPortType == _PORT_DP)
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 15  
 
  840   2                  {
  841   3                      ucSCode = _DP_SAMPLING_FREQ_32K_GROUP_S_CODE >> 2;
@@ -958,7 +958,7 @@ line level    source
  899   2      
  900   2                  break;
  901   2      
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 16  
 
  902   2              case _AUDIO_FREQ_384K:
  903   2      
@@ -1022,7 +1022,7 @@ line level    source
  961   2                  else if(enumPortType == _PORT_HDMI)
  962   2                  {
  963   3                      ucSCode = _HDMI_SAMPLING_FREQ_48K_GROUP_S_CODE;
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 17  
 
  964   3                  }
  965   2      
@@ -1086,7 +1086,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 18  
 
                           // Set Frequency Parameters to 500Hz
                           SET_AUDIO_GEN_FREQ_S_CODE(_HDMI_SAMPLING_FREQ_32K_GROUP_S_CODE);
@@ -1150,7 +1150,7 @@ line level    source
 1085   2                  ucResult = 0x0B;
 1086   2                  break;
 1087   2      
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 19  
 
 1088   2              case 0x0C:
 1089   2              case 0x10:
@@ -1214,7 +1214,7 @@ line level    source
               //--------------------------------------------------
               BYTE ScalerAudioGetDigitalAudioPort_EXINT0(EnumAudioOutputType enumAudioOutput) using 1
               {
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 20  
 
                   switch(enumAudioOutput)
                   {
@@ -1278,7 +1278,7 @@ line level    source
              -_BIT1 | _BIT0));
 1209   1      
 1210   1      #if(_DAC_SPEAKER_OUTPUT_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 21  
 
 1211   1          // Power On for Line Out Power
 1212   1          ScalerSetBit(P6_C0_REG_DAC_POWER0, ~_BIT5, _BIT5);
@@ -1342,7 +1342,7 @@ line level    source
 1270          {
 1271   1          switch(enumDACOutput)
 1272   1          {
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 22  
 
 1273   2      #if((_DAC_SPEAKER_OUTPUT_SUPPORT == _ON) && (_DAC_HP_OUTPUT_SUPPORT == _ON))
 1274   2              case _AUDIO_DAC_OUTPUT_BOTH:
@@ -1406,7 +1406,7 @@ line level    source
 1332          
 1333          //--------------------------------------------------
 1334          // Description  : Clear DAC State Change
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 23  
 
 1335          // Input Value  : None
 1336          // Output Value : None
@@ -1470,7 +1470,7 @@ line level    source
 1394   1      
 1395   1          ScalerAudioDACSetState(_AUDIO_DAC_READY);
 1396   1      }
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 24  
 
 1397          
 1398          //--------------------------------------------------
@@ -1534,7 +1534,7 @@ line level    source
 1456   1          if(enumOutputType == _AUDIO_DAC_OUTPUT_SPEAKER)
 1457   1          {
 1458   2              // Set AOUT Gain After DAC Block
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 25  
 
 1459   2              ScalerSetBit(P6_C8_REG_OUT_GAIN, ~(_BIT6 | _BIT5 | _BIT4), (enumOutputGain << 4));
 1460   2          }
@@ -1598,7 +1598,7 @@ line level    source
                   // Select SPDIF from DVC path
                   ScalerSetBit(P6_E1_AD_SPDIF_CTRL, ~_BIT4, _BIT4);
               
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 26  
 
                   // Select I2S from DVC path
                   ScalerSetBit(P6_E7_AD_I2S_CTRL, ~_BIT5, _BIT5);
@@ -1662,7 +1662,7 @@ line level    source
 1572   2      
 1573   2              // Initial volume step size for DB gain mode
 1574   2              ScalerSetBit(P8_A1_DVC_VA_MSB, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 27  
 
 1575   2              ScalerSetByte(P8_A2_DVC_VA_LSB, 0x01);
 1576   2          }
@@ -1726,7 +1726,7 @@ line level    source
 1632   3                  while((ScalerGetBit(P8_A9_DVC_GAIN_DONE, _BIT7) != _BIT7) && (PDATA_WORD(1) < _DVC_VOLUME_MUTE
              -_TIMER));
 1633   3              }
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 28  
 
 1634   2          }
 1635   1          else // Unmute
@@ -1790,7 +1790,7 @@ line level    source
 1691          //--------------------------------------------------
 1692          // Description  : Set ZCD Timeout
 1693          // Input Value  : bMute, usVolume, bAdjustType
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 29  
 
 1694          // Output Value : None
 1695          //--------------------------------------------------
@@ -1854,7 +1854,7 @@ line level    source
 1752   1          ScalerAudioDVCVolumeAdjustType(_VOLUME_STEP_SIZE);
 1753   1      
 1754   1          // Get Sampling Rate
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 30  
 
 1755   1      #if(_LINE_IN_SUPPORT == _ON)
 1756   1          if(ScalerAudioGetInputSource() == _LINE_IN_AUDIO)
@@ -1918,7 +1918,7 @@ line level    source
 1813          // Input Value  : None
 1814          // Output Value : None
 1815          //--------------------------------------------------
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 31  
 
 1816          void ScalerAudioDVCResetProc(void)
 1817          {
@@ -1982,7 +1982,7 @@ line level    source
               
                           ScalerSetBit(P6_E2_AD_SPDIF_CS_0, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), _AUDIO_SPDIF_FS_32KHZ);
               
-C51 COMPILER V8.12   SCALERAUDIO                                                           09/16/2026 20:27:06 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERAUDIO                                                       09/18/2026 20:37:46 PAGE 32  
 
                           break;
               
@@ -2036,7 +2036,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2735    ----
+   CODE SIZE        =   2852    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      1      16
    PDATA SIZE       =   ----    ----

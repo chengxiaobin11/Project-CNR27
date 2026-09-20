@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE SCALERAUDIO_SEPTPHY
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERAUDIO_SEPTPHY
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\ScalerAudio_SeptPhy.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerAudio_SeptPhy.c LARGE OPTIMIZE(9,SP
-                    -EED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Header
-                    -;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib\He
-                    -ader;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL6432_
-                    -Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;.\K
-                    -ernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User\RT
-                    -D Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header) DE
-                    -FINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerAudio_
-                    -SeptPhy.lst) OBJECT(.\Output\RL6432_Project\ScalerAudio_SeptPhy.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\Scaler\ScalerFunction\Code\ScalerAudio_SeptPhy.c LARGE OPTIMIZE(9
+                    -,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\System\Hea
+                    -der;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunction\Lib
+                    -\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler\RL64
+                    -32_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\Header;
+                    -.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.\User
+                    -\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\Header)
+                    - DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\ScalerAud
+                    -io_SeptPhy.lst) TABS(2) OBJECT(.\Output\RL6432_Project\ScalerAudio_SeptPhy.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   41          // FUNCTION DECLARATIONS
   42          //****************************************************************************
   43          #if(_AUDIO_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 2   
 
   44          bit ScalerAudioGetAudioInputPortChanged(EnumAudioInputSource enumAudioSource, BYTE ucInputPort);
   45          void ScalerAudioSetUserDefineAudioFrequency(EnumAudioSamplingFreqType enumAudioFreq);
@@ -126,7 +126,7 @@ line level    source
               void ScalerAudioD2FwBoundaryTracking(void);
               void ScalerAudioD2FwTrackingReset(void);
               void ScalerAudioD2FwTrackingEventSet(void);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 3   
 
               void ScalerAudioD2TimeoutEventSet(void);
               BYTE ScalerAudioD2FwTrackingTimerEventPeriod(void);
@@ -190,7 +190,7 @@ line level    source
               void ScalerAudioD4FwTrackingHandler(void);
               void ScalerAudioD4FwTrackingInitial(void);
               void ScalerAudioD4DcodeSettingInitial(void);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 4   
 
               void ScalerAudioD4FwPreparingTracking(void);
               void ScalerAudioD4FwBoundaryTracking(void);
@@ -254,7 +254,7 @@ line level    source
  223          // FUNCTION DEFINITIONS
  224          //****************************************************************************
  225          #if(_AUDIO_SUPPORT == _ON)
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 5   
 
  226          //--------------------------------------------------
  227          // Description  : Get if Digital Audio Port Changed
@@ -318,7 +318,7 @@ line level    source
  285   1      #if(_D5_HDMI_SUPPORT == _ON)
                   SET_D5_SAMPLING_FREQ_USER_DEFINE(enumAudioFreq);
               #endif
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 6   
 
  288   1      }
  289          
@@ -382,7 +382,7 @@ line level    source
  347          {
  348   1          if(ucInputPort == ScalerAudioGetDigitalAudioPortMapping())
  349   1          {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 7   
 
  350   2              return _TRUE;
  351   2          }
@@ -446,7 +446,7 @@ line level    source
  409   2      #if(_D1_DP_EXIST == _ON)
                           ScalerSetBit_EXINT(PB9_74_AUD_FSM_CTRL_0, ~_BIT7, ((BYTE)bEnable) << 7);
               #endif
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 8   
 
  412   2                  break;
  413   2      
@@ -510,7 +510,7 @@ line level    source
  470   1      
  471   1          // Set I code of trend tracking
  472   1          ScalerSetByte(PB6_99_AUD_TRND_7, 0x00);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 9   
 
  473   1          ScalerSetByte(PB6_9A_AUD_TRND_8, 0x02);
  474   1      
@@ -574,7 +574,7 @@ line level    source
               
                   // D code Double Buffer
                   ScalerSetBit(PB6_7C_AUD_FSM_CTRL_1, ~_BIT7, _BIT7);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 10  
 
               #else
  533   1          // Set S code by HW auto
@@ -638,7 +638,7 @@ line level    source
  588          //--------------------------------------------------
  589          // Description  : DP Digital Audio Output Process
  590          // Input Value  : Enable or Disable
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 11  
 
  591          // Output Value : None
  592          //--------------------------------------------------
@@ -702,7 +702,7 @@ line level    source
              -AIN_DOWN_VALUE << 2) | _DP_DB_GAIN_UP_VALUE));
  650   2      
  651   2              // Initial Volume Step Size for DB Gain Mode
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 12  
 
  652   2              ScalerSetByte(PB6_77_DVC_VA, 0x01);
  653   2          }
@@ -766,7 +766,7 @@ line level    source
  705   2              // Set S code by FW manual
  706   2              ScalerSetBit(PB6_58_SCODE_0, ~_BIT7, _BIT7);
  707   2      
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 13  
 
  708   2              // Set D code by FW manual
  709   2              ScalerSetBit(PB6_80_AUD_PS_CTRL_0, ~_BIT6, 0x00);
@@ -830,7 +830,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Initial D1 DP audio setting
               // Input Value  : None
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 14  
 
               // Output Value : None
               //--------------------------------------------------
@@ -894,7 +894,7 @@ line level    source
               
                   // Disable Audio Coding Type Change INT
                   ScalerSetBit(PB9_3B_DP_IRQ_CTRL1, ~_BIT0, 0x00);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 15  
 
               
                   // Reset Coding Type Detect
@@ -958,7 +958,7 @@ line level    source
                   ScalerSetBit(PB9_58_SCODE_0, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _DP_SAMPLING_FR
              -EQ_32K_GROUP_S_CODE);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 16  
 
                   // S code for 44.1kHz
                   ScalerSetBit(PB9_59_SCODE_1, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _DP_SAMPLING_FR
@@ -1022,7 +1022,7 @@ line level    source
               // Description  : Set ZCD Timeout for DP Audio
               // Input Value  : bAdjustType, enumSamplingFreqPacket
               // Output Value : None
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 17  
 
               //--------------------------------------------------
               void ScalerAudioD1DPSetDVCWindowSize(bit bAdjustType, EnumAudioSamplingFreqPacket enumSamplingFreqPacket)
@@ -1086,7 +1086,7 @@ line level    source
                       ScalerSetByte(PB9_77_DVC_VA, _DP_VOLUME_STEP_SIZE_VALUE);
                   }
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 18  
 
                   // DP Audio DVC Window Setting
                   ScalerAudioD1DPSetDVCWindowSize(bAdjustType, _AUDIO_FREQ_PACKET_48K);
@@ -1150,7 +1150,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerAudioD1AudioFrequencyMode_EXINT0(EnumAudioFreqTrackingMode enumAudioFreqTrackingMode) using 1
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 19  
 
               {
                   if(enumAudioFreqTrackingMode == _AUDIO_TRACKING_AUTO_LOAD_MODE)
@@ -1214,7 +1214,7 @@ line level    source
                   if(ScalerGetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_03_PORT_PAGE71_HDMI_AFCR, _BIT4) == _BIT4)
                   {
                       return _ENABLE;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 20  
 
                   }
                   else
@@ -1278,7 +1278,7 @@ line level    source
                       else if(enumAudioLeftRightChannelSelect == _AUDIO_RIGHT_CHANNEL)
                       {
                           // HDMI MAC DVC Full Gain Control
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 21  
 
                           ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_07_PORT_PAGE71_HDMI_MAG_M_FINAL, ~_BIT2, 0x00)
              -;
@@ -1342,7 +1342,7 @@ line level    source
               void ScalerAudioD2DigitalDetectProc(void)
               {
                   if(ScalerAudioD2SamplingFreqDetect() != 0x00)
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 22  
 
                   {
                       // Enable Audio output
@@ -1406,7 +1406,7 @@ line level    source
                               ScalerTimerReactiveTimerEvent(_AUDIO_DYNAMIC_I_CODE_TIMER_MS, _SCALER_TIMER_EVENT_AUDIO_D2
              -_LOAD_STABLE_I_CODE);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 23  
 
                               SET_AUDIO_D2_ICODE_RELOADED();
                           }
@@ -1470,7 +1470,7 @@ line level    source
               // Description  : Get D2 Audio Detected
               // Input Value  : None
               // Output Value : TRUE => Audio Detected
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 24  
 
               //--------------------------------------------------
               bit ScalerAudioD2GetAudioDetected(void)
@@ -1534,7 +1534,7 @@ line level    source
                   }
               
                   return _TRUE;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 25  
 
               }
               //--------------------------------------------------
@@ -1598,7 +1598,7 @@ line level    source
               // Input Value  : bOn
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 26  
 
               void ScalerAudioD2I2sSpdifChannelOutputSelect(EnumAudioIisSpdifOutput enumAudioIisSpdifOutput)
               {
@@ -1662,7 +1662,7 @@ line level    source
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_10_PORT_PAGE71_HDMI_CMCR, ~_BIT4, _BIT4);
               
                       // Load D code
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 27  
 
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_31_PORT_PAGE71_HDMI_WDCR0, ~_BIT6, _BIT6);
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_31_PORT_PAGE71_HDMI_WDCR0, ~_BIT6, 0x00);
@@ -1726,7 +1726,7 @@ line level    source
                                   ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_AUDIO_D2_FW_TRACKING_TIMEOUT);
                               }
                               else
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 28  
 
                               {
                                   // FW tracking - preparing tracking
@@ -1790,7 +1790,7 @@ line level    source
                   // Disable Auto Load S/D Code
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_8A_PORT_PAGE71_AUDIO_FREQDET, ~_BIT6, 0x00);
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_10_PORT_PAGE71_HDMI_CMCR, ~_BIT4, _BIT4);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 29  
 
               
                   // Initialize D Code for FW Audio Tracking
@@ -1854,7 +1854,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : D2 Pll Fw Tracking Process - Preparing Tracking
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 30  
 
               // Input Value  : None
               // Output Value : None
@@ -1918,7 +1918,7 @@ line level    source
                               // set stable count = 0
                               g_stHDMID2AudioFwTrackingInfo.ucAfifoTrackStableCnt = 0;
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 31  
 
                               DebugMessageAudio("D2 Audio: AFIFO current", ucAfifoCurrent);
                               DebugMessageAudio("D2 Audio: SUMC-", usbackupSumc);
@@ -1982,7 +1982,7 @@ line level    source
               
                               // Set D code
                               ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_14_PORT_PAGE71_HDMI_DCAPR1, LOBYTE(usback
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 32  
 
              -upSumc));
                               ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_13_PORT_PAGE71_HDMI_DCAPR0, HIBYTE(usback
@@ -2046,7 +2046,7 @@ line level    source
                       g_stHDMID2AudioFwTrackingInfo.b1AudioFwTrackStable = 0x01;
               
                       DebugMessageAudio("Audio : Find Stable D", usbackupSumc);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 33  
 
                   }
               }
@@ -2110,7 +2110,7 @@ line level    source
                   {
                       DebugMessageAudio("D2 Audio: Boundary down", g_stHDMID2AudioFwTrackingInfo.ucAfifoBackup);
                       DebugMessageAudio("D2 Audio: SUMC+", usbackupSumc);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 34  
 
               
                       if(ucAfifoCurrent < 0x08)
@@ -2174,7 +2174,7 @@ line level    source
                   // Enable Auto Load S Code
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_8A_PORT_PAGE71_AUDIO_FREQDET, ~_BIT6, _BIT6);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 35  
 
                   // Set Double Buffer bit
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_10_PORT_PAGE71_HDMI_CMCR, ~_BIT4, _BIT4);
@@ -2238,7 +2238,7 @@ line level    source
 2027   1          if(ScalerAudioD3SamplingFreqDetect() != 0x00)
 2028   1          {
 2029   2              // Enable Audio output
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 36  
 
 2030   2              ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_30_PORT_PAGE72_HDMI_AVMCR, ~(_BIT6 | _BIT5), (_BIT
              -6 | _BIT5));
@@ -2302,7 +2302,7 @@ line level    source
 2082   4      
 2083   4                      SET_AUDIO_D3_ICODE_RELOADED();
 2084   4                  }
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 37  
 
 2085   3              }
 2086   2          }
@@ -2366,7 +2366,7 @@ line level    source
 2141          //--------------------------------------------------
 2142          bit ScalerAudioD3GetAudioDetected(void)
 2143          {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 38  
 
 2144   1          // Check audio packet
 2145   1          if(GET_AUDIO_D3_PACKET_DETECT() == _FALSE)
@@ -2430,7 +2430,7 @@ line level    source
 2201   1      }
 2202          //--------------------------------------------------
 2203          // Description  : Initial D3 HDMI audio setting
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 39  
 
 2204          // Input Value  : None
 2205          // Output Value : None
@@ -2494,7 +2494,7 @@ line level    source
 2256   1          // Audio Normal Output
 2257   1          ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_30_PORT_PAGE72_HDMI_AVMCR, ~(_BIT6 | _BIT5), (_BIT6 | 
              -_BIT5));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 40  
 
 2258   1      
 2259   1          // Disable Audio Watchdog for FIFO Overflow/Underflow
@@ -2558,7 +2558,7 @@ line level    source
              -Q_44K_GROUP_D_CODE));
                   ScalerSetDataPortByte(P72_C9_HDMI_AP, _P72_CA_PT_14_PORT_PAGE72_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING_FRE
              -Q_44K_GROUP_D_CODE));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 41  
 
               
               #else // _FIX_SAMPLING_FREQ_TYPE == _FIX_FREQ_48KHZ
@@ -2622,7 +2622,7 @@ line level    source
               #endif
 2357   1      
 2358   1          // Enable Audio Freq Detect, Disable Samping Freq. Change INT
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 42  
 
 2359   1          ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_8A_PORT_PAGE72_AUDIO_FREQDET, ~(_BIT7 | _BIT3 | _BIT1 
              -| _BIT0), _BIT7);
@@ -2686,7 +2686,7 @@ line level    source
               #endif
 2416   1      
 2417   1          enumAudioFreq = ScalerGetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_8B_PORT_PAGE72_AUDIO_FREQ_RESULT, (_BI
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 43  
 
              -T3 | _BIT2 | _BIT1 | _BIT0));
 2418   1      
@@ -2750,7 +2750,7 @@ line level    source
 2474   1      
 2475   1          // DPLL power up
 2476   1          ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_38_PORT_PAGE72_HDMI_DPCR0, ~_BIT7, 0x00);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 44  
 
 2477   1      
 2478   1          // Delay 2000us
@@ -2814,7 +2814,7 @@ line level    source
 2533   1          else
 2534   1          {
 2535   2              // Enable SPDIF/I2S 4 lane Output
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 45  
 
 2536   2              ScalerSetDataPortByte(P72_C9_HDMI_AP, _P72_CA_PT_62_PORT_PAGE72_HDMI_AOCR, 0xFF);
 2537   2          }
@@ -2878,7 +2878,7 @@ line level    source
               // Output Value : _ENABLE or _DISABLE
               //--------------------------------------------------
               bit ScalerAudioD3GetInternalAudioGenEnable(void)
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 46  
 
               {
                   if(ScalerGetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_03_PORT_PAGE72_HDMI_AFCR, _BIT4) == _BIT4)
@@ -2942,7 +2942,7 @@ line level    source
                           // HDMI MAC DVC Mute Off Left channel
                           ScalerSetDataPortBit(P72_C9_HDMI_AP, _P72_CA_PT_07_PORT_PAGE72_HDMI_MAG_M_FINAL, ~(_BIT1 | _BI
              -T0), (_BIT1));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 47  
 
                       }
                       else if(enumAudioLeftRightChannelSelect == _AUDIO_RIGHT_CHANNEL)
@@ -3006,7 +3006,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 48  
 
               void ScalerAudioD3FwTrackingHandler(void)
               {
@@ -3070,7 +3070,7 @@ line level    source
                           break;
               
                       case _AUDIO_FW_TRACKING_PROCESS_PLAYBACK:
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 49  
 
               
                           if(GET_AUDIO_D3_FW_TRACKING_EVENT() == _TRUE)
@@ -3134,7 +3134,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 50  
 
               // Description  : Initial D code setting by fs
               // Input Value  : None
@@ -3198,7 +3198,7 @@ line level    source
                   // get current AFIFO waterlevel
                   ScalerGetDataPortByte(P72_C9_HDMI_AP, _P72_CA_PT_16_PORT_PAGE72_HDMI_FDDR, 1, &(ucAfifoCurrent), _NON_
              -AUTOINC);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 51  
 
               
                   // get current Dcode
@@ -3262,7 +3262,7 @@ line level    source
              -mc));
                           ScalerSetDataPortByte(P72_C9_HDMI_AP, _P72_CA_PT_13_PORT_PAGE72_HDMI_DCAPR0, HIBYTE(usbackupSu
              -mc));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 52  
 
               
                           // Set Double Buffer bit
@@ -3326,7 +3326,7 @@ line level    source
               
                               // set stable count = 0
                               g_stHDMID3AudioFwTrackingInfo.ucAfifoTrackStableCnt = 0;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 53  
 
               
                               DebugMessageAudio("D3 Audio: AFIFO current", ucAfifoCurrent);
@@ -3390,7 +3390,7 @@ line level    source
                   // check WL, adjust SUMC
                   WORD usbackupSumc = 0x00;
                   BYTE ucAfifoCurrent = 0x00;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 54  
 
               
                   // get current AFIFO waterlevel
@@ -3454,7 +3454,7 @@ line level    source
                       g_stHDMID3AudioFwTrackingInfo.ucAfifoBackup = ucAfifoCurrent;
               
                       // Set D code
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 55  
 
                       ScalerSetDataPortByte(P72_C9_HDMI_AP, _P72_CA_PT_14_PORT_PAGE72_HDMI_DCAPR1, LOBYTE(usbackupSumc))
              -;
@@ -3518,7 +3518,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Audio FW tracking timer event
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 56  
 
               // Input Value  : None
               // Output Value : None
@@ -3582,7 +3582,7 @@ line level    source
                           SET_AUDIO_D4_AUTO_LOAD_FREQ();
               
                           DebugMessageAudio("HDMI FRL D4 Audio Auto_Load Mode", 0);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 57  
 
                       }
               #endif
@@ -3646,7 +3646,7 @@ line level    source
               
                           // Disable Audio FIFO Tracking
                           ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_15_PORT_PAGE73_HDMI_PSCR, ~(_BIT3 | _BIT2), 0x
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 58  
 
              -00);
               
@@ -3710,7 +3710,7 @@ line level    source
                      (GET_AUDIO_D4_SAMPLING_FREQ() <= _AUDIO_FREQ_48K))
                   {
                       DebugMessageAudio("False : D4 Audio FW Tracking preparing", 0);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 59  
 
                       return _FALSE;
                   }
@@ -3774,7 +3774,7 @@ line level    source
                   // Disable AVMUTE function and enable Audio FIFO Tracking main control (I/P code)
                   ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_31_PORT_PAGE73_HDMI_WDCR0, ~(_BIT7 | _BIT5), _BIT5);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 60  
 
                   // Disable FIFO Boundary Tracking, Disable Trend Tracking
                   ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_15_PORT_PAGE73_HDMI_PSCR, ~(_BIT7 | _BIT6 | _BIT5 | _B
@@ -3838,7 +3838,7 @@ line level    source
              -BIT0), (_BIT1 | _BIT0));
               
                   // Bit2: When no audio or changing sampling rate, AFSM load double buffer one more.
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 61  
 
                   ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_9F_PORT_PAGE73_PRESET_AFSM_MOD, ~(_BIT7 | _BIT6 | _BIT
              -5 | _BIT4 | _BIT2), (_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT2));
@@ -3902,7 +3902,7 @@ line level    source
                   ScalerSetDataPortByte(P73_C9_HDMI_AP, _P73_CA_PT_14_PORT_PAGE73_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING_FRE
              -Q_48K_GROUP_D_CODE));
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 62  
 
               #endif
               
@@ -3966,7 +3966,7 @@ line level    source
               }
               //--------------------------------------------------
               // Description  : Load initial I Code
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 63  
 
               // Input Value  : None
               // Output Value : None
@@ -4030,7 +4030,7 @@ line level    source
                       {
                           ScalerSetBit(P6_D4_DA_CLK_CTRL, ~(_BIT7 | _BIT6), _BIT6);
                       }
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 64  
 
                       else
                       {
@@ -4094,7 +4094,7 @@ line level    source
                   // DPLL latch calibration enable
                   ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_38_PORT_PAGE73_HDMI_DPCR0, ~_BIT1, _BIT1);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 65  
 
                   // Delay 1000us
                   ScalerTimerDelayXms(2);
@@ -4158,7 +4158,7 @@ line level    source
               {
                   if(enumAudioFreqTrackingMode == _AUDIO_TRACKING_AUTO_LOAD_MODE)
                   {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 66  
 
                       // Set S code for auto load mode
                       ScalerSetDataPortByte(P73_C9_HDMI_AP, _P73_CA_PT_95_PORT_PAGE73_PRESET_S_CODE0, _HDMI_SAMPLING_FRE
@@ -4222,7 +4222,7 @@ line level    source
               // Description  : D4 Auido Speaker Testing Process
               // Input Value  : Enable or Disable
               // Output Value : None
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 67  
 
               //--------------------------------------------------
               void ScalerAudioD4InternalAudioGenSwitch(bit bOn, EnumAudioLeftRightChannelSelect enumAudioLeftRightChanne
@@ -4286,7 +4286,7 @@ line level    source
                       else
                       {
                           // HDMI MAC DVC Full Gain Control
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 68  
 
                           ScalerSetDataPortBit(P73_C9_HDMI_AP, _P73_CA_PT_07_PORT_PAGE73_HDMI_MAG_M_FINAL, ~_BIT2, _BIT2
              -);
@@ -4350,7 +4350,7 @@ line level    source
                               ScalerAudioD4FwTrackingInitial();
               
                               SET_AUDIO_D4_FW_TRACKING_EVENT();
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 69  
 
               
                               CLR_AUDIO_D4_FW_TRACKING_RESET();
@@ -4414,7 +4414,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 70  
 
                       default:
                           break;
@@ -4478,7 +4478,7 @@ line level    source
                       // Set D code for 32kHz
                       ScalerSetDataPortByte(P73_C9_HDMI_AP, _P73_CA_PT_13_PORT_PAGE73_HDMI_DCAPR0, HIBYTE(_HDMI_SAMPLING
              -_FREQ_32K_GROUP_D_CODE));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 71  
 
                       ScalerSetDataPortByte(P73_C9_HDMI_AP, _P73_CA_PT_14_PORT_PAGE73_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING
              -_FREQ_32K_GROUP_D_CODE));
@@ -4542,7 +4542,7 @@ line level    source
                           if((GET_AUDIO_D4_WL_TARGET_DIRECTION() == _AUDIO_WL_GOES_UP) &&
                              (ucAfifoCurrent >= (g_stHDMID4AudioFwTrackingInfo.ucAfifoBackup + 0x02)))
                           {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 72  
 
                               DebugMessageAudio("D4 Audio: AFIFO has gone up", ucAfifoCurrent);
               
@@ -4606,7 +4606,7 @@ line level    source
                           DebugMessageAudio("D4 Audio: AFIFO Full", ucAfifoCurrent);
                           DebugMessageAudio("D4 Audio: SUMC- Full", usbackupSumc);
                       }
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 73  
 
               
                       SET_AUDIO_D4_WL_TARGET_DIRECTION(_AUDIO_WL_GOES_DOWN);
@@ -4670,7 +4670,7 @@ line level    source
              -mc));
                           ScalerSetDataPortByte(P73_C9_HDMI_AP, _P73_CA_PT_13_PORT_PAGE73_HDMI_DCAPR0, HIBYTE(usbackupSu
              -mc));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 74  
 
               
                           // Set Double Buffer
@@ -4734,7 +4734,7 @@ line level    source
                      (ucAfifoCurrent > 0x18))
                   {
                       DebugMessageAudio("D4 Audio: Boundary up", g_stHDMID4AudioFwTrackingInfo.ucAfifoBackup);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 75  
 
                       DebugMessageAudio("D4 Audio: SUMC-", usbackupSumc);
               
@@ -4798,7 +4798,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 76  
 
               //--------------------------------------------------
               // Description  : D4 Pll Fw Tracking Reset
@@ -4862,7 +4862,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerAudioD4TimeoutEventSet(void)
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 77  
 
               {
                   SET_AUDIO_D4_FW_TRACKING_TIMEOUT();
@@ -4926,7 +4926,7 @@ line level    source
               #endif
                           // Enable Audio FIFO Tracking
                           ScalerSetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_15_PORT_PAGE74_HDMI_PSCR, ~(_BIT3 | _BIT2), (_
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 78  
 
              -BIT3 | _BIT2));
               
@@ -4990,7 +4990,7 @@ line level    source
               #if(_AUDIO_MANUAL_SAMPLING_FREQ_SUPPORT == _OFF)
                       if(GET_AUDIO_D5_AUTO_LOAD_FREQ() == _TRUE)
                       {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 79  
 
                           // Set User Define Frequency When No Audio
                           ScalerAudioD5AudioFrequencyMode(_AUDIO_TRACKING_MANNUAL_MODE);
@@ -5054,7 +5054,7 @@ line level    source
                   // Check Audio Tracking
                   if(ScalerGetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_15_PORT_PAGE74_HDMI_PSCR, (_BIT3 | _BIT2)) == 0x00)
                   {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 80  
 
                       DebugMessageAudio("False : D5 HDMI Audio Tracking Disable", 0);
                       return _FALSE;
@@ -5118,7 +5118,7 @@ line level    source
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_08_PORT_PAGE74_HDMI_MAG_L_FINAL, 0x00);
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_09_PORT_PAGE74_HDMI_MAG_R_FINAL, 0x00);
               #endif
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 81  
 
               
                   // Set wait time for load parameter
@@ -5182,7 +5182,7 @@ line level    source
                   // Change audio clk divider according to SYSCLK = 27MHz
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_8E_PORT_PAGE74_XTAL_DIV, _AUTO_FREQ_DETECT_XTAL_DIV);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 82  
 
                   // Set threshold to sepeerate sampling frequency
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_90_PORT_PAGE74_TH1, 0x00);
@@ -5246,7 +5246,7 @@ line level    source
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_95_PORT_PAGE74_PRESET_S_CODE0, _HDMI_SAMPLING_FREQ_32
              -K_GROUP_S_CODE);
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_96_PORT_PAGE74_PRESET_S_CODE1, _HDMI_SAMPLING_FREQ_44
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 83  
 
              -K_GROUP_S_CODE);
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_97_PORT_PAGE74_PRESET_S_CODE2, _HDMI_SAMPLING_FREQ_48
@@ -5310,7 +5310,7 @@ line level    source
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_25_PORT_PAGE74_HDMI_ICBPSR1, LOBYTE(_INITIAL_I_CODE))
              -;
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 84  
 
                   DebugMessageAudio("Load initial I code", _INITIAL_I_CODE);
               }
@@ -5374,7 +5374,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 85  
 
               // Description  : Initial D5 Auido PLL Settings
               // Input Value  : None
@@ -5438,7 +5438,7 @@ line level    source
               //--------------------------------------------------
               void ScalerAudioD5WatchDogProc(bit bOn)
               {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 86  
 
                   if(bOn == _ON)
                   {
@@ -5502,7 +5502,7 @@ line level    source
                       // Enable Auto Load S Code and D Code
                       ScalerSetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_8A_PORT_PAGE74_AUDIO_FREQDET, ~_BIT6, _BIT6);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 87  
 
                       // Set Double Buffer bit
                       ScalerSetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_10_PORT_PAGE74_HDMI_CMCR, ~_BIT4, _BIT4);
@@ -5566,7 +5566,7 @@ line level    source
               
                       // Disable audio FIFO and Enable audio internal generator
                       ScalerSetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_03_PORT_PAGE74_HDMI_AFCR, ~(_BIT6 | _BIT4 | _BIT3 
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 88  
 
              -| _BIT2 | _BIT1 | _BIT0), _BIT4);
               
@@ -5630,7 +5630,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 89  
 
                       DebugMessageAudio("D5 Aduio Test Off", ScalerGetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_03_PORT_PAG
              -E74_HDMI_AFCR, _BIT4));
@@ -5694,7 +5694,7 @@ line level    source
                           if(GET_AUDIO_D5_FW_TRACKING_EVENT() == _TRUE)
                           {
                               CLR_AUDIO_D5_FW_TRACKING_EVENT();
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 90  
 
               
                               // Find stable SUMC or already 4s --> boundary tracking
@@ -5758,7 +5758,7 @@ line level    source
               void ScalerAudioD5FwTrackingInitial(void)
               {
                   g_stHDMID5AudioFwTrackingInfo.b1AudioFwTrackStable = 0x00;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 91  
 
                   g_stHDMID5AudioFwTrackingInfo.ucAfifoTrackStableCnt = 0x00;
                   g_stHDMID5AudioFwTrackingInfo.ucAudioFreqRecord = ScalerGetDataPortBit(P74_C9_HDMI_AP, _P74_CA_PT_8B_P
@@ -5822,7 +5822,7 @@ line level    source
              -_FREQ_44K_GROUP_D_CODE));
                       ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_14_PORT_PAGE74_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING
              -_FREQ_44K_GROUP_D_CODE));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 92  
 
                   }
                   else if(GET_AUDIO_D5_SAMPLING_FREQ() == _AUDIO_FREQ_48K)
@@ -5886,7 +5886,7 @@ line level    source
                               {
                                   usbackupSumc -= (((_AUDIO_FW_TRCK_FIRST_STABLE_CNT / 2) - g_stHDMID5AudioFwTrackingInf
              -o.ucAfifoTrackStableCnt) * (ucAfifoCurrent - (g_stHDMID5AudioFwTrackingInfo.ucAfifoBackup + 0x01)));
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 93  
 
                               }
                               else
@@ -5950,7 +5950,7 @@ line level    source
                       {
                           if((GET_AUDIO_D5_WL_TARGET_DIRECTION() == _AUDIO_WL_GOES_DOWN) &&
                              (ucAfifoCurrent <= (g_stHDMID5AudioFwTrackingInfo.ucAfifoBackup - 0x02)))
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 94  
 
                           {
                               DebugMessageAudio("D5 Audio: AFIFO has gone down", ucAfifoCurrent);
@@ -6014,7 +6014,7 @@ line level    source
               
                           DebugMessageAudio("D5 Audio: AFIFO Empty", ucAfifoCurrent);
                           DebugMessageAudio("D5 Audio: SUMC+ Empty", usbackupSumc);
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 95  
 
                       }
               
@@ -6078,7 +6078,7 @@ line level    source
               
                       // Reset AFIFO water level backup
                       g_stHDMID5AudioFwTrackingInfo.ucAfifoBackup = ucAfifoCurrent;
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 96  
 
               
                       // Set D code
@@ -6142,7 +6142,7 @@ line level    source
               
                   SET_AUDIO_D5_FW_TRACKING_STATE(_AUDIO_FW_TRACKING_INITIAL);
               
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 97  
 
                   // Set I code of trend
                   ScalerSetDataPortByte(P74_C9_HDMI_AP, _P74_CA_PT_20_PORT_PAGE74_HDMI_ICTPSR0, 0x00);
@@ -6206,7 +6206,7 @@ line level    source
               {
                   if(GET_AUDIO_D5_FW_TRACKING_STATE() == _AUDIO_FW_TRACKING_PROCESS_PREPARING)
                   {
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 98  
 
                       return (_AUDIO_FW_TRCK_PREPARING_CHECK);
                   }
@@ -6270,7 +6270,7 @@ line level    source
 5594   1          ScalerSetBit(PBF_C0_MN_SCLKG_PLL_INSEL, ~_BIT0, _DPLL_VCORSTB_NORMAL_VALUE);
 5595   1      
 5596   1          // DPLL power up
-C51 COMPILER V8.12   SCALERAUDIO_SEPTPHY                                                   09/16/2026 20:27:32 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERAUDIO_SEPTPHY                                               09/18/2026 20:38:17 PAGE 99  
 
 5597   1          ScalerSetBit(PBF_BD_MN_SCLKG_PLL_PWR, ~_BIT7, 0x00);
 5598   1      
@@ -6314,7 +6314,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2604    ----
+   CODE SIZE        =   2620    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       8
    PDATA SIZE       =   ----    ----

@@ -1,17 +1,17 @@
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 1   
 
 
-C51 COMPILER V8.12, COMPILATION OF MODULE USERCOMMONFWUPDATEFOREGROUND
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONFWUPDATEFOREGROUND
 OBJECT MODULE PLACED IN .\Output\RL6432_Project\UserCommonFwUpdateForeground.obj
-COMPILER INVOKED BY: c:\Keil\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonFwUpdateForeground.c LARGE OPTIM
-                    -IZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Syste
-                    -m\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunctio
-                    -n\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Scaler
-                    -\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib\He
-                    -ader;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Header;.
-                    -\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory\He
-                    -ader) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\User
-                    -CommonFwUpdateForeground.lst) OBJECT(.\Output\RL6432_Project\UserCommonFwUpdateForeground.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Kernel\User Common Function\Code\UserCommonFwUpdateForeground.c LARGE OP
+                    -TIMIZE(9,SPEED) INCDIR(.\Output\RL6432;.\Project\Header;.\Pcb;.\Panel;.\Kernel\Device\Header;.\Kernel\Common;.\Kernel\Sy
+                    -stem\Header;.\Kernel\Scaler\ScalerFunction\Header;.\Kernel\Scaler\ScalerCommonFunction\Header;.\Kernel\Scaler\ScalerFunc
+                    -tion\Lib\Header;.\Kernel\Scaler\ScalerCommonFunction\Lib\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Header;.\Kernel\Sca
+                    -ler\RL6432_Series_Common\Header;.\Kernel\Scaler\RL6432_Series_Scaler\Lib\Header;.\Kernel\Scaler\RL6432_Series_Common\Lib
+                    -\Header;.\Kernel\User Common Function\Header;.\User\RTD Series\RTD2014Function\Header;.\User\RTD Series\RTD2014Osd\Heade
+                    -r;.\User\RTD Factory\Header;.\User\None Series\NoneFunction\Header;.\User\None Series\NoneOsd\Header;.\User\None Factory
+                    -\Header) DEFINE(_PROJECT=_RL6432_PROJECT,_SCALER_TYPE=_RL6432_SERIES) DEBUG OBJECTEXTEND PRINT(.\Output\RL6432_Project\U
+                    -serCommonFwUpdateForeground.lst) TABS(2) OBJECT(.\Output\RL6432_Project\UserCommonFwUpdateForeground.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               bit UserCommonFwUpdateForegroundHandler(void);
               void UserCommonFwUpdateForegroundSetHighPriProcess(void);
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 2   
 
               void UserCommonFwUpdateForegroundGetProjectIDAddrProcess(void);
               void UserCommonFwUpdateForegroundVerifyProjectIDProcess(void);
@@ -126,7 +126,7 @@ line level    source
              -R_EVENT_FW_UPDATE_FOREGROUND_EXIT);
                                       break;
                                   case _FW_UPDATE_FOREGROUND_OPCODE_START_REQ:
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 3   
 
                                       UserCommonFwUpdateForegroundStartProcess();
                                       ScalerTimerReactiveTimerEvent(_FW_UPDATE_FOREGROUND_EXIT_TIMER_COUNT, _SYSTEM_TIME
@@ -190,7 +190,7 @@ line level    source
                   // Send Reply
                   UserCommonFwUpdateForegroundSendReply(_FW_UPDATE_RESULT_IDLE_AND_SUCCESS);
               }
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 4   
 
               
               //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               #if((_DIGITAL_SIGNATURE_SUPPORT == _ON) && (_DIGITAL_SIGNATURE_TYPE == _DIGITAL_SIGNATURE_HW))
                   if(((_DUAL_BANK_USER_FW_CODE_SIZE * 65536) % g_stFwUpdateUserCommonInfo.usIspPageCount) != 0)
                   {
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 5   
 
                       UserCommonFwUpdateForegroundSendReply(_FW_UPDATE_RESULT_IDLE_AND_FAIL);
                       return;
@@ -318,7 +318,7 @@ line level    source
                       {
                           ScalerFlashErasePage(g_stFwUpdateUserCommonInfo.stUserDataInfo.ucUserDataBank, ucIndex);
                       }
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 6   
 
                   }
               
@@ -382,7 +382,7 @@ line level    source
                   }
                   g_stFwUpdateUserCommonInfo.ucCalCrc = UserCommonFwUpdateCalculateCrc(usIspLength, pucIspXram, g_stFwUp
              -dateUserCommonInfo.ucCalCrc);
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 7   
 
               #endif
               
@@ -446,7 +446,7 @@ line level    source
                           if(((WORD)_FLASH_PROGRAM_SIZE) < ((usCurrentAddress % _FLASH_PROGRAM_SIZE) + usProgramLength))
                           {
                               usProgramCurrentLength = (WORD)_FLASH_PROGRAM_SIZE -    (usCurrentAddress % 256);
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 8   
 
                           }
                           else
@@ -510,7 +510,7 @@ line level    source
                   BYTE ucResult = _FW_UPDATE_RESULT_IDLE_AND_SUCCESS;
               
                   if(GET_FW_UPDATE_VERIFY_ID_PASS() == _FALSE)
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 9   
 
                   {
                       UserCommonFwUpdateForegroundSendReply(_FW_UPDATE_RESULT_IDLE_AND_FAIL);
@@ -574,7 +574,7 @@ line level    source
               
               //---------------------------------------------------------
               // Description  :  Foreground Fw Update Change Mode
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 10  
 
               // Input Value  : None
               // Output Value : None
@@ -638,7 +638,7 @@ line level    source
                   if(ScalerFwUpdateForegroundGetStatus() == _TRUE)
                   {
                       if(SysPowerGetPowerStatus() == _POWER_STATUS_NORMAL)
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 11  
 
                       {
                           return GET_FW_UPDATE_FOREGROUND_HIGH_PRIORITY();
@@ -702,7 +702,7 @@ line level    source
                       return _TRUE;
                   }
               
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 12  
 
                   if(g_stFwUpdateUserCommonInfo.ulReceivedKeyAndSigLen > _DIGITAL_SIGNATURE_INFO_HEADER_SIZE)
                   {
@@ -766,7 +766,7 @@ line level    source
                                   g_stFwUpdateUserCommonInfo.usIspSigLen += usTmpSigLen;
                               }
                           }
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 13  
 
                       }
                       else
@@ -830,7 +830,7 @@ line level    source
              -R + _DIGITAL_SIGNATURE_INFO_HEADER_SIZE), usTmpKeyLen);
                               ScalerFlashWrite(g_stFwUpdateUserCommonInfo.stUserDataInfo.ucUserDataBank, usCurrentAddres
              -s, usTmpKeyLen, GET_ISP_XRAM_BUFFER(0));
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 14  
 
                               // Read Check
                               memset(pucReadBuf, 0xFF, sizeof(pucReadBuf));
@@ -894,7 +894,7 @@ line level    source
                   ScalerFwUpdateForegroundSceneBackup();
               }
               
-C51 COMPILER V8.12   USERCOMMONFWUPDATEFOREGROUND                                          09/16/2026 20:28:56 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONFWUPDATEFOREGROUND                                      09/18/2026 20:39:54 PAGE 15  
 
               //--------------------------------------------------
               // Description  : Foreground Fw Update Restore Scene
