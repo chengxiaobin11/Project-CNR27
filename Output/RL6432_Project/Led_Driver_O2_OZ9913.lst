@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 1   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LED_DRIVER_O2_OZ9913
@@ -62,7 +62,7 @@ line level    source
               
               //--------------------------------------------------
               // Opteration Status
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 2   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 2   
 
               //--------------------------------------------------
               #define _DEFAULT_STATUS_MODE                        0x00
@@ -126,7 +126,7 @@ line level    source
               #define _REG_ADDRESS_PWM6_DELAY_TIME_MSB            0x1B
               #define _REG_ADDRESS_PWM7_DELAY_TIME_LSB            0x1C
               #define _REG_ADDRESS_PWM7_DELAY_TIME_MSB            0x1D
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 3   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 3   
 
               #define _REG_ADDRESS_PWM8_DELAY_TIME_LSB            0x1E
               #define _REG_ADDRESS_PWM8_DELAY_TIME_MSB            0x1F
@@ -190,7 +190,7 @@ line level    source
               typedef enum
               {
                   _VSYNC_TRIGGERS_ON_RISING_EDGE  = 0x01,
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 4   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 4   
 
                   _VSYNC_TRIGGERS_ON_FALLING_EDGE,
                   _VSYNC_TRIGGERS_ON_BOTH_EDGE,
@@ -254,7 +254,7 @@ line level    source
               } EnumOCPThreshold;
               
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 5   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 5   
 
               //****************************************************************************
               // CODE TABLES
@@ -318,7 +318,7 @@ line level    source
                   if(*(pucDdcciArray + _DEBUG_I2C_SLAVE) != _DEVICE_LED_DRIVER_DEVICE_ADDRESS_DEBUG)
                   {
                       return _FALSE;
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 6   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 6   
 
                   }
               
@@ -382,7 +382,7 @@ line level    source
               //--------------------------------------------------
               void ExternalDeviceInterfaceLedDriverPwmEnable(bit bEnable)
               {
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 7   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 7   
 
                   BYTE pucTemp[3] =
                   {
@@ -446,7 +446,7 @@ line level    source
                   pucTemp[0] = _DEVICE_LED_DRIVER_DEVICE_ADDRESS_WRITE;
               
                   pucTemp[1] = ((enumDeviceLedDriverPwm == _DEVICE_LED_DRIVER_PWM_1) ? _REG_ADDRESS_PWM1_PLUS_WIDTH_LSB 
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 8   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 8   
 
              -:
                                 (enumDeviceLedDriverPwm == _DEVICE_LED_DRIVER_PWM_2) ? _REG_ADDRESS_PWM2_PLUS_WIDTH_LSB 
@@ -510,7 +510,7 @@ line level    source
               
                   BYTE pucTemp[2 + ((_PANEL_PWM_LOCAL_END - _PANEL_PWM_LOCAL_START + 1) * 2)] = {0};
                   BYTE ucLength = (_PANEL_PWM_LOCAL_END - _PANEL_PWM_LOCAL_START + 1);
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 9   
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 9   
 
               
                   WORD usDriverPWMBoost = (DWORD)_DEVICE_LED_DRIVER_PWM_MAX * _PANEL_LV_BOOST_MAX / _PANEL_LV_MAX;
@@ -574,7 +574,7 @@ line level    source
                   for(ucI = 0; ucI < ucLength; ucI++)
                   {
                       PDATA_DWORD(0) = 0;
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 10  
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 10  
 
               
                       for(ucJ = 0; ucJ < sizeof(tucPAANEL_LOCAL_PWM_TYPE); ucJ++)
@@ -638,7 +638,7 @@ line level    source
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_7) ? _REG_ADDRESS_PWM7_PLUS_WIDTH_LSB 
              -:
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_8) ? _REG_ADDRESS_PWM8_PLUS_WIDTH_LSB 
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 11  
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 11  
 
              -:
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_9) ? _REG_ADDRESS_PWM9_PLUS_WIDTH_LSB 
@@ -702,7 +702,7 @@ line level    source
               void ExternalDeviceLedDriverSetPwmDelay(void)
               {
                   BYTE ucI = 0;
-C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/18/2026 20:40:20 PAGE 12  
+C51 COMPILER V9.60.0.0   LED_DRIVER_O2_OZ9913                                              09/20/2026 19:45:04 PAGE 12  
 
                   BYTE pucTemp[4] = {0};
                   WORD usTempDelay = 0;

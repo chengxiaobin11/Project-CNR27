@@ -22,7 +22,7 @@
 //--------------------------------------------------
 // DDC Channel Select
 //--------------------------------------------------
-#define _DEBUG_DDC_CHANNEL_SEL                      _PCB_DEBUG_DDC
+#define _DEBUG_DDC_CHANNEL_SEL                      _DDC3//_PCB_DEBUG_DDC
 
 //--------------------------------------------------
 // RTD Tool IIC Debug by UserInterface Function
@@ -32,7 +32,7 @@
 //--------------------------------------------------
 // Debug Message Supported
 //--------------------------------------------------
-#define _DEBUG_MESSAGE_SYSTEM                       _OFF
+#define _DEBUG_MESSAGE_SYSTEM                       _ON
 #define _DEBUG_MESSAGE_SCALER                       _OFF
 #define _DEBUG_MESSAGE_ANALOG                       _OFF
 #define _DEBUG_MESSAGE_DIGITAL                      _OFF

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/18/2026 20:40:03 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/20/2026 19:44:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERINTERFACEDIMMING
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               EnumSDRCalibrationType UserInterfaceSDROCCOGCMode(void);
               EnumSDRPCMStatus UserInterfaceGetSDRPCMMode(void);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/18/2026 20:40:03 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/20/2026 19:44:50 PAGE 2   
 
               EnumSDROGCStatus UserInterfaceGetSDROGCMode(void);
               #if(_GLOBAL_DIMMING_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
               // Output Value : EnumSDROGCStatus
               //--------------------------------------------------
               EnumSDROGCStatus UserInterfaceGetSDROGCMode(void)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/18/2026 20:40:03 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/20/2026 19:44:50 PAGE 3   
 
               {
                   switch(GET_OSD_GAMMA())
@@ -190,7 +190,7 @@ line level    source
                           enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE6;
                           break;
                   }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/18/2026 20:40:03 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEDIMMING                                       09/20/2026 19:44:50 PAGE 4   
 
               
                   return enumOCCPCMGammaCTMatrix;

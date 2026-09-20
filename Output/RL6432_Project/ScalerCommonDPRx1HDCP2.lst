@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDPRX1HDCP2
@@ -62,7 +62,7 @@ line level    source
               BYTE g_pucDpRx1Hdcp2Rtx[8];
               BYTE g_pucDpRx1Hdcp2TxCaps[3];
               BYTE g_pucDpRx1Hdcp2Rn[8];
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 2   
 
               BYTE g_pucDpRx1Hdcp2Rrx[8];
               BYTE g_pucDpRx1Hdcp2VPrime[20];
@@ -126,7 +126,7 @@ line level    source
                   // Write AKE No Store Km
                   if((ScalerGetBit_EXINT(_REG_DP_RX1_HDCP2_ADDR_A3, _BIT7) == _BIT7) && (ScalerGetBit_EXINT(_REG_DP_RX1_
              -HDCP2_ADDR_A4, _BIT7) == _BIT7))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 3   
 
                   {
                       // CLR Flag
@@ -190,7 +190,7 @@ line level    source
               
                   // Write Stream ID Type
                   if((ScalerGetBit_EXINT(_REG_DP_RX1_HDCP2_ADDR_A3, _BIT5) == _BIT5) && (ScalerGetBit_EXINT(_REG_DP_RX1_
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 4   
 
              -HDCP2_ADDR_A4, _BIT5) == _BIT5))
                   {
@@ -254,7 +254,7 @@ line level    source
                   // Get kd
                   for(pData_EXINT[0] = 0; pData_EXINT[0] < 64; pData_EXINT[0]++)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 5   
 
                       if(pData_EXINT[0] < 16)
                       {
@@ -318,7 +318,7 @@ line level    source
                   PDATA_WORD_EXINT(1) = 8 * (pData_EXINT[1] + 3 + 64);
               
                   g_pucHdcp2HmacSha256Input[62] = pData_EXINT[2];
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 6   
 
                   g_pucHdcp2HmacSha256Input[63] = pData_EXINT[3];
               
@@ -382,7 +382,7 @@ line level    source
              -a_EXINT[1]));
                                   }
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 7   
 
                           }
                       }
@@ -446,7 +446,7 @@ line level    source
                           pData[3] = 0x32;
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 8   
 
               
                       default:
@@ -510,7 +510,7 @@ line level    source
                   for(pData_EXINT[0] = 0; pData_EXINT[0] < usLength; pData_EXINT[0]++)
                   {
                       ScalerDpRx1SetDpcdValue_EXINT0(pData_EXINT[1], pData_EXINT[2], pData_EXINT[3], pucReadArray[pData_
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 9   
 
              -EXINT[0]]);
                       PDATA_WORD_EXINT(1) = PDATA_WORD_EXINT(1) + 1;
@@ -574,7 +574,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 10  
 
                       default:
               
@@ -638,7 +638,7 @@ line level    source
                   // Get kd
                   for(pData[0] = 0; pData[0] < 64; pData[0]++)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 11  
 
                       if(pData[0] < 32)
                       {
@@ -702,7 +702,7 @@ line level    source
              -UE)
                   {
                       return _TRUE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 12  
 
                   }
               
@@ -766,7 +766,7 @@ line level    source
                   for(pData[0] = 0; pData[0] < 32; pData[0]++)
                   {
                       DebugMessageHDCP2("H prime", pucSHA256[pData[0]]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 13  
 
                   }
               #endif
@@ -830,7 +830,7 @@ line level    source
                   // Calculate Ekh[km] = kh AES m XOR Km
                   for(pData[0] = 0; pData[0] < 16; ++pData[0])
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 14  
 
                       g_pucHdcp2Kh[pData[0]] = ScalerGetByte(P63_81_HDCP_AES_OUT_15 + pData[0]) ^ g_pucDpRx1Hdcp2Km[pDat
              -a[0]];
@@ -894,7 +894,7 @@ line level    source
                                       if((GET_DP_TX_HDCP2_CAPABLE_SUPPORTED() == _TRUE) && (GET_DP_TX_HDCP2_VERSION_SUPP
              -ORTED() == _TRUE))
                                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 15  
 
                                           if(GET_DP_TX_HDCP2_DOWNSTREAM_EVENT() == _DP_TX_HDCP2_DOWNSTREAM_AUTH_EVENT_RE
              -AUTH)
@@ -958,7 +958,7 @@ line level    source
               
                               CLR_DP_RX1_HDCP2_AUTH_STATE_CHANGE();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 16  
 
                               if(GET_DP_RX_HDCP2_UPSTREAM_PORT() == _HDCP_D1_PORT)
                               {
@@ -1022,7 +1022,7 @@ line level    source
                                   SET_DP_RX1_HDCP_UPSTREAM_EVENT(_DP_RX_HDCP_UPSTREAM_AUTH_EVENT_TIMEOUT);
                               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 17  
 
                               ScalerDpRx1Hdcp2ChangeAuthState(_DP_RX_HDCP2_REPEATER_STATE_AUTH_DONE);
                           }
@@ -1086,7 +1086,7 @@ line level    source
                       case _DP_RX_HDCP2_REPEATER_STATE_AUTH_DONE:
               
                           if(GET_DP_RX1_HDCP2_AUTH_STATE_CHANGE() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 18  
 
                           {
                               DebugMessageHDCP2("DPRX1 HDCP2 - Done", 0);
@@ -1150,7 +1150,7 @@ line level    source
                           else
                           {
                               ucRxInfoDevice = GET_DP_TX_HDCP2_RXINFO_DEVICE_COUNT();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 19  
 
                               ucRxInfoDepth = GET_DP_TX_HDCP2_RXINFO_DEPTH();
               
@@ -1214,7 +1214,7 @@ line level    source
                   }
               
                   pData[0] = (ucRxInfoDepth << 1) | (ucRxInfoDevice >> 4);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 20  
 
                   pData[1] = (ucRxInfoDevice << 4) |
                              ((BYTE)bRxInfoDeviceExceed << 3) |
@@ -1278,7 +1278,7 @@ line level    source
                   SET_DP_RX1_AUX_MANUAL_MODE();
               
                   for(pData[1] = 0; pData[1] < 155; pData[1]++)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 21  
 
                   {
                       ScalerDpRx1SetDpcdValue(0x06, 0x93, (0x45 + pData[1]), g_pucDpTxHdcp2ReceiverIdList[pData[1]]);
@@ -1342,7 +1342,7 @@ line level    source
                   BYTE pucRxInfo[2] = {0};
                   BYTE pucSeqNumV[3] = {0};
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 22  
 
                   ScalerDpRx1SetDpcdValue(0x06, 0x93, 0x30, pucRxInfo[0]);
                   ScalerDpRx1SetDpcdValue(0x06, 0x93, 0x31, pucRxInfo[1]);
@@ -1406,7 +1406,7 @@ line level    source
                           SET_DP_RX1_HDCP2_REPEATER_CAPABLE();
                       }
                       else
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 23  
 
                       {
                           CLR_DP_RX1_HDCP2_REPEATER_CAPABLE();
@@ -1470,7 +1470,7 @@ line level    source
                   if((ScalerDpRx1GetDpcdInfo(0x06, 0x80, 0x2A) != 0x00) || (ScalerDpRx1GetDpcdInfo(0x06, 0x80, 0x2B) != 
              -0x00))
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/18/2026 20:38:35 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1HDCP2                                            09/20/2026 19:43:44 PAGE 24  
 
                       ScalerDpRx1SetDpcdValue(0x06, 0x80, 0x29, 0x00);
                       ScalerDpRx1SetDpcdValue(0x06, 0x80, 0x2A, 0x00);

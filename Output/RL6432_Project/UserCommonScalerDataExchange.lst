@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONSCALERDATAEXCHANGE
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // STRUCT / TYPE / ENUM DEFINITTIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 2   
 
               
               
@@ -126,7 +126,7 @@ line level    source
                           SET_DATA_EXCHANGE_TX_EVENT(enumEventCnt);
               
                           DebugMessageSystem("0. Sent Init Event", enumEventCnt);
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 3   
 
               
                           UserCommonDataExchangeSendInitDataItem();
@@ -190,7 +190,7 @@ line level    source
              -CHECK_CODE0;
                           g_stD0DataExchange.unionDataExchangeItem.stInitStartCheck.ucCheckCode1 = _DATA_EXCHANGE_START_
              -CHECK_CODE1;
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 4   
 
                           break;
               
@@ -254,7 +254,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 5   
 
               #if(_DP_ADAPTIVESYNC_SUPPORT == _ON)
                       case _DATA_EXCHAGNE_CMD_DP_ADAPTIVESYNC_STATUS:
@@ -318,7 +318,7 @@ line level    source
                                       g_stD0DataExchange.unionDataExchangeItem.stDpVersion.enumMstPort = _DATA_EXCHANGE_
              -DP_MST_RX0_PORT;
                                   }
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 6   
 
                                   else
                                   {
@@ -382,7 +382,7 @@ line level    source
                       case _DATA_EXCHAGNE_CMD_PIN_ASSIGNMENT_E_SUPPORT_ON_OFF:
                           if(UserInterfaceTypeCGetOsdPinAssignmentESupportSelection(_D0_INPUT_PORT) == _TYPE_C_PIN_ASSIG
              -NMENT_E_SUPPORT_ON)
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 7   
 
                           {
                               g_stD0DataExchange.unionDataExchangeItem.stPinAssignmentESupportOnOff.enumPinAssignmentESu
@@ -446,7 +446,7 @@ line level    source
                       if(UserCommonDataExchangeTx() == _TRUE)
                       {
                           SET_DATA_EXCHANGE_TX_EVENT(_DATA_EXCHAGNE_CMD_NONE);
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 8   
 
                           CLR_DATA_EXCHANGE_COMMAND_COUNT();
                       }
@@ -510,7 +510,7 @@ line level    source
               
                       case _DATA_EXCHAGNE_CMD_DP_IRQ_TIME:
                           usLength = sizeof(StructDataExchangeIrqTime);
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 9   
 
                           break;
               
@@ -574,7 +574,7 @@ line level    source
               #endif
               
                       case _DATA_EXCHAGNE_CMD_USER_DEFINE:
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 10  
 
                           enumDataExType = _DATA_EXCHANGE_DATA_USER;
               
@@ -638,7 +638,7 @@ line level    source
                           {
                               return _FALSE;
                           }
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 11  
 
                       }
               
@@ -702,7 +702,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Write data to the DDC-CI Port by IIC
               // Input Value  : usSubAddr    --> Start address of selected device
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 12  
 
               //                usLength     --> Numbers of data we want to write
               //                pReadArray   --> Result array
@@ -766,7 +766,7 @@ line level    source
               #if(_HW_IIC_SUPPORT == _ON)
                           if(ScalerMcuHwIICWrite(ucSlaveAddr, 1, usSubAddr, ucDataCnt, pucWriteArray, ucHwIICPinNum) == 
              -_FAIL)
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 13  
 
                           {
                               return _FAIL;
@@ -830,7 +830,7 @@ line level    source
               //--------------------------------------------------
               EnumDataExchangeCmdType UserCommonDataExchangeGetEvent(void)
               {
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 14  
 
                   return GET_DATA_EXCHANGE_TX_EVENT();
               }
@@ -894,7 +894,7 @@ line level    source
                       {
               #if(_DEBUG_MESSAGE_SUPPORT == _ON)
                           for(pData[0] = 0; pData[0] < ucLength; pData[0]++)
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 15  
 
                           {
                               DebugMessageSystem("pucReadArray[ucCnt]", pucGetDataArray[pData[0]]);
@@ -958,7 +958,7 @@ line level    source
                       return _DATA_EXCHANGE_ITEM_MULTI;
                   }
                   else if(GET_DATA_EXCHANGE_COMMAND_COUNT() == 1)
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 16  
 
                   {
                       return _DATA_EXCHANGE_ITEM_SINGLE;
@@ -1022,7 +1022,7 @@ line level    source
                           break;
               
                       case _DATA_EXCHAGNE_CMD_AUX_ADJR_MODE:
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 17  
 
                           g_stMultiOsdItems.stAuxAdjr.b4DPAuxAdjrSetting = g_stD0DataExchange.unionDataExchangeItem.stAu
              -xAdjr.b4DPAuxAdjrSetting;
@@ -1086,7 +1086,7 @@ line level    source
               
                       default:
                           break;
-C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/18/2026 20:39:47 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONSCALERDATAEXCHANGE                                      09/20/2026 19:44:40 PAGE 18  
 
                   }
               }

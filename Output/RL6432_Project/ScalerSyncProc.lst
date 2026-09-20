@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERSYNCPROC
@@ -62,7 +62,7 @@ line level    source
   42          
   43          //--------------------------------------------------
   44          // Definitions Of Sync Processor Auto Run Polling Time, Target 120ms
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 2   
 
   45          // Auto Run Typer Time Out Base Counter(0x200000) Reference 27M Crystal About 80ms:                       
              -                                                     //
@@ -126,7 +126,7 @@ line level    source
               //--------------------------------------------------
               typedef enum
               {
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 3   
 
                   _SOG_LEVEL_VALID,
                   _SOG_LEVEL_INVALID,
@@ -190,7 +190,7 @@ line level    source
               bit ScalerSyncProcRecheckSOGSyncStable(void);
               #endif
  165          
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 4   
 
  166          //****************************************************************************
  167          // FUNCTION DEFINITIONS
@@ -254,7 +254,7 @@ line level    source
                       pData[0] = _FALSE;
               #endif
  227   2          }
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 5   
 
  228   1          else if(ucInputPort == _A2_INPUT_PORT)
  229   1          {
@@ -318,7 +318,7 @@ line level    source
               
                   // Disable De-composite circuit
                   ScalerSetBit(P0_47_SYNC_SELECT, ~_BIT5, 0x00);
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 6   
 
               
               #endif // End of #if(_SOG_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  348   1          // Adc output clock setting
  349   1          ScalerADCOutputClkSetting();
  350   1      
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 7   
 
  351   1          // ADC Power control setting
  352   1          ScalerADCPowerSetting();
@@ -446,7 +446,7 @@ line level    source
  410   1      
  411   1          // Clamp position unit: Single ADC clock
  412   1          ScalerSetDataPortByte(P0_5C_SYNC_PROC_PORT_ADDR, _P0_5D_PT_06_CLAMP_CTRL2, 0x30);
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 8   
 
  413   1      
  414   1          // Coast Setting for Front porch default condition: +2/-1
@@ -510,7 +510,7 @@ line level    source
  470   1      
  471   1          // Sync from HS Pad
  472   1          ScalerSetBit(P0_47_SYNC_SELECT, ~_BIT4, 0x00);
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 9   
 
  473   1      
  474   1          // Start Stable Period Measure
@@ -574,7 +574,7 @@ line level    source
  528   2              ScalerSetBit(P0_4F_STABLE_MEASURE, ~_BIT0, 0x00);
  529   2              ScalerSetBit(P0_4F_STABLE_MEASURE, ~_BIT0, _BIT0);
  530   2      
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 10  
 
  531   2              if(ScalerTimerPollingFlagProc(12, P0_4F_STABLE_MEASURE, _BIT7, _TRUE) == _TRUE)
  532   2              {
@@ -638,7 +638,7 @@ line level    source
  589   1      
  590   1          // Stop Stable Measure
  591   1          ScalerSetBit(P0_4F_STABLE_MEASURE, ~_BIT0, 0x00);
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 11  
 
  592   1      
  593   1          // Disable Hsync Type Detection Auto Run, Disable De-Composite
@@ -702,7 +702,7 @@ line level    source
  649   4                          ScalerSetDataPortBit(P0_5C_SYNC_PROC_PORT_ADDR, _P0_5D_PT_08_CAPTURE_WINDOW_SETTING, ~
              -(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), PDATA_WORD(1));
  650   4                      }
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 12  
 
  651   3      
  652   3                      ucSyncTemp = _CS_STATE;
@@ -766,7 +766,7 @@ line level    source
  709   1      #if(_VGA_APLL_HIGH_GAIN_MODE_SUPPORT == _ON)
                   ScalerPLLSetApllHighGainMode(_DISABLE);
               #endif
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 13  
 
  712   1      
  713   1          if(ScalerAPLLAdjust(usIHTotal, usIHFreq) == _FALSE)
@@ -830,7 +830,7 @@ line level    source
  770   2                  usClampPosEnd = 0x38;
  771   2      
  772   2      #if (_YPBPR_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 14  
 
                           SET_COLOR_SPACE(_COLOR_SPACE_YPBPR);
               #endif
@@ -894,7 +894,7 @@ line level    source
  831          // Output Value : None
  832          //--------------------------------------------------
  833          void ScalerSyncProcClampPosSetting(WORD usClampPosStart, WORD usClampPosEnd)
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 15  
 
  834          {
  835   1          // Y/G Clamp Position LSB
@@ -958,7 +958,7 @@ line level    source
  886          //-------------------------------------------------------------------
  887          // Description  : Calculate H freq by stable measure
  888          // Input Value  : None
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 16  
 
  889          // Output Value : H Freq
  890          //-------------------------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
                       ScalerSetDataPortBit(P0_5C_SYNC_PROC_PORT_ADDR, _P0_5D_PT_19_HS_DETECT_SETTING, ~(_BIT6 | _BIT3 | 
              -_BIT2 | _BIT1 | _BIT0), (_BIT6 | _BIT3 | _BIT2 | _BIT1 | _BIT0));
               
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 17  
 
                       // Set SOG compare level to 0
                       ScalerSetByte(P0_D7_ADC_SOG_DAC, 0x00);
@@ -1086,7 +1086,7 @@ line level    source
 1003          void ScalerSyncProcDownCounterSetting(void)
 1004          {
 1005   1          // Down Counter reference  CR4C[2:0] + CR4D[7:0]
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 18  
 
 1006   1          ScalerSetBit(P0_5B_HS_DETECT, ~(_BIT1 | _BIT0), (_BIT1 | _BIT0));
 1007   1      
@@ -1150,7 +1150,7 @@ line level    source
               {
                   WORD usHSyncPeriod = 0;
                   WORD usHSyncPulseCount = 0;
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 19  
 
               
                   // Enable Sync Processor Clock
@@ -1214,7 +1214,7 @@ line level    source
                       {
                           return _SOG_LEVEL_INVALID;
                       }
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 20  
 
               
                       // SOG HS is valid
@@ -1278,7 +1278,7 @@ line level    source
                       {
                           if(ScalerSyncProcTypeAutoRun() == _NO_SYNC_STATE)
                           {
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 21  
 
                               // Change SOG middle compare level within range
                               if(g_ucSogMidLevel >= (_SOG_MID_COMPARE_LEVEL + _SOG_MID_COMPARE_RANGE))
@@ -1342,7 +1342,7 @@ line level    source
                       // Set current SOG compare level
                       ScalerSetBit(P0_D7_ADC_SOG_DAC, ~(0x3F), pucSOYCompareLelArr[ucLevelCounter]);
                       ++ucLevelCounter;
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 22  
 
               
                       // Check SOG flag and HS result
@@ -1406,7 +1406,7 @@ line level    source
               // Output Value : True --> Sync is realy stable
               //                False --> Sync is fake stable before
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/18/2026 20:38:14 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERSYNCPROC                                                    09/20/2026 19:43:28 PAGE 23  
 
               bit ScalerSyncProcRecheckSOGSyncStable(void)
               {

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONNVRAM
@@ -62,7 +62,7 @@ line level    source
   45          {
   46              // _FLASH_W25X20A; ucUnprotectWRSR is not used here
   47              {0x9F, 0xEF, 0x30, 0x12, 0x90, 0xEF, 0x11, 0x00, 0x06, 0x04, 0x20, 0x28, 0xBC, 0x00},
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 2   
 
   48              // _FLASH_W25X21CL; ucUnprotectWRSR is not used here
   49              {0x9F, 0xEF, 0x30, 0x12, 0x90, 0xEF, 0x11, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x00},
@@ -126,7 +126,7 @@ line level    source
  107              {0x9F, 0xEF, 0x40, 0x15, 0x90, 0xEF, 0x14, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
  108              // _FLASH_A25L032; ucUnprotectWRSR is not used here
  109              {0x9F, 0x37, 0x30, 0x16, 0x90, 0x37, 0x15, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 3   
 
  110              // _FLASH_W25Q32F; ucUnprotectWRSR is not used here
  111              {0x9F, 0xEF, 0x40, 0x16, 0x90, 0xEF, 0x15, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
@@ -190,7 +190,7 @@ line level    source
  169              {0x9F, 0x51, 0x40, 0x14, 0x90, 0x51, 0x13, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x00},
  170              // _FLASH_MD25D40DT; ucUnprotectWRSR is not used here
  171              {0x9F, 0x51, 0x40, 0x13, 0x90, 0x51, 0x12, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x00},
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 4   
 
  172              // _FLASH_EN25QH16B; ucUnprotectWRSR is not used here
  173              {0x9F, 0x1C, 0x70, 0x15, 0x90, 0x1C, 0x14, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x00},
@@ -254,7 +254,7 @@ line level    source
  231              {0x9F, 0xC8, 0x40, 0x17, 0x90, 0xC8, 0x16, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
  232              // _FLASH_PY25Q80HB; ucUnprotectWRSR is not used here
  233              {0x9F, 0x85, 0x20, 0x14, 0x90, 0x85, 0x13, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 5   
 
  234              // _FLASH_GD25Q128E; ucUnprotectWRSR is not used here
  235              {0x9F, 0xC8, 0x40, 0x18, 0x90, 0xC8, 0x17, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
@@ -318,7 +318,7 @@ line level    source
  293              {0x9F, 0x68, 0x40, 0x15, 0x90, 0x68, 0x14, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
  294              // _FLASH_PY25Q32HB; ucUnprotectWRSR is not used here
  295              {0x9F, 0x85, 0x20, 0x16, 0x90, 0x85, 0x15, 0x00, 0x06, 0x04, 0x20, 0x02, 0xFC, 0x40},
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 6   
 
  296          };
  297          
@@ -382,7 +382,7 @@ line level    source
  355   1          memset(pucIDArry, 0, sizeof(pucIDArry));
  356   1          memset(pucFlashType, 0, sizeof(pucFlashType));
  357   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 7   
 
  358   1          // ID check 1, use 0x9F/0x90/0xAB op code base on flash spec
  359   1          for(ucIndex = 0; ucIndex < _FLASH_TOTAL_COUNT; ucIndex++)
@@ -446,7 +446,7 @@ line level    source
  411   4                      if((tFlashInformation[pucFlashType[ucIndex]].ucIDCheck2_ID2 != 0x00) && (pucIDArry[2] != t
              -FlashInformation[pucFlashType[ucIndex]].ucIDCheck2_ID2))
  412   4                      {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 8   
 
  413   5                          continue;
  414   5                      }
@@ -510,7 +510,7 @@ line level    source
                           {
                               g_ucFlashType = _FLASH_W25Q16DV;
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 9   
 
               #endif
  476   3      
@@ -574,7 +574,7 @@ line level    source
  534   4                      g_ucFlashType = _FLASH_FM25Q08A;
  535   4                  }
  536   3      #else
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 10  
 
                           if(g_ucFlashType == _FLASH_FM25Q08A)
                           {
@@ -638,7 +638,7 @@ line level    source
  596   4                      g_ucFlashType = _FLASH_BY25D80ASTIG;
  597   4                  }
  598   3      #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 11  
 
  599   3      
  600   3      #if(_FLASH_TYPE_AT25SF041_OR_AT25SF041B == _FLASH_AT25SF041B)
@@ -702,7 +702,7 @@ line level    source
  658   3      #endif
  659   3      
  660   3      #if(_FLASH_TYPE_EN25Q80_OR_EN25Q80C == _FLASH_EN25Q80C)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 12  
 
                           if(g_ucFlashType == _FLASH_EN25Q80)
                           {
@@ -766,7 +766,7 @@ line level    source
  720          
  721          //--------------------------------------------------
  722          // Description  : Read flash ID code
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 13  
 
  723          // Input Value  : ucRDIDOPCode: Read ID code op code
  724          //                pucIDArry: Saved the ID code read from flash
@@ -830,7 +830,7 @@ line level    source
  782   2                  // Use RDID(0x90/0xAB) Instruction first to get Flash Manufacture ID, Device ID //
  783   2                  //////////////////////////////////////////////////////////////////////////////////
  784   2                  MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x5E, _CKCON_MCU_SLOW_CYCLE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 14  
 
  785   2                  MCU_FF61_COMMON_OP_CODE = ucRDIDOPCode;
  786   2                  MCU_FF64_FLASH_PROG_ISP0 = 0x00;
@@ -894,7 +894,7 @@ line level    source
  844   1          BYTE ucWRSR = 0x00;
  845   1          BYTE ucWRSR1 = 0x00;
  846   1          BYTE ucWRSR2 = 0x00;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 15  
 
  847   1          BYTE ucWRSR3 = 0x00;
  848   1          BYTE ucCheckBit = 0x00;
@@ -958,7 +958,7 @@ line level    source
  906   3                      case 0:
  907   3                          if(ucPage == 0)
  908   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 16  
 
  909   4                              ucWRSR = 0xE4;
  910   4                          }
@@ -1022,7 +1022,7 @@ line level    source
  968   3                      case 19:
  969   3                      case 20:
  970   3                      case 21:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 17  
 
  971   3                      case 22:
  972   3                      case 23:
@@ -1086,7 +1086,7 @@ line level    source
 1030   3                      case 61:
 1031   3                          // Protect Bank 0~59
 1032   3                          ucWRSR = 0x8C;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 18  
 
 1033   3                          ucWRSR1 = 0x40;
 1034   3                          break;
@@ -1150,7 +1150,7 @@ line level    source
 1092   4                          }
 1093   3                          else if((ucPage >= 4) && (ucPage <= 7))
 1094   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 19  
 
 1095   4                              ucWRSR = 0xF8;
 1096   4                          }
@@ -1214,7 +1214,7 @@ line level    source
 1154   3                      case 31:
 1155   3                          // Protect Bank 32~63
 1156   3                          ucWRSR = 0xB8;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 20  
 
 1157   3                          ucWRSR1 = 0x40;
 1158   3                          break;
@@ -1278,7 +1278,7 @@ line level    source
 1216   3                      case 63:
 1217   3                          if(ucPage == 15)
 1218   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 21  
 
 1219   4                              ucWRSR = 0xC4;
 1220   4                          }
@@ -1342,7 +1342,7 @@ line level    source
 1278   2      
 1279   2                  // Set unprotect status register
 1280   2                  ScalerFlashSetWRSR(ucWRSR, _FALSE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 22  
 
 1281   2                  break;
 1282   2      
@@ -1406,7 +1406,7 @@ line level    source
 1340   2              case _FLASH_MX25L4006E:
 1341   2              case _FLASH_A25L040:
 1342   2                  switch(ucBank)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 23  
 
 1343   2                  {
 1344   3                      case 0:
@@ -1470,7 +1470,7 @@ line level    source
 1402   3                      case 2:
 1403   3                      case 3:
 1404   3                          ucWRSR = 0x2E;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 24  
 
 1405   3                          ucWRSR1 = 0x40;
 1406   3                          break;
@@ -1534,7 +1534,7 @@ line level    source
 1464   2                  // Set unprotect status register
 1465   2                  ScalerFlashSet2ByteWRSR(ucWRSR, ucWRSR1, _FALSE);
 1466   2                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 25  
 
 1467   2      
 1468   2              case _FLASH_EN25F20:
@@ -1598,7 +1598,7 @@ line level    source
 1526   3                          else if(ucPage == 14)
 1527   3                          {
 1528   4                              ucWRSR = 0x76;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 26  
 
 1529   4                          }
 1530   3                          else if(ucPage == 15)
@@ -1662,7 +1662,7 @@ line level    source
 1588   3                          ucWRSR = 0x02;
 1589   3                          break;
 1590   3                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 27  
 
 1591   2      
 1592   2                  // Use general unprotect if BP4(bit6) do not need unlock, else use burst write to unlock BP4
@@ -1726,7 +1726,7 @@ line level    source
 1650   3                      // Set SRWD = 0
 1651   3                      ScalerFlashSetWRSR(ucWRSR & 0x7F, _FALSE);
 1652   3                      // Set unprotect register
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 28  
 
 1653   3                      ScalerFlashSetWRSR(ucWRSR, _FALSE);
 1654   3                  }
@@ -1790,7 +1790,7 @@ line level    source
 1712   3                      case 0:
 1713   3                      case 1:
 1714   3                      case 2:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 29  
 
 1715   3                      case 3:
 1716   3                          ucWRSR = 0x0E;
@@ -1854,7 +1854,7 @@ line level    source
 1774   3      
 1775   3                      case 1:
 1776   3                          // Protect Bank 2~7
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 30  
 
 1777   3                          ucWRSR = 0x12;
 1778   3                          break;
@@ -1918,7 +1918,7 @@ line level    source
 1836   3      
 1837   3                      case 6:
 1838   3                          // Protect Bank 0~5
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 31  
 
 1839   3                          ucWRSR = 0x32;
 1840   3                          break;
@@ -1982,7 +1982,7 @@ line level    source
 1898   3                          else if((ucPage > 11) && (ucPage <= 13))
 1899   3                          {
 1900   4                              // Protect Sector 0~251
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 32  
 
 1901   4                              ucWRSR = 0x0A;
 1902   4                          }
@@ -2046,7 +2046,7 @@ line level    source
 1960   4                              ucWRSR = 0x04;
 1961   4                          }
 1962   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 33  
 
 1963   3      
 1964   3                      default:
@@ -2110,7 +2110,7 @@ line level    source
 2022   3                          ucWRSR = 0x32;
 2023   3                          ucWRSR1 = 0x40;
 2024   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 34  
 
 2025   3                      case 8:
 2026   3                      case 9:
@@ -2174,7 +2174,7 @@ line level    source
 2084   2                  MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x78, _CKCON_MCU_SLOW_CYCLE);
 2085   2                  MCU_FF61_COMMON_OP_CODE = 0x4C;
 2086   2                  MCU_FF64_FLASH_PROG_ISP0 = ucBank;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 35  
 
 2087   2                  MCU_FF65_FLASH_PROG_ISP1 = (BYTE)((ucPage << 4) & 0xF0);
 2088   2                  MCU_FF66_FLASH_PROG_ISP2 = 0x00;
@@ -2238,7 +2238,7 @@ line level    source
 2146   4                              // Protect Sector 1~127
 2147   4                              ucWRSR = 0x66;
 2148   4                          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 36  
 
 2149   3                          else if(ucPage == 1)
 2150   3                          {
@@ -2302,7 +2302,7 @@ line level    source
 2208   4                          }
 2209   3                          else if((ucPage >= 8) && (ucPage <= 11))
 2210   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 37  
 
 2211   4                              // Protect Sector 0~119
 2212   4                              ucWRSR = 0x52;
@@ -2366,7 +2366,7 @@ line level    source
 2270   3                          // Protect Bank 0~23
 2271   3                          ucWRSR = 0x2E;
 2272   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 38  
 
 2273   3      
 2274   3                      case 28:
@@ -2430,7 +2430,7 @@ line level    source
 2332   3                      case 30:
 2333   3                      case 31:
 2334   3                          // Protect Bank 32~63
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 39  
 
 2335   3                          ucWRSR = 0x1A;
 2336   3                          break;
@@ -2494,7 +2494,7 @@ line level    source
 2394   3                      default:
 2395   3                          ucWRSR = 0x02;
 2396   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 40  
 
 2397   3                  }
 2398   2      
@@ -2558,7 +2558,7 @@ line level    source
 2456   3                      else if((ucBank >= 32) && (ucBank <= 47))
 2457   3                      {
 2458   4                          // Protect Bank 0~31
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 41  
 
 2459   4                          ucWRSR = 0x24;
 2460   4                      }
@@ -2622,7 +2622,7 @@ line level    source
 2518   3                          break;
 2519   3      
 2520   3                      case 16:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 42  
 
 2521   3                      case 17:
 2522   3                      case 18:
@@ -2686,7 +2686,7 @@ line level    source
 2580   3                          {
 2581   4                              // Protect Sector 2~511
 2582   4                              ucWRSR = 0x6A;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 43  
 
 2583   4                          }
 2584   3                          else if((ucPage == 2) || (ucPage == 3))
@@ -2750,7 +2750,7 @@ line level    source
 2642   3                      case 21:
 2643   3                      case 22:
 2644   3                      case 23:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 44  
 
 2645   3                          // Protect Bank 0~15
 2646   3                          ucWRSR = 0x16;
@@ -2814,7 +2814,7 @@ line level    source
 2704   3                          break;
 2705   3                  }
 2706   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 45  
 
 2707   2                  // Set unprotect status register
 2708   2                  ScalerFlashSet2ByteWRSR(ucWRSR, ucWRSR1, _FALSE);
@@ -2878,7 +2878,7 @@ line level    source
 2766   3                      case 9:
 2767   3                      case 10:
 2768   3                      case 11:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 46  
 
 2769   3                      case 12:
 2770   3                      case 13:
@@ -2942,7 +2942,7 @@ line level    source
 2828   3                          // Protect Bank 0~47
 2829   3                          ucWRSR = 0x16;
 2830   3                          ucWRSR1 = 0x40;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 47  
 
 2831   3                          break;
 2832   3      
@@ -3006,7 +3006,7 @@ line level    source
 2890   2              case _FLASH_GD25Q16:
 2891   2                  switch(ucBank)
 2892   2                  {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 48  
 
 2893   3                      case 0:
 2894   3                      case 1:
@@ -3070,7 +3070,7 @@ line level    source
 2952   2                  ucBank = ((ucRDCR & _BIT3) == _BIT3) ? (63 - ucBank) : ucBank;
 2953   2                  switch(ucBank)
 2954   2                  {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 49  
 
 2955   3                      case 0:
 2956   3                      case 1:
@@ -3134,7 +3134,7 @@ line level    source
 3014   3                      case 51:
 3015   3                      case 52:
 3016   3                      case 53:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 50  
 
 3017   3                      case 54:
 3018   3                      case 55:
@@ -3198,7 +3198,7 @@ line level    source
 3076   3                      case 3:
 3077   3                      case 4:
 3078   3                      case 5:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 51  
 
 3079   3                      case 6:
 3080   3                      case 7:
@@ -3262,7 +3262,7 @@ line level    source
 3138   2              case _FLASH_AT25SF041:
 3139   2                  switch(ucBank)
 3140   2                  {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 52  
 
 3141   3                      case 0:
 3142   3                          // Protect Bank 1~7
@@ -3326,7 +3326,7 @@ line level    source
 3200   2                  if(ucBank <= 63)
 3201   2                  {
 3202   3                      // Protect Bank 64~127
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 53  
 
 3203   3                      ucWRSR = 0x1E;
 3204   3                  }
@@ -3390,7 +3390,7 @@ line level    source
 3262   3                          else if((ucPage >= 4) && (ucPage <= 7))
 3263   3                          {
 3264   4                              ucWRSR = 0x72;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 54  
 
 3265   4                          }
 3266   3                          else
@@ -3454,7 +3454,7 @@ line level    source
 3324   3                      case 31:
 3325   3                          // Protect Bank 32~63
 3326   3                          ucWRSR = 0x3A;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 55  
 
 3327   3                          ucWRSR1 = 0x40;
 3328   3                          break;
@@ -3518,7 +3518,7 @@ line level    source
 3386   3                      case 63:
 3387   3                          if(ucPage == 15)
 3388   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 56  
 
 3389   4                              ucWRSR = 0x46;
 3390   4                          }
@@ -3582,7 +3582,7 @@ line level    source
 3448   3                          ucWRSR = 0x30;
 3449   3                          ucWRSR1 = 0x10;
 3450   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 57  
 
 3451   3      
 3452   3                      case 8:
@@ -3646,7 +3646,7 @@ line level    source
 3510   4                              break;
 3511   4                          case 7:
 3512   4                              ucWRSR = 0x02;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 58  
 
 3513   4                              break;
 3514   4                          default:
@@ -3710,7 +3710,7 @@ line level    source
 3572   2                  break;
 3573   2      
 3574   2              case _FLASH_W25Q16JVSIM:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 59  
 
 3575   2              case _FLASH_W25Q32JVSIM:
 3576   2              case _FLASH_W25Q16JVSIQ:
@@ -3774,7 +3774,7 @@ line level    source
 3634   3                          ucWRSR1 = 0x40;
 3635   3                          break;
 3636   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 60  
 
 3637   3                      case 12:
 3638   3                      case 13:
@@ -3838,7 +3838,7 @@ line level    source
 3696   4                          }
 3697   3                          else if((ucPage >= 8) && (ucPage <= 11))
 3698   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 61  
 
 3699   4                              ucWRSR = 0x0C;
 3700   4                          }
@@ -3902,7 +3902,7 @@ line level    source
 3758   3                      case 30:
 3759   3                          // Protect Bank 0~29
 3760   3                          ucWRSR = 0x14;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 62  
 
 3761   3                          break;
 3762   3      
@@ -3966,7 +3966,7 @@ line level    source
 3820   3                          ucWRSR1 = 0x40;
 3821   3                          break;
 3822   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 63  
 
 3823   3                      case 8:
 3824   3                      case 9:
@@ -4030,7 +4030,7 @@ line level    source
 3882   3                          {
 3883   4                              ucWRSR = 0x08;
 3884   4                          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 64  
 
 3885   3                          else if((ucPage >= 8) && (ucPage <= 11))
 3886   3                          {
@@ -4094,7 +4094,7 @@ line level    source
 3944   4                              ucWRSR = 0x26;
 3945   4                          }
 3946   3                          ucWRSR1 = 0x40;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 65  
 
 3947   3                          break;
 3948   3      
@@ -4158,7 +4158,7 @@ line level    source
 4006   3                      case 30:
 4007   3                          ucWRSR = 0x0A;
 4008   3                          ucWRSR1 = 0x40;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 66  
 
 4009   3                          break;
 4010   3      
@@ -4222,7 +4222,7 @@ line level    source
 4068   4                          }
 4069   3                          ucWRSR1 = 0x40;
 4070   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 67  
 
 4071   3      
 4072   3                      case 1:
@@ -4286,7 +4286,7 @@ line level    source
 4130   3                          else
 4131   3                          {
 4132   4                              ucWRSR = 0x86;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 68  
 
 4133   4                          }
 4134   3                          ucWRSR1 = 0x40;
@@ -4350,7 +4350,7 @@ line level    source
 4192   3                      case 7:
 4193   3                          // Protect Bank 8~63
 4194   3                          ucWRSR = 0x32;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 69  
 
 4195   3                          ucWRSR1 = 0x40;
 4196   3                          break;
@@ -4414,7 +4414,7 @@ line level    source
 4254   3                      case 49:
 4255   3                      case 50:
 4256   3                      case 51:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 70  
 
 4257   3                      case 52:
 4258   3                      case 53:
@@ -4478,7 +4478,7 @@ line level    source
 4316   3                          break;
 4317   3                  }
 4318   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 71  
 
 4319   2                  // Set unprotect status register
 4320   2                  ScalerFlashSet2ByteWRSR(ucWRSR, ucWRSR1, _WRITE_SR_MODE_SEL);
@@ -4542,7 +4542,7 @@ line level    source
 4378   3                          if(ucPage == 15)
 4379   3                          {
 4380   4                              ucWRSR = 0x46;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 72  
 
 4381   4                          }
 4382   3                          else if(ucPage == 14)
@@ -4606,7 +4606,7 @@ line level    source
 4440   3                      case 1:
 4441   3                          // Protect Bank 2~15
 4442   3                          ucWRSR = 0x2A;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 73  
 
 4443   3                          ucWRSR1 = 0x40;
 4444   3                          break;
@@ -4670,7 +4670,7 @@ line level    source
 4502   3                          ucWRSR1 = 0x40;
 4503   3                          break;
 4504   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 74  
 
 4505   3                      default:
 4506   3                          ucWRSR = 0x02;
@@ -4734,7 +4734,7 @@ line level    source
 4564   3                      case 12:
 4565   3                      case 13:
 4566   3                      case 14:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 75  
 
 4567   3                      case 15:
 4568   3                          ucWRSR = 0x36;
@@ -4798,7 +4798,7 @@ line level    source
 4626   3      
 4627   3                      default:
 4628   3                          ucWRSR = 0x02;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 76  
 
 4629   3                          ucWRSR1 = 0x00;
 4630   3                          break;
@@ -4862,7 +4862,7 @@ line level    source
 4688   3                      case 24:
 4689   3                      case 25:
 4690   3                      case 26:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 77  
 
 4691   3                      case 27:
 4692   3                      case 28:
@@ -4926,7 +4926,7 @@ line level    source
 4750   3                          ucWRSR = 0x00;
 4751   3                          break;
 4752   3                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 78  
 
 4753   2      
 4754   2                  // Set unprotect status register
@@ -4990,7 +4990,7 @@ line level    source
 4812   3                      case 7:
 4813   3                          if(ucPage == 15)
 4814   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 79  
 
 4815   4                              ucWRSR = 0x46;
 4816   4                          }
@@ -5054,7 +5054,7 @@ line level    source
 4874   3                      case 1:
 4875   3                          // Protect Bank 2~15
 4876   3                          ucWRSR = 0x2A;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 80  
 
 4877   3                          ucWRSR1 = 0x40;
 4878   3                          break;
@@ -5118,7 +5118,7 @@ line level    source
 4936   3                          ucWRSR1 = 0x40;
 4937   3                          break;
 4938   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 81  
 
 4939   3                      default:
 4940   3                          ucWRSR = 0x02;
@@ -5182,7 +5182,7 @@ line level    source
 4998   3                      case 10:
 4999   3                      case 11:
 5000   3                      case 12:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 82  
 
 5001   3                      case 13:
 5002   3                      case 14:
@@ -5246,7 +5246,7 @@ line level    source
 5060   3                          ucWRSR1 = 0x40;
 5061   3                          break;
 5062   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 83  
 
 5063   3                      default:
 5064   3                          ucWRSR = 0x02;
@@ -5310,7 +5310,7 @@ line level    source
 5122   3      
 5123   3                      case 8:
 5124   3                      case 9:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 84  
 
 5125   3                      case 10:
 5126   3                      case 11:
@@ -5374,7 +5374,7 @@ line level    source
 5184   3                      case 6:
 5185   3                      case 7:
 5186   3                      case 8:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 85  
 
 5187   3                      case 9:
 5188   3                      case 10:
@@ -5438,7 +5438,7 @@ line level    source
 5246   4                          }
 5247   3                          else if((ucPage >= 4) && (ucPage <= 7))
 5248   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 86  
 
 5249   4                              ucWRSR = 0x72;
 5250   4                          }
@@ -5502,7 +5502,7 @@ line level    source
 5308   3                      case 30:
 5309   3                      case 31:
 5310   3                          // Protect Bank 32~127
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 87  
 
 5311   3                          ucWRSR = 0x36;
 5312   3                          ucWRSR1 = 0x40;
@@ -5566,7 +5566,7 @@ line level    source
 5370   3                      case 82:
 5371   3                      case 83:
 5372   3                      case 84:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 88  
 
 5373   3                      case 85:
 5374   3                      case 86:
@@ -5630,7 +5630,7 @@ line level    source
 5432   3                      case 124:
 5433   3                      case 125:
 5434   3                          // Protect Bank 0~123
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 89  
 
 5435   3                          ucWRSR = 0x0A;
 5436   3                          ucWRSR1 = 0x40;
@@ -5694,7 +5694,7 @@ line level    source
 5494   3                          else if((ucPage == 2) || (ucPage == 3))
 5495   3                          {
 5496   4                              ucWRSR = 0x6E;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 90  
 
 5497   4                          }
 5498   3                          else if((ucPage >= 4) && (ucPage <= 7))
@@ -5758,7 +5758,7 @@ line level    source
 5556   3                          // Protect Bank 32~255
 5557   3                          ucWRSR = 0x32;
 5558   3                          ucWRSR1 = 0x40;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 91  
 
 5559   3                          break;
 5560   3      
@@ -5822,7 +5822,7 @@ line level    source
 5618   3                      case 84:
 5619   3                      case 85:
 5620   3                      case 86:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 92  
 
 5621   3                      case 87:
 5622   3                      case 88:
@@ -5886,7 +5886,7 @@ line level    source
 5680   3                      case 141:
 5681   3                      case 142:
 5682   3                      case 143:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 93  
 
 5683   3                      case 144:
 5684   3                      case 145:
@@ -5950,7 +5950,7 @@ line level    source
 5742   3                      case 198:
 5743   3                      case 199:
 5744   3                      case 200:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 94  
 
 5745   3                      case 201:
 5746   3                      case 202:
@@ -6014,7 +6014,7 @@ line level    source
 5804   3                          ucWRSR = 0x0E;
 5805   3                          ucWRSR1 = 0x40;
 5806   3                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 95  
 
 5807   3      
 5808   3                      case 248:
@@ -6078,7 +6078,7 @@ line level    source
                               ScalerFlashSet2ByteWRSR(0xDC, ucRDCR | _BIT3, _FALSE);
                               ucRDCR = ScalerFlashReadSR(_RDCR_OPCODE);
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 96  
 
               #endif
 5870   2                  ucBank = ((ucRDCR & _BIT3) == _BIT3) ? (127 - ucBank) : ucBank;
@@ -6142,7 +6142,7 @@ line level    source
 5928   4                          }
 5929   3                          else if(ucPage == 1)
 5930   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 97  
 
 5931   4                              ucWRSR = 0x6A;
 5932   4                          }
@@ -6206,7 +6206,7 @@ line level    source
 5990   3                      case 22:
 5991   3                      case 23:
 5992   3                          // Protect Bank 0~15
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 98  
 
 5993   3                          ucWRSR = 0x16;
 5994   3                          ucWRSR1 = 0x40;
@@ -6270,7 +6270,7 @@ line level    source
 6052   2                  break;
 6053   2      
 6054   2              case _FLASH_GT25Q40C:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 99  
 
 6055   2                  switch(ucBank)
 6056   2                  {
@@ -6334,7 +6334,7 @@ line level    source
 6114   3                          {
 6115   4                              ucWRSR = 0x4A;
 6116   4                          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 100 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 100 
 
 6117   3                          else if((ucPage == 12) || (ucPage == 13))
 6118   3                          {
@@ -6398,7 +6398,7 @@ line level    source
 6176   3      
 6177   3                      case 2:
 6178   3                      case 3:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 101 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 101 
 
 6179   3                          // Protect Bank 4~7
 6180   3                          ucWRSR = 0x02E;
@@ -6462,7 +6462,7 @@ line level    source
 6238   4                              ucWRSR = 0x66;
 6239   4                          }
 6240   3                          else if(ucPage == 1)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 102 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 102 
 
 6241   3                          {
 6242   4                              ucWRSR = 0x6A;
@@ -6526,7 +6526,7 @@ line level    source
 6300   3                      case 21:
 6301   3                      case 22:
 6302   3                      case 23:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 103 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 103 
 
 6303   3                          // Protect Bank 0~15
 6304   3                          ucWRSR = 0x16;
@@ -6590,7 +6590,7 @@ line level    source
 6362   2                  if((ucRDCR & _BIT3) != _BIT3)
 6363   2                  {
 6364   3                      if(ucBank <= 7)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 104 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 104 
 
 6365   3                      {
 6366   4                          // Protect Bank 8~15
@@ -6654,7 +6654,7 @@ line level    source
 6424   3                          if(ucPage == 0)
 6425   3                          {
 6426   4                              ucWRSR = 0x66;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 105 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 105 
 
 6427   4                          }
 6428   3                          else if(ucPage == 1)
@@ -6718,7 +6718,7 @@ line level    source
 6486   4                          }
 6487   3                          else if((ucPage >= 8) && (ucPage <= 11))
 6488   3                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 106 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 106 
 
 6489   4                              ucWRSR = 0x52;
 6490   4                          }
@@ -6782,7 +6782,7 @@ line level    source
 6548   3      
 6549   3                      case 4:
 6550   3                      case 5:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 107 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 107 
 
 6551   3                      case 6:
 6552   3                      case 7:
@@ -6846,7 +6846,7 @@ line level    source
 6610   2                  // Set unprotect status register
 6611   2                  ScalerFlashSet2ByteWRSR(ucWRSR, ucWRSR1, _TRUE);
 6612   2                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 108 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 108 
 
 6613   2      
 6614   2              case _FLASH_UC25HD40I:
@@ -6910,7 +6910,7 @@ line level    source
 6672   3                      case 6:
 6673   3                      case 7:
 6674   3                          ucWRSR = 0x12;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 109 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 109 
 
 6675   3                          break;
 6676   3      
@@ -6974,7 +6974,7 @@ line level    source
 6734   2                  ScalerFlashSetWREN(tFlashInformation[g_ucFlashType].ucWRDisOpCode);
 6735   2                  break;
 6736   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 110 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 110 
 
 6737   2              case _FLASH_W25X20A:
 6738   2              case _FLASH_MX25L2026:
@@ -7038,7 +7038,7 @@ line level    source
 6796   2                  MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x21, _CKCON_MCU_SLOW_CYCLE);
 6797   2      
 6798   2                  ScalerFlashSetWREN(tFlashInformation[g_ucFlashType].ucWRDisOpCode);
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 111 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 111 
 
 6799   2                  break;
 6800   2      
@@ -7102,7 +7102,7 @@ line level    source
 6858   2              case _FLASH_ZB25VQ16C:
 6859   2              case _FLASH_XM25QH64D:
 6860   2              case _FLASH_FM25Q64A:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 112 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 112 
 
 6861   2              case _FLASH_XM25QH128D:
 6862   2              case _FLASH_W25Q32RV:
@@ -7166,7 +7166,7 @@ line level    source
 6919   2                  ScalerFlashSetWRSR(0xFF, _FALSE);
 6920   2                  ScalerFlashSetWREN(0x04);
 6921   2                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 113 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 113 
 
 6922   2          }
 6923   1      
@@ -7230,7 +7230,7 @@ line level    source
 6979          {
 6980   1          BYTE ucRDSR3 = 0x00;
 6981   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 114 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 114 
 
 6982   1          ucRDSR3 = ScalerFlashReadSR(_RDCR_OPCODE);
 6983   1          if((ucWRSR & ucCheckBit) == (ucRDSR3 & ucCheckBit))
@@ -7294,7 +7294,7 @@ line level    source
 7040   1      
 7041   1          MCU_FF61_COMMON_OP_CODE = 0x41;
 7042   1          MCU_FF64_FLASH_PROG_ISP0 = ucWRSR;
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 115 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 115 
 
 7043   1          MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, (MCU_FF60_COMMON_INST_EN | _BIT0), _CKCON_MCU_SLOW_CY
              -CLE);
@@ -7358,7 +7358,7 @@ line level    source
 7101          //                ucExitOTPOpCode   : Exit OTP Mode OpCode
 7102          //                ucOpCode          : RDSR instruction op code
 7103          // Output Value : Current SR Value
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 116 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 116 
 
 7104          //--------------------------------------------------
 7105          BYTE ScalerFlashReadSROnOTPMode(BYTE ucEnterOTPOpCode, BYTE ucExitOTPOpCode, BYTE ucOpCode)
@@ -7422,7 +7422,7 @@ line level    source
 7163          //                ucIsSST: _TRUE for SST Flash, _FALSE for other flash
 7164          // Output Value : None
 7165          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 117 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 117 
 
 7166          void ScalerFlashSetWRSR(BYTE ucWRSR, bit bIsSST)
 7167          {
@@ -7486,7 +7486,7 @@ line level    source
 7221   1      
 7222   1          // WRSR
 7223   1          if(bIsSST == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 118 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 118 
 
 7224   1          {
 7225   2              MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x90, _CKCON_MCU_SLOW_CYCLE);
@@ -7550,7 +7550,7 @@ line level    source
              -CLE);
 7280   1      
 7281   1          // No need to polling, 8051 will halt when common instruction executes
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 119 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 119 
 
 7282   1      
 7283   1          if(bIsSST == _TRUE)
@@ -7614,7 +7614,7 @@ line level    source
 7340   1          // WRSR
 7341   1          if(bIsSST == _TRUE)
 7342   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 120 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 120 
 
 7343   2              MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x88, _CKCON_MCU_SLOW_CYCLE);
 7344   2          }
@@ -7678,7 +7678,7 @@ line level    source
                       case _FLASH_EN25F40A:
                       case _FLASH_EN25Q40A:
                       case _FLASH_EN25Q80:
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 121 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 121 
 
                       case _FLASH_MX25L8006E:
                       case _FLASH_MX25L1606E:
@@ -7742,7 +7742,7 @@ line level    source
                           {
                               // Sector Unlock Disable
                               MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x20, _CKCON_MCU_SLOW_CYCLE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 122 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 122 
 
                               MCU_FF61_COMMON_OP_CODE = 0x4D;
                               MCU_SET_BYTE_WITH_CKCON(MCU_FF60_COMMON_INST_EN, 0x21, _CKCON_MCU_SLOW_CYCLE);
@@ -7806,7 +7806,7 @@ line level    source
                           }
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 123 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 123 
 
                       case _FLASH_FM25Q08B:
                       case _FLASH_PY25Q40HB:
@@ -7870,7 +7870,7 @@ line level    source
                       case _FLASH_XM25QH32CHIGT:
                       case _FLASH_BY25Q32CSSIG:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 124 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 124 
 
                           // Read SR
                           ucRDSR = ScalerFlashReadSR(_RDSR_OPCODE);
@@ -7934,7 +7934,7 @@ line level    source
               #endif
                   {
                       if(g_ucFlashType == _FLASH_UNDETECT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 125 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 125 
 
                       {
                           ScalerFlashDetectFlashType();
@@ -7998,7 +7998,7 @@ line level    source
                       ucStartPage = usAddr / _FLASH_PAGE_SIZE;
               
                       ScalerFlashWREN(ucBank, ucStartPage);
-C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/18/2026 20:38:43 PAGE 126 
+C51 COMPILER V9.60.0.0   SCALERCOMMONNVRAM                                                 09/20/2026 19:43:50 PAGE 126 
 
                   }
               

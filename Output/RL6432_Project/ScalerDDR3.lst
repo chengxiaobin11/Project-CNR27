@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDDR3
@@ -62,7 +62,7 @@ line level    source
               // DDR3 Search Phase - Write Leveling
               //--------------------------------------------------
               #define _SEARCH_PHASE_WRITE_LEVELING                        _ON
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 2   
 
               
               //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
               //--------------------------------------------------
               // DDR3 Search Phase
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 3   
 
               typedef struct
               {
@@ -190,7 +190,7 @@ line level    source
               
               BYTE code *tDDR_SEARCH_PHASE_TEST_DATA_SEED[] =
               {
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 4   
 
                   tDDR_SEARCH_PHASE_TEST_DATA_SEED_EVEN,
                   tDDR_SEARCH_PHASE_TEST_DATA_SEED_ODD,
@@ -254,7 +254,7 @@ line level    source
               #if(_SEARCH_PHASE_WRITE_LEVELING == _ON)
               void ScalerDDR3ScanPhaseWriteLeveling(StructPhaseInfo *pstCurrResult);
               BYTE ScalerDDR3ScanPhaseWLFindProperWDQSPhase(BYTE pucWLResult0[8], BYTE pucWLResult1[8]);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 5   
 
               #else
               bit ScalerDDR3ScanPhaseB(StructPhaseInfo *pstPrevResult, StructPhaseInfo *pstCurrResult);
@@ -318,7 +318,7 @@ line level    source
               
                   // ZQ group sel=0, all update on refresh cycle
                   ScalerSetDWord(PAC_60_ZQ_SEL0_1, 0x00370000);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 6   
 
               
                   // all update after ZQ calibration done
@@ -382,7 +382,7 @@ line level    source
                       ScalerTimerPollingFlagProc(5, PA9_2C_PAD_ZCTRL_STATUS1, _BIT7, _TRUE);
               
                       if((ScalerGetBit(PA9_2C_PAD_ZCTRL_STATUS1, _BIT6) == 0x00))
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 7   
 
                       {
                           break;
@@ -446,7 +446,7 @@ line level    source
                   ScalerSetDWord(PA8_10_TMCTRL4_1, 0x00000C02);
                   ScalerSetDWord(PA8_14_TMCTRL5_1, 0x02100200);
                   ScalerSetDWord(PA8_18_TMCTRL6_1, 0x8E200040);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 8   
 
                   ScalerSetDWord(PA8_44_MOD_REG_1, 0x00060931);
                   ScalerSetDWord(PA8_48_MOD23_REG_1, 0x00000008);
@@ -510,7 +510,7 @@ line level    source
                       ulWLMuxDQ |= (pucPhaseOfClk[1] <= 15) ? 0x00000000 :
                                    (((pucPhaseOfClk[1] >= 16) && (pucPhaseOfClk[1] <= 47)) ? 0x00000011 : 0x00000022);
                       ulWLMuxDQOE |= (pucPhaseOfClk[1] <= 15) ? 0x00000000 :
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 9   
 
                                      (((pucPhaseOfClk[1] >= 16) && (pucPhaseOfClk[1] <= 47)) ? 0x00000011 : 0x00000022);
                   }
@@ -574,7 +574,7 @@ line level    source
               #else
                   ScalerSetDWord(PA9_04_READ_COM_CTRL1, 0x00023880);
               #endif
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 10  
 
               
                   // DC1 init
@@ -638,7 +638,7 @@ line level    source
                   ScalerMaskSetDWord(PA0_48_DC_PRIORITY_C2, 0xFFFF0000, 0xF0FE);
               
                   // Request ID: Client7 = MCU
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 11  
 
                   // ------- Set PA0_5E_DC_PRIORITY_c7 / PA0_5F_DC_PRIORITY_c7 -----
                   ScalerMaskSetDWord(PA0_5C_DC_PRIORITY_C7, 0xFFFF0000, 0xF0FE);
@@ -702,7 +702,7 @@ line level    source
                       // Power off MPLL
                       ScalerSetBit(P0_F8_MPLL_WD, ~_BIT0, _BIT0);
                   }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 12  
 
               }
               
@@ -766,7 +766,7 @@ line level    source
               
               
               #if(_DDR3_PHASE_CALIBRATION == _ON)
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 13  
 
               
               #if(_MEMORY_PHASE_CALIBRATION_MODE == _MEMORY_PHASE_CALIBRATION_MCU_MODE)
@@ -830,7 +830,7 @@ line level    source
               #endif
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 14  
 
               
                   for(ucDataBufOffset = 0; ucDataBufOffset < 16; ucDataBufOffset++)
@@ -894,7 +894,7 @@ line level    source
                   // Phase check result
                   bit bPhaseChkResultA = _SUCCESS;
                   bit bPhaseChkResultB = _SUCCESS;
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 15  
 
               
                   // Set DDR config
@@ -958,7 +958,7 @@ line level    source
                   }
               
                   // Send DDR read request
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 16  
 
                   ucMCUDDRDMACmd = _MCU_DDR3_DMA_CMD_READ;
                   ScalerSetByte(P37_00_MCU_DC_CMD, (ucMCUDDRDMACmd << 5));
@@ -1022,7 +1022,7 @@ line level    source
              -] << 16) | ((DWORD)pucWriteDataA[1] << 8) | pucWriteDataA[0]));
               
                           DebugMessageMemoryPhaseCal("Dump read data A:", 0);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 17  
 
                           DebugMessageMemoryPhaseCal("15~12", (((DWORD)pucReadDataA[15] << 24) | ((DWORD)pucReadDataA[14
              -] << 16) | ((DWORD)pucReadDataA[13] << 8) | pucReadDataA[12]));
@@ -1086,7 +1086,7 @@ line level    source
                   }
               
                   //===========================================
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 18  
 
                   // Process before searching phase
                   //===========================================
@@ -1150,7 +1150,7 @@ line level    source
                   // Wait until IEN_START
                   ScalerTimerWaitForEvent(_EVENT_IEN_START);
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 19  
 
                   // Get FRC cap current block num, and set to FRC display block num
                   ScalerSetBit(P5_AE_DISP_M1_DISP_CTRL2, ~_BIT3, (ScalerGetBit(P5_2A_CAP_M1_STATUS, _BIT6) >> 3));
@@ -1214,7 +1214,7 @@ line level    source
                   }
               
                   // Disable M1, M2 M-domain CRC output
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 20  
 
                   ScalerSetByte(P36_40_M_CRC_CTRL, 0x00);
               
@@ -1278,7 +1278,7 @@ line level    source
                   {
                       return;
                   }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 21  
 
               
               #if(_OD_SUPPORT == _ON)
@@ -1342,7 +1342,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Postprocess of DDR search phase FRC mode
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 22  
 
               // Input Value  : None
               // Output Value : None
@@ -1406,7 +1406,7 @@ line level    source
                   ScalerPLLSetMPLLFreq((DWORD)_MEMORY_PLL_CLOCK * 1000);
               
                   // Reset System Bridge
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 23  
 
                   ScalerSetBit(P37_A0_M_DOMAIN_SB_RESET, ~_BIT0, _BIT0);
                   ScalerTimerDelayXms(2);
@@ -1470,7 +1470,7 @@ line level    source
              -l bit is set to 1"
                           ucSyncSel = 0x00;
                           ucSyncSel |= (((pstPhaseResult->pucWritePhaseOfClk[0] & _BIT4) == _BIT4) ? _BIT0 : 0x00);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 24  
 
                           ucSyncSel |= (((pstPhaseResult->pucWritePhaseOfClk[1] & _BIT4) == _BIT4) ? _BIT1 : 0x00);
                           ucSyncSel |= (((pstPhaseResult->pucWritePhaseOfClk[2] & _BIT4) == _BIT4) ? _BIT2 : 0x00);
@@ -1534,7 +1534,7 @@ line level    source
               
                   if(GET_SCAN_RESULT(pucScanResult, 0) == _SUCCESS)
                   {
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 25  
 
                       ucPassIntvlStart = 0;
                   }
@@ -1598,7 +1598,7 @@ line level    source
                   return _FALSE;
               }
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 26  
 
               //--------------------------------------------------
               // Description  : Check DDR R/W correctness of specific phase set
@@ -1662,7 +1662,7 @@ line level    source
                   //====================================================
                   pData[0] = pucPhaseOfClk[3];
                   pData[1] = pucPhaseOfClk[2];
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 27  
 
                   pData[2] = pucPhaseOfClk[1];
                   pData[3] = pucPhaseOfClk[0];
@@ -1726,7 +1726,7 @@ line level    source
                   BYTE ucClkIndex = 0;
                   BYTE ucClk2ShiftNum = 0;
                   BYTE ucPhaseOfClk2 = pstCurrResult->pucWritePhaseOfClk[2];
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 28  
 
               
                   // Avoid setting clk2 between 32-63
@@ -1790,7 +1790,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 29  
 
               //--------------------------------------------------
               // Description  : DDR SDRAM Scan Phase A, search DDR_CK phase
@@ -1854,7 +1854,7 @@ line level    source
              - _SCAN_RESULT_WRITE_PHASE);
               
                   //====================================
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 30  
 
                   // Set Clk2 phase to scanned best phase
                   //====================================
@@ -1918,7 +1918,7 @@ line level    source
                   //=================================================================
                   pucPhaseOfClk[0] = pstCurrResult->pucWritePhaseOfClk[0];
                   pucPhaseOfClk[1] = 0;
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 31  
 
                   pucPhaseOfClk[2] = pstCurrResult->pucWritePhaseOfClk[2];
                   pucPhaseOfClk[5] = 0;
@@ -1982,7 +1982,7 @@ line level    source
                       ScalerTimerPollingFlagProc(_SEARCH_PHASE_POLLING_TIMEOUT, PA8_57_DC_WRITE_LEVE_4, _BIT0, _TRUE);
               
                       // trig-wr_level to 1, dc_phy send one dqs high pulse to DRAM
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 32  
 
                       ScalerSetDWord(PA8_54_DC_WRITE_LEVE_1, 0x00000002);
                       ScalerTimerPollingFlagProc(_SEARCH_PHASE_POLLING_TIMEOUT, PA8_57_DC_WRITE_LEVE_4, _BIT1, _FALSE);
@@ -2046,7 +2046,7 @@ line level    source
               
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 33  
 
               // Description  : Find proper wDQS phase according to write leveling result
               // Input Value  : Array of write leveling result
@@ -2110,7 +2110,7 @@ line level    source
               #else // Else of #if(_SEARCH_PHASE_WRITE_LEVELING == _ON)
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 34  
 
               // Description  : DDR SDRAM Scan Phase B, search wDQS phase
               // Input Value  : Previous phase search result, current phase search result
@@ -2174,7 +2174,7 @@ line level    source
                   ScalerDDR3ScanPhasePrintScanResult(pucScanResultClk3);
               
                   DebugMessageMemoryPhaseCal("*** Clk3 ***", 0);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 35  
 
               
                   if(ScalerDDR3ScanPhaseResultExistPassRange(pucScanResultClk3) == _FALSE)
@@ -2238,7 +2238,7 @@ line level    source
               
                       SET_SCAN_RESULT(pucScanResultClk3, pucPhaseOfClk[3], ScalerDDR3PhaseCheck());
                   }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 36  
 
               
                   // Clk 3
@@ -2302,7 +2302,7 @@ line level    source
               #endif // End of #if(_SEARCH_PHASE_WRITE_LEVELING == _ON)
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 37  
 
               // Description  : DDR SDRAM Scan Phase C, search wDQ phase
               // Input Value  : Previous phase search result, current phase search result
@@ -2366,7 +2366,7 @@ line level    source
                   //=================================================================
                   ScalerDDR3ScanPhasePrintScanResult(pucScanResultClk1);
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 38  
 
                   DebugMessageMemoryPhaseCal("*** Clk1 ***", 0);
               
@@ -2430,7 +2430,7 @@ line level    source
                       SET_SCAN_RESULT(pucScanResultClk1, pucPhaseOfClk[1], ScalerDDR3PhaseCheck());
                   }
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 39  
 
                   // Clk 1
                   ScalerDDR3ScanPhasePrintScanResult(pucScanResultClk1);
@@ -2494,7 +2494,7 @@ line level    source
               }
               
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 40  
 
               //--------------------------------------------------
               // Description  : DDR SDRAM Scan Phase E, search rDQ delay tap
@@ -2558,7 +2558,7 @@ line level    source
               // Description  : Check if search phase process has converged
               // Input Value  : Previous phase search result, current phase search result
               // Output Value : Process has converged -> _SUCCESS
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 41  
 
               //                If not                -> _FAIL
               //--------------------------------------------------
@@ -2622,7 +2622,7 @@ line level    source
                   // Set initial phase
                   //===========================================
                   structPrevFoundPhase.pucWritePhaseOfClk[0] = _DDR3_PHASE_CAL_INIT_PHASE_CLK0;    // Internal Clock
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 42  
 
                   structPrevFoundPhase.pucWritePhaseOfClk[1] = _DDR3_PHASE_CAL_INIT_PHASE_CLK1;    // wDQ01
                   structPrevFoundPhase.pucWritePhaseOfClk[2] = _DDR3_PHASE_CAL_INIT_PHASE_CLK2;    // Pad Clock
@@ -2686,7 +2686,7 @@ line level    source
                       if(ScalerDDR3ScanPhaseC(&structPrevFoundPhase, &structCurrFoundPhase) == _FAIL)
                       {
                           bSearchPhaseStatus = _FAIL;
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 43  
 
                           continue;
                       }
@@ -2750,7 +2750,7 @@ line level    source
               
               #if(_MEMORY_PHASE_CALIBRATION_MODE == _MEMORY_PHASE_CALIBRATION_FRC_MODE)
                   ScalerDDR3ScanPhaseFRCModeDDRClientAccessCtrl(_ENABLE);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 44  
 
               #endif
               }
@@ -2814,7 +2814,7 @@ line level    source
                   ucInitialRxDelayTap = ScalerGetByte(PA8_80_DQ0_1_DLYN_1);       // Rx Dq
               
               #if(_PHASE_CHECK_DEBUG_MSG == _ON)
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 45  
 
                   DebugMessageMemoryPhaseCal("***** Check Phase1 Start= ", 0x00);
                   DebugMessageMemoryPhaseCal("***** Clk0 CMD Phase = ", pucInitialCheckPhase[0]);
@@ -2878,7 +2878,7 @@ line level    source
                       // Check Start Bad Phase
                       if((pData[1] == _FALSE) && (bPhaseSearch == _TRUE))
                       {
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 46  
 
                           ucCheckStartBad = ucCheckAdrCnt;
               
@@ -2942,7 +2942,7 @@ line level    source
               
                           // FRC Frame Check
                           pData[1] = ScalerDDR3CheckReadWriteFrame();
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 47  
 
               
                           if(pData[1] == _SUCCESS)
@@ -3006,7 +3006,7 @@ line level    source
               
                   // Enable Related Block & Disable Idomain PG
                   ScalerDDR3SCheckPhaseSetRelatedBlock(_ON);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 48  
 
               
                   // Enable All FRC Client
@@ -3070,7 +3070,7 @@ line level    source
                   //===========================================
                   // Tx Clk Searching phase Check
                   //===========================================
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 49  
 
                   // Enable on the fly calibration function
                   ScalerMaskSetDWord(PA9_08_CAL_CTRL1, 0xfffffffe, 0x00000001);
@@ -3134,7 +3134,7 @@ line level    source
                       for(ucCheckInteration = 1; ucCheckInteration <= _PHASE_CHECK_ITERATION; ucCheckInteration++)
                       {
                           ScalerDDR3CheckPhaseFRCModeDDRClientAccessCtrl(_DISABLE);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 50  
 
               
                           pucCheckPhase[1] = pucInitialCheckPhase[1];
@@ -3198,7 +3198,7 @@ line level    source
                           ScalerDDR3CheckSetReadDQDelayTapReg(ucInitialRxDelayTap);
               
                           ScalerDDR3CheckPhaseFRCModeDDRClientAccessCtrl(_ENABLE);
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 51  
 
               
                           pData[1] = ScalerDDR3CheckReadWriteFrame();
@@ -3262,7 +3262,7 @@ line level    source
                                   ucCheckPhaseResult |= _BIT3;
                               }
                           }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 52  
 
                       }
                   }
@@ -3326,7 +3326,7 @@ line level    source
                   else
                   {
               #if(_OD_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 53  
 
                       //===========================================
                       // Disable OD
@@ -3390,7 +3390,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerDDR3CheckMemoryAddressChange(DWORD ulAddress)
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 54  
 
               {
               #if((_MEMORY_SIZE_CONFIG & _MEMORY_NUM_MASK) == _MEMORY_2PCS)
@@ -3454,7 +3454,7 @@ line level    source
                   pData[1] = 0x00;
                   pData[2] = ucPart3OfSysPllSetting5;
                   pData[3] = ucPart4OfSysPllSetting5;
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 55  
 
                   ScalerSetDWord(PA5_1C_SYS_PLL5_1, PDATA_DWORD(0));
               
@@ -3518,7 +3518,7 @@ line level    source
                   {
                       ScalerMaskSetDWord(PA5_00_SYS_PLL_DDR1_1, 0xFFFFFF07, 0x000000F8);
               
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 56  
 
                       // Delay Time us [5,x] Waiting for DDR3 setting
                       DELAY_5US();
@@ -3582,7 +3582,7 @@ line level    source
                           pucIDomainCRCValue[ucCRCRegOffset + (sizeof(pucIDomainCRCValue) / 2)] = ScalerGetByte(P36_07_I
              -_MAIN2_CRC_1 + ucCRCRegOffset);
                       }
-C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/18/2026 20:37:50 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERDDR3                                                        09/20/2026 19:43:11 PAGE 57  
 
               
                       //===========================================

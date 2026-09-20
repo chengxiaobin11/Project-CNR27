@@ -1,6 +1,6 @@
  /******************************OSD_FUNCTION_DEFINE*****************************************/
 /* 	
- *	¶¨ÒåOSDµÄ¹¦ÄÜ£¬Î»ÖÃ¿ÉÒÔÈÎÒâ·Å
+ *	ï¿½ï¿½ï¿½ï¿½OSDï¿½Ä¹ï¿½ï¿½Ü£ï¿½Î»ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 #ifndef _DEF_OSD_TYPE
 #if(_PROJECT == _RL6463_PROJECT || _PROJECT == _RL6851_PROJECT)
@@ -34,9 +34,9 @@
 
 #ifndef	_DEF_P1_PICTURE_ITEM5
 #if(_HDR_SUPPORT)
-#define _DEF_P1_PICTURE_ITEM5      _MENU_FUN_HDR								//Ô¤ÁôHDRÎ»ÖÃ
+#define _DEF_P1_PICTURE_ITEM5      _MENU_FUN_HDR								//Ô¤ï¿½ï¿½HDRÎ»ï¿½ï¿½
 #else
-#define _DEF_P1_PICTURE_ITEM5      _MENU_NULL									//Ô¤ÁôHDRÎ»ÖÃ
+#define _DEF_P1_PICTURE_ITEM5      _MENU_NULL									//Ô¤ï¿½ï¿½HDRÎ»ï¿½ï¿½
 #endif
 #endif
 
@@ -165,9 +165,9 @@
 
 #ifndef	_DEF_P6_MISC_ITEM4
 #if _MOTION_BLUR_REDUCTION_SUPPORT
-#define _DEF_P6_MISC_ITEM4      	 _MENU_FUN_MBRSYNC							//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM4      	 _MENU_FUN_MBRSYNC							//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #else
-#define _DEF_P6_MISC_ITEM4      	 _MENU_FUN_MPRT											//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM4      	 _MENU_FUN_MPRT											//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #endif
 #endif
 
@@ -185,9 +185,9 @@
 
 #ifndef	_DEF_P6_MISC_ITEM3
 #if _MOTION_BLUR_REDUCTION_SUPPORT
-#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MBRSYNC							//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MBRSYNC							//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #else
-#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MPRT											//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MPRT											//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #endif
 #endif
 
@@ -269,11 +269,11 @@
 #endif
 
 #ifndef	_DEF_P2_DISPLAY_ITEM4
-#define _DEF_P2_DISPLAY_ITEM4      _MENU_NULL 								//Ô¤ÁôgammaÎ»ÖÃ 
+#define _DEF_P2_DISPLAY_ITEM4      _MENU_NULL 								//Ô¤ï¿½ï¿½gammaÎ»ï¿½ï¿½ 
 #endif
 
 #ifndef	_DEF_P2_DISPLAY_ITEM5
-#define _DEF_P2_DISPLAY_ITEM5      _MENU_NULL								//Ô¤ÁôÉ«ÓòÄ£Ê½Î»ÖÃ 
+#define _DEF_P2_DISPLAY_ITEM5      _MENU_NULL								//Ô¤ï¿½ï¿½É«ï¿½ï¿½Ä£Ê½Î»ï¿½ï¿½ 
 #endif
 
 //page3
@@ -341,7 +341,7 @@
 #endif
 
 #ifndef	_DEF_P5_RESET_ITEM3
-#define _DEF_P5_RESET_ITEM3    	  	  _MENU_NULL								 //Ô¤ÁôµÆÐ§Î»ÖÃ
+#define _DEF_P5_RESET_ITEM3    	  	  _MENU_NULL								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
 #endif
 
 #ifndef	_DEF_P5_RESET_ITEM4
@@ -370,9 +370,9 @@
 
 #ifndef	_DEF_P6_MISC_ITEM3
 #if _MOTION_BLUR_REDUCTION_SUPPORT
-#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MBRSYNC							//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MBRSYNC							//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #else
-#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MPRT											//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM3      	 _MENU_FUN_MPRT											//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #endif
 #endif
 
@@ -390,9 +390,9 @@
 
 #ifndef	_DEF_P6_MISC_ITEM2
 #if _MOTION_BLUR_REDUCTION_SUPPORT
-#define _DEF_P6_MISC_ITEM2      	 _MENU_FUN_MBRSYNC							//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM2      	 _MENU_FUN_MBRSYNC							//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #else
-#define _DEF_P6_MISC_ITEM2      	 _MENU_FUN_MPRT											//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM2      	 _MENU_FUN_MPRT											//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #endif
 #endif
 
@@ -415,7 +415,7 @@
 /************************************************************************************/
 
 #ifndef	_DEF_P6_MISC_ITEM4
-#define _DEF_P6_MISC_ITEM4      	 _MENU_NULL										//Ô¤Áô³¬ÆµÎ»ÖÃ			
+#define _DEF_P6_MISC_ITEM4      	 _MENU_NULL										//Ô¤ï¿½ï¿½ï¿½ï¿½ÆµÎ»ï¿½ï¿½			
 #endif
 
 #ifndef	_DEF_P6_MISC_ITEM5

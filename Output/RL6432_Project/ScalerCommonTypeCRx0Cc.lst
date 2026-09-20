@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTYPECRX0CC
@@ -62,7 +62,7 @@ line level    source
               #if(_TYPE_C_POWER_SOURCE == _TYPE_C_VBUS_POWER_ONLY)
               void ScalerTypeCRx0CcVbusPoweredSnkInitial(void);
               void ScalerTypeCRx0CcVbusPoweredSnkAttachedProc_EXINT0(void);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 2   
 
               #endif
               void ScalerTypeCRx0CcHandler(void);
@@ -126,7 +126,7 @@ line level    source
  105          
  106          #if((_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED) || (_TYPE_C_GPIO_MODE_SUPPORT == _ON))
               void ScalerTypeCRx0CcLoadTrimming(void);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 3   
 
               #endif
  109          
@@ -190,7 +190,7 @@ line level    source
                   else
                   {
                       ScalerTypeCRx0CcSetDebounce(_TYPE_C_CC, 110);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 4   
 
                   }
               #else
@@ -254,7 +254,7 @@ line level    source
                   // ---------- HW Mode Accessory Support Setting ----------
               
                   // [2]   hw_debug_sup_en
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 5   
 
               #if((_TYPE_C_ACC_SUPPORT_TYPE == _TYPE_C_ACC_DEBUG) || (_TYPE_C_ACC_SUPPORT_TYPE == _TYPE_C_ACC_DEBUG_POWE
              -R) || (_TYPE_C_ACC_SUPPORT_TYPE == _TYPE_C_ACC_DEBUG_AUDIO) || (_TYPE_C_ACC_SUPPORT_TYPE == _TYPE_C_ACC_ALL))
@@ -318,7 +318,7 @@ line level    source
               
               #if(_TYPE_C_POWER_SOURCE == _TYPE_C_VBUS_POWER_ONLY)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 6   
 
               // Description  : Type C CC Vbus Powered Sink Initial Process
               // Input Value  : None
@@ -382,7 +382,7 @@ line level    source
                           ScalerSetBit_EXINT(P66_0C_TPC_CC_CTRL, ~(_BIT7 | _BIT5 | _BIT3), 0x00);
                       }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 7   
 
                       // Adjust Unattch Vth to 3.67V
                       ScalerTypeCPowerRx0UnattachVthAdjust_EXINT0(500);
@@ -446,7 +446,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : CC Logic Process
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 8   
 
               // Input Value  : None
               // Output Value : None
@@ -510,7 +510,7 @@ line level    source
               
                           if(GET_CC_RX0_CONNECT_EN() == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 9   
 
                               CLR_TYPE_C_RX0_RESET_FLAG();
               
@@ -574,7 +574,7 @@ line level    source
                               {
                                   if(ScalerTypeCPowerRx0CheckVbusSafe0V() == _FALSE)
                                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 10  
 
                                       return;
                                   }
@@ -638,7 +638,7 @@ line level    source
               #if((_TYPE_C_PMIC_TYPE != _PMIC_NONE) && (_TYPE_C_PMIC_CHECK_SUPPORT == _ON))
                                   // Start PMIC Protection
                                   ScalerTypeCPmicRx0ProtectStart(_TYPE_C_POWER_SNK);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 11  
 
               #endif
               
@@ -702,7 +702,7 @@ line level    source
               #endif  // End of #if(_TYPE_C_EMB_SRC_DEF_CUR == _TYPE_C_SRC_DEF_USB)
               
                                   // [0x6630] Change to FW Mode, Clear (hw_done_irq) & (hw_unattach_irq), and Disable hw
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 12  
 
              -_unattach_irq_en
                                   // [7] tpc_cc_mode_sel = 0
@@ -766,7 +766,7 @@ line level    source
                           }
               
                           // 3. Run PMIC Handler
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 13  
 
               #if(_TYPE_C_PMIC_TYPE != _PMIC_NONE)
                           ScalerTypeCPmicRx0Handler();
@@ -830,7 +830,7 @@ line level    source
                       // [0x6630] : [3] hw_done_irq, [2] hw_done_irq_en, [1] hw_unattach_irq, [0] hw_unattach_irq_en
                       // [0] hw_unattach_irq_en = _ENABLE
                       ScalerSetBit_EXINT(P66_30_CC_HW_MODE_CTRL, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _BIT
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 14  
 
              -0));
               
@@ -894,7 +894,7 @@ line level    source
                               // Clear IRQ and Popup Digital Detect Result
                               ScalerSetBit_EXINT(P66_2C_CC_R_CHG_INT, ~(_BIT7 | _BIT5 | _BIT0), (_BIT7 | _BIT5 | _BIT0))
              -;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 15  
 
               
                               // If CC is (Rd+Ra || Ra+Rd), Take Attached Flow
@@ -958,7 +958,7 @@ line level    source
               
                                   // Turn On U3 & Hub Function
                                   ScalerDpRx0SetDpAltModeLaneMapping_EXINT0(_TYPE_C_PIN_ASSIGNMENT_NONE, GET_CC_RX0_ORIE
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 16  
 
              -NTATION());
               
@@ -1022,7 +1022,7 @@ line level    source
                                       // [0x6635] Set HW State to Unattached.SNK
                                       ScalerSetBit_EXINT(P66_30_CC_HW_MODE_CTRL, ~(_BIT6 | _BIT3 | _BIT1), 0x00);
                                       ScalerSetBit_EXINT(P66_35_CC_HW_STATE_TRANSIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), _
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 17  
 
              -BIT4);
                                   }
@@ -1086,7 +1086,7 @@ line level    source
               
                                       // Do Type C Unattach Flow (ADC / PD / CC Reset), and Start HW CC Connection Detec
              -tion (Enable hw_done_irq_en)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 18  
 
                                       ScalerTypeCRx0CcUnattachFlow_EXINT0();
                                   }
@@ -1150,7 +1150,7 @@ line level    source
                   if(ScalerGetBit_EXINT(P66_58_DBCC_SNK_DET_COND, (_BIT1 | _BIT0)) == (_BIT1 | _BIT0))
                   {
                       // DRP Try Src FW Solution : (hw_try_wait_snk_irq == 1) && (hw_try_wait_snk_irq_en == Enable)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 19  
 
                       // [0x6658] : [1] hw_try_wait_snk_irq, [0] hw_try_wait_snk_irq_en
                       // Clear and Disable hw_try_wait_snk_irq
@@ -1214,7 +1214,7 @@ line level    source
                           // [0x6630] Change to FW Mode to Detect Attach or Unattach
                           // [7] tpc_cc_mode_sel = 0
                           ScalerSetBit_EXINT(P66_30_CC_HW_MODE_CTRL, ~(_BIT7 | _BIT3 | _BIT1), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 20  
 
               
                           // Set Power Role for Detecting CC1/CC2 Resistor = SNK
@@ -1278,7 +1278,7 @@ line level    source
               
                           // Do Type C Unattach Flow (ADC / PD / CC Reset), and Start HW CC Connection Detection (Enable
              - hw_done_irq_en)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 21  
 
                           ScalerTypeCRx0CcUnattachFlow_EXINT0();
                       }
@@ -1342,7 +1342,7 @@ line level    source
               void ScalerTypeCRx0CcWDTimerEventProc_WDINT(EnumScalerWDTimerEventID enumEventID, BYTE *pucActiveWDID, BYT
              -E *pucActiveWDTime) using 3
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 22  
 
                   pucActiveWDID = pucActiveWDID;
                   pucActiveWDTime = pucActiveWDTime;
@@ -1406,7 +1406,7 @@ line level    source
               #endif
               
                       default:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 23  
 
               
                           break;
@@ -1470,7 +1470,7 @@ line level    source
                   {   // [0x6607] tCCDebounce = 100-200ms
                       // tpc_db_time_tcc = ucTime
                       ScalerSetByte(P66_07_TPC_TCC_DB_TIME, ucTime);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 24  
 
                   }
                   else
@@ -1534,7 +1534,7 @@ line level    source
              -o AttachWait.SRC
                   // Set Macro and Enable [adc0_comp_vbus_off_en], then Active WD Timer Event to Dynamically Change Vbus
              -_Off_Thr to vSafe0V when [adc0_comp_vbus_on] INT Triggered.
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 25  
 
                   // Note : Since _TYPE_C_FUNCTION_GEN_1 (RL6492) Do Not Have PD Timer Register, The FW Solution in S2_1
              -P is Different from S3.
@@ -1598,7 +1598,7 @@ line level    source
                       ScalerSetBit(P66_30_CC_HW_MODE_CTRL, ~(_BIT6 | _BIT2 | _BIT0), 0x00);
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 26  
 
                   // [0x660C] Disconnect CC1/2 Channel, Detect Circuit
                   // [7] tpc_cc1_det_en     = _TYPE_C_DISCONNECT
@@ -1662,7 +1662,7 @@ line level    source
                   // Clear and Disable CC1/2_R_CHG_INT     [0x662C] = b'1010_0000
                   ScalerSetBit_EXINT(P66_2C_CC_R_CHG_INT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT5));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 27  
 
                   // CC Flags Reset
                   CLR_CC_RX0_ATTACHED();
@@ -1726,7 +1726,7 @@ line level    source
                   // [0x6637][7:6] Setting SRC Rp Resistor (36K / 12K / 4.7K)
               #if(_TYPE_C_EMB_SRC_DEF_CUR == _TYPE_C_SRC_DEF_USB)
                   ScalerSetBit(P66_37_CC_HW_Z_CFG, ~(_BIT7 | _BIT6), (_SET_RP_DEF << 6));
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 28  
 
                   SET_CC_RX0_DEF_CUR(90);  // 90 * 10mA = 900mA
               #elif(_TYPE_C_EMB_SRC_DEF_CUR == _TYPE_C_SRC_DEF_1P5A)
@@ -1790,7 +1790,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 29  
 
               // Description  : Type C Setting For Connection (Connect Channels)
               // Input Value  : None
@@ -1854,7 +1854,7 @@ line level    source
               bit ScalerTypeCRx0CcAttachedSetting(void)
               {
                   bit bPass = _FALSE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 30  
 
               
               #if((_DEBUG_MESSAGE_TYPE_C == _ON) && (_CC_FW_DEBUG == _ON))
@@ -1918,7 +1918,7 @@ line level    source
                               ScalerSetBit(P66_0C_TPC_CC_CTRL, ~(_BIT6 | _BIT4 | _BIT2), 0x00);
               
                               bPass = _TRUE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 31  
 
                           }
                           else
@@ -1982,7 +1982,7 @@ line level    source
               // Description  : CC Check if Unattach Event is Triggered
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 32  
 
               //--------------------------------------------------
               bit ScalerTypeCRx0CcUnattachCheck(void)
@@ -2046,7 +2046,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 33  
 
               // Description  : Enable / Disable Vconn Power
               // Input Value  : bAction : _ON / _OFF
@@ -2110,7 +2110,7 @@ line level    source
                       ScalerSetByte(P66_72_CC2_VCONN_OCP_INT, 0x00);
               
                       // [0x660D] Turn Off Both CC1/2 Vconn Switch : [3:2] tpc_cc1/2_vconn_en= _DISABLE
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 34  
 
                       ScalerSetBit(P66_0D_TPC_OCP_CTRL, ~(_BIT3 | _BIT2), 0x00); // [0x660D] <3:2> : tpc_cc1/2_vconn_en 
              -= _DISABLE
@@ -2174,7 +2174,7 @@ line level    source
                   {
                       // Disable CC1/CC2 Vconn IRQs
                       ScalerSetByte_EXINT(P66_71_CC1_VCONN_OCP_INT, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 35  
 
                       ScalerSetByte_EXINT(P66_72_CC2_VCONN_OCP_INT, 0x00);
               
@@ -2238,7 +2238,7 @@ line level    source
                       // Disable CC1/CC2 Vconn IRQs
                       ScalerSetByte_EXINT(P66_71_CC1_VCONN_OCP_INT, 0x00);
                       ScalerSetByte_EXINT(P66_72_CC2_VCONN_OCP_INT, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 36  
 
               
                       // [0x660D] Turn Off Both CC1/2 Vconn Switch : [3:2] tpc_cc1/2_vconn_en= _DISABLE
@@ -2302,7 +2302,7 @@ line level    source
                       ScalerSetBit(P66_25_BMC_TX_RX_CFG, ~(_BIT7 | _BIT6), 0x00);
               
                       // [0x660C] CC1/CC2 Disconnect to BMC Channel
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 37  
 
                       // [3] tpc_cc1_en = _TYPE_C_DISCONNECT
                       // [2] tpc_cc2_en = _TYPE_C_DISCONNECT
@@ -2366,7 +2366,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Enable/Disable Detect Vbus On/Off to transit State
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 38  
 
               // Input Value  : _ENABLE / _DISABLE
               // Output Value : None
@@ -2430,7 +2430,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 39  
 
               //--------------------------------------------------
               // Description  : Update & Return CC Pin Resistor (Only For CC Pin, Not Vconn Pin)
@@ -2494,7 +2494,7 @@ line level    source
                       {
                           SET_RX0_CC1_R(_DET_RP_3P0A);
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 40  
 
                       else
                       {
@@ -2558,7 +2558,7 @@ line level    source
                   }
               }
               #endif // End of #if(_TYPE_C_EMB_DP_ALT_MODE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 41  
 
               #endif // End of #if(_TYPE_C_PORT_CTRL_MODAL_OPERATION_SUPPORT == _ON)
               
@@ -2622,7 +2622,7 @@ line level    source
                       ScalerTimerDelayXms(usResistor_hold_time);
                       if(((ScalerGetByte(P66_2A_CC_ANA_DET_R) & (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == 0x70) || ((ScalerGet
              -Byte(P66_2A_CC_ANA_DET_R) & (_BIT3 | _BIT2 | _BIT1 | _BIT0)) == 0x07))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 42  
 
                       {
                           bACOnDeviceDetect = _TRUE;
@@ -2686,7 +2686,7 @@ line level    source
                       ScalerSetByte(P66_28_VTH_SEL, 0x99);
               
               #else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 43  
 
                       ScalerSetByte(P66_5A_CC_FW_CC1_Z_CFG, _BIT3);
                       ScalerSetByte(P66_5B_CC_FW_CC2_Z_CFG, _BIT3);
@@ -2750,7 +2750,7 @@ line level    source
               
                           // [0x6658] : [1] hw_try_wait_snk_irq, [0] hw_try_wait_snk_irq_en
                           // Clear and Disable hw_try_wait_snk_irq
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 44  
 
                           ScalerSetBit(P66_58_DBCC_SNK_DET_COND, ~(_BIT3 | _BIT1 | _BIT0), _BIT1);
               
@@ -2814,7 +2814,7 @@ line level    source
                       ScalerSetBit_EXINT(P66_35_CC_HW_STATE_TRANSIT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT5 | _BIT4));
               
                       for(pData_EXINT[0] = 0; pData_EXINT[0] < 50; pData_EXINT[0] ++)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 45  
 
                       {
                           DELAY_40US_EXINT();
@@ -2878,7 +2878,7 @@ line level    source
                       // Enable CC1/ CC2 Change IRQ to Detect Open + Open
                       ScalerSetBit_EXINT(P66_2C_CC_R_CHG_INT, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT0), (_BIT7 | _BIT6 |
              - _BIT5 | _BIT4));
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 46  
 
                   }
               }
@@ -2942,7 +2942,7 @@ line level    source
               {
                   if(enumFunctionSupport == _TYPE_C_SUPPORT_NO_FUNCTION)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 47  
 
                       CLR_CC_RX0_CONNECT_EN();
                   }
@@ -3006,7 +3006,7 @@ line level    source
               // Description  : FW Mode to Unattached.SRC
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 48  
 
               //--------------------------------------------------
               void ScalerTypeCRx0CcFWModeSRCUnattached_EXINT0(void) using 1
@@ -3070,7 +3070,7 @@ line level    source
               {
                   // Clr TryWait.Snk to Attached.SNK Flag
                   CLR_TYPE_C_RX0_TRY_WAIT_SNK_STATE();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 49  
 
               
                   ScalerTypeCRx0PdSetPowerRole_EXINT0(_PD_POWER_SNK);
@@ -3134,7 +3134,7 @@ line level    source
                   CLR_TYPE_C_RX0_CHANGE_VBUS_OFF_THR();
                   ScalerTimerWDCancelTimerEvent_EXINT0(_SCALER_WD_TIMER_EVENT_CC_RX0_CHANGE_VBUS_OFF_THRESHOLD);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 50  
 
               
               #if(_TYPE_C_EIZO_CUSTOMIZED_PMIC_SIC437A_SUPPORT == _ON)
@@ -3198,7 +3198,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 51  
 
                           // [0x6667] Clear and Enable SNK FR_SWAP INT
                           // [7] snk_frs_done_int    = 1
@@ -3262,7 +3262,7 @@ line level    source
                           ScalerSetBit_EXINT(P66_60_FRS_CTRL, ~_BIT7, _BIT7);
               
                           SET_RX0_SRC_FRSWAP_STATUS(_ENABLE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 52  
 
                       }
                       else
@@ -3326,7 +3326,7 @@ line level    source
                   {
                       ScalerSetBit(P66_66_SRC_FRS_INT, ~(_BIT7 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 53  
 
               }
               
@@ -3390,7 +3390,7 @@ line level    source
               
                   if((pucEfuseValueTemp[0] & 0xE0) != 0x00)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 54  
 
                       // Read CC Resistance
                       ScalerEfuseGetData(_EFUSE_CC_RESISTANCE, 8, &pucEfuseValueTemp[0]);
@@ -3454,7 +3454,7 @@ line level    source
                       ScalerSetBit(P66_1B_TPC_CC1_RP36K_CFG, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x0F);
               
                       ScalerSetBit(P66_1C_TPC_CC2_RD_CFG, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x0F);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 55  
 
                       ScalerSetBit(P66_1D_TPC_CC2_RP4P7K_CFG, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x0F);
                       ScalerSetBit(P66_1E_TPC_CC2_RP12K_CFG, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x0F);
@@ -3518,7 +3518,7 @@ line level    source
                       {
                           enumTypeCCcDetectStatus = _TYPE_C_CC_DETECT_HIGH;
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/18/2026 20:38:53 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECRX0CC                                            09/20/2026 19:43:58 PAGE 56  
 
                   }
                   else if(enumTypeCChannel == _TYPE_C_CC2)

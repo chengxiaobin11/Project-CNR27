@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 1   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TFONT_HEBREW
@@ -62,7 +62,7 @@ line level    source
   45            0x11,0x00,0x00,
   46            0x11,0x00,0x00,
   47            0x11,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 2   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 2   
 
   48            0x70,0x80,0x00,
   49            0x00,0x00,0x00,
@@ -126,7 +126,7 @@ line level    source
  107            //========Address -- (09),
  108            0x00,0x00,0x00,
  109            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 3   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 3   
 
  110            0x07,0x08,0x00,
  111            0x44,0x44,0x00,
@@ -190,7 +190,7 @@ line level    source
  169            0x20,0xe0,0x00,
  170            0x00,0x00,0x00,
  171            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 4   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 4   
 
  172            
  173            //========Address -- (0f),
@@ -254,7 +254,7 @@ line level    source
  231            0x00,0x88,0x00,
  232            0x05,0x88,0x00,
  233            0x55,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 5   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 5   
 
  234            0x54,0x00,0x00,
  235            0x44,0x00,0x00,
@@ -318,7 +318,7 @@ line level    source
  293            
  294            //========Address -- (1a),
  295            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 6   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 6   
 
  296            0x00,0x00,0x00,
  297            0x06,0x00,0x00,
@@ -382,7 +382,7 @@ line level    source
  355            0x44,0x44,0x00,
  356            0x40,0x40,0x00,
  357            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 7   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 7   
 
  358            0x00,0x00,0x00,
  359            
@@ -446,7 +446,7 @@ line level    source
  417            0x00,0x00,0x00,
  418            0x06,0x00,0x00,
  419            0x11,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 8   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 8   
 
  420            0x11,0x00,0x00,
  421            0x11,0x00,0x00,
@@ -510,7 +510,7 @@ line level    source
  479            0x00,0x00,0x00,
  480            
  481            //========Address -- (2b),
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 9   
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 9   
 
  482            0x00,0x00,0x00,
  483            0x00,0x00,0x00,
@@ -574,7 +574,7 @@ line level    source
  541            0x11,0x00,0x00,
  542            0x35,0x00,0x00,
  543            0x50,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 10  
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 10  
 
  544            0x00,0x00,0x00,
  545            0x00,0x00,0x00,
@@ -638,7 +638,7 @@ line level    source
  603            0x00,0x00,0x00,
  604            0x00,0x00,0x00,
  605            0x05,0x08,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 11  
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 11  
 
  606            0x44,0x44,0x00,
  607            0x44,0x44,0x00,
@@ -702,7 +702,7 @@ line level    source
  665            0x00,0x00,0x00,
  666            0x00,0x00,0x00,
  667            
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 12  
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 12  
 
  668            //========Address -- (3c),
  669            0x00,0x00,0x00,
@@ -766,7 +766,7 @@ line level    source
  727            0x00,0x88,0x00,
  728            0x00,0x88,0x00,
  729            0x00,0x88,0x00,
-C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/18/2026 20:40:17 PAGE 13  
+C51 COMPILER V9.60.0.0   TFONT_HEBREW                                                      09/20/2026 19:45:01 PAGE 13  
 
  730            0x00,0x80,0x00,
  731            0x00,0x00,0x00,

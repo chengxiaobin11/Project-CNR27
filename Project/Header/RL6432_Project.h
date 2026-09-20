@@ -25,7 +25,7 @@
 // General //
 /////////////
 #ifndef	_OVERCLOCK
-#define _OVERCLOCK												_OFF//×îÐÂ°æÒÑÎÞ×÷ÓÃ
+#define _OVERCLOCK												_OFF//ï¿½ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 //--------------------------------------------------
 // Pcb Option

@@ -113,13 +113,21 @@
 //--------------------------------------------------
 //#define _LVDS_CABLE_TYPE                       _PANEL_LVDS_CABLE_TYPE
 #if(_LVDS_OUTPUT_PORT == _LVDS_2_PORT)
+// #define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
+// #define _LVDS_PORT_MIRROR                       _ENABLE
+// #define _LVDS_PORT_AB_SWAP                    	_DISABLE
+// #define _LVDS_PORT_CD_SWAP                    	_DISABLE
+// #define _LVDS_PORT_EF_SWAP                      _DISABLE
+// #define _LVDS_PORT_GH_SWAP                     	_DISABLE
+// #define _LVDS_PN_SWAP                         	_DISABLE //Need Check
+
 #define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
 #define _LVDS_PORT_MIRROR                       _ENABLE
-#define _LVDS_PORT_AB_SWAP                    	_DISABLE
-#define _LVDS_PORT_CD_SWAP                    	_DISABLE
+#define _LVDS_PORT_AB_SWAP                    	_ENABLE
+#define _LVDS_PORT_CD_SWAP                    	_ENABLE
 #define _LVDS_PORT_EF_SWAP                      _DISABLE
 #define _LVDS_PORT_GH_SWAP                     	_DISABLE
-#define _LVDS_PN_SWAP                         	_DISABLE //Need Check
+#define _LVDS_PN_SWAP                         	_ENABLE //Need Check
 
 #elif(_LVDS_OUTPUT_PORT == _LVDS_4_PORT)
 
@@ -1094,28 +1102,28 @@ sbit bD3_HPD                                  	= P1 ^ 1; // _156PIN_PIN_84, P1.1
 
 
 #define PCB_LED_AC_ON_INITIAL()                 {\
-                                                    bLED1 = _LED_OFF;\
-                                                    bLED2 = _LED_ON;\
-                                                }
-
-#define PCB_LED_ACTIVE()                        {\
-                                                    bLED1 = _LED_OFF;\
-                                                    bLED2 = _LED_ON;\
-                                                }
-
-#define PCB_LED_IDLE()                          {\
-                                                    bLED1 = _LED_OFF;\
-                                                    bLED2 = _LED_ON;\
-                                                }
-
-#define PCB_LED_POWER_SAVING()                  {\
                                                     bLED1 = _LED_ON;\
                                                     bLED2 = _LED_OFF;\
                                                 }
 
-#define PCB_LED_ON()                            {\
+#define PCB_LED_ACTIVE()                        {\
+                                                    bLED1 = _LED_ON;\
+                                                    bLED2 = _LED_OFF;\
+                                                }
+
+#define PCB_LED_IDLE()                          {\
+                                                    bLED1 = _LED_ON;\
+                                                    bLED2 = _LED_OFF;\
+                                                }
+
+#define PCB_LED_POWER_SAVING()                  {\
                                                     bLED1 = _LED_OFF;\
                                                     bLED2 = _LED_ON;\
+                                                }
+
+#define PCB_LED_ON()                            {\
+                                                    bLED1 = _LED_ON;\
+                                                    bLED2 = _LED_OFF;\
                                                 }
 
 #define PCB_LED_OFF()                           {\
@@ -1151,7 +1159,8 @@ sbit bD3_HPD                                  	= P1 ^ 1; // _156PIN_PIN_84, P1.1
 #define PCB_ADKEY2()                            (AD_KEY2)
 
 #define bPOWER_KEY                            	(MCU_FE21_PORT81_PIN_REG)	//156PIN_PIN_68  
-
+#define bUpp									(MCU_FE22_PORT82_PIN_REG)  //_156PIN_PIN_70
+#define bMenu      								(MCU_FE23_PORT83_PIN_REG)  //_156PIN_PIN_69
 
 #define POWER_KEY								0x00
 #define MENU_KEY								0xA8
@@ -1165,29 +1174,28 @@ sbit bD3_HPD                                  	= P1 ^ 1; // _156PIN_PIN_84, P1.1
 #define RIGHT_REG								2
 #define EXIT_REG								2
 
-
-#define PCB_KEY_STATE(ucV0, ucV1, ucV2, ucV3, ucKeyState)   {\
-																	if(KeyDefault[9]>=0x80?!AD_KEY3:((((KeyDefault[4]<10)? 0: KeyDefault[4]-10) <= ((KeyDefault[9]==1)? AD_KEY1 : AD_KEY2)) && (((KeyDefault[9]==1)? AD_KEY1 : AD_KEY2) < ((KeyDefault[4]>237)? 247: KeyDefault[4]+10))))\
-																	{\
-																		(ucKeyState) |= _LEFT_KEY_MASK ;\
-																	}\
-																	if(KeyDefault[8]>=0x80?!AD_KEY3:((((KeyDefault[3]<10)? 0: KeyDefault[3]-10) <= ((KeyDefault[8]==1)? AD_KEY1 : AD_KEY2)) && (((KeyDefault[8]==1)? AD_KEY1 : AD_KEY2) < ((KeyDefault[3]>237)? 247: KeyDefault[3]+10))))\
-																	{\
-																		(ucKeyState) |= _RIGHT_KEY_MASK ;\
-																	}\															   
-																	if(KeyDefault[7]>=0x80?!AD_KEY3:((((KeyDefault[2]<10)? 0: KeyDefault[2]-10) <= ((KeyDefault[7]==1)? AD_KEY1 : AD_KEY2)) && (((KeyDefault[7]==1)? AD_KEY1 : AD_KEY2) < ((KeyDefault[2]>237)? 247: KeyDefault[2]+10))))\
-																	{\
-																		(ucKeyState) |= _EXIT_KEY_MASK ;\
-																	}\												   
-																	if(KeyDefault[6]>=0x80?!AD_KEY3:((((KeyDefault[1]<10)? 0: KeyDefault[1]-10) <= ((KeyDefault[6]==1)? AD_KEY1 : AD_KEY2)) && (((KeyDefault[6]==1)? AD_KEY1 : AD_KEY2) < ((KeyDefault[1]>237)? 247: KeyDefault[1]+10))))\
-																	{\
-																		(ucKeyState) |= _MENU_KEY_MASK ;\
-																	}\																	
-																	if(KeyDefault[5]>=0x80?!AD_KEY3:((((KeyDefault[0]<10)? 0: KeyDefault[0]-10) <= ((KeyDefault[5]==1)? AD_KEY1 : AD_KEY2)) && (((KeyDefault[5]==1)? AD_KEY1 : AD_KEY2) < ((KeyDefault[0]>237)? 247: KeyDefault[0]+10))))\
-																	{\
-																		(ucKeyState) |= _POWER_KEY_MASK ;\
-																	}\									  
-																}
+#define PCB_KEY_STATE(ucV0, ucV1, ucV2, ucV3, ucKeyState)	{\
+																if((0x9E <= (ucV2)) && ((ucV2) < 0xB2))\
+																{\
+																	(ucKeyState) |= _POWER_KEY_MASK;\
+																}\
+																else if(!AD_KEY3)\
+																{\
+																	(ucKeyState) |=_EXIT_KEY_MASK;\
+																}\
+																else if((0x0 <= (ucV2)) && ((ucV2) < 0x10))\
+																{\
+																	(ucKeyState) |=_LEFT_KEY_MASK;\
+																}\
+																else if((0x76 <= (ucV2)) && ((ucV2) < 0x8A))\
+																{\
+																	(ucKeyState) |=_RIGHT_KEY_MASK;\
+																}\
+																else if((0x0 <= (ucV1)) && ((ucV1) < 0x10))\
+																{\
+																	(ucKeyState) |=_MENU_KEY_MASK;\
+																}\                                                           
+															}
 
 
 

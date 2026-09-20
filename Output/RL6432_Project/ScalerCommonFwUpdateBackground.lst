@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/18/2026 20:38:59 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/20/2026 19:44:02 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONFWUPDATEBACKGROUND
@@ -62,7 +62,7 @@ line level    source
               #endif
               #if(_DP_SUPPORT == _ON)
                   _STATUS_IDLE,
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/18/2026 20:38:59 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/20/2026 19:44:02 PAGE 2   
 
               #endif
               #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
                   return _STATUS_IDLE;
               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/18/2026 20:38:59 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/20/2026 19:44:02 PAGE 3   
 
               //--------------------------------------------------
               // Description  : For affective Ip to Set Busy Status
@@ -190,7 +190,7 @@ line level    source
                           {
                               ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_BACKGROUND_FW_UPDATE_MCCS_BUSY);
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/18/2026 20:38:59 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEBACKGROUND                                    09/20/2026 19:44:02 PAGE 4   
 
                           break;
               #endif

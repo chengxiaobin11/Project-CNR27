@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDISPLAY
@@ -62,7 +62,7 @@ line level    source
              -xAA,
                   /*    3 (350mV)   */      0x00, 0x08, 0xAA,    0x01, 0x0A, 0xAA,    0x60, 0x0C, 0xAA,    0x61, 0x0E, 0
              -xAA,
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 2   
 
               };
               #endif
@@ -126,7 +126,7 @@ line level    source
  102          DWORD ScalerDisplayGetPanelClockInfo(EnumPanelClockType enumType);
  103          BYTE ScalerDisplaySelectDVFMode(void);
  104          void ScalerDisplaySetDVFreq(void);
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 3   
 
  105          
  106          
@@ -190,7 +190,7 @@ line level    source
                   ScalerSetBit(P15_26_LVDS_PORTA_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
               
               #endif // #if(_LVDS_TERMINATION_CONTROL == _ENABLE)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 4   
 
               
               #elif(_LVDS_PORT_SEL == _LVDS_1_PORT_C)
@@ -254,7 +254,7 @@ line level    source
  218   1          {
  219   2              ScalerSetBit(P15_26_LVDS_PORTA_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _
              -BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0));
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 5   
 
  220   2              ScalerSetBit(P15_36_LVDS_PORTB_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _
              -BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0));
@@ -318,7 +318,7 @@ line level    source
                       ScalerSetBit(P15_26_LVDS_PORTA_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _
              -BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0));
                       ScalerSetBit(P15_36_LVDS_PORTB_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 6   
 
              -BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0));
                       ScalerSetBit(P55_26_LVDS_PORTA_CTRL6, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT5 | _
@@ -382,7 +382,7 @@ line level    source
              -1 | _BIT0))) << ucLvdsPortSwapIndex)));
  321   1      
  322   1          // Port GH Swap
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 7   
 
  323   1          ucLvdsPortSwapIndex = ((_LVDS_PORT_GH_SWAP == _DISABLE) ? 0 : 4);
  324   1      
@@ -446,7 +446,7 @@ line level    source
                   {
                       // Disable Digital Phy output
                       ScalerSetByte(P38_8E_PHY0_TXBIST_02_H1, 0x00);
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 8   
 
               
                       // Reset Vby1 Digital Phy
@@ -510,7 +510,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerDisplayVboHtpdnSetFwControl(bit bEnable)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 9   
 
               {
                   // Write Clear the HTDPN and LOCKN Flag
@@ -574,7 +574,7 @@ line level    source
                       // Wait LT stable
                       ScalerTimerDelayXms(50);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 10  
 
                       // Enable Vby1 LOCKN controlled by H/W
                       ScalerSetBit(P38_27_VBY1_FW_CTRL, ~_BIT6, 0x00);
@@ -638,7 +638,7 @@ line level    source
                       // Set LOCKN Pull Low
                       ScalerSetBit(P38_27_VBY1_FW_CTRL, ~_BIT0, 0x00);
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 11  
 
                   else
                   {
@@ -702,7 +702,7 @@ line level    source
                   ScalerSetBit(P38_28_VBY1_IRQ_CTRL, ~(_BIT5 | _BIT4 | _BIT1 | _BIT0), _BIT1);
               
                   if(bEnable == _ENABLE)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 12  
 
                   {
                       // Set LOCKN_FAIL Interrupt Enable
@@ -766,7 +766,7 @@ line level    source
                   DebugMessageCheck("ALN Status", ScalerGetBit(P38_0D_TRANSMIT_STATUS, _BIT1));
               
                   // Check Vbyone Lockn status success
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 13  
 
                   if(!((ScalerDisplayVboLocknStatus() == _SUCCESS) || (ScalerGetBit(P38_0D_TRANSMIT_STATUS, _BIT1) == _B
              -IT1)))
@@ -830,7 +830,7 @@ line level    source
               //--------------------------------------------------
               void ScalerDisplayVboPanelSetFastOff(bit bEnable)
               {
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 14  
 
                   if(bEnable == _ENABLE)
                   {
@@ -894,7 +894,7 @@ line level    source
               #if(_PANEL_VBO_UNLOCK_MUTE_BY_FW_POLLING == _ON)
                       else
                       {
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 15  
 
               #if(_PANEL_OLED_BACKLIGHT_AC_DET_CONTROL_TYPE == _PANEL_OLED_AC_DET_CTRL_WITHOUT_SEQ)
                           // Backlight Turn Off
@@ -958,7 +958,7 @@ line level    source
                   }
                   else if(ScalerGetBit_EXINT(P38_28_VBY1_IRQ_CTRL, (_BIT7 | _BIT5)) == (_BIT7 | _BIT5))
                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 16  
 
                       // Write Clear the Lock Flag
                       ScalerSetBit_EXINT(P38_28_VBY1_IRQ_CTRL, ~(_BIT5 | _BIT4 | _BIT1 | _BIT0), _BIT5);
@@ -1022,7 +1022,7 @@ line level    source
               
                       // [5] 1: Enable SSC, 0: disable
                       // [4] 0: 1st Order SDM, 1:2nd Order SDM
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 17  
 
                       // [3] 0: Triangular wave, 1: Square wave
                       ScalerSetBit(P38_D5_DPTX_CMU5, ~(_BIT5 | _BIT4 | _BIT3), _BIT5);
@@ -1086,7 +1086,7 @@ line level    source
               
                   ScalerSetBit(P38_B6_DPTX_DRV_DAC_DAT_LANE3_2, ~0xF0, ((pucTable[ucIndex + 1] & 0x0F) << 4));
                   ScalerSetBit(P38_B6_DPTX_DRV_DAC_DAT_LANE3_2, ~0x0F, (pucTable[ucIndex + 1] & 0x0F));
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 18  
 
                   ScalerSetBit(P38_B7_DPTX_DRV_DAC_DAT_LANE1_0, ~0xF0, ((pucTable[ucIndex + 1] & 0x0F) << 4));
                   ScalerSetBit(P38_B7_DPTX_DRV_DAC_DAT_LANE1_0, ~0x0F, (pucTable[ucIndex + 1] & 0x0F));
@@ -1150,7 +1150,7 @@ line level    source
              -& _BIT1) >> 1)));
               
                   // Set ASY FIFO PLL Tracking Boundary
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 19  
 
                   ScalerSetBit(P38_08_PLL_TRACKING, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT0);
               
@@ -1214,7 +1214,7 @@ line level    source
                       // Power Up DPLL CLK to Vby1
                       ScalerSetBit(P1_DC_DCLK_GATED_CTRL2, ~_BIT1, _BIT1);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 20  
 
                       // Power Up Vby1 PLL for LCLK
                       ScalerSetBit(P38_09_TRANSMIT_CONTROL_H2, ~_BIT6, _BIT6);
@@ -1278,7 +1278,7 @@ line level    source
                       // Enable Weakly Pull Down
                       ScalerSetByte(P38_C1_DPTX_RCVDET_BIAS_PULLDN1, 0xFF);
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 21  
 
               }
               
@@ -1342,7 +1342,7 @@ line level    source
                     return _PANEL_TYP_FRAME_RATE_FREE_RUN;
               #elif(_PANEL_TYPE == _PANDA_MV238FHM_NG0_LVDS_FHD_165HZ)  
                 if(GET_INPUT_TIMING_VFREQ()<570)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 22  
 
                     return _PANEL_TYP_FRAME_RATE_FREE_RUN;
               #elif 0//(_PANEL_TYPE == _AUO_M250HAN01_6_EDP_FHD165HZ) 
@@ -1406,7 +1406,7 @@ line level    source
 1291   3                  else
 1292   3                  {
 1293   4      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 23  
 
 1294   4      #if((_DISPLAY_ROTATION_TYPE == _DISPLAY_ROTATION_GEN_II) && (_FRC_HW_AUTO_3BLOCK_TOGGLE_SUPPORT == _ON))
 1295   4                      if(ScalerRotationCheckStatus() == _TRUE)
@@ -1470,7 +1470,7 @@ line level    source
                   return _1_IVF;
               
               #endif // End of #if(_FRC_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/18/2026 20:37:51 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDISPLAY                                                     09/20/2026 19:43:12 PAGE 24  
 
 1354   1      }
 1355          
@@ -1522,7 +1522,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    730    ----
+   CODE SIZE        =    741    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      8       4
    PDATA SIZE       =   ----    ----

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_PINSHARE
@@ -62,7 +62,7 @@ line level    source
   45          #if(_HW_IIC_SUPPORT == _ON)
   46          void ScalerPinshareHwIICPin(BYTE ucHwIICPinNum);
   47          #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 2   
 
   48          
   49          void ScalerPinshareGpioDdcPinSwitch(BYTE ucPinType);
@@ -126,7 +126,7 @@ line level    source
  103   1          ScalerSetByte(P10_07_PIN_SHARE_CTRL17, (BYTE)_PIN_68); // Page 10-07[2:0], Pin_68
  104   1          ScalerSetByte(P10_08_PIN_SHARE_CTRL30, (BYTE)_PIN_71); // Page 10-08[2:0], Pin_71
  105   1          ScalerSetByte(P10_09_PIN_SHARE_CTRL31, (BYTE)_PIN_72); // Page 10-09[2:0], Pin_72
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 3   
 
  106   1      
  107   1          // Check if pin_AA7-AA6 are assigned to DDC1
@@ -190,7 +190,7 @@ line level    source
  161   1          ScalerSetByte(P10_2B_PIN_SHARE_CTRL73, (BYTE)_PIN_193); // Page 10-2B[2:0], Pin_193
  162   1          ScalerSetByte(P10_2C_PIN_SHARE_CTRL74, (BYTE)_PIN_194); // Page 10-2C[2:0], Pin_194
  163   1          ScalerSetByte(P10_2D_PIN_SHARE_CTRL75, (BYTE)_PIN_195); // Page 10-2D[2:0], Pin_195
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 4   
 
  164   1          ScalerSetByte(P10_2E_PIN_SHARE_CTRL76, (BYTE)_PIN_196); // Page 10-2E[2:0], Pin_196
  165   1          ScalerSetByte(P10_2F_PIN_SHARE_CTRL77, (BYTE)_PIN_197); // Page 10-2F[2:0], Pin_197
@@ -254,7 +254,7 @@ line level    source
  218   1          ScalerSetByte(P10_48_PIN_SHARE_CTRLB0, (BYTE)_PIN_142_OFF_REGION); // Page 10-48[2:0], Pin_142
  219   1          ScalerSetByte(P10_49_PIN_SHARE_CTRLB1, (BYTE)_PIN_143_OFF_REGION); // Page 10-49[2:0], Pin_143
  220   1          ScalerSetByte(P10_4A_PIN_SHARE_CTRLB2, (BYTE)_PIN_144_OFF_REGION); // Page 10-4A[2:0], Pin_144
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 5   
 
  221   1          ScalerSetByte(P10_4B_PIN_SHARE_CTRLB3, (BYTE)_PIN_145_OFF_REGION); // Page 10-4B[2:0], Pin_145
  222   1          ScalerSetByte(P10_4C_PIN_SHARE_CTRLB4, (BYTE)_PIN_146_OFF_REGION); // Page 10-4C[2:0], Pin_146
@@ -318,7 +318,7 @@ line level    source
  278   1          ScalerSetByte(P10_25_PIN_SHARE_CTRL65, (BYTE)_PIN_178_OFF_REGION); // Page 10-25[2:0], Pin_178
  279   1      
  280   1          // Check if pin 179-180 are assigned to IIC1
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 6   
 
  281   1      #if((_PIN_179_OFF_REGION == 8) && (_PIN_180_OFF_REGION == 8))
                   ScalerSetBit(P10_26_PIN_SHARE_CTRL66, ~_BIT7, _BIT7);  // Enable IIC1
@@ -382,7 +382,7 @@ line level    source
                           ScalerSetByte(P10_3A_PIN_SHARE_CTRL92, 0x00);
                           ScalerSetByte(P10_3B_PIN_SHARE_CTRL93, 0x00);
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 7   
 
  342   2      
  343   2                  break;
@@ -446,7 +446,7 @@ line level    source
  400   2                  break;
  401   2      
  402   2              case _DDC1_SWITCH_DDC:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 8   
 
  403   2                  ScalerSetBit(P10_0A_PIN_SHARE_CTRL32, ~_BIT7, 0x00); // Page 10-0A[2:0], Pin_73
  404   2                  break;
@@ -510,7 +510,7 @@ line level    source
  456          //                enumConfigTyte --> Pin type(GPIO/PWM..Etc.)
  457          // Output Value : None
  458          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 9   
 
  459          void ScalerPinshareAdjustConfig(EnumConfigPin enumConfigPin, EnumPinConfigType enumConfigType)
  460          {
@@ -574,7 +574,7 @@ line level    source
  518   3      
  519   3                      case _GPO_OD:
  520   3                          ScalerSetBit(P10_02_PIN_SHARE_CTRL12, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 10  
 
  521   3                          break;
  522   3      
@@ -638,7 +638,7 @@ line level    source
  580   3      
  581   3                      case _GPO_PP:
  582   3                          ScalerSetBit(P10_5B_PIN_SHARE_CTRLD3, ~(_BIT2 | _BIT1 | _BIT0), _BIT0);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 11  
 
  583   3                          break;
  584   3      
@@ -702,7 +702,7 @@ line level    source
  642   3                          ScalerSetBit(P10_2A_PIN_SHARE_CTRL72, ~(_BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
  643   3                          break;
  644   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 12  
 
  645   3                      case _PWM2_OD:
  646   3                          ScalerSetBit(P10_2A_PIN_SHARE_CTRL72, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
@@ -766,7 +766,7 @@ line level    source
  704   3      
  705   3                      case _PWM5_OD:
  706   3                          ScalerSetBit(P10_2F_PIN_SHARE_CTRL77, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 13  
 
  707   3                          break;
  708   3      
@@ -830,7 +830,7 @@ line level    source
  766   3                          ScalerSetBit(P10_31_PIN_SHARE_CTRL81, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
  767   3                          break;
  768   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 14  
 
  769   3                      default:
  770   3                          break;
@@ -894,7 +894,7 @@ line level    source
  826   2                  switch(enumFlashDriveConfig)
  827   2                  {
  828   3                      case _SPI_DRIVE_3_0MA:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 15  
 
  829   3                          ScalerSetBit(P10_B2_PIN_DRIVING_CTRL02, ~(_BIT4 | _BIT3 | _BIT2), _BIT3);
  830   3                          break;
@@ -958,7 +958,7 @@ line level    source
  887   2              ScalerSetBit(P27_0C_ECBUS_PHY_BIST, ~_BIT0, 0x00);
  888   2              // Disable 3Ohm Decrease
  889   2              ScalerSetBit(P67_0C_ECBUS_PHY_BIST, ~_BIT0, 0x00);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 16  
 
  890   2          }
  891   1      }
@@ -1022,7 +1022,7 @@ line level    source
                       // Pin 74 Pinshare Config : AUX_N Mode
                       ScalerSetBit(P10_0B_PIN_SHARE_CTRL33, ~(_BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
                   }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 17  
 
               }
               #endif  // End of #if(_D1_DP_EXIST == _ON)
@@ -1086,7 +1086,7 @@ line level    source
 1009          #endif
 1010          #endif
 1011          #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/18/2026 20:39:24 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PINSHARE                                            09/20/2026 19:44:21 PAGE 18  
 
 1012          
 

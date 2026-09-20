@@ -25,7 +25,7 @@
 
 #if(_OSD_TYPE == _REALTEK_2014_OSD)
 /********************************For Dcr*************************************/
-//_ADJ_BACKLIGHT_BY_TABLE Îª_OFFÊ±£¬²»ÓÃÐÞ¸Ä¡£
+//_ADJ_BACKLIGHT_BY_TABLE Îª_OFFÊ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä¡ï¿½
 	code char BacklightFlag[] = {"This is BacklightDef Flag!"};
 
 	BYTE code BacklightDefault[3] = 
@@ -2569,7 +2569,7 @@ void UserInterfacePowerSwitch(EnumPowerAction enumSwitch)
         #if(_LED_EFFECT == _ON)	
             SET_OSD_PRE_LED_TYPE(GET_OSD_LED_TYPE());	
             SET_OSD_LED_TYPE(_OSDLedType_OFF);
-            led_start =1;                                                     //¹Ø±Õ µÆÐ§
+            led_start =1;                                                     //ï¿½Ø±ï¿½ ï¿½ï¿½Ð§
         #endif
 
             // Update LED Status
@@ -2643,6 +2643,10 @@ void UserInterfaceKeyPadLedControl(BYTE ucKeyPadLed)
 	#if _DEF_DX_KEY_LED
 		ScalerTimerCancelTimerEvent( _USER_TIMER_EVENT_RG_LED_FLICKER);
 	#endif
+    if ((GET_OSD_FACTORY_MODE() == _ON)) {
+        PCB_LED_POWER_SAVING();
+        return;
+    }
     switch(ucKeyPadLed)
     {
         case _LED_POWER_ON:

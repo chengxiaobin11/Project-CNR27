@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONNVRAMSYSTEM
@@ -62,7 +62,7 @@ line level    source
   43          {
   44              0x00,                              // Mode Slot Index
   45              _USER_DEFAULT_DCLK_SPREAD_RANGE,   // SSC
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 2   
 
   46              _DP_EDID_1080P,                    // DP EDID Select
   47          
@@ -126,7 +126,7 @@ line level    source
                   {                       0x00,                         0x00,                         0x00}, // Gain LSB
                   {_ADC_YPBPR_DEFAULT_PR_OFFSET, _ADC_YPBPR_DEFAULT_Y_OFFSET, _ADC_YPBPR_DEFAULT_PB_OFFSET}, // Offset M
              -SB
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 3   
 
                   {                       0x00,                         0x00,                         0x00}, // Offset L
              -SB
@@ -190,7 +190,7 @@ line level    source
  159          void UserCommonFlashSaveModeUserData(void);
  160          BYTE UserCommonFlashLoadModeUserModeNumberData(BYTE ucSlotIndex);
  161          void UserCommonFlashRestoreModeUserData(void);
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 4   
 
  162          BYTE UserCommonFlashVGAFifoModeIndexOffsetInc(BYTE ucStep);
  163          BYTE UserCommonFlashGetMaxFifoGroupCnt(void);
@@ -254,7 +254,7 @@ line level    source
               #endif
               #endif // End of #if(_DP_TX_SUPPORT == _ON)
               
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 5   
 
               #elif(_HDCP_1_4_KEY_LOCATION == _TABLE_LOCATION_FLASH)
               void UserCommonFlashGetHDCPKeyBKsv(BYTE ucSubAddr, BYTE ucLength, BYTE *pucReadArray);
@@ -318,7 +318,7 @@ line level    source
               void UserCommonFlashRestoreTxHDCP2(WORD usAddr, BYTE ucLength, BYTE *pucBuf);
               #endif
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 6   
 
               #endif // End of #if(_HDCP_2_2_KEY_LOCATION == _TABLE_LOCATION_SYSTEM_EEPROM)
  287          #endif // End of #if(_HDCP_2_2_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  345   2      
  346   2              case _DP_HOT_PLUG_DC_OFF_HIGH:
  347   2                  ucValue = g_stSystemData.b1DPHotPlugDCOffHigh;
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 7   
 
  348   2                  break;
  349   2      
@@ -446,7 +446,7 @@ line level    source
  407   2              case _EDID_D1_SELECT:
  408   2                  ucValue = g_stSystemData.b3EdidD1;
  409   2                  break;
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 8   
 
  410   2              case _EDID_D2_SELECT:
  411   2                  ucValue = g_stSystemData.b3EdidD2;
@@ -510,7 +510,7 @@ line level    source
  469   2                  {
  470   3                      ucValue = _SOURCE_SWITCH_FIXED_PORT;
  471   3                  }
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 9   
 
  472   2                  else if(ucValue == _SOURCE_SWITCH_DELL_HOTKEY_AUTO)
  473   2                  {
@@ -574,7 +574,7 @@ line level    source
                               CLR_HDMI_HOTPLUG_TOGGLE();
                           }
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 10  
 
  534   2      #endif
  535   2                  break;
@@ -638,7 +638,7 @@ line level    source
  593   2      
  594   2                  g_stSystemData.b3EdidD0 = ucValue;
  595   2                  g_stSystemData.b3EdidD1 = ucValue;
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 11  
 
  596   2                  g_stSystemData.b3EdidD2 = ucValue;
  597   2                  g_stSystemData.b3EdidD6 = ucValue;
@@ -702,7 +702,7 @@ line level    source
  655   2                  break;
  656   2              case _EDID_D6_SELECT:
  657   2                  g_stSystemData.b3EdidD6 = ucValue;
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 12  
 
  658   2                  break;
  659   2      
@@ -766,7 +766,7 @@ line level    source
  716   1          while(ulLength > 0)
  717   1          {
  718   2              if(ucSubAddrLength == 1)
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 13  
 
  719   2              {
  720   3                  ucSlaveAddress = ucSlaveAddr + (BYTE)((ulSubAddr & 0xFF00) >> 7);
@@ -830,7 +830,7 @@ line level    source
  776          // Description  : Write data to the System EEPROM by IIC
  777          // Input Value  : usSubAddr    --> Start address of selected device
  778          //                usLength     --> Numbers of data we want to write
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 14  
 
  779          //                pReadArray   --> Result array
  780          //                ucIICStatus   --> SW IIC Applications
@@ -894,7 +894,7 @@ line level    source
  837   2      
  838   2              if(ulLength > ucDataCnt)
  839   2              {
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 15  
 
  840   3                  ulLength -= ucDataCnt;
  841   3              }
@@ -958,7 +958,7 @@ line level    source
                           {
                               ucTimeOutCnt--;
               
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 16  
 
                               ScalerDelay5us();
               
@@ -1022,7 +1022,7 @@ line level    source
               #if(_USER_SYSTEM_EEPROM_CUSTOMIZATION == _ON)
                   if(UserInterfaceSystemEepromReadCustomProc(ulSubAddr, usLength, pucReadArray) == _FAIL)
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 17  
 
                       return _FAIL;
                   }
@@ -1086,7 +1086,7 @@ line level    source
               
               #if(_USER_SYSTEM_EEPROM_CUSTOMIZATION == _ON)
                   if(UserInterfaceSystemEepromWriteCustomProc(ulSubAddr, usLength, pucWriteArray) == _FAIL)
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 18  
 
                   {
                       return _FAIL;
@@ -1150,7 +1150,7 @@ line level    source
                   UserCommonEepromWrite(_SYSTEM_DATA_ADDRESS, sizeof(StructSystemDataType), (BYTE *)(&g_stSystemData));
               }
               
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 19  
 
               //--------------------------------------------------
               // Description  : Load system data from EEPROM
@@ -1214,7 +1214,7 @@ line level    source
                           break;
                       }
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 20  
 
               
                   if(ucSlotIndex == (UserCommonEepromGetMaxFifoGroupCnt() + 1))
@@ -1278,7 +1278,7 @@ line level    source
                   BYTE ucMNumber = 0xFF;
                   BYTE ucInx = 0;
               
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 21  
 
                   // g_stVGAModeUserData will be clear
                   memset(&stVGAModeUserData, 0xFF, sizeof(StructVGAModeUserDataType));
@@ -1342,7 +1342,7 @@ line level    source
                   {
                       UserCommonEepromRead(_ADC_SETTING_ADDRESS + sizeof(StructAdcDataType),
                                            sizeof(StructAdcDataType),
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 22  
 
                                            &g_stAdcData.ucAdcPGA);
                   }
@@ -1406,7 +1406,7 @@ line level    source
 1313          //                ucLength: buf length
 1314          // Output Value : return _TRUE if load success, else return _FALSE
 1315          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 23  
 
 1316          bit UserCommonFlashLoadItem(EnumFlashItemIDType enumItemID, BYTE *pucData, BYTE ucLength)
 1317          {
@@ -1470,7 +1470,7 @@ line level    source
 1374   1          BYTE ucResult = 0;
 1375   1          BYTE ucData = 0;
 1376   1      
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 24  
 
 1377   1          bit bDataBit0 = 0;
 1378   1          bit bDataBit1 = 0;
@@ -1534,7 +1534,7 @@ line level    source
 1434   1      
 1435   1          ucResult = (((BYTE)bLastCRC0) + (((BYTE)bLastCRC1) << 1) + (((BYTE)bLastCRC2) << 2) + (((BYTE)bLastCRC
              -3) << 3) + (((BYTE)bLastCRC4) << 4) + (((BYTE)bLastCRC5) << 5) + (((BYTE)bLastCRC6) << 6) + (((BYTE)bLastCRC7) << 7));
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 25  
 
 1436   1      
 1437   1          return ucResult;
@@ -1598,7 +1598,7 @@ line level    source
 1493   6                          }
 1494   5                      }
 1495   4      
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 26  
 
 1496   4                      // Same item has been saved last time
 1497   4                      if(ucItemIndex >= ucLength)
@@ -1662,7 +1662,7 @@ line level    source
 1552   1          UserCommonFlashWrite(_SYSTEM_EEPROM_EMULATION_FLASH_BANK, usPageAddr + g_pusFlashAddrArr[ucPageID] * _
              -DATA_ITEM_LENGTH + _DATA_ITEM_LENGTH - 1, 1, pucWholeItem + _DATA_ITEM_LENGTH - 1);
 1553   1      
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 27  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 27  
 
 1554   1          g_pusFlashAddrArr[ucPageID]++;
 1555   1      
@@ -1726,7 +1726,7 @@ line level    source
 1612   1          if(UserCommonFlashLoadItem(_FLASH_ITEMID_MODE_USER_DATA + ucSlotIndex, pData, sizeof(StructVGAModeUser
              -DataType)) == _TRUE)
 1613   1          {
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 28  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 28  
 
 1614   2              memcpy(&g_stVGAModeUserData, pData, sizeof(StructVGAModeUserDataType));
 1615   2          }
@@ -1790,7 +1790,7 @@ line level    source
 1671          // Input Value  : None
 1672          // Output Value : None
 1673          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 29  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 29  
 
 1674          void UserCommonFlashRestoreModeUserData(void)
 1675          {
@@ -1854,7 +1854,7 @@ line level    source
 1729   2          }
 1730   1      
 1731   1          return g_stSystemData.ucModeSlotIndex;
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 30  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 30  
 
 1732   1      }
 1733          
@@ -1918,7 +1918,7 @@ line level    source
 1790   1      
 1791   1          if(enumColorFormat == _COLOR_SPACE_RGB)
 1792   1          {
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 31  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 31  
 
 1793   2              UserCommonFlashSaveItem(_FLASH_ITEMID_VGA_ADC_DATA, (BYTE *)(&g_stAdcData), sizeof(StructAdcDataTy
              -pe));
@@ -1982,7 +1982,7 @@ line level    source
               void UserCommonEepromRestoreEDID(DWORD ulOffset, BYTE ucLength, BYTE *pucBuf)
               {
                   UserCommonEepromWrite(ulOffset, ucLength, pucBuf);
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 32  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 32  
 
               }
               #endif
@@ -2046,7 +2046,7 @@ line level    source
               void UserCommonEepromRestoreHDCP1P4(DWORD ulOffset, BYTE ucLength, BYTE *pucBuf)
               {
                   UserCommonEepromWrite((DWORD)_RX_HDCP_1_4_KEY_ADDRESS_EEPROM + ulOffset, ucLength, pucBuf);
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 33  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 33  
 
               }
               #endif
@@ -2110,7 +2110,7 @@ line level    source
               }
               
               #if(_WRITE_HDCP_TO_SYSTEM_EEPROM == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 34  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 34  
 
               //--------------------------------------------------
               // Description  : Restore HDCP 1.4 Key
@@ -2174,7 +2174,7 @@ line level    source
                   UserCommonEepromRead(((DWORD)_RX_HDCP_2_2_KEY_ADDRESS_EEPROM + (ulSubAddr)), usLength, pucReadArray);
               }
               
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 35  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 35  
 
               //--------------------------------------------------
               // Description  : Get HDCP By User Defined Method
@@ -2238,7 +2238,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void UserCommonEepromRestoreHDCP2(DWORD ulOffset, BYTE ucLength, BYTE *pucBuf)
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 36  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 36  
 
               {
                   UserCommonEepromWrite((DWORD)_RX_HDCP_2_2_KEY_ADDRESS_EEPROM + ulOffset, ucLength, pucBuf);
@@ -2302,7 +2302,7 @@ line level    source
               #endif // End of #if(_WRITE_HDCP_TO_SYSTEM_EEPROM == _ON)
               
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 37  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 37  
 
               
               #elif(_HDCP_2_2_KEY_LOCATION == _TABLE_LOCATION_FLASH)
@@ -2366,7 +2366,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 38  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 38  
 
               void UserCommonFlashGetHdcp2LCKey(WORD usSubAddr, WORD usLength, BYTE *pucReadArray)
               {
@@ -2430,7 +2430,7 @@ line level    source
               {
                   UserCommonFlashRead(_TX_HDCP_2_2_KEY_FLASH_BANK, (_TX_HDCP_2_2_KEY_ADDRESS_FLASH + 768 + (usSubAddr)),
              - usLength, pucReadArray);
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 39  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 39  
 
               }
               
@@ -2494,7 +2494,7 @@ line level    source
 2318   1      }
 2319          #endif // End of #if(_FLASH_READ_FUNCTION_SUPPORT == _ON)
 2320          
-C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/18/2026 20:39:43 PAGE 40  
+C51 COMPILER V9.60.0.0   USERCOMMONNVRAMSYSTEM                                             09/20/2026 19:44:36 PAGE 40  
 
 2321          #if(_FLASH_WR_PROTECT == _ON)
               //--------------------------------------------------

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDP_SEPTPHY
@@ -62,7 +62,7 @@ line level    source
   42          void ScalerDpRxSetDpcdValue(BYTE ucInputPort, BYTE ucDpcdAccessPortH, BYTE ucDpcdAccessPortM, BYTE ucDpcdA
              -ccessPortL, BYTE ucDpcdValue);
   43          void ScalerDpEdidSwitch(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 2   
 
   44          void ScalerDpFakeLinkTrainingSetting(BYTE ucInputPort);
   45          EnumDpPowerState ScalerDpGetPowerStatus(BYTE ucInputPort);
@@ -126,7 +126,7 @@ line level    source
               void ScalerDpRxHdrSupportSwitch(BYTE ucInputPort, EnumDpHdrSupport enumDpHdrSupport);
               EnumDpHdrSupport ScalerDpRxHdrGetSupport(BYTE ucInputPort);
               void ScalerDpRxHdrDpcdSetting(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 3   
 
               #endif
  103          #endif
@@ -190,7 +190,7 @@ line level    source
  157          {
  158   1          switch(ucInputPort)
  159   1          {
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 4   
 
  160   2      #if(_D0_DP_EXIST == _ON)
  161   2      
@@ -254,7 +254,7 @@ line level    source
  216   2              default:
  217   2      
  218   2                  break;
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 5   
 
  219   2          }
  220   1      }
@@ -318,7 +318,7 @@ line level    source
                       case _D1_INPUT_PORT:
                           SET_DP_RX_D1_EDID_SWITCH();
                           SET_DP_RX_CAPABILITY_SWITCHED();
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 6   
 
                           break;
               #endif
@@ -382,7 +382,7 @@ line level    source
               
                       case _D6_INPUT_PORT:
               #endif
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 7   
 
  342   2                  if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x06, 0x00, (_BIT2 | _BIT1 | _BIT0)) == _BIT1)
  343   2                  {
@@ -446,7 +446,7 @@ line level    source
               
                           return (ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, 0x01, (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)));
               #endif
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 8   
 
  402   2              default:
  403   2      
@@ -510,7 +510,7 @@ line level    source
               
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 9   
 
                           return (ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, (0x03 + enumDpLane), (_BIT1 | _BIT0)));
               #endif
@@ -574,7 +574,7 @@ line level    source
  523          // Description  : Dp HotPlug Event for interface
  524          // Input Value  : Hot Plug Type
  525          // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 10  
 
  526          //--------------------------------------------------
  527          void ScalerDpSetHotPlugEvent(BYTE ucInputPort, EnumDpHotPlugAssertType enumHpdType)
@@ -638,7 +638,7 @@ line level    source
  582   3              }
  583   2          }
  584   1      #endif
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 11  
 
  585   1      
  586   1      #if(_D1_DP_EXIST == _ON)
@@ -702,7 +702,7 @@ line level    source
  641   3      #if(_D0_DP_EXIST == _ON)
  642   3      
  643   3                  case _D0_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 12  
 
  644   3      
  645   3      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
@@ -766,7 +766,7 @@ line level    source
  699   5                              DebugMessageRx0("_D0_HOT_PLUG_HIGH after Xms", (pstHpdSeq[ucI].enumHpdTime - pstHp
              -dSeq[ucI - 1].enumHpdTime));
  700   5                          }
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 13  
 
  701   4                          else
  702   4                          {
@@ -830,7 +830,7 @@ line level    source
              -X1_HOTPLUG_ASSERTED);
                                   }
                                   else
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 14  
 
               #endif
                                   {
@@ -894,7 +894,7 @@ line level    source
               
               #if(_DP_MST_SUPPORT == _ON)
                               if(ScalerDpRxMstGetMstCapability(_D1_INPUT_PORT) == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 15  
 
                               {
                                   ScalerDpRx1SetHotPlugEvent(_DP_HPD_LOW_RESET_AUX);
@@ -958,7 +958,7 @@ line level    source
  877   5                              {
  878   6      #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
                                           return;
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 16  
 
               #endif
  881   6      
@@ -1022,7 +1022,7 @@ line level    source
                                       {
               #if((_DP_HDMI_COMPATIBLE_MODE == _ON) || (_DP_POWER_OFF_HDCP_SUPPORT == _ON))
                                           return;
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 17  
 
               #endif
               
@@ -1086,7 +1086,7 @@ line level    source
               }
               #endif
  995          
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 18  
 
  996          //--------------------------------------------------
  997          // Description  : Initial DP Settings
@@ -1150,7 +1150,7 @@ line level    source
 1050   2      #if(_D1_DP_EXIST == _ON)
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 19  
 
                           if(enumDpLaneCount > _D1_DP_MAIN_LINK_LANES)
                           {
@@ -1214,7 +1214,7 @@ line level    source
                   ScalerSetBit(PBA_79_AUX_DIG_PHY9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT1 | _BIT0));
               
                   ScalerTimerDelayXms(2);
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 20  
 
               
                   if((ScalerGetBit(PB7_7A_AUX_DIG_PHYA, _BIT0) == 0x00) && (ScalerGetBit(PBA_7A_AUX_DIG_PHYA, _BIT0) == 
@@ -1278,7 +1278,7 @@ line level    source
 1173   2              // Aux PHY Power Saving Mode
 1174   2              ScalerSetBit(PB7_62_AUX_2, ~_BIT1, _BIT1);
 1175   2      
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 21  
 
 1176   2              // Aux Bias Current From POR
 1177   2              ScalerSetBit(PB7_63_AUX_3, ~_BIT7, _BIT7);
@@ -1342,7 +1342,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 22  
 
                       SET_DP_RX1_PS_AUX_TOGGLE();
                   }
@@ -1406,7 +1406,7 @@ line level    source
 1297   2                  ScalerDpRx0SetHotPlugEvent(_DP_HPD_ASSERTED);
 1298   2                  break;
 1299   2      
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 23  
 
 1300   2              case _SCALER_TIMER_EVENT_DP_RX0_HDCP_LONG_HOTPLUG_EVENT:
 1301   2      
@@ -1470,7 +1470,7 @@ line level    source
 1356   2      #endif
 1357   2      
 1358   2      #if(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 24  
 
                       case _SCALER_TIMER_EVENT_DP_RX1_HOTPLUG_ASSERTED:
                           ScalerDpRx1SetHotPlugEvent(_DP_HPD_ASSERTED);
@@ -1534,7 +1534,7 @@ line level    source
 1418   2          }
 1419   1      }
 1420          
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 25  
 
 1421          //--------------------------------------------------
 1422          // Description  : Dp Version Switch
@@ -1598,7 +1598,7 @@ line level    source
 1479   2              case _POWER_ACTION_NORMAL_TO_FAKE_OFF:
 1480   2      
 1481   2      #if(_DP_MST_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 26  
 
                           if(GET_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD() == _TRUE)
                           {
@@ -1662,7 +1662,7 @@ line level    source
 1541   1      }
 1542          
 1543          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 27  
 
 1544          // Description  : Dp Main Link Quality Management
 1545          // Input Value  : Dx Input Port
@@ -1726,7 +1726,7 @@ line level    source
 1603   1      #if(_D0_DP_EXIST == _ON)
 1604   1          if(ScalerGetBit_EXINT(PB7_FB_DUMMY_1, (_BIT7 | _BIT6)) == (_BIT7 | _BIT6))
 1605   1          {
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 28  
 
 1606   2              if(ScalerGetBit_EXINT(PB7_D0_AUX_MODE_SET, _BIT4) == 0x00)
 1607   2              {
@@ -1790,7 +1790,7 @@ line level    source
                           g_ucDpAuxRx1DpcdAddress = (ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L));
                           g_ucDpAuxRx1DpcdLength = (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F) + 1;
                       }
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 29  
 
                   }
               #if(_DP_HDR10_SUPPORT == _ON)
@@ -1854,7 +1854,7 @@ line level    source
 1726   3                  // Backup DPCD Address and Length of 1st AUX Command
 1727   3                  g_ucDpAuxRx0DpcdAddress = (ScalerGetByte_EXINT(PB7_D4_AUX_RX_ADDR_L));
 1728   3                  g_ucDpAuxRx0DpcdLength = (ScalerGetByte_EXINT(PB7_D5_AUX_RXLEN) & 0x0F) + 1;
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 30  
 
 1729   3              }
 1730   2          }
@@ -1918,7 +1918,7 @@ line level    source
                       BYTE ucDpRxAuxCmdAddrStart = 0;
                       BYTE ucDpRxAuxCmdAddrEnd = 0;
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 31  
 
                       ucDpRxAuxCmdAddrEnd = ScalerGetByte_EXINT(PBA_D4_AUX_RX_ADDR_L) - 1;
                       ucDpRxAuxCmdAddrStart = ucDpRxAuxCmdAddrEnd - (ScalerGetByte_EXINT(PBA_D5_AUX_RXLEN) & 0x0F);
@@ -1982,7 +1982,7 @@ line level    source
                   CLR_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD();
               
               #if(_D0_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 32  
 
                   if(ScalerDpRx0HdcpCheckEnabled() == _TRUE)
                   {
@@ -2046,7 +2046,7 @@ line level    source
                   // MSG Status Reset
                   SET_DP_RX_MST_MODE_STATE(_DP_RX_MST_MODE_STATUS_NONE_MSG);
                   SET_DP_RX_EVENT(_DP_RX_NONE_EVENT);
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 33  
 
               
                   // Free Request Pool Array
@@ -2110,7 +2110,7 @@ line level    source
                   CLR_DP_MST_RX_URGENT_EVENT_CHECK_SKIP();
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 34  
 
               // Tx Reset-----------------------------------
               
@@ -2174,7 +2174,7 @@ line level    source
               
                   CLR_DP_RX_CANCEL_MSG_TIMEOUT_EVENT();
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 35  
 
                   // Reset Stream ID Mapping Table
                   for(pData_EXINT[0] = 0; pData_EXINT[0] < 5; pData_EXINT[0]++)
@@ -2238,7 +2238,7 @@ line level    source
               
               #if(_DP_HDCP14_REPEATER_BIT_DISABLE_FOR_TX_CLONE_OFF == _ON)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 36  
 
               // Description  : HDCP 1.4 Repeater Capability Switch
               // Input Value  : Input Port
@@ -2302,7 +2302,7 @@ line level    source
                   ScalerDpHdcpResetUpstreamEventProc();
               
               #if(_D0_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 37  
 
                   ScalerDpRx0HDCPHandler();
               
@@ -2366,7 +2366,7 @@ line level    source
 2220   2              case _D0_INPUT_PORT:
 2221   2      
 2222   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 38  
 
               
                       case _D6_INPUT_PORT:
@@ -2430,7 +2430,7 @@ line level    source
                           }
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 39  
 
               #endif
               
@@ -2494,7 +2494,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 40  
 
                           break;
                   }
@@ -2558,7 +2558,7 @@ line level    source
 2405   2      #endif
 2406   2      
 2407   2      #if(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/18/2026 20:38:18 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERDP_SEPTPHY                                                  09/20/2026 19:43:32 PAGE 41  
 
                       case _D1_INPUT_PORT:
               

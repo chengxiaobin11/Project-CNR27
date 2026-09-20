@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/18/2026 20:39:35 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/20/2026 19:44:30 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_EFUSE
@@ -62,7 +62,7 @@ line level    source
   45          // Description  : M2PLL Power COntrol.
   46          // Input Value  : enumEfuseDataState, pucEfuseData
   47          // Output Value : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/18/2026 20:39:35 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_EFUSE                                               09/20/2026 19:44:30 PAGE 2   
 
   48          //--------------------------------------------------
   49          void ScalerEfuseGetData(EnumEfuseDataState enumEfuseDataState, BYTE ucEfuseLength, BYTE *pucEfuseData)

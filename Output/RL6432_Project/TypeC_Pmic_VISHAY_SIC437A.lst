@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_VISHAY_SIC437A
@@ -62,7 +62,7 @@ line level    source
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicSwitchControl_WDINT(EnumTypeCPmicSwitchControl 
              -enumSwitchControl, EnumTypeCPmicDirection enumPowerDirection);
               #if(_TYPE_C_EMB_PD3_PPS_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 2   
 
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicPpsOutputModeSetting(EnumTypeCPmicDirection enu
              -mPowerDirection, EnumPDPdoType enumOutputPdoType);
@@ -126,7 +126,7 @@ line level    source
               {
               }
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 3   
 
               //--------------------------------------------------
               // Description  : PMIC Reset Settings
@@ -190,7 +190,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Control PMIC to Directed Voltage
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 4   
 
               // Input Value  : bPowerDirection : _PD_POWER_SNK / _PD_POWER_SRC
               //                usVoltage : 300 ~ 2100 (Unit = 10mV)
@@ -254,7 +254,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 5   
 
               // Description  : PMIC VBUS Discharge Control
               // Input Value  : enumEn : _ENABLE / _DISABLE
@@ -318,7 +318,7 @@ line level    source
               // Output Value : Control result (Fail/Success)
               //--------------------------------------------------
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicSwitchControl_WDINT(EnumTypeCPmicSwitchControl 
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 6   
 
              -enumSwitchControl, EnumTypeCPmicDirection enumPowerDirection) using 3
               {
@@ -382,7 +382,7 @@ line level    source
               EnumTypeCPmicOperationMode ExternalDeviceInterfaceTypeCPmicReadPpsOperationModeStatus_EXINT0(void) using 1
               {
                   return _TYPE_C_PMIC_NONE_MODE_OPERATION;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 7   
 
               }
               #endif // End of #if(_PORT_CTRL_EMB_PD3_PPS_SUPPORT == _ON)
@@ -446,7 +446,7 @@ line level    source
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 8   
 
               //--------------------------------------------------
               // Description  : Type-C Unattached Power Control Flow
@@ -510,7 +510,7 @@ line level    source
                   // Kernel Call This Funciton When TypeC PD as SRC and Vbus is Ready During Power Transition
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 9   
 
               }
               
@@ -574,7 +574,7 @@ line level    source
                   // Use enumPowerRole to Get PD Contrller is SRC or SNK When Hard Reset Happens
               
                   return _TYPE_C_VBUS_CHECK_NONE;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 10  
 
               }
               
@@ -638,7 +638,7 @@ line level    source
                   // For Eizo Implement Customized OCP Flow
                   // Kernel Call This Funciton When TypeC PD Detect OCP Event
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 11  
 
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
@@ -702,7 +702,7 @@ line level    source
                   // Kernel Call This Funciton When TypeC Detect Vbus 0V
                   // Use enumPowerRole to Get PD Contrller is SRC or SNK When Vbus 0V Detected
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/18/2026 20:40:27 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_VISHAY_SIC437A                                         09/20/2026 19:45:09 PAGE 12  
 
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }

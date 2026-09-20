@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONHDCP2
@@ -62,7 +62,7 @@ line level    source
   45          BYTE g_pucHdcp2HmacSha256CipherInput[64];
   46          BYTE g_pucHdcp2Sha256[32];
   47          
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 2   
 
   48          BYTE g_pucHdcp2BackUp[4];
   49          
@@ -126,7 +126,7 @@ line level    source
  101          bit ScalerHdcp2RxHmacSha256Calculate(BYTE *pucInputArray1, BYTE *pucInputArray2);
  102          #if(_DP_MST_SUPPORT == _ON)
               bit ScalerHdcp2RepeaterLPrimeHmacSha256Calculate(BYTE *pucInputArray1, BYTE *pucInputArray2, BYTE *pucInpu
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 3   
 
              -tArray3);
               bit ScalerHdcp2RepeaterLPrimeCalculate(BYTE *pucHdcp2dKey0, BYTE *pucHdcp2dKey1, BYTE *pucInputArray);
@@ -190,7 +190,7 @@ line level    source
  156   2                  // Initial AES Input Value
  157   2                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 8; pData_EXINT[0]++)
  158   2                  {
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 4   
 
  159   3                      g_pucHdcp2AesInput[pData_EXINT[0]] = *(pucHdcp2Rtx + pData_EXINT[0]);
  160   3                  }
@@ -254,7 +254,7 @@ line level    source
  218   2                  {
  219   3                      g_pucHdcp2AesCipherInput[pData_EXINT[0]] = *(pucHdcp2Km + pData_EXINT[0]);
  220   3                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 5   
 
  221   2      
  222   2                  for(pData_EXINT[0] = 8; pData_EXINT[0] < 16; pData_EXINT[0]++)
@@ -318,7 +318,7 @@ line level    source
  276   1          {
  277   2              g_pucHdcp2HmacSha256Input[8 + pData_EXINT[0]] = pucHdcp2RxCaps[pData_EXINT[0]];
  278   2          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 6   
 
  279   1      
  280   1          for(pData_EXINT[0] = 0; pData_EXINT[0] < 3; pData_EXINT[0]++)
@@ -382,7 +382,7 @@ line level    source
  337   1      #if((_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT) || (_D4_INPUT_PORT_TYPE == _D4_MHL_PORT))
                   ScalerTMDSRx4Hdcp2Handler();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 7   
 
  340   1      
  341   1      #if((_D5_INPUT_PORT_TYPE == _D5_HDMI_PORT) || (_D5_INPUT_PORT_TYPE == _D5_MHL_PORT))
@@ -446,7 +446,7 @@ line level    source
  399   1      
  400   1      #if((_D1_DP_EXIST == _ON) && (_DP_HDCP_2_2_SUPPORT == _ON))
                   ScalerDpRx1Hdcp2Handler_EXINT0();
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 8   
 
               #endif
  403   1      
@@ -510,7 +510,7 @@ line level    source
  459   3              }
  460   2              else
  461   2              {
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 9   
 
  462   3                  g_pucHdcp2HmacSha256CipherInput[pData_EXINT[0]] = 0;
  463   3              }
@@ -574,7 +574,7 @@ line level    source
  517          void ScalerHdcp2RxDownLoadCalculateKey(WORD usSubAddr, WORD usLength, BYTE *pucReadArray, BYTE ucRSAType)
  518          {
  519   1          switch(ucRSAType)
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 10  
 
  520   1          {
  521   2              case _HDCP_2_2_RSA_D_KEY:
@@ -638,7 +638,7 @@ line level    source
  579   1          pucHdcp2Rrx[6] = ScalerGetByte_EXINT(P63_8F_HDCP_AES_OUT_1);
  580   1          pucHdcp2Rrx[7] = ScalerGetByte_EXINT(P63_90_HDCP_AES_OUT_0);
  581   1      }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 11  
 
  582          //--------------------------------------------------
  583          // Description  : HDCP 2.2 HMACSHA 256 Calculate IN INT
@@ -702,7 +702,7 @@ line level    source
  640          {
  641   1          // Disable HDCP 2.2 Software Reset
  642   1          ScalerSetBit(P63_10_HDCP_RSA_CTRL0, ~_BIT3, _BIT3);
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 12  
 
  643   1      
  644   1          // Calculate Kh = SHA256(Kprivrx), Need 3 SHA256 Block
@@ -766,7 +766,7 @@ line level    source
  702   2              // Set First Calculate
  703   2              ScalerSetBit(P63_30_HDCP_SHA_CONTRL, ~(_BIT2 | _BIT1), _BIT1);
  704   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 13  
 
  705   2              // Enable SHA256 Calculate
  706   2              ScalerSetBit(P63_30_HDCP_SHA_CONTRL, ~_BIT2, _BIT2);
@@ -830,7 +830,7 @@ line level    source
  764   2          }
  765   1          else
  766   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 14  
 
  767   2              // Disable First Calculate
  768   2              ScalerSetBit_EXINT(P63_30_HDCP_SHA_CONTRL, ~(_BIT2 | _BIT1), 0x00);
@@ -894,7 +894,7 @@ line level    source
              -2RrxErrta1, 8) != 0x00))
  826   2              {
  827   3                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 15  
 
  828   3              }
  829   2              else
@@ -958,7 +958,7 @@ line level    source
  886   2                  for(pData_EXINT[0] = 0; pData_EXINT[0] < 8; pData_EXINT[0]++)
  887   2                  {
  888   3                      g_pucHdcp2AesInput[pData_EXINT[0]] = *(pucHdcp2Rtx + pData_EXINT[0]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 16  
 
  889   3                  }
  890   2      
@@ -1022,7 +1022,7 @@ line level    source
  947          // Input Value  : None
  948          // Output Value : _TRUE or _FALSE
  949          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 17  
 
  950          BYTE ScalerHdcp2RsaAvailable_WDINT(void) using 3
  951          {
@@ -1086,7 +1086,7 @@ line level    source
 1006   1          BYTE pucAESCipherInput[16];
 1007   1      
 1008   1          memset(pucAESInput, 0, sizeof(pucAESInput));
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 18  
 
 1009   1          memset(pucAESCipherInput, 0, sizeof(pucAESCipherInput));
 1010   1      
@@ -1150,7 +1150,7 @@ line level    source
              -TxCaps, BYTE *pucHdcp2RxCaps)
 1068          {
 1069   1          BYTE pucHMACSHA256Input[64];
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 19  
 
 1070   1          BYTE pucHMACSHA256CipherInput[64];
 1071   1      
@@ -1214,7 +1214,7 @@ line level    source
 1129   2          }
 1130   1      }
 1131          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 20  
 
 1132          // Description  : HDCP 2.2 HMACSHA 256 Calculate
 1133          // Input Value  : None
@@ -1278,7 +1278,7 @@ line level    source
               
                   // Calculate SHA256((K0 XOR ipad) || text)
                   if(ScalerHdcp2RxSha256Calculate(pucInputArray3, 0) == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 21  
 
                   {
                       if(ScalerHdcp2RxSha256Calculate(pucInputArray1, 1) == _TRUE)
@@ -1342,7 +1342,7 @@ line level    source
                   memcpy(&pucHMACSHA256CipherInput[16], pucHdcp2dKey1, 16);
                   memset(&pucHMACSHA256CipherInput[32], 0, 32);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 22  
 
                   if(ScalerHdcp2RepeaterLPrimeHmacSha256Calculate(pucLPrimeInput1, pucLPrimeInput2, pucHMACSHA256CipherI
              -nput) == _TRUE)
@@ -1406,7 +1406,7 @@ line level    source
 1311   2          }
 1312   1      
 1313   1          for(pData[0] = 0; pData[0] < 16; pData[0]++)
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 23  
 
 1314   1          {
 1315   2              ScalerSetBit(P63_10_HDCP_RSA_CTRL0, ~_BIT0, _BIT0);
@@ -1470,7 +1470,7 @@ line level    source
 1371   2              {
 1372   3                  ScalerSetByte(P63_16_HDCP_RSA_DATA_ADDR, (0x30 | pData[0]));
 1373   3                  memcpy(&pucRsaOaepInput[(15 - pData[0]) * 8], (volatile BYTE xdata *)P63_20_HDCP_RSA_DATA_OUT_
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 24  
 
              -DATA7, 8);
 1374   3              }
@@ -1534,7 +1534,7 @@ line level    source
 1430   2          }
 1431   1      
 1432   1          return _FALSE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 25  
 
 1433   1      }
 1434          #endif
@@ -1598,7 +1598,7 @@ line level    source
               
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 26  
 
                           ScalerTMDSRx1Hdcp2ResetProc();
               
@@ -1662,7 +1662,7 @@ line level    source
 1547   1          {
 1548   2      #if((_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT) || (_D1_INPUT_PORT_TYPE == _D1_MHL_PORT))
                       case _SCALER_TIMER_EVENT_RX1_HDCP2_REAUTH:
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 27  
 
               
                           ScalerTMDSRx1Hdcp2ReAuthEvent();
@@ -1726,7 +1726,7 @@ line level    source
 1608   1      }
 1609          
 1610          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 28  
 
 1611          // Description  : HDCP 2.2 RSA Calculate in INT
 1612          // Input Value  : None
@@ -1790,7 +1790,7 @@ line level    source
 1666   1      
 1667   1          // Load Npinv to RSA Module
 1668   1          memcpy((volatile BYTE xdata *)P63_12_HDCP_RSA_NP_INV_3, &g_stRxHdcp2DownLoadKeyType.pucHdcp2Npinv, 4);
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 29  
 
 1669   1      
 1670   1          // Set RSA Write key done
@@ -1854,7 +1854,7 @@ line level    source
 1726   4                      g_pucHdcp2SHA256Input[pData_EXINT[0]] = pucHdcp2RsaOaepInput[1 + pData_EXINT[0]] ^ ScalerG
              -etByte_EXINT((P63_35_HDCP_SHA_0 + pData_EXINT[0]));
 1727   4                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 30  
 
 1728   3      
 1729   3                  memset(&g_pucHdcp2SHA256Input[32], 0, 32);
@@ -1918,7 +1918,7 @@ line level    source
 1786   2              memcpy((volatile BYTE xdata *)P63_17_HDCP_RSA_DATA_IN_DATA7, &pucEkpubKmArray[pData_EXINT[0] << 3]
              -, 8);
 1787   2          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 31  
 
 1788   1      
 1789   1          for(pData_EXINT[0] = 0; pData_EXINT[0] < 16; pData_EXINT[0]++)
@@ -1982,7 +1982,7 @@ line level    source
 1844   1          BYTE ucLoopIndex = 0;
 1845   1      
 1846   1          // Set 1, Then Set 0 for Reset SHA256 Module
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 32  
 
 1847   1          ScalerSetBit_EXINT(P63_30_HDCP_SHA_CONTRL, ~_BIT3, _BIT3);
 1848   1      
@@ -2046,7 +2046,7 @@ line level    source
 1905   1      
 1906   1          for(pData_EXINT[0] = 0; pData_EXINT[0] < 16; pData_EXINT[0]++)
 1907   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 33  
 
 1908   2              g_pucHdcp2HmacSha256CipherInput[pData_EXINT[0]] = *(pucHdcp2dKey0 + pData_EXINT[0]);
 1909   2          }
@@ -2110,7 +2110,7 @@ line level    source
 1966   1      
 1967   1          // Calculate SHA256((K0 XOR ipad) || text)
 1968   1          if(ScalerHdcp2RxSha256Calculate_WDINT(pucInputArray2, 0) == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 34  
 
 1969   1          {
 1970   2              if(ScalerHdcp2RxSha256Calculate_WDINT(pucInputArray1, 1) == _TRUE)
@@ -2174,7 +2174,7 @@ line level    source
               
                   pData[0] = ((*pucRxinfo & _BIT0) << 4 | (*(pucRxinfo + 1) >> 4)) * 5;
                   pData[1] = pData[0] + 5 + 9;
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 35  
 
                   pData[1] = ((pData[1] <= 64) ? 1 : ((pData[1] <= 128) ? 2 : 3));
                   PDATA_WORD(1) = (64 + pData[0] + 5) * 8;
@@ -2238,7 +2238,7 @@ line level    source
                   {
                       *(pucInputArray2 + pData[0]) = (*(pucInputArray2 + pData[0]) ^ 0x36) ^ 0x5C;
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 36  
 
               
                   memcpy(pucInputArray1, (volatile BYTE xdata *)P63_35_HDCP_SHA_0, 32);
@@ -2302,7 +2302,7 @@ line level    source
                   PDATA_WORD(1) = (64 + pData[0] + 3) * 8;
               
                   memcpy(pucHMACSHA256Input, pucStreamIdType, pData[0]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/18/2026 20:38:40 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONHDCP2                                                 09/20/2026 19:43:48 PAGE 37  
 
               
                   PDATA_DWORD(1) = ulSeqNumM;

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_SCALING
@@ -62,7 +62,7 @@ line level    source
   45              0xC7, 0x0F, 0xDB, 0x0F, 0xF0, 0x0F, 0x0C, 0x00, 0x27, 0x00, 0x49, 0x00, 0x6B, 0x00, 0x93, 0x00,
   46              0xBC, 0x00, 0xEA, 0x00, 0x16, 0x01, 0x49, 0x01, 0x7A, 0x01, 0xB0, 0x01, 0xE3, 0x01, 0x1C, 0x02,
   47              0x84, 0x04, 0x78, 0x04, 0x6C, 0x04, 0x57, 0x04, 0x42, 0x04, 0x23, 0x04, 0x04, 0x04, 0xDC, 0x03,
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 2   
 
   48              0xB4, 0x03, 0x86, 0x03, 0x59, 0x03, 0x26, 0x03, 0xF4, 0x02, 0xBD, 0x02, 0x89, 0x02, 0x50, 0x02,
   49              0xBA, 0x0F, 0xAF, 0x0F, 0xA7, 0x0F, 0xA1, 0x0F, 0x9C, 0x0F, 0x9A, 0x0F, 0x9A, 0x0F, 0x9C, 0x0F,
@@ -126,7 +126,7 @@ line level    source
  107          #else
               void ScalerScalingSetScalingUpCoef(void);
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 3   
 
  110          
  111          void ScalerScalingUpdateFIFOScalingSize(StructSDRAMDataInfo *pstData);
@@ -190,7 +190,7 @@ line level    source
  163   2              else
  164   2              {
  165   3                  if(pData[3] > 0xBF)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 4   
 
  166   3                  {
  167   4                      pData[3] = 0xFF;
@@ -254,7 +254,7 @@ line level    source
  224   2              // Disable Video Compensation
  225   2              ScalerSetBit(P0_32_SCALE_CONTROL_REG, ~_BIT7, 0x00);
  226   2          }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 5   
 
  227   1      
  228   1          //===============================
@@ -318,7 +318,7 @@ line level    source
  281          //--------------------------------------------------
  282          void ScalerScalingSetScalingDownCoef(void)
  283          {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 6   
 
  284   1          // M1
  285   1          // Set Coefficient table 1
@@ -382,7 +382,7 @@ line level    source
              - 8) & 0xFF));
  338   2              ScalerSetDataPortByte(P0_24_SD_ADDRESS_PORT_M1, _P0_25_PT_07_H_SD_FACTOR_L_M1, (PDATA_DWORD(0) & 0
              -xFF));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 7   
 
  339   2      
  340   2              // Calculate Initial Phase
@@ -446,7 +446,7 @@ line level    source
  393   2              ScalerSetDataPortByte(P0_24_SD_ADDRESS_PORT_M1, _P0_25_PT_00_V_SD_INIT_M1, PDATA_DWORD(0));
  394   2          }
  395   1          else
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 8   
 
  396   1          {
  397   2              // M1
@@ -510,7 +510,7 @@ line level    source
  451          // Input Value  : none
  452          // Output Value : 0: no 3D ScaleUp,  1: 3D 3Line V ScaleUp,  2:3D 2Line V ScaleUp,
  453          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 9   
 
  454          EnumVSUCoefType ScalerScalingGetScalingUpType(void)
  455          {
@@ -574,7 +574,7 @@ line level    source
  511   1          // Consider FIFO Input / Output V Height
  512   1          //-----------------------------------------------
  513   1          if(g_stMDomainInputData.usVHeight > g_stMDomainOutputData.usVHeight)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 10  
 
  514   1          {
  515   2              pstData->usInputVHeight = g_stMDomainOutputData.usVHeight;
@@ -638,7 +638,7 @@ line level    source
  569   2      
  570   2      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
  571   2              if(((GET_ROT_TYPE() == _ROT_CW180) || (GET_ROT_TYPE() == _ROT_VER_MIRROR)) &&
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 11  
 
  572   2                 (GET_MEMORY_DVF_SELECT() != _1_IVF))
  573   2              {
@@ -702,7 +702,7 @@ line level    source
  627   6                              ScalerRotationSetRotInputSlowerFasterStyle(_TRUE);
  628   6                          }
  629   5                          else
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 12  
 
  630   5                          {
  631   6                              if((PDATA_WORD(4) > PDATA_WORD(5)) && (ScalerGlobalGetIDCode() >= _RL6432_VER_B_ID
@@ -766,7 +766,7 @@ line level    source
  687   5                          pstData->usInputHWidth = ulHSDSpace;
  688   5                      }
  689   4      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 13  
 
  690   4                      if((GET_MEMORY_SELECT() == _FREE_RUN_MEMORY) && (ScalerFRCCheckDoubleFrameBuffer(pstData->
              -usInputHWidth, pstData->usInputVHeight) == _TRUE))
@@ -830,7 +830,7 @@ line level    source
  747          
 
 
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/18/2026 20:39:27 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SCALING                                             09/20/2026 19:44:23 PAGE 14  
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   3105    ----

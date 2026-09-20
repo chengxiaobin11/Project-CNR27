@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERVGIP
@@ -62,7 +62,7 @@ line level    source
   45          
   46          WORD ScalerVgipGetCaptureVStartPosition(void);
   47          void ScalerVgipSetCaptureVStartPosition(WORD usIVstart);
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 2   
 
   48          
   49          WORD ScalerVgipGetCaptureVHeight(void);
@@ -126,7 +126,7 @@ line level    source
  107          //--------------------------------------------------
  108          void ScalerVgipModifyPolarity(EnumSourceTypeDef enumSourceType)
  109          {
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 3   
 
  110   1      #if((_VGA_SUPPORT == _ON) && (_VGA_CAPTURE_SUPPORT == _ON))
  111   1          if(enumSourceType == _SOURCE_VGA)
@@ -190,7 +190,7 @@ line level    source
  169   1      }
  170          
  171          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 4   
 
  172          // Description  : Get Capture V-Start Position
  173          // Input Value  : None
@@ -254,7 +254,7 @@ line level    source
  230   1      
  231   1      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
                   // Set M2 V capture start
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 5   
 
               #if(_HW_VGIP_V_START_BIT_WIDTH == _13_BIT)
                   ScalerSetByte(P40_16_M2_IPH_ACT_WID_H, g_ucVgipMiscSetting);
@@ -318,7 +318,7 @@ line level    source
  291   1          g_ucVgipVSetting = ((g_ucVgipVSetting & 0x0F) | ((HIBYTE(usIVheight) & 0x0F) << 4));
  292   1      
  293   1      #if(_HW_VGIP_V_HEIGHT_BIT_WIDTH == _13_BIT)
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 6   
 
                   g_ucVgipMiscSetting = ((g_ucVgipMiscSetting & ~_BIT7) | ((HIBYTE(usIVheight) & 0x10) << 3));
               #endif
@@ -382,7 +382,7 @@ line level    source
  352   1          // IVdelay[8]: P0_1E[1]
  353   1          // IVdelay[7:0]: P0_1B[7:0]
  354   1          if(ScalerVgipGetDigitalCaptureStatus() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 7   
 
  355   1          {
  356   2              return;
@@ -446,7 +446,7 @@ line level    source
                   }
                   else
               #endif
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 8   
 
  416   1          {
  417   2              return usIHstart;
@@ -510,7 +510,7 @@ line level    source
               #if(_HW_VGIP_H_WIDTH_BIT_WIDTH == _13_BIT)
                   usIHwidth |= ((WORD)ScalerGetBit(P0_16_M1_IPH_ACT_WID_H, _BIT0) << 12);
               #endif
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 9   
 
               
                   return usIHwidth;
@@ -574,7 +574,7 @@ line level    source
  536   1          WORD usIHSDelay = ((((WORD)ScalerGetByte(P0_1E_M1_VGIP_HV_DELAY) & _BIT2) << 7) | (((WORD)ScalerGetByt
              -e(P0_1E_M1_VGIP_HV_DELAY) & _BIT0) << 8) | ScalerGetByte(P0_1D_M1_IHS_DELAY));
  537   1      
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 10  
 
  538   1      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
                   if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
@@ -638,7 +638,7 @@ line level    source
  596          // Output Value : None
  597          //--------------------------------------------------
  598          void ScalerVgipVsBypassEnable(bit bEnable)
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 11  
 
  599          {
  600   1          if(bEnable == _ENABLE)
@@ -702,7 +702,7 @@ line level    source
  658          // Output Value : None
  659          //--------------------------------------------------
  660          void ScalerVgipDoubleBufferEnable(bit bEnable)
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 12  
 
  661          {
  662   1          // Set VGIP Double Buffer
@@ -766,7 +766,7 @@ line level    source
  719   2      
  720   2              // Apply VGIP Double Buffer
  721   2              ScalerSetBit(P0_10_M1_VGIP_CTRL, ~_BIT5, _BIT5);
-C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/18/2026 20:38:16 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERVGIP                                                        09/20/2026 19:43:30 PAGE 13  
 
  722   2      
  723   2      #if(_FORMAT_CONVERSION_SUPPORT == _ON)

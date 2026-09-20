@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERMBR
@@ -62,7 +62,7 @@ line level    source
   45          #define GET_MBR_DRR_TCON_PARAM_VEND_COMP_EXINT0()               (g_stMbrDrrTconParam.usCompVEnd)
   46          
   47          
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 2   
 
   48          //****************************************************************************
   49          // STRUCT / TYPE / ENUM DEFINITTIONS
@@ -126,7 +126,7 @@ line level    source
               void ScalerMbrIntHandlerDVS_EXINT0(void);
               void ScalerMbrIntHandlerDENStop_EXINT0(void);
               #endif
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 3   
 
               #if(_RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
               void ScalerMbrRtkAdvMbrCtrl(BYTE ucTcon, BYTE ucBacklightDuty, BYTE ucBacklightPos, bit bLightCtrl);
@@ -190,7 +190,7 @@ line level    source
               // Input Value  : ucTcon - TCON Number
               //                ucBacklightDuty - User OSD Backlight Duty Setting
               //                ucBacklightPos - User OSD Backlight Position Setting
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 4   
 
               //                bLightCtrl - Backlight ON/OFF
               // Output Value : None
@@ -254,7 +254,7 @@ line level    source
                           ScalerTconAdjustByIndex(ucTcon - 1, 0x0000, 0x1FFF, 0x0000, 0x0000);
                           ScalerTconInvEnableByIndex(ucTcon - 1, _ENABLE);
                           ScalerTconLogicalOpEnable((EnumTconLogicalOpSet)(ucTcon - 1), _TCON_LOGICAL_OP_AND, _ENABLE);
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 5   
 
               
                           // Strobe Setting
@@ -318,7 +318,7 @@ line level    source
                       if(usDuty == 500)
                       {
                           ScalerTconLogicalOpEnable((EnumTconLogicalOpSet)ucTconStart, _TCON_TOGGLE_OP_NORMAL, _ENABLE);
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 6   
 
                           ScalerTconEnableByIndex(ucTconStart, _ENABLE);
                       }
@@ -382,7 +382,7 @@ line level    source
                   //                     DEN_Stop          DVS
                   //               _______                          _______
                   // Strobe_______|       |________________________|       |_________
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 7   
 
                   //        ____________________             ____________________
                   // Comp  |                    |___________|                    |___
@@ -446,7 +446,7 @@ line level    source
                           SET_MBR_DRR_TRANS_SEQ(_MBR_DRR_TRANS_DEN_STOP);
                           SET_MBR_DRR_EVENT_NEXT(_MBR_DRR_EVENT_DEN_STOP);
                       }
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 8   
 
                   }
                   else if(usStrobePeriod_prev == 0) // recover from constant this time
@@ -510,7 +510,7 @@ line level    source
                       */
                       if(usStrobePeriod_prev < usDENStop)
                       {
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 9   
 
                           SET_MBR_DRR_TCON_PARAM_EN_STROBE(_ENABLE);
                           SET_MBR_DRR_TCON_PARAM_VSTART_STROBE(usStrobeVPos);
@@ -574,7 +574,7 @@ line level    source
               //                ucBacklightPos - User OSD Backlight Position Setting
               //                bLightCtrl - Backlight ON/OFF
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 10  
 
               //--------------------------------------------------
               void ScalerMbrDrrAdjust(BYTE ucTcon, BYTE ucBacklightDuty, BYTE ucBacklightPos, bit bLightCtrl)
@@ -638,7 +638,7 @@ line level    source
                   ScalerTconEnableByIndex(_TCON2, _DISABLE);
                   for(ucIndex = _TCON3; ucIndex < (ucTcon - 1); ucIndex++)
                   {
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 11  
 
                       ScalerTconEnableByIndex(ucIndex, _DISABLE);
                       ScalerTconAdjustByIndex(ucIndex, 0x0000, 0x0000, 0x0000, 0x0000);
@@ -702,7 +702,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerMbrIntHandlerDVS_EXINT0(void) using 1
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 12  
 
               {
                   // DVS event
@@ -766,7 +766,7 @@ line level    source
                               else if(GET_MBR_DRR_TRANS_SEQ_EXINT0() == _MBR_DRR_TRANS_DVS_DEN_STOP)
                               {
                                   SET_MBR_DRR_EVENT_NEXT_EXINT0(_MBR_DRR_EVENT_DEN_STOP);
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 13  
 
                               }
                           }
@@ -830,7 +830,7 @@ line level    source
                                   ScalerSetDataPortByte_EXINT0(P15_A3_TCON_ADDR, _P15_A4_PT_12_TC0_VE_MSB + (_PCB_MBR_TC
              -ON_PIN << 4), HIBYTE(GET_MBR_DRR_TCON_PARAM_VEND_STROBE_EXINT0()));
                                   ScalerSetDataPortByte_EXINT0(P15_A3_TCON_ADDR, _P15_A4_PT_13_TC0_VE_LSB + (_PCB_MBR_TC
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 14  
 
              -ON_PIN << 4), LOBYTE(GET_MBR_DRR_TCON_PARAM_VEND_STROBE_EXINT0()));
                                   bLastMove = _TRUE;
@@ -894,7 +894,7 @@ line level    source
                                       }
                                       else
                                       {
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 15  
 
                                           SET_MBR_DRR_STEP_CHG_CNT_EXINT0(GET_MBR_DRR_STEP_CHG_CNT_EXINT0() + 1);
                                       }
@@ -958,7 +958,7 @@ line level    source
  868          
 
 
-C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/18/2026 20:38:02 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERMBR                                                         09/20/2026 19:43:20 PAGE 16  
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   ----    ----

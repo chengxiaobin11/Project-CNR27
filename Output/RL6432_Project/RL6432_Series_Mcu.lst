@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_MCU
@@ -62,7 +62,7 @@ line level    source
   45          #define _EMBEDDED_DDCRAM_DDC2_MHL_ADDRESS                   0xE580
   46          #define _EMBEDDED_DDCRAM_DDC3_MHL_ADDRESS                   0xE780
   47          #define _EMBEDDED_DDCRAM_DDC4_MHL_ADDRESS                   0xE980
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 2   
 
   48          #define _EMBEDDED_DDCRAM_DDC5_MHL_ADDRESS                   0xEB80
   49          
@@ -126,7 +126,7 @@ line level    source
               BYTE xdata MCU_DDCRAM_MHL_D1[_D1_MHL_EMBEDDED_DDCRAM_SIZE]  _at_ _EMBEDDED_DDCRAM_DDC1_MHL_ADDRESS;
               #endif
  109          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 3   
 
  110          #if(_D2_MHL_EMBEDDED_DDCRAM_SIZE != _EDID_SIZE_NONE)
               BYTE xdata MCU_DDCRAM_MHL_D2[_D2_MHL_EMBEDDED_DDCRAM_SIZE]  _at_ _EMBEDDED_DDCRAM_DDC2_MHL_ADDRESS;
@@ -190,7 +190,7 @@ line level    source
  169          //--------------------------------------------------
  170          // EMCU GPIO Control (Page FE)
  171          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 4   
 
  172          volatile BYTE xdata MCU_FE00_PORT40_PIN_REG                         _at_ 0xFE00;
  173          volatile BYTE xdata MCU_FE01_PORT41_PIN_REG                         _at_ 0xFE01;
@@ -254,7 +254,7 @@ line level    source
  231          volatile BYTE xdata MCU_FE3B_PORTB3_PIN_REG                         _at_ 0xFE3B;
  232          volatile BYTE xdata MCU_FE3C_PORTB4_PIN_REG                         _at_ 0xFE3C;
  233          volatile BYTE xdata MCU_FE3D_PORTB5_PIN_REG                         _at_ 0xFE3D;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 5   
 
  234          volatile BYTE xdata MCU_FE3E_PORTB6_PIN_REG                         _at_ 0xFE3E;
  235          volatile BYTE xdata MCU_FE3F_PORTB7_PIN_REG                         _at_ 0xFE3F;
@@ -318,7 +318,7 @@ line level    source
  293          
  294          //--------------------------------------------------
  295          // EMCU DDCRAM Settings (Page FE)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 6   
 
  296          //--------------------------------------------------
  297          volatile BYTE xdata MCU_FEB1_DDCRAM_ST_ADDRESS                      _at_ 0xFEB1;
@@ -382,7 +382,7 @@ line level    source
  355          volatile BYTE xdata MCU_FF1F_DDC0_DDC_CONTROL_1                     _at_ 0xFF1F;
  356          volatile BYTE xdata MCU_FF20_DDC0_DDC_CONTROL_2                     _at_ 0xFF20;
  357          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 7   
 
  358          
  359          //--------------------------------------------------
@@ -446,7 +446,7 @@ line level    source
  417          volatile BYTE xdata MCU_FF4F_PWM23L_DUT                             _at_ 0xFF4F;
  418          volatile BYTE xdata MCU_FF50_PWM4H_DUT                              _at_ 0xFF50;
  419          volatile BYTE xdata MCU_FF51_PWM5H_DUT                              _at_ 0xFF51;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 8   
 
  420          volatile BYTE xdata MCU_FF52_PWM45L_DUT                             _at_ 0xFF52;
  421          volatile BYTE xdata MCU_FF53_PWM_DUT_TYPE                           _at_ 0xFF53;
@@ -510,7 +510,7 @@ line level    source
  479          // EMCU I2C Slave Module (Page FF)
  480          //--------------------------------------------------
  481          volatile BYTE xdata MCU_FF83_I2CS_CTRL0                             _at_ 0xFF83;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 9   
 
  482          volatile BYTE xdata MCU_FF84_I2CS_CTRL1                             _at_ 0xFF84;
  483          volatile BYTE xdata MCU_FF85_I2CS_CTRL2                             _at_ 0xFF85;
@@ -574,7 +574,7 @@ line level    source
  541          
  542          
  543          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 10  
 
  544          // EMCU Interrupt Control Part 2 (Page FF)
  545          //--------------------------------------------------
@@ -638,7 +638,7 @@ line level    source
  603          volatile BYTE xdata MCU_FFF0_XDATA_SPI_FLASH_WRITE_PROTECT          _at_ 0xFFF0;
  604          volatile BYTE xdata MCU_FFF1_SCA_WR_INTRVL                          _at_ 0xFFF1;
  605          volatile BYTE xdata MCU_FFF2_PWM_I2C_CLOCK_STOP                     _at_ 0xFFF2;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 11  
 
  606          
  607          
@@ -673,8 +673,8 @@ line level    source
  636          #if(_DDCCI_AUTO_SWITCH_SUPPORT == _ON)
  637          void ScalerMcuDdcciAutoSwitchInactiveChannel(bit bEnable);
  638          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
- 639          void ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(bit bEnable);
- 640          #endif
+              void ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(bit bEnable);
+              #endif
  641          #endif
  642          #endif
  643          void ScalerMcuGpioInitial(void);
@@ -689,8 +689,8 @@ line level    source
  652          void ScalerMcuDdcciReleaseScl(void);
  653          
  654          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
- 655          void ScalerMcuDdcciHoldScl_EXINT1(void);
- 656          #endif
+              void ScalerMcuDdcciHoldScl_EXINT1(void);
+              #endif
  657          #endif
  658          
  659          void ScalerMcuSetISPChannel(WORD usISPChannel);
@@ -702,7 +702,7 @@ line level    source
  665          //****************************************************************************
  666          //--------------------------------------------------
  667          // Description  : DDC Debounce Settings
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 12  
 
  668          // Input Value  : Clock --> _EXT_XTAL_CLK/_IOSC_CLK
  669          // Output Value : None
@@ -766,7 +766,7 @@ line level    source
                       MCU_FF1F_DDC0_DDC_CONTROL_1 |= (_BIT7 | _BIT6 | _BIT5 | _BIT4);
               #endif
  724   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 13  
 
  725   2      #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
                       // DDC1 De-bounce Reference Clock(IOSC = 27M) div by 2, latch 1 stages
@@ -812,9 +812,9 @@ line level    source
               #endif
  764   1      
  765   1      #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-                  // Force to debug mode when debug message is enable
-                  enumMode = _DEBUG_MODE;
-              #endif
+ 766   1          // Force to debug mode when debug message is enable
+ 767   1          enumMode = _DEBUG_MODE;
+ 768   1      #endif
  769   1      
  770   1          // Disable STOP_I, D_IN_I, SUB_I interrupts
  771   1          MCU_FF28_IIC_IRQ_CONTROL &= ~(_BIT4 | _BIT3 | _BIT2 | _BIT1);
@@ -830,7 +830,7 @@ line level    source
  781   3                  // Clear IRQ FLag
  782   3                  MCU_FF27_IIC_STATUS = 0x00;
  783   3                  // Read IIC Data In(0xFF25) to Clear Data In Flag
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 14  
 
  784   3                  pData[0] = MCU_FF25_IIC_DATA_IN;
  785   3                  // Write IIC Data Out(0xFF26) to Clear Data Out Flag
@@ -894,7 +894,7 @@ line level    source
  843   2          }
  844   1          else
  845   1          {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 15  
 
  846   2              // Set slave address for debug tool
  847   2              MCU_FF23_IIC_SET_SLAVE = 0x6A;
@@ -958,7 +958,7 @@ line level    source
  905          void ScalerMcuDdcciAutoSwitchInactiveChannel(bit bEnable)
  906          {
  907   1          if(bEnable == _ENABLE)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 16  
 
  908   1          {
  909   2              switch(MCU_FF22_IIC_CH_SEL)
@@ -1022,7 +1022,7 @@ line level    source
  967   3                      MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
  968   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
  969   3                      MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 17  
 
  970   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
  971   3      
@@ -1072,127 +1072,127 @@ line level    source
 1015   1      }
 1016          
 1017          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
-1018          //--------------------------------------------------
-1019          // Description  : Set DDCCI Auto Switch Inactive Channel Disable
-1020          // Input Value  : bEnable --> Status to Set
-1021          // Output Value : None
-1022          //--------------------------------------------------
-1023          void ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(bit bEnable) using 2
-1024          {
-1025   1          if(bEnable == _ENABLE)
-1026   1          {
-1027   2              switch(MCU_FF22_IIC_CH_SEL)
-1028   2              {
-1029   3                  case _DDCCI_ADC_DDC:
-1030   3      
-1031   3                      MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 18  
+              //--------------------------------------------------
+              // Description  : Set DDCCI Auto Switch Inactive Channel Disable
+              // Input Value  : bEnable --> Status to Set
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(bit bEnable) using 2
+              {
+                  if(bEnable == _ENABLE)
+                  {
+                      switch(MCU_FF22_IIC_CH_SEL)
+                      {
+                          case _DDCCI_ADC_DDC:
+              
+                              MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 18  
 
-1032   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
-1033   3                      MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
-1034   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
-1035   3      
-1036   3                      break;
-1037   3      
-1038   3                  case _DDCCI_DDC0:
-1039   3      
-1040   3                      MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
-1041   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
-1042   3                      MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
-1043   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
-1044   3      
-1045   3                      break;
-1046   3      
-1047   3                  case _DDCCI_DDC1:
-1048   3      
-1049   3                      MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
-1050   3                      MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
-1051   3                      MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
-1052   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
-1053   3      
-1054   3                      break;
-1055   3      
-1056   3                  case _DDCCI_DDC2:
-1057   3      
-1058   3                      MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
-1059   3                      MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
-1060   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
-1061   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
-1062   3      
-1063   3                      break;
-1064   3      
-1065   3                  case _DDCCI_DDC3:
-1066   3      
-1067   3                      MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
-1068   3                      MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
-1069   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
-1070   3                      MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
-1071   3      
-1072   3                      break;
-1073   3      
-1074   3                  default:
-1075   3      
-1076   3                      break;
-1077   3              }
-1078   2          }
-1079   1          else
-1080   1          {
-1081   2              switch(MCU_FF22_IIC_CH_SEL)
-1082   2              {
-1083   3                  case _DDCCI_ADC_DDC:
-1084   3      
-1085   3                      MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
-1086   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
-1087   3                      MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
-1088   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
-1089   3      
-1090   3                      break;
-1091   3      
-1092   3                  case _DDCCI_DDC0:
-1093   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 19  
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC0:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC1:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC2:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC3:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT4;
+              
+                              break;
+              
+                          default:
+              
+                              break;
+                      }
+                  }
+                  else
+                  {
+                      switch(MCU_FF22_IIC_CH_SEL)
+                      {
+                          case _DDCCI_ADC_DDC:
+              
+                              MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC0:
+              
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 19  
 
-1094   3                      MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
-1095   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
-1096   3                      MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
-1097   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
-1098   3      
-1099   3                      break;
-1100   3      
-1101   3                  case _DDCCI_DDC1:
-1102   3      
-1103   3                      MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
-1104   3                      MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
-1105   3                      MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
-1106   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
-1107   3      
-1108   3                      break;
-1109   3      
-1110   3                  case _DDCCI_DDC2:
-1111   3      
-1112   3                      MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
-1113   3                      MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
-1114   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
-1115   3                      MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
-1116   3      
-1117   3                      break;
-1118   3      
-1119   3                  case _DDCCI_DDC3:
-1120   3      
-1121   3                      MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
-1122   3                      MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
-1123   3                      MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
-1124   3                      MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
-1125   3      
-1126   3                      break;
-1127   3      
-1128   3                  default:
-1129   3      
-1130   3                      break;
-1131   3              }
-1132   2          }
-1133   1      }
-1134          #endif
+                              MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC1:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC2:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT4;
+              
+                              break;
+              
+                          case _DDCCI_DDC3:
+              
+                              MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT4;
+                              MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
+              
+                              break;
+              
+                          default:
+              
+                              break;
+                      }
+                  }
+              }
+              #endif
 1135          #endif
 1136          #endif
 1137          
@@ -1214,7 +1214,7 @@ line level    source
                   // Switch Off Repeater Power By PCB Control
                   PCB_TWO_CHIP_REPEATER_POW(_TWO_CHIP_REPEATER_POWER_OFF);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 20  
 
                   // Switch Off Repeater Power By PCB Control
                   PCB_TWO_CHIP_PORT_CTRL_POW(_TWO_CHIP_PORT_CTRL_POWER_OFF);
@@ -1278,7 +1278,7 @@ line level    source
 1215   1          PCB_VCCK_OFF_POWER(_VCCK_OFF_POWER_ON);
 1216   1      
 1217   1          // Wait for VCCK_OFF Power On Stable
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 21  
 
 1218   1          POLLING_VCCK_OFF_STATUS(_VCCK_OFF_TIME_POLLING_POWER_ON);
 1219   1      
@@ -1342,7 +1342,7 @@ line level    source
 1277   1      
 1278   1          // Force DDC to DDC2 Mode
 1279   1          MCU_FF1C_ADC_DDC_CONTROL_1 |= _BIT2;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 22  
 
 1280   1          MCU_FF1F_DDC0_DDC_CONTROL_1 |= _BIT2;
 1281   1          MCU_FF2D_DDC1_DDC_CONTROL_1 |= _BIT2;
@@ -1406,7 +1406,7 @@ line level    source
 1339   1      
 1340   1          // VGA DDC
 1341   1          MCU_FF1D_ADC_DDC_CONTROL_2 &= ~_BIT0;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 23  
 
 1342   1      }
 1343          
@@ -1470,7 +1470,7 @@ line level    source
                               {
                                   MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT4;
                               }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 24  
 
               
                               if(_D1_DDC_CHANNEL_SEL == _DDC3)
@@ -1534,7 +1534,7 @@ line level    source
                           default:
                               break;
                       }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 25  
 
                   }
                   else
@@ -1598,7 +1598,7 @@ line level    source
               #if(_D2_DDC_CHANNEL_SEL != _NO_DDC)
                           case _D2_DDC_CHANNEL_SEL:
                               if(_D2_DDC_CHANNEL_SEL == _DDC0)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 26  
 
                               {
                                   MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT4;
@@ -1662,7 +1662,7 @@ line level    source
 1587          void ScalerMcuDdcRamEnable(void)
 1588          {
 1589   1          // VGA_DDC Debounce Enable, ADC DDC channel enable
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 27  
 
 1590   1          MCU_FF1B_ADC_DDC_ENABLE |= (_BIT1 | _BIT0);
 1591   1      
@@ -1726,7 +1726,7 @@ line level    source
 1649   1          // Assign DDC-CI interrupts to int1 (IRQ2)
 1650   1          MCU_FFC4_IRQ_PRIORITY_3 &= ~(_BIT2 | _BIT1 | _BIT0);
 1651   1          MCU_FFC4_IRQ_PRIORITY_3 |= _BIT0;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 28  
 
 1652   1      
 1653   1          // Enable DDC-CI buffer auto reset
@@ -1790,43 +1790,43 @@ line level    source
 1711   1      }
 1712          
 1713          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 29  
 
-1714          //--------------------------------------------------
-1715          // Description  : hold SCL
-1716          // Input Value  : NONE
-1717          // Output Value : NONE
-1718          //--------------------------------------------------
-1719          void ScalerMcuDdcciHoldScl_EXINT1(void) using 2
-1720          {
-1721   1          switch(MCU_FF22_IIC_CH_SEL & (_BIT2 | _BIT1 | _BIT0))
-1722   1          {
-1723   2              case _DDCCI_DDC3:
-1724   2                  MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT0;
-1725   2                  break;
-1726   2      
-1727   2              case _DDCCI_DDC2:
-1728   2                  MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT0;
-1729   2                  break;
-1730   2      
-1731   2              case _DDCCI_DDC1:
-1732   2                  MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT0;
-1733   2                  break;
-1734   2      
-1735   2              case _DDCCI_DDC0:
-1736   2                  MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT0;
-1737   2                  break;
-1738   2      
-1739   2              case _DDCCI_ADC_DDC:
-1740   2                  MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT0;
-1741   2                  break;
-1742   2      
-1743   2              default:
-1744   2      
-1745   2                  break;
-1746   2          }
-1747   1      }
-1748          #endif
+              //--------------------------------------------------
+              // Description  : hold SCL
+              // Input Value  : NONE
+              // Output Value : NONE
+              //--------------------------------------------------
+              void ScalerMcuDdcciHoldScl_EXINT1(void) using 2
+              {
+                  switch(MCU_FF22_IIC_CH_SEL & (_BIT2 | _BIT1 | _BIT0))
+                  {
+                      case _DDCCI_DDC3:
+                          MCU_FE6F_DDC3_DDC_CONTROL_2 |= _BIT0;
+                          break;
+              
+                      case _DDCCI_DDC2:
+                          MCU_FE66_DDC2_DDC_CONTROL_2 |= _BIT0;
+                          break;
+              
+                      case _DDCCI_DDC1:
+                          MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT0;
+                          break;
+              
+                      case _DDCCI_DDC0:
+                          MCU_FF20_DDC0_DDC_CONTROL_2 |= _BIT0;
+                          break;
+              
+                      case _DDCCI_ADC_DDC:
+                          MCU_FF1D_ADC_DDC_CONTROL_2 |= _BIT0;
+                          break;
+              
+                      default:
+              
+                          break;
+                  }
+              }
+              #endif
 1749          #endif  // End of #if((_OGC_SUPPORT == _ON) || (_OCC_SUPPORT == _ON) || (_OGC_DICOM_SUPPORT == _ON))
 1750          
 1751          
@@ -1854,7 +1854,7 @@ line level    source
 1773          // Description  : ISP Channel Setting
 1774          // Input Value  : ucDdcChannel --> VGA_DDC...VGA_DDC2
 1775          //                bEnable --> _ENABLE: enable DDC ISP function, no protect
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/18/2026 20:39:17 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MCU                                                 09/20/2026 19:44:16 PAGE 30  
 
 1776          //                            _DISABLE: disable DDC ISP function, protect
 1777          // Output Value : NONE
@@ -1902,13 +1902,13 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1322    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =   1150    ----
+   CONSTANT SIZE    =     30    ----
    XDATA SIZE       =   ----       5
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----       3
+   BIT SIZE         =   ----       2
 END OF MODULE INFORMATION.
 
 

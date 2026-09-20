@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSDFUNC
@@ -62,7 +62,7 @@ line level    source
   45          BYTE g_ucOsdWidthB;
   46          BYTE g_ucOsdHeightB;
   47          BYTE g_ucFontPointer0 = _OSD_PAGE_0_START;
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 2   
 
   48          BYTE g_ucFontPointer1 = _OSD_PAGE_1_START;
   49          BYTE g_ucFontPointer2 = _OSD_PAGE_2_START;
@@ -126,7 +126,7 @@ line level    source
  104   2          case _MENU_FUN_FREESYNC:
  105   2            
  106   2            if((GET_KEYMESSAGE() == _MENU_KEY_MESSAGE) && (g_usBackupValue != g_usAdjustValue))
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 3   
 
  107   2            {
  108   3              #if(_FREESYNC_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
                         UserCommonNVRamSetSystemData(_SEARCH_PORT, SysSourceGetInputPort());
                         UserCommonNVRamSetSystemData(_SOURCE_SCAN_TYPE, SysSourceGetScanType());
                         SET_OSD_EVENT_MESSAGE(_OSDEVENT_SAVE_NVRAM_SYSTEMDATA_MSG);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 4   
 
                       }           
                 #endif        
@@ -254,7 +254,7 @@ line level    source
                   Led_ClrLedSCL();
               
                 }
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 5   
 
                 else if(ucstate == 2)
                 {
@@ -318,7 +318,7 @@ line level    source
                     SCL_DATA_0();
                 }
               }
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 6   
 
               
               
@@ -382,7 +382,7 @@ line level    source
                 //ScalerTimerDelayXms(12);
                 
               }
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 7   
 
               
               void SDA_DATA_0()
@@ -446,7 +446,7 @@ line level    source
  411                    i = _ECO_MOVIE_BACKLIGHT;
  412                    break;
  413                    
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 8   
 
  414                  case _COLOREFFECT_GAME:
  415                    i = _ECO_GAME_BACKLIGHT;
@@ -510,7 +510,7 @@ line level    source
  471              case _MENU_FUN_DCR:
  472                
  473                g_usAdjustValue = (BYTE)OsdDisplayDetOverRange(g_usAdjustValue, _ON, _OFF, _ON);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 9   
 
  474              #if _DEF_Energy_Msg
  475                if(g_usAdjustValue>_OFF&&GET_OSD_EnergyMsg())
@@ -574,7 +574,7 @@ line level    source
  531                }
  532                
  533                UserAdjustBacklight(GET_OSD_BACKLIGHT());
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 10  
 
  534                
  535          #if(_HDR10_SUPPORT == _ON)            
@@ -638,7 +638,7 @@ line level    source
  593                {
  594                  g_usAdjustValue = (BYTE)OsdDisplayDetOverRange(g_usAdjustValue, _CT_USER, _CT_9300, _ON);
  595                }
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 11  
 
  596          #endif
  597          
@@ -702,7 +702,7 @@ line level    source
  653                }
  654                else if(GET_OSD_AUTO_POWEROFF() == _AutoPowerOff_120)
  655                {
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 12  
 
  656                  g_usPowerDownCount = 120;
  657                  ScalerTimerActiveTimerEvent(SEC(60), _USER_TIMER_EVENT_AUTO_POWER_DOWN); 
@@ -766,7 +766,7 @@ line level    source
  715                g_usAdjustValue = (BYTE)(DetOverRangeForHotkeySelect(g_usAdjustValue , _MENU_HOT_KEY_FUNC- _MENU_FUN_BA
              -CKLIGHT-1, 0, _ON));
  716                SET_OSD_HOTKEY_LEFT(g_usAdjustValue);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 13  
 
  717                  break;
  718          
@@ -830,7 +830,7 @@ line level    source
  774                    
  775                #if(_MPRT_WEAK_MID_HIGH)
  776                  g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue , 3, _OFF, _ON));
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 14  
 
  777                #else
  778                  g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue , _ON, _OFF, _ON));
@@ -894,7 +894,7 @@ line level    source
  836                //  UserAdjustContrast(GET_OSD_CONTRAST());
  837                  
  838                  UserAdjustGamma(GET_OSD_GAMMA());
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 15  
 
  839                  ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
  840                  UserCommonAdjustGammaRegionEnable(_FUNCTION_ON);
@@ -958,7 +958,7 @@ line level    source
                   ScalerGetDataPortByte(0x02CD, 0xAC, 2, &pucHDRData[0], _AUTOINC);
                   ScalerGetDataPortByte(0x02CD, 0xAF, 2, &pucHDRData[2], _AUTOINC);
                   ScalerGetDataPortByte(0x02CD, 0xB1, 24, &pucHDRData[4], _AUTOINC);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 16  
 
               #endif
               }
@@ -1022,7 +1022,7 @@ line level    source
                   ScalerColorOutputGammaEnable(_FUNCTION_OFF);
                   ScalerColorSRGBEnable(_FUNCTION_OFF);
                   ScalerColorPCMInputGammaEnable(_FUNCTION_OFF);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 17  
 
               
                   ScalerColorPCMInputGammaAdjust(606,_OGC_FLASH_BANK);
@@ -1086,7 +1086,7 @@ line level    source
 1017          void OsdFuncAdj1()
 1018          {
 1019   1        BYTE j=OSD_MAIN_MENU_ITEM<<4|OSD_SubMenuCur;
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 18  
 
 1020   1        extern void OsdDispMainMenu_1(void);
 1021   1        extern void OSDSubMenuMove1(void);
@@ -1150,7 +1150,7 @@ line level    source
 1077   4                //OSDFunPutString(ROW(_OSD_ITEM_ROW_START+(OSD_ITEM(ucOsdState)&0x0f)*2),COL( _OSD_ITEM_COL_SLIDER+1)
              -,LENGTH(11),(_PFONT_PAGE_ITEM_1+(OSD_ITEM(ucOsdState)&0x0f)), ucOsdState,  GetOsdValue(ucOsdState),OSD_ALIGN_CENTER, _CO
              -LOR_MENU_FONT, GET_OSD_LANGUAGE());
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 19  
 
 1078   4                RTDOsdTableFuncPutStringCenter(_OSD_ITEM_ROW_START+(OSD_ITEM(ucOsdState)&0x0f)*_OSD_ITEM_ROW_CHANGE, 
              -_OSD_ITEM_COL_SLIDER+1, _OSD_ITEM_COL_SLIDER+12, _PFONT_PAGE_ITEM_1 + (OSD_ITEM(ucOsdState)&0x0f), 
@@ -1214,7 +1214,7 @@ line level    source
                       OsdFuncOsdToEnergyMsg();
                       return ;
                     }
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 20  
 
                     #endif
                 #endif
@@ -1278,7 +1278,7 @@ line level    source
 1191   3              else if(GetOsdValue(_MENU_FUN_POWER_SAVING)!= _OFF)
 1192   3              { 
 1193   4                SET_OSD_POWER_SAVING(_OFF);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 21  
 
 1194   4              }
 1195   3            }
@@ -1342,7 +1342,7 @@ line level    source
 1251   2            Osd3thChange(_MENU_FUN_DCC);
 1252   2            
 1253   2            if(GET_OSD_HDR_MODE() == _HDR10_MODE_FORCE_2084)
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 22  
 
 1254   2            {
 1255   3              OsdHdrAdj();
@@ -1406,7 +1406,7 @@ line level    source
               #elif(_CT_5800_SUPPRT)
                     while(g_usAdjustValue==_CT_7500 ||g_usAdjustValue==_CT_5800)
                     {
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 23  
 
                       g_usAdjustValue = (BYTE)OsdDisplayDetOverRange(g_usAdjustValue, _CT_USER, _CT_9300, _ON);
                     }
@@ -1470,7 +1470,7 @@ line level    source
 1373   2          
 1374   2            g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue , _AutoPowerOff_END, _AutoPowerOff_OFF,
              - _ON));
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 24  
 
 1375   2            SET_OSD_AUTO_POWEROFF(g_usAdjustValue);
 1376   2            if(GET_OSD_AUTO_POWEROFF() == _AutoPowerOff_OFF)
@@ -1524,9 +1524,9 @@ line level    source
               #endif
 1425   2      
 1426   2      #if(_OD_SUPPORT == _ON)
-1427   2            ScalerODEnable(UserInterfaceGetODEnableStatus());
-1428   2            ScalerODAdjustDeltaGain(GET_OSD_OD_GAIN());
-1429   2      #endif
+                    ScalerODEnable(UserInterfaceGetODEnableStatus());
+                    ScalerODAdjustDeltaGain(GET_OSD_OD_GAIN());
+              #endif
 1430   2              break;
 1431   2          
 1432   2          case _MENU_FUN_FREESYNC:
@@ -1534,7 +1534,7 @@ line level    source
 1434   2            g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue , _ON, _OFF, _ON));
 1435   2            SET_OSD_FREE_SYNC_STATUS(g_usAdjustValue);
 1436   2          #if(_FREESYNC_LEFT_RIGHT_EFFECT)
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 25  
 
                     #if(_FREESYNC_SUPPORT == _ON)
                     UserCommonInterfaceFreeSyncSupportSwitch();
@@ -1598,7 +1598,7 @@ line level    source
                     g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue ? 1 : 0, 1, 0, _ON));
                   #else
 1496   2            g_usAdjustValue = (BYTE)(OsdDisplayDetOverRange(g_usAdjustValue , _LANGUAGE_AMOUNT, 0, _ON));
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 26  
 
 1497   2          #endif
 1498   2        #if(Project_ID == ID_CHANGJIA_GS24S3F_HK2556E01_1P2H_M236HVR010_FHD144HZ_20210908)||(Project_ID == ID_CHA
@@ -1662,7 +1662,7 @@ line level    source
              -)%4)*108, _OSD_WINDOW_Y_START+(g_usAdjustValue%5)*36+102, _OSD_WINDOW_X_START + ((g_usAdjustValue - g_usAdjustValue%5)%4
              -)*108+72, _OSD_WINDOW_Y_START+(g_usAdjustValue%5)*36+18+102, _COLOR_BG_3, _COLOR_MENU_FONT_SELECT, _CP_BG, _ENABLE);  
                     else
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 27  
 
                     #if(_DEF_OSD_LANGUAGE_PAGE_RANK_4x6)
                         OsdWindowDrawingHighlight(_OSD_WINDOW_4_8,( _OSD_WINDOW_X_START + (g_usAdjustValue/6)*(8*12)+12), _OS
@@ -1716,17 +1716,17 @@ line level    source
               #endif
 1592   2      
 1593   2      #if(_MPRT_SUPPORT == _ON)
-1594   2            
-1595   2            if(GET_OSD_MPRT())
-1596   2            {
-1597   3              SET_OSD_OD_STATUS(_ON); 
-1598   3          #if(_MPRT_WEAK_MID_HIGH)
+                    
+                    if(GET_OSD_MPRT())
+                    {
+                      SET_OSD_OD_STATUS(_ON); 
+                  #if(_MPRT_WEAK_MID_HIGH)
                       SET_OSD_OD_STATUS(g_usAdjustValue); 
                       if(GET_OSD_MPRT()==1)
                         SET_OSD_OD_GAIN(_OD_WEAK);
                       else if(GET_OSD_MPRT()==2)
                         SET_OSD_OD_GAIN(_OD_MID);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 28  
 
                       else if(GET_OSD_MPRT()==3)
                         SET_OSD_OD_GAIN(_OD_STRONG);
@@ -1735,24 +1735,24 @@ line level    source
                       SET_OSD_OD_STATUS(3); 
                       SET_OSD_OD_GAIN(_OD_STRONG);
                   #endif
-1611   3              ScalerODAdjustDeltaGain(GET_OSD_OD_GAIN());
-1612   3              UserAdjustLowMotionBlurDisplay(GET_OSD_MPRT());
-1613   3        
-1614   3            }
-1615   2            else
-1616   2            {
-1617   3              SET_OSD_OD_STATUS(_OFF);    
-1618   3              PCB_BACKLIGHT_POWER(_LIGHT_CONTROL_OFF);
-1619   3              UserAdjustLowMotionBlurDisplay(GET_OSD_MPRT());
-1620   3              ScalerTimerActiveTimerEvent(SEC(0.1), _USER_TIMER_EVENT_MPRT);
-1621   3            }
-1622   2        
-1623   2             
-1624   2              SET_OSD_OD_STATUS(g_usAdjustValue);     
-1625   2      #if(_OD_SUPPORT == _ON)
-1626   2              ScalerODEnable(UserInterfaceGetODEnableStatus());
-1627   2      #endif  
-1628   2      #endif
+                      ScalerODAdjustDeltaGain(GET_OSD_OD_GAIN());
+                      UserAdjustLowMotionBlurDisplay(GET_OSD_MPRT());
+                
+                    }
+                    else
+                    {
+                      SET_OSD_OD_STATUS(_OFF);    
+                      PCB_BACKLIGHT_POWER(_LIGHT_CONTROL_OFF);
+                      UserAdjustLowMotionBlurDisplay(GET_OSD_MPRT());
+                      ScalerTimerActiveTimerEvent(SEC(0.1), _USER_TIMER_EVENT_MPRT);
+                    }
+                
+                     
+                      SET_OSD_OD_STATUS(g_usAdjustValue);     
+              #if(_OD_SUPPORT == _ON)
+                      ScalerODEnable(UserInterfaceGetODEnableStatus());
+              #endif  
+              #endif
 1629   2            break;
 1630   2      #if 1//_MOTION_BLUR_REDUCTION_SUPPORT
 1631   2           case _MENU_FUN_MBRSYNC:                 
@@ -1790,7 +1790,7 @@ line level    source
                     }
                     // Reset to display setting to re-set backlight parameters
                     // Caustion!! RTK_Adv_MBR requires "reset to display setting to be effective
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 29  
 
               #if(_MOTION_BLUR_REDUCTION_MODE_SWITCH_NO_MUTE_SUPPORT == _ON)
                     UserCommonInterfaceMbrStrobeBacklightCtrl(_LIGHT_CONTROL_ON);
@@ -1854,7 +1854,7 @@ line level    source
                       UserGuangGanHandler();
                     }
                     else
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 30  
 
                       UserAdjustBacklight(GET_OSD_BACKLIGHT());
                   break;
@@ -1918,7 +1918,7 @@ line level    source
 1783   2      #if(_PCB_TYPE == _RL6432__156PIN__HKMRT255XE08__1T1H1DP_LVDS)
                     if(GET_FUN_KVM() == _OFF)//×Ô¶¯
                     {
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 31  
 
                       if(SysSourceGetInputPort()== _D0_INPUT_PORT )
                       {
@@ -1982,7 +1982,7 @@ line level    source
 1844   2          case _TYPE_ARROW:
 1845   2          
 1846   2            OsdFuncAdj(); 
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 32  
 
 1847   2            ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
 1848   2            if(GET_OSD_STATE()!=_MENU_FUN_Energy)
@@ -2046,7 +2046,7 @@ line level    source
               #endif
               
               #if(_D4_INPUT_PORT_TYPE != _D4_NO_PORT)        
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 33  
 
                   case _OSD_INPUT_D4:
                     return _D4_INPUT_PORT;
@@ -2110,7 +2110,7 @@ line level    source
               #endif
                   
               
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 34  
 
               #if(_D5_INPUT_PORT_TYPE != _D5_NO_PORT)        
                   case _OSD_INPUT_D5:
@@ -2174,7 +2174,7 @@ line level    source
 2027   2      #if(_D5_INPUT_PORT_TYPE != _D5_NO_PORT)        
                   case _OSD_INPUT_D5:
                           return _D5_INPUT_PORT;
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 35  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 35  
 
                     break;
               #endif
@@ -2238,7 +2238,7 @@ line level    source
                       ucTmp = 0x4E;  // 18 Pixel
                   }
                   else
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 36  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 36  
 
               #endif
 2093   1          {
@@ -2302,7 +2302,7 @@ line level    source
                           ScalerOsdFBShiftValue(_OSD_FRONT_BACK_SHIFT_OUTSIDE, 0);
                       }
                       else if((usX * ucXdouble) <= (4094 + 100))
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 37  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 37  
 
                       {
                           ScalerOsdPosition(enumOsdPositionType, 100 / ucXdouble, usY);
@@ -2366,7 +2366,7 @@ line level    source
 2210          //--------------------------------------------------
 2211          // Description  :
 2212          // Input Value  : None
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 38  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 38  
 
 2213          // Output Value : None
 2214          //--------------------------------------------------
@@ -2430,7 +2430,7 @@ line level    source
 2272          // Output Value : None
 2273          //--------------------------------------------------
 2274          void OsdFuncEnableOsd(void)
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 39  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 39  
 
 2275          {
 2276   1          ScalerOsdEnableOsd();
@@ -2494,7 +2494,7 @@ line level    source
                   else
               #endif
                   {
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 40  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 40  
 
                       for(ucHeightCount = 0; ucHeightCount < ucHeight; ucHeightCount++)
                       {
@@ -2558,7 +2558,7 @@ line level    source
                       }
                   }
                   else
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 41  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 41  
 
               #endif
 2395   1          {
@@ -2622,7 +2622,7 @@ line level    source
               
               #if(_D3_INPUT_PORT_TYPE == _D3_DVI_PORT)
                       case _D3_INPUT_PORT:
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 42  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 42  
 
               #endif
               
@@ -2686,7 +2686,7 @@ line level    source
                           UserAdjust3DGamma(GET_OSD_PCM_SOFT_PROFT_MODE());
                       }
               #endif
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 43  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 43  
 
 2517   2              UserAdjustPCM(GET_OSD_PCM_STATUS());
 2518   2              ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
@@ -2750,7 +2750,7 @@ line level    source
               #if(_BRIGHTNESS_SUPPORT == _ON)
                       ScalerColorBrightnessEnable(_FUNCTION_OFF);
               #endif
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 44  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 44  
 
               
               #if(_CONTRAST_SUPPORT == _ON)
@@ -2814,7 +2814,7 @@ line level    source
               #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT)        
                     case _D2_INPUT_PORT:
                       SET_OSD_INPUT_PORT_OSD_ITEM(_OSD_INPUT_D2);
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 45  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 45  
 
                       break;
               #endif
@@ -2878,7 +2878,7 @@ line level    source
                       SET_OSD_INPUT_PORT_OSD_ITEM(_OSD_INPUT_D0);
                       break;
               #endif
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 46  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 46  
 
               
               #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT)        
@@ -2942,7 +2942,7 @@ line level    source
 2762   3                      break;
 2763   3      #endif
 2764   3      
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 47  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 47  
 
 2765   3      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)        
                     case _D1_INPUT_PORT:
@@ -3006,7 +3006,7 @@ line level    source
              -IVID_L) && (GET_KEYMESSAGE() == _LEFT_KEY_MESSAGE)))
                  */
                  if(0){
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 48  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 48  
 
                       OsdDispOsdMessage(_OSD_DISP_DISABLE_FREEZE_MSG);
                       ScalerTimerActiveTimerEvent(SEC(1), _USER_TIMER_EVENT_OSD_DISABLE_FREEZE_MSG);
@@ -3070,7 +3070,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 49  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 49  
 
                       default:
                           return 0;
@@ -3134,7 +3134,7 @@ line level    source
               #if(_DYNAMIC_COLOR_AUTO_MEASURE == _ON)
                   UserAdjustSmartCrosshairHandler();
               #endif
-C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/18/2026 20:40:11 PAGE 50  
+C51 COMPILER V9.60.0.0   RTD2014OSDFUNC                                                    09/20/2026 19:44:56 PAGE 50  
 
               
               }
@@ -3145,7 +3145,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   3429    ----
+   CODE SIZE        =   3322    ----
    CONSTANT SIZE    =      4    ----
    XDATA SIZE       =     11      20
    PDATA SIZE       =   ----    ----

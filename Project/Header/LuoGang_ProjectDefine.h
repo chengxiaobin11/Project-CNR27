@@ -757,8 +757,8 @@
     #define _PCB_TYPE                                             _RL6432__156PIN__HKMRT2557E23__1A1H1DP__LVDS//  _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS
     #define _PANEL_TYPE                                           _BOE_MV270QHBN80_LVDS_QHD60HZ//_AUO_M238HVN01_2_LVDS_FHD75HZ// _BOE_MV238FHM_NG1_LVDS_FHD144HZ//                       
     #define _FRC_SUPPORT                                            _ON 
-    #define _MPRT_SUPPORT                                           _ON
-	#define _OD_SUPPORT 											_ON
+    #define _MPRT_SUPPORT                                           _OFF
+	#define _OD_SUPPORT 											_OFF
 	#define _HDMI_24C02_SUPPORT 									_OFF
 	
 #elif(Project_ID    ==  ID_KAIDI_HK2785E20_MV315QHM_NX0_QHD75HZ_20260319)

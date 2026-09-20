@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_AUDIO
@@ -62,7 +62,7 @@ line level    source
   44          #if((_D1_HDMI_SUPPORT == _ON) || (_D1_DP_EXIST == _ON))
               StructAudioDigitalInfo g_stAudioD1DigtalInfo;
               StructAudioFreqParameter g_stAudioD1FreqParameter;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 2   
 
               StructAudioDpCodingType g_stDpAudioD1CodingType;
               #endif
@@ -126,7 +126,7 @@ line level    source
               void ScalerAudioFwTrackingHandler(void);
               void ScalerAudioFwTrackingEventSet(EnumScalerTimerEventID enumEventID);
               void ScalerAudioTimeoutEventSet(EnumScalerTimerEventID enumEventID);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 3   
 
               #endif
  110          
@@ -190,7 +190,7 @@ line level    source
  166          
  167          #if(_D0_DP_EXIST == _ON)
  168          void ScalerAudioD0SetAudioPLL(void);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 4   
 
  169          void ScalerAudioD0LoadInitialICode(void);
  170          void ScalerAudioD0LoadStableICodeEvent(void);
@@ -254,7 +254,7 @@ line level    source
  226   1      
  227   1      #if((_D1_HDMI_SUPPORT == _ON) || (_D2_HDMI_SUPPORT == _ON) || ((_INTERNAL_AUDIO_TEST_SUPPORT == _ON) && ((
              -_D0_DP_EXIST == _ON) || (_D1_DP_EXIST == _ON))))
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 5   
 
                   ScalerAudioD2HDMIAudioInitial();
               #endif
@@ -318,7 +318,7 @@ line level    source
               #endif
  288   1      
  289   1      #if(_D2_HDMI_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 6   
 
                   if(CHECK_TMDS_DPHY_SWITCH(_D2_INPUT_PORT) == _TRUE)
                   {
@@ -382,7 +382,7 @@ line level    source
                           return ScalerAudioD1GetAudioDetected();
               #endif
  351   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 7   
 
  352   2              case _D2_INPUT_PORT:
  353   2      
@@ -446,7 +446,7 @@ line level    source
  411   2      #endif
  412   2                  break;
  413   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 8   
 
  414   2              default:
  415   2                  break;
@@ -510,7 +510,7 @@ line level    source
  473   2      
  474   2      #if(_D0_DP_EXIST == _ON)
  475   2                  // Check Audio Packet
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 9   
 
  476   2                  if(ScalerAudioD0GetAudioDetected() == _FALSE)
  477   2                  {
@@ -574,7 +574,7 @@ line level    source
  532   4      
  533   4                          // Calculate Minimum Delay for Receiving 192*2 Audio Samples
  534   4                          // Avoid 0Hz Value
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 10  
 
  535   4                          if(enumAudioPacket == _AUDIO_FREQ_PACKET_NO_AUDIO)
  536   4                          {
@@ -638,7 +638,7 @@ line level    source
               
                           // Check First Time Check or Coding Type Change before Playback
                           if((GET_DP_D1_AUDIO_CODING_TYPE_FORMAT() == _AUDIO_CODING_TYPE_NONE) ||
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 11  
 
                              ((ScalerGetBit(PB9_3B_DP_IRQ_CTRL1, _BIT0) == 0x00) && (ScalerGetBit(PB9_36_DP_GLB_STATUS, 
              -_BIT2) == _BIT2)))
@@ -702,7 +702,7 @@ line level    source
               
                                   // Delay with 2ms margin added
                                   ScalerTimerDelayXms(usDelayTime + 2);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 12  
 
               
                                   // Update Detect Result
@@ -766,7 +766,7 @@ line level    source
  715   2          }
  716   1      
  717   1          return _TRUE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 13  
 
  718   1      }
  719          
@@ -830,7 +830,7 @@ line level    source
  777   2          }
  778   1      
  779   1          return _FALSE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 14  
 
  780   1      }
  781          
@@ -894,7 +894,7 @@ line level    source
  837   3                      break;
  838   3      
  839   3                  case _D4_INPUT_PORT:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 15  
 
  840   3      
  841   3                      break;
@@ -958,7 +958,7 @@ line level    source
  899   3      
  900   3                  case _D3_INPUT_PORT:
  901   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 16  
 
  902   3                      break;
  903   3      
@@ -1022,7 +1022,7 @@ line level    source
               
               #elif(_D1_DP_EXIST == _ON)
               #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 17  
 
                           if(ScalerAudioDpGetInternalAudioGenEnable() == _ENABLE)
                           {
@@ -1086,7 +1086,7 @@ line level    source
                           case _D6_INPUT_PORT:
               #endif
 1020   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 18  
 
 1021   3      #if(_D0_DP_EXIST == _ON)
 1022   3                      ScalerAudioD0WatchDogProc(bOn);
@@ -1150,7 +1150,7 @@ line level    source
 1080   3                      ScalerAudioD0HbrModeControl(bOn);
 1081   3                      DebugMessageAudio("Audio D0: HBR Mode Control", bOn);
 1082   3      #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 19  
 
 1083   3                      break;
 1084   3      
@@ -1214,7 +1214,7 @@ line level    source
 1142   2      
 1143   2      #if(_D3_HDMI_SUPPORT == _ON)
 1144   2              case _SCALER_TIMER_EVENT_AUDIO_D3_LOAD_STABLE_I_CODE:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 20  
 
 1145   2      
 1146   2                  ScalerAudioD3LoadStableICodeEvent();
@@ -1278,7 +1278,7 @@ line level    source
                           }
                           else
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 21  
 
                           {
                               ScalerAudioInputPortSwitch(_AUDIO_FROM_D1_PORT);
@@ -1342,7 +1342,7 @@ line level    source
 1266   2      #if(_EMBEDDED_DAC_SUPPORT == _ON)
 1267   2              // Set AOUT and HPOUT Gain After DAC Block
 1268   2              ScalerAudioDACSetOutputGain(_AUDIO_DAC_OUTPUT_SPEAKER, _LINE_IN_DAC_AOUT_GAIN_DB);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 22  
 
 1269   2              ScalerAudioDACSetOutputGain(_AUDIO_DAC_OUTPUT_HEADPHONE, _LINE_IN_DAC_HPOUT_GAIN_DB);
 1270   2      #endif
@@ -1406,7 +1406,7 @@ line level    source
 1328   2      
 1329   2              default:
 1330   2                  break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 23  
 
 1331   2          }
 1332   1      
@@ -1470,7 +1470,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Timer Event to tracking event
               // Input Value  : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 24  
 
               // Output Value : None
               //--------------------------------------------------
@@ -1534,7 +1534,7 @@ line level    source
               
                           ScalerAudioD3TimeoutEventSet();
                           break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 25  
 
               #endif
               
@@ -1598,7 +1598,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Detect D1 digital audio for HDMI/DP interface
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 26  
 
               // Input Value  : None
               // Output Value : None
@@ -1662,7 +1662,7 @@ line level    source
               
                   if(ScalerAudioD1SamplingFreqDetect() != 0x00)
                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 27  
 
               #if(_D1_HDMI_SUPPORT == _ON)
                       // Enable Audio output
@@ -1726,7 +1726,7 @@ line level    source
                           // -----------------------------------------
                           ScalerAudioD1AudioFrequencyMode(_AUDIO_TRACKING_AUTO_LOAD_MODE);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 28  
 
                           // Set Flag
                           SET_AUDIO_D1_AUTO_LOAD_FREQ();
@@ -1790,7 +1790,7 @@ line level    source
                               ScalerTimerReactiveTimerEvent(_AUDIO_DYNAMIC_I_CODE_TIMER_MS, _SCALER_TIMER_EVENT_AUDIO_D1
              -_LOAD_STABLE_I_CODE);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 29  
 
                               SET_AUDIO_D1_ICODE_RELOADED();
                           }
@@ -1854,7 +1854,7 @@ line level    source
                       {
                           // Set DP Receive Port1 Out Of Sync
                           ScalerDpRx1SinkStatusSet(_DP_SINK_REVEICE_PORT1, _DP_SINK_OUT_OF_SYNC);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 30  
 
                       }
               #endif
@@ -1918,7 +1918,7 @@ line level    source
                       DebugMessageAudio("False : D1 HDMI Audio Tracking Disable", 0);
                       return _FALSE;
                   }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 31  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 31  
 
               
                   // Check HDMI audio FIFO overflow and underflow
@@ -1982,7 +1982,7 @@ line level    source
               
                           if(ScalerGetBit(PB9_70_AUD_BUFFER_CTRL_0, (_BIT1 | _BIT0)) != 0x00)
                           {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 32  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 32  
 
                               DebugMessageAudio("False : D1 DP Audio FSM Reset", ScalerGetBit(PB9_70_AUD_BUFFER_CTRL_0, 
              -(_BIT1 | _BIT0)));
@@ -2046,7 +2046,7 @@ line level    source
                   enumAudioFreq = ScalerGetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_8B_PORT_PAGE71_AUDIO_FREQ_RESULT, (_BI
              -T3 | _BIT2 | _BIT1 | _BIT0));
               #elif(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 33  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 33  
 
                   enumAudioFreq = (ScalerGetBit(PB9_61_AUD_SAMPLE_CNT_0, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) >> 4);
               #endif
@@ -2110,7 +2110,7 @@ line level    source
               // Input Value  : bOn
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 34  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 34  
 
               void ScalerAudioD1WatchDogProc(bit bOn)
               {
@@ -2174,7 +2174,7 @@ line level    source
               //--------------------------------------------------
               void ScalerAudioD1HbrAudioDetect(void)
               {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 35  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 35  
 
               #if(_D1_DP_EXIST == _ON)
                   // Check HBR Audio Receive
@@ -2238,7 +2238,7 @@ line level    source
               // Input Value  : bOn
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 36  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 36  
 
               void ScalerAudioD1I2sSpdifChannelOutputSelect(EnumAudioIisSpdifOutput enumAudioIisSpdifOutput)
               {
@@ -2302,7 +2302,7 @@ line level    source
               
                                       DebugMessageAudio("D1 Audio: SUMC Stable", g_stHDMID1AudioFwTrackingInfo.b1AudioFw
              -TrackStable);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 37  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 37  
 
                                   }
                                   else
@@ -2366,7 +2366,7 @@ line level    source
                   // Set P code of trend
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_22_PORT_PAGE71_HDMI_PCTPSR0, 0x00);
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_23_PORT_PAGE71_HDMI_PCTPSR1, 0x00);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 38  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 38  
 
               
                   // Set I code of boundary
@@ -2430,7 +2430,7 @@ line level    source
              -_FREQ_48K_GROUP_D_CODE));
                       ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_14_PORT_PAGE71_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING
              -_FREQ_48K_GROUP_D_CODE));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 39  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 39  
 
                   }
               
@@ -2494,7 +2494,7 @@ line level    source
                               ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_14_PORT_PAGE71_HDMI_DCAPR1, LOBYTE(usback
              -upSumc));
                               ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_13_PORT_PAGE71_HDMI_DCAPR0, HIBYTE(usback
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 40  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 40  
 
              -upSumc));
               
@@ -2558,7 +2558,7 @@ line level    source
              -/ 2))
                               {
                                   usbackupSumc += (((_AUDIO_FW_TRCK_FIRST_STABLE_CNT / 2) - g_stHDMID1AudioFwTrackingInf
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 41  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 41  
 
              -o.ucAfifoTrackStableCnt) * ((g_stHDMID1AudioFwTrackingInfo.ucAfifoBackup - 0x01) - ucAfifoCurrent));
                               }
@@ -2622,7 +2622,7 @@ line level    source
                   }
               
                   // check stable
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 42  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 42  
 
                   if(g_stHDMID1AudioFwTrackingInfo.ucAfifoTrackStableCnt >= _AUDIO_FW_TRCK_FIRST_STABLE_CNT)
                   {
@@ -2686,7 +2686,7 @@ line level    source
               
                   // AFIFO water level goes down, increase SUMC
                   if(((ucAfifoCurrent < 0x0E) && (ucAfifoCurrent < g_stHDMID1AudioFwTrackingInfo.ucAfifoBackup)) ||
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 43  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 43  
 
                      (ucAfifoCurrent < 0X08))
                   {
@@ -2750,7 +2750,7 @@ line level    source
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_26_PORT_PAGE71_HDMI_PCBPSR0, 0x7F);
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_27_PORT_PAGE71_HDMI_PCBPSR1, 0xFF);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 44  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 44  
 
                   // Enable Auto Load S Code
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_8A_PORT_PAGE71_AUDIO_FREQDET, ~_BIT6, _BIT6);
@@ -2814,7 +2814,7 @@ line level    source
               //--------------------------------------------------
               void ScalerAudioD2HDMIAudioInitial(void)
               {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 45  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 45  
 
                   ScalerAudioD2SetAudioPLL();
               
@@ -2878,7 +2878,7 @@ line level    source
               
                   // Set Y Value
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_33_PORT_PAGE71_HDMI_WDCR2, ~(_BIT3 | _BIT2 | _BIT1 | _
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 46  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 46  
 
              -BIT0), (_BIT1 | _BIT0));
               
@@ -2942,7 +2942,7 @@ line level    source
                   // Set D code for 48kHz
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_13_PORT_PAGE71_HDMI_DCAPR0, HIBYTE(_HDMI_SAMPLING_FRE
              -Q_48K_GROUP_D_CODE));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 47  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 47  
 
                   ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_14_PORT_PAGE71_HDMI_DCAPR1, LOBYTE(_HDMI_SAMPLING_FRE
              -Q_48K_GROUP_D_CODE));
@@ -3006,7 +3006,7 @@ line level    source
               #if(_D2_HDMI_SUPPORT == _ON)
               
                   // Audio Tracking Reset
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 48  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 48  
 
                   ScalerAudioD2FwTrackingReset();
               #endif
@@ -3070,7 +3070,7 @@ line level    source
                   // DPLL CMP enable
                   ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_38_PORT_PAGE71_HDMI_DPCR0, ~_BIT0, _BIT0);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 49  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 49  
 
                   // Delay 1000us
                   ScalerTimerDelayXms(2);
@@ -3134,7 +3134,7 @@ line level    source
               
                       // Load D code
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_31_PORT_PAGE71_HDMI_WDCR0, ~_BIT6, _BIT6);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 50  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 50  
 
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_31_PORT_PAGE71_HDMI_WDCR0, ~_BIT6, 0x00);
                   }
@@ -3198,7 +3198,7 @@ line level    source
 2962          //--------------------------------------------------
 2963          // Description  : Audio SPDIF/IIS Output Select
 2964          // Input Value  : bOn
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 51  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 51  
 
 2965          // Input Value  : ucInputPort
 2966          // Output Value : None
@@ -3262,7 +3262,7 @@ line level    source
 3023   2                  break;
 3024   2      
 3025   2              case _AUDIO_FROM_D2_PORT:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 52  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 52  
 
 3026   2      
 3027   2      #if(_D2_HDMI_SUPPORT == _ON)
@@ -3326,7 +3326,7 @@ line level    source
                       case _AUDIO_FROM_D2_PORT:
               
                           return _SOURCE_HDMI;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 53  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 53  
 
               #endif
 3089   2      
@@ -3390,7 +3390,7 @@ line level    source
 3147   3      
 3148   3                  default:
 3149   3                      break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 54  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 54  
 
 3150   3              }
 3151   2          }
@@ -3454,7 +3454,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
               #if((_D6_INPUT_PORT_TYPE != _D6_NO_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 55  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 55  
 
                       case _D6_INPUT_PORT:
               #endif
@@ -3518,7 +3518,7 @@ line level    source
 3271   2      #if(_D1_DP_EXIST == _ON)
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 56  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 56  
 
                           // Get User Define DP Capability
                           return GET_AUDIO_DP_D1_SUPPORT();
@@ -3582,7 +3582,7 @@ line level    source
 3333   1          ScalerSetBit(PB6_D3_MN_SCLKG_PLL_PWR, ~_BIT2, _BIT2);
 3334   1      
 3335   1          // Delay at least 1000us
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 57  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 57  
 
 3336   1          ScalerTimerDelayXms(2);
 3337   1      
@@ -3646,7 +3646,7 @@ line level    source
 3395   3                  // Disable INT for Auido Sampling Change
 3396   3                  ScalerSetBit(PB6_50_AUD_FREQUENY_DET_0, ~(_BIT6 | _BIT5), 0x00);
 3397   3      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 58  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 58  
 
 3398   3                  // Disable Boundary Tracking Method
 3399   3                  ScalerSetBit(PB6_81_AUD_BDRY_0, ~_BIT7, 0x00);
@@ -3710,7 +3710,7 @@ line level    source
 3457   2              if(ScalerGetBit(PB6_81_AUD_BDRY_0, _BIT7) == 0x00)
 3458   2              {
 3459   3      #if(_DIGITAL_AUDIO_OUTPUT_FIX_I2S_PHASE_DELAY == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 59  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 59  
 
                           if(ScalerAudioGetDigitalAudioPort(_AUDIO_DAC_OUT) == _AUDIO_FROM_D0_PORT)
                           {
@@ -3774,7 +3774,7 @@ line level    source
 3518   3      
 3519   3                  // Disable Trend Tracking Method
 3520   3                  ScalerSetBit(PB6_92_AUD_TRND_0, ~_BIT7, 0x00);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 60  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 60  
 
 3521   3      
 3522   3                  // Reload D code
@@ -3838,7 +3838,7 @@ line level    source
 3580   2              DebugMessageAudio("False : D0 DP Audio Fsm Disable", 0);
 3581   2      
 3582   2              return _FALSE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 61  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 61  
 
 3583   2          }
 3584   1      
@@ -3902,7 +3902,7 @@ line level    source
 3638   1      
 3639   1      #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
                   if(ScalerAudioDpGetInternalAudioGenEnable() == _ENABLE)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 62  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 62  
 
                   {
                       // For Audio test pattern
@@ -3966,7 +3966,7 @@ line level    source
 3699          // Description  : D0 Audio Watch Dog Proc
 3700          // Input Value  : bOn
 3701          // Output Value : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 63  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 63  
 
 3702          //--------------------------------------------------
 3703          void ScalerAudioD0WatchDogProc(bit bOn)
@@ -4030,7 +4030,7 @@ line level    source
 3759   1          else
 3760   1          {
 3761   2              // Check Current Detect Mode
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 64  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 64  
 
 3762   2              if(ScalerGetBit(PB6_B0_DP_AUD_CTRL, _BIT6) != 0x00)
 3763   2              {
@@ -4094,7 +4094,7 @@ line level    source
                   // DPLL VCORSTB Set to Normal
                   ScalerSetBit(PB9_D6_MN_SCLKG_PLL_INSEL, ~_BIT0, _DPLL_VCORSTB_NORMAL_VALUE);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 65  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 65  
 
                   // DPLL power up
                   ScalerSetBit(PB9_D3_MN_SCLKG_PLL_PWR, ~_BIT7, 0x00);
@@ -4158,7 +4158,7 @@ line level    source
 3883   2      #endif
 3884   2      
 3885   2              default:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 66  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 66  
 
 3886   2                  break;
 3887   2          }
@@ -4222,7 +4222,7 @@ line level    source
               // Description  : Auido Speaker Testing Process
               // Input Value  : Enable or Disable
               // Output Value : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 67  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 67  
 
               //--------------------------------------------------
               void ScalerAudioInternalAudioGenSwitch(bit bOn, BYTE ucInputPort, EnumAudioLeftRightChannelSelect enumAudi
@@ -4286,7 +4286,7 @@ line level    source
               #endif
               #if(_D0_DP_EXIST == _ON)
                           return ScalerAudioDpGetInternalAudioGenEnable();
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 68  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 68  
 
               #endif
               
@@ -4350,7 +4350,7 @@ line level    source
               #endif
                           break;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 69  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 69  
 
                       case _D2_INPUT_PORT:
                       case _D3_INPUT_PORT:
@@ -4414,7 +4414,7 @@ line level    source
              -6 | _BIT5));
               
                       // Set S code
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 70  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 70  
 
                       ScalerSetDataPortByte(P71_C9_HDMI_AP, _P71_CA_PT_12_PORT_PAGE71_HDMI_SCAPR, GET_AUDIO_GEN_FREQ_S_C
              -ODE());
@@ -4478,7 +4478,7 @@ line level    source
               
                       // Enable DPLL Freq. Tuning
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_3A_PORT_PAGE71_HDMI_DPCR2, ~_BIT1, _BIT1);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 71  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 71  
 
               
                       // Enable audio FIFO and Disable audio internal generator
@@ -4542,7 +4542,7 @@ line level    source
               #endif
                           break;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 72  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 72  
 
                       case _AUDIO_FROM_D1_PORT:
               
@@ -4606,7 +4606,7 @@ line level    source
                           stAudioStatus.ucChannelStaus1 = ScalerGetDataPortSingleByte(P71_C9_HDMI_AP, _P71_CA_PT_58_PORT
              -_PAGE71_HDMI_ACS1);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 73  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 73  
 
                           // Get Channel_Status[23:16]
                           stAudioStatus.ucChannelStaus2 = ScalerGetDataPortSingleByte(P71_C9_HDMI_AP, _P71_CA_PT_59_PORT
@@ -4670,7 +4670,7 @@ line level    source
                           // [19:16] = 4'b0000, Source number do not take into account;
                           // [23:20] Set Dummy and Reference by AudioChannelNumStaus1 ~ 8.
                           stAudioStatus.ucChannelStaus2 = 0x00;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/18/2026 20:39:01 PAGE 74  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_AUDIO                                               09/20/2026 19:44:03 PAGE 74  
 
               
                           // [27:24] = 4'b0010, 48kHz;

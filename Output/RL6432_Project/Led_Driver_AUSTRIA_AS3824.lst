@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 1   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LED_DRIVER_AUSTRIA_AS3824
@@ -62,7 +62,7 @@ line level    source
               #define _DEVICE_LED_DRIVER_BLOCK_DATA               0x00
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 2   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 2   
 
               // Read / Write
               //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
               // TYPE / ENUM DEFINITTIONS
               //****************************************************************************
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 3   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 3   
 
               
               //****************************************************************************
@@ -190,7 +190,7 @@ line level    source
                       return _FALSE;
                   }
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 4   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 4   
 
                   if(ucType == _READ)
                   {
@@ -254,7 +254,7 @@ line level    source
               
                   // Enable Output CH1~CH8
                   BYTE pucDevice_05[3] =
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 5   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 5   
 
                   {
                       (_DEVICE_LED_DRIVER_DEVICE_ADDRESS | _DEVICE_LED_DRIVER_SINGLE_DATA),
@@ -318,7 +318,7 @@ line level    source
                   BYTE pucDevice_12[11] =
                   {
                       (_DEVICE_LED_DRIVER_DEVICE_ADDRESS | _DEVICE_LED_DRIVER_BLOCK_DATA),
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 6   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 6   
 
                       0x08,
                       0x70,
@@ -382,7 +382,7 @@ line level    source
                   ScalerSpiData(_WRITE, 3, pucDevice_14);
                   ScalerSpiData(_WRITE, 3, pucDevice_15);
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 7   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 7   
 
                   ScalerSpiData(_WRITE, 3, pucDevice_07);
                   ScalerSpiData(_WRITE, 3, pucDevice_08);
@@ -446,7 +446,7 @@ line level    source
               //--------------------------------------------------
               void ExternalDeviceInterfaceLedDriverPwm(EnumDeviceLedDriverPwm enumDeviceLedDriverPwm, WORD usValue, Enum
              -DeviceLedCalibrationUse enumcaliUse)
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 8   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 8   
 
               {
                   BYTE ucI = 0;
@@ -510,7 +510,7 @@ line level    source
                       usValue = ((usValue > _DEVICE_LED_DRIVER_PWM_MAX) ? _DEVICE_LED_DRIVER_PWM_MAX :
                                  ((usValue < _DEVICE_LED_DRIVER_PWM_MIN) ? _DEVICE_LED_DRIVER_PWM_MIN : usValue));
                   }
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 9   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 9   
 
               
                   for(ucI = 0; ucI < ucLength; ucI++)
@@ -574,7 +574,7 @@ line level    source
              -:
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_6) ? _REG_ADDRESS_PWM6_PLUS_WIDTH_LSB 
              -:
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 10  
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 10  
 
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_7) ? _REG_ADDRESS_PWM7_PLUS_WIDTH_LSB 
              -:
@@ -638,7 +638,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ExternalDeviceInterfaceLedDriverPwmArray(WORD *pusValue)
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 11  
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 11  
 
               {
                   BYTE ucI = 0;
@@ -702,7 +702,7 @@ line level    source
               
                   ucLength = 3 + (ucLength * 2);
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/18/2026 20:40:22 PAGE 12  
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3824                                         09/20/2026 19:45:05 PAGE 12  
 
                   ScalerSpiSPIDataCeForceLow(_WRITE, ucLength, pucTemp);
               }

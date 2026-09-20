@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_GDIPHY
@@ -62,7 +62,7 @@ line level    source
   45          // FUNCTION DECLARATIONS
   46          //****************************************************************************
   47          void ScalerGDIPhyBandgap(bit bSelect);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 2   
 
   48          
   49          #if(_DIGITAL_PORT_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
  107   1          // [7:5] reg_adp_time = 3'b010 --> DP PHY DFE delay_time = 16*(1/14.318)*(reg_adp_time[2:0]+1) = 3.35u
              -s
  108   1          ScalerSetBit(P1D_2D_ANA_CDR_02, ~(_BIT7 | _BIT6 | _BIT5), _BIT6);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 3   
 
  109   1          ScalerSetBit(P7A_2D_ANA_CDR_02, ~(_BIT7 | _BIT6 | _BIT5), _BIT6);
  110   1      
@@ -190,7 +190,7 @@ line level    source
                       ScalerSetBit(P1D_2A_KOFFSET_06, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
                       ScalerSetBit(P1D_2B_KOFFSET_07, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
                       // CMU PLL Always On
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 4   
 
                       ScalerSetBit(P1D_1B_CMU_01, ~_BIT7, _BIT7);
               #endif
@@ -254,7 +254,7 @@ line level    source
  227   2      
  228   2      #if((_D1_INPUT_PORT_TYPE == _D1_MHL_PORT) || (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT))
                       // Set 1k Manual Code
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 5   
 
                       ScalerSetByte(P27_A2_CBUS_RES_AUTOK_0, _MHL_1K);
               
@@ -318,7 +318,7 @@ line level    source
                           ScalerGDIPhyRx2Z0Switch(bSelect);
               #endif
  290   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 6   
 
  291   2                  break;
  292   2      
@@ -382,7 +382,7 @@ line level    source
  350   2              case _D3_INPUT_PORT:
  351   2      
  352   2                  ScalerGDIPhyRx3PowerProc(enumPowerAction);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 7   
 
  353   2      
  354   2                  break;
@@ -446,7 +446,7 @@ line level    source
  412   1          ScalerGDIPhyRx0Power(enumPowerAction);
  413   1      
  414   1          switch(enumPowerAction)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 8   
 
  415   1          {
  416   2              case _POWER_ACTION_AC_ON_TO_NORMAL:
@@ -510,7 +510,7 @@ line level    source
                       ScalerSetBit(P27_A1_CBUS_EN_1, ~_BIT2, 0x00);
               
                       // Enable CBUS Phy, LDO, Input Comparator and Output Driver
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 9   
 
                       ScalerSetBit(P27_A0_CBUS_EN_0, ~(_BIT6 | _BIT4 | _BIT2 | _BIT0), (_BIT6 | _BIT4 | _BIT2 | _BIT0));
               #endif
@@ -574,7 +574,7 @@ line level    source
  535   2          }
  536   1      }
  537          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 10  
 
  538          
  539          //--------------------------------------------------
@@ -638,7 +638,7 @@ line level    source
  597   2                  // [1] bypass_eqen_rdy = 1 --> Manual Mode
  598   2                  ScalerSetBit(P1D_10_EQEN_TIMER, ~_BIT1, _BIT1);
  599   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 11  
 
  600   2                  // [1] bypass_data_rdy = 1 --> Manual Mode
  601   2                  ScalerSetBit(P1D_11_DATA_TIMER, ~_BIT1, _BIT1);
@@ -702,7 +702,7 @@ line level    source
                               // Enable RGB Z0
                               ScalerSetBit(P7A_18_IMPEDANCE_00, ~(_BIT6 | _BIT5 | _BIT4), (_BIT6 | _BIT5 | _BIT4));
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 12  
 
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
                               if((GET_MHL_RX1_PROCESS_STATE() >= _MHL_STATE_SET_DEV_CAP_DONE) &&
@@ -766,7 +766,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 13  
 
                           break;
                   }
@@ -830,7 +830,7 @@ line level    source
               
                               // Initialize DDC Detection Process
                               CLR_TMDS_RX1_DDC_DETECTED();
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 14  
 
               
                               // Enable DDC Toggle IRQ
@@ -894,7 +894,7 @@ line level    source
                       }
                   }
                   else
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 15  
 
                   {
               #if(_D1_TMDS_SUPPORT == _ON)
@@ -958,7 +958,7 @@ line level    source
               #if((_D1_INPUT_PORT_TYPE == _D1_DP_PORT) && ((_D1_DP_CONNECTOR_TYPE == _DP_CONNECTOR_TYPE_C) || (_D1_DP_Z0
              -_IMPEDANCE_OPTION == _U3_90_OHM)))
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 16  
 
                           // [3:0] Z0_ADJR = 6 --> Z0 Differential Impedance = level 6
                           ScalerSetBit(P7A_18_IMPEDANCE_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT1));
@@ -1022,7 +1022,7 @@ line level    source
               
                               // [7] Disable CMU PLL
                               ScalerSetBit(P7A_1B_CMU_01, ~_BIT7, 0x00);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 17  
 
               #endif
                               // Analog Select to HDMI
@@ -1086,7 +1086,7 @@ line level    source
                           // Disable Auto k-offset auto mode (foreground)
                           ScalerSetBit(P7A_24_KOFFSET_00, ~(_BIT6 | _BIT5), 0x00);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 18  
 
                           break;
               
@@ -1150,7 +1150,7 @@ line level    source
                               ((GET_MHL_RX2_ADOPTER_ID_HBYTE() == _SAMSUNG_NOTE2_ADOPTER_ID_HBYTE) && (GET_MHL_RX2_ADOPT
              -ER_ID_LBYTE() == _SAMSUNG_NOTE2_ADOPTER_ID_LBYTE))))
                           {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 19  
 
                               // Reset CBUS
                               ScalerMHLCBUSResetProc(_D2_INPUT_PORT);
@@ -1214,7 +1214,7 @@ line level    source
               #if(_MHL_DEBUG_WITHOUT_CBUS_MODE == _ON)
                           // Enable Z0
                           ScalerSetBit(P7B_18_IMPEDANCE_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT6 | _BIT5 | _
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 20  
 
              -BIT4));
               #endif
@@ -1278,7 +1278,7 @@ line level    source
                   if(bSelect == _ON)
                   {
                       // [1] MHL_Mode = 1'b0 --> Disable MHL Mode
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 21  
 
                       ScalerSetBit(P7B_17_BANDGAP_03, ~_BIT1, 0x00);
               
@@ -1342,7 +1342,7 @@ line level    source
              -))
                       // Reset Hdcp2 Proc
                       ScalerHdcp2ResetTMDSProc(_D2_INPUT_PORT);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 22  
 
               #endif
                   }
@@ -1406,7 +1406,7 @@ line level    source
                           ///////////////
                           // Reset PHY //
                           ///////////////
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 23  
 
               
                           // [2:0] phy_si_reset_n = 4'b1111 --> Normal Digital PHY
@@ -1470,7 +1470,7 @@ line level    source
               #endif
                           break;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 24  
 
                       case _POWER_ACTION_NORMAL_TO_OFF:
                       case _POWER_ACTION_SWITCH_INTERFACE_TO_OFF:
@@ -1534,7 +1534,7 @@ line level    source
                                   // Reset D3 CBUS
                                   ScalerMHLCBUSResetProc(_D3_INPUT_PORT);
                               }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 25  
 
               #endif
 1442   3                  }
@@ -1598,7 +1598,7 @@ line level    source
 1495   2      
 1496   2                  break;
 1497   2          }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 26  
 
 1498   1      }
 1499          
@@ -1662,7 +1662,7 @@ line level    source
                               CLR_TMDS_RX3_DDC_DETECTED();
               
                               // Enable DDC Toggle IRQ
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 27  
 
                               MCU_FE72_DDC3_EDID_IRQ |= _BIT2;
                               MCU_FE72_DDC3_EDID_IRQ |= _BIT3;
@@ -1726,7 +1726,7 @@ line level    source
 1615   1          else
 1616   1          {
 1617   2      #if(_D3_TMDS_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 28  
 
 1618   2      
 1619   2              // Disable DDC Toggle IRQ
@@ -1790,7 +1790,7 @@ line level    source
                           ScalerSetBit(P7C_18_IMPEDANCE_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT1));
               #else
 1678   2                  // [3:0] Z0_ADJR = 9 --> Z0 Differential Impedance = level 9
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 29  
 
 1679   2                  ScalerSetBit(P7C_18_IMPEDANCE_00, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
 1680   2      #endif
@@ -1854,7 +1854,7 @@ line level    source
 1738   2      #if((_D3_TMDS_SUPPORT == _ON) && (_TMDS_Z0_POWER_SAVING_OPTION == _ONLY_CLK_CHANNEL_CONNECTED_FOR_PS))
               
               #if(_D3_INPUT_PORT_TYPE == _D3_MHL_PORT)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/18/2026 20:39:14 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_GDIPHY                                              09/20/2026 19:44:14 PAGE 30  
 
                           if(GET_D3_TMDS_MODE() == _TMDS_HDMI_MODE)
                           {

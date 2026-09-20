@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSSOURCE
@@ -62,7 +62,7 @@ line level    source
               #endif
   42          
   43          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 2   
 
   44          // Macro of Getting Input Port Type
   45          //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
  103          
  104          // SourceInfo bit[3:4] -- Source Search Times
  105          //                                     = 0~3 => Counter
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 3   
 
  106          
  107          // SourceInfo bit[5] -- Cable detect
@@ -190,7 +190,7 @@ line level    source
               WORD g_usSourceNoCableSearchTimeTypeC;
               #endif
  167          #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 4   
 
  168          
  169          StructPortCableStatus g_stPortCableStatus;
@@ -254,7 +254,7 @@ line level    source
               bit SysSourceCheckEmbeddedDpAutoSwitch(void);
               void SysSourceEmbeddedDpSwitch(EnumSourceSearchPort enumDpPort);
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 5   
 
  229          
  230          bit SysSourceCheckTargetTimes(BYTE ucTargetTimes);
@@ -318,7 +318,7 @@ line level    source
               #endif
               #endif
  289          
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 6   
 
  290          //****************************************************************************
  291          // FUNCTION DEFINITIONS
@@ -382,7 +382,7 @@ line level    source
                       else if(SysSourceBgJudgeDoDetect() == _TRUE)
                       {
                           if(GET_SOURCE_DETECTING() == _FALSE)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 7   
 
                           {
                               SysSourceBgSwitchPort();
@@ -446,7 +446,7 @@ line level    source
                       case _SOURCE_SWITCH_HP_TIMING_CHANGE:
                       case _SOURCE_SWITCH_HP_OOR_SOURCE_SCAN:
                       case _SOURCE_SWITCH_HP_SCAN_SWITCH_PORT:
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 8   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 8   
 
                       case _SOURCE_SWITCH_HP_SCAN_NEXT_PORT:
               
@@ -510,7 +510,7 @@ line level    source
              -T(ucSearchIndex) == _TRUE))
  472   3                      {
  473   4                          SET_SOURCE_TYPE(ucSearchIndex, ScalerTMDSScanInputPort(enumSearchPort, GET_INPUTPORT_T
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 9   
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 9   
 
              -YPE(ucSearchIndex)));
  474   4                      }
@@ -574,7 +574,7 @@ line level    source
                                       SET_SOURCE_TYPE(ucSearchIndex, ScalerTMDSScanInputPort(enumSearchPort, GET_INPUTPO
              -RT_TYPE(ucSearchIndex)));
                                   }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 10  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 10  
 
                               }
                           }
@@ -638,7 +638,7 @@ line level    source
  588   2                  if(SysPowerGetPowerStatus() == _POWER_STATUS_NORMAL)
  589   2                  {
  590   3                      if((GET_SOURCE_SEARCH_DELAY_MODE() != _SOURCE_SEARCH_POLLING_MODE) && (GET_SOURCE_PREDETEC
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 11  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 11  
 
              -T(ucSearchIndex) == _TRUE))
  591   3                      {
@@ -702,7 +702,7 @@ line level    source
  648   2                  return SysDpSourceKeepDetectingCheck();
  649   2      #endif
  650   2      
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 12  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 12  
 
  651   2              default:
  652   2                  break;
@@ -766,7 +766,7 @@ line level    source
  706   2              {
  707   3                  case _PORT_VGA:
  708   3      
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 13  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 13  
 
  709   3      #if(_SOURCE_AUTO_SEARCH_STYLE == _SOURCE_POLLING_EIZO_STYLE)
                               SysSourceEizoReactiveTotalSearchTime(UserInterfaceAdjustSourceReactiveSearchTime(_ADJUST_P
@@ -830,7 +830,7 @@ line level    source
                                       {
               #if(_SOURCE_AUTO_SEARCH_STYLE == _SOURCE_POLLING_EIZO_STYLE)
                                           SysSourceEizoReactiveTotalSearchTime(UserInterfaceAdjustSourceReactiveSearchTi
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 14  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 14  
 
              -me(_ADJUST_PORT_MHL));
               #else
@@ -894,7 +894,7 @@ line level    source
              -NG);
               #endif
                                       }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 15  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 15  
 
                                       else
                                       {
@@ -958,7 +958,7 @@ line level    source
                                           SysSourceEizoReactiveTotalSearchTime(UserInterfaceAdjustSourceReactiveSearchTi
              -me(_ADJUST_PORT_TMDS));
               #else
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 16  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 16  
 
                                           ScalerTimerReactiveTimerEvent(SEC(4.5), _SYSTEM_TIMER_EVENT_SOURCE_CLEAR_DETEC
              -TING);
@@ -1022,7 +1022,7 @@ line level    source
                       }
               #endif
  926   2      
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 17  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 17  
 
  927   2              switch(GET_SOURCE_SCAN_TYPE())
  928   2              {
@@ -1086,7 +1086,7 @@ line level    source
              -VENT_SOURCE_CLEAR_DETECTING);
                                       }
                                       else
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 18  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 18  
 
                                       {
                                           ScalerTimerReactiveTimerEvent(g_usSourceNoCableSearchTimeHdmi, _SYSTEM_TIMER_E
@@ -1150,7 +1150,7 @@ line level    source
                                               if(SysTypeCCheckTypeCPortControllerExist(GET_INPUT_PORT(GET_INPUTPORT_TYPE
              -(ucSearchIndex))) == _TRUE)
                                               {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 19  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 19  
 
                                                   ScalerTimerReactiveTimerEvent(g_usSourceNoCableSearchTimeTypeC, _SYSTE
              -M_TIMER_EVENT_SOURCE_CLEAR_DETECTING);
@@ -1214,7 +1214,7 @@ line level    source
                               {
               #if(_VGA_PORT_EXIST == _ON)
                                   case _PORT_VGA:
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 20  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 20  
 
               
                                       if(GET_SOURCE_HP_FROM_TIMING_CHANGE() == _TRUE)
@@ -1278,7 +1278,7 @@ line level    source
                                       {
                                           ScalerTimerReactiveTimerEvent(g_usSourceDefaultSearchTimeHdmi, _SYSTEM_TIMER_E
              -VENT_SOURCE_CLEAR_DETECTING);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 21  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 21  
 
                                       }
                                       else if(GET_SOURCE_SEARCH_TIMES(ucSearchIndex) == 0x00)
@@ -1342,7 +1342,7 @@ line level    source
                                           }
                                           else
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 22  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 22  
 
                                           {
                                               ScalerTimerReactiveTimerEvent(g_usSourceDefaultSearchTimeDp, _SYSTEM_TIMER
@@ -1406,7 +1406,7 @@ line level    source
               #if(_HDMI_PORT_EXIST == _ON)
                                       case _PORT_HDMI:
                                       case _PORT_MHL:
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 23  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 23  
 
                                           ScalerTimerReactiveTimerEvent(g_usSourceDefaultSearchTimeHdmi, _SYSTEM_TIMER_E
              -VENT_SOURCE_CLEAR_DETECTING);
@@ -1470,7 +1470,7 @@ line level    source
 1302   1          {
 1303   2              case _SOURCE_SWITCH_FIXED_PORT:
 1304   2              case _SOURCE_SWITCH_AUTO_IN_GROUP:
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 24  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 24  
 
 1305   2              case _SOURCE_SWITCH_AUTO_WITHOUT_GROUP:
 1306   2              case _SOURCE_SWITCH_DELL_HOTKEY_FIXED:
@@ -1534,7 +1534,7 @@ line level    source
                                   {
                                       ScalerDpVersionSwitch(_D0_INPUT_PORT, UserInterfaceGetDPVersion(_D0_INPUT_PORT), U
              -serCommonInterfaceGetDpMstCapablePort());
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 25  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 25  
 
                                   }
                                   else if(GET_D6_SWITCH_SELECT() == _D6_INPUT_PORT)
@@ -1598,7 +1598,7 @@ line level    source
                                   {
                                       CLR_SOURCE_DETECTING();
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 26  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 26  
 
               #if(_HP_SOURCE_SCAN_SUPPORT == _ON)
                                       CLR_SOURCE_HP_DETECTING();
@@ -1662,7 +1662,7 @@ line level    source
 1482   4                          CLR_SOURCE_SEARCH_TIME_REACTIVE();
 1483   4      #endif
 1484   4                      }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 27  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 27  
 
 1485   3      
 1486   3                      if(SysPowerGetPowerStatus() == _POWER_STATUS_SAVING)
@@ -1726,7 +1726,7 @@ line level    source
               
               #if(_HP_SOURCE_SCAN_SUPPORT == _ON)
                                   CLR_SOURCE_HP_DETECTING();
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 28  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 28  
 
               #endif
               
@@ -1790,7 +1790,7 @@ line level    source
               #endif
 1601   1      
 1602   1          ucBackupSearchIndex = g_ucSearchIndex;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 29  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 29  
 
 1603   1      
 1604   1          switch(GET_SOURCE_SCAN_TYPE())
@@ -1854,7 +1854,7 @@ line level    source
               #elif(_SOURCE_AUTO_SEARCH_STYLE == _SOURCE_POLLING_ACER_STYLE)
               
                               if(GET_SOURCE_SEARCH_TIMES(g_ucSearchIndex) <= 1)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 30  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 30  
 
                               {
                                   if(SysSourceCheckTargetTimes(1) == _TRUE)
@@ -1918,7 +1918,7 @@ line level    source
                               if(GET_SOURCE_SEARCH_TIMES(g_ucSearchIndex) == 0x00)
                               {
                                   INCREASE_SOURCE_SEARCH_TIMES(g_ucSearchIndex);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 31  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 31  
 
               
                                   if(SysSourceCheckTargetTimes(1) == _TRUE)
@@ -1982,7 +1982,7 @@ line level    source
                                       {
                                           if((GET_SOURCE_SEARCH_DELAY_MODE() != _SOURCE_SEARCH_POLLING_MODE) || (GET_SOU
              -RCE_DP_SWITCH_TIMEOUT() == _TRUE))
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 32  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 32  
 
                                           {
                                               if((GET_D6_SWITCH_POWER_STATUS() == _DIGITAL_D6_SWITCH_POWER_ON) && (SysSo
@@ -2046,7 +2046,7 @@ line level    source
                                           if(GET_SOURCE_SEARCH_DELAY_MODE() != _SOURCE_SEARCH_POLLING_MODE)
                                           {
                                               SET_D6_SWITCH_SELECT(UserInterfaceGetDpSwitchSelectPort());
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 33  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 33  
 
                                           }
               
@@ -2110,7 +2110,7 @@ line level    source
                                       break;
                                   }
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 34  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 34  
 
               #else // #else of #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_
              -D0))
@@ -2174,7 +2174,7 @@ line level    source
                                  ((ucBackupSearchIndex != SysSourceConvertSearchPort(UserCommonNVRamGetSystemData(_SEARC
              -H_PORT))) && (GET_SOURCE_SEARCH_DELAY_MODE() == _SOURCE_SEARCH_DELAY_REACTIVE_MODE)))
                               {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 35  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 35  
 
                                   SET_SOURCE_SEARCH_CHECK_NVRAM_PORT();
                               }
@@ -2238,7 +2238,7 @@ line level    source
               
                               if(GET_MODE_STATE() == _MODE_STATUS_SEARCH)
                               {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 36  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 36  
 
                                   SET_SOURCE_SEARCH_DELAY_MODE(_SOURCE_SEARCH_DELAY_DEFAULT_MODE);
                               }
@@ -2302,7 +2302,7 @@ line level    source
                               if(SysSourceCheckTargetTimes(1) == _TRUE)
                               {
                                   SET_SOURCE_SWITCH_FINISH();
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 37  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 37  
 
               
                                   if(GET_MODE_STATE() == _MODE_STATUS_SEARCH)
@@ -2366,7 +2366,7 @@ line level    source
 2131   3                  }
 2132   2      
 2133   2      #if(_SOURCE_AUTO_SEARCH_STYLE == _SOURCE_POLLING_IN_SEARCH_STATE)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 38  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 38  
 
 2134   2      
 2135   2      #if(_SOURCE_DOUBLE_CHECK_NVRAM_PORT_SUPPORT == _ON)
@@ -2430,7 +2430,7 @@ line level    source
               
                               CLR_SOURCE_FUJITSU_SWITCH_PORT();
                           }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 39  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 39  
 
               
                           if(GET_MODE_STATE() == _MODE_STATUS_SEARCH)
@@ -2494,7 +2494,7 @@ line level    source
 2248   5                          }
 2249   4                      }
 2250   3      
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 40  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 40  
 
 2251   3                      g_ucSearchIndex = (g_ucSearchIndex + 1) % _INPUT_PORT_VALID;
 2252   3      
@@ -2558,7 +2558,7 @@ line level    source
                                       {
                                           ucHpSwitchTargetPort = GET_SOURCE_HP_PORT_SWITCH_TARGET();
                                       }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 41  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 41  
 
               #else
                                       ucHpSwitchTargetPort = GET_SOURCE_HP_PORT_SWITCH_TARGET();
@@ -2622,7 +2622,7 @@ line level    source
                                               g_ucSearchIndex = GET_SOURCE_HP_PORT_SWITCH_TARGET();
               
                                               DebugMessageSystem("7. Bingo Switch Port!!!!!!!", 0);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 42  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 42  
 
               
               #if((_D12_INPUT_PORT_TYPE == _D12_HDMI_PORT) && (_D12_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D3))
@@ -2686,7 +2686,7 @@ line level    source
                                           {
                                               SET_SOURCE_SEARCH_TIME_INITIAL();
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 43  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 43  
 
                                               SET_SOURCE_SEARCH_PORT_INITIAL();
                                           }
@@ -2750,7 +2750,7 @@ line level    source
               
                                               CLR_SOURCE_PREDETECT(g_ucSearchIndex);
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 44  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 44  
 
                                               SET_SOURCE_SEARCH_DELAY_MODE(_SOURCE_SEARCH_DELAY_DEFAULT_MODE);
               
@@ -2814,7 +2814,7 @@ line level    source
                               if((GET_MODE_STATE() == _MODE_STATUS_SEARCH) && (SysSourceCheckTargetTimes(1) == _TRUE))
                               {
                                   pData[1] = 0;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 45  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 45  
 
               
                                   for(pData[0] = 0; pData[0] < _INPUT_PORT_VALID; pData[0]++)
@@ -2878,7 +2878,7 @@ line level    source
                               {
                                   g_ucSearchIndex = SysSourceConvertSearchPort(UserCommonNVRamGetSystemData(_SEARCH_PORT
              -));
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 46  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 46  
 
                               }
                           }
@@ -2942,7 +2942,7 @@ line level    source
               
                                       DebugMessageSystem("7. Bingo Switch Port!!!!!!!", 0);
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 47  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 47  
 
               #if((_D12_INPUT_PORT_TYPE == _D12_HDMI_PORT) && (_D12_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D3))
                                       if(SysSourceCheckD3ExternalHdmiAutoSwitch() == _TRUE)
@@ -3006,7 +3006,7 @@ line level    source
               
               #if((_D12_INPUT_PORT_TYPE == _D12_HDMI_PORT) && (_D12_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D3))
                                       if(SysSourceCheckD3ExternalHdmiAutoSwitch() == _TRUE)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 48  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 48  
 
               #endif
                                       {
@@ -3070,7 +3070,7 @@ line level    source
               
                                           SET_SOURCE_SEARCH_TIME_REACTIVE();
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 49  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 49  
 
                                           SET_SOURCE_HP_SOURCE_JUDGE();
               
@@ -3134,7 +3134,7 @@ line level    source
                               SET_SOURCE_SCAN_TYPE(_SOURCE_SWITCH_HP_TIMING_CHANGE);
               
                               SET_SOURCE_SEARCH_DELAY_MODE(_SOURCE_SEARCH_POLLING_MODE);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 50  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 50  
 
               
                               if(UserCommonNVRamGetSystemData(_SOURCE_HP_AUTO_SEARCH) == _FALSE)
@@ -3198,7 +3198,7 @@ line level    source
               
                               SET_SOURCE_HP_TARGET_SEARCH_TIMES(1);
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 51  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 51  
 
                               CLR_SOURCE_HP_SOURCE_JUDGE();
               
@@ -3262,7 +3262,7 @@ line level    source
                                       ScalerTimerCancelTimerEvent(_SYSTEM_TIMER_EVENT_SOURCE_HP_CANCEL_MANUAL_SWITCH_POR
              -T);
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 52  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 52  
 
                                       return;
                                   }
@@ -3326,7 +3326,7 @@ line level    source
                           }
               #endif
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 53  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 53  
 
                           if(GET_SOURCE_SEARCH_TIMES(g_ucSearchIndex) == 0x00)
                           {
@@ -3390,7 +3390,7 @@ line level    source
               #endif
               
                                   if(GET_SOURCE_TYPE(ucHpSwitchTargetPort) != _SOURCE_NONE)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 54  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 54  
 
                                   {
                                       for(pData[0] = 0; pData[0] < _INPUT_PORT_VALID; pData[0]++)
@@ -3454,7 +3454,7 @@ line level    source
                               if(g_ucSearchIndex == SysSourceConvertSearchPort(_D12_INPUT_PORT))
                               {
                                   ucHpSwitchTargetPort = SysSourceConvertSearchPort(_D3_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 55  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 55  
 
                               }
                               else
@@ -3518,7 +3518,7 @@ line level    source
                           CLR_SOURCE_HP_TIMING_CHANGE();
               
                           CLR_SOURCE_HP_SOURCE_JUDGE();
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 56  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 56  
 
               
                           CLR_SOURCE_PREDETECT(g_ucSearchIndex);
@@ -3582,7 +3582,7 @@ line level    source
                                           SysSourceConvertSearchIndexD12ToD3();
               #endif
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 57  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 57  
 
                                           SET_SOURCE_TYPE(g_ucSearchIndex, _SOURCE_NONE);
               
@@ -3646,7 +3646,7 @@ line level    source
               
                           if(SysSourceCheckTargetTimes(1) == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 58  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 58  
 
                               BYTE ucIndex = 0;
               
@@ -3710,7 +3710,7 @@ line level    source
                               }
                               else
                               {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 59  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 59  
 
                                   ucHpSwitchTargetPort = (SysSourceConvertSearchPort(UserCommonNVRamGetSystemData(_SEARC
              -H_PORT)));
@@ -3774,7 +3774,7 @@ line level    source
               
                               SET_SOURCE_SEARCH_PORT_INITIAL();
                           }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 60  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 60  
 
               
               #if((_D12_INPUT_PORT_TYPE == _D12_HDMI_PORT) && (_D12_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D3))
@@ -3838,7 +3838,7 @@ line level    source
                               ScalerGDIPhyZ0Switch(_D3_INPUT_PORT, _OFF);
                               PCB_HDMI_SW_SELECT(_SW_SEL_HDMI3);
                           }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 61  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 61  
 
                           else
                           {
@@ -3902,7 +3902,7 @@ line level    source
                               PCB_HDMI_SW_SELECT(_SW_SEL_HDMI3);
                           }
                           else
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 62  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 62  
 
                           {
                               DebugMessageSystem("7. wuzanne test : D1 Port Default Switch to D12", 0);
@@ -3966,7 +3966,7 @@ line level    source
              -dex)),
                                                   enumSearchPort, enumPortType,
                                                   GET_SOURCE_SEARCH_DELAY_MODE());
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 63  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 63  
 
                   }
                   else
@@ -4030,7 +4030,7 @@ line level    source
 3675   2      #if(_DP_SUPPORT == _ON)
 3676   2              case _PORT_DP:
 3677   2      
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 64  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 64  
 
 3678   2                  DebugMessageSystem("7. DP Port Initial", 1);
 3679   2      
@@ -4094,7 +4094,7 @@ line level    source
               #elif(_HP_SOURCE_SCAN_TYPE == _HP_SOURCE_SCAN_TYPE_F)
                   SET_SOURCE_HP_TARGET_SEARCH_TIMES(1);
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 65  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 65  
 
               
                   SET_SOURCE_HP_PORT_SWITCH_TARGET((_INPUT_PORT_VALID + 1));
@@ -4158,7 +4158,7 @@ line level    source
               #endif
               
               #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 66  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 66  
 
                   SET_DP_EMBEDDED_SWITCH_SELECT(_D1_INPUT_PORT);
               #endif
@@ -4222,7 +4222,7 @@ line level    source
 3861   1      #if(_DP_SUPPORT == _ON)
 3862   1          if(UserCommonNVRamGetSystemData(_DP_AUX_DIFF_MODE) == _TRUE)
 3863   1          {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 67  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 67  
 
 3864   2              SET_DP_AUX_DIFF_MODE();
 3865   2          }
@@ -4286,7 +4286,7 @@ line level    source
               #endif
 3923   1      
 3924   1      #if((_D2_HDMI_SUPPORT == _ON) && (_HDMI_FREESYNC_SUPPORT == _ON))
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 68  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 68  
 
                   SET_TMDS_RX2_FREESYNC_SUPPORT(UserInterfaceGetFreeSyncEnable(_D2_INPUT_PORT));
               #endif
@@ -4350,7 +4350,7 @@ line level    source
 3984   2              case _SOURCE_VGA:
 3985   2      
 3986   2                  return (bit)ScalerSyncProcStableDetect();
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 69  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 69  
 
 3987   2      #endif
 3988   2      
@@ -4414,7 +4414,7 @@ line level    source
 4046          {
 4047   1          return GET_INPUTPORT_TYPE(SysSourceConvertSearchPort(ucInputPort));
 4048   1      }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 70  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 70  
 
 4049          
 4050          //--------------------------------------------------
@@ -4478,7 +4478,7 @@ line level    source
                               UserCommonNVRamSetSystemData(_SEARCH_PORT, ucInputPort);
                           }
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 71  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 71  
 
                           g_ucSearchIndex = SysSourceConvertSearchPort(ucInputPort);
               
@@ -4542,7 +4542,7 @@ line level    source
               
                           CLR_SOURCE_HP_TIMING_CHANGE();
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 72  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 72  
 
                           SET_SOURCE_HP_TARGET_SEARCH_TIMES(1);
               
@@ -4606,7 +4606,7 @@ line level    source
               
                           if(SysSourceGetInputPort() == _D0_INPUT_PORT)
                           {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 73  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 73  
 
                               SET_D6_SWITCH_SELECT(_D0_INPUT_PORT);
                           }
@@ -4670,7 +4670,7 @@ line level    source
 4291          
 4292          //--------------------------------------------------
 4293          // Description  : Source Information Reset
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 74  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 74  
 
 4294          // Input Value  : None
 4295          // Output Value : None
@@ -4734,7 +4734,7 @@ line level    source
 4351   2              CLR_SOURCE_PREDETECT(ucCnt);
 4352   2      
 4353   2      #if(_SOURCE_BACKGROUND_DETECT_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 75  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 75  
 
                       CLR_SOURCE_BG_JUDGE(ucCnt);
               #endif
@@ -4798,7 +4798,7 @@ line level    source
 4413   1      
 4414   1      #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT)
 4415   1      #if(_D3_INPUT_PORT_TYPE == _D3_MHL_PORT)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 76  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 76  
 
                   SET_D3_CABLE_STATUS((!PCB_D3_PIN()) | PCB_D3_MHL_DETECT());
               #else
@@ -4862,7 +4862,7 @@ line level    source
               
                           case _A1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 77  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 77  
 
                               if(GET_CABLE_DETECT(ucI) != GET_A1_CABLE_STATUS())
                               {
@@ -4926,7 +4926,7 @@ line level    source
               #else
 4536   4                          SET_D0_CABLE_STATUS(!PCB_D0_PIN());
 4537   4      #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 78  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 78  
 
 4538   4      
 4539   4      #if(_D0_INPUT_PORT_TYPE == _D0_MHL_PORT)
@@ -4990,7 +4990,7 @@ line level    source
                                       }
               
               #elif(_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 79  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 79  
 
               
                                       if(GET_D0_CABLE_STATUS() == _TRUE)
@@ -5054,7 +5054,7 @@ line level    source
                               if((GET_CABLE_DETECT(ucI) != GET_D1_CABLE_STATUS()) || (GET_D1_TMDS_MODE() != PCB_D1_MHL_D
              -ETECT()))
               #else
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 80  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 80  
 
                               if(GET_CABLE_DETECT(ucI) != GET_D1_CABLE_STATUS())
               #endif
@@ -5118,7 +5118,7 @@ line level    source
                                           ScalerTMDSHDMI2HPDRRIRQEnable(_D1_INPUT_PORT, _DISABLE);
               #endif
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 81  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 81  
 
               #if((_HDCP_2_2_SUPPORT == _ON) && (_TMDS_HDCP_2_2_SUPPORT == _ON))
                                           ScalerHdcp2ResetTMDSProc(_D1_INPUT_PORT);
@@ -5182,7 +5182,7 @@ line level    source
                                       ScalerDpRestoreFakeLTLaneCount(_D1_INPUT_PORT);
               #endif
                                   }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 82  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 82  
 
                               }
               
@@ -5246,7 +5246,7 @@ line level    source
                                               ScalerTMDSHDMI2HPDRRIRQEnable(_D2_INPUT_PORT, _ENABLE);
               #endif
                                           }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 83  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 83  
 
                                       }
                                       else
@@ -5310,7 +5310,7 @@ line level    source
                                           ScalerTMDSHdcp1p4AksvClear(_D2_INPUT_PORT);
                                       }
               #endif // End of #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 84  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 84  
 
               
                                       SET_SOURCE_SEARCH_PORT_INITIAL();
@@ -5374,7 +5374,7 @@ line level    source
                                               // Disable HPD Rising to Falling IRQ for HDMI 2.0 Protocol CTS
                                               ScalerTMDSHDMI2HPDRRIRQEnable(_D3_INPUT_PORT, _DISABLE);
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 85  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 85  
 
                                           }
                                           else
@@ -5438,7 +5438,7 @@ line level    source
 5020   7      
 5021   7      #if((_HDCP_2_2_SUPPORT == _ON) && (_TMDS_HDCP_2_2_SUPPORT == _ON))
 5022   7                                      ScalerHdcp2ResetTMDSProc(_D3_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 86  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 86  
 
 5023   7      #endif
 5024   7                                      ScalerTMDSHdcp1p4AksvClear(_D3_INPUT_PORT);
@@ -5502,7 +5502,7 @@ line level    source
               #endif
                                   {
               #if(_D4_INPUT_PORT_TYPE == _D4_MHL_PORT)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 87  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 87  
 
               
               #if(_MHL_DEBUG_WITHOUT_CBUS_MODE == _ON)
@@ -5566,7 +5566,7 @@ line level    source
                                       }
                                       else
                                       {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 88  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 88  
 
               #if((_D4_HDMI_2_0_SUPPORT == _ON) && (_TMDS_HDMI_2_0_SCDC_RR_CTS_SUPPORT == _ON))
                                           // Disable HPD Rising to Falling IRQ for HDMI 2.0 Protocol CTS
@@ -5630,7 +5630,7 @@ line level    source
              -HL_DETECT()))
               #else
                                   if(GET_CABLE_DETECT(ucI) != GET_D5_CABLE_STATUS())
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 89  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 89  
 
               #endif
                                   {
@@ -5694,7 +5694,7 @@ line level    source
               #if(_D5_HDMI_2_0_SUPPORT == _ON)
                                           ScalerTMDSHdmiHpd5vPinCheckEvent(_D5_INPUT_PORT, _ENABLE);
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 90  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 90  
 
                                       }
                                       else
@@ -5758,7 +5758,7 @@ line level    source
 5324   3      
 5325   3      #if((_D12_INPUT_PORT_TYPE == _D12_HDMI_PORT) && (_D12_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D3))
                           case _D12_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 91  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 91  
 
               #if((_HDMI_SUPPORT == _ON) && (_D5_HDMI_2_0_SUPPORT == _ON) && (_HDMI_5V_DETECT_BY_USER == _ON))
                               g_stTmdsMacRx5vStatusByUser.b1D125vStatusByUser = UserInterfaceTmds5vPinDetect(_D12_INPUT_
@@ -5822,7 +5822,7 @@ line level    source
 5384   3                      break;
 5385   3              }
 5386   2          }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 92  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 92  
 
 5387   1      }
 5388          
@@ -5886,7 +5886,7 @@ line level    source
                   else
                   {
                       SET_D1_HDMI_5V_STATUS();
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 93  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 93  
 
                       PCB_D1_HOTPLUG(_D1_HOT_PLUG_HIGH);
                   }
@@ -5950,7 +5950,7 @@ line level    source
               }
               #endif
 5510          
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 94  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 94  
 
 5511          #if(_DP_EMBEDDED_SWITCH_SUPPORT_TYPE == _DP_EMBEDDED_SWITCH_2_DP)
               //--------------------------------------------------
@@ -6014,7 +6014,7 @@ line level    source
                       }
               
                       return _TRUE;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 95  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 95  
 
                   }
               
@@ -6078,7 +6078,7 @@ line level    source
                   {
                       CLR_SOURCE_HP_SOURCE_JUDGE();
                   }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 96  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 96  
 
               #endif
 5633   1      
@@ -6142,7 +6142,7 @@ line level    source
                   }
                   else
               #endif
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 97  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 97  
 
               #endif
 5695   1          {
@@ -6206,7 +6206,7 @@ line level    source
 5753   1          {
 5754   2      #if(_HP_SOURCE_SCAN_SUPPORT == _ON)
               
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 98  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 98  
 
                       case _SOURCE_SWITCH_HP_SOURCE_SCAN:
                       case _SOURCE_SWITCH_HP_SOURCE_SWITCH:
@@ -6270,7 +6270,7 @@ line level    source
 5815   2      
 5816   2                  if(GET_SOURCE_SCAN_TYPE() == _SOURCE_SWITCH_DELL_HOTKEY_FIXED)
 5817   2                  {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 99  
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 99  
 
 5818   3                      SET_SOURCE_SCAN_TYPE(_SOURCE_SWITCH_FIXED_PORT);
 5819   3                  }
@@ -6334,7 +6334,7 @@ line level    source
 5875   1      }
 5876          
 5877          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 100 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 100 
 
 5878          // Description  : Input Port Search Priority Select
 5879          // Input Value  : Priority and Input Port
@@ -6398,7 +6398,7 @@ line level    source
 5936   1          {
 5937   2              g_ucSearchIndex = enumSourcePriority;
 5938   2          }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 101 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 101 
 
 5939   1      
 5940   1          g_pucSourceSearchPriority[enumSourcePriority] = enumPort;
@@ -6462,7 +6462,7 @@ line level    source
 5998   2              case _SOURCE_INPUT_TYPE_DP:
 5999   2                  g_usSourceDefaultSearchTimeDp = usDefaultSearchTime;
 6000   2                  break;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 102 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 102 
 
 6001   2      
 6002   2      #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -6526,7 +6526,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Check Type C Cable Status
               // Input Value  : None
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 103 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 103 
 
               // Output Value : _TRUE or _FALSE
               //--------------------------------------------------
@@ -6590,7 +6590,7 @@ line level    source
                       SET_SOURCE_EIZO_PS_SUPPORT();
                   }
                   else
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 104 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 104 
 
                   {
                       CLR_SOURCE_EIZO_PS_SUPPORT();
@@ -6654,7 +6654,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysSourceEizoReactiveTotalSearchTime(WORD usTime)
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 105 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 105 
 
               {
                   WORD usSearchTime = 0;
@@ -6718,7 +6718,7 @@ line level    source
               {
                   return (bit)GET_SOURCE_HP_SOURCE_JUDGE();
               }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 106 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 106 
 
               
               //--------------------------------------------------
@@ -6782,7 +6782,7 @@ line level    source
               
                   return _FALSE;
               }
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 107 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 107 
 
               #endif
 6310          
@@ -6846,7 +6846,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Judge if the port with source will be chosen
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 108 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 108 
 
               // Input Value  : None
               // Output Value : None
@@ -6910,7 +6910,7 @@ line level    source
               //--------------------------------------------------
               void SysSourceBgDetectReset(void)
               {
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 109 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 109 
 
                   SysSourceBgInfoReset();
               
@@ -6974,7 +6974,7 @@ line level    source
                               if(GET_PORT_TYPE(GET_INPUTPORT_TYPE(g_ucBgDetectIndex)) == _PORT_VGA)
                               {
                                   return _FALSE;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 110 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 110 
 
                               }
               #endif
@@ -7038,7 +7038,7 @@ line level    source
               // Description  : Get Source Bg Scan Type for User
               // Input Value  : None
               // Output Value : Current Scan Type
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 111 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 111 
 
               //--------------------------------------------------
               BYTE SysSourceBgGetScanType(void)
@@ -7102,7 +7102,7 @@ line level    source
               bit SysSourceBgStableCheck(void)
               {
                   bit bCheckResult = _FALSE;
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 112 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 112 
 
               
                   // Change color array index to bg detect to prevent overwritting of sys color
@@ -7162,11 +7162,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   3187    ----
-   CONSTANT SIZE    =     11    ----
+   CODE SIZE        =   3299    ----
+   CONSTANT SIZE    =    189    ----
    XDATA SIZE       =     52      11
    PDATA SIZE       =   ----    ----
-C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/18/2026 20:37:41 PAGE 113 
+C51 COMPILER V9.60.0.0   SYSSOURCE                                                         09/20/2026 19:43:05 PAGE 113 
 
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

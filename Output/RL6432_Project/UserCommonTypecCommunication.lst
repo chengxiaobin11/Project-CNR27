@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONTYPECCOMMUNICATION
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // FUNCTION DECLARATIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 2   
 
               bit UserCommonTypecCommunicationWrite(BYTE ucSlaveAddr, WORD usSubAddr, BYTE ucSubAddrLength, WORD usLengt
              -h, BYTE *pucWriteArray, BYTE ucInputPort);
@@ -126,7 +126,7 @@ line level    source
                   {
               #if(_D1_DP_TYPE_C_RTK_PC_SMBUS_IIC == _SW_IIC_PIN_GPIO)
                       // SW IIC
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 3   
 
                       ucSWIICStatus = _IIC_SMBUS_D1;
                       ucHwIICPinNum = _SW_IIC_PIN_GPIO;
@@ -190,7 +190,7 @@ line level    source
                   {
                       return _FAIL;
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 4   
 
               
                   if(ucInputPort == _D0_INPUT_PORT)
@@ -254,7 +254,7 @@ line level    source
                   bit bStatus = _SUCCESS;
                   BYTE ucSWIICStatus = _IIC_NONE;
                   BYTE ucHwIICPinNum = _NO_IIC_PIN;
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 5   
 
                   ucDeviceAddr = ucDeviceAddr;
                   pucReadArray = pucReadArray;
@@ -318,7 +318,7 @@ line level    source
               // Description  : Read data to the External Device by SMBus
               // Input Value  : usSubAddr    --> Start address of selected device
               //                usLength     --> Numbers of data we want to read
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 6   
 
               //                pReadArray   --> Result array
               //                ucIICStatus   --> SW IIC Applications
@@ -382,7 +382,7 @@ line level    source
                       // Execute Hardware IIC Read Command
                       if(ucHwIICPinNum == _SW_IIC_PIN_GPIO)
                       {
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 7   
 
               #if(_SW_IIC_SUPPORT == _ON)
                           SET_SW_IIC_STATUS(ucSWIICStatus);
@@ -446,7 +446,7 @@ line level    source
                   // If the data series start + 0xD4 + 0x02 was sent on SM bus, it will erase the rom code of 54xx serie
              -s port controller or 54xx series hub device
                   if((ucSlaveAddr == 0xD4) && (usSubAddr == 0x02))
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 8   
 
                   {
                       return _FAIL;
@@ -510,7 +510,7 @@ line level    source
               
                   return _SUCCESS;
               }
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 9   
 
               #pragma restore
               
@@ -574,7 +574,7 @@ line level    source
                   PCB_CHECK_RTS_SMBUS_BUSY_STATUS(bStatus)
               
                   // Check SM Bus Status
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 10  
 
                   if(bStatus == _RTS_SMBUS_BUSY)
                   {
@@ -638,7 +638,7 @@ line level    source
               // Description  : SM Bus Arbitration Status Release
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/18/2026 20:39:44 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONTYPECCOMMUNICATION                                      09/20/2026 19:44:37 PAGE 11  
 
               //--------------------------------------------------
               void UserCommonTypecCommunicationReleaseSMbusCtlPin(void)

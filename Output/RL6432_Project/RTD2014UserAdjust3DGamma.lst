@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERADJUST3DGAMMA                                          09/18/2026 20:39:58 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST3DGAMMA                                          09/20/2026 19:44:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERADJUST3DGAMMA
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               void UserAdjust3DGamma(BYTE uc3DGammaMode);
               
-C51 COMPILER V9.60.0.0   RTD2014USERADJUST3DGAMMA                                          09/18/2026 20:39:58 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUST3DGAMMA                                          09/20/2026 19:44:47 PAGE 2   
 
               
               //****************************************************************************

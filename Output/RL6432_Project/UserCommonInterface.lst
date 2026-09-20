@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONINTERFACE
@@ -62,7 +62,7 @@ line level    source
               #warning "NOTE: If Use LVDS User Mode, Driving Current didnt trimming, There will be 12 percent variation"
               #endif
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 2   
 
   40          #endif
   41          #endif
@@ -126,7 +126,7 @@ line level    source
               #endif
  100          
  101          #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 3   
 
               #include "./EDID/EdidTableMhlD2.h"
               #endif
@@ -190,7 +190,7 @@ line level    source
  160          #if(_TRANSLATOR_SUPPORT == _OFF)
  161          void UserCommonInterfaceAdjustInputTiming(void);
  162          void UserCommonInterfaceAdjustDisplayTiming(void);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 4   
 
  163          bit UserCommonInterfaceReadyForActive(void);
  164          #endif
@@ -232,13 +232,13 @@ line level    source
  198          
  199          #if(_DDCCI_CODE_REDUCTION == _OFF)
  200          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
- 201          void UserCommonInterfaceDdcciIntGetData_EXINT1(void);
- 202          BYTE UserCommonInterfaceGetDdcciStatus_EXINT1(void);
- 203          
- 204          #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
- 205          BYTE UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1(void);
- 206          #endif
- 207          #endif
+              void UserCommonInterfaceDdcciIntGetData_EXINT1(void);
+              BYTE UserCommonInterfaceGetDdcciStatus_EXINT1(void);
+              
+              #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
+              BYTE UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1(void);
+              #endif
+              #endif
  208          #endif
  209          
  210          #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
  220          void UserCommonInterfaceEdidEmbeddedInfoParser(BYTE ucInputport);
  221          void UserCommonInterfaceLoadEmbeddedEdidData(void);
  222          void UserCommonInterfaceLoadEmbeddedEdidDataByPort(EnumInputPortEdid enumInputPort);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 5   
 
  223          #if(_DP_SUPPORT == _ON)
  224          void UserCommonInterfaceDPSwitchEdid(BYTE ucSelectedPort);
@@ -318,7 +318,7 @@ line level    source
               void UserCommonInterfaceGetDpTxHdcp2RRMODN(WORD usSubAddr, WORD usLength, BYTE *pucReadArray);
               void UserCommonInterfaceGetDpTxHdcp2DcpLlcN(WORD usSubAddr, WORD usLength, BYTE *pucReadArray);
               void UserCommonInterfaceGetDpTxHdcp2EKey(WORD usSubAddr, WORD usLength, BYTE *pucReadArray);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 6   
 
               void UserCommonInterfaceGetDpTxHdcp2NPinv(WORD usSubAddr, WORD usLength, BYTE *pucReadArray);
               #endif
@@ -382,7 +382,7 @@ line level    source
               #endif
  335          
  336          void UserCommonInterfaceOsdHandler(void);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 7   
 
  337          void UserCommonInterfaceInitial(void);
  338          
@@ -446,7 +446,7 @@ line level    source
              -*pstTypeCUserProtectInfo);
               #endif // End of #if(_TYPE_C_EMB_VBUS_PROTECT_MODE == _VBUS_PROTECT_BY_USER)
               #endif // End of #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 8   
 
               #endif // End of #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               #endif // End of #if(_DP_TYPE_C_CONNECTOR_SUPPORT == _ON)
@@ -510,7 +510,7 @@ line level    source
               BYTE UserCommonAudioTtsGetErrorSegment(void);
               #endif // End of #if(_AUDIO_TTS_SUPPORT_TYPE == _AUDIO_TTS_EMBEDDED_TYPE)
  448          
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 9   
 
  449          #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
               EnumAudioSamplingFreqType UserCommonAudioUpdateUserDefineAudioGenFreq(void);
@@ -574,7 +574,7 @@ line level    source
  506          // Output Value : None
  507          //--------------------------------------------------
  508          void UserCommonInterfaceUncallFunction(void)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 10  
 
  509          {
  510   1          bit bUncall = _FALSE;
@@ -638,7 +638,7 @@ line level    source
  567   2      
  568   2              ScalerTimerSearchActiveTimerEvent(0);
  569   2              UserCommonInterfaceGetDisplaySettingBacklightAction();
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 11  
 
  570   2      
  571   2      #if(_HDMI_SUPPORT == _ON)
@@ -702,7 +702,7 @@ line level    source
               
               #if(_DP_MST_TX_INTERCEPT_DDCCI_MSG_SUPPORT == _ON)
                       UserCommonInterfaceDpMstTxInterceptDdcciMsgSetting(_OFF);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 12  
 
               #endif
               #endif
@@ -753,10 +753,10 @@ line level    source
  677   2      #endif
  678   2      
  679   2      #if(_OD_SUPPORT == _ON)
- 680   2              ScalerODGetStatus();
- 681   2              ScalerODGetDeltaGain();
- 682   2              ScalerODGetSupportStatus();
- 683   2      #endif
+                      ScalerODGetStatus();
+                      ScalerODGetDeltaGain();
+                      ScalerODGetSupportStatus();
+              #endif
  684   2      
  685   2      #if(_FRC_SUPPORT == _OFF)
                       ScalerGlobalGetDBStatus();
@@ -766,7 +766,7 @@ line level    source
              -MODE)) && (_DDR3_PHASE_CHECK == _ON))
                       ScalerDDR3PhaseCalibrationFRCMode();
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 13  
 
  692   2      
  693   2              UserCommonAdjustHPosition(0);
@@ -830,7 +830,7 @@ line level    source
  751   2      #if(_D4_HDMI_SUPPORT == _ON)
                       ScalerSyncTMDSEdidSwitch(_D4_INPUT_PORT);
                       ScalerSyncHDMIDdcCheckBusy(_D4_INPUT_PORT, _DELAY_30US_TIMESCALE, 1, 1500);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 14  
 
               #endif
  755   2      
@@ -894,7 +894,7 @@ line level    source
               
               #if((_TYPE_C_PORT_CTRL_MODAL_OPERATION_SUPPORT == _ON) && (_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_ACER_ALT_MOD
              -E))
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 15  
 
                       SysTypeCGetAcerAltModeReady(_D0_INPUT_PORT);
               #endif
@@ -958,7 +958,7 @@ line level    source
  870   2      #endif
  871   2      
  872   2              UserInterfaceGetFreeSyncEnable(_D0_INPUT_PORT);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 16  
 
  873   2              UserInterfaceGetDpAdaptiveSyncEnable(_D0_INPUT_PORT);
  874   2      
@@ -1022,7 +1022,7 @@ line level    source
                       UserCommonInterfaceMbrStrobeBacklightCtrl(_LIGHT_CONTROL_OFF);
                       ScalerTconLogicalOpEnable(_TCON13_LOGICAL_OP, _TCON_LOGICAL_OP_AND, _DISABLE);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 17  
 
               #if(_HW_PWM_RST_BY_TCON_SELECT == _TCON4)
                       ScalerTcon4Adjust(0x0000, 0x0000, 0x0000, 0x0000);
@@ -1086,7 +1086,7 @@ line level    source
  994          
  995          //--------------------------------------------------
  996          // Description  : User initial LUT/Latch/SRAM tabled ata
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 18  
 
  997          // Input Value  : None
  998          // Output Value : None
@@ -1150,7 +1150,7 @@ line level    source
               #endif
               
               #else
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 19  
 
 1059   1      
 1060   1          return UserInterfaceGetDisplaySettingBacklightAction();
@@ -1214,7 +1214,7 @@ line level    source
                               ScalerDisplayVboHtpdnHandler();
               
               #elif(_PANEL_STYLE == _PANEL_DPTX)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 20  
 
               
                               // Panel DPTx Power Sequence Check Point
@@ -1278,7 +1278,7 @@ line level    source
                               // Wait Event for Backlight On
                               ScalerTimerActiveTimerEvent(_PANEL_POWER_ON_T3, _USER_TIMER_EVENT_PANEL_BACKLIGHT_ON);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 21  
 
                               SET_PANELPOWERSTATUS(_WAITING_FOR_BACKLIGHT);
               
@@ -1342,7 +1342,7 @@ line level    source
                               // HTDPN fail before CDR lock, or CDR fail during ALN training, then set panel fast off
                               if(ScalerDisplayVboPanelFastOffCheck() != _ENABLE)
                               {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 22  
 
                                   UserInterfaceAdjustWaitPanelT4();
                               }
@@ -1406,7 +1406,7 @@ line level    source
               #endif
 1305   2      
 1306   2                  if(GET_PANELPOWERSTATUS() == _PANEL_POWER_OFF_STATE)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 23  
 
 1307   2                  {
 1308   3      #if(_PANEL_POW_SEQ_T6_TIMER_EVENT_MODE == _OFF)
@@ -1470,7 +1470,7 @@ line level    source
               
                               SET_PANELPOWERSTATUS(_BACKLIGHT_ON_ALREADY);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 24  
 
                               // Set Panel Fast Off Disable
                               ScalerDisplayVboPanelSetFastOff(_DISABLE);
@@ -1534,7 +1534,7 @@ line level    source
               #endif
               
               #elif(_PANEL_STYLE == _PANEL_DPTX)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 25  
 
               
               #if(_PANEL_DPTX_HPD_DETECT == _ON)
@@ -1598,7 +1598,7 @@ line level    source
               #endif // #if(_PANEL_STYLE == _PANEL_LVDS)
 1491   3                  }
 1492   2      
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 26  
 
 1493   2                  break;
 1494   2      
@@ -1662,7 +1662,7 @@ line level    source
 1552          // Description  : Set color in bypass normal active process
 1553          // Input Value  : None
 1554          // Output Value : None
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 27  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 27  
 
 1555          //--------------------------------------------------
 1556          void UserCommonInterfaceAdjustActiveByPassColorProc(void)
@@ -1675,8 +1675,8 @@ line level    source
 1563   1      #endif
 1564   1      
 1565   1      #if(_OD_SUPPORT == _ON)
-1566   1          ScalerODEnable(UserInterfaceGetODEnableStatus());
-1567   1      #endif
+                  ScalerODEnable(UserInterfaceGetODEnableStatus());
+              #endif
 1568   1      
 1569   1      #if(_SHARPNESS_SUPPORT == _ON)
 1570   1          UserCommonAdjustSharpness(SysSourceGetInputPort());
@@ -1726,7 +1726,7 @@ line level    source
               #endif
 1615   1      
 1616   1          if(UserInterfaceGetActiveByPassStatus() == _TRUE)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 28  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 28  
 
 1617   1          {
 1618   2              UserCommonInterfaceAdjustActiveByPassColorProc();
@@ -1790,7 +1790,7 @@ line level    source
 1675   2      #endif
 1676   2      
 1677   2              ScalerColorDigitalFilterEnable(_FUNCTION_OFF);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 29  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 29  
 
 1678   2          }
 1679   1      #endif  // End of #if(_VGA_SUPPORT == _ON)
@@ -1854,7 +1854,7 @@ line level    source
                       {
                           ScalerColorPanelUniformityEnable(_FUNCTION_ON);
                           SET_LD_ACTION_MODE_STATUS(_LD_ACTION_MODE_DIMMING);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 30  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 30  
 
                       }
                       else
@@ -1918,7 +1918,7 @@ line level    source
 1799          //--------------------------------------------------
 1800          void UserCommonInterfaceOsdResetProc(void)
 1801          {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 31  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 31  
 
 1802   1          // Turn off backlight
 1803   1          if(UserInterfaceGetLogoStatus() == _OFF)
@@ -1982,7 +1982,7 @@ line level    source
 1861   1      #endif
 1862   1      
 1863   1      #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 32  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 32  
 
 1864   1      
 1865   1      #if(_COLOR_IP_DCR == _ON)
@@ -2046,7 +2046,7 @@ line level    source
               #if(_RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
                   // Clear MBR mode
                   ScalerMbrClearRtkAdvMbrMode();
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 33  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 33  
 
               #endif
               #endif
@@ -2110,7 +2110,7 @@ line level    source
 1982   1      #if(_UNDERSCAN_SUPPORT == _ON)
 1983   1          UserCommonAdjustUnderScan();
 1984   1      #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 34  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 34  
 
 1985   1      
 1986   1      #if(_DISPLAY_ROTATION_SUPPORT == _ON)
@@ -2174,7 +2174,7 @@ line level    source
 2043   1          return _TRUE;
 2044   1      }
 2045          #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 35  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 35  
 
 2046          
 2047          #if(_VGA_SUPPORT == _ON)
@@ -2238,7 +2238,7 @@ line level    source
 2105   1        
 2106   1          if((GET_INPUT_TIMING_HWIDTH() == 0x00) || (GET_INPUT_TIMING_VHEIGHT() == 0x00))
 2107   1          {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 36  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 36  
 
 2108   2              return _TRUE;
 2109   2          }
@@ -2302,7 +2302,7 @@ line level    source
 2164   2      
 2165   2                  break;
 2166   2      
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 37  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 37  
 
 2167   2      #endif
 2168   2      
@@ -2366,7 +2366,7 @@ line level    source
               #endif
 2227   2      
 2228   2                  if(ScalerSyncGetInputPixelClk() >= _INPUTCLOCK_RANG_DP)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 38  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 38  
 
 2229   2                  {
 2230   3                      return _TRUE;
@@ -2430,7 +2430,7 @@ line level    source
 2284   1      
 2285   1      #if((_D4_HDMI_SUPPORT == _ON) && (_HDMI_FREESYNC_SUPPORT == _ON))
                   ScalerFreeSyncSupportSwitch(_D4_INPUT_PORT, UserInterfaceGetFreeSyncEnable(_D4_INPUT_PORT), SysSourceG
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 39  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 39  
 
              -etFreesyncInputPort());
               #endif
@@ -2494,7 +2494,7 @@ line level    source
               #endif
               
               #if((_D2_INPUT_PORT_TYPE == _D2_DP_PORT) && (_DP_ADAPTIVESYNC_SUPPORT == _ON))
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 40  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 40  
 
                   ScalerDpAdaptiveSyncSupportSwitch(_D2_INPUT_PORT, UserInterfaceGetDpAdaptiveSyncEnable(_D2_INPUT_PORT)
              -);
@@ -2558,7 +2558,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void UserCommonInterfaceDpAdaptiveSyncSetInputPortSupport(EnumSourceSearchPort enumSourcePort, EnumDpAdapt
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 41  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 41  
 
              -iveSyncSupport enumSupport)
               {
@@ -2622,7 +2622,7 @@ line level    source
               #endif
 2459   2      
 2460   2      #if(_D2_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 42  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 42  
 
                       case _D2_INPUT_PORT:
                           return MCU_DDCRAM_D2;
@@ -2652,180 +2652,180 @@ line level    source
 2486          
 2487          #if(_DDCCI_CODE_REDUCTION == _OFF)
 2488          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
-2489          //--------------------------------------------------
-2490          // Description  : Get DDC-CI Data in Interrupt Process
-2491          // Input Value  : None
-2492          // Output Value : None
-2493          //--------------------------------------------------
-2494          void UserCommonInterfaceDdcciIntGetData_EXINT1(void) using 2
-2495          {
-2496   1          BYTE ucTemp = 0;
-2497   1      
-2498   1          // Clear Unused DDCCI IRQ Flag
-2499   1          SET_DDCCI_STATUS2(GET_DDCCI_STATUS2() & ~(_BIT5 | _BIT4));
-2500   1      
-2501   1          if(GET_RUN_DDCCI_COMMAND() == _SUCCESS)
-2502   1          {
-2503   2              // Clear Flags
-2504   2              if((GET_DDCCI_STATUS1() & _BIT0) == _BIT0)
-2505   2              {
-2506   3                  CLR_DDCCI_STATUS1(_BIT0);
-2507   3              }
-2508   2      
-2509   2              if((GET_DDCCI_STATUS1() & _BIT1) == _BIT1)
-2510   2              {
-2511   3                  CLR_DDCCI_STATUS1(_BIT1);
-2512   3              }
-2513   2      
-2514   2              if((GET_DDCCI_STATUS1() & _BIT2) == _BIT2)
-2515   2              {
-2516   3                  ucTemp = GET_DDCCI_DATA_IN();
-2517   3                  // For HP case, return Null Msg if Command isn't finish
-2518   3      #if(_HW_DDCCI_BUFFER_EMPTY_REPLY_NULL_MSG_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Get DDC-CI Data in Interrupt Process
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              void UserCommonInterfaceDdcciIntGetData_EXINT1(void) using 2
+              {
+                  BYTE ucTemp = 0;
+              
+                  // Clear Unused DDCCI IRQ Flag
+                  SET_DDCCI_STATUS2(GET_DDCCI_STATUS2() & ~(_BIT5 | _BIT4));
+              
+                  if(GET_RUN_DDCCI_COMMAND() == _SUCCESS)
+                  {
+                      // Clear Flags
+                      if((GET_DDCCI_STATUS1() & _BIT0) == _BIT0)
+                      {
+                          CLR_DDCCI_STATUS1(_BIT0);
+                      }
+              
+                      if((GET_DDCCI_STATUS1() & _BIT1) == _BIT1)
+                      {
+                          CLR_DDCCI_STATUS1(_BIT1);
+                      }
+              
+                      if((GET_DDCCI_STATUS1() & _BIT2) == _BIT2)
+                      {
+                          ucTemp = GET_DDCCI_DATA_IN();
+                          // For HP case, return Null Msg if Command isn't finish
+              #if(_HW_DDCCI_BUFFER_EMPTY_REPLY_NULL_MSG_SUPPORT == _ON)
                           MCU_FF2A_IIC_IRQ_CONTROL2 |= _BIT6;
               #endif
-2521   3              }
-2522   2          }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 43  
+                      }
+                  }
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 43  
 
-2523   1          else
-2524   1          {
-2525   2              SET_RUN_DDCCI_COMMAND_SRC(_DDCCI_CMD_SRC_I2C);
-2526   2      
-2527   2              if(GET_DDCCI_SLAVE_ADDRESS() == _DDCCI_DEST_ADDRESS)
-2528   2              {
-2529   3                  SET_RUN_DDCCI_COMMAND((bit)ScalerMcuDdcciIntGetData_EXINT1(g_pucDdcciRxBuf));
-2530   3      
-2531   3      #if(_DDCCI_AUTO_SWITCH_SUPPORT == _ON)
-2532   3                  if(GET_DDCCI_AUTO_SWITCH() == _FALSE)
-2533   3                  {
-2534   4                      ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(_DISABLE);
-2535   4                  }
-2536   3      
-2537   3                  if((GET_RUN_DDCCI_COMMAND() == _FAIL) && (g_ucMcuDdcciRetry == _FALSE))
-2538   3                  {
-2539   4                      if(GET_RECEIVE_DDCCI_CMD_NOT_FINISH() == _FALSE)
-2540   4                      {
-2541   5                          SET_RECEIVE_DDCCI_CMD_NOT_FINISH();
-2542   5                      }
-2543   4                  }
-2544   3                  else
-2545   3                  {
-2546   4                      if(GET_RECEIVE_DDCCI_CMD_NOT_FINISH() == _TRUE)
-2547   4                      {
-2548   5                          CLR_RECEIVE_DDCCI_CMD_NOT_FINISH();
-2549   5      
-2550   5                          ScalerTimerCancelTimerEvent_EXINT1(_SYSTEM_TIMER_EVENT_CLR_DDCCI_RECEIVE_COMMAND_NOT_F
+                  else
+                  {
+                      SET_RUN_DDCCI_COMMAND_SRC(_DDCCI_CMD_SRC_I2C);
+              
+                      if(GET_DDCCI_SLAVE_ADDRESS() == _DDCCI_DEST_ADDRESS)
+                      {
+                          SET_RUN_DDCCI_COMMAND((bit)ScalerMcuDdcciIntGetData_EXINT1(g_pucDdcciRxBuf));
+              
+              #if(_DDCCI_AUTO_SWITCH_SUPPORT == _ON)
+                          if(GET_DDCCI_AUTO_SWITCH() == _FALSE)
+                          {
+                              ScalerMcuDdcciAutoSwitchInactiveChannel_EXINT1(_DISABLE);
+                          }
+              
+                          if((GET_RUN_DDCCI_COMMAND() == _FAIL) && (g_ucMcuDdcciRetry == _FALSE))
+                          {
+                              if(GET_RECEIVE_DDCCI_CMD_NOT_FINISH() == _FALSE)
+                              {
+                                  SET_RECEIVE_DDCCI_CMD_NOT_FINISH();
+                              }
+                          }
+                          else
+                          {
+                              if(GET_RECEIVE_DDCCI_CMD_NOT_FINISH() == _TRUE)
+                              {
+                                  CLR_RECEIVE_DDCCI_CMD_NOT_FINISH();
+              
+                                  ScalerTimerCancelTimerEvent_EXINT1(_SYSTEM_TIMER_EVENT_CLR_DDCCI_RECEIVE_COMMAND_NOT_F
              -INISH);
-2551   5                      }
-2552   4                  }
-2553   3      #endif
-2554   3      
-2555   3      #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
-2556   3                  if(GET_RUN_DDCCI_COMMAND() == _SUCCESS)
-2557   3                  {
-2558   4                      if(UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1() == _TRUE)
-2559   4                      {
-2560   5                          SET_RUN_DDCCI_COMMAND(_FAIL);
-2561   5                      }
-2562   4                  }
-2563   3      #endif
-2564   3      
-2565   3                  g_ucMcuDdcciRetry = _FALSE;
-2566   3              }
-2567   2              else
-2568   2              {
-2569   3                  SET_RUN_DDCCI_COMMAND((bit)UserInterfaceGetFactoryCommand_EXINT1());
-2570   3              }
-2571   2          }
-2572   1      }
-2573          
-2574          //--------------------------------------------------
-2575          // Description  : Get DDC-CI Status in Interrupt Process
-2576          // Input Value  : None
-2577          // Output Value : _TURE or _False
-2578          //--------------------------------------------------
-2579          BYTE UserCommonInterfaceGetDdcciStatus_EXINT1(void) using 2
-2580          {
-2581   1      #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
+                              }
+                          }
+              #endif
+              
+              #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
+                          if(GET_RUN_DDCCI_COMMAND() == _SUCCESS)
+                          {
+                              if(UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1() == _TRUE)
+                              {
+                                  SET_RUN_DDCCI_COMMAND(_FAIL);
+                              }
+                          }
+              #endif
+              
+                          g_ucMcuDdcciRetry = _FALSE;
+                      }
+                      else
+                      {
+                          SET_RUN_DDCCI_COMMAND((bit)UserInterfaceGetFactoryCommand_EXINT1());
+                      }
+                  }
+              }
+              
+              //--------------------------------------------------
+              // Description  : Get DDC-CI Status in Interrupt Process
+              // Input Value  : None
+              // Output Value : _TURE or _False
+              //--------------------------------------------------
+              BYTE UserCommonInterfaceGetDdcciStatus_EXINT1(void) using 2
+              {
+              #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
                   if(ScalerDebugGetDdcciSwitchState_EXINT1() == _TRUE)
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 44  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 44  
 
                       return _FALSE;
                   }
               #endif
-2587   1          if((bit)UserInterfaceGetDdcciStatus_EXINT1() == _ON)
-2588   1          {
-2589   2              return _TRUE;
-2590   2          }
-2591   1      
-2592   1          return _FALSE;
-2593   1      }
-2594          
-2595          
-2596          #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
-2597          //--------------------------------------------------
-2598          // Description  : Get HDMI Freesync support
-2599          // Input Value  : None
-2600          // Output Value : None
-2601          //--------------------------------------------------
-2602          BYTE UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1(void) using 2
-2603          {
-2604   1          BYTE ucDdcciCount = 0;
-2605   1      
-2606   1          if(UserInterfaceDdcciHDMIFreesyncOpcode_EXINT1() == _TRUE)
-2607   1          {
-2608   2              if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_CMD_SET_VCP_FEATURE)
-2609   2              {
-2610   3                  ScalerSyncSetHDMIFREESYNCVcp_EXINT1(g_pucDdcciRxBuf[_DDCCI_SET_HIGH_BYTE]);
-2611   3              }
-2612   2      
-2613   2              if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_CMD_GET_VCP_FEATURE)
-2614   2              {
-2615   3                  g_pucDdcciTxBuf[_DDCCI_SOURCE] = 0x6E;
-2616   3                  g_pucDdcciTxBuf[_DDCCI_LENGTH] = 0x88;
-2617   3                  g_pucDdcciTxBuf[_DDCCI_COMMAND] = 0x02;
-2618   3                  g_pucDdcciTxBuf[_DDCCI_RESULT_CODE] = 0x00;
-2619   3                  g_pucDdcciTxBuf[_DDCCI_SINK_OPCODE] = g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE];
-2620   3                  g_pucDdcciTxBuf[_DDCCI_TYPE_CODE] = 0x00;
-2621   3                  g_pucDdcciTxBuf[_DDCCI_MAX_HIGH_BYTE] = 0x00;
-2622   3                  g_pucDdcciTxBuf[_DDCCI_MAX_LOW_BYTE] = 0x00;
-2623   3                  g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE] = ScalerSyncGetHDMIFREESYNCVcp_EXINT1();
-2624   3                  g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE] = ScalerFreeSyncHDMIGetFreeSyncSupport_EXINT1(ScalerM
+                  if((bit)UserInterfaceGetDdcciStatus_EXINT1() == _ON)
+                  {
+                      return _TRUE;
+                  }
+              
+                  return _FALSE;
+              }
+              
+              
+              #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
+              //--------------------------------------------------
+              // Description  : Get HDMI Freesync support
+              // Input Value  : None
+              // Output Value : None
+              //--------------------------------------------------
+              BYTE UserCommonInterfaceDdcciHDMIFreesyncHandle_EXINT1(void) using 2
+              {
+                  BYTE ucDdcciCount = 0;
+              
+                  if(UserInterfaceDdcciHDMIFreesyncOpcode_EXINT1() == _TRUE)
+                  {
+                      if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_CMD_SET_VCP_FEATURE)
+                      {
+                          ScalerSyncSetHDMIFREESYNCVcp_EXINT1(g_pucDdcciRxBuf[_DDCCI_SET_HIGH_BYTE]);
+                      }
+              
+                      if(g_pucDdcciRxBuf[_DDCCI_COMMAND] == _DDCCI_CMD_GET_VCP_FEATURE)
+                      {
+                          g_pucDdcciTxBuf[_DDCCI_SOURCE] = 0x6E;
+                          g_pucDdcciTxBuf[_DDCCI_LENGTH] = 0x88;
+                          g_pucDdcciTxBuf[_DDCCI_COMMAND] = 0x02;
+                          g_pucDdcciTxBuf[_DDCCI_RESULT_CODE] = 0x00;
+                          g_pucDdcciTxBuf[_DDCCI_SINK_OPCODE] = g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE];
+                          g_pucDdcciTxBuf[_DDCCI_TYPE_CODE] = 0x00;
+                          g_pucDdcciTxBuf[_DDCCI_MAX_HIGH_BYTE] = 0x00;
+                          g_pucDdcciTxBuf[_DDCCI_MAX_LOW_BYTE] = 0x00;
+                          g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE] = ScalerSyncGetHDMIFREESYNCVcp_EXINT1();
+                          g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE] = ScalerFreeSyncHDMIGetFreeSyncSupport_EXINT1(ScalerM
              -cuDdcciGetInputPort_EXINT1());
-2625   3      
-2626   3                  g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE + 1] = (((0xB4 ^ g_pucDdcciTxBuf[_DDCCI_SINK_OPCODE]) 
+              
+                          g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE + 1] = (((0xB4 ^ g_pucDdcciTxBuf[_DDCCI_SINK_OPCODE]) 
              -^ g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE]) ^ g_pucDdcciTxBuf[_DDCCI_PRESENT_LOW_BYTE]);
-2627   3      
-2628   3                  // Enable mcu write
-2629   3                  MCU_FF2A_IIC_IRQ_CONTROL2 |= (_BIT6 | _BIT5);
-2630   3      
-2631   3                  while(ucDdcciCount < 11)
-2632   3                  {
-2633   4                      // Load data to DDC-CI buffer
-2634   4                      MCU_FF26_IIC_DATA_OUT = g_pucDdcciTxBuf[ucDdcciCount++];
-2635   4                  }
-2636   3      
-2637   3                  // Disable mcu write
-2638   3                  MCU_FF2A_IIC_IRQ_CONTROL2 &= ~_BIT5;
-2639   3      
-2640   3                  // Clear buffer for new message
-2641   3                  memset(g_pucDdcciRxBuf, 0, _DDCCI_RXBUF_LENGTH);
-2642   3              }
-2643   2      
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 45  
+              
+                          // Enable mcu write
+                          MCU_FF2A_IIC_IRQ_CONTROL2 |= (_BIT6 | _BIT5);
+              
+                          while(ucDdcciCount < 11)
+                          {
+                              // Load data to DDC-CI buffer
+                              MCU_FF26_IIC_DATA_OUT = g_pucDdcciTxBuf[ucDdcciCount++];
+                          }
+              
+                          // Disable mcu write
+                          MCU_FF2A_IIC_IRQ_CONTROL2 &= ~_BIT5;
+              
+                          // Clear buffer for new message
+                          memset(g_pucDdcciRxBuf, 0, _DDCCI_RXBUF_LENGTH);
+                      }
+              
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 45  
 
-2644   2              return _TRUE;
-2645   2          }
-2646   1          else
-2647   1          {
-2648   2              return _FALSE;
-2649   2          }
-2650   1      }
-2651          #endif
-2652          
-2653          #endif
+                      return _TRUE;
+                  }
+                  else
+                  {
+                      return _FALSE;
+                  }
+              }
+              #endif
+              
+              #endif
 2654          #endif
 2655          
 2656          #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
@@ -2878,7 +2878,7 @@ line level    source
                       UserCommonFlashRestoreEDID(_EDID_A0_ADDRESS_FLASH + ucCount * sizeof(pucBuffer), sizeof(pucBuffer)
              -, pucBuffer);
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 46  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 46  
 
                   }
               #endif
@@ -2942,7 +2942,7 @@ line level    source
 2744   1      #if((_D3_INPUT_PORT_TYPE != _D3_NO_PORT) && (_D3_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE) && ((_D3_EMB
              -EDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM) || (_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FL
              -ASH)))
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 47  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 47  
 
                   for(ucCount = 0; ucCount < (_D3_EMBEDDED_DDCRAM_MAX_SIZE / sizeof(pucBuffer)); ucCount++)
                   {
@@ -3006,7 +3006,7 @@ line level    source
              -r), pucBuffer);
               #elif(_D6_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
                       UserCommonFlashRestoreEDID(_EDID_D6_ADDRESS_FLASH + ucCount * sizeof(pucBuffer), sizeof(pucBuffer)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 48  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 48  
 
              -, pucBuffer);
               #endif
@@ -3070,7 +3070,7 @@ line level    source
 2834   1      // D3 MHL EDID--------------------------------------------------------------------------------------------
              ------------
 2835   1      #if((_D3_INPUT_PORT_TYPE != _D3_NO_PORT) && (_D3_MHL_EMBEDDED_DDCRAM_SIZE != _EDID_SIZE_NONE) && ((_D3_MHL
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 49  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 49  
 
              -_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM) || (_D3_MHL_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOC
              -ATION_FLASH)))
@@ -3134,7 +3134,7 @@ line level    source
 2881          void UserCommonInterfaceEdidEmbeddedInfoParser(BYTE ucInputport)
 2882          {
 2883   1          WORD pusCtaDataBlockAddr[_CTA_TOTAL_DB] = {0};
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 50  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 50  
 
 2884   1          WORD pusDidDataBlockAddr[_DID_TOTAL_DB] = {0};
 2885   1      
@@ -3198,7 +3198,7 @@ line level    source
 2939          //--------------------------------------------------
 2940          // Description  : Set Embedded EDID Data of AC ON
 2941          // Input Value  : None
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 51  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 51  
 
 2942          // Output Value : None
 2943          //--------------------------------------------------
@@ -3262,7 +3262,7 @@ line level    source
               
                       // Edid Parse Info (from DDCRAM only)
                       UserCommonInterfaceEdidEmbeddedInfoParser(_D1_INPUT_PORT);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 52  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 52  
 
                   }
               
@@ -3326,7 +3326,7 @@ line level    source
                       ScalerSyncSetDdcForceNack(_D4_INPUT_PORT, _OFF);
               
                       // Edid Parse Info (from DDCRAM only)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 53  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 53  
 
                       UserCommonInterfaceEdidEmbeddedInfoParser(_D4_INPUT_PORT);
                   }
@@ -3390,7 +3390,7 @@ line level    source
 3097   1      #if(_D5_INPUT_PORT_TYPE == _D5_MHL_PORT)
                   UserCommonInterfaceLoadEmbeddedEdidDataByPort(_D5_INPUT_PORT_MHL_EDID);
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 54  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 54  
 
 3100   1      }
 3101          
@@ -3454,7 +3454,7 @@ line level    source
                     if(GET_OSD_OVERCLOCK() == _ON)
                     { 
                       memcpy(MCU_DDCRAM_D0, tEDID_TABLE_OVERCLOCK_HDMI, _D0_EMBEDDED_DDCRAM_MAX_SIZE);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 55  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 55  
 
                     }
                     else
@@ -3518,7 +3518,7 @@ line level    source
                 #elif((_DEF_GAME_MODE)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)&&(_DEF_DP_GAME_MODE==_OFF))
                   if(GET_OSD_OVERCLOCK() == _ON)
                   { 
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 56  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 56  
 
                     memcpy(MCU_DDCRAM_D1, tEDID_TABLE_OVERCLOCK_HDMI, _D1_EMBEDDED_DDCRAM_MAX_SIZE);
                   }
@@ -3582,7 +3582,7 @@ line level    source
                   }
                   else
                 #elif((_DEF_GAME_MODE)&&(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&(_DEF_DP_GAME_MODE==_OFF))  
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 57  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 57  
 
                   if(GET_OSD_OVERCLOCK() == _ON)
                   { 
@@ -3646,7 +3646,7 @@ line level    source
 3336   2        #if((_DEF_GAME_MODE)&&(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)&&(_DEF_DP_GAME_MODE==_OFF))
                   if(GET_OSD_OVERCLOCK() == _ON)
                   { 
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 58  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 58  
 
                     memcpy(MCU_DDCRAM_D3, tEDID_TABLE_OVERCLOCK_HDMI, _D3_EMBEDDED_DDCRAM_MAX_SIZE);
                   }
@@ -3710,7 +3710,7 @@ line level    source
              -MCU_DDCRAM_D4);
               #elif(_D4_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
                           UserInterfaceGetEmbeddedEDIDData(_D4_INPUT_PORT_EDID);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 59  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 59  
 
               #endif
               
@@ -3774,7 +3774,7 @@ line level    source
               #elif(_D0_MHL_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
                           UserInterfaceGetEmbeddedEDIDData(_D0_INPUT_PORT_MHL_EDID);
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 60  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 60  
 
               
                           break;
@@ -3838,7 +3838,7 @@ line level    source
              -D3);
               #elif(_D3_MHL_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
                           UserCommonFlashRead(_EDID_FLASH_BANK, (_EDID_D3_MHL_ADDRESS_FLASH), _D3_MHL_EMBEDDED_DDCRAM_SI
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 61  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 61  
 
              -ZE, MCU_DDCRAM_MHL_D3);
               #elif(_D3_MHL_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
@@ -3902,7 +3902,7 @@ line level    source
 3559          //--------------------------------------------------
 3560          // Description  : Set DP Embedded EDID Data
 3561          // Input Value  : ucSelectedPort
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 62  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 62  
 
 3562          // Output Value : None
 3563          //--------------------------------------------------
@@ -3966,7 +3966,7 @@ line level    source
 3621          
 3622          //--------------------------------------------------
 3623          // Description  : Switch DP ports Embedded EDID Data
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 63  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 63  
 
 3624          // Input Value  : void
 3625          // Output Value : None
@@ -4030,7 +4030,7 @@ line level    source
                           if(UserCommonInterfaceHDMIGetMultiEdidLocated(ucInputPort, enumEdidSel) == _HDMI_EDID_EXTERNAL
              -)
                           {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 64  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 64  
 
                               return _HDMI_EDID_EXTERNAL;
                           }
@@ -4094,7 +4094,7 @@ line level    source
                           }
               #elif(_D3_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
 3742   2                  return _HDMI_EDID_EMBEDDED;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 65  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 65  
 
 3743   2      #else
                           return _HDMI_EDID_EXTERNAL;
@@ -4158,7 +4158,7 @@ line level    source
                       // Before Reload Edid Process
                       UserCommonInterfaceHDMIBeforeReloadEdid(ucInputport, enumHDMIEDIDSelection);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 66  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 66  
 
                       // Reload Edid Process
               #if((_EMBEDDED_EDID_SUPPORT == _ON) && (_WRITE_EDID_LOCATION_BY_USER_SUPPORT == _ON))
@@ -4222,7 +4222,7 @@ line level    source
               #endif
               
               #if(_D5_HDMI_MULTI_EDID_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 67  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 67  
 
                   UserCommonInterfaceHDMISwitchEdid(_D5_INPUT_PORT, UserInterfaceGetMultiHdmiEdidIndex(_D5_INPUT_PORT));
               #endif
@@ -4286,7 +4286,7 @@ line level    source
                   }
               #endif
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 68  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 68  
 
               #if(_D3_HDMI_MULTI_EDID_SUPPORT == _ON)
                   UserCommonInterfaceHDMISwitchEdid(_D3_INPUT_PORT, UserInterfaceGetMultiHdmiEdidIndex(_D3_INPUT_PORT));
@@ -4350,7 +4350,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 69  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 69  
 
               #if(_D4_HDMI_MULTI_EDID_SUPPORT == _ON)
                       case _D4_INPUT_PORT:
@@ -4414,7 +4414,7 @@ line level    source
                       case _D5_INPUT_PORT:
                           return _TRUE;
                           break;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 70  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 70  
 
               #endif
               
@@ -4478,7 +4478,7 @@ line level    source
               
               #if((_D4_HDMI_SUPPORT == _ON) &&\
                   (_D4_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER) &&\
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 71  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 71  
 
                   (_D4_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE))
                       case _D4_INPUT_PORT:
@@ -4542,7 +4542,7 @@ line level    source
                                   {
                                       UserCommonInterfaceHDMISwitchMultiEeprom(ucInputport, ucTempEEPROM);
                                       break;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 72  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 72  
 
                                   }
                               }
@@ -4606,7 +4606,7 @@ line level    source
               #endif
               
               #if(_D4_HDMI_MULTI_EDID_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 73  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 73  
 
                   // D4 External Edid Config Setting
                   UserCommonInterfaceHDMISwitchMultiEeprom(_D4_INPUT_PORT, UserInterfaceGetMultiHdmiEdidIndex(_D4_INPUT_
@@ -4670,7 +4670,7 @@ line level    source
               #endif
               #if(_D5_HDMI_SUPPORT == _ON)
                   UserCommonInterfaceHdmiExternalInfoParser(_D5_INPUT_PORT);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 74  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 74  
 
               #endif
               }
@@ -4734,7 +4734,7 @@ line level    source
              -T6)) << 2) | (pucEdidContent[usHfVsdbStartAddr + 10]));
               
                                   if((pucEdidContent[usHfVsdbStartAddr] & (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)) >= 11
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 75  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 75  
 
              -)
                                   {
@@ -4798,7 +4798,7 @@ line level    source
 4403   3                      pucRtkIdstring[6 - pData[0]] = '2';
 4404   3                      break;
 4405   3      
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 76  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 76  
 
 4406   3                  case 0x03:
 4407   3                      pucRtkIdstring[6 - pData[0]] = '3';
@@ -4862,7 +4862,7 @@ line level    source
 4465   1      
 4466   1      #if(_HDCP_1_4_KEY_LOCATION == _TABLE_LOCATION_CODE)
 4467   1          memcpy(pucReadArray, tHDCP_KEY_BKSV + ucSubAddr, ucLength);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 77  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 77  
 
 4468   1      #elif((_HDCP_1_4_KEY_LOCATION == _TABLE_LOCATION_SYSTEM_EEPROM) || (_HDCP_1_4_KEY_LOCATION == _TABLE_LOCAT
              -ION_FLASH))
@@ -4926,7 +4926,7 @@ line level    source
 4525          // Description  : Get HDCP Bksv
 4526          // Input Value  : None
 4527          // Output Value : None
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 78  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 78  
 
 4528          //--------------------------------------------------
 4529          void UserCommonInterfaceGetHdcp2Certrx(WORD usSubAddr, WORD usLength, BYTE *pucReadArray)
@@ -4990,7 +4990,7 @@ line level    source
 4584          #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
               //--------------------------------------------------
               // Description  : Get HDCP KpubKm for Verify
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 79  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 79  
 
               // Input Value  : None
               // Output Value : None
@@ -5054,7 +5054,7 @@ line level    source
 4644          // Input Value  : None
 4645          // Output Value : None
 4646          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 80  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 80  
 
 4647          void UserCommonInterfaceGetHdcp2LCKey(WORD usSubAddr, WORD usLength, BYTE *pucReadArray)
 4648          {
@@ -5118,7 +5118,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Get HDCP2.2 TX KEY -- E_Key
               // Input Value  : None
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 81  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 81  
 
               // Output Value : None
               //--------------------------------------------------
@@ -5182,7 +5182,7 @@ line level    source
                   UserInterfaceGetTxHDCPKeyAksvByUser(ucSubAddr, ucLength, pucReadArray);
               #endif
               }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 82  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 82  
 
               //--------------------------------------------------
               // Description  : Get HDCP Key
@@ -5246,7 +5246,7 @@ line level    source
               #if((_FLASH_WRITE_FUNCTION_SUPPORT == _ON) && (_HDCP_2_2_KEY_LOCATION == _TABLE_LOCATION_FLASH))
                   if((_RX_HDCP_2_2_KEY_FLASH_BANK != _EDID_FLASH_BANK) || (_RX_HDCP_2_2_TABLE_FLASH_PAGE != _EDID_TABLE_
              -FLASH_PAGE))
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 83  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 83  
 
                   {
                       UserCommonFlashErasePage(_RX_HDCP_2_2_KEY_FLASH_BANK, _RX_HDCP_2_2_TABLE_FLASH_PAGE);
@@ -5310,7 +5310,7 @@ line level    source
                      ((_TX_HDCP_1_4_KEY_FLASH_BANK != _RX_HDCP_1_4_KEY_FLASH_BANK) || (_TX_HDCP_1_4_TABLE_FLASH_PAGE != 
              -_RX_HDCP_1_4_TABLE_FLASH_PAGE)))
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 84  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 84  
 
                       UserCommonFlashErasePage(_TX_HDCP_1_4_KEY_FLASH_BANK, _TX_HDCP_1_4_TABLE_FLASH_PAGE);
                   }
@@ -5374,7 +5374,7 @@ line level    source
               #endif // End of #if(_WRITE_HDCP_TO_SYSTEM_EEPROM == _ON)
 4934          
 4935          #if(_DP_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 85  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 85  
 
 4936          //--------------------------------------------------
 4937          // Description  : Get DPCD Table Information
@@ -5438,7 +5438,7 @@ line level    source
 4988          // Input Value  : Input Port
 4989          // Output Value : EnumAudioDpDpcdSupport
 4990          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 86  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 86  
 
 4991          EnumAudioDpDpcdSupport UserCommonAudioDpGetCapabilityInitialState(BYTE ucInputPort)
 4992          {
@@ -5502,7 +5502,7 @@ line level    source
                                   break;
               
                               case _DP_VERSION_1_2:
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 87  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 87  
 
                                   g_stD0DataExchange.unionDataExchangeItem.stDpVersion.enumVersion = _DATA_EXCHANGE_DP_V
              -ERSION_1_2;
@@ -5566,7 +5566,7 @@ line level    source
                           break;
                   }
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 88  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 88  
 
 5104   1      }
 5105          //--------------------------------------------------
@@ -5630,7 +5630,7 @@ line level    source
 5160   3      #if((_D1_INPUT_PORT_TYPE == _D1_DP_PORT) && (_D1_DP_MST_PORT_SUPPORT == _ON))
                           case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 89  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 89  
 
                               if(UserInterfaceGetDPVersion(_D1_INPUT_PORT) >= _DP_VERSION_1_2)
                               {
@@ -5694,7 +5694,7 @@ line level    source
 5222   2      #if(_DP_TX_SUPPORT == _ON)
                           return ScalerDpTxGetDownStreamEdidBw();
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 90  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 90  
 
 5225   2      
 5226   2              default:
@@ -5758,7 +5758,7 @@ line level    source
 5282   1          ucSlaveAddress = ucSlaveAddress;
 5283   1          ucLength = ucLength;
 5284   1          pucDataArray = pucDataArray;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 91  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 91  
 
 5285   1      
 5286   1      #if(_DP_TX_SUPPORT == _ON)
@@ -5822,7 +5822,7 @@ line level    source
 5344          //--------------------------------------------------
 5345          // Description  : Get HDR Select Status
 5346          // Input Value  : enumSourcePort
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 92  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 92  
 
 5347          // Output Value : enumDpHdrSupport
 5348          //--------------------------------------------------
@@ -5886,7 +5886,7 @@ line level    source
              - 0) == _FALSE)
                   {
                       return _DP_AUX_FAIL;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 93  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 93  
 
                   }
               
@@ -5950,7 +5950,7 @@ line level    source
 5462          void UserCommonInterfaceOsdHandler(void)
 5463          {
 5464   1      #if(_URGENT_EVENT_CHECK_MODE == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 94  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 94  
 
 5465   1          if(ScalerSyncCheckUrgentEvent() == _FALSE)
 5466   1      #endif
@@ -6014,7 +6014,7 @@ line level    source
 5524          // Output Value : True or False
 5525          //--------------------------------------------------
 5526          bit UserCommonInterfaceGetRGBQuantizationLimitRangeStatus(EnumColorRGBQuantization enumColorRGBQuantizatio
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 95  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 95  
 
              -n)
 5527          {
@@ -6078,7 +6078,7 @@ line level    source
 5585          
 5586          #if(_DP_MST_SUPPORT == _ON)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 96  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 96  
 
               // Description  : Mst Rx0 Rx1 Capable Port
               // Input Value  : _DP_MST_RX0_PORT or _DP_MST_RX1_PORT
@@ -6142,7 +6142,7 @@ line level    source
               #endif
                   }
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 97  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 97  
 
               #endif
               }
@@ -6206,7 +6206,7 @@ line level    source
                   }
               #endif // #if(_D0_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
               }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 98  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 98  
 
               
               //--------------------------------------------------
@@ -6270,7 +6270,7 @@ line level    source
                           break;
               
                       default:
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 99  
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 99  
 
                       case _D1_INPUT_PORT:
                       case _D6_INPUT_PORT:
@@ -6334,7 +6334,7 @@ line level    source
              - 0x00};
               
                   UserInterfaceTypeCGetLenovoDockingEvent(ucInputPort, &stLenovoDockEvent);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 100 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 100 
 
               
                   *pstLenovoDockEvent = stLenovoDockEvent;
@@ -6398,7 +6398,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : TypeC Hp Alt Mode System Event Process
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 101 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 101 
 
               // Input Value  : ucInputPort --> Input Port
               //                stHpSysEvent --> Hp System Event
@@ -6462,7 +6462,7 @@ line level    source
               {
                   StructTypeCUserProtectInfo stTypeCUserProtectInfo = {100, 0, 0, 0, 0};
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 102 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 102 
 
                   // Get User Setting By Different PDO
                   UserInterfaceTypeCGetProtectInfo(ucInputPort, ucPdoIndex, &stTypeCUserProtectInfo);
@@ -6526,7 +6526,7 @@ line level    source
               //--------------------------------------------------
               void UserCommonInterfaceDataExchangeAllDataReset(void)
               {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 103 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 103 
 
               #if(_D0_TWO_CHIP_DATA_EXCHANGE_MODE != _DATA_EXCHANGE_MODE_NONE)
                   g_stD0DataExchange.unionDataExchangeItem.stOsdReset.stDdcciStatus.b1DdcciStatus = (UserInterfaceGetDdc
@@ -6590,7 +6590,7 @@ line level    source
                           g_stD0DataExchange.unionDataExchangeItem.stOsdReset.stDpVersion.enumVersion = _DATA_EXCHANGE_D
              -P_VERSION_1_1;
                           break;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 104 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 104 
 
               
                       case _DP_VERSION_1_2:
@@ -6654,7 +6654,7 @@ line level    source
                       g_stD0DataExchange.unionDataExchangeItem.stOsdReset.stPinAssignmentESupportOnOff.enumPinAssignment
              -ESupportOnOff = _DATA_EXCHANGE_PIN_ASSIGNMENT_E_SUPPORT_ON;
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 105 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 105 
 
                   else
                   {
@@ -6718,7 +6718,7 @@ line level    source
               
                   DebugMessageScaler("MBR: bTurnOffBacklight", bTurnOffBacklight);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 106 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 106 
 
                   // ********************************************
                   // 2. Turn off backlight
@@ -6782,7 +6782,7 @@ line level    source
                   // ********************************************
                   // 4. Turn on backlight
                   // ********************************************
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 107 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 107 
 
                   if(bLightCtrl == _LIGHT_CONTROL_ON)
                   {
@@ -6846,7 +6846,7 @@ line level    source
                                           ScalerMbrRtkAdvMbrSequenceCtrlEnable(bLightCtrl == _LIGHT_CONTROL_ON);
                                       }
                                       else
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 108 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 108 
 
               #endif
                                       {
@@ -6910,7 +6910,7 @@ line level    source
               //--------------------------------------------------
               // Description  : In active mode, decide whether to change backlight mode
               // Input Value  : None
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 109 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 109 
 
               // Output Value : None
               //--------------------------------------------------
@@ -6974,7 +6974,7 @@ line level    source
                               usStrobePeriod_prev = (GET_MBR_DVTOTAL() + 1) * (GET_MBR_DRR_STEP_CHG_CNT() - 1) / _MBR_DR
              -R_TRANSITION_FRAME_CNT_HI;
                           }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 110 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 110 
 
                           DebugMessageScaler("MBR: Transition", GET_MBR_DRR_BACKLIGHT_MODE());
                           DebugMessageScaler("MBR: Step Change Count", GET_MBR_DRR_STEP_CHG_CNT());
@@ -7038,7 +7038,7 @@ line level    source
               {
                   // Reset RTK ADV MBR mode
                   ScalerMbrClearRtkAdvMbrMode();
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 111 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 111 
 
               
                   // Get User/OSD MBR enable and set to MBR global variable
@@ -7102,7 +7102,7 @@ line level    source
 6509   2      
 6510   2      #if(_HDMI21_VRR_SUPPORT == _ON)
                           if(ScalerDrrGetType() == _DRR_HDMI21_VRR_TYPE)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 112 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 112 
 
                           {
                               if(UserInterfaceDisplayHdmiVrrGetIVFmaxFromLut(&usVfreqMax) == _HDMI21_VRR_WITH_IVF_MAX)
@@ -7166,7 +7166,7 @@ line level    source
 6570          void UserCommonInterfaceTimerEventProc(EnumScalerTimerEventID enumEventID)
 6571          {
 6572   1          UserInterfaceTimerEventProc(enumEventID);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 113 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 113 
 
 6573   1      
 6574   1          switch(enumEventID)
@@ -7230,7 +7230,7 @@ line level    source
 6632   3      #if(_DP_SUPPORT == _ON)
 6633   3                  // DP Audio Capability Status Check
 6634   3                  if((GET_PORT_TYPE(SysSourceGetInputPortType(SysSourceGetInputPort())) == _PORT_DP) &&
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 114 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 114 
 
 6635   3                     (ScalerAudioDpGetCapabilityState(ScalerAudioGetDigitalAudioPortMapping()) == _AUDIO_DP_DPCD
              -_NOT_SUPPORT))
@@ -7294,7 +7294,7 @@ line level    source
               
                   // By-Pass DVC Control
                   return _FALSE;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 115 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 115 
 
               }
               #endif
@@ -7358,7 +7358,7 @@ line level    source
               
                   // Turn-off Upsampling
                   ScalerAudioTtsUpsamplingControl(_DISABLE);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 116 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 116 
 
               
                   // Cancel Previous WD Event
@@ -7422,7 +7422,7 @@ line level    source
               {
                   BYTE ucErrorSegment = 0x00;
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 117 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 117 
 
                   return ucErrorSegment;
               }
@@ -7486,7 +7486,7 @@ line level    source
               #endif
               }
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 118 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 118 
 
               //--------------------------------------------------
               // Description  : Get User Define Audio Gen Freq
@@ -7550,7 +7550,7 @@ line level    source
               // Description  : Get HDMI SPD Product Description Info Contents
               // Input Value  : InputPort
               // Output Value : EnumHdmiSpdProuductlInfo
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 119 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 119 
 
               //--------------------------------------------------
               EnumHdmiSpdProuductlInfo UserCommonInterfaceTmdsGetSpdPdInfo(EnumSourceSearchPort enumInputPort)
@@ -7614,7 +7614,7 @@ line level    source
 6999   1          if(bEnable == _ENABLE)
 7000   1          {
 7001   2              // When Enable, HPD set H & Ddc pinshare switch to correct(ie.DDC Normal work)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 120 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 120 
 
 7002   2              switch(ucInputPort)
 7003   2              {
@@ -7649,8 +7649,8 @@ line level    source
 7032   3                  case _D3_INPUT_PORT:
 7033   3                      PCB_D3_HOTPLUG(_D3_HOT_PLUG_HIGH);
 7034   3      #if((_DEBUG_MESSAGE_SUPPORT == _OFF) || (_PCB_DEBUG_DDC != _DDC3))
-7035   3                      ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_DDC);
-7036   3      #endif
+                              ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_DDC);
+              #endif
 7037   3                      break;
 7038   3      #endif
 7039   3      
@@ -7678,7 +7678,7 @@ line level    source
 7061   1          else
 7062   1          {
 7063   2              // When Disable, HPD set Low & Ddc pinshare switch to GPI(ie. DDC force Nack)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 121 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 121 
 
 7064   2              switch(ucInputPort)
 7065   2              {
@@ -7712,8 +7712,8 @@ line level    source
 7093   3      #if(_D3_TMDS_SUPPORT == _ON)
 7094   3                  case _D3_INPUT_PORT:
 7095   3      #if((_DEBUG_MESSAGE_SUPPORT == _OFF) || (_PCB_DEBUG_DDC != _DDC3))
-7096   3                      ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_GPI);
-7097   3      #endif
+                              ScalerPinshareGpioDdcPinSwitch(_DDC3_SWITCH_GPI);
+              #endif
 7098   3                      PCB_D3_HOTPLUG(_D3_HOT_PLUG_LOW);
 7099   3                      break;
 7100   3      #endif
@@ -7742,7 +7742,7 @@ line level    source
 7123   1      }
 7124          
 7125          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 122 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 122 
 
 7126          // Description  : Switch HDCP Version Capbility
 7127          // Input Value  : None
@@ -7806,7 +7806,7 @@ line level    source
               #endif
                 {
                   DebugMessageOsd("1.a0",1);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 123 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 123 
 
                   PCB_A0_EDID_EEPROM_WRITE_PROTECT(_EDID_EEPROM_WP_DISABLE);
                   ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_GPIO);
@@ -7870,7 +7870,7 @@ line level    source
                     memcpy(pucBuffer, tEDID_TABLE_D0, 256);
                   }
               #else
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 124 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 124 
 
                             
               #warning "zhe is edid D0 error!!"
@@ -7934,7 +7934,7 @@ line level    source
              -PIO, _WRITE_SIZE_8)==_FAIL)
                   {
                     ScalerTimerDelayXms(100); 
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 125 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 125 
 
                     if(UserCommonEepromIICWrite(_EEPROM_SLAVE_ADDRESS, 0x00, 1, 256, pucBuffer, _IIC_FOR_DDC1, _SW_IIC_PIN_
              -GPIO, _WRITE_SIZE_8)==_FAIL)
@@ -7998,7 +7998,7 @@ line level    source
               
               
                   ScalerPinshareGpioDdcPinSwitch(_DDC2_SWITCH_DDC);
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 126 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 126 
 
               
                   ScalerTimerDelayXms(10);
@@ -8062,7 +8062,7 @@ line level    source
                 {
                   PCB_D4_EDID_EEPROM_WRITE_PROTECT(_EDID_EEPROM_WP_DISABLE);
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 127 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 127 
 
                   ScalerPinshareGpioDdcPinSwitch(_DDC4_SWITCH_GPIO);
                   DebugMessageOsd("1.a4",1);
@@ -8126,7 +8126,7 @@ line level    source
                               
               #warning "zhe is edid A0 error!!"
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 128 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 128 
 
               #endif
                   SET_OSD_EDID_FLAG(GET_OSD_EDID_FLAG()|_BIT7);
@@ -8190,7 +8190,7 @@ line level    source
               #endif
               
               
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 129 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 129 
 
               #if((_D1_INPUT_PORT_TYPE!=_D1_NO_PORT)&&(_D1_EMBEDDED_DDCRAM_LOCATION ==_EDID_TABLE_LOCATION_USER)&&(_D1_E
              -MBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE))
@@ -8254,7 +8254,7 @@ line level    source
                   if(UserCommonEepromIICWrite(_EEPROM_SLAVE_ADDRESS, 0x00, 1, 256, pucBuffer, _IIC_FOR_DDC2, _SW_IIC_PIN_G
              -PIO, _WRITE_SIZE_8)==_FAIL)
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 130 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 130 
 
                     ScalerTimerDelayXms(100); 
                     UserCommonEepromIICWrite(_EEPROM_SLAVE_ADDRESS, 0x00, 1, 256, pucBuffer, _IIC_FOR_DDC2, _SW_IIC_PIN_GPI
@@ -8318,7 +8318,7 @@ line level    source
                 
               #if _MEW_EDID_EDID_WRITE      
               #if _D4_INPUT_PORT_TYPE==_D4_HDMI_PORT  
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 131 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 131 
 
                 if(ChangeEdidInfo(pucBuffer,_HDMI4_NAME_TATLE)==_FAIL)
                 {
@@ -8382,7 +8382,7 @@ line level    source
 7701   1      }
 7702          
 7703          BYTE ChangeEdidInfo1(BYTE *ptr,BYTE ucValue)
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 132 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 132 
 
 7704          {
 7705   1        WORD idx,ok,lenght = 0;
@@ -8446,7 +8446,7 @@ line level    source
 7763   3            ok = 0;
 7764   3            continue;
 7765   3          }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 133 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 133 
 
 7766   2          else
 7767   2          { 
@@ -8510,7 +8510,7 @@ line level    source
                     }
                     DebugMessageOsd("3.idx----",(idx+7));
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 134 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 134 
 
                   ptr[0X82]-=7;//ÐÞ¸Ä³¤¶È
                 /////////////////////////colormetry gata block/////////////////////////
@@ -8574,7 +8574,7 @@ line level    source
 7887   2              ptr[idx-1]=0;
 7888   2            }
 7889   2            #endif
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 135 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 135 
 
 7890   2            CheckEdidSum(ptr);
 7891   2            return _TRUE;
@@ -8638,7 +8638,7 @@ line level    source
 7946   3                  break;
 7947   3      #else
               #warning "zhe is edid error!!"
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 136 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 136 
 
               #endif
 7950   3      
@@ -8702,7 +8702,7 @@ line level    source
               #if(((_D2_INPUT_PORT_TYPE==_D2_HDMI_PORT)+(_D2_INPUT_PORT_TYPE==_D2_HDMI_PORT))>1)
                         case _HDMI2_NAME_TATLE:
                           EdidName=HDMI1_EDID_table;
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 137 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 137 
 
                           break;
                           
@@ -8766,7 +8766,7 @@ line level    source
                           break;
               
                           
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 138 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 138 
 
               #elif(((_D2_INPUT_PORT_TYPE==_D2_HDMI_PORT)+(_D3_INPUT_PORT_TYPE==_D3_HDMI_PORT)+(_D4_INPUT_PORT_TYPE==_D4
              -_HDMI_PORT))==1)
@@ -8830,7 +8830,7 @@ line level    source
 8122   2      #define EDID_ID_SIZE_V    30      
 8123   2      #define EDID_ID_SIZE_H1   522     
 8124   2      #define EDID_ID_SIZE_V1   295 
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 139 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 139 
 
 8125   2      
 8126   2      #elif EDID_ID_SIZE==2380
@@ -8894,7 +8894,7 @@ line level    source
               #define EDID_ID_SIZE_V1   399 
               
               #elif EDID_ID_SIZE==3400
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 140 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 140 
 
               #define EDID_ID_SIZE_H    80      
               #define EDID_ID_SIZE_V    33      
@@ -8958,7 +8958,7 @@ line level    source
                     sum1=(sum+7)/10;
                     EdidFlag[2]=sum1%256;
                     
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 141 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 141 
 
                     sum=(EDID_ID_SIZE*10*254*9/18357);
                     if(sum2<sum1)
@@ -9022,7 +9022,7 @@ line level    source
               #define _DEF_800_600_60hz_VESA    0X01
               
               #define _DEF_800_600_72hz_VESA    0X80
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 142 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 142 
 
               #define _DEF_800_600_75hz_VESA    0X40
               #define _DEF_832_624_75hz_MAC2    0X20
@@ -9086,7 +9086,7 @@ line level    source
               
               #define _DEF_standard_BYTE81      _DEF_standard_Width(1600)//
               #define _DEF_standard_BYTE82      _DEF_standard_RATE(60)|_DEF_standard_16_9//
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 143 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 143 
 
               #endif
               
@@ -9150,7 +9150,7 @@ line level    source
                   lenght = sizeof(HDMI_VENDOR_Name);
                   memcpy(EdidFlag,HDMI_VENDOR_Name,sizeof(HDMI_VENDOR_Name));
                   for(idx=54,ok=0;idx<256;idx++) 
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 144 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 144 
 
                   {
                   
@@ -9214,7 +9214,7 @@ line level    source
               //08 0B 09 0B 0A 0B 0A 0B  48 32 3 5   0X30 0X20 0X35 0X00 
               //0c 0d 0e   0x56 0x50 0x21  598 336
               //0f 10   0 0
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 145 
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 145 
 
               //11   0X1E    
               //Intertaced  0x80
@@ -9277,11 +9277,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   5168    ----
-C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/18/2026 20:39:41 PAGE 146 
+   CODE SIZE        =   4809    ----
+C51 COMPILER V9.60.0.0   USERCOMMONINTERFACE                                               09/20/2026 19:44:34 PAGE 146 
 
-   CONSTANT SIZE    =   2210    ----
-   XDATA SIZE       =      4     227
+   CONSTANT SIZE    =   2221    ----
+   XDATA SIZE       =      4     228
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

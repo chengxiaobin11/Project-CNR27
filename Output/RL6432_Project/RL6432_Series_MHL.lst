@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_MHL
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               void ScalerMHLModeMHLSetting(BYTE ucInputPort);
               void ScalerMHLModeHdmiSetting(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 2   
 
               void ScalerMHLInitialSettings(void);
               void ScalerMHLCBUSPhySwitch(BYTE ucPortSelect, bit bSelect);
@@ -126,7 +126,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 3   
 
                           break;
                   }
@@ -190,7 +190,7 @@ line level    source
               #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
                   ScalerMHLRx2InitialSettings();
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 4   
 
               
               #if(_D3_INPUT_PORT_TYPE == _D3_MHL_PORT)
@@ -254,7 +254,7 @@ line level    source
               #endif
               
               #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 5   
 
                   ScalerMHLRx2CBUSSwitchClk(enumClockSel);
               #endif
@@ -318,7 +318,7 @@ line level    source
                   {
               #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 6   
 
                       case _D1_INPUT_PORT:
               
@@ -382,7 +382,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 7   
 
               #if(_D3_INPUT_PORT_TYPE == _D3_MHL_PORT)
               
@@ -446,7 +446,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 8   
 
               //--------------------------------------------------
               // Description  : TMDS Interrupt Process (EXINT0 Only)
@@ -510,7 +510,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 9   
 
                       default:
               
@@ -574,7 +574,7 @@ line level    source
               // Output Value : True or False
               //--------------------------------------------------
               bit ScalerMHLMscRCPGetCommand(BYTE ucInputPort, BYTE *pucKeyCode)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 10  
 
               {
                   switch(ucInputPort)
@@ -638,7 +638,7 @@ line level    source
               #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
               
                       case _D2_INPUT_PORT:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 11  
 
               
                           return ScalerMHLRx2MscUCPGetCommand(pucKeyCode);
@@ -702,7 +702,7 @@ line level    source
               #endif
               
                       default:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 12  
 
               
                           return _FALSE;
@@ -766,7 +766,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerMHLTimerEventProc(EnumScalerTimerEventID enumEventID)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/18/2026 20:39:20 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHL                                                 09/20/2026 19:44:18 PAGE 13  
 
               {
                   switch(enumEventID)

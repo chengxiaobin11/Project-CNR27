@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONPORTCONTROLLERUSER
@@ -62,7 +62,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
               #if(_D0_DP_TYPE_C_DISCRETE_PORT_CTRL_LINK == _DISCRETE_PORT_CTRL_USE_SMBUS)
               EnumTypeCAttachStatus UserCommonPortControllerGetD0CcAttachByI2C(void);
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 2   
 
               EnumTypeCAltModeStatus UserCommonPortControllerGetD0AltModeReadyByI2C(void);
               #endif
@@ -126,7 +126,7 @@ line level    source
               
               //****************************************************************************
               // FUNCTION DEFINITIONS
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 3   
 
               //****************************************************************************
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
@@ -190,7 +190,7 @@ line level    source
                   return _TYPE_C_UNATTACH;
               }
               
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 4   
 
               //--------------------------------------------------
               // Description  : Get D6 Alt Mode Ready Info Through I2C
@@ -254,7 +254,7 @@ line level    source
               // Description  : Get User Port Controller Power Role
               // Input Value  : ucInputPort --> Inputput
               // Output Value : EnumTypeCPowerRole (_TYPE_C_POWER_ROLE_NONE / _TYPE_C_POWER_SNK / _TYPE_C_POWER_SRC)
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 5   
 
               //--------------------------------------------------
               EnumTypeCPowerRole UserCommonPortControllerGetUserPowerRole(BYTE ucInputPort)
@@ -318,7 +318,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Get User Port Controller Source/Sink PDO Info
               // Input Value  : ucInputPort, enumPowerRole (Src/Snk PDO), ucPdoIndex : 1~7
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 6   
 
               // Output Value : StructTypeCUserPDO (Voltage Unit = 100mV / Current = 10mA)
               //--------------------------------------------------
@@ -382,7 +382,7 @@ line level    source
               
                   UserInterfaceTypeCPortControllerGetUserRequestedSrcPdo(ucInputPort, &stTypeCSrcPdo);
               
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 7   
 
                   return stTypeCSrcPdo;
               }
@@ -446,7 +446,7 @@ line level    source
               {
                   if(UserInterfaceTypeCPortControllerConfigUserPinAssignment(ucInputPort, enumPinAssignment) == _TYPE_C_
              -USER_PORT_CTRL_COMMUNICATION_SUCCESS)
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 8   
 
                   {
                       return _SUCCESS;
@@ -510,7 +510,7 @@ line level    source
               // Description  : Type C Lenovo Alt Mode Get System Event (Including System Acknowledge)
               // Input Value  : ucInputPort
               // Output Value : StructTypeCLenovoSysEvent
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/18/2026 20:39:45 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLERUSER                                      09/20/2026 19:44:38 PAGE 9   
 
               //--------------------------------------------------
               StructTypeCLenovoSysEvent UserCommonPortControllerGetUserLenovoSystemEvent(BYTE ucInputPort)

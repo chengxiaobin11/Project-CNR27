@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTMDS
@@ -62,7 +62,7 @@ line level    source
   45          #endif
   46          
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 2   
 
   48          // FUNCTION DECLARATIONS
   49          //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               #if(_HDMI_FREESYNC_II_SUPPORT == _ON)
               void ScalerTMDSRx5GetFreeSyncIIData(BYTE *pucFreeSyncIIData);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 3   
 
               
               #if(_HDMI_HDR10_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
  169   2      #if(_D1_HDMI_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 4   
 
               #if(_D1_INPUT_PORT_TMDS_MAC_PAGE == _PAGE2)
                           return ScalerTMDSRx0HdmiGetAVIInfo(enumContent);
@@ -254,7 +254,7 @@ line level    source
  231          // Input Value  : Content of Interest
  232          // Output Value : Content Value
  233          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 5   
 
  234          void ScalerTMDSSetPsWakeupHpdToggle(BYTE ucInputPort)
  235          {
@@ -318,7 +318,7 @@ line level    source
               
               #if(_D0_INPUT_PORT_TMDS_MAC_PAGE == _PAGE2)
                           ScalerTMDSRx0HDMI2HPDRRIRQEnable(bEnable);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 6   
 
               #else
                           ScalerTMDSRx0HDMI2HPDRRIRQEnable(bEnable);
@@ -382,7 +382,7 @@ line level    source
               #endif
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 7   
 
               #endif
               
@@ -446,7 +446,7 @@ line level    source
               void ScalerTMDSRx2GetHDR10Data(BYTE *pucHDRData)
               {
                   ScalerGetDataPortByte(P71_CD_HDMI_PSAP, _HDR10_INFO_HDMI_VERSION, 2, &pucHDRData[0], _AUTOINC);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 8   
 
                   ScalerGetDataPortByte(P71_CD_HDMI_PSAP, _HDR10_INFO_HDMI_EOTF, 2, &pucHDRData[2], _AUTOINC);
                   ScalerGetDataPortByte(P71_CD_HDMI_PSAP, _HDR10_INFO_HDMI_DISPLAY_PRIMARIES_X0_LSB, 24, &pucHDRData[4],
@@ -510,7 +510,7 @@ line level    source
               void ScalerTMDSRx4GetHDR10Data(BYTE *pucHDRData)
               {
                   ScalerGetDataPortByte(P73_CD_HDMI_PSAP, _HDR10_INFO_HDMI_VERSION, 2, &pucHDRData[0], _AUTOINC);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 9   
 
                   ScalerGetDataPortByte(P73_CD_HDMI_PSAP, _HDR10_INFO_HDMI_EOTF, 2, &pucHDRData[2], _AUTOINC);
                   ScalerGetDataPortByte(P73_CD_HDMI_PSAP, _HDR10_INFO_HDMI_DISPLAY_PRIMARIES_X0_LSB, 24, &pucHDRData[4],
@@ -574,7 +574,7 @@ line level    source
                       case _D2_INPUT_PORT:
                           return GET_D2_CABLE_STATUS();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 10  
 
  539   2      
  540   2      #if(_D3_HDMI_SUPPORT == _ON)
@@ -638,7 +638,7 @@ line level    source
                           ScalerSetDataPortByte(P2_39_HDMI_CTRL_39, _P2_3A_PT_D8_PORT_PAGE02_HDMI_SCDC_D8, g_stTmdsMacRx
              -ScdcInfoSet.pucIdstring[5]);
                           ScalerSetDataPortByte(P2_39_HDMI_CTRL_39, _P2_3A_PT_D9_PORT_PAGE02_HDMI_SCDC_D9, g_stTmdsMacRx
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 11  
 
              -ScdcInfoSet.pucIdstring[6]);
                           ScalerSetDataPortByte(P2_39_HDMI_CTRL_39, _P2_3A_PT_DA_PORT_PAGE02_HDMI_SCDC_DA, g_stTmdsMacRx
@@ -702,7 +702,7 @@ line level    source
              -ScdcInfoSet.pucIdstring[1]);
                           ScalerSetDataPortByte(P2_39_HDMI_CTRL_39, _P2_3A_PT_D5_PORT_PAGE02_HDMI_SCDC_D5, g_stTmdsMacRx
              -ScdcInfoSet.pucIdstring[2]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 12  
 
                           ScalerSetDataPortByte(P2_39_HDMI_CTRL_39, _P2_3A_PT_D6_PORT_PAGE02_HDMI_SCDC_D6, g_stTmdsMacRx
              -ScdcInfoSet.pucIdstring[3]);
@@ -766,7 +766,7 @@ line level    source
              -RxScdcInfoSet.ucManufactureOuiM);
  665   2                  ScalerSetDataPortByte(P72_39_HDMI_CTRL_39, _P72_3A_PT_D2_PORT_PAGE72_HDMI_SCDC_D2, g_stTmdsMac
              -RxScdcInfoSet.ucManufactureOuiH);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 13  
 
  666   2                  ScalerSetDataPortByte(P72_39_HDMI_CTRL_39, _P72_3A_PT_D3_PORT_PAGE72_HDMI_SCDC_D3, g_stTmdsMac
              -RxScdcInfoSet.pucIdstring[0]);
@@ -830,7 +830,7 @@ line level    source
                           DebugMessageRx4("Set Rx4 SCDC Version Info", 0x00);
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 14  
 
  703   2      
  704   2      #if(_D5_HDMI_2_0_SUPPORT == _ON)
@@ -894,7 +894,7 @@ line level    source
                           // Disable CED Lock Transition IRQ & Flag
                           ScalerSetBit(P2_17_HDMI_CTRL_17, ~(_BIT6 | _BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT1 | _BIT0));
                           ScalerSetBit(P2_18_HDMI_CTRL_18, ~(_BIT2 | _BIT1 | _BIT0), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 15  
 
               
                           // Clear SCDC CED Counter
@@ -958,7 +958,7 @@ line level    source
                           // Reset SCDC
                           ScalerSetBit(P71_38_HDMI_CTRL_38, ~(_BIT2 | _BIT1), (_BIT2 | _BIT1));
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 16  
 
                           break;
               #endif
@@ -1022,7 +1022,7 @@ line level    source
                           ScalerSetBit(P74_38_HDMI_CTRL_38, ~(_BIT2 | _BIT1), (_BIT2 | _BIT1));
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 17  
 
  875   2              default:
  876   2                  break;
@@ -1086,7 +1086,7 @@ line level    source
                               else if(PCB_GET_HDMI_SW_SELECT() == _SW_SEL_HDMI3_1)
                               {
                                   CLR_D12_HDMI_5V_PIN_HIGH();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 18  
 
                               }
               #else
@@ -1150,7 +1150,7 @@ line level    source
  996          
  997          //--------------------------------------------------
  998          // Description  : TMDS Check Hpd 5V Pin Check
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 19  
 
  999          // Input Value  : ucInputPort
 1000          // Output Value : None
@@ -1214,7 +1214,7 @@ line level    source
 1056          //--------------------------------------------------
 1057          EnumUserHdmi5vStatus ScalerTMDSHdmiHpd5vPinDetect(BYTE ucInputPort)
 1058          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 20  
 
 1059   1          switch(ucInputPort)
 1060   1          {
@@ -1278,7 +1278,7 @@ line level    source
               #else
 1119   2                  // Check Hot Plug 5V
 1120   2                  if(ScalerGetBit(P72_23_HDMI_CTRL_23, _BIT0) == _BIT0)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 21  
 
 1121   2                  {
 1122   3                      return _HDMI_5V_STATUS_HIGH;
@@ -1342,7 +1342,7 @@ line level    source
                           if(bValue == _ON)
                           {
                               SET_D1_HDMI_5V_PIN_HIGH();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 22  
 
                           }
                           else
@@ -1406,7 +1406,7 @@ line level    source
                           {
                               SET_D4_HDMI_5V_PIN_HIGH();
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 23  
 
                           else
                           {
@@ -1470,7 +1470,7 @@ line level    source
 1304   2                  break;
 1305   2      #endif
 1306   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 24  
 
 1307   2      #if(_D4_HDMI_2_0_SUPPORT == _ON)
                       case _D4_INPUT_PORT:
@@ -1534,7 +1534,7 @@ line level    source
 1366   2                  enumFreeSyncSupport = GET_TMDS_RX2_FREESYNC_SUPPORT();
 1367   2                  break;
 1368   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 25  
 
 1369   2              case _D3_INPUT_PORT:
 1370   2                  enumFreeSyncSupport = GET_TMDS_RX3_FREESYNC_SUPPORT();
@@ -1598,7 +1598,7 @@ line level    source
               #else
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E0_PORT_PAGE71_HDMI_SCDC_E0, g_stDrr
              -HdmiAmdAupiInfo.ucPanelManufactureIdL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 26  
 
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E1_PORT_PAGE71_HDMI_SCDC_E1, g_stDrr
              -HdmiAmdAupiInfo.ucPanelManufactureIdM);
@@ -1662,7 +1662,7 @@ line level    source
               
                               DebugMessageScaler("Set Rx2 AMD AUPI SCDC Info", 0x00);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 27  
 
                               break;
               #endif
@@ -1726,7 +1726,7 @@ line level    source
                               ScalerSetDataPortByte(P74_39_HDMI_CTRL_39, _P74_3A_PT_E4_PORT_PAGE74_HDMI_SCDC_E4, g_stDrr
              -HdmiAmdAupiInfo.ucFwCheckSumL);
                               ScalerSetDataPortByte(P74_39_HDMI_CTRL_39, _P74_3A_PT_E5_PORT_PAGE74_HDMI_SCDC_E5, g_stDrr
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 28  
 
              -HdmiAmdAupiInfo.ucFwCheckSumM);
                               ScalerSetDataPortByte(P74_39_HDMI_CTRL_39, _P74_3A_PT_E6_PORT_PAGE74_HDMI_SCDC_E6, g_stDrr
@@ -1790,7 +1790,7 @@ line level    source
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E4_PORT_PAGE71_HDMI_SCDC_E4, 0x00);
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E5_PORT_PAGE71_HDMI_SCDC_E5, 0x00);
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E6_PORT_PAGE71_HDMI_SCDC_E6, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 29  
 
                               ScalerSetDataPortByte(P71_39_HDMI_CTRL_39, _P71_3A_PT_E7_PORT_PAGE71_HDMI_SCDC_E7, 0x00);
               #endif
@@ -1854,7 +1854,7 @@ line level    source
                   {
                       // Enable HDMI 2.0 SCDC Function
               #if(_D0_HDMI_2_0_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 30  
 
                       ScalerSetBit(P2_19_HDMI_CTRL_19, ~_BIT7, _BIT7);
               #endif
@@ -1918,7 +1918,7 @@ line level    source
                       ScalerSetBit(P73_19_HDMI_CTRL_19, ~_BIT7, 0x00);
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 31  
 
               #if(_D5_HDMI_2_0_SUPPORT == _ON)
                       ScalerSetBit(P74_19_HDMI_CTRL_19, ~_BIT7, 0x00);
@@ -1982,7 +1982,7 @@ line level    source
                   ScalerSetBit(P73_E6_HDMI_FREQDET_CTRL, ~(_BIT7 | _BIT2), _BIT7);
               
               #if(_HDMI_HPD_TOGGLE_BY_Z0_OFF_DDC_TOGGLE == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/18/2026 20:38:50 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTMDS                                                  09/20/2026 19:43:56 PAGE 32  
 
                   SET_TMDS_RX4_AC_ON_HPD_TOGGLE_EVENT();
               #endif

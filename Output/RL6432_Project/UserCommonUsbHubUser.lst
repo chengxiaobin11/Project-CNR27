@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/18/2026 20:39:46 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/20/2026 19:44:39 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONUSBHUBUSER
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               bit UserCommonUsbHubSetSSMode(BYTE ucInputPort, bit bEn);
               EnumHubDspDetectStatus UserCommonUsbHubDetectDFPStatus(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/18/2026 20:39:46 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/20/2026 19:44:39 PAGE 2   
 
               WORD UserCommonUsbHubSetPollingStep(BYTE ucInputPort);
               
@@ -126,7 +126,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/18/2026 20:39:46 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBUSER                                              09/20/2026 19:44:39 PAGE 3   
 
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----

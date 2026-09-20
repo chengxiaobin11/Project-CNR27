@@ -43,7 +43,7 @@ BYTE code KeyDefault[10] =
 //--------------------------------------------------
 #define _RELEASE_KEY_MASK                           0x00
 #define _POWER_KEY_MASK                             0x01
-#if 1//_DEF_OSD_KEY_2   KeyDefaultºÍÏÂÃæµÄ¶ÔÆë
+#if 1//_DEF_OSD_KEY_2   KeyDefaultï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
 #define _MENU_KEY_MASK                              0x02
 #define _EXIT_KEY_MASK                              0x04 
 #define _RIGHT_KEY_MASK                             0x08
@@ -575,6 +575,9 @@ BYTE RTDKeyScan(void)
     ucVoltage2 = PCB_ADKEY2();
     ucVoltage3 = PCB_ADKEY3();
 
+	DebugMessageSystem("ucVoltage1",ucVoltage1);
+	DebugMessageSystem("ucVoltage2",ucVoltage2);
+
 	retry_Key=3;
 	while(retry_Key)
 	{
@@ -752,7 +755,7 @@ bit RTDKeyPowerKeyProc(void)
 			PCB_USB_HUB_RESET(_USB_POWER_ON);
 			PCB_USB_SWITCH_SET(_USB_SWTICH_PC);
 			PCB_USB_POWER(_USB_POWER_ON);
-			PCB_LAN_POWER_EN(_PCB_LAN_POWER_ON);//ÍøÂçÐ¾Æ¬ÉÏµç
+			PCB_LAN_POWER_EN(_PCB_LAN_POWER_ON);//ï¿½ï¿½ï¿½ï¿½Ð¾Æ¬ï¿½Ïµï¿½
 #endif
 #if(_PCB_TYPE == _RL6449__216PIN__HK_M_RTD2795E18_1DP2H1T_EDP)
 			_TYPE_C_VCC_POWER_ON();

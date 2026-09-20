@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERAUTOFUNC
@@ -62,7 +62,7 @@ line level    source
               #endif
   46          
   47          #define GET_AUTO_RESULT_WORD2()                  (ScalerGetWord(&g_stRegVgaAuto.uc_14_AUTO_PHASE_3))
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 2   
 
   48          #define GET_AUTO_RESULT_WORD1()                  (ScalerGetWord(&g_stRegVgaAuto.uc_15_AUTO_PHASE_2))
   49          #define GET_AUTO_RESULT_WORD0()                  (ScalerGetWord(&g_stRegVgaAuto.uc_16_AUTO_PHASE_1))
@@ -126,7 +126,7 @@ line level    source
   97          //****************************************************************************
   98          
   99          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 3   
 
  100          // Definitions of stages in auto-color process
  101          //--------------------------------------------------
@@ -190,7 +190,7 @@ line level    source
               #endif // End of #if(_YPBPR_SUPPORT == _ON)
  160          
  161          #if(_ADC_SELF_CALIBRATION == _ON)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 4   
 
               EnumAutoResult ScalerAutoUpdateAdcGainCalibrationRGB(BYTE ucGainBias, BYTE ucStepRatio);
               EnumAutoResult ScalerAutoCompensateCalibrationRGB(EnumAutoColorType enumAutoType);
@@ -254,7 +254,7 @@ line level    source
  221   1      
  222   1          // Restore ADC channel swapping
  223   1          g_stRegVgaCapture.b1_06_4_ADC_R_G_SWAP = stAdcSwapStatus.b1_ADC_R_G_SWAP;
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 5   
 
  224   1          g_stRegVgaCapture.b1_06_5_ADC_R_B_SWAP = stAdcSwapStatus.b1_ADC_R_B_SWAP;
  225   1          g_stRegVgaCapture.b1_06_6_ADC_G_B_SWAP = stAdcSwapStatus.b1_ADC_G_B_SWAP;
@@ -318,7 +318,7 @@ line level    source
  283   2                  pucFunctionCompensate = &ScalerAutoCompensateRGB;
  284   2                  break;
  285   2      
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 6   
 
  286   2              default:
  287   2                  return _AUTO_FAIL;
@@ -382,7 +382,7 @@ line level    source
  345   1          BYTE ucClampEnd = 0;
  346   1      
  347   1      #if(_ADC_SELF_CALIBRATION == _ON)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 7   
 
                   if(enumAutoType == _AUTO_CALIBRATE_RGB)
                   {
@@ -446,7 +446,7 @@ line level    source
  403   1          ScalerSetBit(P0_EC_AUTO_BLACK_LEVEL_R_NOISE_VALUE, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), 0x00);
  404   1      
  405   1          // Trigger status after max frame reached; Average value; HS trailing edge; EQ_MGN(0~3) = 0
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 8   
 
  406   1          ScalerSetBit(P0_E8_AUTO_BLACK_LEVEL_CTRL7, ~(_BIT6 | _BIT5 | _BIT2 | _BIT1 | _BIT0), _BIT2);
  407   1      
@@ -510,7 +510,7 @@ line level    source
  465   3              }
  466   2      
  467   2              // Update ADC gain according to max level & measured maximum
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 9   
 
  468   2              if(ucMax < pData[0])
  469   2              {
@@ -574,7 +574,7 @@ line level    source
  527          {
  528   1          ucStepRatio *= 2;
  529   1      
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 10  
 
  530   1          if((ScalerAutoUpdateAdcGain(ucGainBias, ucStepRatio) == _AUTO_FAIL) ||
  531   1             (ScalerAutoUpdateAdcGain(ucGainBias, ucStepRatio) == _AUTO_FAIL))
@@ -638,7 +638,7 @@ line level    source
  589   1          while(pData[0] < ucFrameCount)
  590   1          {
  591   2              if((ScalerVgaTopWaitForEvent(_EVENT_VGA_IVS) == _FALSE) || ((++pData[1]) > 8))
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 11  
 
  592   2              {
  593   3                  return _AUTO_FAIL;
@@ -702,7 +702,7 @@ line level    source
  649   1          BYTE ucResult = 0;
  650   1      
  651   1          if(ucTarget > ucCurrent)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 12  
 
  652   1          {
  653   2              ucResult = (BYTE)(((DWORD)(ucTarget - ucCurrent) * ((WORD)ucGain + 252)) / ucTarget);
@@ -766,7 +766,7 @@ line level    source
  710   1      
  711   1          if(enumAutoType != _AUTO_TUNE_RGB_GAIN_ONLY)
  712   1          {
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 13  
 
  713   2              // Double-check for offset
  714   2              if(ScalerAutoCompensateOffset(ucColor) == _AUTO_FAIL)
@@ -830,7 +830,7 @@ line level    source
  772   1          if(HIBYTE(usResult) > 0)
  773   1          {
  774   2              // Increase offset by (minimum - 1)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 14  
 
  775   2              pData[0] = ((HIBYTE(usResult) == 1) ? 1 : (HIBYTE(usResult) - 1));
  776   2          }
@@ -894,7 +894,7 @@ line level    source
  831          EnumAutoResult ScalerAutoCompareMeasure(EnumMeasureType enumType)
  832          {
  833   1          // Stop image auto-function measure
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 15  
 
  834   1          g_stRegVgaAuto.b1_0D_0_NOW_AF = _FALSE;
  835   1      
@@ -958,7 +958,7 @@ line level    source
  892   1          g_stRegVgaAuto.b1_0A_4_RGB_IN_ONE_EN = _FALSE;
  893   1      
  894   1          switch(enumType)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 16  
 
  895   1          {
  896   2              case _MEASURE_YPBPR_MIN:
@@ -1022,7 +1022,7 @@ line level    source
  953   1          PDATA_DWORD(1) = 0; // Previous sum
  954   1          PDATA_DWORD(2) = 0; // Previous level
  955   1          PDATA_DWORD(3) = 0; // Max difference
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 17  
 
  956   1          if(ucStartLevel != 255)
  957   1          {
@@ -1086,7 +1086,7 @@ line level    source
 1015   3              }
 1016   2      
 1017   2              if(PDATA_DWORD(0) < PDATA_DWORD(2))
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 18  
 
 1018   2              {
 1019   3                  // Pixel decreases. Stop main-tone search.
@@ -1150,7 +1150,7 @@ line level    source
                   if(enumAutoType != _AUTO_TUNE_YPBPR_GAIN_ONLY)
                   {
                       // Double check for offset
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 19  
 
                       if(ScalerAutoHardwareAbl(16, 2) == _AUTO_FAIL)
                       {
@@ -1214,7 +1214,7 @@ line level    source
 1136          #if(_ADC_SELF_CALIBRATION == _ON)
               //--------------------------------------------------
               // Description  : Update ADC gain for RGB self-calibration
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 20  
 
               // Input Value  : ucBias: bias level from max level
               // Output Value : _AUTO_SUCCESS or _AUTO_FAIL
@@ -1278,7 +1278,7 @@ line level    source
                   ScalerSetByte(P0_C0_ADC_GAI_RED_MSB, (ScalerGetByte(P0_C0_ADC_GAI_RED_MSB) + _CALIBRATION_R_GAIN_BIAS)
              -);
                   ScalerSetByte(P0_C1_ADC_GAI_GRN_MSB, (ScalerGetByte(P0_C1_ADC_GAI_GRN_MSB) + _CALIBRATION_G_GAIN_BIAS)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 21  
 
              -);
                   ScalerSetByte(P0_C2_ADC_GAI_BLU_MSB, (ScalerGetByte(P0_C2_ADC_GAI_BLU_MSB) + _CALIBRATION_B_GAIN_BIAS)
@@ -1342,7 +1342,7 @@ line level    source
                   // Disable double buffer; Input ADC pixel format; Enable input sampling;
                   g_stRegVgaCapture.b1_00_5_DOUBLE_READY = _FALSE;
                   g_stRegVgaCapture.b1_00_4_DOUBLE_ENABLE = _FALSE;
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 22  
 
                   g_stRegVgaCapture.b2_00_2_IN_SEL = 0;
                   g_stRegVgaCapture.b1_00_0_IVRUN_EN = _TRUE;
@@ -1406,7 +1406,7 @@ line level    source
 1313   3                  if(ScalerAutoCustomUpdateAdcGainChannel(_AUTO_GREEN_CHANNEL, ucGainBias, ucStepRatio) == _AUTO
              -_SUCCESS)
 1314   3                  {
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 23  
 
 1315   4                      return _AUTO_SUCCESS;
 1316   4                  }
@@ -1470,7 +1470,7 @@ line level    source
 1373   2      
 1374   2              // Minimum gain step = 1
 1375   2              if(pData[1] == 0)
-C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/18/2026 20:37:47 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERAUTOFUNC                                                    09/20/2026 19:43:09 PAGE 24  
 
 1376   2              {
 1377   3                  pData[1] = 1;

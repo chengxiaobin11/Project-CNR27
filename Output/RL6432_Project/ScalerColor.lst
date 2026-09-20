@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOLOR
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          
   47          
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 2   
 
   48          //****************************************************************************
   49          // CODE TABLES
@@ -126,7 +126,7 @@ line level    source
  104          void ScalerColorHDR10SupportSwitch(EnumSourceSearchPort enumSourcePort, EnumHDR10ModeDef enumSupport);
  105          #endif
  106          
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 3   
 
  107          #if(_OCC_PCM_GAMMA_SUPPORT == _ON)
               void ScalerColorOCCPCMGammaInputGammaLoadTable(BYTE ucSelect);
@@ -190,7 +190,7 @@ line level    source
                   ScalerColorHLWIDLTILSRAdjust(usHPos, usHWidth, usVPos, usVHeight);
               
                   if(GET_INTERLACED_MODE() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 4   
 
                   {
                       ScalerGlobalIDomainDBApply(enumDBApply);
@@ -254,7 +254,7 @@ line level    source
  225          {
  226   1          WORD usAdjustOption = 0x0000;
  227   1      
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 5   
 
  228   1          ScalerColorIDitherLoadDitherTable(pucDitherTable, ucBankAddress);
  229   1      
@@ -318,7 +318,7 @@ line level    source
  280   1          ucData = ScalerGetByte(P0_69_D_DITHER_DATA_ACCESS);
  281   1      
  282   1          if(enumOn == _FUNCTION_ON)
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 6   
 
  283   1          {
  284   2              ucData = (ucData & (~_BIT0)) | _D_DITHER_6BIT_PANEL_FUNC_ENABLE;
@@ -382,7 +382,7 @@ line level    source
  342          #if(_SIX_COLOR_SUPPORT == _ON)
               //--------------------------------------------------
               // Description  : Enable ICM function
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 7   
 
               // Input Value  : None
               // Output Value : None
@@ -446,7 +446,7 @@ line level    source
                           pData[2] = 0;
                       }
                       else
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 8   
 
                       {
                           pData[1] = (SWORD)0 - ((pData[0] + 4) >> 1);
@@ -510,7 +510,7 @@ line level    source
                               SET_RX1_HDR10_SUPPORT(enumSupport);
                           }
               
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 9   
 
                           break;
               #endif
@@ -574,7 +574,7 @@ line level    source
               #endif
  525   2      
  526   2              default:
-C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/18/2026 20:37:48 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOLOR                                                       09/20/2026 19:43:10 PAGE 10  
 
  527   2                  break;
  528   2          }

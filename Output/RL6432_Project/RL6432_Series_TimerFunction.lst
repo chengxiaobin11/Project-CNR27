@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/18/2026 20:39:30 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_TIMERFUNCTION
@@ -56,17 +56,17 @@ line level    source
   39          void ScalerTimerClrEventStatusbyReg(EnumWaitEventType enumEvent);
   40          
   41          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
-  42          void ScalerTimerClrEventStatusbyFlag(EnumWaitEventType enumEvent);
-  43          #endif
+              void ScalerTimerClrEventStatusbyFlag(EnumWaitEventType enumEvent);
+              #endif
   44          
   45          BYTE ScalerTimerGetEventStatus(EnumWaitEventType enumEvent);
   46          BYTE ScalerTimerGetEventStatusbyReg(EnumWaitEventType enumEvent);
   47          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/18/2026 20:39:30 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 2   
 
   48          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
-  49          BYTE ScalerTimerGetEventStatusbyFlag(EnumWaitEventType enumEvent);
-  50          #endif
+              BYTE ScalerTimerGetEventStatusbyFlag(EnumWaitEventType enumEvent);
+              #endif
   51          
   52          //****************************************************************************
   53          // FUNCTION DEFINITIONS
@@ -90,12 +90,12 @@ line level    source
   71   2              case _EVENT_DEN_START:
   72   2                  // Total
   73   2      #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
-  74   2                  if(ScalerGetBit(P0_05_IRQ_CTRL1, _BIT3) == _BIT3)
-  75   2                  {
-  76   3                      ScalerTimerClrEventStatusbyFlag(enumEvent);
-  77   3                  }
-  78   2                  else
-  79   2      #endif
+                          if(ScalerGetBit(P0_05_IRQ_CTRL1, _BIT3) == _BIT3)
+                          {
+                              ScalerTimerClrEventStatusbyFlag(enumEvent);
+                          }
+                          else
+              #endif
   80   2                  {
   81   3                      ScalerTimerClrEventStatusbyReg(enumEvent);
   82   3                  }
@@ -126,7 +126,7 @@ line level    source
  107          void ScalerTimerClrEventStatusbyReg(EnumWaitEventType enumEvent)
  108          {
  109   1          switch(enumEvent)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/18/2026 20:39:30 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 3   
 
  110   1          {
  111   2              case _EVENT_DEN_START:
@@ -153,31 +153,31 @@ line level    source
  132   1      }
  133          
  134          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
- 135          //--------------------------------------------------
- 136          // Description  : Clear Flag Event Status
- 137          // Input Value  : enumEvent   --> Specified event
- 138          // Output Value : None
- 139          //--------------------------------------------------
- 140          void ScalerTimerClrEventStatusbyFlag(EnumWaitEventType enumEvent)
- 141          {
- 142   1          switch(enumEvent)
- 143   1          {
- 144   2      #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 145   2              case _EVENT_DEN_START:
- 146   2                  SET_EVENT_DEN_START_INT(_FALSE);
- 147   2                  break;
- 148   2      #endif
- 149   2      #if(_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
+              //--------------------------------------------------
+              // Description  : Clear Flag Event Status
+              // Input Value  : enumEvent   --> Specified event
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerTimerClrEventStatusbyFlag(EnumWaitEventType enumEvent)
+              {
+                  switch(enumEvent)
+                  {
+              #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
+                      case _EVENT_DEN_START:
+                          SET_EVENT_DEN_START_INT(_FALSE);
+                          break;
+              #endif
+              #if(_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
                       case _EVENT_DEN_STOP:
                           SET_EVENT_DEN_STOP_INT(_FALSE);
                           break;
               #endif
- 154   2      
- 155   2              default:
- 156   2                  break;
- 157   2          }
- 158   1      }
- 159          #endif
+              
+                      default:
+                          break;
+                  }
+              }
+              #endif
  160          
  161          //--------------------------------------------------
  162          // Description  : Hold until the specified event occurs
@@ -190,7 +190,7 @@ line level    source
  169   1          {
  170   2              case _EVENT_IVS:
  171   2              case _EVENT_IEN_STOP:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/18/2026 20:39:30 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 4   
 
  172   2              case _EVENT_ALL:
  173   2              default:
@@ -199,12 +199,12 @@ line level    source
  176   2              case _EVENT_DEN_START:
  177   2                  // Total
  178   2      #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 179   2                  if(ScalerGetBit(P0_05_IRQ_CTRL1, _BIT3) == _BIT3)
- 180   2                  {
- 181   3                      return ScalerTimerGetEventStatusbyFlag(enumEvent);
- 182   3                  }
- 183   2                  else
- 184   2      #endif
+                          if(ScalerGetBit(P0_05_IRQ_CTRL1, _BIT3) == _BIT3)
+                          {
+                              return ScalerTimerGetEventStatusbyFlag(enumEvent);
+                          }
+                          else
+              #endif
  185   2                  {
  186   3                      return ScalerTimerGetEventStatusbyReg(enumEvent);
  187   3                  }
@@ -253,36 +253,36 @@ line level    source
  230   1      }
  231          
  232          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
- 233          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/18/2026 20:39:30 PAGE 5   
+              //--------------------------------------------------
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 5   
 
- 234          // Description  : Hold until the specified event occurs by flag
- 235          // Input Value  : enumEvent   --> Specified event
- 236          // Output Value : Return _TRUE if event occurs
- 237          //--------------------------------------------------
- 238          BYTE ScalerTimerGetEventStatusbyFlag(EnumWaitEventType enumEvent)
- 239          {
- 240   1          switch(enumEvent)
- 241   1          {
- 242   2      #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 243   2              case _EVENT_DEN_START:
- 244   2                  // Total
- 245   2                  return GET_EVENT_DEN_START_INT();
- 246   2      #endif
- 247   2      #if(_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
+              // Description  : Hold until the specified event occurs by flag
+              // Input Value  : enumEvent   --> Specified event
+              // Output Value : Return _TRUE if event occurs
+              //--------------------------------------------------
+              BYTE ScalerTimerGetEventStatusbyFlag(EnumWaitEventType enumEvent)
+              {
+                  switch(enumEvent)
+                  {
+              #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
+                      case _EVENT_DEN_START:
+                          // Total
+                          return GET_EVENT_DEN_START_INT();
+              #endif
+              #if(_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
                       case _EVENT_DEN_STOP:
                           return GET_EVENT_DEN_STOP_INT();
               #endif
- 251   2              default:
- 252   2                  return _FALSE;
- 253   2          }
- 254   1      }
- 255          #endif
+                      default:
+                          return _FALSE;
+                  }
+              }
+              #endif
  256          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    229    ----
+   CODE SIZE        =    168    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----       2
    PDATA SIZE       =   ----    ----

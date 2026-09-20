@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDDR1
@@ -62,7 +62,7 @@ line level    source
   45              _DDR1_TX_DQS0,
   46              _DDR1_TX_DQS1,
   47              _DDR1_RX_DQS0_R,
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 2   
 
   48              _DDR1_RX_DQS0_F,
   49              _DDR1_RX_DQS1_R,
@@ -126,7 +126,7 @@ line level    source
               BYTE g_pucDDR1InitialPhase2[7];
               BYTE g_pucDDR1DelayChain2[7];
               BYTE g_pucDDR1OnLineDelayChain2[7];
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 3   
 
               BYTE g_ucDDR1Rx2IenDelayChain2;
               #endif
@@ -162,8 +162,8 @@ line level    source
  140          void ScalerDDR1PinshareInitial(void);
  141          void ScalerDDR1ControlReset(void);
  142          #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 143          void ScalerDDR1SetFRCDisplayTokenRing(EnumFunctionOnOFF enumOn);
- 144          #endif
+              void ScalerDDR1SetFRCDisplayTokenRing(EnumFunctionOnOFF enumOn);
+              #endif
  145          #endif
  146          
  147          #if(_DDR1_PHASE_CALIBRATION == _ON)
@@ -190,7 +190,7 @@ line level    source
  168          //****************************************************************************
  169          // FUNCTION DEFINITIONS
  170          //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 4   
 
  171          #if(_MEMORY_TYPE_CONFIG == _MEMORY_DDR1)
  172          //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
  230   1          // Set DDR1 Module Active to Read and Write delay
  231   1          ScalerSetBit(P4_A1_SDR_CTRL0, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT4 | _BIT3 | _BIT1
              - | _BIT0));
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 5   
 
  232   1      
  233   1          // Set DDR1 Module CAS Latency
@@ -318,7 +318,7 @@ line level    source
                   ScalerSetByte(P4_1A_SDDR_DQX1_CTRL0, 0x00);
                   ScalerSetByte(P4_1B_SDDR_DQX1_CTRL1, 0x55);
               #endif
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 6   
 
  293   1      }
  294          
@@ -339,23 +339,23 @@ line level    source
  309   1      }
  310          
  311          #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 312          //--------------------------------------------------
- 313          // Description  : Set Display Token Ring according to OD status
- 314          // Input Value  : EnumFunctionOnOFF enumOn
- 315          // Output Value : None
- 316          //--------------------------------------------------
- 317          void ScalerDDR1SetFRCDisplayTokenRing(EnumFunctionOnOFF enumOn)
- 318          {
- 319   1          if((enumOn == _FUNCTION_ON) && (GET_OD_USE_BIT() != _OFF))
- 320   1          {
- 321   2              ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0x44);
- 322   2          }
- 323   1          else
- 324   1          {
- 325   2              ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0xFF);
- 326   2          }
- 327   1      }
- 328          #endif // End of #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
+              //--------------------------------------------------
+              // Description  : Set Display Token Ring according to OD status
+              // Input Value  : EnumFunctionOnOFF enumOn
+              // Output Value : None
+              //--------------------------------------------------
+              void ScalerDDR1SetFRCDisplayTokenRing(EnumFunctionOnOFF enumOn)
+              {
+                  if((enumOn == _FUNCTION_ON) && (GET_OD_USE_BIT() != _OFF))
+                  {
+                      ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0x44);
+                  }
+                  else
+                  {
+                      ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0xFF);
+                  }
+              }
+              #endif // End of #if((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
  329          #endif // End of #if(_MEMORY_TYPE_CONFIG == _MEMORY_DDR1)
  330          
  331          #if(_DDR1_PHASE_CALIBRATION == _ON)
@@ -382,21 +382,21 @@ line level    source
                   ScalerSetByte(P4_B1_SDR_RSC_RTC_WR, 0x88);
               
               #elif((_OD_SUPPORT == _OFF) && (_FRC_SUPPORT == _ON))
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 7   
 
+ 355   1          ScalerSetByte(P4_AC_SDR_RSC_CAP1, 0xFF);
+ 356   1          ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0xFF);
+ 357   1      
+ 358   1          ScalerSetByte(P4_B0_SDR_RSC_RTC_RD, 0x11);
+ 359   1          ScalerSetByte(P4_B1_SDR_RSC_RTC_WR, 0xAA);
+ 360   1      
+ 361   1      #elif((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
                   ScalerSetByte(P4_AC_SDR_RSC_CAP1, 0xFF);
-                  ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0xFF);
+                  ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0x44);
               
                   ScalerSetByte(P4_B0_SDR_RSC_RTC_RD, 0x11);
                   ScalerSetByte(P4_B1_SDR_RSC_RTC_WR, 0xAA);
-              
-              #elif((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON))
- 362   1          ScalerSetByte(P4_AC_SDR_RSC_CAP1, 0xFF);
- 363   1          ScalerSetByte(P4_AE_SDR_RSC_MAIN, 0x44);
- 364   1      
- 365   1          ScalerSetByte(P4_B0_SDR_RSC_RTC_RD, 0x11);
- 366   1          ScalerSetByte(P4_B1_SDR_RSC_RTC_WR, 0xAA);
- 367   1      #endif
+              #endif
  368   1      }
  369          
  370          //--------------------------------------------------
@@ -446,7 +446,7 @@ line level    source
  414   2      
  415   2              // Rx Dqs Search Phase
  416   2              ScalerDDR1RxDqsSearchPhase();
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 8   
 
  417   2          }
  418   1      
@@ -510,7 +510,7 @@ line level    source
  476   2              ScalerDDR1ControlReset();
  477   2      
  478   2              g_ucPhaseCount = ScalerDDR1McuReadWriteCheck((ucCount >> 6), ((ucCount << 2) & 0xFC), 0x00);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 9   
 
  479   2      
  480   2              if((g_ucPhaseCount == _TRUE) && (bPhaseSearch == _FALSE))
@@ -574,7 +574,7 @@ line level    source
                   {
                       ScalerSetByte(P4_22_TX2_CLK_DLY, ucCount);
               
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 10  
 
                       ScalerSetBit(P4_BE_SDR_RX_PHASE_CALIBRATION, ~_BIT6, _BIT6);
               
@@ -638,7 +638,7 @@ line level    source
  600   1          // Enable Tx Clk Calibration Circuit
  601   1          ScalerDDR1TxClkCalibrationEnable(_OFF);
  602   1      }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 11  
 
  603          
  604          //--------------------------------------------------
@@ -702,7 +702,7 @@ line level    source
  662   3                  {
  663   4                      ucTempDiffPhase = pData[2];
  664   4      
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 12  
 
  665   4                      ucBestPhase = (ucInitialPhase + ucEndPhase) / 2;
  666   4                  }
@@ -766,7 +766,7 @@ line level    source
                           {
                               ucPhase0 = _TRUE;
                           }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 13  
 
                       }
               
@@ -830,7 +830,7 @@ line level    source
  784   1          BYTE ucEndPhase = 0;
  785   1          BYTE ucTempDiffPhase = 0;
  786   1          BYTE ucBestPhase = 0;
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 14  
 
  787   1          bit bPhaseSearch = _FALSE;
  788   1      
@@ -894,7 +894,7 @@ line level    source
               //**********************************************************************************//
               
                   ucTempDiffPhase = 0;
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 15  
 
               
                   for(ucCount = 0; ucCount < 128; ucCount++)
@@ -958,7 +958,7 @@ line level    source
  908   1          BYTE ucCount = 0;
  909   1          BYTE ucInitialPhase = 0;
  910   1          BYTE ucEndPhase = 0;
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 16  
 
  911   1          BYTE ucTempDiffPhase = 0;
  912   1          BYTE ucBestPhase = 0;
@@ -1022,7 +1022,7 @@ line level    source
  970   1          {
  971   2              ucBestPhase = (ucBestPhase / 4);
  972   2          }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 17  
 
  973   1          else
  974   1          {
@@ -1086,7 +1086,7 @@ line level    source
 1032   1          {
 1033   2              ucBestPhase = (ucBestPhase / 4);
 1034   2          }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 18  
 
 1035   1          else
 1036   1          {
@@ -1150,7 +1150,7 @@ line level    source
 1094   1          {
 1095   2              ucBestPhase = (ucBestPhase / 4);
 1096   2          }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 19  
 
 1097   1          else
 1098   1          {
@@ -1214,7 +1214,7 @@ line level    source
 1156   1          {
 1157   2              ucBestPhase = (ucBestPhase / 4);
 1158   2          }
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 20  
 
 1159   1          else
 1160   1          {
@@ -1278,7 +1278,7 @@ line level    source
                   if(ucBestPhase >= (g_pucDDR1DelayChain2[3] / 2))
                   {
                       ucBestPhase = (ucBestPhase / 4);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 21  
 
                   }
                   else
@@ -1342,7 +1342,7 @@ line level    source
                   if(ucBestPhase >= (g_pucDDR1DelayChain2[4] / 2))
                   {
                       ucBestPhase = (ucBestPhase / 4);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 22  
 
                   }
                   else
@@ -1406,7 +1406,7 @@ line level    source
                   if(ucBestPhase >= (g_pucDDR1DelayChain2[5] / 2))
                   {
                       ucBestPhase = (ucBestPhase / 4);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 23  
 
                   }
                   else
@@ -1470,7 +1470,7 @@ line level    source
                   if(ucBestPhase >= (g_pucDDR1DelayChain2[6] / 2))
                   {
                       ucBestPhase = (ucBestPhase / 4);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 24  
 
                   }
                   else
@@ -1534,7 +1534,7 @@ line level    source
 1466   2              ScalerSetBit(P4_CB_TX_PHASE_CALIBRATION, ~_BIT2, 0x00);
 1467   2      
 1468   2      #if(_MEMORY_SIZE_CONFIG == _4M_16BIT_DDR1_2PCS)
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 25  
 
               
                       // Disable Tx2 Calibration Function
@@ -1598,7 +1598,7 @@ line level    source
 1528   2          }
 1529   1          else
 1530   1          {
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 26  
 
 1531   2              // Disable Tx Dqs0 Calibration Circuit
 1532   2              ScalerSetBit(P4_F6_DDR_AUTO_CALIB4, ~_BIT7, 0x00);
@@ -1662,7 +1662,7 @@ line level    source
 1590   2              // Pob Rx Dqs1 Falling delay chain value of half clock cycle
 1591   2              g_pucDDR1DelayChain[6] = g_pucDDR1DelayChain[4];
 1592   2      
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 27  
 
 1593   2      #if(_DDR1_MCU_ALL_PHASE_CHECK == _ON)
                       DebugMessageMemoryPhaseCal("Rx dqs0 half T", g_pucDDR1DelayChain[3]);
@@ -1726,7 +1726,7 @@ line level    source
 1652   1          ScalerSetByte(P4_B8_SDR_ADDR_H, ucAddrH);
 1653   1          ScalerSetByte(P4_B9_SDR_ADDR_M, ucAddrM);
 1654   1          ScalerSetByte(P4_BA_SDR_ADDR_L, ucAddrL);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 28  
 
 1655   1      
 1656   1          ScalerDDR1WriteToFifo();
@@ -1790,7 +1790,7 @@ line level    source
 1714          
 1715          //--------------------------------------------------
 1716          // Description  : DDR1 Clear Fifo
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 29  
 
 1717          // Input Value  : None
 1718          // Output Value : None
@@ -1854,7 +1854,7 @@ line level    source
 1775   4                      ScalerSetByte(tDDR1_FINE_DLY_REG0[ucRxClkIndex],
 1776   4                                    (BYTE)(((SWORD)g_pucDDR1InitialPhase[ucRxClkIndex] + shHalfCycleTapDiff / 2 
              -+ shCurrOneCycleTap) % shCurrOneCycleTap));
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 30  
 
 1777   4                  }
 1778   3              }
@@ -1918,7 +1918,7 @@ line level    source
 1834   3                  DELAY_XUS(85);
 1835   3      
 1836   3                  ScalerSetBit(P4_BB_SDR_ACCESS_CMD, ~(_BIT7 | _BIT6 | _BIT5), _DDR1_MCU_COMMAND_NOP_FINISH);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 31  
 
 1837   3              }
 1838   2      
@@ -1982,7 +1982,7 @@ line level    source
 1896          void ScalerDDR1RestoreInitialPhase(void)
 1897          {
 1898   1          ScalerSetByte(P4_C1_TX_CLK_DLY2, g_pucDDR1InitialPhase[0]);
-C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/18/2026 20:37:49 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDDR1                                                        09/20/2026 19:43:11 PAGE 32  
 
 1899   1          ScalerSetByte(P4_CD_DDR_TX_DLY0, g_pucDDR1InitialPhase[1]);
 1900   1          ScalerSetByte(P4_CE_DDR_TX_DLY1, g_pucDDR1InitialPhase[2]);
@@ -2008,7 +2008,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   2311    ----
+   CODE SIZE        =   2284    ----
    CONSTANT SIZE    =     30    ----
    XDATA SIZE       =     24      27
    PDATA SIZE       =   ----    ----

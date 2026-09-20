@@ -14,7 +14,7 @@
 
 //----------------------------------------------------------------------------------------------------
 // ID Code      : LuoGang_OSD_UserInclude.h No.0000      //IDO
-// Update Note  : Ïà¹Ø¶¨Òå¶¼ÔÚ HK_OSD_UserInclude.h
+// Update Note  : ï¿½ï¿½Ø¶ï¿½ï¿½å¶¼ï¿½ï¿½ HK_OSD_UserInclude.h
 //----------------------------------------------------------------------------------------------------
 #if(Project_ID == ID_COMMON) 
 
@@ -50,7 +50,7 @@
 
 #elif(Project_ID    ==  ID_CS_2785)
 	//#define _LOGO_TYPE											 _LOGO_QTOUCH
-	#define _DCR_PANEL_ON_OFF									_ON //DCR´ò¿ª£¬ºÚ³¡ÊÇ·ñ¹Ø±³¹â
+	#define _DCR_PANEL_ON_OFF									_ON //DCRï¿½ò¿ª£ï¿½ï¿½Ú³ï¿½ï¿½Ç·ï¿½Ø±ï¿½ï¿½ï¿½
 	#define _LOGO_TYPE											_LOGO_STEALTH
 	
 	
@@ -71,12 +71,12 @@
 	#define _CONTRAST_MAX                               178
 	#define _CONTRAST_MIN                               78
 #endif
-	#define EDID_HDR_SC									_OFF//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_OFF//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2026//Äê·Ý
-	#define EDID_WEEK_table                         	16//ÖÜ±ð
+	#define EDID_YEAR_table                         	2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	16//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -132,7 +132,7 @@
 	#define _DEF_P6_MISC_ITEM0      	 _MENU_FUN_SIGNAL
 	#define _DEF_P6_MISC_ITEM1      	 _MENU_FUN_FREESYNC//_MENU_FUN_AUDOIMUTE
 	#define _DEF_P6_MISC_ITEM2      	 _MENU_NULL//_MENU_FUN_AUDOIVOLUME  
-	#define _DEF_COLORTEMP										_CT_USER//Ä¬ÈÏÉ«ÎÂ
+	#define _DEF_COLORTEMP										_CT_USER//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 		
 	#define _FW_VERSION                         _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_4__,_1__,_3__
 		
@@ -153,12 +153,12 @@
 	#define _CONTRAST_MAX                               178
 	#define _CONTRAST_MIN                               78
 #endif
-	#define EDID_HDR_SC									_OFF//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_OFF//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -214,17 +214,17 @@
 	#define _DEF_P6_MISC_ITEM0      	 _MENU_FUN_FREESYNC
 	#define _DEF_P6_MISC_ITEM1      	 _MENU_NULL//_MENU_FUN_AUDOIMUTE
 	#define _DEF_P6_MISC_ITEM2      	 _MENU_NULL//_MENU_FUN_AUDOIVOLUME  
-	#define _DEF_COLORTEMP										_CT_USER//Ä¬ÈÏÉ«ÎÂ
+	#define _DEF_COLORTEMP										_CT_USER//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 	
 	#define _FW_VERSION                         _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_5__,_0__,_8__,_1__,_3__
 	
 #elif(Project_ID    ==  ID_CS_2513)
-	#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_SIZE								2700//0x0000
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME								"HDC"
 	#define VGA_EDID_table								"VGA"
@@ -252,12 +252,12 @@
 	#define _CONTRAST_MAX                               178
 	#define _CONTRAST_MIN                               78
 #endif
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HDC"
 	#define VGA_EDID_table                          	"VGA"
@@ -273,7 +273,7 @@
 	//#define _DEF_P3_COLORTEMP_ITEM4								  _MENU_FUN_GAMMA
 	//#define _DEF_P3_COLORTEMP_ITEM5								  _MENU_NULL//_MENU_FUN_COLORGAMUT
 	//#define _DEF_P4_OSDSETTING_ITEM5							  _MENU_FUN_POWER_OFF
-	//#define _DEF_P5_RESET_ITEM3 								 _MENU_FUN_LED								 //Ô¤ÁôµÆÐ§Î»ÖÃ
+	//#define _DEF_P5_RESET_ITEM3 								 _MENU_FUN_LED								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
 	//#define _DEF_P5_RESET_ITEM4 								  _MENU_FUN_FLICKER_FREE  
 	//#define _DEF_P6_MISC_ITEM4									  _MENU_FUN_SATURATION						  
 	//#define _DEF_P6_MISC_ITEM5									  _MENU_FUN_OSD_ROTATE						  
@@ -289,12 +289,12 @@
 	#define _CONTRAST_MAX								178
 	#define _CONTRAST_MIN								78
 
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -311,9 +311,9 @@
 	#define _DEF_P3_COLORTEMP_ITEM5								  _MENU_NULL//_MENU_FUN_COLORGAMUT
 	#define _DEF_P4_OSDSETTING_ITEM5							  _MENU_FUN_POWER_OFF
 	
-	#define _DEF_P5_RESET_ITEM3    	  	 						 _MENU_FUN_LED								 //Ô¤ÁôµÆÐ§Î»ÖÃ
-	#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_AUDOIVOLUME//Ô¤ÁôµÆÐ§Î»ÖÃ
-	#define _DEF_P5_RESET_ITEM5 								 _MENU_FUN_AUDOIMUTE								 //Ô¤ÁôµÆÐ§Î»ÖÃ
+	#define _DEF_P5_RESET_ITEM3    	  	 						 _MENU_FUN_LED								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
+	#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_AUDOIVOLUME//Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
+	#define _DEF_P5_RESET_ITEM5 								 _MENU_FUN_AUDOIMUTE								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
 	#define _DEF_P6_MISC_ITEM1									  _MENU_FUN_FREESYNC
 	#define _DEF_P6_MISC_ITEM2									  _MENU_FUN_OD
 	#define _DEF_P6_MISC_ITEM3									  _MENU_FUN_OSD_ROTATE
@@ -328,8 +328,8 @@
 #define _DEF_HOTKEY_RIGHT							_MENU_FUN_BACKLIGHT
 #if(MF27OFHB_C00)
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							25//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							25//ï¿½Ü±ï¿½
 
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_NAME								"BOM"
@@ -342,8 +342,8 @@
 #define _BACKLIGHT_MIN								20
 #elif(MF238FHB_NTO)
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							25//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							25//ï¿½Ü±ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_NAME								"BOM"
@@ -356,8 +356,8 @@
 #define _BACKLIGHT_MIN								20
 #else
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							25//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							25//ï¿½Ü±ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_NAME								"BOM"
@@ -372,7 +372,7 @@
 #define _DEF_COLORTEMP								_CT_7500
 
 #define EDID_HDR_SC 								_ON
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define _MEW_EDID_TYPE								_MEW_EDID_TYPE_HIGHT
 #define _PANEL_DP_MAX_FRAME_RATE					1000
@@ -382,8 +382,8 @@
 #define _DEF_DIGITAL_VOL_MAX						0xE14//0x1600
 #define _DEF_DIGITAL_VOL_CENTER 					0x764//0x93D//0XD33
 
-#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 #define _CT_7500_SUPPRT 							_ON
 
 #define _DEF_P1_PICTURE_ITEM0						_MENU_FUN_BACKLIGHT
@@ -411,11 +411,11 @@
 	#define _BACKLIGHT_MIN								20
 	
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_SIZE								2700
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_CODE								0x2704
 	#define EDID_ID_NAME								"XYM"
@@ -431,8 +431,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 	
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	
 	#define _DEF_P1_PICTURE_ITEM0      					_MENU_FUN_BACKLIGHT
@@ -461,11 +461,11 @@
 	#define _BACKLIGHT_MIN								20
 	
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_SIZE								2380
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_CODE								0x2404
 	#define EDID_ID_NAME								"XYM"
@@ -481,8 +481,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 	
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	
 	#define _DEF_P1_PICTURE_ITEM0      					_MENU_FUN_BACKLIGHT
@@ -507,8 +507,8 @@
 #define _BACKLIGHT_MIN								0x1A
 
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							18//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							18//ï¿½Ü±ï¿½
 	
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_NAME								"HKM"
@@ -527,8 +527,8 @@
 #define _BACKLIGHT_MIN								0x10
 
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							18//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							18//ï¿½Ü±ï¿½
 	
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_NAME								"HKM"
@@ -548,8 +548,8 @@
 #define _BACKLIGHT_MIN								0x20
 
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2025//Äê·Ý
-#define EDID_WEEK_table 							1//ÖÜ±ð
+#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 #define EDID_ID_CODE								0x2400
 #define EDID_ID_NAME								"HKM"
@@ -561,7 +561,7 @@
 #define _EOC_RTS_FPS_SUPPORT						_OFF
 
 #endif
-#define _EOC_ENERGY_SUPPORT					     	    _ON  //ºêÏÄÄÜÔ´ÖÐÐÄ
+#define _EOC_ENERGY_SUPPORT					     	    _ON  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½
 
 	#define _DEF_LANGUAGE                               _ENGLISH
 	#define _OSD_LANGUAGE_DELETE                        _ON
@@ -571,7 +571,7 @@
 	
 
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 
 	#define _MEW_EDID_TYPE								_MEW_EDID_TYPE_HIGHT
@@ -582,8 +582,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 	
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	
 	#define _DEF_P1_PICTURE_ITEM0      					_MENU_FUN_BACKLIGHT
@@ -628,11 +628,11 @@
 	#define _BACKLIGHT_MIN								0x20
 #endif
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_SIZE								2700
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 			
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_NAME								"HKM"
@@ -648,8 +648,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 			
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	#define _EOC_RTS_FPS_SUPPORT					    _OFF
 			
@@ -686,11 +686,11 @@
 	#define _BACKLIGHT_MIN								0x20
 		
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_SIZE								2700
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							27//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							27//ï¿½Ü±ï¿½
 			
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_NAME								"CLP"
@@ -706,8 +706,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 			
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	#define _EOC_RTS_FPS_SUPPORT					    _OFF
 			
@@ -744,11 +744,11 @@
 	#define _BACKLIGHT_MIN								0x20
 
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_SIZE								2380
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_CODE								0x2400
 	#define EDID_ID_NAME								"HKM"
@@ -764,8 +764,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 	
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	#define _EOC_RTS_FPS_SUPPORT					    _OFF
 	
@@ -801,11 +801,11 @@
 	#define _BACKLIGHT_MIN								0x20
 		
 	#define EDID_HDR_SC 								_ON
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_SIZE								2700
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 			
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_NAME								"HKM"
@@ -821,8 +821,8 @@
 	#define _DEF_DIGITAL_VOL_MAX                        0xE14//0x1600
 	#define _DEF_DIGITAL_VOL_CENTER						0x764//0x93D//0XD33
 			
-	#define _DEF_FACTORY_MODE							_ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE							_ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE							_ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE							_ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _CT_7500_SUPPRT                             _ON
 	#define _EOC_RTS_FPS_SUPPORT					    _OFF
 			
@@ -855,12 +855,12 @@
 	#define _CONTRAST_MAX								178
 	#define _CONTRAST_MIN								78
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -877,9 +877,9 @@
 	#define _DEF_P3_COLORTEMP_ITEM5								  _MENU_NULL//_MENU_FUN_COLORGAMUT
 	#define _DEF_P4_OSDSETTING_ITEM5							  _MENU_FUN_POWER_OFF
 		
-	#define _DEF_P5_RESET_ITEM3    	  	 						 _MENU_FUN_LED								 //Ô¤ÁôµÆÐ§Î»ÖÃ
-	#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_AUDOIVOLUME//Ô¤ÁôµÆÐ§Î»ÖÃ
-	#define _DEF_P5_RESET_ITEM5 								 _MENU_FUN_AUDOIMUTE								 //Ô¤ÁôµÆÐ§Î»ÖÃ
+	#define _DEF_P5_RESET_ITEM3    	  	 						 _MENU_FUN_LED								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
+	#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_AUDOIVOLUME//Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
+	#define _DEF_P5_RESET_ITEM5 								 _MENU_FUN_AUDOIMUTE								 //Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
 	#define _DEF_P6_MISC_ITEM1									  _MENU_FUN_FREESYNC
 	#define _DEF_P6_MISC_ITEM2									  _MENU_FUN_OD
 	#define _DEF_P6_MISC_ITEM3									  _MENU_FUN_OSD_ROTATE
@@ -894,15 +894,15 @@
 
 #define _DEF_LANGUAGE								_ARABIC
 
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define OSD_TRANS								_ON
 
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							24//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							24//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"GEM"
 #define VGA_EDID_table								"JY-KA-27"
@@ -917,7 +917,7 @@
 #define _PANEL_DP_MAX_FRAME_RATE					1000//_PANEL_MAX_FRAME_RATE
 #define _PANEL_HDMI_MAX_FRAME_RATE					1000//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
 #define _PANEL_VGA_MAX_FRAME_RATE					750//_PANEL_MAX_FRAME_RATE
-#define _DEF_COLORTEMP										_CT_7500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_7500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 #define _DEF_DIGITAL_VOL_MAX								0xFB8//0xCC8//1.96W
 #define _DEF_DIGITAL_VOL_CENTER                           	0x9F5//0x664//0x6A4
 		
@@ -936,16 +936,16 @@
 
 #define _DEF_LANGUAGE								_KOREAN
 
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define OSD_TRANS								_ON
 
 #if(SG2701B08_1)
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							24//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							24//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"GEM"
 #define VGA_EDID_table								"JY-KA-27"
@@ -960,15 +960,15 @@
 #define _PANEL_DP_MAX_FRAME_RATE					1000//_PANEL_MAX_FRAME_RATE
 #define _PANEL_HDMI_MAX_FRAME_RATE					1000//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
 #define _PANEL_VGA_MAX_FRAME_RATE					750//_PANEL_MAX_FRAME_RATE
-#define _DEF_COLORTEMP										_CT_7500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_7500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 #define _DEF_DIGITAL_VOL_MAX								0xFB8//0xCC8//1.96W
 #define _DEF_DIGITAL_VOL_CENTER                           	0x9F5//0x664//0x6A4
 
 #elif(HV320FHB_F41)
 #define EDID_ID_CODE								0x3200
 #define EDID_ID_SIZE								3150
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							24//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							24//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"GEN"
 #define VGA_EDID_table								"JY-KA-32"
@@ -983,15 +983,15 @@
 #define _PANEL_DP_MAX_FRAME_RATE					750//_PANEL_MAX_FRAME_RATE
 #define _PANEL_HDMI_MAX_FRAME_RATE					750//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
 #define _PANEL_VGA_MAX_FRAME_RATE					750//_PANEL_MAX_FRAME_RATE
-#define _DEF_COLORTEMP										_CT_6500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_6500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 #define _DEF_DIGITAL_VOL_MAX								0xFB8//0xCC8//1.96W
 #define _DEF_DIGITAL_VOL_CENTER                           	0x9F5//0x664//0x6A4
 
 #else
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							23//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							23//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKC"
 #define VGA_EDID_table								"VGA"
@@ -1006,7 +1006,7 @@
 #define _PANEL_DP_MAX_FRAME_RATE					1000//_PANEL_MAX_FRAME_RATE
 #define _PANEL_HDMI_MAX_FRAME_RATE					1000//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
 #define _PANEL_VGA_MAX_FRAME_RATE					750//_PANEL_MAX_FRAME_RATE
-#define _DEF_COLORTEMP										_CT_7500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_7500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 
 #endif
 
@@ -1025,17 +1025,17 @@
 #define _DEF_BACKLIGHT								80//
 #define _DEF_LANGUAGE                               _UKRAINE
 	
-#define _UKRAINE_SUPPRT							_ON //ÊÇ·ñÔö¼ÓÎÚ¿ËÀ¼Óï,¿ªÎÚ¿ËÀ¼±ØÐë¿ªÎÚ×È±ð¿ËÓï
-#define _UZBEK_SUPPRT							_ON //ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+#define _UKRAINE_SUPPRT							_ON //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
+#define _UZBEK_SUPPRT							_ON //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 #define _ENABLE_PAWER_SAVING_MENU				_OFF
-#define _CT_7500_SUPPRT							_ON //ÊÇ·ñÔö¼Ó7500É«ÎÂ
+#define _CT_7500_SUPPRT							_ON //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½7500É«ï¿½ï¿½
 #define _ENABLE_VGA_AUTO_ADJUST						_ON
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 #define EDID_ID_CODE								0x2719
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							31//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							31//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"XYM"
 #define VGA_EDID_table								"P2725HV"//"27MP56"//"27MP55"
@@ -1053,7 +1053,7 @@
 #define _CONTRAST_MAX								178
 #define _CONTRAST_MIN								78
 
-#define _DEF_COLORTEMP										_CT_6500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_6500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 
 		
 #define _DEF_P1_PICTURE_ITEM0      _MENU_FUN_BACKLIGHT
@@ -1061,7 +1061,7 @@
 #define _DEF_P1_PICTURE_ITEM2      _MENU_FUN_ECO
 #define _DEF_P1_PICTURE_ITEM3      _MENU_FUN_DCR
 #define _DEF_P1_PICTURE_ITEM4      _MENU_NULL
-#define _DEF_P1_PICTURE_ITEM5      _MENU_NULL								//Ô¤ÁôHDRÎ»ÖÃ
+#define _DEF_P1_PICTURE_ITEM5      _MENU_NULL								//Ô¤ï¿½ï¿½HDRÎ»ï¿½ï¿½
 
 #define _DEF_P2_DISPLAY_ITEM0      _MENU_FUN_VGA_HPOSITON
 #define _DEF_P2_DISPLAY_ITEM1      _MENU_FUN_VGA_VPOSITON
@@ -1095,7 +1095,7 @@
 #define _DEF_P6_MISC_ITEM1      	 _MENU_NULL
 #define _DEF_P6_MISC_ITEM2      	 _MENU_NULL  
 #define _DEF_P6_MISC_ITEM3      	 _MENU_NULL
-#define _DEF_P6_MISC_ITEM4      	 _MENU_NULL							//Ô¤ÁôfreesyncÎ»ÖÃ
+#define _DEF_P6_MISC_ITEM4      	 _MENU_NULL							//Ô¤ï¿½ï¿½freesyncÎ»ï¿½ï¿½
 #define _DEF_P6_MISC_ITEM5      	 _MENU_NULL
 
 
@@ -1110,13 +1110,13 @@
 
 #define _DEF_LANGUAGE								_ENGLISH
 
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 #if(PN270CU01_6)
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							18//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							18//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKC"
 #define VGA_EDID_table								"27MP52"
@@ -1137,8 +1137,8 @@
 #elif((SG2701B08_1))
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							18//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							18//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKC"
 #define VGA_EDID_table								"27MP52"
@@ -1159,8 +1159,8 @@
 #elif(SG2381B04_1_shan)
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKM"
 #define VGA_EDID_table								"VGA"
@@ -1181,8 +1181,8 @@
 #elif(SG2701B08_1_LONG)
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"27MP55"//"27MP56"//"27MP55"
@@ -1203,8 +1203,8 @@
 #elif(SG2381B04_1)
 #define EDID_ID_CODE								0x2400
 #define EDID_ID_SIZE								2400
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"24MP55"
@@ -1225,8 +1225,8 @@
 #elif(SG2381B04_144)
 #define EDID_ID_CODE								0x2400
 #define EDID_ID_SIZE								2400
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"24MP55"
@@ -1247,8 +1247,8 @@
 #elif(SG2381B04_144_2)
 #define EDID_ID_CODE								0x2400
 #define EDID_ID_SIZE								2400
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 	
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"24MP56"
@@ -1269,8 +1269,8 @@
 #elif(SG2701B08_1_144_27M56)
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"27MP56"
@@ -1291,8 +1291,8 @@
 #elif((SG2701B08_1_144))
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2400
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"MNT"
 #define VGA_EDID_table								"27MP55"
@@ -1313,8 +1313,8 @@
 #else
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							18//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							18//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKC"
 #define VGA_EDID_table								"24MP51"
@@ -1333,11 +1333,11 @@
 #define _CONTRAST_MIN								78
 
 #endif
-#define _DEF_COLORTEMP										_CT_7500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_7500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 
 		
 #define _DEF_P1_PICTURE_ITEM5      _MENU_NULL 
-#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_GAMMA//Ô¤ÁôµÆÐ§Î»ÖÃ
+#define _DEF_P5_RESET_ITEM4 								 _MENU_FUN_GAMMA//Ô¤ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½
 #define _DEF_P6_MISC_ITEM1									  _MENU_FUN_FREESYNC
 #define _DEF_P6_MISC_ITEM2									  _MENU_FUN_OD
 #define _DEF_P6_MISC_ITEM3									  _MENU_FUN_HDR
@@ -1359,12 +1359,12 @@
 
 #define _DEF_LANGUAGE								_ENGLISH
 
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							26//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							26//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define VGA_EDID_table								"VGA"
@@ -1390,12 +1390,12 @@
 
 #define _DEF_LANGUAGE								_ENGLISH
 
-#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_HDR_SC 								_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							27//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							27//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define VGA_EDID_table								"VGA"
@@ -1423,12 +1423,12 @@
 	
 	#define _DEF_LANGUAGE                               _SPANISH
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1454,12 +1454,12 @@
 	
 	#define _DEF_LANGUAGE                               _SPANISH
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x4000
 	#define EDID_ID_SIZE                           	 	4000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1484,12 +1484,12 @@
 	
 	#define _DEF_LANGUAGE                               _SPANISH
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x4300
 	#define EDID_ID_SIZE                           	 	4300
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1514,12 +1514,12 @@
 	
 	#define _DEF_LANGUAGE                               _SPANISH
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x5000
 	#define EDID_ID_SIZE                           	 	5000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1544,12 +1544,12 @@
 		
 	#define _DEF_LANGUAGE                               _SPANISH
 		
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1575,12 +1575,12 @@
 			
 	#define _DEF_LANGUAGE                               _SPANISH
 			
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1608,12 +1608,12 @@
 	
 	#define _DEF_LANGUAGE                               _CHINESE_S
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"CGC"
 	#define VGA_EDID_table                          	"2552EKH"
@@ -1651,12 +1651,12 @@
 	
 	#define _DEF_LANGUAGE                               _CHINESE_S
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"CGC"
 	#define VGA_EDID_table                          	"2552EKH"
@@ -1693,12 +1693,12 @@
 	
 	#define _DEF_LANGUAGE                               _CHINESE_S
 	
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2380
 	#define EDID_ID_SIZE                           	 	2380
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME                            	"CGC"
 	#define VGA_EDID_table                          	"2552EKH"
@@ -1732,12 +1732,12 @@
 	#define _CONTRAST_MAX								2848
 	#define _CONTRAST_MIN								1248
 
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1757,12 +1757,12 @@
 	#define _CONTRAST_MAX								2848
 	#define _CONTRAST_MIN								1248
 
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1784,12 +1784,12 @@
 	#define _DEF_P3_COLORTEMP_ITEM4      				_MENU_FUN_ROTATE
 	#define _DEF_P3_COLORTEMP_ITEM5 					_MENU_FUN_OSD_ROTATE
 	#define _LOGO_TYPE									_LOGO_ANMTE
-	#define _DEF_OSDROTATE							    _OSD_ROTATE_DEGREE_0//osd Ðý×ª
-	#define _DEF_DISP_ROTATE							_DISP_ROTATE_0//Í¼ÏñÐý×ª
+	#define _DEF_OSDROTATE							    _OSD_ROTATE_DEGREE_0//osd ï¿½ï¿½×ª
+	#define _DEF_DISP_ROTATE							_DISP_ROTATE_0//Í¼ï¿½ï¿½ï¿½ï¿½×ª
 	#define _DEF_HOTKEY_LEFT                 				    _HOT_KEY_LOS_TYPE1
 
-	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_HDR_SC									_ON//_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_COLOR_CHARACTERISTICS_INFO				_OFF//
 	
 	#define _DEF_COLOR1				0xe8
@@ -1810,8 +1810,8 @@
 
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1832,12 +1832,12 @@
 	#define _DEF_BACKLIGHT                              80//
 	#define _LOGO_TYPE									_LOGO_NONE
 	#define _DEF_HOTKEY_LEFT                 			_HOT_KEY_LOS_TYPE1
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 	#define EDID_ID_CODE                            	0x2700
 	#define EDID_ID_SIZE                           	 	2700//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 		
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1857,12 +1857,12 @@
 	#define _DEF_BACKLIGHT                              80
 	#define _LOGO_TYPE									_LOGO_NONE
 	#define _DEF_HOTKEY_LEFT                 			_HOT_KEY_LOS_TYPE1
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 	#define EDID_ID_CODE                            	0x3400
 	#define EDID_ID_SIZE                           	 	3400//0x0000
-	#define EDID_YEAR_table                         	2025//Äê·Ý
-	#define EDID_WEEK_table                         	1//ÖÜ±ð
+	#define EDID_YEAR_table                         	2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table                         	1//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME                            	"HKM"
 	#define VGA_EDID_table                          	"VGA"
@@ -1880,7 +1880,7 @@
 	#define _MPRT_MIN_FRAME_RATE         						750
 	
 	#define _DEF_OD										        _OFF//N
-	#define	_OSD_BLACK_WHITE_TYPE								_OFF //ºÚ°×ºÍÀ¶°×²Ëµ¥Ñ¡Ôñ
+	#define	_OSD_BLACK_WHITE_TYPE								_OFF //ï¿½Ú°×ºï¿½ï¿½ï¿½ï¿½×²Ëµï¿½Ñ¡ï¿½ï¿½
 	#define _DEF_BACKLIGHT                                      80
 	#define _MPRT_RATIO 								        60
 
@@ -1907,32 +1907,32 @@
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 	#define _OSD_POWER_SAVING_MODE								_ON
 	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 	
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_5__,_1__,_1__,_1__,_3__
 
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 	
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_CODE								0x2380
 	#define EDID_ID_SIZE								2380//0x0000
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"JPN"
 	#define DP_EDID_table								"JAPANNEXT.MNT"
@@ -1948,7 +1948,7 @@
 	#define _MPRT_MIN_FRAME_RATE         						750
 	
 	#define _DEF_OD										        _OFF//N
-	#define	_OSD_BLACK_WHITE_TYPE								_ON //ºÚ°×ºÍÀ¶°×²Ëµ¥Ñ¡Ôñ
+	#define	_OSD_BLACK_WHITE_TYPE								_ON //ï¿½Ú°×ºï¿½ï¿½ï¿½ï¿½×²Ëµï¿½Ñ¡ï¿½ï¿½
 	#define _DEF_BACKLIGHT                                      80
 	#define _MPRT_RATIO 								        60
 
@@ -1975,32 +1975,32 @@
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 	#define _OSD_POWER_SAVING_MODE								_ON
 	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 	
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_5__,_1__,_1__,_1__,_3__
 
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 	
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_CODE								0x2380
 	#define EDID_ID_SIZE								2380//0x0000
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"JPN"
 	#define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2091,22 +2091,22 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
-#define _DEF_Energy_Msg 									_OFF//ÄÜÐ§ÌáÊ¾¿ª¹Ø
+#define _DEF_Energy_Msg 									_OFF//ï¿½ï¿½Ð§ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 #define _MC_EUROPE											_ON
 
 #define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_6__,_1__,_2__
@@ -2114,12 +2114,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_6500
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x3150
 #define EDID_ID_SIZE								3150//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							24//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							24//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"XYM"
 #define VGA_EDID_table								"32MC02B"
@@ -2206,23 +2206,23 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
-#define _DEF_Energy_Msg 									_ON//ÄÜÐ§ÌáÊ¾¿ª¹Ø
+#define _DEF_Energy_Msg 									_ON//ï¿½ï¿½Ð§ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 #define _DEF_Energy_Value									20
 #define _MC_EUROPE											_ON
 
@@ -2231,12 +2231,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380//0x0000
-#define EDID_YEAR_table 							2025//Äê·Ý
-#define EDID_WEEK_table 							1//ÖÜ±ð
+#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2323,20 +2323,20 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
 
@@ -2345,12 +2345,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							27//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							27//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2437,20 +2437,20 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
 
@@ -2459,12 +2459,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							27//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							27//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2551,20 +2551,20 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
 
@@ -2573,12 +2573,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							27//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							27//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2665,20 +2665,20 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
 
@@ -2687,12 +2687,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2380
 #define EDID_ID_SIZE								2380//0x0000
-#define EDID_YEAR_table 							2025//Äê·Ý
-#define EDID_WEEK_table 							1//ÖÜ±ð
+#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2753,7 +2753,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _MPRT_MIN_FRAME_RATE         						750
 	
 	#define _DEF_OD										        _OFF//N
-	#define	_OSD_BLACK_WHITE_TYPE								_ON //ºÚ°×ºÍÀ¶°×²Ëµ¥Ñ¡Ôñ
+	#define	_OSD_BLACK_WHITE_TYPE								_ON //ï¿½Ú°×ºï¿½ï¿½ï¿½ï¿½×²Ëµï¿½Ñ¡ï¿½ï¿½
 	#define _DEF_BACKLIGHT                                      80
 	#define _MPRT_RATIO 								        60
 
@@ -2780,23 +2780,23 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 	#define _OSD_POWER_SAVING_MODE								_ON
 	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 	
 	#define _MC_LANGUAGE                                        _ON
-	#define _DEF_Energy_Msg										_ON//ÄÜÐ§ÌáÊ¾¿ª¹Ø
+	#define _DEF_Energy_Msg										_ON//ï¿½ï¿½Ð§ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 	#define _DEF_Energy_Value									20
 	#define _MC_EUROPE                                          _ON
 	
@@ -2805,12 +2805,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 	
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_CODE								0x2380
 	#define EDID_ID_SIZE								2380//0x0000
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"JPN"
 	#define DP_EDID_table								"JAPANNEXT.MNT"
@@ -2875,7 +2875,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _MPRT_MIN_FRAME_RATE         						750
 
 	#define _DEF_OD										        _OFF//
-	#define	_OSD_BLACK_WHITE_TYPE								_ON //ºÚ°×ºÍÀ¶°×²Ëµ¥Ñ¡Ôñ
+	#define	_OSD_BLACK_WHITE_TYPE								_ON //ï¿½Ú°×ºï¿½ï¿½ï¿½ï¿½×²Ëµï¿½Ñ¡ï¿½ï¿½
 	#define _DEF_BACKLIGHT                                      80
 	#define _MPRT_RATIO 								        60
 
@@ -2902,31 +2902,31 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 	#define _OSD_POWER_SAVING_MODE								_ON
 	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
 	
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_5__,_1__,_2__,_1__,_6__
 
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 	
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	
 	#define EDID_ID_CODE								0x2380
 	#define EDID_ID_SIZE								2380//0x0000
-	#define EDID_YEAR_table 							2025//Äê·Ý
-	#define EDID_WEEK_table 							1//ÖÜ±ð
+	#define EDID_YEAR_table 							2025//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							1//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"JPN"
 	#define DP_EDID_table								"JAPANNEXT.MNT"
@@ -3013,29 +3013,29 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 		
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB	
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 	
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_3__,_2__,_5__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 		
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 		
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_SIZE								2700//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							12//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"ZNX27QM"//"KD-2700YM"//"27QH75YM"
@@ -3069,25 +3069,25 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_OSD_LANGUAGE_ARROW                    			 _ON	
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB	
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_9__,_1__,_6__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_6500
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_SIZE								2360//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							30//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							30//ï¿½Ü±ï¿½
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"24FHD144"//"KD-2700YM"//"27QH75YM"
 	#define HDMI_EDID_table 							DP_EDID_table
@@ -3122,14 +3122,14 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_P4_OSDSETTING_ITEM5							_MENU_NULL 
 	#define _DEF_P5_RESET_ITEM0 								_MENU_FUN_RESET
 	#define _DEF_P5_RESET_ITEM1 								_MENU_FUN_POWER_OFF
-	#define _DEF_P5_RESET_ITEM2 								_MENU_FUN_HDR
-	#define _DEF_P5_RESET_ITEM3 								_MENU_FUN_MPRT	
+	#define _DEF_P5_RESET_ITEM2 								_MENU_NULL//_MENU_FUN_HDR
+	#define _DEF_P5_RESET_ITEM3 								_MENU_NULL//_MENU_FUN_MPRT	
 	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_P5_RESET_ITEM5 								_MENU_NULL
 	#define _DEF_P6_MISC_ITEM0									_MENU_FUN_SIGNAL
 	#define _DEF_P6_MISC_ITEM1									_MENU_FUN_LOWBLUE
-	#define _DEF_P6_MISC_ITEM2									_MENU_FUN_FREESYNC
-	#define _DEF_P6_MISC_ITEM3									_MENU_FUN_OD
+	#define _DEF_P6_MISC_ITEM2									_MENU_NULL//_MENU_FUN_FREESYNC
+	#define _DEF_P6_MISC_ITEM3									_MENU_NULL//_MENU_FUN_OD
 	#define _DEF_P6_MISC_ITEM4									_MENU_NULL
 	#define _DEF_P6_MISC_ITEM5									_MENU_NULL	
 #elif(Project_ID == ID_KAIDI_HK2785E20_MV315QHM_NX0_QHD75HZ_20260319)
@@ -3160,29 +3160,29 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB	
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 		
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 		
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_3__,_2__,_5__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 			
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_CODE								0x3150
 	#define EDID_ID_SIZE								3150//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							12//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"ZNX32QM"//"KD315YM"
@@ -3222,29 +3222,29 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB	
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 		
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 		
 	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_3__,_2__,_5__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_USER
 			
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_CODE								0x3150
 	#define EDID_ID_SIZE								3150//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							12//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"KD315YM"
@@ -3266,12 +3266,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_BACKLIGHT                                      100//80
 	#define _MPRT_RATIO 								        60
 	#define _DEF_IR_PROTOCAL									_IR_SQY_XHK_0827//_IR_SQY_YS14C
-	#define _DEF_FACTORY_MODE									_OFF//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
-	#define _DEF_BURNING_MODE									_OFF//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø	
+	#define _DEF_FACTORY_MODE									_OFF//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
+	#define _DEF_BURNING_MODE									_OFF//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½	
 	#define _DEF_OSD_LANGUAGE_ARROW                    			 _ON	
 	#define _DEF_VOLUME										     30
-	#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
-	#define	_MENU_INFOR_SHOW_HDR								_ON//²Ëµ¥ÐÅÏ¢Ò³ÃæÏÔÊ¾ HDR
+	#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
+	#define	_MENU_INFOR_SHOW_HDR								_ON//ï¿½Ëµï¿½ï¿½ï¿½Ï¢Ò³ï¿½ï¿½ï¿½ï¿½Ê¾ HDR
 	
 	#define _CONTRAST_MAX										2592//2848
 	#define _CONTRAST_MIN										1248
@@ -3292,29 +3292,29 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	
-	#define _SOURCE_AUTO_ON								        _ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-	#define _CT_sRGB_SUPPRT							    		_ON  //É«ÎÂÊÇ·ñ´øsRGB	
+	#define _SOURCE_AUTO_ON								        _ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+	#define _CT_sRGB_SUPPRT							    		_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB	
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 		
-	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-	#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+	#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 	#define _OD_WEAK											0X18
 	#define _OD_MID 											0X30
 	#define _OD_STRONG											0X40
-	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-	#define _MPRT_DCR_REPULSION                                 _ON  //DCRºÍMPRT»¥³â
+	#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+	#define _MPRT_DCR_REPULSION                                 _ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 		
 	//#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_6__,_0__,_5__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_7500
 			
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_CODE								0x3150
 	#define EDID_ID_SIZE								3150//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							12//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 	
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"JAPANNEXT"
@@ -3331,7 +3331,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #elif(Project_ID ==ID_CHUANGWU_2795E18_2P2H_ME270QHM_NF0_EDP_QHD165HZ)	
 #define _LOGO_TYPE											 _LOGO_HONGXIA_MATRIX//_LOGO_NONE	
 #define _SMALL_LOGO_TYPE									_SMALL_LOGO2BIT_MATRIX	
-#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
+#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 #define _DEF_COLORTEMP										_CT_6500
 	
 #define _DEF_DX_KEY_LED 									_OFF//_ON
@@ -3350,16 +3350,16 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _MPRT_PWM_DEF										  0xC0
 #define _MPRT_PWM_MIN										 0x70
 #define _DEF_LANGUAGE										 _ENGLISH
-#define _UZBEK_SUPPRT										_OFF//ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+#define _UZBEK_SUPPRT										_OFF//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 	
 #define _FW_VERSION 										_F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_7__,_0__,_7__
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 		
 #define EDID_ID_CODE								0x3150
 #define EDID_ID_SIZE								2450//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							12//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"HKM"
 #define VGA_EDID_table								"VGA"
@@ -3445,20 +3445,20 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_GAMMA											_GAMMA_22
 #define _DEF_HDR_MODE										_HDR10_MODE_AUTO
 
-#define _SOURCE_AUTO_ON 									_ON //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
-#define _CT_sRGB_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´øsRGB
+#define _SOURCE_AUTO_ON 									_ON //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
+#define _CT_sRGB_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #define _OSD_POWER_SAVING_MODE								_ON
 
 #define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 #define _DEF_HDR_MPRT_GRAY									_OFF
 
-#define _ENABLE_MAIN_MENU_F_ICON							_OFF//¹¤³§ÀÏ»¯Ä£Ê½
-#define _OSD_SHOW_SYNC										_OFF//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _ENABLE_MAIN_MENU_F_ICON							_OFF//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
+#define _OSD_SHOW_SYNC										_OFF//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #define _OD_WEAK											0X18
 #define _OD_MID 											0X30
 #define _OD_STRONG											0X40
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
-#define _MPRT_DCR_REPULSION 								_ON  //DCRºÍMPRT»¥³â
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
+#define _MPRT_DCR_REPULSION 								_ON  //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 
 #define _MC_LANGUAGE										_ON
 
@@ -3467,12 +3467,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #define _DEF_OSD_TIMEOUT									20
 #define _DEF_COLORTEMP										_CT_USER
 
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 
 #define EDID_ID_CODE								0x2700
 #define EDID_ID_SIZE								2700//0x0000
-#define EDID_YEAR_table 							2026//Äê·Ý
-#define EDID_WEEK_table 							28//ÖÜ±ð
+#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+#define EDID_WEEK_table 							28//ï¿½Ü±ï¿½
 
 #define EDID_ID_NAME								"CLP"
 #define DP_EDID_table								"DP"
@@ -3531,7 +3531,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #elif(Project_ID    ==  ID_TONGZHOU_RTD2795E01_AUO_M315QAN01_0_20260824)
 	#define _LOGO_TYPE											 _LOGO_GREATWALL2//_LOGO_NONE	
 	#define _SMALL_LOGO_TYPE									_SMALL_LOGO_TYPE_NONE	
-	#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
+	#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 	#define _DEF_COLORTEMP										_CT_6500
 	#define _DEF_DX_KEY_LED 									_OFF//_ON
 	#define _DEF_DIGITAL_VOL_MAX								 3600
@@ -3544,13 +3544,13 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _MPRT_PWM_DEF        								  0xC0
 	#define _MPRT_PWM_MIN        								 0x70
 	#define _DEF_LANGUAGE										 _CHINESE_S
-	#define _UZBEK_SUPPRT										_ON//ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+	#define _UZBEK_SUPPRT										_ON//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 	#define _FW_VERSION 										_F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_8__,_2__,_4__
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE								0x3215
 	#define EDID_ID_SIZE								3150//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							35//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							35//ï¿½Ü±ï¿½
 	#define EDID_ID_NAME								"CGC"
 	#define DP_EDID_table								"V3215U"
 	#define HDMI_EDID_table 							DP_EDID_table
@@ -3564,7 +3564,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #elif(Project_ID    ==  ID_CHUANGWU_2795E01_2P2H_M250HAN03_5_EDP_FHD300HZ)
 	#define _LOGO_TYPE											 _LOGO_HONGXIA_MATRIX//_LOGO_NONE	
 	#define _SMALL_LOGO_TYPE									_SMALL_LOGO2BIT_MATRIX	
-	#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
+	#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 	#define _DEF_COLORTEMP										_CT_7500
 		
 	#define _DEF_DX_KEY_LED 									_OFF//_ON
@@ -3583,16 +3583,16 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _MPRT_PWM_DEF        								  0xC0
 	#define _MPRT_PWM_MIN        								 0x70
 	#define _DEF_LANGUAGE										 _ENGLISH
-	#define _UZBEK_SUPPRT										_ON//ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+	#define _UZBEK_SUPPRT										_ON//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 		
 	#define _FW_VERSION 										_F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_5__,_2__,_0__
 
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_CODE								0x3150
 	#define EDID_ID_SIZE								2450//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							12//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							12//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"MX25GF300"
@@ -3609,7 +3609,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #elif(Project_ID    ==  ID_JIEFEI_2795E04_1USB1DP2H_ME270QHB_NF0_EDP_QHD165HZ_20260601)
 	#define _LOGO_TYPE											_LOGO_NONE	
 	#define _SMALL_LOGO_TYPE									_SMALL_LOGO2BIT_MATRIX	
-	#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
+	#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 	#define _DEF_COLORTEMP										_CT_7500
 		
 	#define _DEF_DX_KEY_LED 									_OFF//_ON
@@ -3628,16 +3628,16 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _MPRT_PWM_DEF        								  0xC0
 	#define _MPRT_PWM_MIN        								 0x70
 	#define _DEF_LANGUAGE										 _ENGLISH
-	#define _UZBEK_SUPPRT										_OFF//ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+	#define _UZBEK_SUPPRT										_OFF//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 		
 	#define _FW_VERSION 										_F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_6__,_1__,_5__
 
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 			
 	#define EDID_ID_CODE								0x3150
 	#define EDID_ID_SIZE								2450//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							25//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							25//ï¿½Ü±ï¿½
 
 	#define EDID_ID_NAME								"HKM"
 	#define DP_EDID_table								"MX25GF300"
@@ -3652,7 +3652,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #elif(Project_ID    ==  ID_XINHONGSHAN_2795E04_1USB1DP2H_SAMSUNG_LSM315DP01_QHD165HZ_20260713)
 	#define _LOGO_TYPE											_LOGO_FYHXele	
 	#define _SMALL_LOGO_TYPE									_SMALL_LOGO_TYPE_NONE	
-	#define _CT_7500_SUPPRT 									_ON  //É«ÎÂÊÇ·ñ´ø7500
+	#define _CT_7500_SUPPRT 									_ON  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 	#define _DEF_COLORTEMP										_CT_7500
 	#define _DEF_DX_KEY_LED 									_OFF//_ON
 	#define _DEF_DIGITAL_VOL_MAX								 3600
@@ -3667,13 +3667,13 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	// #define _MPRT_PWM_MIN        								  0x70
 
 	#define _DEF_LANGUAGE										 _ENGLISH
-	#define _UZBEK_SUPPRT										_OFF//ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+	#define _UZBEK_SUPPRT										_OFF//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 	#define _FW_VERSION 										_F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_7__,_1__,_3__
-	#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+	#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 	#define EDID_ID_CODE								0x3200
 	#define EDID_ID_SIZE								3150//0x0000
-	#define EDID_YEAR_table 							2026//Äê·Ý
-	#define EDID_WEEK_table 							29//ÖÜ±ð
+	#define EDID_YEAR_table 							2026//ï¿½ï¿½ï¿½
+	#define EDID_WEEK_table 							29//ï¿½Ü±ï¿½
 	#define EDID_ID_NAME								"XHS"
 	#define DP_EDID_table								"FY32QHMC"
 	#define HDMI_EDID_table 							DP_EDID_table
@@ -3684,11 +3684,11 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 #endif//Project_ID end
 
 #ifndef _UZBEK_SUPPRT
-#define _UZBEK_SUPPRT							_OFF //ÊÇ·ñÔö¼ÓÎÚ×È±ð¿ËÓï
+#define _UZBEK_SUPPRT							_OFF //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _UKRAINE_SUPPRT
-#define _UKRAINE_SUPPRT							_OFF //ÊÇ·ñÔö¼ÓÎÚ¿ËÀ¼Óï,¿ªÎÚ¿ËÀ¼±ØÐë¿ªÎÚ×È±ð¿ËÓï
+#define _UKRAINE_SUPPRT							_OFF //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
 #endif
 
 

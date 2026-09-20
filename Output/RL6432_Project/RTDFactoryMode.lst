@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 1   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTDFACTORYMODE
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          // FUNCTION DECLARATIONS
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 2   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 2   
 
   48          void RTDFactoryMenuOperation(void);
   49          void RTDFactoryMainMenu(void);
@@ -126,7 +126,7 @@ line level    source
  107          void RTDFactoryColortemp3RLeft(void);
  108          void RTDFactoryColortemp3RRight(void);
  109          void RTDFactoryColortemp3RExit(void);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 3   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 3   
 
  110          //============= Colortemp 3 G=======================
  111          void RTDFactoryColortemp3GEnter(void);
@@ -190,7 +190,7 @@ line level    source
  169          void RTDFactoryAdcGainRExit(void);
  170          //============= Adc Gain G=======================
  171          void RTDFactoryAdcGainGEnter(void);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 4   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 4   
 
  172          void RTDFactoryAdcGainGLeft(void);
  173          void RTDFactoryAdcGainGRight(void);
@@ -254,7 +254,7 @@ line level    source
  231          void RTDFactoryColortemp2RAdjustEnter(void);
  232          void RTDFactoryColortemp2RAdjustLeft(void);
  233          void RTDFactoryColortemp2RAdjustRight(void);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 5   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 5   
 
  234          void RTDFactoryColortemp2RAdjustExit(void);
  235          //============= Colortemp 2 G Adjust=======================
@@ -318,7 +318,7 @@ line level    source
  293          void RTDFactoryColortemp6RAdjustRight(void);
  294          void RTDFactoryColortemp6RAdjustExit(void);
  295          //============= Colortemp 6 G Adjust=======================
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 6   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 6   
 
  296          void RTDFactoryColortemp6GAdjustEnter(void);
  297          void RTDFactoryColortemp6GAdjustLeft(void);
@@ -382,7 +382,7 @@ line level    source
  351              {RTDFactoryResetPanelTimeEnter,                 RTDFactoryResetPanelTimeLeft,                   RTDFac
              -toryResetPanelTimeRight,                  RTDFactoryResetPanelTimeExit,},
  352              {RTDFactoryColortemp1REnter,                    RTDFactoryColortemp1RLeft,                      RTDFac
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 7   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 7   
 
              -toryColortemp1RRight,                     RTDFactoryColortemp1RExit,},
  353              {RTDFactoryColortemp1GEnter,                    RTDFactoryColortemp1GLeft,                      RTDFac
@@ -446,7 +446,7 @@ line level    source
              -toryColortemp1BAdjustRight,               RTDFactoryColortemp1BAdjustExit,},
  383              {RTDFactoryColortemp2RAdjustEnter,              RTDFactoryColortemp2RAdjustLeft,                RTDFac
              -toryColortemp2RAdjustRight,               RTDFactoryColortemp2RAdjustExit,},
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 8   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 8   
 
  384              {RTDFactoryColortemp2GAdjustEnter,              RTDFactoryColortemp2GAdjustLeft,                RTDFac
              -toryColortemp2GAdjustRight,               RTDFactoryColortemp2GAdjustExit,},
@@ -510,7 +510,7 @@ line level    source
  423   2                (*OperationFactoryTable[GET_OSD_STATE() - _MENU_FACTORY_AUTOCOLOR][GET_KEYMESSAGE()])();
  424   2          }
  425   1      }
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 9   
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 9   
 
  426          
  427          //----------------------------------------------------------------------------------------------------
@@ -574,7 +574,7 @@ line level    source
                   //D2 PORT
                   #if(_D2_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE) 
                       //if(GET_OSD_INPUT_PORT_OSD_ITEM==_OSD_INPUT_D2)
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 10  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 10  
 
                       {
                           FactoryEDIDInfo(_DDCRAM_D2,_ManValue_D2,((_D2_INPUT_PORT_TYPE)&0x0F));
@@ -638,7 +638,7 @@ line level    source
              -Y_PAGE_0, tFONT_FACTORY_EUROPE, tOSD_FACTORY_PAGE_TABLE[18], _ENGLISH);
  525   1          RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EXIT_ROW), COL(_FACTORY_FUNCTION_COL), _PFONT_FACTORY_PAGE
              -_0, tFONT_FACTORY_EUROPE, tOSD_FACTORY_PAGE_TABLE[19], _ENGLISH);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 11  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 11  
 
  526   1      
  527   1          for(ucRowCount = 0; ucRowCount < 8; ucRowCount++)
@@ -702,7 +702,7 @@ line level    source
  563   1      
  564   1          // Burnin on or off
  565   1          RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_BURNIN_ROW), COL(_FACTORY_ON_OFF_COL), _PFONT_FACTORY_BURN
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 12  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 12  
 
              -IN, tFONT_FACTORY_EUROPE, tOSD_FACTORY_ON_OFF_TABLE[GET_OSD_BURNING_MODE()], _ENGLISH);
  566   1      
@@ -766,7 +766,7 @@ line level    source
  611          
  612          
  613          //----------------------------------------------------------------------------------------------------
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 13  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 13  
 
  614          // OSD Factory Operation
  615          //----------------------------------------------------------------------------------------------------
@@ -830,7 +830,7 @@ line level    source
  661          {
  662   1      #if(_ADC_SELF_CALIBRATION == _ON)
                   RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_AUTOCOLOR_TYPE);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 14  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 14  
 
               #else
  665   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_BURNIN);
@@ -894,7 +894,7 @@ line level    source
  723   1      
  724   1      #else
                 RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_EXIT);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 15  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 15  
 
               
               #endif
@@ -958,7 +958,7 @@ line level    source
  781          {
  782   1          RTDFactoryOsdFuncDisableOsd();
  783   1      }
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 16  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 16  
 
  784          
  785          //============= Colortemp 1 R=======================
@@ -1022,7 +1022,7 @@ line level    source
  843          {
  844   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT1_GREEN);
  845   1      }
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 17  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 17  
 
  846          
  847          void RTDFactoryColortemp1BExit(void)
@@ -1086,7 +1086,7 @@ line level    source
  905          {
  906   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT3_RED);
  907   1          RTDFactoryOsdChangColorTemp(_CT_6500);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 18  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 18  
 
  908   1      }
  909          
@@ -1150,7 +1150,7 @@ line level    source
  967          {
  968   1          g_usBackupValue = g_stColorProcData.usColorTempB;
  969   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT3_BLUE_ADJ);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 19  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 19  
 
  970   1      }
  971          
@@ -1214,7 +1214,7 @@ line level    source
 1029          {
 1030   1          RTDFactoryOsdFuncDisableOsd();
 1031   1      }
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 20  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 20  
 
 1032          
 1033          //============= Colortemp 4 B=======================
@@ -1278,7 +1278,7 @@ line level    source
 1091          void RTDFactoryColortemp5GRight(void)
 1092          {
 1093   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT5_RED);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 21  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 21  
 
 1094   1      }
 1095          
@@ -1342,7 +1342,7 @@ line level    source
 1153          
 1154          void RTDFactoryColortemp6GLeft(void)
 1155          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 22  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 22  
 
 1156   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT6_BLUE);
 1157   1      }
@@ -1406,7 +1406,7 @@ line level    source
 1215          
 1216          void RTDFactoryAdcGainRExit(void)
 1217          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 23  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 23  
 
 1218   1          RTDFactoryOsdFuncDisableOsd();
 1219   1      }
@@ -1470,7 +1470,7 @@ line level    source
 1277          
 1278          void RTDFactoryAdcOffsetRLeft(void)
 1279          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 24  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 24  
 
 1280   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_OFFSET_GREEN);
 1281   1      }
@@ -1534,7 +1534,7 @@ line level    source
 1339   1      }
 1340          
 1341          //============= Osd Page=======================
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 25  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 25  
 
 1342          //============= Exit=======================
 1343          void RTDFactoryExitEnter(void)
@@ -1598,7 +1598,7 @@ line level    source
 1401          //============= Burnin On Off=======================
 1402          void RTDFactoryBurninOnOffEnter(void)
 1403          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 26  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 26  
 
 1404   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_BURNIN);
 1405   1      }
@@ -1662,7 +1662,7 @@ line level    source
 1463          {
 1464   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_CT1_GREEN_ADJ, g_stColorProcData.usColorTempG);
 1465   1      }
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 27  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 27  
 
 1466          
 1467          void RTDFactoryColortemp1GAdjustRight(void)
@@ -1726,7 +1726,7 @@ line level    source
 1525   1      }
 1526          
 1527          void RTDFactoryColortemp2RAdjustRight(void)
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 28  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 28  
 
 1528          {
 1529   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_CT2_RED_ADJ, g_stColorProcData.usColorTempR);
@@ -1790,7 +1790,7 @@ line level    source
 1587          void RTDFactoryColortemp2BAdjustRight(void)
 1588          {
 1589   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_CT2_BLUE_ADJ, g_stColorProcData.usColorTempB);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 29  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 29  
 
 1590   1      }
 1591          
@@ -1854,7 +1854,7 @@ line level    source
 1649   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_CT3_GREEN_ADJ, g_stColorProcData.usColorTempG);
 1650   1      }
 1651          
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 30  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 30  
 
 1652          void RTDFactoryColortemp3GAdjustExit(void)
 1653          {
@@ -1918,7 +1918,7 @@ line level    source
 1711          
 1712          void RTDFactoryColortemp4RAdjustExit(void)
 1713          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 31  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 31  
 
 1714   1          if(g_usBackupValue != g_stColorProcData.usColorTempR)
 1715   1          {
@@ -1982,7 +1982,7 @@ line level    source
 1773          {
 1774   1          if(g_usBackupValue != g_stColorProcData.usColorTempB)
 1775   1          {
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 32  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 32  
 
 1776   2              g_stColorProcData.usColorTempB = g_usBackupValue;
 1777   2              RTDFactoryOsdDispNumber(_MENU_FACTORY_CT4_BLUE_ADJ, g_stColorProcData.usColorTempB);
@@ -2046,7 +2046,7 @@ line level    source
 1835   1          {
 1836   2              g_stColorProcData.usColorTempG = g_usBackupValue;
 1837   2              RTDFactoryOsdDispNumber(_MENU_FACTORY_CT5_GREEN_ADJ, g_stColorProcData.usColorTempG);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 33  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 33  
 
 1838   2          }
 1839   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT5_GREEN);
@@ -2110,7 +2110,7 @@ line level    source
 1897   2              RTDFactoryOsdDispNumber(_MENU_FACTORY_CT6_RED_ADJ, g_stColorProcData.usColorTempR);
 1898   2          }
 1899   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT6_RED);
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 34  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 34  
 
 1900   1      }
 1901          
@@ -2174,7 +2174,7 @@ line level    source
 1959   1          RTDFactoryOsdFuncSelectItem(_MENU_FACTORY_CT6_BLUE);
 1960   1      }
 1961          
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 35  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 35  
 
 1962          //============= Adc Gain R Adjust=======================
 1963          void RTDFactoryAdcGainRAdjustEnter(void)
@@ -2238,7 +2238,7 @@ line level    source
 2021          void RTDFactoryAdcGainGAdjustRight(void)
 2022          {
 2023   1      #if(_VGA_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 36  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 36  
 
 2024   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_GAIN_GREEN_ADJ, g_stAdcData.pucAdcGainMSB[_AUTO_GREEN_CHANNEL]);
 2025   1      #endif
@@ -2302,7 +2302,7 @@ line level    source
 2081          {
 2082   1      #if(_VGA_SUPPORT == _ON)
 2083   1          if(g_usBackupValue != g_stAdcData.pucAdcOffsetMSB[_AUTO_RED_CHANNEL])
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 37  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 37  
 
 2084   1          {
 2085   2              UserCommonNVRamSaveADCSetting(_COLOR_SPACE_RGB);
@@ -2366,7 +2366,7 @@ line level    source
 2141   1          RTDFactoryOsdDispNumber(_MENU_FACTORY_OFFSET_GREEN_ADJ, g_stAdcData.pucAdcOffsetMSB[_AUTO_GREEN_CHANNE
              -L]);
 2142   1      #endif
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 38  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 38  
 
 2143   1      }
 2144          
@@ -2430,7 +2430,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/18/2026 20:40:20 PAGE 39  
+C51 COMPILER V9.60.0.0   RTDFACTORYMODE                                                    09/20/2026 19:45:03 PAGE 39  
 
    CODE SIZE        =   4841    ----
    CONSTANT SIZE    =    672    ----

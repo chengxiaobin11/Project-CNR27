@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWINFO                                                09/18/2026 20:38:56 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWINFO                                                09/20/2026 19:44:00 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONFWINFO
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // FUNCTION DECLARATIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWINFO                                                09/18/2026 20:38:56 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWINFO                                                09/20/2026 19:44:00 PAGE 2   
 
               void ScalerFwInfoGetCurrentVersion(BYTE *pucArray);
               void ScalerFwInfoGetFwVersionAddress(BYTE *pucArray);

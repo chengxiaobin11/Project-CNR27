@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERADJUSTOUTPUTGAMMA
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_GAMMA_FUNCTION == _ON)
   47          void UserAdjustGamma(BYTE ucGamma);
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 2   
 
   48          #endif
   49          
@@ -126,7 +126,7 @@ line level    source
                   {
                     UserCommonAdjustGamma(tGAMMA_TABLE[1], GET_CURRENT_BANK_NUMBER());
               
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 3   
 
                   }
                 #endif
@@ -190,7 +190,7 @@ line level    source
  169          //--------------------------------------------------
  170          // Description  : Adjust PCM
  171          // Input Value  : ucPCM
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 4   
 
  172          // Output Value : None
  173          //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               // Input Value  : EnumGammaType
               // Output Value : EnumPCMGammaType
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 5   
 
               EnumOCCPCMGammaType UserAdjustOCCPCMGammaOSDMapping(EnumGammaType enumGammaType)
               {
@@ -318,7 +318,7 @@ line level    source
                           enumOCCPCMGammaCTMatrix = _OCC_PCM_GAMMA_CT_MODE5;
                           break;
               
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/18/2026 20:39:59 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTOUTPUTGAMMA                                      09/20/2026 19:44:47 PAGE 6   
 
                       case _CT_USER:
                       default:

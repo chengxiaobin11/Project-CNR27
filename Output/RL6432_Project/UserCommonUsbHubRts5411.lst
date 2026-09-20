@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONUSBHUBRTS5411
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // STRUCT / TYPE / ENUM DEFINITTIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
                       default:
                           break;
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 3   
 
               
                   return _D0_DP_TYPE_C_HUB_SLAVE_ADDR;
@@ -190,7 +190,7 @@ line level    source
                   if(UserInterfaceTypeCUsbHubDetectDFPStatusUserFlow(ucInputPort) == _TRUE)
                   {
                       return UserInterfaceTypeCUsbHubDetectDFPStatus(ucInputPort);
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 4   
 
                   }
                   else
@@ -254,7 +254,7 @@ line level    source
                       ucUsb2HubInfo |= _BIT0;
                   }
               
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 5   
 
                   if(GET_HUB_DSP1_INFO() == 0x01)
                   {
@@ -318,7 +318,7 @@ line level    source
                   {
                       SET_HUB_DSP_U3_CHANGE(_TRUE);
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 6   
 
                   else
                   {
@@ -382,7 +382,7 @@ line level    source
               }
               
               #if(_BILLBOARD_HUB_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/18/2026 20:39:47 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONUSBHUBRTS5411                                           09/20/2026 19:44:39 PAGE 7   
 
               //--------------------------------------------------
               // Description  : For 5411 Hub to Control Billboard

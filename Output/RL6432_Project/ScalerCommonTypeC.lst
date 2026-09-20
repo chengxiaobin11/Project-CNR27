@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTYPEC
@@ -62,7 +62,7 @@ line level    source
               EnumTypeCSpmOperation g_enumTypeCSpmOperation;
               
               #if(_PORT_CONTROLLER_RTS5400_SERIES_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 2   
 
               #if((_TYPE_C_PORT_CTRL_MODAL_OPERATION_SUPPORT == _ON) && (_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_LENOVO_ALT_M
              -ODE))
@@ -126,7 +126,7 @@ line level    source
               void ScalerTypeCGetPdoStatus(BYTE ucInputPort, WORD *pusVoltage, WORD *pusCurrent);
               StructTypeCUserPDO ScalerTypeCGetRequestedSrcPdo(BYTE ucInputPort);
               void ScalerTypeCSetFixPdo(BYTE ucInputPort, EnumTypeCPowerRole enumPowerRole, BYTE ucPdoIndex, WORD usVolt
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 3   
 
              -age, WORD usMaxCur, EnumPDPeakCurType enumPeakCur);
               #if(_TYPE_C_EMB_PD3_PPS_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
               #endif // End of #if(_BILLBOARD_SCALER_SUPPORT == _ON)
               #endif // End of #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
               #endif // End of #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 4   
 
  158          
  159          #if(_TYPE_C_GPIO_MODE_SUPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Set System Level Alt Mode Ready to Scaler Level
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 5   
 
               // Input Value  : ucInputPort (_D0_INPUT_PORT / _D1_INPUT_PORT...), Alt Mode Ready
               // Output Value : void
@@ -318,7 +318,7 @@ line level    source
                   EnumTypeCPortCtrlType enumPortCtrlType = _TYPE_C_PORT_CTRL_NONE;
               
                   switch(ucInputPort)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 6   
 
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                       case _D0_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 7   
 
                           ScalerTypeCRx0CcVbusPoweredSnkInitial();
               
@@ -446,7 +446,7 @@ line level    source
               #endif
               
                       default:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 8   
 
               
                           break;
@@ -510,7 +510,7 @@ line level    source
               //--------------------------------------------------
               EnumTypeCOrientation ScalerTypeCGetOrientation(BYTE ucInputPort)
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 9   
 
                   switch(ucInputPort)
                   {
@@ -574,7 +574,7 @@ line level    source
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                       case _D0_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 10  
 
               
                           bGetMultiFunctionChangeDone = ScalerTypeCRx0PdGetMultiFunctionChangeDone();
@@ -638,7 +638,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 11  
 
                   return stTypeCCableInfoForDpcd;
               }
@@ -702,7 +702,7 @@ line level    source
               
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 12  
 
               
                       default:
@@ -766,7 +766,7 @@ line level    source
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                       case _D6_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 13  
 
                           return _SUCCESS;
               #endif
@@ -830,7 +830,7 @@ line level    source
               
                           return _SUCCESS;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 14  
 
               
                       default:
@@ -894,7 +894,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
                           ScalerTypeCRx0PdSetPdoByKernel(enumPowerRole);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 15  
 
               
                           break;
@@ -958,7 +958,7 @@ line level    source
               // Description  : Type C Get Source Present Supply Power
               // Input Value  : ucInputPort
               // Output Value : usPresentPower in 0.1W
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 16  
 
               //--------------------------------------------------
               WORD ScalerTypeCGetPresentPower(BYTE ucInputPort)
@@ -1022,7 +1022,7 @@ line level    source
               
                           ScalerTypeCRx0PdSetStatusEvent(stTypeCStatusEvent);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 17  
 
                           break;
               #endif
@@ -1086,7 +1086,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 18  
 
                           break;
                   }
@@ -1150,7 +1150,7 @@ line level    source
               
                           break;
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 19  
 
               
                   return stTypeCPdo;
@@ -1214,7 +1214,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 20  
 
                   return stTypeCPartnerPdo;
               }
@@ -1278,7 +1278,7 @@ line level    source
               // Description  : Get TypeC Negotiated Voltage / Current
               // Input Value  : ucInputPort, Voltage (10mV) / Current (10mA)
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 21  
 
               //--------------------------------------------------
               void ScalerTypeCGetPdoStatus(BYTE ucInputPort, WORD *pusVoltage, WORD *pusCurrent)
@@ -1342,7 +1342,7 @@ line level    source
              -age, WORD usMaxCur, EnumPDPeakCurType enumPeakCur)
               {
                   switch(ucInputPort)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 22  
 
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
@@ -1406,7 +1406,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 23  
 
                           break;
                   }
@@ -1470,7 +1470,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTypeCSetRdo(BYTE ucInputPort, StructTypeCUserRDO stTypeCUserRdo)
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 24  
 
                   stTypeCUserRdo = stTypeCUserRdo;
               
@@ -1534,7 +1534,7 @@ line level    source
               
                           ScalerTypeCRx0PdSetProtectInfo(ucPdoIndex, stTypeCUserProtectInfo);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 25  
 
               #if(_TYPE_C_PMIC_TYPE != _PMIC_NONE)
                           // PMIC Related Vbus Portect Info
@@ -1598,7 +1598,7 @@ line level    source
               
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 26  
 
               
                       default:
@@ -1662,7 +1662,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Clear Embedded Port Controller Event
               // Input Value  : ucInputPort, enumPdPortCtrlEvent (_PD_PORT_CTRL_EVENT_POWER_OCP / _PD_PORT_CTRL_EVENT_PO
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 27  
 
              -WER_OVP...)
               // Output Value : None
@@ -1726,7 +1726,7 @@ line level    source
                                   ScalerSetBit(P7F_55_10B_ADC_LDO_CTRL, ~_BIT0, 0x00);
               
                                   bControlResult = _SUCCESS;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 28  
 
                               }
                           }
@@ -1790,7 +1790,7 @@ line level    source
                       default:
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 29  
 
                   }
               }
@@ -1854,7 +1854,7 @@ line level    source
               StructTypeCDpStatusInfo ScalerTypeCGetDpStatusInfo(BYTE ucInputPort)
               {
               #if(_TYPE_C_DPAM_VERSION < _DPAM_VERSION_2_1)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 30  
 
                   StructTypeCDpStatusInfo stDpStatusInfo = {_PD_DP_CONNECT_NONE, 0x00, 0x00, 0x00, 0x00, 0x00, _PD_HPD_N
              -ONE};
@@ -1918,7 +1918,7 @@ line level    source
                   return enumLenovoAltModeStatus;
               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 31  
 
               //--------------------------------------------------
               // Description  : Return Port Controller Partner Lenovo Device Type
@@ -1982,7 +1982,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTypeCSetLenovoDockingEvent(BYTE ucInputPort, StructTypeCLenovoDockEvent stLenovoDockEvent)
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 32  
 
                   switch(ucInputPort)
                   {
@@ -2046,7 +2046,7 @@ line level    source
               
                           if(ScalerTypeCRx0PdGetAcerAltModeReady() == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 33  
 
                               enumAcerAltModeStatus = _TYPE_C_ACER_ALT_MODE_READY;
                           }
@@ -2110,7 +2110,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 34  
 
                       default:
               
@@ -2174,7 +2174,7 @@ line level    source
               #endif
               
                       default:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 35  
 
               
                           break;
@@ -2238,7 +2238,7 @@ line level    source
               // Input Value  : ucInputPort
               // Output Value : User Event Busy Status (_TYPE_C_HP_USER_EVENT_BUSY / _TYPE_C_HP_USER_EVENT_NOT_BUSY)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 36  
 
               EnumTypeCHpBusyStatus ScalerTypeCCheckHpUserEventBusy(BYTE ucInputPort)
               {
@@ -2302,7 +2302,7 @@ line level    source
               {
                   StructTypeCDellSysEvent stDellSysEvent = {_TYPE_C_DELL_SYS_EVENT_NONE, {0x00}, 0x00};
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 37  
 
                   switch(ucInputPort)
                   {
@@ -2366,7 +2366,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 38  
 
                           break;
                   }
@@ -2430,7 +2430,7 @@ line level    source
               #endif // End of #if(_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_DELL_ALT_MODE)
               #endif // End of #if(_TYPE_C_PORT_CTRL_MODAL_OPERATION_SUPPORT == _ON)
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 39  
 
               #if(_BILLBOARD_SCALER_SUPPORT == _ON)
               //--------------------------------------------------
@@ -2494,7 +2494,7 @@ line level    source
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   ----    ----
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/18/2026 20:38:51 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPEC                                                 09/20/2026 19:43:57 PAGE 40  
 
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----

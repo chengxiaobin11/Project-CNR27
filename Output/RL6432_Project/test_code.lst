@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 1   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/20/2026 19:45:11 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TEST_CODE
@@ -62,7 +62,7 @@ line level    source
              -_FLAG_MODE))
                   BANK0("SYSMAIN");
                   FUNC("?PR?SYSMAINSTARTUSERCODE?SYSMAIN",0x4000);
-C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 2   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/20/2026 19:45:11 PAGE 2   
 
                   BANK_LIMIT(_DUAL_BANK_USER_FW_CODE_SIZE);
               #else
@@ -126,7 +126,7 @@ line level    source
  107   1      #if((_DP_SUPPORT == _ON) && (_DP_IRQ_HPD_MODE == _DP_IRQ_HPD_T2_MODE))
  108   1          COMM_SEG("?PR?SCALERSYNCDPHPDIRQASSERTTIMER2EVENTPROC_EXINT?SCALERCOMMONSYNC");
  109   1      #endif
-C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/18/2026 20:40:30 PAGE 3   
+C51 COMPILER V9.60.0.0   TEST_CODE                                                         09/20/2026 19:45:11 PAGE 3   
 
  110   1      #if((_DP_SUPPORT == _ON) && (_DP_AUX_RX_DPCD_EXT_CAP_WILDCARD_SUPPORT == _ON))
  111   1          COMM_SEG("?PR?SCALERDPRXAUXTIMER2PREINTHANDLER_EXINT?SCALERDP_SEPTPHY");

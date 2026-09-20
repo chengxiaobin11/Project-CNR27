@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERINTERFACEHDR
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          void UserInterfaceHDRAdjustSDRProc(void);
   47          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 2   
 
   48          #if(_HDR10_SUPPORT == _ON)
   49          EnumHDR10ModeDef UserInterfaceHDRGetHDR10ModeStatus(EnumSourceSearchPort enumSourcePort);
@@ -126,7 +126,7 @@ line level    source
  105   2              OsdFuncColorPcmAdjust();
  106   2          }
  107   1          UserAdjustBacklight(GET_OSD_BACKLIGHT());
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 3   
 
  108   1      }
  109          
@@ -190,7 +190,7 @@ line level    source
  167          //--------------------------------------------------
  168          EnumHDR10ColorMatrix UserInterfaceHDRGetHDR10ForceModeColorMatrix(void)
  169          {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 4   
 
  170   1          return _HDR10_COLOR_MATRIX_BT2020;
  171   1      }
@@ -254,7 +254,7 @@ line level    source
                   {
                       switch(GET_OSD_HDR_LIGHT_ENHANCE())
                       {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 5   
 
                           default:
                           case _HDR10_LIGHTENHANCE_NONE:
@@ -318,7 +318,7 @@ line level    source
               #endif
  289   1      
  290   1          if(GET_OSD_COLOR_EFFECT() != _COLOREFFECT_USER)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 6   
 
  291   1          {
  292   2              return tDCC_HDR10_TABLE[GET_OSD_COLOR_EFFECT()];
@@ -382,7 +382,7 @@ line level    source
               }
               #endif
  352          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/18/2026 20:40:01 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACEHDR                                           09/20/2026 19:44:49 PAGE 7   
 
  353          #if((_HDR10_FIXED_POINT_TONEMAPPING_SUPPORT == _ON) || (_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT
              - == _ON))

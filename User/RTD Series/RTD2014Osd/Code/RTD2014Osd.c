@@ -391,7 +391,7 @@ ScalerDpRx0SetDpLaneMapping(_TYPE_C_PIN_ASSIGNMENT_C, _TYPE_C_ORIENTATION_UNFLIP
 	PCB_D0_HOTPLUG(1);
 	ScalerDpRx0SetDpLaneMapping(_TYPE_C_PIN_ASSIGNMENT_C, _TYPE_C_ORIENTATION_UNFLIP);
 	
-	if(GET_FUN_KVM() == _OFF)//×Ô¶¯
+	if(GET_FUN_KVM() == _OFF)//ï¿½Ô¶ï¿½
 	{
 		if(SysSourceGetInputPort()== _D0_INPUT_PORT )
 		{
@@ -434,7 +434,7 @@ ScalerDpRx0SetDpLaneMapping(_TYPE_C_PIN_ASSIGNMENT_C, _TYPE_C_ORIENTATION_UNFLIP
 	||(_PCB_TYPE == _RL6449__216PIN__HK_M_RTD2795E06__1T1DP1H__eDPVB1))
 					
 
-					if(GET_FUN_KVM() == _OFF)//×Ô¶¯   TypeC_Proc
+					if(GET_FUN_KVM() == _OFF)//ï¿½Ô¶ï¿½   TypeC_Proc
 					{
 						if(SysSourceGetInputPort()== _D0_INPUT_PORT )
 						  {
@@ -1087,7 +1087,7 @@ void RTDOsdEventMsgProc(void)
 #if(_LED_EFFECT)
                          SET_OSD_PRE_LED_TYPE(GET_OSD_LED_TYPE());	
                         SET_OSD_LED_TYPE(_OSDLedType_OFF);
-				led_start =1;           //      //¹Ø±ÕµÆÐ§
+				led_start =1;           //      //ï¿½Ø±Õµï¿½Ð§
                          // ScalerTimerDelayXms(30);
 #endif
 			
@@ -1364,7 +1364,7 @@ else
             if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
             {
             
-			RTDOsdDispHotkeyFuncAdjust(GET_OSD_HOTKEY_RIGHT());
+			//RTDOsdDispHotkeyFuncAdjust(GET_OSD_HOTKEY_RIGHT());
 
         	}
   
@@ -1386,7 +1386,7 @@ else
 				OsdGameModeInputHigh();
 			#else
 			#if((usKeyCode == _IR_CODE_KEY_ADD)||(usKeyCode == _IR_CODE_KEY_MINUS))
-				RTDOsdDispHotkeyFuncAdjust(GET_OSD_HOTKEY_LEFT());
+				//RTDOsdDispHotkeyFuncAdjust(GET_OSD_HOTKEY_LEFT());
 			#endif
 			#endif
 
@@ -2289,7 +2289,7 @@ void MENU_HOT_KEY_LOS3(void)
 }
 #endif
 
-void MENU_FUN_NULL(void)//·ÅÁËÒ»Ð©ÔÝÊ±²»ÓÃµÄº¯Êý£¬ÓÖ²»Ïë¶¯kernel²¿·Ö£¬·ÀÖ¹±àÒëÆ÷±¨¾¯¸æ
+void MENU_FUN_NULL(void)//ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ÃµÄºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ë¶¯kernelï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	BYTE test = 0;
 	
@@ -2442,8 +2442,8 @@ code void (*OperationTable[])(void) =
 	MENU_FUN_COMMON,//_MENU_FUN_SATURATION
 	MENU_FUN_COMMON,//_MENU_FUN_OVERCLOCK,
 #if(_ROTATE_FUN_SUPPORT)
-	MENU_FUN_COMMON,//_MENU_FUN_ROTATE,	//Ðý×ª
-	MENU_FUN_COMMON,//_MENU_FUN_OSD_ROTATE, //Ðý×ª
+	MENU_FUN_COMMON,//_MENU_FUN_ROTATE,	//ï¿½ï¿½×ª
+	MENU_FUN_COMMON,//_MENU_FUN_OSD_ROTATE, //ï¿½ï¿½×ª
 #endif
 #if 1//_MOTION_BLUR_REDUCTION_SUPPORT
 	MENU_FUN_COMMON,//_MENU_FUN_MBRSYNC

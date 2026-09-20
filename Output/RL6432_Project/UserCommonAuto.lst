@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONAUTO
@@ -62,7 +62,7 @@ line level    source
   45          #define _AUTO_POSITION_FOR_IN_REGION_EN             _ON
   46          
   47          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 2   
 
   48          // Definition of results of checking active region
   49          //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
  106          //****************************************************************************
  107          
  108          
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 3   
 
  109          //****************************************************************************
  110          // VARIABLE DECLARATIONS
@@ -190,7 +190,7 @@ line level    source
  168   1      
  169   1      #if(_AUTO_CLOCK_SAVE_VALUE_OPTION == _CLOCK_SAVE_PERCENT_VALUE)
  170   1          SET_VGA_MODE_ADJUST_CLOCK(50);
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 4   
 
  171   1      #else
                   SET_VGA_MODE_ADJUST_CLOCK(g_stVGAModeUserData.usCenterClock);
@@ -254,7 +254,7 @@ line level    source
  229   2              g_ucAutoConfigStatus |= _AUTO_CONFIG_CLOCK_ABORT;
  230   2      
  231   2              return _TRUE;
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 5   
 
  232   2          }
  233   1      
@@ -318,7 +318,7 @@ line level    source
                   }
                   else
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 6   
 
  293   1          {
  294   2              if(ScalerVgaTopMeasureActiveRegion(_NORMAL_MEASURE, _FULL_BOUNDARY, usCurrClock) == _FALSE)
@@ -382,7 +382,7 @@ line level    source
  346   1          DebugMessageAnalog("7. Measure VH", GET_ACTIVE_V_HEIGHT());
  347   1          DebugMessageAnalog("7. Measeure V Start", GET_ACTIVE_V_START());
  348   1          DebugMessageAnalog("7. IVDelay", ScalerVgaTopGetCaptureVDelay());
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 7   
 
  349   1          DebugMessageAnalog("7. IVCapture", ScalerVgaTopGetCaptureVStartPosition());
  350   1          DebugMessageAnalog("7. CenterVposition", g_stVGAModeUserData.usCenterVPosition);
@@ -446,7 +446,7 @@ line level    source
  402          bit UserCommonAutoPhase(void)
  403          {
  404   1          BYTE ucBestPhase = 0;
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 8   
 
  405   1          BYTE ucRoughPhase = 0;
  406   1          BYTE ucTargetPhase = 0;
@@ -510,7 +510,7 @@ line level    source
  460   2              {
  461   3                  ulSODTemp1 = 0;
  462   3              }
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 9   
 
  463   2      
  464   2              if(ulSODTemp1 > ulSODTemp2)
@@ -574,7 +574,7 @@ line level    source
  520   1      
  521   1          usClockRangeMax = UserCommonAdjustGetAdcClockRange(_GET_CLOCKRANGE_MAX);
  522   1          usClockRangeMin = UserCommonAdjustGetAdcClockRange(_GET_CLOCKRANGE_MIN);
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 10  
 
  523   1          usCurrClock = UserCommonAdjustPercentToRealValue(GET_VGA_MODE_ADJUST_CLOCK(), usClockRangeMax, usClock
              -RangeMin, (((usClockRangeMax - usClockRangeMin) / 2) + usClockRangeMin));
@@ -638,7 +638,7 @@ line level    source
  578   1          // Initial Htotal(clock)
  579   1          *pusCurrClock = ((GET_INPUT_TIMING_HTOTAL()) >= g_stVGAModeUserData.usCenterClock) ? (GET_INPUT_TIMING
              -_HTOTAL()) : g_stVGAModeUserData.usCenterClock;
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 11  
 
  580   1      
  581   1          do
@@ -702,7 +702,7 @@ line level    source
  637   2              // ---------------- = -----------------              //
  638   2              //  Current_Clock       Target_Clock                 //
  639   2              //                                                   //
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 12  
 
  640   2              //                 ModeTable_Width * Current_Clock   //
  641   2              // Target_Clock = ---------------------------------  //
@@ -766,7 +766,7 @@ line level    source
  696   1          do
  697   1          {
  698   2              ScalerGlobalWatchDog(_DISABLE);
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 13  
 
  699   2      
  700   2              bAdjustPhaseResult = ScalerAPLLFastLockAdjust(usTargetClock);
@@ -830,7 +830,7 @@ line level    source
  753   2              {
  754   3                  *pusCurrClock = usRoughClock;
  755   3              }
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 14  
 
  756   2              else
  757   2              {
@@ -894,7 +894,7 @@ line level    source
  811   2      
  812   2              if(ulSODMax == 0x00)
  813   2              {
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 15  
 
  814   3                  if(GET_ACTIVE_H_WIDTH() != GET_INPUT_TIMING_HWIDTH())
  815   3                  {
@@ -958,7 +958,7 @@ line level    source
  871   6                              *pusCurrClock = (usRoughClock - (usRoughClock % _AUTO_CLOCK_STEP));
  872   6                          }
  873   5                      }
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 16  
 
  874   4                  }
  875   3              }
@@ -1022,7 +1022,7 @@ line level    source
  929   1          WORD usCaptureHStart = 0;
  930   1      
  931   1          usCaptureHStart = ScalerVgipGetCaptureHStartPosition();
-C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/18/2026 20:39:37 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONAUTO                                                    09/20/2026 19:44:32 PAGE 17  
 
  932   1      
  933   1          if(((usCaptureHStart + GET_INPUT_TIMING_HWIDTH()) <= usCurrClock) && (usCurrClock <= GET_ADC_LIMIT_CLO

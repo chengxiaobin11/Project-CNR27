@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDPRX0HDCP2
@@ -62,7 +62,7 @@ line level    source
   45          BYTE g_pucDpRx0Hdcp2Rtx[8];
   46          BYTE g_pucDpRx0Hdcp2TxCaps[3];
   47          BYTE g_pucDpRx0Hdcp2Rn[8];
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 2   
 
   48          BYTE g_pucDpRx0Hdcp2Rrx[8];
   49          BYTE g_pucDpRx0Hdcp2VPrime[20];
@@ -126,7 +126,7 @@ line level    source
  105          // Input Value  : None
  106          // Output Value : None
  107          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 3   
 
  108          void ScalerDpRx0Hdcp2Handler(void)
  109          {
@@ -190,7 +190,7 @@ line level    source
  167   1      #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
                   SET_DP_RX0_HDCP2_AKE_NO_STORED_KM_RECEIVED();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 4   
 
  170   1      
  171   1          // Receiver Has received AKE_NO_STORED_KM
@@ -254,7 +254,7 @@ line level    source
                       g_pucDpRx0Hdcp2Rn[2] = 0x3e;
                       g_pucDpRx0Hdcp2Rn[3] = 0xa8;
                       g_pucDpRx0Hdcp2Rn[4] = 0x78;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 5   
 
                       g_pucDpRx0Hdcp2Rn[5] = 0xa6;
                       g_pucDpRx0Hdcp2Rn[6] = 0x38;
@@ -318,7 +318,7 @@ line level    source
                       pucRiv[1] = 0x2b;
                       pucRiv[2] = 0x6b;
                       pucRiv[3] = 0x43;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 6   
 
                       pucRiv[4] = 0xc5;
                       pucRiv[5] = 0xe8;
@@ -382,7 +382,7 @@ line level    source
                           for(pData[0] = 0; pData[0] < 32; pData[0]++)
                           {
                               g_pucHdcp2Sha256[pData[0]] = ScalerGetByte(P63_35_HDCP_SHA_0 + pData[0]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 7   
 
               
                               DebugMessageHDCP2("M prime", g_pucHdcp2Sha256[pData[0]]);
@@ -446,7 +446,7 @@ line level    source
  409   2              switch(ucMessageId)
  410   2              {
  411   3                  case _HDCP_2_2_AKE_INIT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 8   
 
  412   3      
  413   3                      // HDCP2 Reset Proc
@@ -510,7 +510,7 @@ line level    source
  471   3                      {
  472   4                          if(pData_EXINT[0] < 8)
  473   4                          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 9   
 
  474   5                              g_pucHdcp2M[pData_EXINT[0]] = g_pucDpRx0Hdcp2Rtx[pData_EXINT[0]];
  475   5                          }
@@ -574,7 +574,7 @@ line level    source
  529   3      
  530   3                      for(pData_EXINT[0] = 0; pData_EXINT[0] < 16; pData_EXINT[0]++)
  531   3                      {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 10  
 
  532   4                          g_pucDpRx0Hdcp2dKey0[pData_EXINT[0]] = ScalerGetByte_EXINT(P63_81_HDCP_AES_OUT_15 + pD
              -ata_EXINT[0]);
@@ -638,7 +638,7 @@ line level    source
  586   3      
  587   3                  case _HDCP_2_2_SKE_SEND_EKS:
  588   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 11  
 
  589   3                      ScalerTimerWDCancelTimerEvent_EXINT0(_SCALER_WD_TIMER_EVENT_DP_RX0_HDCP2_SKE);
  590   3      
@@ -702,7 +702,7 @@ line level    source
  647   5                          }
  648   4      
  649   4                          // Load M prime to DPCD Table
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 12  
 
  650   4                          ScalerDpRx0Hdcp2SetDpcdReadValue_EXINT0(_HDCP_2_2_RX_M_PRIME, g_pucHdcp2Sha256, 32);
  651   4      
@@ -766,7 +766,7 @@ line level    source
  706   2              ScalerSetBit_EXINT(_REG_DP_RX0_HDCP2_ADDR_FB, ~(_BIT7 | _BIT5 | _BIT4 | _BIT3 | _BIT1), 0x00);
  707   2      
  708   2              // CLR Flag
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 13  
 
  709   2              ScalerSetBit_EXINT(_REG_DP_RX0_HDCP2_ADDR_FB, ~(_BIT7 | _BIT5 | _BIT3 | _BIT1), _BIT5);
  710   2      
@@ -830,7 +830,7 @@ line level    source
  763          // Input Value  : None
  764          // Output Value : None
  765          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 14  
 
  766          void ScalerDpRx0Hdcp2LoadCertRrxKey(void)
  767          {
@@ -894,7 +894,7 @@ line level    source
  822   2          }
  823   1      
  824   1          pucSHA256Input[32] = 0x80;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 15  
 
  825   1          pucSHA256Input[62] = 0x01;
  826   1      
@@ -958,7 +958,7 @@ line level    source
  880          // Input Value  : None
  881          // Output Value : None
  882          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 16  
 
  883          void ScalerDpRx0Hdcp2ResetProc(void)
  884          {
@@ -1022,7 +1022,7 @@ line level    source
  941   1      
  942   1          CLR_DP_RX0_HDCP2_AUTHENTICATION_DONE();
  943   1          CLR_DP_RX0_HDCP2_AKE_INIT_RECEIVED();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 17  
 
  944   1          CLR_DP_RX0_HDCP2_AKE_NO_STORED_KM_RECEIVED();
  945   1          CLR_DP_RX0_HDCP2_AKE_STORED_KM_RECEIVED();
@@ -1086,7 +1086,7 @@ line level    source
              -E0));
 1002   1      
 1003   1          // Clear Bstatus REAUTH_REQ and Link Intergrity Failure for HDCP 1.4
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 18  
 
 1004   1          ScalerDpRx0SetDpcdValue_EXINT0(0x06, 0x80, 0x29, (ScalerDpRx0GetDpcdInfo_EXINT0(0x06, 0x80, 0x29) & 0x
              -F0));
@@ -1150,7 +1150,7 @@ line level    source
                                       // Type = 0x00
                                       ScalerSetBit_EXINT(PB_95_HDCP_ST_TYPE, ~(_BIT7 >> pData_EXINT[1]), 0x00);
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 19  
 
                                   else
                                   {
@@ -1214,7 +1214,7 @@ line level    source
 1121   2      
 1122   2                  break;
 1123   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 20  
 
 1124   2              case _HDCP_2_2_RX_V_PRIME:
 1125   2      
@@ -1278,7 +1278,7 @@ line level    source
 1183   2      
 1184   2                  break;
 1185   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 21  
 
 1186   2              default:
 1187   2      
@@ -1342,7 +1342,7 @@ line level    source
 1244   2      
 1245   2                  break;
 1246   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 22  
 
 1247   2              case _HDCP_2_2_RX_V_PRIME:
 1248   2      
@@ -1406,7 +1406,7 @@ line level    source
                   pucKd[15] = 0xed;
                   pucKd[16] = 0xb5;
                   pucKd[17] = 0x02;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 23  
 
                   pucKd[18] = 0x0c;
                   pucKd[19] = 0x0d;
@@ -1470,7 +1470,7 @@ line level    source
                   g_pucHdcp2HmacSha256Input[2] = 0x00;
                   g_pucHdcp2HmacSha256Input[3] = 0x00;
                   g_pucHdcp2HmacSha256Input[4] = 0x00;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 24  
 
               
                   g_pucHdcp2HmacSha256Input[5] = 0x80;
@@ -1534,7 +1534,7 @@ line level    source
 1429          // Description  : Load H_Prime and Calculate Pairing
 1430          // Input Value  : None
 1431          // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 25  
 
 1432          //--------------------------------------------------
 1433          void ScalerDpRx0Hdcp2CalculateKmKh(void)
@@ -1598,7 +1598,7 @@ line level    source
 1490   1      
 1491   1      #if(_HDCP_2_2_ERRATA_TEST_SUPPORT == _ON)
                   // Start Pairing AES Calculate
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 26  
 
                   for(pData[0] = 0; pData[0] < 16; ++pData[0])
                   {
@@ -1662,7 +1662,7 @@ line level    source
 1550   1          for(pData_EXINT[0] = 0; pData_EXINT[0] < 8; ++pData_EXINT[0])
 1551   1          {
 1552   2              g_pucHdcp2Ks[pData_EXINT[0]] = g_pucHdcp2EDkeyKs[pData_EXINT[0]] ^ ScalerGetByte_EXINT((P63_81_HDC
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 27  
 
              -P_AES_OUT_15 + pData_EXINT[0]));
 1553   2          }
@@ -1726,7 +1726,7 @@ line level    source
 1607   2      
 1608   2              // Load H prime to DPCD Table
 1609   2              ScalerDpRx0Hdcp2SetDpcdReadValue_WDINT(_HDCP_2_2_RX_H_PRIME, g_pucHdcp2Sha256, 32);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 28  
 
 1610   2          }
 1611   1      
@@ -1790,7 +1790,7 @@ line level    source
 1667          //--------------------------------------------------
 1668          void ScalerDpRx0Hdcp2ClearDpcdReadValue_WDINT(BYTE ucRSAType, WORD usLength) using 3
 1669          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 29  
 
 1670   1          switch(ucRSAType)
 1671   1          {
@@ -1854,7 +1854,7 @@ line level    source
 1729   2          }
 1730   1      }
 1731          
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 30  
 
 1732          //--------------------------------------------------
 1733          // Description  : Download HDCP Receiver Public Key Certificate
@@ -1918,7 +1918,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerDpRx0Hdcp2RepeaterHandler(void)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 31  
 
               {
                   if(GET_DP_RX0_HDCP2_MODE() == _ENABLE)
@@ -1982,7 +1982,7 @@ line level    source
                                           }
                                       }
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 32  
 
                               }
                           }
@@ -2046,7 +2046,7 @@ line level    source
              -_TIMEOUT);
                                   }
                                   else if(GET_DP_TX_HDCP_DOWNSTREAM_SUPPORTED() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 33  
 
                                   {
                                       DebugMessageHDCP2("DPRX0 HDCP2 - To DPTX HDCP1", 0);
@@ -2110,7 +2110,7 @@ line level    source
                           }
               
                           if(GET_DP_RX0_HDCP2_REPEATER_AUTH_2_START() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 34  
 
                           {
                               CLR_DP_RX0_HDCP2_REPEATER_AUTH_2_START();
@@ -2174,7 +2174,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 35  
 
               // Description  : Change HDCP2 Auth State
               // Input Value  : Target HDCP2 Auth State
@@ -2238,7 +2238,7 @@ line level    source
                               }
                           }
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 36  
 
               
                       if(bRxInfoDeviceExceed == _FALSE)
@@ -2302,7 +2302,7 @@ line level    source
                   }
               
                   return _TRUE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 37  
 
               }
               
@@ -2366,7 +2366,7 @@ line level    source
               bit ScalerDpRx0Hdcp2VComputeProc(void)
               {
                   BYTE pucRxInfo[2] = {0};
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 38  
 
                   BYTE pucSeqNumV[3] = {0};
               
@@ -2430,7 +2430,7 @@ line level    source
                       ScalerDpRx0SetDpcdValue(0x06, 0x93, (0x4A + pData[0]), 0x00);
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 39  
 
                   SET_DP_RX0_AUX_AUTO_MODE();
               
@@ -2494,7 +2494,7 @@ line level    source
                                   if(GET_DP_RX0_HDCP_AUTH_STATE() == _DP_RX_HDCP_STATE_IDLE)
                                   {
                                       if(ScalerSyncDpGetHotPlugStatus(_D0_INPUT_PORT) == _HIGH)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 40  
 
                                       {
                                           ScalerDpRx0CpIRQ(_DP_HDCP2_RXSTATUS_REAUTH_REQ);
@@ -2558,7 +2558,7 @@ line level    source
                       {
                           // DPCD [0x68014 ~ 0x68027]
                           ScalerDpRx0SetDpcdValue(0x06, 0x80, (0x14 + ucIndex), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/18/2026 20:38:33 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX0HDCP2                                            09/20/2026 19:43:43 PAGE 41  
 
                       }
               

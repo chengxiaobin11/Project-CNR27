@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDEBUG
@@ -61,21 +61,26 @@ line level    source
   44          #define _SCALER_GET_DUAL_BANK_INFO_OP_CODE        0x09
   45          
   46          #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-              #warning "NOTE: DEBUG MESSAGE SUPPORT ON!!"
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 2   
+  47          #warning "NOTE: DEBUG MESSAGE SUPPORT ON!!"
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 2   
 
-              #endif
+*** WARNING C320 IN LINE 47 OF Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c: "NOTE: DEBUG MESSAGE SUPPORT
+             - ON!!"
+  48          #endif
   49          
   50          #if(_DEBUG_IIC_BY_USERINTERFACE == _ON)
               #warning "NOTE: _DEBUG_IIC_BY_USERINTERFACE ON!!"
               #endif
   53          
   54          #if((_DEBUG_MESSAGE_SUPPORT == _ON) && (_HDMI_FREESYNC_SUPPORT == _ON))
-              #if(_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD != _EDID_SWITCH_MODE)
-              #warning "_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD Should Be _EDID_SWITCH_MODE When Both _DEBUG_MESSAGE_SUP
+  55          #if(_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD != _EDID_SWITCH_MODE)
+  56          #warning "_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD Should Be _EDID_SWITCH_MODE When Both _DEBUG_MESSAGE_SUP
              -PORT and _HDMI_FREESYNC_SUPPORT are _ON!!!MCCS CODE in EDID Should be 0!!!"
-              #endif
-              #endif
+*** WARNING C320 IN LINE 56 OF Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c: "_HDMI_FREESYNC_CAPABILITY_S
+             -WITCH_METHOD Should Be _EDID_SWITCH_MODE When Both _DEBUG_MESSAGE_SUPPORT and _HDMI_FREESYNC_SUPPORT are _ON!!!MCCS CODE
+             - in EDID Should be 0!!!"
+  57          #endif
+  58          #endif
   59          
   60          //****************************************************************************
   61          // STRUCT / TYPE / ENUM DEFINITTIONS
@@ -95,12 +100,12 @@ line level    source
   75          EnumDDCCIDebugMode g_enumDDCCIDebugMode = _DEBUG_MODE;
   76          
   77          #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-              bit g_bDebugMessageEven = _FALSE;
-              WORD g_usFilterPro;
-              bit g_bFwHalt = _FALSE;
-              bit g_bDebugMessageStart = _FALSE;
-              BYTE idata g_pucDebugMessageBUF[4];
-              #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
+  78          bit g_bDebugMessageEven = _FALSE;
+  79          WORD g_usFilterPro;
+  80          bit g_bFwHalt = _FALSE;
+  81          bit g_bDebugMessageStart = _FALSE;
+  82          BYTE idata g_pucDebugMessageBUF[4];
+  83          #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
   84          
   85          #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
               StructDualBankBootDebug g_stDualBankDebug;
@@ -119,15 +124,15 @@ line level    source
   99          EnumDDCCIDebugMode ScalerDebugGetDDCCIDebugMode(void);
  100          
  101          #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-              void ScalerDebugMessage(BYTE *pucArray1, DWORD ulArray2);
-              bit ScalerDebugCheckDebugPort(BYTE ucInputPort);
-              #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
+ 102          void ScalerDebugMessage(BYTE *pucArray1, DWORD ulArray2);
+ 103          bit ScalerDebugCheckDebugPort(BYTE ucInputPort);
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 3   
+
+ 104          #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
  105          
  106          void ScalerDebugIntProc_EXINT1(void);
  107          void ScalerDebug(void);
  108          
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 3   
-
  109          #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
               #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
               BYTE ScalerDebugGetDdcciSwitchState_EXINT1(void);
@@ -178,236 +183,236 @@ line level    source
  156   1      }
  157          
  158          #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-              //--------------------------------------------------
-              // Description  : Debug Message process
-              // Input Value  : None
-              // Output Value : None
-              //--------------------------------------------------
-              void ScalerDebugMessage(BYTE *pucArray1, DWORD ulArray2)
-              {
-                  BYTE ucCnt = 0;
-                  BYTE ucLength = 0;
-                  BYTE ucCheckSum = 0;
-                  BYTE ucIndex = 0;
-              
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 4   
+ 159          //--------------------------------------------------
+ 160          // Description  : Debug Message process
+ 161          // Input Value  : None
+ 162          // Output Value : None
+ 163          //--------------------------------------------------
+ 164          void ScalerDebugMessage(BYTE *pucArray1, DWORD ulArray2)
+ 165          {
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 4   
 
-                  if(g_pucDdcciData[0] == 0x55)
-                  {
-                      g_bDebugMessageEven = _TRUE;
-                  }
-              
-                  if(g_bDebugMessageEven == _FALSE)
-                  {
-                      return;
-                  }
-              
-                  if(*pucArray1 == 0)
-                  {
-                      return;
-                  }
-              
-                  if((g_usFilterPro & 0xF800) == 0xC800)
-                  {
-                      if((pucArray1[0] >= '0') && (pucArray1[0] <= '9'))
-                      {
-                          if((g_usFilterPro & (1 << (pucArray1[0] - '0'))) == 0)
-                          {
-                              return;
-                          }
-                      }
-                      else
-                      {
-                          if((g_usFilterPro & (_BIT2 << 8)) == 0)
-                          {
-                              return;
-                          }
-                      }
-                  }
-              
-                  g_bDebugMessageStart = 0;
-                  g_bFwHalt = 1;
-              
-                  for(ucCheckSum = 0; ucCheckSum < 4; ucCheckSum++)
-                  {
-                      g_pucDebugMessageBUF[ucCheckSum] = 0;
-                  }
-              
-                  do
-                  {
-                      if(g_bRunCommand == _TRUE)
-                      {
-                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x20;
-                          ucCnt = 0;
-              
-                          switch(g_pucDdcciData[0])
-                          {
-                              case 0x20: // Handshake Setting
-                              case 0x55:
-              
-                                  if(g_pucDdcciData[1] == 0x5A)
-                                  {
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          MCU_FF26_IIC_DATA_OUT = 0xE7;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
-             -T));
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 5   
+ 166   1          BYTE ucCnt = 0;
+ 167   1          BYTE ucLength = 0;
+ 168   1          BYTE ucCheckSum = 0;
+ 169   1          BYTE ucIndex = 0;
+ 170   1      
+ 171   1          if(g_pucDdcciData[0] == 0x55)
+ 172   1          {
+ 173   2              g_bDebugMessageEven = _TRUE;
+ 174   2          }
+ 175   1      
+ 176   1          if(g_bDebugMessageEven == _FALSE)
+ 177   1          {
+ 178   2              return;
+ 179   2          }
+ 180   1      
+ 181   1          if(*pucArray1 == 0)
+ 182   1          {
+ 183   2              return;
+ 184   2          }
+ 185   1      
+ 186   1          if((g_usFilterPro & 0xF800) == 0xC800)
+ 187   1          {
+ 188   2              if((pucArray1[0] >= '0') && (pucArray1[0] <= '9'))
+ 189   2              {
+ 190   3                  if((g_usFilterPro & (1 << (pucArray1[0] - '0'))) == 0)
+ 191   3                  {
+ 192   4                      return;
+ 193   4                  }
+ 194   3              }
+ 195   2              else
+ 196   2              {
+ 197   3                  if((g_usFilterPro & (_BIT2 << 8)) == 0)
+ 198   3                  {
+ 199   4                      return;
+ 200   4                  }
+ 201   3              }
+ 202   2          }
+ 203   1      
+ 204   1          g_bDebugMessageStart = 0;
+ 205   1          g_bFwHalt = 1;
+ 206   1      
+ 207   1          for(ucCheckSum = 0; ucCheckSum < 4; ucCheckSum++)
+ 208   1          {
+ 209   2              g_pucDebugMessageBUF[ucCheckSum] = 0;
+ 210   2          }
+ 211   1      
+ 212   1          do
+ 213   1          {
+ 214   2              if(g_bRunCommand == _TRUE)
+ 215   2              {
+ 216   3                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x20;
+ 217   3                  ucCnt = 0;
+ 218   3      
+ 219   3                  switch(g_pucDdcciData[0])
+ 220   3                  {
+ 221   4                      case 0x20: // Handshake Setting
+ 222   4                      case 0x55:
+ 223   4      
+ 224   4                          if(g_pucDdcciData[1] == 0x5A)
+ 225   4                          {
+ 226   5                              do
+ 227   5                              {
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 5   
 
-                                  }
-                                  else if(g_pucDdcciData[1] == 0xA5)
-                                  {
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          MCU_FF26_IIC_DATA_OUT = 0xEC;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
+ 228   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 229   6                                  MCU_FF26_IIC_DATA_OUT = 0xE7;
+ 230   6                              }
+ 231   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-                                  }
-                                  else
-                                  {
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          MCU_FF26_IIC_DATA_OUT = 0xF1;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
+ 232   5                          }
+ 233   4                          else if(g_pucDdcciData[1] == 0xA5)
+ 234   4                          {
+ 235   5                              do
+ 236   5                              {
+ 237   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 238   6                                  MCU_FF26_IIC_DATA_OUT = 0xEC;
+ 239   6                              }
+ 240   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-                                  }
-              
-                                  break;
-              
-                              case 0x25: // Debug Message Start
-              
-                                  if(g_pucDdcciData[1] == 0)
-                                  {
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          ucLength = 0; // Total Length
-                                          ucIndex = 0;
-                                          ucCheckSum = 0x00; // Initial checksum
-              
-                                          do
-                                          {
-                                              ucCheckSum += pucArray1[ucLength];
-                                          }
-                                          while((pucArray1[ucLength++] != 0) && (ucLength < 240)); // To count the lengt
+ 241   5                          }
+ 242   4                          else
+ 243   4                          {
+ 244   5                              do
+ 245   5                              {
+ 246   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 247   6                                  MCU_FF26_IIC_DATA_OUT = 0xF1;
+ 248   6                              }
+ 249   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
+             -T));
+ 250   5                          }
+ 251   4      
+ 252   4                          break;
+ 253   4      
+ 254   4                      case 0x25: // Debug Message Start
+ 255   4      
+ 256   4                          if(g_pucDdcciData[1] == 0)
+ 257   4                          {
+ 258   5                              do
+ 259   5                              {
+ 260   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 261   6                                  ucLength = 0; // Total Length
+ 262   6                                  ucIndex = 0;
+ 263   6                                  ucCheckSum = 0x00; // Initial checksum
+ 264   6      
+ 265   6                                  do
+ 266   6                                  {
+ 267   7                                      ucCheckSum += pucArray1[ucLength];
+ 268   7                                  }
+ 269   6                                  while((pucArray1[ucLength++] != 0) && (ucLength < 240)); // To count the lengt
              -h of pArray1 and checksum
-              
-                                          g_pucDebugMessageBUF[0] = (BYTE)(ulArray2 >> 24);
-                                          g_pucDebugMessageBUF[1] = (BYTE)(ulArray2 >> 16);
-                                          g_pucDebugMessageBUF[2] = (BYTE)(ulArray2 >> 8);
-                                          g_pucDebugMessageBUF[3] = (BYTE)(ulArray2);
-                                          ucLength = ucLength - 1;
-              
-                                          MCU_FF26_IIC_DATA_OUT = 0xFA;
-                                          MCU_FF26_IIC_DATA_OUT = 0xF5;
-                                          MCU_FF26_IIC_DATA_OUT = ucLength;
-                                          MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[0];
-                                          MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[1];
-                                          MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[2];
-                                          MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[3];
-              
-                                          ucIndex = ucCheckSum;
-                                          ucCheckSum = 0x0F;
-                                          ucCheckSum = ucCheckSum + ucLength + g_pucDebugMessageBUF[0] + g_pucDebugMessa
+ 270   6      
+ 271   6                                  g_pucDebugMessageBUF[0] = (BYTE)(ulArray2 >> 24);
+ 272   6                                  g_pucDebugMessageBUF[1] = (BYTE)(ulArray2 >> 16);
+ 273   6                                  g_pucDebugMessageBUF[2] = (BYTE)(ulArray2 >> 8);
+ 274   6                                  g_pucDebugMessageBUF[3] = (BYTE)(ulArray2);
+ 275   6                                  ucLength = ucLength - 1;
+ 276   6      
+ 277   6                                  MCU_FF26_IIC_DATA_OUT = 0xFA;
+ 278   6                                  MCU_FF26_IIC_DATA_OUT = 0xF5;
+ 279   6                                  MCU_FF26_IIC_DATA_OUT = ucLength;
+ 280   6                                  MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[0];
+ 281   6                                  MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[1];
+ 282   6                                  MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[2];
+ 283   6                                  MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[3];
+ 284   6      
+ 285   6                                  ucIndex = ucCheckSum;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 6   
+
+ 286   6                                  ucCheckSum = 0x0F;
+ 287   6                                  ucCheckSum = ucCheckSum + ucLength + g_pucDebugMessageBUF[0] + g_pucDebugMessa
              -geBUF[1] + g_pucDebugMessageBUF[2] + g_pucDebugMessageBUF[3];
-              
-                                          g_pucDebugMessageBUF[0] = ucCheckSum + ucIndex; // Save checksum for all strin
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 6   
-
+ 288   6      
+ 289   6                                  g_pucDebugMessageBUF[0] = ucCheckSum + ucIndex; // Save checksum for all strin
              -g and data
-                                          MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[0]; // Checksum for all string an
+ 290   6                                  MCU_FF26_IIC_DATA_OUT = g_pucDebugMessageBUF[0]; // Checksum for all string an
              -d data
-                                          MCU_FF26_IIC_DATA_OUT = ucCheckSum + g_pucDebugMessageBUF[0];
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x09) && ((ucCnt++) < _DATA_OUT_COUN
+ 291   6                                  MCU_FF26_IIC_DATA_OUT = ucCheckSum + g_pucDebugMessageBUF[0];
+ 292   6                              }
+ 293   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x09) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-                                  }
-                                  else
-                                  {
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          ucIndex = (g_pucDdcciData[1] - 1) * 15;
-                                          ucCheckSum = g_pucDdcciData[1] + 0x0F;
-                                          g_pucDebugMessageBUF[0] = 1;
-              
-                                          do
-                                          {
-                                              MCU_FF26_IIC_DATA_OUT = pucArray1[ucIndex];
-                                              ucCheckSum += pucArray1[ucIndex];
-                                              ucIndex++;
-                                              g_pucDebugMessageBUF[0] = g_pucDebugMessageBUF[0] + 1;
-                                          }
-                                          while((ucIndex < (g_pucDdcciData[1] * 15)) && (pucArray1[ucIndex] != 0));
-              
-                                          MCU_FF26_IIC_DATA_OUT = ucCheckSum;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != g_pucDebugMessageBUF[0]) && ((ucCnt+
+ 294   5                          }
+ 295   4                          else
+ 296   4                          {
+ 297   5                              do
+ 298   5                              {
+ 299   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 300   6                                  ucIndex = (g_pucDdcciData[1] - 1) * 15;
+ 301   6                                  ucCheckSum = g_pucDdcciData[1] + 0x0F;
+ 302   6                                  g_pucDebugMessageBUF[0] = 1;
+ 303   6      
+ 304   6                                  do
+ 305   6                                  {
+ 306   7                                      MCU_FF26_IIC_DATA_OUT = pucArray1[ucIndex];
+ 307   7                                      ucCheckSum += pucArray1[ucIndex];
+ 308   7                                      ucIndex++;
+ 309   7                                      g_pucDebugMessageBUF[0] = g_pucDebugMessageBUF[0] + 1;
+ 310   7                                  }
+ 311   6                                  while((ucIndex < (g_pucDdcciData[1] * 15)) && (pucArray1[ucIndex] != 0));
+ 312   6      
+ 313   6                                  MCU_FF26_IIC_DATA_OUT = ucCheckSum;
+ 314   6                              }
+ 315   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != g_pucDebugMessageBUF[0]) && ((ucCnt+
              -+) < _DATA_OUT_COUNT));
-                                      g_bDebugMessageStart = 1;
-                                  }
-              
-                                  break;
-              
-                              case 0x2A: // Debug Message End
-              
-                                  if(g_bDebugMessageStart == _TRUE)
-                                  {
-                                      g_bDebugMessageStart = 0; // Debug Message End
-                                      g_bFwHalt = 0;
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          MCU_FF26_IIC_DATA_OUT = 0xF7;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
+ 316   5                              g_bDebugMessageStart = 1;
+ 317   5                          }
+ 318   4      
+ 319   4                          break;
+ 320   4      
+ 321   4                      case 0x2A: // Debug Message End
+ 322   4      
+ 323   4                          if(g_bDebugMessageStart == _TRUE)
+ 324   4                          {
+ 325   5                              g_bDebugMessageStart = 0; // Debug Message End
+ 326   5                              g_bFwHalt = 0;
+ 327   5                              do
+ 328   5                              {
+ 329   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 330   6                                  MCU_FF26_IIC_DATA_OUT = 0xF7;
+ 331   6                              }
+ 332   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-                                  }
-              
-                                  break;
-              
-                              case 0x2F: // Debug Message Event finsih
-              
-                                  do
-                                  {
-                                      MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                      MCU_FF26_IIC_DATA_OUT = 0xF5;
-                                  }
-                                  while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUNT));
-              
-                                  g_bDebugMessageEven = 0;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 7   
+ 333   5                          }
+ 334   4      
+ 335   4                          break;
+ 336   4      
+ 337   4                      case 0x2F: // Debug Message Event finsih
+ 338   4      
+ 339   4                          do
+ 340   4                          {
+ 341   5                              MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 7   
 
-                                  g_bFwHalt = 0;
-                                  MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xBF;
-                                  break;
-              
-                              default:
-                                  break;
-                          }
-              
-                          g_bRunCommand = 0;
-                          g_ucDdcciCommandNumber = 0;
-              
-                          MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xDF;
-              
-                          // Delay Time us [30,x] Avoid MCU Clock too fast lead to Tool Communication Fail.
-                          DELAY_30US();
-              
-              // Release SCL Pin
-              #if(_DEBUG_DDC_CHANNEL_SEL == _DDC5)
+ 342   5                              MCU_FF26_IIC_DATA_OUT = 0xF5;
+ 343   5                          }
+ 344   4                          while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUNT));
+ 345   4      
+ 346   4                          g_bDebugMessageEven = 0;
+ 347   4                          g_bFwHalt = 0;
+ 348   4                          MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xBF;
+ 349   4                          break;
+ 350   4      
+ 351   4                      default:
+ 352   4                          break;
+ 353   4                  }
+ 354   3      
+ 355   3                  g_bRunCommand = 0;
+ 356   3                  g_ucDdcciCommandNumber = 0;
+ 357   3      
+ 358   3                  MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xDF;
+ 359   3      
+ 360   3                  // Delay Time us [30,x] Avoid MCU Clock too fast lead to Tool Communication Fail.
+ 361   3                  DELAY_30US();
+ 362   3      
+ 363   3      // Release SCL Pin
+ 364   3      #if(_DEBUG_DDC_CHANNEL_SEL == _DDC5)
                           MCU_FE81_DDC5_DDC_CONTROL_2 &= ~_BIT0;
               #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC4)
                           MCU_FE78_DDC4_DDC_CONTROL_2 &= ~_BIT0;
               #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC3)
-                          MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT0;
-              #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC2)
+ 369   3                  MCU_FE6F_DDC3_DDC_CONTROL_2 &= ~_BIT0;
+ 370   3      #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC2)
                           MCU_FE66_DDC2_DDC_CONTROL_2 &= ~_BIT0;
               #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC1)
                           MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT0;
@@ -416,69 +421,69 @@ line level    source
               #elif((_DEBUG_DDC_CHANNEL_SEL == _VGA_DDC) || (_DEBUG_DDC_CHANNEL_SEL == _VGA_DDC2))
                           CLR_VGADDC_SCL_FORCE_LOW();
               #endif
-                      }
-                  }
-                  while(g_bFwHalt != 0);
-              
-                  g_bDebugMessageStart = 0;
-                  g_bFwHalt = 0;
-              }
-              
-              //--------------------------------------------------
-              // Description  : Check Ddc For Debug
-              // Input Value  : Input Port
-              // Output Value : None
-              //--------------------------------------------------
-              bit ScalerDebugCheckDebugPort(BYTE ucInputPort)
-              {
-                  switch(ucInputPort)
-                  {
-              #if(((_D0_TMDS_SUPPORT == _ON) || (_D0_INPUT_PORT_TYPE == _D0_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
+ 379   3              }
+ 380   2          }
+ 381   1          while(g_bFwHalt != 0);
+ 382   1      
+ 383   1          g_bDebugMessageStart = 0;
+ 384   1          g_bFwHalt = 0;
+ 385   1      }
+ 386          
+ 387          //--------------------------------------------------
+ 388          // Description  : Check Ddc For Debug
+ 389          // Input Value  : Input Port
+ 390          // Output Value : None
+ 391          //--------------------------------------------------
+ 392          bit ScalerDebugCheckDebugPort(BYTE ucInputPort)
+ 393          {
+ 394   1          switch(ucInputPort)
+ 395   1          {
+ 396   2      #if(((_D0_TMDS_SUPPORT == _ON) || (_D0_INPUT_PORT_TYPE == _D0_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
              -0))
                       case _D0_INPUT_PORT:
               
                           return _TRUE;
               #endif
-              
-              #if(((_D1_TMDS_SUPPORT == _ON) || (_D1_INPUT_PORT_TYPE == _D1_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
+ 401   2      
+ 402   2      #if(((_D1_TMDS_SUPPORT == _ON) || (_D1_INPUT_PORT_TYPE == _D1_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 8   
+
              -1))
                       case _D1_INPUT_PORT:
               
                           return _TRUE;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 8   
-
-              
-              #if(((_D2_TMDS_SUPPORT == _ON) || (_D2_INPUT_PORT_TYPE == _D2_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
+ 407   2      
+ 408   2      #if(((_D2_TMDS_SUPPORT == _ON) || (_D2_INPUT_PORT_TYPE == _D2_DP_PORT)) && (_DEBUG_DDC_CHANNEL_SEL == _DDC
              -2))
                       case _D2_INPUT_PORT:
               
                           return _TRUE;
               #endif
-              
-              #if((_D3_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC3))
-                      case _D3_INPUT_PORT:
-              
-                          return _TRUE;
-              #endif
-              
-              #if((_D4_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC4))
+ 413   2      
+ 414   2      #if((_D3_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC3))
+ 415   2              case _D3_INPUT_PORT:
+ 416   2      
+ 417   2                  return _TRUE;
+ 418   2      #endif
+ 419   2      
+ 420   2      #if((_D4_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC4))
                       case _D4_INPUT_PORT:
               
                           return _TRUE;
               #endif
-              
-              #if((_D5_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC5))
+ 425   2      
+ 426   2      #if((_D5_TMDS_SUPPORT == _ON) && (_DEBUG_DDC_CHANNEL_SEL == _DDC5))
                       case _D5_INPUT_PORT:
               
                           return _TRUE;
               #endif
-                      default:
-              
-                          return _FALSE;
-                  }
-              }
-              #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
+ 431   2              default:
+ 432   2      
+ 433   2                  return _FALSE;
+ 434   2          }
+ 435   1      }
+ 436          #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
  437          
  438          //--------------------------------------------------
  439          // Description  :
@@ -505,13 +510,13 @@ line level    source
  460   3      
  461   3                  // Host write Enable
  462   3                  MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xDF;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 9   
+
  463   3              }
  464   2      
  465   2              if((ucTempBuf & 0x04) != 0x00)
  466   2              {
  467   3                  while((MCU_FF29_IIC_STATUS2 & _BIT1) == 0)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 9   
-
  468   3                  {
  469   4      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
                               // For  SMBUS block read/write Protocol has byte count issue.
@@ -569,32 +574,32 @@ line level    source
                               SET_VGADDC_SCL_FORCE_LOW();
               #endif
  523   4      
- 524   4      #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-              
-                              if(g_pucDdcciData[0] == 0x55)
-                              {
-                                  if(g_pucDdcciData[1] == 0x00)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 10  
 
-                                  {
-                                      g_usFilterPro = 0;
-                                  }
-                                  else
-                                  {
-                                      g_usFilterPro = ((g_pucDdcciData[1] << 8) + g_pucDdcciData[2]);
-                                  }
-                              }
-              
-                              if((g_pucDdcciData[0] == 0x2F) && (g_bDebugMessageEven == _TRUE))
-                              {
-                                  g_bDebugMessageEven = _FALSE;
-                                  g_bFwHalt = _FALSE;
-                              }
-                              else if((g_pucDdcciData[0] == 0x55) && (g_bDebugMessageEven != _TRUE))
-                              {
-                                  g_bDebugMessageEven = _TRUE;
-                              }
-              #endif
+ 524   4      #if(_DEBUG_MESSAGE_SUPPORT == _ON)
+ 525   4      
+ 526   4                      if(g_pucDdcciData[0] == 0x55)
+ 527   4                      {
+ 528   5                          if(g_pucDdcciData[1] == 0x00)
+ 529   5                          {
+ 530   6                              g_usFilterPro = 0;
+ 531   6                          }
+ 532   5                          else
+ 533   5                          {
+ 534   6                              g_usFilterPro = ((g_pucDdcciData[1] << 8) + g_pucDdcciData[2]);
+ 535   6                          }
+ 536   5                      }
+ 537   4      
+ 538   4                      if((g_pucDdcciData[0] == 0x2F) && (g_bDebugMessageEven == _TRUE))
+ 539   4                      {
+ 540   5                          g_bDebugMessageEven = _FALSE;
+ 541   5                          g_bFwHalt = _FALSE;
+ 542   5                      }
+ 543   4                      else if((g_pucDdcciData[0] == 0x55) && (g_bDebugMessageEven != _TRUE))
+ 544   4                      {
+ 545   5                          g_bDebugMessageEven = _TRUE;
+ 546   5                      }
+ 547   4      #endif
  548   4      
  549   4                      MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x20;
  550   4                      g_bRunCommand = _TRUE;
@@ -633,13 +638,13 @@ line level    source
  583          //--------------------------------------------------
  584          // Description  : IC Debug Process
  585          // Input Value  : None
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 11  
+
  586          // Output Value : None
  587          //--------------------------------------------------
  588          void ScalerDebug(void)
  589          {
  590   1          BYTE ucHalt = 0;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 11  
-
  591   1          BYTE ucCnt = 0;
  592   1          BYTE ucResult = 0;
  593   1          WORD usAddress = 0;
@@ -697,13 +702,13 @@ line level    source
               
               #elif(_PCB_SYS_EEPROM_IIC != _NO_IIC_PIN) // Else of #if(_PCB_SYS_EEPROM_IIC == _SW_IIC_PIN_GPIO)
  644   6      
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 12  
+
  645   6      #if(_EEPROM_TYPE == _EEPROM_24LC16)
  646   6                                  ScalerMcuHwIICRead(g_pucDdcciData[2], 1, g_pucDdcciData[1], 1, &ucResult, _PCB
              -_SYS_EEPROM_IIC);
  647   6      #elif((_EEPROM_TYPE == _EEPROM_24WC64) || (_EEPROM_TYPE == _EEPROM_CAT24M01) || (_EEPROM_TYPE == _EEPROM_2
              -4256))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 12  
-
                                           ScalerMcuHwIICRead(g_pucDdcciData[2], 2, ((g_pucDdcciData[4] << 8) & 0xFF00) +
              - (((WORD)g_pucDdcciData[1]) & 0x00FF), 1, &ucResult, _PCB_SYS_EEPROM_IIC);
               #endif
@@ -748,26 +753,26 @@ line level    source
  683   5                              break;
  684   5      
  685   5      #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-                                  case 0x2F: // Debug Message Event finsih
-                                      MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x20;
-              
-                                      do
-                                      {
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
-                                          MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xBF; // Reset IIC Data Buffer
-                                          MCU_FF26_IIC_DATA_OUT = 0xF5;
-                                      }
-                                      while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
+ 686   5                          case 0x2F: // Debug Message Event finsih
+ 687   5                              MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x20;
+ 688   5      
+ 689   5                              do
+ 690   5                              {
+ 691   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 |= 0x40;
+ 692   6                                  MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xBF; // Reset IIC Data Buffer
+ 693   6                                  MCU_FF26_IIC_DATA_OUT = 0xF5;
+ 694   6                              }
+ 695   5                              while(((MCU_FF35_DDCCI_REMAIN_DATA & 0x1F) != 0x01) && ((ucCnt++) < _DATA_OUT_COUN
              -T));
-              
-                                      MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xDF;
-                                      g_bDebugMessageStart = 0;
-                                      g_bFwHalt = _FALSE;
-                                      g_bDebugMessageEven = 0;
-                                      break;
-              #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 13  
+ 696   5      
+ 697   5                              MCU_FF2A_IIC_IRQ_CONTROL2 &= 0xDF;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 13  
 
+ 698   5                              g_bDebugMessageStart = 0;
+ 699   5                              g_bFwHalt = _FALSE;
+ 700   5                              g_bDebugMessageEven = 0;
+ 701   5                              break;
+ 702   5      #endif // End of #if(_DEBUG_MESSAGE_SUPPORT == _ON)
  703   5      
  704   5                          case 0x3A:
  705   5                              // Read flash(if the address is max than 0xFF00, read mcu register)
@@ -825,13 +830,13 @@ line level    source
                                           ScalerFwUpdateSwitchState(_DEBUG_MODE, g_pucDdcciData[1]);
                                       }
                                       break;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 14  
+
               #endif
  758   5                          default:
  759   5                              switch(g_pucDdcciData[0] & 0x0F) // Write command
  760   5                              {
  761   6                                  case 0x00:
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 14  
-
  762   6      
  763   6                                      // ScalerSetByte(g_pucDdcciData[2], g_pucDdcciData[1]);
  764   6                                      // MCU_FFF3_SCA_INF_CONTROL |= 0x20;
@@ -889,13 +894,13 @@ line level    source
  812   7      #elif((_EEPROM_TYPE == _EEPROM_24WC64) || (_EEPROM_TYPE == _EEPROM_CAT24M01) || (_EEPROM_TYPE == _EEPROM_2
              -4256))
                                                   ScalerMcuHwIICWrite(g_pucDdcciData[2], 2, ((g_pucDdcciData[4] << 8) & 
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 15  
+
              -0xFF00) + (((WORD)g_pucDdcciData[1]) & 0x00FF), 1, g_pucDdcciData + 3, _PCB_SYS_EEPROM_IIC);
               #endif
  815   7      
  816   7      #endif  // End of #if(_PCB_SYS_EEPROM_IIC == _SW_IIC_PIN_GPIO)
  817   7      
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 15  
-
  818   7                                          // Enable EEPROM Write Protect
  819   7                                          PCB_EEPROM_WRITE_PROTECT(_EEPROM_WP_ENABLE);
  820   7                                      }
@@ -953,13 +958,13 @@ line level    source
                               MCU_FF2E_DDC1_DDC_CONTROL_2 &= ~_BIT0;
               #elif(_DEBUG_DDC_CHANNEL_SEL == _DDC0)
                               MCU_FF20_DDC0_DDC_CONTROL_2 &= ~_BIT0;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 16  
+
               #elif((_DEBUG_DDC_CHANNEL_SEL == _VGA_DDC) || (_DEBUG_DDC_CHANNEL_SEL == _VGA_DDC2))
                               CLR_VGADDC_SCL_FORCE_LOW();
               #endif
  875   4                  }
  876   3              }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 16  
-
  877   2              while(ucHalt != 0);
  878   2          }
  879   1      }
@@ -1017,13 +1022,13 @@ line level    source
               {
                   *pucOpCode = g_stDualBankDebug.ucOpCode;
                   *pucSubOpCode = g_stDualBankDebug.ucSubOpCode;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 17  
+
               
                   return g_stDualBankDebug.ucRevDebugCmd;
               }
               #endif // End of #if((_DUAL_BANK_SUPPORT == _ON) || (_DIGITAL_SIGNATURE_SUPPORT == _ON))
  938          
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 17  
-
  939          //--------------------------------------------------
  940          // Description  : Scaler Debug Send Data
  941          // Input Value  : ucLen:  Send Data Len
@@ -1081,13 +1086,13 @@ line level    source
  993   2      
  994   2              if(usTimeOutCnt == 0)
  995   2              {
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 18  
+
  996   3                  break;
  997   3              }
  998   2          }
  999   1      
 1000   1          MCU_FF2A_IIC_IRQ_CONTROL2 &= ~_BIT5;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 18  
-
 1001   1      
 1002   1      #if(_SMBUS_BLOCK_READ_WRITE_COMMAND_SUPPORT == _ON)
                   if(GET_SMBUS_BLOCK_RW_STATUS() == _TRUE)
@@ -1145,13 +1150,13 @@ line level    source
 1054   1      
 1055   1          ucChecksum = 0;
 1056   1          pucDdcciOutData[0] = _SCALER_READ_REGISTERS_CMD;
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 19  
+
 1057   1          pucDdcciOutData[1] = ucLen;
 1058   1          for(ucIndex = 0; ucIndex < ucLen; ucIndex++)
 1059   1          {
 1060   2              pucDdcciOutData[2 + ucIndex] = ScalerGetByte(usAddress);
 1061   2              ucChecksum += pucDdcciOutData[2 + ucIndex];
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 19  
-
 1062   2              if(bAutoIncrease == _TRUE)
 1063   2              {
 1064   3                  usAddress++;
@@ -1209,13 +1214,13 @@ line level    source
 1116   1          // Checksum OK do write option
 1117   1          for(ucIndex = 0; ucIndex < ucLen; ucIndex++)
 1118   1          {
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 20  
+
 1119   2              ScalerSetByte(usAddress, g_pucDdcciData[5 + ucIndex]);
 1120   2              if(bAutoIncrease == _TRUE)
 1121   2              {
 1122   3                  usAddress++;
 1123   3              }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 20  
-
 1124   2          }
 1125   1      
 1126   1          pucDdcciOutData[0] = _SCALER_WRITE_REGISTERS_CMD;
@@ -1273,13 +1278,13 @@ line level    source
 1178   2              // Byte Count
 1179   2              pucDdcciOutData[1] = 9;
 1180   2      
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 21  
+
 1181   2              // Dual bank Support
 1182   2              pucDdcciOutData[2] = _DUAL_BANK_SUPPORT;
 1183   2      
 1184   2              // Dual bank Type
 1185   2              pucDdcciOutData[3] = 0xFF;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 21  
-
 1186   2      
 1187   2              // Active User(1)
 1188   2              pucDdcciOutData[4] = 0xFF;
@@ -1337,13 +1342,13 @@ line level    source
                   {
                       return _ISP_FAIL;
                   }
+C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/20/2026 19:43:42 PAGE 22  
+
               
                   // Erase Combine FW Info. Data block
                   ScalerFlashErasePage(_DUAL_BANK_BUNDLE_VERSION_LOCATE_BANK, _DUAL_BANK_BUNDLE_VERSION_LOCATE_SECTOR);
               
                   // Recovery sign flag
-C51 COMPILER V9.60.0.0   SCALERCOMMONDEBUG                                                 09/18/2026 20:38:32 PAGE 22  
-
                   if(ScalerFlashWrite(_DUAL_BANK_BUNDLE_VERSION_LOCATE_BANK, ((WORD)(_DUAL_BANK_BUNDLE_VERSION_LOCATE_SE
              -CTOR << 12)), _DUAL_BANK_BUNDLE_VERSION_COUNT, &g_pucDdcciData[3]) == _FALSE)
                   {
@@ -1388,14 +1393,14 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1583    ----
+   CODE SIZE        =   2489    ----
    CONSTANT SIZE    =     32    ----
-   XDATA SIZE       =     34     118
+   XDATA SIZE       =     36     129
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =      1       3
+   IDATA SIZE       =      4    ----
+   BIT SIZE         =      4       3
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
