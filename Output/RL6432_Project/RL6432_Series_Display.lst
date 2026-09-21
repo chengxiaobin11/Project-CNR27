@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DISPLAY
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_PANEL_STYLE == _PANEL_LVDS)
   47          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 2   
 
   48          void ScalerDisplayLvdsInitialTable(void);
   49          void ScalerDisplayVcmControl(BYTE ucType);
@@ -126,7 +126,7 @@ line level    source
  104   1      
  105   1          // Set LVDS Interface Type
  106   1          ScalerSetByte(P39_06_LVDS_DISPLAY_CONV_CTRL5, ((_LVDS_RB_SWAP << 7) | (_LVDS_ML_SWAP << 6) | (_LVDS_PN
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 3   
 
              -_SWAP << 4) | (_BIT3) | (_LVDS_CLK_CHANNEL_SEL << 1) | (_LVDS_PAIR_MIRROR << 0)));
  107   1      
@@ -190,7 +190,7 @@ line level    source
                   ScalerSetBit(P55_23_LVDS_PORTA_CTRL3, ~(_BIT4 | _BIT3 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
                   ScalerSetBit(P55_33_LVDS_PORTB_CTRL3, ~(_BIT4 | _BIT3 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 4   
 
               #elif(_LVDS_SHAPE_ADJUSTMENT == _LVDS_SHAPE_SLOW_TO_FAST)
                   // Set LVDS Shape-adjustment Slow to Fast
@@ -254,7 +254,7 @@ line level    source
  213   2                  break;
  214   2      
  215   2              default:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 5   
 
  216   2      
  217   2                  break;
@@ -318,7 +318,7 @@ line level    source
  269   1          bit bTxaPulDw = _DISABLE;
  270   1          bit bTxbPulDw = _DISABLE;
  271   1          bit bTxcPulDw = _DISABLE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 6   
 
  272   1          bit bTxdPulDw = _DISABLE;
  273   1      
@@ -382,7 +382,7 @@ line level    source
  323   3                  ScalerSetBit(P10_50_PIN_SHARE_CTRLC0, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
  324   3              }
  325   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 7   
 
  326   2              ScalerSetBit(P10_51_PIN_SHARE_CTRLC1, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
  327   2              ScalerSetBit(P10_52_PIN_SHARE_CTRLC2, ~(_BIT2 | _BIT1 | _BIT0), _BIT2);
@@ -446,7 +446,7 @@ line level    source
  381   2      
  382   2              // For 24 bit Panel need use A port LVDS GPIO
  383   2              if(_PANEL_DISP_BIT_MODE == _PANEL_DISP_30_BIT)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 8   
 
  384   2              {
  385   3                  ScalerSetBit(P10_4F_PIN_SHARE_CTRLB7, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
@@ -510,7 +510,7 @@ line level    source
  440          // Input Value  : None
  441          // Output Value : None
  442          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 9   
 
  443          void ScalerDisplayLvdsClkInfoSelect(void)
  444          {
@@ -574,7 +574,7 @@ line level    source
                   if(_PANEL_DISP_BIT_MODE == _PANEL_DISP_30_BIT)
                   {
                       // Set LVDS TXB3 Output Termination 80ohm
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 10  
 
                       ScalerSetBit(P15_38_LVDS_PORTB_CTRL8, ~(_BIT3 | _BIT2), 0x00);
               
@@ -638,7 +638,7 @@ line level    source
                       // Set LVDS TXBC Output Termination 80ohm
                       ScalerSetBit(P15_38_LVDS_PORTB_CTRL8, ~(_BIT5 | _BIT4), 0x00);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 11  
 
                       // Set LVDS TXBC Current 2x
                       ScalerSetBit(P15_30_LVDS_PORTB_CTRL0, ~_BIT3, _BIT3);
@@ -702,7 +702,7 @@ line level    source
               
               #elif(_LVDS_CLK_CHANNEL_SEL == _MODE_2)
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 12  
 
                   // Set LVDS TXB2 Output Termination 80ohm
                   ScalerSetBit(P55_38_LVDS_PORTB_CTRL8, ~(_BIT7 | _BIT6), 0x00);
@@ -766,7 +766,7 @@ line level    source
                   else
                   {
                       // Set LVDS TXBC Output Termination 80ohm
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 13  
 
                       ScalerSetBit(P55_38_LVDS_PORTB_CTRL8, ~(_BIT5 | _BIT4), 0x00);
               
@@ -830,7 +830,7 @@ line level    source
               
                   // Set LVDS TXA Current 2x
                   ScalerSetBit(P15_20_LVDS_PORTA_CTRL0, ~_BIT5, (_LVDS_PORTA_DATA4_DRIV_2X_USER_CTRL) << 5);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 14  
 
                   ScalerSetBit(P15_20_LVDS_PORTA_CTRL0, ~_BIT4, (_LVDS_PORTA_DATA3_DRIV_2X_USER_CTRL) << 4);
                   ScalerSetBit(P15_20_LVDS_PORTA_CTRL0, ~_BIT2, (_LVDS_PORTA_DATA2_DRIV_2X_USER_CTRL) << 2);
@@ -894,7 +894,7 @@ line level    source
                       ScalerSetBit(P55_62_DPTX_Z0_TX_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT6 | _BIT5));
                   }
                   else if(_LVDS_PORTC_DATA0_TERM_USER_ADJUST == 0x01)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 15  
 
                   {// 70: 01010 (1)
                       ScalerSetBit(P55_61_DPTX_Z0_TX_1, ~_BIT3, 0x00);
@@ -958,7 +958,7 @@ line level    source
                       ScalerSetBit(P55_63_DPTX_Z0_TX_3, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT6 | _BIT5));
                   }
                   else if(_LVDS_PORTD_DATA3_TERM_USER_ADJUST == 0x01)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 16  
 
                   {// 70: 01010 (1)
                       ScalerSetBit(P55_61_DPTX_Z0_TX_1, ~_BIT1, 0x00);
@@ -1022,7 +1022,7 @@ line level    source
  914   1          ScalerSetBit(P55_2A_LVDS_PORTA_CTRL10, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0
              -), 0x00);
  915   1          ScalerSetBit(P55_3A_LVDS_PORTB_CTRL10, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 17  
 
              -), 0x00);
  916   1          ScalerSetBit(P55_50_DPTX_PREEM_TXA0, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
@@ -1086,7 +1086,7 @@ line level    source
               #elif((_LVDS_PORT_SEL == _LVDS_2_PORT_CD) || (_LVDS_PORT_SEL == _LVDS_4_PORT_ABCD))
                           ScalerSetBit(P55_61_DPTX_Z0_TX_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x0F);
                           ScalerSetByte(P55_62_DPTX_Z0_TX_2, 0xAA);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 18  
 
                           ScalerSetByte(P55_63_DPTX_Z0_TX_3, 0xAA);
               #endif // End of (_LVDS_PORT_SEL == _LVDS_1_PORT_C)
@@ -1150,7 +1150,7 @@ line level    source
               
                           ScalerSetBit(P15_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _
              -BIT0));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 19  
 
                           ScalerSetBit(P55_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT1 | _
              -BIT0));
@@ -1214,7 +1214,7 @@ line level    source
                           ScalerSetBit(P55_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
               
                           break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 20  
 
               
                       case _LVDS_DRIV_CONTROL_2_5:
@@ -1278,7 +1278,7 @@ line level    source
               
                   ScalerSetBit(P55_29_LVDS_PORTA_CTRL9, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT2 | _BIT0));
                   ScalerSetBit(P55_2A_LVDS_PORTA_CTRL10, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 21  
 
              -), (_BIT6 | _BIT4 | _BIT2 | _BIT0));
                   ScalerSetBit(P55_3A_LVDS_PORTB_CTRL10, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0
@@ -1342,7 +1342,7 @@ line level    source
                           break;
               
                       default:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 22  
 
               
                           break;
@@ -1406,7 +1406,7 @@ line level    source
               
                       case _LVDS_DRIV_CONTROL_4_0:
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 23  
 
                           ScalerSetBit(P15_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
                           ScalerSetBit(P55_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT0));
@@ -1470,7 +1470,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 24  
 
                       case _LVDS_DRIV_CONTROL_2_5:
               
@@ -1534,7 +1534,7 @@ line level    source
               
                   // Set LVDS TXC/ TXD Driving Current
                   ScalerSetByte(P55_57_DPTX_SWING_CURRENT_1, 0xAA);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 25  
 
                   ScalerSetByte(P55_58_DPTX_SWING_CURRENT_2, 0xAA);
                   ScalerSetBit(P55_02_LVDS_COMMON_AB_CTRL2, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_LVDS_DRIV_CURRENT_USER_A
@@ -1598,7 +1598,7 @@ line level    source
 1413   1          ScalerSetByte(P15_09_LVDS_COMMON_AB_CTRL9, (((ucLvdsPhaseH << 4) & 0xF0) | ((ucLvdsPhaseL >> 4) & 0x0F
              -)));
 1414   1      #else
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 26  
 
                   ScalerSetBit(P15_08_LVDS_COMMON_AB_CTRL8, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
                   ScalerSetByte(P15_09_LVDS_COMMON_AB_CTRL9, 0x30);
@@ -1662,7 +1662,7 @@ line level    source
 1466   1      
 1467   1      // PI_Phase_CD3 select
 1468   1      #if(_LVDS_PI_PHASE_CD3_SEL <= _LVDS_PHASE16)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 27  
 
 1469   1          ucLvdsPhaseH = (ucLvdsPhaseSeedH << (_LVDS_PI_PHASE_CD3_SEL >> 2));
 1470   1          ucLvdsPhaseL = (ucLvdsPhaseSeedL << (_LVDS_PI_PHASE_CD3_SEL % 8)) & 0xF0;
@@ -1726,7 +1726,7 @@ line level    source
 1514   1      
 1515   1      #elif(_LVDS_SR_CONTROL == _LVDS_SR_CONTROL_1)
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 28  
 
                   ScalerSetBit(P15_22_LVDS_PORTA_CTRL2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)
              -, (_BIT6));
@@ -1790,7 +1790,7 @@ line level    source
 1563   1          ScalerSetBit(P15_06_LVDS_COMMON_AB_CTRL6, ~(_BIT6 | _BIT5), ucPhaseBand);
 1564   1          ScalerSetBit(P15_08_LVDS_COMMON_AB_CTRL8, ~(_BIT6 | _BIT5), ucPhaseBand);
 1565   1          ScalerSetBit(P15_0A_LVDS_COMMON_AB_CTRL10, ~(_BIT6 | _BIT5), ucPhaseBand);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 29  
 
 1566   1          ScalerSetBit(P55_03_LVDS_COMMON_AB_CTRL3, ~(_BIT6 | _BIT5), ucPhaseBand);
 1567   1          ScalerSetBit(P55_04_LVDS_COMMON_AB_CTRL4, ~(_BIT6 | _BIT5), ucPhaseBand);
@@ -1854,7 +1854,7 @@ line level    source
 1617   2      #if(_LVDS_NO_VCM_LEVEL_BEFORE_DATA == _ON)
                       // Set DISP mode is LVDS
                       ScalerSetBit(P39_00_LVDS_DISP_TYPE, ~(_BIT2 | _BIT1 | _BIT0), _BIT0);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 30  
 
               
                       // Set LVDS Pinshare is LVDS
@@ -1918,7 +1918,7 @@ line level    source
               // Description  : LVDS PinShare Setting
               // Input Value  : _LVDS_TYPE or _HIZ_TYPE
               // Output Value : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 31  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 31  
 
               //--------------------------------------------------
               void ScalerDisplayLvdsPinshareSetting(EnumLvdsPinshareType enumLvdsPinshareType)
@@ -1982,7 +1982,7 @@ line level    source
                       ScalerSetBit(P10_49_PIN_SHARE_CTRLB1, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
                       ScalerSetBit(P10_4A_PIN_SHARE_CTRLB2, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
                       ScalerSetBit(P10_4B_PIN_SHARE_CTRLB3, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 32  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 32  
 
                       ScalerSetBit(P10_4C_PIN_SHARE_CTRLB4, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
                       ScalerSetBit(P10_4D_PIN_SHARE_CTRLB5, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
@@ -2046,7 +2046,7 @@ line level    source
 *** WARNING C294 IN LINE 385 OF Kernel\Scaler\RL6432_Series_Scaler\Code\RL6432_Series_Display.c: unreachable code
 
 
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/20/2026 19:44:06 PAGE 33  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DISPLAY                                             09/21/2026 15:32:54 PAGE 33  
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   1200    ----

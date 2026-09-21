@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERGDIPHYTX
@@ -62,7 +62,7 @@ line level    source
               //////////////////////////////////////////////////////////////////////////////
               // tDPTX_DRV_TABLE structure
               // size = 16 * 3bytes setting
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 2   
 
               // 3 setting bytes arranged like this
               // DEEMPL[7:0]                          first byte
@@ -126,7 +126,7 @@ line level    source
                   // SET Z0 50ohm for Lane 3 and 2
                   // [7:4] = 1000 for 50 ohm (Lane3)
                   // [3:0] = 1000 for 50 ohm (Lane2)
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 3   
 
                   ScalerSetByte(PBC_C2_DPTX_Z0_LANE3_2, 0x88);
               
@@ -190,7 +190,7 @@ line level    source
                       }
                       else
                           if(ucLaneCnt == 4)
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 4   
 
                           {
                               ScalerSetBit(PBC_A0_DPTX_PHY_CTRL0, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BI
@@ -254,7 +254,7 @@ line level    source
                       // [2:0] PI Current setting
                       ScalerSetBit(PBC_D0_DPTX_CMU0, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (
              -_BIT6 | _BIT5 | _BIT4 | _BIT1 | _BIT0));
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 5   
 
               
                       // [6:4] CMU'S LPF Rs
@@ -318,7 +318,7 @@ line level    source
                       ulCMUFreq = ((DWORD)usFCode << 12);
                       usFCode = ulCMUFreq / (_EXT_XTAL * 2);
                   }
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 6   
 
               
                   // N Code = 9 bit
@@ -382,7 +382,7 @@ line level    source
               
                       // SSC Off stable
                       ScalerTimerDelayXms(2);
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 7   
 
                   }
               
@@ -446,7 +446,7 @@ line level    source
                       case _DP_FOUR_LANE:
               
                           // set Lane3~0 PHY voltage swing level
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 8   
 
                           ScalerGDIPhyTxSetSignalLevel(GET_DP_TX_DOWNSTREAM_LINK_RATE(), _DP_TX_LANE_3, GET_DP_TX_LANE3_
              -CURRENT_VOL_SWING(), GET_DP_TX_LANE3_CURRENT_PRE_EMPHASIS());
@@ -510,7 +510,7 @@ line level    source
                       pucTable = tDPTX_DRV_HBR2_TABLE;
                   }
                   else
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 9   
 
                   {
                       pucTable = tDPTX_DRV_TABLE;
@@ -574,7 +574,7 @@ line level    source
                           ScalerSetBit(PBC_B8_DPTX_DRV_DAC_POST0_LANE3_2, ~0x0F, (pucTable[ucIndex + 2] & 0x0F));
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 10  
 
               
                       case _DP_TX_LANE_3:
@@ -638,7 +638,7 @@ line level    source
               
                   // Duty cycle of CLKRD clock
                   ScalerSetBit(PBC_BD_DPTX_CKRDDUTY_SPD_SEL, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT6 | _BIT5 | 
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 11  
 
              -_BIT4));
               
@@ -702,7 +702,7 @@ line level    source
               
                   case _DP_LINK_RBR:
               
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 12  
 
                           // RBR = 1.62GHz, VCO = 1.5 ~ 3 GHz
                           ScalerSetBit(PBC_BD_DPTX_CKRDDUTY_SPD_SEL, ~(_BIT1 | _BIT0), _BIT0);
@@ -766,7 +766,7 @@ line level    source
                   // F Code = 12 bit
                   usNCode &= 0x1FF;
                   usFCode &= 0xFFF;
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 13  
 
               
                   // Set N.f code
@@ -831,7 +831,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/20/2026 19:43:18 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERGDIPHYTX                                                    09/21/2026 15:32:04 PAGE 14  
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

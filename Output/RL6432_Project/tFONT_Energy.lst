@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 1   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TFONT_ENERGY
@@ -62,7 +62,7 @@ line level    source
   45            0x88,0x44,0x00,
   46            0xf8,0xc0,0x00,
   47            0x87,0x48,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 2   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 2   
 
   48            0x00,0x00,0x00,
   49            0x00,0x00,0x00,
@@ -126,7 +126,7 @@ line level    source
  107            0x00,0x00,0x00,
  108            0x00,0x00,0x00,
  109            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 3   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 3   
 
  110            0x78,0x08,0x00,
  111            0x88,0x00,0x00,
@@ -190,7 +190,7 @@ line level    source
  169            0x00,0x00,0x00,
  170            0x00,0x00,0x00,
  171            
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 4   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 4   
 
  172            //========Address -- (0f),
  173            0x00,0x00,0x00,
@@ -254,7 +254,7 @@ line level    source
  231            0x0b,0x08,0x00,
  232            0xc8,0x44,0x00,
  233            0x88,0x44,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 5   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 5   
 
  234            0xcb,0x48,0x00,
  235            0x88,0x00,0x00,
@@ -318,7 +318,7 @@ line level    source
  293            //========Address -- (1a),
  294            0x00,0x00,0x00,
  295            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 6   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 6   
 
  296            0x00,0x00,0x00,
  297            0x08,0x04,0x00,
@@ -382,7 +382,7 @@ line level    source
  355            0x22,0x00,0x00,
  356            0x00,0x00,0x00,
  357            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 7   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 7   
 
  358            
  359            //========Address -- (20),
@@ -446,7 +446,7 @@ line level    source
  417            0x00,0x00,0x00,
  418            0x07,0x00,0x00,
  419            0x88,0x80,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 8   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 8   
 
  420            0x88,0x00,0x00,
  421            0x87,0x80,0x00,
@@ -510,7 +510,7 @@ line level    source
  479            
  480            //========Address -- (2b),
  481            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 9   
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 9   
 
  482            0x00,0x00,0x00,
  483            0x00,0x00,0x00,
@@ -574,7 +574,7 @@ line level    source
  541            0x70,0x08,0x00,
  542            0x87,0x80,0x00,
  543            0x02,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 10  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 10  
 
  544            0x40,0x00,0x00,
  545            
@@ -638,7 +638,7 @@ line level    source
  603            0x00,0x00,0x0c,
  604            0x00,0xc4,0x44,
  605            0x00,0x48,0x44,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 11  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 11  
 
  606            0x01,0xc2,0x44,
  607            0x60,0x10,0x44,
@@ -702,7 +702,7 @@ line level    source
  665            0x00,0x00,0x00,
  666            
  667            //========Address -- (3c),
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 12  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 12  
 
  668            0x00,0x00,0x00,
  669            0x00,0x00,0x0c,
@@ -766,7 +766,7 @@ line level    source
  727            0x70,0xf0,0xe0,
  728            0x01,0xf0,0x08,
  729            0x10,0x0f,0x80,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 13  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 13  
 
  730            0x00,0x00,0x00,
  731            0x00,0x00,0x00,
@@ -830,7 +830,7 @@ line level    source
  789            0x00,0x00,0x00,
  790            0x00,0x00,0x0c,
  791            0x12,0xc2,0x44,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 14  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 14  
 
  792            0x22,0x22,0x44,
  793            0x10,0xc0,0x44,
@@ -894,7 +894,7 @@ line level    source
  851            0x00,0x00,0x00,
  852            0x00,0x00,0x00,
  853            
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 15  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 15  
 
  854            //========Address -- (4d),
  855            0x00,0x00,0x00,
@@ -958,7 +958,7 @@ line level    source
  913            0x01,0x4c,0x44,
  914            0x60,0x30,0x44,
  915            0x70,0xf8,0xc4,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 16  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 16  
 
  916            0x00,0x88,0x44,
  917            0x00,0x00,0x00,
@@ -1022,7 +1022,7 @@ line level    source
  975            //========Address -- (58),
  976            0x00,0x00,0x00,
  977            0x07,0x0f,0x0c,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 17  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 17  
 
  978            0x0f,0x4f,0x0e,
  979            0xa0,0x40,0xa0,
@@ -1086,7 +1086,7 @@ line level    source
 1037            0x3c,0x74,0xc4,
 1038            0x00,0x70,0xc0,
 1039            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 18  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 18  
 
 1040            
 1041            //========Address -- (5e),
@@ -1150,7 +1150,7 @@ line level    source
 1099            0xf0,0xfa,0xe0,
 1100            0x74,0xfa,0xc4,
 1101            0x70,0xf8,0xc0,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 19  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 19  
 
 1102            0xf1,0xf0,0xe8,
 1103            0x30,0x1e,0x00,
@@ -1214,7 +1214,7 @@ line level    source
 1161            
 1162            //========Address -- (69),
 1163            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 20  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 20  
 
 1164            0x00,0x01,0x00,
 1165            0x42,0x95,0x24,
@@ -1278,7 +1278,7 @@ line level    source
 1223            0x22,0x2c,0x48,
 1224            0x32,0x12,0x84,
 1225            0x00,0xc0,0x20,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 21  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 21  
 
 1226            0x00,0x00,0x00,
 1227            
@@ -1342,7 +1342,7 @@ line level    source
 1285            0x00,0x00,0x00,
 1286            0x00,0x00,0x00,
 1287            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 22  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 22  
 
 1288            0x00,0x00,0x00,
 1289            0x00,0x00,0x00,
@@ -1406,7 +1406,7 @@ line level    source
 1347            0x00,0x00,0x00,
 1348            
 1349            //========Address -- (7a),
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 23  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 23  
 
 1350            0x00,0x00,0x00,
 1351            0x00,0x0a,0x00,
@@ -1470,7 +1470,7 @@ line level    source
 1409            0xaa,0x91,0x00,
 1410            0x22,0x71,0xc0,
 1411            0x22,0x11,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 24  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 24  
 
 1412            0x20,0xf0,0xe0,
 1413            0x00,0x00,0x00,
@@ -1534,7 +1534,7 @@ line level    source
 1471            0x00,0x00,0x00,
 1472            0x00,0x00,0x00,
 1473            0x00,0x08,0x84,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 25  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 25  
 
 1474            0x87,0x8f,0x84,
 1475            0x01,0x88,0x00,
@@ -1598,7 +1598,7 @@ line level    source
 1533            0x70,0x00,0x00,
 1534            0x00,0x00,0x00,
 1535            
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 26  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 26  
 
 1536            //========Address -- (8b),
 1537            0x00,0x00,0x00,
@@ -1662,7 +1662,7 @@ line level    source
 1595            0x43,0x0c,0x00,
 1596            0xe1,0x00,0x00,
 1597            0x1f,0xc0,0x00,
-C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/20/2026 19:44:59 PAGE 27  
+C51 COMPILER V9.60.0.0   TFONT_ENERGY                                                      09/21/2026 15:33:49 PAGE 27  
 
 1598            0x00,0x88,0x00,
 1599            0x00,0x40,0x00,

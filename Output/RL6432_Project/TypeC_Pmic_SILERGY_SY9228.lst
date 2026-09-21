@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_SILERGY_SY9228
@@ -62,7 +62,7 @@ line level    source
               #define _ADDR_00_ADC_ACTIVE                 0x01        // Active
               #define _ADDR_00_ADC_MODE                   0x01        // Auto Detect Mode
               #define _ADDR_00_VBUS_DISCHARGE             0x01        // Inactive Discharge
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 2   
 
               #define _ADDR_00_GATE_ENABLE                0x00        // Disable
               #define _ADDR_01_CABLE_COMPENSATION         0x02        // 100m Ohm
@@ -126,7 +126,7 @@ line level    source
                   BYTE b1VOCPFlag : 1;
                   BYTE b1ADCReady : 1;
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 3   
 
                   BYTE ucInputVoltageValue;
               
@@ -190,7 +190,7 @@ line level    source
               
               
               //****************************************************************************
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 4   
 
               // VARIABLE DECLARATIONS
               //****************************************************************************
@@ -254,7 +254,7 @@ line level    source
                   PCB_PMIC_POWER(_POWER_ON);
               
                   // Delay 10ms for Silergy PMIC's Special Design
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 5   
 
                   ScalerTimerDelayXms(10);
               
@@ -318,7 +318,7 @@ line level    source
               
                   // Set Pmic config
                   g_stPMICData.b1PMICEnable = _ON;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 6   
 
                   g_stPMICData.b1GateEnable = _ON;
                   PCB_PMIC_VBUS_SOURCE_CONTROL(_VBUS_SOURCE_SWITCH_ON);
@@ -382,7 +382,7 @@ line level    source
                       }
               
                       if(ScalerTypeCPmicIICWrite(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _SY9228_FUNCTION_SETTING1, _SY9228_SUBA
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 7   
 
              -DDR_LENGTH, 4, (BYTE *)(&g_stPMICData) + _SY9228_FUNCTION_SETTING1) == _FAIL)
                       {
@@ -446,7 +446,7 @@ line level    source
                       }
                       else if(usVoltage >= 610)
                       {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 8   
 
                           g_stPMICData.b2SwitchFreq = 0x01;
                       }
@@ -510,7 +510,7 @@ line level    source
                   g_stPMICData.b1PMICEnable = _OFF;
               
                   // Disable PMIC
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 9   
 
                   if(ScalerTypeCPmicIICWrite_EXINT0(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _SY9228_FUNCTION_SETTING1, _SY9228_S
              -UBADDR_LENGTH, 1, (BYTE *)(&g_stPMICData) + _SY9228_FUNCTION_SETTING1) == _FAIL)
@@ -574,7 +574,7 @@ line level    source
                       {
                           g_stPMICData.b3VOCPSetting = 0x02;
                       }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 10  
 
                       else if(usCurrent <= 200)
                       {
@@ -638,7 +638,7 @@ line level    source
                   g_stPMICData.b1VOUTDischarge = !enumEn;
               
                   // PCB Control
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 11  
 
                   if(enumEn == _TYPE_C_PMIC_DISCHARGE_ENABLE)
                   {
@@ -702,7 +702,7 @@ line level    source
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicVbusDischarge_WDINT(EnumTypeCPmicDischarge enum
              -En) using 3
               {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 12  
 
                   // Set PMIC VBUS Discharge status
                   g_stPMICData.b1VOUTDischarge = !enumEn;
@@ -766,7 +766,7 @@ line level    source
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 13  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 13  
 
               
               //--------------------------------------------------
@@ -830,7 +830,7 @@ line level    source
                           PCB_PMIC_VBUS_SINK_CONTROL(_VBUS_SINK_SWITCH_ON);
                       }
                   }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 14  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 14  
 
                   else
                   {
@@ -894,7 +894,7 @@ line level    source
               // Description  : PMIC Read Output Status
               // Input Value  : None
               // Output Value : Output Mode (Fixed Voltage/PPS)
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 15  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 15  
 
               //--------------------------------------------------
               EnumTypeCPmicOperationMode ExternalDeviceInterfaceTypeCPmicReadPpsOperationModeStatus_EXINT0(void) using 1
@@ -958,7 +958,7 @@ line level    source
                   usCurrent = ((WORD)(((DWORD)g_stPMICData.ucOutputCurrentValue * 100 * 6) / 256));
               
                   // Show data
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/20/2026 19:45:07 PAGE 16  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_SILERGY_SY9228                                         09/21/2026 15:33:57 PAGE 16  
 
                   DebugMessageTypeC("Pmic:Current Value(Bit)", g_stPMICData.ucOutputCurrentValue);
                   DebugMessageTypeC("Pmic:Current Value(10mA)", usCurrent);

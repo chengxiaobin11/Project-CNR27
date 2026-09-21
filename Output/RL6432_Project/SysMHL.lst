@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSMHL
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // FUNCTION DEFINITIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 2   
 
               //--------------------------------------------------
               // Description  : MHL Handler Process
@@ -126,7 +126,7 @@ line level    source
                           if(ScalerMHLMscUCPGetCommand(_D0_INPUT_PORT, &ucKeyCode) == _TRUE)
                           {
                               ScalerMHLMscSendCommand(_D0_INPUT_PORT, _MSC_MSG, _MSC_UCPK, ucKeyCode);
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 3   
 
                           }
               #endif  // End of #if(_MHL_UCP_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
                       /////////////////////////
                       ScalerMHLMscCheckDeviceINT(_D1_INPUT_PORT);
                   }
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 4   
 
               #endif  // End of #if(_D1_INPUT_PORT_TYPE == _D1_MHL_PORT)
               
@@ -254,7 +254,7 @@ line level    source
               
                       if(ScalerMHLMscHandler(_D3_INPUT_PORT, SysSourceGetInputPort(), GET_MODE_STATE()) == _TRUE)
                       {
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 5   
 
                           ///////////////
                           //RAP Handler//
@@ -318,7 +318,7 @@ line level    source
                               {
                                   SET_MODE_RESET_TARGET(_MODE_ACTION_RESET_TO_SEARCH);
                               }
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 6   
 
                           }
               
@@ -382,7 +382,7 @@ line level    source
                               if(UserInterfaceAdjustMHLMscRCPProc(ucKeyCode) == _FALSE)
                               {
                                   ScalerMHLMscSendCommand(_D5_INPUT_PORT, _MSC_MSG, _MSC_RCPE, _MSC_RCPE_INEFFECTIVE_COD
-C51 COMPILER V9.60.0.0   SYSMHL                                                            09/20/2026 19:43:04 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSMHL                                                            09/21/2026 15:31:50 PAGE 7   
 
              -E);
                               }

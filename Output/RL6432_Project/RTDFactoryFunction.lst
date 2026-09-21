@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 1   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTDFACTORYFUNCTION
@@ -62,7 +62,7 @@ line level    source
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 2   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 2   
 
               #warning "zhe is TEST!!"
               #warning "zhe is TEST!!"
@@ -126,7 +126,7 @@ line level    source
               #define _FACTORY_COLORTEMP_TEXT4            _5__,_6__,_0__,_0__
               #else
  108          #define _FACTORY_COLORTEMP_TEXT4            _5__,_8__,_0__,_0__
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 3   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 3   
 
  109          #endif
  110          #define _FACTORY_COLORTEMP_TEXT5            _s__,_R__,_G__,_B__
@@ -190,7 +190,7 @@ line level    source
  163              _SEPERATE__,             // ;
  164              _QUERY__,                // ?
  165          }EnumOSDfFontDef;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 4   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 4   
 
  166          
  167          //****************************************************************************
@@ -254,7 +254,7 @@ line level    source
  225          
  226              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_R_NUMBER_COL - 2), LENGTH(3)},
  227              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_G_NUMBER_COL - 2), LENGTH(3)},
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 5   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 5   
 
  228              {ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_B_NUMBER_COL - 2), LENGTH(3)},
  229          
@@ -318,7 +318,7 @@ line level    source
  287              {ROW(_FACTORY_COLORIMETRY_SEAMLESS_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
  288              {ROW(_FACTORY_DP_AUX_ADJR_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
  289              {ROW(_FACTORY_DP_IRQ_ROW), COL(_FACTORY_ON_OFF_COL), LENGTH(3)},
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 6   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 6   
 
  290          
  291              {ROW(_FACTORY_OSD_PAGE_ROW), COL(_FACTORY_OSD_PAGE_NUMBER_COL), LENGTH(2)},
@@ -382,7 +382,7 @@ line level    source
  348          };
  349          
  350          BYTE code tsOSD_FACTORY_COLORTEMP1[] =
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 7   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 7   
 
  351          {
  352              _FACTORY_COLORTEMP_TEXT2,_END_,
@@ -446,7 +446,7 @@ line level    source
  410              tsOSD_FACTORY_PANEL_TIME,
  411              tsOSD_FACTORY_COLORTEMP,
  412              tsOSD_FACTORY_COLORTEMP0,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 8   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 8   
 
  413              tsOSD_FACTORY_COLORTEMP1,
  414              tsOSD_FACTORY_COLORTEMP2,
@@ -510,7 +510,7 @@ line level    source
  471          {
  472              _O__,_S__,_D__,__,_S__,_i__,_z__,_e__,_X__,_2__,_END_,
  473          };
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 9   
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 9   
 
  474          
  475          BYTE code tsCOLORIMETRY_SEAMLESS[] =
@@ -574,7 +574,7 @@ line level    source
  531          BYTE code tsOSD_FACTORY_ON[] =
  532          {
  533              _O__, _n__, _END_,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 10  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 10  
 
  534          };
  535          
@@ -638,7 +638,7 @@ line level    source
  593          };
  594          BYTE code tsOSD_FACTORY_ASCII_0[] =
  595          {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 11  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 11  
 
  596              _0__, _END_,
  597          };
@@ -702,7 +702,7 @@ line level    source
  655          {
  656              _F__, _END_,
  657          };
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 12  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 12  
 
  658          
  659          code BYTE *tsOSD_FACTORY_ASCII_TABLE[] =
@@ -766,7 +766,7 @@ line level    source
  717              0x00,0x00,0x00,
  718              0x03,0x08,0x00,
  719              0x7e,0xce,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 13  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 13  
 
  720              0xcc,0x66,0x00,
  721              0xcc,0x66,0x00,
@@ -830,7 +830,7 @@ line level    source
  779              0x30,0x80,0x00,
  780              0x00,0x00,0x00,
  781          
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 14  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 14  
 
  782              //========Address -- (07),
  783              0x00,0x00,0x00,
@@ -894,7 +894,7 @@ line level    source
  841              0xcc,0x33,0x00,
  842              0xff,0xee,0x00,
  843              0xcc,0x33,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 15  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 15  
 
  844              0xcf,0x3f,0x00,
  845              0xf0,0xe0,0x00,
@@ -958,7 +958,7 @@ line level    source
  903              //========Address -- (12),
  904              0x00,0x00,0x00,
  905              0x0c,0x03,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 16  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 16  
 
  906              0xcc,0x33,0x00,
  907              0xcc,0x33,0x00,
@@ -1022,7 +1022,7 @@ line level    source
  965              0xcc,0xee,0x66,
  966              0xc0,0xe0,0x60,
  967              0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 17  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 17  
 
  968          
  969              //========Address -- (18),
@@ -1086,7 +1086,7 @@ line level    source
 1027              0x7c,0xe7,0x00,
 1028              0xce,0x30,0x00,
 1029              0x73,0xce,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 18  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 18  
 
 1030              0x0c,0x73,0x00,
 1031              0xe7,0x3e,0x00,
@@ -1150,7 +1150,7 @@ line level    source
 1089          
 1090              //========Address -- (23),
 1091              0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 19  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 19  
 
 1092              0x0c,0x03,0x00,
 1093              0xc6,0x36,0x00,
@@ -1214,7 +1214,7 @@ line level    source
 1151              0xcc,0x66,0x00,
 1152              0xe7,0xee,0x00,
 1153              0x30,0x60,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 20  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 20  
 
 1154              0x00,0x00,0x00,
 1155          
@@ -1278,7 +1278,7 @@ line level    source
 1213              0x06,0x00,0x00,
 1214              0x60,0x00,0x00,
 1215              0x66,0x00,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 21  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 21  
 
 1216              0x66,0x00,0x00,
 1217              0x66,0x00,0x00,
@@ -1342,7 +1342,7 @@ line level    source
 1275              0x00,0x00,0x00,
 1276          
 1277              //========Address -- (34),
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 22  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 22  
 
 1278              0x00,0x00,0x00,
 1279              0x00,0x00,0x00,
@@ -1406,7 +1406,7 @@ line level    source
 1337              0xcc,0x66,0x00,
 1338              0xcc,0x66,0x00,
 1339              0xcf,0xee,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 23  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 23  
 
 1340              0x70,0x60,0x00,
 1341              0x00,0x00,0x00,
@@ -1470,7 +1470,7 @@ line level    source
 1399              0x33,0x66,0x00,
 1400              0x01,0x0c,0x00,
 1401              0x11,0xcc,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 24  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 24  
 
 1402              0x33,0x66,0x00,
 1403              0x36,0x63,0x00,
@@ -1534,7 +1534,7 @@ line level    source
 1461              0x60,0xe0,0x00,
 1462              0x00,0x00,0x00,
 1463          
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 25  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 25  
 
 1464              //========Address -- (45),
 1465              0x00,0x00,0x00,
@@ -1598,7 +1598,7 @@ line level    source
 1523              0xdf,0xce,0x00,
 1524              0xec,0x66,0x00,
 1525              0xcc,0x66,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 26  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 26  
 
 1526              0xcc,0x66,0x00,
 1527              0xc0,0x60,0x00,
@@ -1662,7 +1662,7 @@ line level    source
 1585              //========Address -- (50),
 1586              0x00,0x00,0x00,
 1587              0x06,0x0c,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 27  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 27  
 
 1588              0x60,0xc0,0x00,
 1589              0x37,0x8c,0x00,
@@ -1726,7 +1726,7 @@ line level    source
 1647              0x46,0x00,0x00,
 1648              0x62,0x00,0x00,
 1649              0x10,0x00,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 28  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 28  
 
 1650          
 1651              //========Address -- (56),
@@ -1790,7 +1790,7 @@ line level    source
 1709              0x00,0x00,0x00,
 1710              0x00,0x00,0x00,
 1711              0xff,0x00,0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 29  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 29  
 
 1712              0x00,0x00,0x00,
 1713              0x00,0x00,0x00,
@@ -1854,7 +1854,7 @@ line level    source
 1769              {_K__, 10}, {_L__,  8}, {_M__, 12}, {_N__,  9}, {_O__, 10}, {_P__,  9}, {_Q__, 11}, {_R__, 10}, {_S__,
              -  9}, {_T__,  9},
 1770              {_U__,  9}, {_V__, 10}, {_W__, 11}, {_X__, 11}, {_Y__,  9}, {_Z__,  9},
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 30  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 30  
 
 1771          
 1772              {_a__,  8}, {_b__,  8}, {_c__,  8}, {_d__,  8}, {_e__,  8}, {_f__,  6}, {_g__,  8}, {_h__,  8}, {_i__,
@@ -1918,7 +1918,7 @@ line level    source
              -ICON(0x1F), 0x00, 0x90, ICON(0x20), 0x00, 0x90, ICON(0x21), 0x00, 0x90, ICON(0x22), 0x00, 0x90, ICON(0x23), 0x00, 0x90, 
              -ICON(0x24), 0x00, 0x90, ICON(0x25), 0x00, 0x90, ICON(0x26), 0x00, 0x90, ICON(0x27), 0x00, 0x90, ICON(0x28), 0x00, 0x90, 
              -ICON(0x29), 0x00,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 31  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 31  
 
               };
               
@@ -1982,7 +1982,7 @@ line level    source
              -cb,0xfb,0x96,0xee,0xd5,0xbd,0x06,0xcf,0x4e,0x92,0xe4,0x75,0x27,0xf9,0x7b,0xaf,0xe4,0xba,0xaf,0xbf,0x73,0x2e,0x2d,0xf1,0x
              -f9,0x26,0x79,0x7a,0xff,0x92,0xcf,0x4e,0x92,0x24,0x39,0xe7,0x06,0x00,0x1e,0xca,0x5a,0x14,0x28,0xf9,0x83,0xbc,0xe0,0xc0,0x
              -82,0x05,0xeb,0x0f,0xd6,0xb7,0x37,0xbf,0x6f,0xff,0x78,0x56,0xe3,0x57,0xe7,0xcb,0x78,0x50,0xf2,0xc7,0xda,0x4f,0x4a,0x81,0x
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 32  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 32  
 
              -f5,0x13,0x3c,0x9f,0x8b,0xe7,0xd9,0xa7,0x6a,0x72,0x87,0xb3,0x35,0xeb,0xf6,0x63,0x2e,0x30,0x54,0xfd,0x72,0x72,0x4e,0x72,0x
              -3e,0xfb,0xb9,0x73,0xd2,0x77,0xee,0x7c,0xf2,0xdc,0x27,0xe7,0xfd,0xe6,0x93,0x7c,0xee,0x9c,0x64,0xfe,0x72,0xfb,0x5d,0xc9,0x
@@ -2046,7 +2046,7 @@ line level    source
              -cf,0xe7,0x9b,0xe4,0x7e,0x92,0x93,0xfb,0x77,0x27,0xdf,0xec,0x4f,0x92,0x3c,0x4f,0x72,0xf2,0x97,0xdc,0xe7,0xca,0x7b,0x53,0x
              -86,0x02,0x7b,0x6b,0xee,0x17,0x9e,0x1b,0xf6,0x0d,0x0a,0x00,0x05,0x55,0xf9,0x30,0xfb,0x13,0x96,0xda,0x74,0xcd,0xf0,0xe9,0x
              -1e,0xea,0xd7,0x17,0xb5,0xbb,0xe1,0x6a,0x54,0xe8,0xa1,0xf4,0xaa,0xc1,0x5a,0xf3,0x87,0x5e,0x94,0x7e,0x9b,0xe5,0xfa,0xc2,0x
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 33  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 33  
 
              -ba,0x28,0x5f,0xba,0xe6,0xfb,0x6b,0xbb,0xbe,0x77,0x5f,0xf7,0x9d,0xf4,0x9d,0x9d,0xec,0xe4,0x7c,0x4e,0x92,0xe4,0x49,0x92,0x
              -9d,0xe4,0x9c,0xfd,0xc4,0x9d,0xa9,0x28,0x16,0x53,0xb9,0xae,0x27,0x27,0x7b,0xa9,
@@ -2110,7 +2110,7 @@ line level    source
 1866          //void RTDFactoryOsdLoadHardwareVLCFont(BYTE *pucArray, WORD usOffset, WORD usFontTableStart, bit bOsdRota
              -te);
 1867          void RTDFactoryOsdFuncClearOsdFont(BYTE ucRow, BYTE ucCol, BYTE ucWidth, BYTE ucHeight, BYTE ucChar);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 34  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 34  
 
 1868          void RTDFactoryOsdFuncPutStringProp(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE *pucFontTable, BYTE *p
              -ucArray, BYTE ucLanguage);
@@ -2174,7 +2174,7 @@ line level    source
                   }
               #endif
 1927   1          // Row Command
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 35  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 35  
 
 1928   1          for(ucI = 0; ucI < ucHeight; ucI++)
 1929   1          {
@@ -2238,7 +2238,7 @@ line level    source
 1983              ScalerOsdBurstWriteDataPort(pucArray, 8, GET_CURRENT_BANK_NUMBER(), _BURSTWRITE_DATA_OSD, _BURSTWRITE_
              -FROM_FLASH);
 1984          
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 36  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 36  
 
 1985              usNum = ((WORD) * (pucArray + 8) << 8) | *(pucArray + 9);
 1986          
@@ -2302,7 +2302,7 @@ line level    source
 2042   3                  ScalerOsdCharCommandByteSeries(usOsdAddr, _OSD_BYTE0, 0x4C, ucWidth);
 2043   3                  ScalerOsdCharCommandByteSeries(usOsdAddr, _OSD_BYTE1, ucChar, ucWidth);
 2044   3                  usOsdAddr += g_ucOsdWidth;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 37  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 37  
 
 2045   3              }
 2046   2          }
@@ -2366,7 +2366,7 @@ line level    source
 2103   3                      break;
 2104   3              }
 2105   2      
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 38  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 38  
 
 2106   2              if(pData[3] == 0)
 2107   2              {
@@ -2430,7 +2430,7 @@ line level    source
 2160   5                              bEndFlag = 1;
 2161   5                              break;
 2162   5      
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 39  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 39  
 
 2163   5                          default:
 2164   5                              pData[6] = *(pucArray + pData[0]);
@@ -2494,7 +2494,7 @@ line level    source
                       else
               #endif
 2223   2              {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 40  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 40  
 
 2224   3                  ScalerOsdFontRotateCtrl(_OSD_ROTATE_DEGREE_0, _DISABLE, _DISABLE);
 2225   3                  ScalerOsdCompressionCtrl(_OSD_DECODE_COMPRESSED, _OSD_COMPRESSION_DISABLE);
@@ -2558,7 +2558,7 @@ line level    source
 2280   3                  ScalerOsdCommandByte(PDATA_WORD(7) + g_usFontSelectStart, _OSD_BYTE0, 0x4C);
 2281   3              }
 2282   2      
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 41  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 41  
 
 2283   2              ScalerOsdCommandByte(PDATA_WORD(7) + g_usFontSelectStart, _OSD_BYTE1, PDATA_WORD(5));
 2284   2              pData[8] ++; // Record the length of prop string
@@ -2622,7 +2622,7 @@ line level    source
                 {
                   switch(*(pucArray + ucStringCnt))
                   {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 42  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 42  
 
                     case _END_:
                       bEndFlag = 1;
@@ -2686,7 +2686,7 @@ line level    source
                       ucCharWidth = tOSD_FACTORY_CHARWIDTH_EUROPE[ucCharPos][1];
                       ucStringCnt ++;
               
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 43  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 43  
 
                       usOffset = ucCharPos * 27 + ucI * 3;
               
@@ -2750,7 +2750,7 @@ line level    source
                   // Write the pro font data to sram
                   // COsdFxLoadFontDataAddrCal(ucBankupFontPointer);
                   if((ucFptsSelect >= _PFONT_FACTORY_PAGE_ITEM_1) && (ucFptsSelect < _PFONT_FACTORY_PAGE_ITEM_END))
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 44  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 44  
 
                   {
                     // select 1bit font form 256-511
@@ -2814,7 +2814,7 @@ line level    source
               #if 0// (_OSD_ROTATE_FUNCTION == _ON)
                   if(GET_OSD_ROTATE_STATUS() == _TRUE)
                   {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 45  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 45  
 
                     usAddr = (WORD)(g_ucOsdHeight - 1 - ucCol - ucLength) * g_ucOsdWidth + ucRow;
                   }
@@ -2878,7 +2878,7 @@ line level    source
 2581   2              g_ucFontPointer2 = _FACTORY_ITEM_1_START;
 2582   2              ucPointer = g_ucFontPointer2;
 2583   2          }
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 46  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 46  
 
 2584   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_2)
 2585   1          {
@@ -2942,7 +2942,7 @@ line level    source
 2643   2          }
 2644   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_14)
 2645   1          {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 47  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 47  
 
 2646   2              g_ucFontPointer2 = _FACTORY_ITEM_14_START;
 2647   2              ucPointer = g_ucFontPointer2;
@@ -3006,7 +3006,7 @@ line level    source
 2705   1          {
 2706   2              g_ucFontPointer2 = _FACTORY_ITEM_26_START;
 2707   2              ucPointer = g_ucFontPointer2;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 48  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 48  
 
 2708   2          }
 2709   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_27)
@@ -3070,7 +3070,7 @@ line level    source
 2767   1          if(ucPointerSelect == _PFONT_FACTORY_PAGE_0)
 2768   1          {
 2769   2              if(ucPointer >= _FACTORY_PAGE_0_END)
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 49  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 49  
 
 2770   2              {
 2771   3                  ucPointer = _FACTORY_PAGE_0_START;
@@ -3134,7 +3134,7 @@ line level    source
 2829   2          }
 2830   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_8)
 2831   1          {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 50  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 50  
 
 2832   2              if(ucPointer >= _FACTORY_ITEM_8_END)
 2833   2              {
@@ -3198,7 +3198,7 @@ line level    source
 2891   3              }
 2892   2          }
 2893   1      
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 51  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 51  
 
 2894   1          else if(ucPointerSelect == _PFONT_FACTORY_PAGE_ITEM_17)
 2895   1          {
@@ -3262,7 +3262,7 @@ line level    source
 2953   2              if(ucPointer >= _FACTORY_ITEM_25_END)
 2954   2              {
 2955   3                  ucPointer = _FACTORY_ITEM_25_START;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 52  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 52  
 
 2956   3              }
 2957   2          }
@@ -3326,7 +3326,7 @@ line level    source
 3015   1          {
 3016   2              if(ucPointer >= _FACTORY_ITEM_34_END)
 3017   2              {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 53  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 53  
 
 3018   3                  ucPointer = _FACTORY_ITEM_34_START;
 3019   3              }
@@ -3390,7 +3390,7 @@ line level    source
               
                       usXStart = 10 + usYStart;
               
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 54  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 54  
 
                       if((_FACTORY_OSD_WIDTH + _ROTATE_FACTORY_OSD_WINDOW_OFFSET) > usXEnd)
                       {
@@ -3454,7 +3454,7 @@ line level    source
 3134          {
 3135   1          BYTE ucIndex = 0;
 3136   1          BYTE ucTemp = 0;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 55  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 55  
 
 3137   1          BYTE ucI = 0;
 3138   1          BYTE pucDataSN[16] = {0};
@@ -3518,7 +3518,7 @@ line level    source
 3196   1          // Align Right
 3197   1          if((bit)(ucPar & 0x01) == _TRUE)
 3198   1          {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 56  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 56  
 
 3199   2              RTDFactoryOsdFuncPutStringProp(ucRow, ROW(ucCol - ucTemp), ucFontPoint, tFONT_FACTORY_EUROPE, &puc
              -DataSN[8], _ENGLISH);
@@ -3582,7 +3582,7 @@ line level    source
 3254   2              usOsdItem = usOsdState - _MENU_FACTORY_AUTOCOLOR;
 3255   2              RTDFactoryOsdFuncChangeColor1Bit(tFACTORY_PAGE_SELECT_ITEM_TABLE[usOsdItem][0], tFACTORY_PAGE_SELE
              -CT_ITEM_TABLE[usOsdItem][1], tFACTORY_PAGE_SELECT_ITEM_TABLE[usOsdItem][2], 1, COLOR(_CP_RED, _CP_BG));
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 57  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 57  
 
 3256   2          }
 3257   1          /*else if(g_ucFactoryPage == 1)
@@ -3646,7 +3646,7 @@ line level    source
 3313   2              default:
 3314   2                  break;
 3315   2          }
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 58  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 58  
 
 3316   1      
 3317   1          return usValue;
@@ -3710,7 +3710,7 @@ line level    source
 3369   2                  RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP1_ROW), COL(_FACTORY_G_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP1_G);
 3370   2                  break;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 59  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 59  
 
 3371   2      
 3372   2              case _MENU_FACTORY_CT1_BLUE_ADJ:
@@ -3774,7 +3774,7 @@ line level    source
 3421   2      #if(_CONTRAST_SUPPORT == _ON)
 3422   2                  UserAdjustContrast(GET_OSD_CONTRAST());
 3423   2      #endif
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 60  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 60  
 
 3424   2                  RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_R_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP3_R);
@@ -3838,7 +3838,7 @@ line level    source
 3473   2                  g_stColorProcData.usColorTempB = g_usAdjustValue;
 3474   2                  g_stColorProcData.usColorTempB = (g_stColorProcData.usColorTempB << 4);
 3475   2      
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 61  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 61  
 
 3476   2      #if(_CONTRAST_SUPPORT == _ON)
 3477   2                  UserAdjustContrast(GET_OSD_CONTRAST());
@@ -3902,7 +3902,7 @@ line level    source
 3526   2              case _MENU_FACTORY_CT6_GREEN_ADJ:
 3527   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange((g_usAdjustValue >> 4), _FACTORY_RBG_MAX, _FACT
              -ORY_RBG_MIN, _OFF);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 62  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 62  
 
 3528   2                  g_stColorProcData.usColorTempG = g_usAdjustValue;
 3529   2                  g_stColorProcData.usColorTempG = (g_stColorProcData.usColorTempG << 4);
@@ -3966,7 +3966,7 @@ line level    source
               #endif
                           RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP1_ROW), COL(_FACTORY_B_NUMBER_COL), g_usAdju
              -stValue, (_ALIGN_RIGHT | _FORCE_SHOW_NUMBER_OFF | _SHOW_3), _PFONT_FACTORY_COLORTEMP1_B);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 63  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 63  
 
                           break;
               
@@ -4030,7 +4030,7 @@ line level    source
               
               #if(_CONTRAST_SUPPORT == _ON)
                           UserAdjustContrast(GET_OSD_CONTRAST());
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 64  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 64  
 
               #endif
                           RTDFactoryOsdFuncShowNumber(ROW(_FACTORY_COLORTEMP3_ROW), COL(_FACTORY_G_NUMBER_COL), g_usAdju
@@ -4094,7 +4094,7 @@ line level    source
              -BG_MIN, _OFF);
                           g_stColorProcData.usColorTempR = g_usAdjustValue;
                           g_stColorProcData.usColorTempR = (g_stColorProcData.usColorTempR);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 65  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 65  
 
               
               #if(_CONTRAST_SUPPORT == _ON)
@@ -4158,7 +4158,7 @@ line level    source
               
                       case _MENU_FACTORY_CT6_BLUE_ADJ:
                           g_usAdjustValue = (BYTE)RTDFactoryDetOverRange((g_usAdjustValue), _FACTORY_RBG_MAX, _FACTORY_R
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 66  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 66  
 
              -BG_MIN, _OFF);
                           g_stColorProcData.usColorTempB = g_usAdjustValue;
@@ -4222,7 +4222,7 @@ line level    source
 3786   2      
 3787   2              case _MENU_FACTORY_OFFSET_BLUE_ADJ:
 3788   2                  g_usAdjustValue = (BYTE)RTDFactoryDetOverRange(g_usAdjustValue, _FACTORY_RBG_MAX, _FACTORY_RBG
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 67  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 67  
 
              -_MIN, _OFF);
 3789   2                  g_stAdcData.pucAdcOffsetMSB[_AUTO_BLUE_CHANNEL] = g_usAdjustValue;
@@ -4286,7 +4286,7 @@ line level    source
 3844          //--------------------------------------------------
 3845          void RTDFactoryOsdChangColorTemp(BYTE ucColorTemp)
 3846          {
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 68  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 68  
 
 3847   1          SET_COLOR_TEMP_TYPE(ucColorTemp);
 3848   1          RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
@@ -4350,7 +4350,7 @@ line level    source
 3906   2              if((GET_PANEL_TIME_MIN() % 30) == 0)
 3907   2              {
 3908   3                  RTDNVRamSavePanelUsedTimeData();
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 69  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 69  
 
 3909   3              }
 3910   2          }
@@ -4414,7 +4414,7 @@ line level    source
 3962   1        
 3963   1        ScalerDDomainBackgroundEnable(_ON);
 3964   1        ScalerTimerActiveTimerEvent(SEC(2), _USER_TIMER_EVENT_BUININ_MSG);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 70  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 70  
 
 3965   1        (pos>4)?(pos = 0):pos;
 3966   1        
@@ -4478,7 +4478,7 @@ line level    source
 4021   1        pData[5]=__;
 4022   1        pData[6]=inch/100+_0__;
 4023   1        pData[7]=inch%100/10+_0__;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 71  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 71  
 
 4024   1        pData[8]=_DOT__;
 4025   1        pData[9]=inch%10+_0__;
@@ -4542,7 +4542,7 @@ line level    source
 4082   2          pData[5]=Vactive/100+_0__;
 4083   2          pData[6]=(Vactive%100)/10+_0__;
 4084   2          pData[7]=Vactive%10+_0__;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 72  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 72  
 
 4085   2        }
 4086   1        else
@@ -4606,7 +4606,7 @@ line level    source
 4142   1      
 4143   1      }
 4144          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 73  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 73  
 
 4145          // Description  :
 4146          // Input Value  :
@@ -4670,7 +4670,7 @@ line level    source
 4200   3            else if((PortType==_PORT_DP) && pDDCRAMData[0x13]==0x4)
 4201   3              CheckSum_ok=1;
 4202   3            else
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 74  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 74  
 
 4203   3              CheckSum_ok=0;
 4204   3            
@@ -4734,7 +4734,7 @@ line level    source
 4258   1          BYTE xdata pData[5] = {0};
 4259   1        pData[0]=GetEDIDYear0(pDDCRAMData[_EDID_YEAR_INDEX]);
 4260   1        pData[1]=GetEDIDYear1(pDDCRAMData[_EDID_YEAR_INDEX]);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 75  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 75  
 
 4261   1        pData[2]=GetEDIDYear2(pDDCRAMData[_EDID_YEAR_INDEX]);
 4262   1        pData[3]=GetEDIDYear3(pDDCRAMData[_EDID_YEAR_INDEX]);
@@ -4798,7 +4798,7 @@ line level    source
                         ++i;
                         break;
                       }
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 76  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 76  
 
                     }
                   }
@@ -4862,7 +4862,7 @@ line level    source
               
               }
               #endif
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 77  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 77  
 
 4379          //--------------------------------------------------
 4380          // Description  :
@@ -4926,7 +4926,7 @@ line level    source
 4438          BYTE code tsIN_HDMI2[] =
 4439          {
 4440              _H__,_D__,_M__,_I__,_2__,_END_,
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 78  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 78  
 
 4441          };
 4442          
@@ -4990,7 +4990,7 @@ line level    source
                   _T__,_Y__,_P__,_E__,_C__,_END_,
               };
               
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 79  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 79  
 
               
               code BYTE *tIN_SOURCE_TYPE_STATUS[] =
@@ -5054,7 +5054,7 @@ line level    source
               #if(_SOURCE_AUTO_ON)
                   tsIN_AUTO,
               #endif
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 80  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 80  
 
               #if(_A0_INPUT_PORT_TYPE == _A0_VGA_PORT)
                   tsIN_VGA,
@@ -5118,7 +5118,7 @@ line level    source
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&(_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT)
                   tsIN_HDMI2,
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)&&((_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT)||(_D4_INPUT_PORT_TYPE
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 81  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 81  
 
              - == _D4_HDMI_PORT))
                 tsIN_HDMI1,   
@@ -5182,7 +5182,7 @@ line level    source
 4669          
 4670          
 4671          
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 82  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 82  
 
 4672          #if (_D5_INPUT_PORT_TYPE == _D5_MHL_PORT)
                   tsIN_MHL,
@@ -5246,7 +5246,7 @@ line level    source
               {
                  //EDID Manufact Name
                  GetOSDEDIDManufactName(ManVal);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 83  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 83  
 
                  RTDFactoryOsdFuncPutStringProp(ROW(_FACTORY_EDID_INFO_ROW), COL(_FACTORY_EDID_INFO_COL), _PFONT_FACTORY_
              -PAGE_0, tFONT_FACTORY_EUROPE, pData, _ENGLISH);
@@ -5310,7 +5310,7 @@ line level    source
                       ScalerPinshareGpioDdcPinSwitch(_DDC_VGA_SWITCH_DDC);
                       ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
                       DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_A0,((_A0_INPUT_PORT_TYPE)&0x0F));
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 84  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 84  
 
                   #endif
                         break;
@@ -5374,7 +5374,7 @@ line level    source
                     case _OSD_INPUT_D3:
                     #if(_D3_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
                       DrawEDIDInfo(_DDCRAM_D3,_ManValue_D3,_OSD_INPUT_D3,((_D3_INPUT_PORT_TYPE)&0x0F));
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 85  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 85  
 
                     #elif(_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT && _D3_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE &&  _D3_E
              -MBEDDED_DDCRAM_LOCATION==_EDID_TABLE_LOCATION_USER)
@@ -5438,7 +5438,7 @@ line level    source
              -=_FAIL)
                         UserCommonEepromIICRead(_EEPROM_SLAVE_ADDRESS,0X00,1,256,pucBuffer,_IIC_FOR_DDC6,_SW_IIC_PIN_GPIO);
                       ScalerPinshareGpioDdcPinSwitch(_DDC6_SWITCH_DDC);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 86  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 86  
 
                       ManVal=((pucBuffer[_EDID_MAN_NAME_INDEX0]<<8)|pucBuffer[_EDID_MAN_NAME_INDEX1]);
                       DrawEDIDInfo(pucBuffer,ManVal,_OSD_INPUT_D6,((_D6_INPUT_PORT_TYPE)&0x0F));
@@ -5502,7 +5502,7 @@ line level    source
 4955   1          BYTE ucRowCount = 0;
 4956   1        BYTE i=0;
 4957   1        WORD usCheckSum=0;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 87  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 87  
 
 4958   1        
 4959   1          g_ucFontPointer0 = _FACTORY_PAGE_0_START;
@@ -5566,7 +5566,7 @@ line level    source
 5009   1          BYTE xdata pData[7] = {0};
 5010   1        WORD usValue =  0;
 5011   1        UserCommonFlashRead(1, 0xfffe, 2, (BYTE *)&usValue);
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 88  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 88  
 
 5012   1        ucPar= ucPar;
 5013   1      
@@ -5630,7 +5630,7 @@ line level    source
                   pucDataSN[ir_add+i*3+1]=_0__+(ir_show_data[i]&0XF);
                 }
                 pucDataSN[sum+1]=_END_;
-C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/20/2026 19:45:02 PAGE 89  
+C51 COMPILER V9.60.0.0   RTDFACTORYFUNCTION                                                09/21/2026 15:33:52 PAGE 89  
 
                  
                   RTDFactoryOsdFuncPutStringProp(ucRow, ucCol, ucFontPoint, tFONT_FACTORY_EUROPE, &pucDataSN[0], _ENGLIS

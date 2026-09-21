@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTYPECPMIC
@@ -62,7 +62,7 @@ line level    source
               #define _TYPE_C_HW_IIC_SHPC_28000K          0x2F // 47
               #define _TYPE_C_HW_IIC_STA_SUGPIO_C         0x36 // 54
               #define _TYPE_C_HW_IIC_TOR                  0x47 // 71
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 2   
 
               #else
               #define _TYPE_C_HW_IIC_SLPC_14318K          0x0C // 12
@@ -126,7 +126,7 @@ line level    source
               
               //--------------------------------------------------
               // Macros of PMIC IIC Set Srart
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 3   
 
               //--------------------------------------------------
               #define GET_PMIC_IIC_SET_START()            (g_stPMICControl.b1PmicIICSetStart)
@@ -190,7 +190,7 @@ line level    source
               #define CLR_PMIC_EIZO_VBUS_5V_CHECK()       (g_ucEizoVbus5VCheck = _FALSE)
               
               #define GET_PMIC_EIZO_VBUS_0V_CHECK()       (g_ucEizoVbus0VCheck)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 4   
 
               #define SET_PMIC_EIZO_VBUS_0V_CHECK()       (g_ucEizoVbus0VCheck = _TRUE)
               #define CLR_PMIC_EIZO_VBUS_0V_CHECK()       (g_ucEizoVbus0VCheck = _FALSE)
@@ -254,7 +254,7 @@ line level    source
               // Macros of PMIC Check Flag
               //--------------------------------------------------
               #if(_TYPE_C_PMIC_CHECK_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 5   
 
               #define GET_PMIC_OUTPUT_ENABLE()            (g_bPmicOutputEnable)
               #define SET_PMIC_OUTPUT_ENABLE()            (g_bPmicOutputEnable = _ON)
@@ -318,7 +318,7 @@ line level    source
               #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD != _TYPE_C_PMIC_FW_OCP_NONE)
               BYTE g_ucOcpLevel;
               WORD g_pusOcpCurrent[4];
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 6   
 
               WORD g_pusOcpDelay[4];
               WORD g_usWDTimer;
@@ -382,7 +382,7 @@ line level    source
               BYTE ScalerTypeCPmicIICRead_EXINT0(BYTE ucSlaveAddr, WORD usSubAddr, BYTE ucSubAddrLength, WORD usLength, 
              -BYTE *pucReadArray);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 7   
 
               bit ScalerTypeCPmicIICWrite(BYTE ucSlaveAddr, WORD usSubAddr, BYTE ucSubAddrLength, WORD usLength, BYTE *p
              -ucWriteArray);
@@ -446,7 +446,7 @@ line level    source
               void ScalerTypeCPmicRx0OvpUvpIntHandler_EXINT0(void);
               BYTE ScalerTypeCPmicRx0GetFwOvpUvpCheckFlag_EXINT0(void);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 8   
 
               #endif // End of #if(_TYPE_C_PMIC_CHECK_SUPPORT == _ON)
               
@@ -510,7 +510,7 @@ line level    source
               
                   // Disable burst mode
                   ScalerSetByte(P7F_62_I2CM_CR2, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 9   
 
               
                   // Clear interrupts
@@ -574,7 +574,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Read data from the selected device by TypeC IIC
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 10  
 
               // Input Value  : ucSlaveAddr      --> Slave address
               //                ucSubAddrLength  --> Start address length of selected device
@@ -638,7 +638,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 11  
 
                       case 1:
               
@@ -702,7 +702,7 @@ line level    source
               
                       return _FAIL;
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 12  
 
               
                   // IIC command Start
@@ -766,7 +766,7 @@ line level    source
                       return _FAIL;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 13  
 
                   CLR_PMIC_IIC_IN_MAIN_LOOP();
               
@@ -830,7 +830,7 @@ line level    source
               
                           // Set 1 byte for FRSIB
                           ScalerSetBit_EXINT(P7F_62_I2CM_CR2, ~(_BIT1 | _BIT0), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 14  
 
               
                           // Set no repeat start
@@ -894,7 +894,7 @@ line level    source
                   // If int happened while this I2C setting, then return.
                   if(GET_PMIC_IIC_EVER_IN_WDINT_LOOP() == _TRUE)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 15  
 
                       // Reset(Block) IIC module
                       ScalerSetBit_EXINT(P7F_60_I2CM_CR0, ~_BIT7, 0x00);
@@ -958,7 +958,7 @@ line level    source
                   if(GET_PMIC_IIC_EVER_IN_WDINT_LOOP() == _TRUE)
                   {
                       // Reset(Block) IIC module
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 16  
 
                       ScalerSetBit_EXINT(P7F_60_I2CM_CR0, ~_BIT7, 0x00);
               
@@ -1022,7 +1022,7 @@ line level    source
                   {
                       // Reset(Block) IIC module
                       ScalerSetBit(P7F_60_I2CM_CR0, ~_BIT7, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 17  
 
               
                       // Enable IIC module
@@ -1086,7 +1086,7 @@ line level    source
                   // If int happened while this I2C setting, then return.
                   if((GET_PMIC_IIC_EVER_IN_EXINT0_LOOP() == _TRUE) || (GET_PMIC_IIC_EVER_IN_WDINT_LOOP() == _TRUE))
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 18  
 
                       // Reset(Block) IIC module
                       ScalerSetBit(P7F_60_I2CM_CR0, ~_BIT7, 0x00);
@@ -1150,7 +1150,7 @@ line level    source
               
                   // Set no repeat start
                   ScalerSetBit_EXINT(P7F_63_I2CM_CR3, ~(_BIT4 | _BIT3), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 19  
 
               
                   // Wait I2C Fifo Clk Switch to Mcu Clk
@@ -1214,7 +1214,7 @@ line level    source
                   // Load data to IIC buffer for transmission
                   for(ucI = 0; ucI < pData_EXINT[0]; ucI++)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 20  
 
                       ScalerSetByte_EXINT(P7F_69_I2CM_TD, pucWriteArray[ucI]);
                   }
@@ -1278,7 +1278,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Write data to the selected device by TypeC IIC
               // Input Value  : ucSlaveAddr      --> Slave address
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 21  
 
               //                ucSubAddrLength  --> Start address length of selected device
               //                usSubAddr        --> Start address of selected device
@@ -1342,7 +1342,7 @@ line level    source
                   switch(ucSubAddrLength)
                   {
                       case 0:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 22  
 
               
                           // Set data length
@@ -1406,7 +1406,7 @@ line level    source
               
                   // If interrupt form other process, then wait until transmit finished.
                   if((GET_PMIC_IIC_IN_MAIN_LOOP() == _TRUE) || (GET_PMIC_IIC_IN_EXINT0_LOOP() == _TRUE))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 23  
 
                   {
                       // Wait until Master Transmit Complete
@@ -1470,7 +1470,7 @@ line level    source
                           CLR_PMIC_IIC_SET_START();
               
                           return _FAIL;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 24  
 
                       }
               
@@ -1534,7 +1534,7 @@ line level    source
                   SET_PMIC_IIC_IN_WDINT_LOOP();
               
                   SET_PMIC_IIC_EVER_IN_WDINT_LOOP();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 25  
 
               
                   CLR_PMIC_IIC_EVER_IN_EXINT0_LOOP();
@@ -1598,7 +1598,7 @@ line level    source
               
                       // Check if more than 24 bytes are needed to be received
                       if(usLength > ucDataCnt)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 26  
 
                       {
                           usLength -= ucDataCnt;
@@ -1662,7 +1662,7 @@ line level    source
                       if(usLength > ucDataCnt)
                       {
                           usLength -= ucDataCnt;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 27  
 
                       }
                       else
@@ -1726,7 +1726,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 28  
 
                           ucDataCnt = usLength;
                           usLength = 0;
@@ -1790,7 +1790,7 @@ line level    source
                       else
                       {
                           ucDataCnt = usLength;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 29  
 
                           usLength = 0;
                       }
@@ -1854,7 +1854,7 @@ line level    source
                       {
                           ucDataCnt = usLength;
                           usLength = 0;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 30  
 
                       }
               
@@ -1918,7 +1918,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : PMIC Reset Setting
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 31  
 
               // Input Value  : None
               // Output Value : None
@@ -1982,7 +1982,7 @@ line level    source
                   {
                       DebugMessageTypeC("PMIC Check Fail!", 0x00);
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 32  
 
               #endif
               
@@ -2046,7 +2046,7 @@ line level    source
               // Description  : Rx0 PMIC Reset Settings
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 33  
 
               //--------------------------------------------------
               void ScalerTypeCPmicRx0Reset_EXINT0(void) using 1
@@ -2110,7 +2110,7 @@ line level    source
                       CLR_PMIC_PROTECT_TIMER_START();
               
                       // Active PMIC Protection Tracking Timer
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 34  
 
                       ScalerTimerReactiveTimerEvent(40, _SCALER_TIMER_EVENT_PMIC_TRACKING);
                   }
@@ -2174,7 +2174,7 @@ line level    source
                   EnumTypeCPmicDirection enumDirection = _TYPE_C_PMIC_DIRECTION_SNK;
               
                   // Avoid Warning
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 35  
 
                   enumPeakCurrent = enumPeakCurrent;
               
@@ -2238,7 +2238,7 @@ line level    source
                       ScalerTypeCPowerRangeIntSetting(_TYPE_C_UFP_VMON, usOVPThreshold, usUVPThreshold, _TYPE_C_ADC_WITH
              -OUT_RANGE);
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 36  
 
                   else
                   {
@@ -2302,7 +2302,7 @@ line level    source
                               // Peak Current Threshold 3: 150%(1ms)
                               pucOcpThreshold[2] = 150;
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 37  
 
                           else if(enumPeakCurrent == _PD_PEAK_CUR_2)
                           {
@@ -2366,7 +2366,7 @@ line level    source
                           SET_PMIC_FW_OCP_DELAY(2, 0);
                           SET_PMIC_FW_OCP_CURRENT(3, 0x03FF);
                           SET_PMIC_FW_OCP_DELAY(3, 0);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 38  
 
                       }
               
@@ -2430,7 +2430,7 @@ line level    source
                   }
               #endif // End of #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_SCALER_SARADC)
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 39  
 
               #if(_TYPE_C_PMIC_VOLTAGE_COMPENSATION == _ON)
                   // ========================================================
@@ -2494,7 +2494,7 @@ line level    source
                       SET_PMIC_BIDIR_SNK();
               
                       // Clear PMIC Protection Timer Check Flag When Turn off Vbus Power
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 40  
 
                       CLR_PMIC_PROTECT_TIMER_CHECK();
                   }
@@ -2558,7 +2558,7 @@ line level    source
               // Description  : Control Rx0 PMIC to Directed Voltage
               // Input Value  : bAction : _ON / _OFF
               //                bPowerDirection : _PD_POWER_SNK / _PD_POWER_SRC
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 41  
 
               //                usVoltage : 0 ~ 2100 (Unit = 10mV) / usCurrent : 0 ~ 500 (Unit = 10mA)
               // Output Value : Control result (Fail/Success)
@@ -2622,7 +2622,7 @@ line level    source
                           usUVPThreshold = ((WORD)((((DWORD)(usUVPThreshold)) * _TYPE_C_PMIC_FW_UVP_THRESHOLD) / 100));
                       }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 42  
 
                       SET_PMIC_FW_UVP_VOLTAGE(usUVPThreshold);
               
@@ -2686,7 +2686,7 @@ line level    source
                       {
                           // Peak Current Setting from Spec
                           if(enumPeakCurrent == _PD_PEAK_CUR_1)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 43  
 
                           {
                               // Peak Current Threshold 1: 110%(10ms)
@@ -2750,7 +2750,7 @@ line level    source
                                   SET_PMIC_FW_OCP_CURRENT((ucCount + 1), usCurrentTemp);
                                   SET_PMIC_FW_OCP_DELAY((ucCount + 1), usDelayTemp);
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 44  
 
                           }
                       }
@@ -2814,7 +2814,7 @@ line level    source
                   {
                       // Set Flag to Active PMIC Protection Timer When Vbus Power Stable
                       SET_PMIC_PROTECT_TIMER_CHECK();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 45  
 
               
                       // ====================================================
@@ -2878,7 +2878,7 @@ line level    source
                   // PMIC Check Support Setting Flow
                   // ========================================================
                   if((bAction == _ON) && (bPowerDirection == _PD_POWER_SRC))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 46  
 
                   {
                       SET_PMIC_OUTPUT_ENABLE();
@@ -2942,7 +2942,7 @@ line level    source
                   {
                       return _SUCCESS;
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 47  
 
                   else
                   {
@@ -3006,7 +3006,7 @@ line level    source
                       SET_PMIC_FW_OVP_VOLTAGE(usOVPThreshold);
               
                       // Set Threshold for UVP
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 48  
 
                       if(enumPdoType == _PD_3_PROGRAMMABLE_PDO)
                       {
@@ -3070,7 +3070,7 @@ line level    source
                       SET_PMIC_FW_OCP_DELAY(0, _TYPE_C_PMIC_FW_OCP_DELAY_SHUTDOWN);
               
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 49  
 
                       // ====================================================
                       // Check Peak Current Format
@@ -3134,7 +3134,7 @@ line level    source
                           for(ucCount = 0; ucCount < 3; ucCount++)
                           {
                               if(GET_PMIC_FW_OCP_CURRENT(ucCount) > GET_PMIC_FW_OCP_CURRENT(ucCount + 1))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 50  
 
                               {
                                   usCurrentTemp = GET_PMIC_FW_OCP_CURRENT(ucCount);
@@ -3198,7 +3198,7 @@ line level    source
               
               #elif(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_POLLING_PMIC)
                   // ========================================================
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 51  
 
                   // OCP by Polling PMIC's ADC Value Setting Flow
                   // ========================================================
@@ -3262,7 +3262,7 @@ line level    source
                   // PMIC Debug Setting Flow
                   // ========================================================
                   if((bAction == _ON) && (bPowerDirection == _PD_POWER_SRC))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 52  
 
                   {
                       // Set Flag to Active PMIC Protection Timer When Vbus Power Stable
@@ -3326,7 +3326,7 @@ line level    source
                       enumResult = ExternalDeviceInterfaceTypeCPmicTurnOff_WDINT();
               
                       // Reset PMIC Output Type
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 53  
 
                       SET_PMIC_OUTPUT_MODE_STATUS(enumPdoType);
                   }
@@ -3390,7 +3390,7 @@ line level    source
                   {
                       ScalerTypeCPmicRx0SwitchControl_EXINT0(_OFF, _PD_POWER_SNK);
                       enumDischarge = _TYPE_C_PMIC_DISCHARGE_DISABLE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 54  
 
                   }
               
@@ -3454,7 +3454,7 @@ line level    source
                   }
               
                   if(bPowerDirection == _PD_POWER_SRC)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 55  
 
                   {
                       enumDirection = _TYPE_C_PMIC_DIRECTION_SRC;
@@ -3518,7 +3518,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : RX0 PMIC Switch Control
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 56  
 
               // Input Value  : bEn : _ENABLE / _DISABLE
               // Output Value : Control result (Fail/Success)
@@ -3582,7 +3582,7 @@ line level    source
                   return GET_PMIC_OMF_INFO();
               }
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 57  
 
               
               #if(_TYPE_C_EMB_VBUS_PROTECT_MODE == _VBUS_PROTECT_BY_USER)
@@ -3646,7 +3646,7 @@ line level    source
                       SET_PMIC_PROTECT_TIMER_START();
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 58  
 
                   SET_PMIC_PROTECT_VALID();
               }
@@ -3710,7 +3710,7 @@ line level    source
                       SET_PMIC_FW_OVP_UVP_CHECK();
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 59  
 
               #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_SCALER_SARADC)
                       // Enable OCP Int
@@ -3774,7 +3774,7 @@ line level    source
               
               #if(_TYPE_C_PMIC_DEBUG == _ON)
                       ucTimerEvent |= 0x10;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 60  
 
               
                       ExternalDeviceInterfaceTypeCPmicDebugCheckStatus();
@@ -3838,7 +3838,7 @@ line level    source
                           // [Eizo] SIC437A Customized Power Control : OCP
                           ScalerTypeCPmicRx0PmicOcpProc_EXINT0();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 61  
 
               
                           // Set OCP Event
@@ -3902,7 +3902,7 @@ line level    source
                               // Clear Trigger Level
                               SET_PMIC_FW_OCP_PROTECT_LEVEL(0);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 62  
 
                               return;
                           }
@@ -3966,7 +3966,7 @@ line level    source
               //                pucActiveWDTime : WD Timer Delay Time
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 63  
 
               void ScalerTypeCPmicRx0WDTimerEventProc_WDINT(EnumScalerWDTimerEventID enumEventID, BYTE *pucActiveWDID, B
              -YTE *pucActiveWDTime) using 3
@@ -4030,7 +4030,7 @@ line level    source
                                           ScalerTypeCPowerRangeIntControl_WDINT(_TYPE_C_UFP_IMON, _ENABLE);
               
                                           // Clear Trigger Level
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 64  
 
                                           SET_PMIC_FW_OCP_PROTECT_LEVEL(0);
               
@@ -4094,7 +4094,7 @@ line level    source
                       // Translate Current of 10-Bit_ADC to 10mA/bit
                       usCurrentValue = ((WORD)((((DWORD)ScalerTypeCPowerRx0CorrectionToIdealData(ScalerTypeCPowerGetAdcO
              -utput(_TYPE_C_UFP_IMON))) * _TYPE_C_PMIC_IOUT_MAX_CURRENT) / 1024));
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 65  
 
               
                       // Debounce when current > OCP threshold
@@ -4158,7 +4158,7 @@ line level    source
                       // OCP judgment
                       if(usCurrentValue >= GET_PMIC_SAFETY_CURRENT_VALUE())
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 66  
 
                           DebugMessageTypeC("Pmic turn-off for Safety Protect", 0x00);
               
@@ -4222,7 +4222,7 @@ line level    source
                       // OCP judgment
                       if(usCurrentValue >= usOcpThreshold)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 67  
 
                           usOcpDelay = MAXOF(_TYPE_C_PMIC_FW_OCP_DELAY_SHUTDOWN, 10);
                           ScalerTimerReactiveTimerEvent(usOcpDelay, _SCALER_TIMER_EVENT_PMIC_POLLING_OCP);
@@ -4286,7 +4286,7 @@ line level    source
               
                   // Calculate VIL of compesation voltage (10mV)
                   usSchmittVIL = GET_RX0_OUTPUT_VOL() + ((usCurrentValue * 10) / _VOLTAGE_COMPESATION_CURRENT_UNIT);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 68  
 
               
                   // Calculate VIH of compesation voltage (10mV)
@@ -4350,7 +4350,7 @@ line level    source
                       DebugMessageTypeC("Pmic GPIO interrupt!", PCB_PMIC_INTERRUPT_DETECT());
               
               #if(_TYPE_C_PMIC_PROTECTION_METHOD == _TYPE_C_PMIC_ERROR_RECOVERY)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 69  
 
                       // Set Recovery
                       SET_TYPE_C_ERROR_RECOVERY();
@@ -4414,7 +4414,7 @@ line level    source
                           // Compare UVP Trigger Level with Vbus voltage in "ADC Ideal Data" Form
                           if(ScalerTypeCPowerRx0CorrectionToIdealData_EXINT0(ScalerTypeCPowerGetAdcOutput_EXINT0(_TYPE_C
              -_UFP_VMON)) > GET_PMIC_FW_UVP_VOLTAGE())
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 70  
 
                           {
                               // Recover Pmic to Normal State
@@ -4478,7 +4478,7 @@ line level    source
               // Description  : RX0 Attached Power Control Flow
               // Input Value  : enumPowerRole : _TYPE_C_POWER_SRC / _TYPE_C_POWER_SNK
               // Output Value : Control Result : _SUCCESS / _FAIL
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 71  
 
               //--------------------------------------------------
               BYTE ScalerTypeCPmicRx0AttachProc_EXINT0(EnumTypeCPowerRole enumPowerRole) using 1
@@ -4542,7 +4542,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 72  
 
               // Description  : RX0 Power Transition Start Control Flow
               // Input Value  : usVoltage : 300 ~ 2100 (Unit = 10mV)
@@ -4606,7 +4606,7 @@ line level    source
               //--------------------------------------------------
               BYTE ScalerTypeCPmicRx0PRSwapToSrcProc_WDINT(void) using 3
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 73  
 
                   if(ExternalDeviceInterfaceTypeCPmicPRSwapToSrcProc_WDINT() == _TYPE_C_PMIC_CONTROL_SUCCESS)
                   {
@@ -4670,7 +4670,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 74  
 
                       return _FAIL;
                   }
@@ -4734,7 +4734,7 @@ line level    source
               }
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 75  
 
               #if(_TYPE_C_PMIC_FW_OVP_UVP_SUPPORT == _ON)
               //--------------------------------------------------
@@ -4798,7 +4798,7 @@ line level    source
               //--------------------------------------------------
               // Description  : RX0 Vbus Check Control Flow
               // Input Value  : Vbus Check Type : _TYPE_C_VBUS_CHECK_0V / _TYPE_C_VBUS_CHECK_5V
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 76  
 
               // Output Value : None
               //--------------------------------------------------
@@ -4862,7 +4862,7 @@ line level    source
                       SET_PMIC_EIZO_VBUS_0V_CHECK();
                   }
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 77  
 
               
               //--------------------------------------------------
@@ -4926,7 +4926,7 @@ line level    source
               //--------------------------------------------------
               BYTE ScalerTypeCPmicRx0Vbus0VReadyProc_EXINT0(BYTE ucRole) using 1
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/20/2026 19:43:57 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPMIC                                             09/21/2026 15:32:45 PAGE 78  
 
                   EnumTypeCPowerRole enumPowerRole = _TYPE_C_POWER_ROLE_NONE;
               

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONLOCALDIMMING
@@ -62,7 +62,7 @@ line level    source
               #define _TUNNELPATTERN_FAIL_COUNT                               4
               #define _TUNNELPATTERN_PHASE1_COUNT                             2
               #define _TUNNELPATTERN_PHASE2_COUNT                             2
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 2   
 
               
               #define _TUNNELPATTERN_LV                                       70
@@ -126,7 +126,7 @@ line level    source
               WORD code tLDSDROGCCase4Lv[256] =
               {
               #include _LD_SDR_OGC_CASE_4_LV
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 3   
 
               };
               
@@ -190,7 +190,7 @@ line level    source
                   _PANEL_LV_MAX, _PANEL_LV_MAX, _PANEL_LV_MAX, _PANEL_LV_MAX,
                   _PANEL_LV_MAX, _PANEL_LV_MAX, _PANEL_LV_MAX, _PANEL_LV_MAX,
               };
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 4   
 
               WORD g_pusApplyPWM[_TOTAL_REGION];
               WORD g_pusLastApplyPWM[_TOTAL_REGION] =
@@ -254,7 +254,7 @@ line level    source
               void UserCommonLocalDimmingStepToGDHDR(void);
               void UserCommonLocalDimmingGetNodeLV1X8(WORD *pusUniformityGainNode, WORD *pusPWM, BYTE ucNodeClass);
               void UserCommonLocalDimmingEnable(bit bEn);
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 5   
 
               void UserCommonLocalDimmingSetPWMValue(WORD *pusPWM);
               void UserCommonLocalDimmingDCRToLvVerifyMode(BYTE *pucDCRData8bit, WORD *pusDCRToLV);
@@ -318,7 +318,7 @@ line level    source
               EnumLDStatus UserCommonLocalDimmingGetEnableStatus(void)
               {
                   if((GET_ON_LINE_CALIBRATION_STATUS() == _CALIBRATION_OFF) && (UserInterfaceGetLocalDimmingStatus() == 
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 6   
 
              -_LD_ENABLE))
                   {
@@ -382,7 +382,7 @@ line level    source
                   if(ScalerColorDDomainDBStatus() == _NOT_WAIT)
                   {
                       BYTE pucDCRResult[_TOTAL_REGION];
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 7   
 
                       BYTE ucNodeClass = 0;
                       memset(pucDCRResult, 255UL, _TOTAL_REGION);
@@ -446,7 +446,7 @@ line level    source
              -ble, ucNodeClass);
               
                           // Write Uniformity table
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 8   
 
                           if(ucNodeClass == _NODE_CLASS_NUMBER - 1)
                           {
@@ -510,7 +510,7 @@ line level    source
               
                               pusApplyPWM[2] = pusApplyLv[2] * _REGION2_PWM_TO_LV_OWN;
                               break;
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 9   
 
               
                           case 3:
@@ -574,7 +574,7 @@ line level    source
                       }
               #if(_DISPLAY_HDR_VERSION == _DISPLAY_HDR_VERSION_1_0)
                       if(pusApplyPWM[ucRegionInd] < _PANEL_PWM_MIN)
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 10  
 
                       {
                           pusApplyPWM[ucRegionInd] = _PANEL_PWM_MIN;
@@ -638,7 +638,7 @@ line level    source
                               else if(usUniformityGainNode_ucI < _PANEL_LV_BOOST_MIN)
                               {
                                   usUniformityGainTablePosition = (_PANEL_LV_BOOST_MIN - _PANEL_LV_BOOST_MIN);
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 11  
 
                               }
                               else
@@ -702,7 +702,7 @@ line level    source
                       ScalerTimerDelayXms(2);
               
                       // DCR
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 12  
 
                       ScalerColorDCRLocalDimmingEnable(_FUNCTION_ON);
                       ScalerColorDCRLocalDimmingSetMode(_LOCAL_DIMMING_1X8_MODE);
@@ -766,7 +766,7 @@ line level    source
               // Output Value :
               //--------------------------------------------------
               void UserCommonLocalDimmingSetLastPWMFull(void)
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 13  
 
               {
                   BYTE ucI = 0;
@@ -830,7 +830,7 @@ line level    source
                       DebugMessageHDR("StepToGB[3]", g_pusApplyPWM[3]);
                       DebugMessageHDR("StepToGB[4]", g_pusApplyPWM[4]);
                       DebugMessageHDR("StepToGB[5]", g_pusApplyPWM[5]);
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 14  
 
                       DebugMessageHDR("StepToGB[6]", g_pusApplyPWM[6]);
                       DebugMessageHDR("StepToGB[7]", g_pusApplyPWM[7]);
@@ -894,7 +894,7 @@ line level    source
              -ROUP_NODE_NUMBER, _GROUP_NODE_NUMBER * 5);
                               }
                           }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 15  
 
               
                           break;
@@ -958,7 +958,7 @@ line level    source
                   {
                       for(ucI = 0; ucI < (sizeof(pusLocalPwm) / sizeof(pusLocalPwm[0])); ++ucI)
                       {
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 16  
 
               #if(_DISPLAY_HDR_VERSION == _DISPLAY_HDR_VERSION_1_1)
                           if(pusPWM[ucI] < _PANEL_PWM_MIN)
@@ -1022,7 +1022,7 @@ line level    source
                               pucData += 9;
                           }
                       }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 17  
 
                       else
               #endif
@@ -1086,7 +1086,7 @@ line level    source
               // Output Value : void
               //--------------------------------------------------
               void UserCommonLocalDimmingSetPWMValue(WORD *pusPWM)
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 18  
 
               {
                   BYTE ucI = 0;
@@ -1150,7 +1150,7 @@ line level    source
                           }
                           pucDCRData8bit[ucI] = usLightEnhanceCode;
                       }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 19  
 
               #endif
               
@@ -1214,7 +1214,7 @@ line level    source
                           {
                               case _SDR_OGC_CASE_1:
               
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 20  
 
                                   for(ucI = 0; ucI < _TOTAL_REGION; ucI++)
                                   {
@@ -1278,7 +1278,7 @@ line level    source
                       if(pusDCRToLV[ucI] > _PANEL_LV_MAX)
                       {
                           pusDCRToLV[ucI] = _PANEL_LV_MAX;
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 21  
 
                       }
                   }
@@ -1342,7 +1342,7 @@ line level    source
                               }
               #endif
                           }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 22  
 
                       }
                       else
@@ -1406,7 +1406,7 @@ line level    source
                               }
                           }
                       }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 23  
 
                       else
               #endif
@@ -1470,7 +1470,7 @@ line level    source
               
                                       break;
               
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 24  
 
                                   case _SDR_OGC_CASE_3:
               
@@ -1534,7 +1534,7 @@ line level    source
               
                           if(pusDCRToLV[ucI] > usMaxDCRLv)
                           {
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 25  
 
                               usMaxDCRLv = pusDCRToLV[ucI];
                           }
@@ -1598,7 +1598,7 @@ line level    source
                       if(UserInterfaceGetPCHDRVerifyMode() == _LD_PCHDR_NORMAL_MODE)
                       {
                           WORD usSmoothLv = 0;
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 26  
 
                           usSmoothLv = ((DWORD)(100 -  ucSmoothLevel) * _PANEL_LV_MAX + 50) / 100;
                           memcpy(pusSmoothLV, pusDCRToLV, _TOTAL_REGION * sizeof(pusDCRToLV[0]));
@@ -1662,7 +1662,7 @@ line level    source
                              ((g_pusLastDCRToLV[ucI] - g_pusDCRToLV[ucI]) >= (_PANEL_LV_MAX - _PANEL_LV_MIN)))
                           {
                               g_pusLDR[ucI] = 1024;
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 27  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 27  
 
                           }
                           else
@@ -1726,7 +1726,7 @@ line level    source
               
               #if(_IAPS_SUPPORT == _ON)
                       ScalerColorHLWIAPSGainAdjust(_HLW_FULL_WINDOW, _DB_APPLY_NONE);
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 28  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 28  
 
               #endif
               
@@ -1790,7 +1790,7 @@ line level    source
                   if(g_enumDetectCTunnelPatternStatus != _LD_TUNNEL_PHASE1_PASS)
                   {
                       ulAboveTh1Num = ScalerColorDCRLocalDimmingReadTHDResult(_DCR_LD_ABOVE_TH1_NUM);
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 29  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 29  
 
                       ulAboveTh2Num = ScalerColorDCRLocalDimmingReadTHDResult(_DCR_LD_ABOVE_TH2_NUM);
               
@@ -1854,7 +1854,7 @@ line level    source
                               g_ucWaitForStable = 0;
                           }
                       }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 30  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 30  
 
                   }
                   else
@@ -1918,7 +1918,7 @@ line level    source
               // Description  : whether user can change boost gain value
               // Input Value  : void
               // Output Value : _LD_BOOST_KERNAL/ _LD_BOOST_USER
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 31  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 31  
 
               //--------------------------------------------------
               EnumLDBoostMode UserCommonLocalDimmingGetBoostMode(void)
@@ -1982,7 +1982,7 @@ line level    source
                           usDarkSceneStep = g_pusLDR[ucI];
                       }
                   }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 32  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 32  
 
                   DebugMessageHDR("g_ucMaxDCR", g_ucMaxDCR);
                   DebugMessageHDR("tLDDarkGain", tLDDarkGain[g_ucMaxDCR]);
@@ -2046,7 +2046,7 @@ line level    source
               
                   ScalerColorLDSRGBAdjust(pucSRGBMatrix, _SRGB_3_BIT_SHIFT_LEFT);
               }
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 33  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 33  
 
               
               //--------------------------------------------------
@@ -2110,7 +2110,7 @@ line level    source
                                   break;
               
                               case _SDR_DISPLAYP3:
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 34  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 34  
 
                                   UserCommonFlashRead(_OGC_FLASH_BANK, _OCC_DISPLAYP3_ADDRESS, 18, pucSRGBMatrixOriginal
              -);
@@ -2174,7 +2174,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/20/2026 19:44:35 PAGE 35  
+C51 COMPILER V9.60.0.0   USERCOMMONLOCALDIMMING                                            09/21/2026 15:33:24 PAGE 35  
 
    CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----

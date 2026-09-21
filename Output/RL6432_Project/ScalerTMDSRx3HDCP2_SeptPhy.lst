@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERTMDSRX3HDCP2_SEPTPHY
@@ -62,7 +62,7 @@ line level    source
   45          
   46          BYTE g_pucTmdsRx3Hdcp2Rtx[8];
   47          BYTE g_pucTmdsRx3Hdcp2TxCaps[3];
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 2   
 
   48          BYTE g_pucTmdsRx3Hdcp2Rn[8];
   49          BYTE g_pucTmdsRx3Hdcp2Rrx[8];
@@ -126,7 +126,7 @@ line level    source
  107   1      
  108   1          // Set HW to Authenticated State
  109   1          ScalerSetByte_EXINT(P2E_28_HDCP_I2C_CTRL_2, 0x10);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 3   
 
  110   1          ScalerSetBit_EXINT(P2E_29_HDCP_I2C_CTRL_3, ~_BIT6, _BIT6);
  111   1      }
@@ -190,7 +190,7 @@ line level    source
                   SET_TMDS_RX3_HDCP2_AKE_INIT_RECEIVED();
               #endif
  170   1      
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 4   
 
  171   1          // Receiver Has Received AKE_INIT
  172   1          if(GET_TMDS_RX3_HDCP2_AKE_INIT_RECEIVED() == _TRUE)
@@ -254,7 +254,7 @@ line level    source
                               ScalerHdcp2DkeyCalculate(_HDCP_2_2_DKEY_1, g_pucTmdsRx3Hdcp2Rtx, g_pucTmdsRx3Hdcp2Rrx, g_p
              -ucTmdsRx3Hdcp2Km, g_pucTmdsRx3Hdcp2Rn);
               
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 5   
 
                               memcpy(g_pucTmdsRx3Hdcp2dKey1, (volatile BYTE xdata *)P63_81_HDCP_AES_OUT_15, 16);
               
@@ -318,7 +318,7 @@ line level    source
                           memcpy(pucSHA256, (volatile BYTE xdata *)P63_35_HDCP_SHA_0, 32);
               
                           ScalerTMDSRx3Hdcp2SetRdMsgValue(0x01, pucSHA256, 32);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 6   
 
               
                           for(pData[0] = 0; pData[0] < 32; pData[0]++)
@@ -382,7 +382,7 @@ line level    source
                       pucRiv[2] = 0x6b;
                       pucRiv[3] = 0x43;
                       pucRiv[4] = 0xc5;
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 7   
 
                       pucRiv[5] = 0xe8;
                       pucRiv[6] = 0x86;
@@ -446,7 +446,7 @@ line level    source
  408   3                  // Set HDCP 2.2 Authentication State = UnAuthenticated
  409   3                  SET_TMDS_RX3_HDCP2_AUTH_STATE(_HDCP_2_2_STATE_UNAUTHENTICATED);
  410   3      
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 8   
 
  411   3                  // Set RxStatus REAUTH_REQ
  412   3                  ScalerSetBit(P2E_3B_I2C_DUMMY_0, ~_BIT0, _BIT0);
@@ -510,7 +510,7 @@ line level    source
  470   1          pucBackUp[1] = (ScalerGetByte_EXINT(P72_C8_HDMI_APC) & 0x01);
  471   1      
  472   1          // Set CA Port non-auto increase
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 9   
 
  473   1          ScalerSetBit_EXINT(P72_C8_HDMI_APC, ~_BIT0, 0x00);
  474   1      
@@ -574,7 +574,7 @@ line level    source
  529   3                      ScalerSetByte_EXINT(P72_C4_HDCP_DP, 0x02);
  530   3                      ScalerSetBit_EXINT(P2E_3B_I2C_DUMMY_0, ~_BIT0, 0x00);
  531   3      
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 10  
 
  532   3                      SET_TMDS_RX3_HDCP2_AKE_INIT_RECEIVED();
  533   3      
@@ -638,7 +638,7 @@ line level    source
  587   4                      }
  588   3      
  589   3                      // Calculate Dkey1
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 11  
 
  590   3                      ScalerHdcp2DkeyCalculate_EXINT0(_HDCP_2_2_DKEY_1, g_pucTmdsRx3Hdcp2Rtx, g_pucTmdsRx3Hdcp2R
              -rx, g_pucTmdsRx3Hdcp2Km, g_pucTmdsRx3Hdcp2Rn);
@@ -702,7 +702,7 @@ line level    source
  643   4                          // Set Message Size = 0x21
  644   4                          ScalerSetBit_EXINT(P2E_3B_I2C_DUMMY_0, ~_BIT0, _BIT0);
  645   4                          ScalerSetByte_EXINT(P72_C3_HDCP_AP, 0x70);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 12  
 
  646   4                          ScalerSetByte_EXINT(P72_C4_HDCP_DP, 0x21);
  647   4                          ScalerSetByte_EXINT(P72_C3_HDCP_AP, 0x71);
@@ -766,7 +766,7 @@ line level    source
  701   3      
  702   3                      break;
  703   3      
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 13  
 
  704   3                  default:
  705   3                      break;
@@ -830,7 +830,7 @@ line level    source
  761   1          ScalerSetByte_EXINT(P72_C9_HDMI_AP, pucBackUp[0]);
  762   1      }
  763          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 14  
 
  764          // Description  : HDCP 2.2 Re-Auth Timer Event
  765          // Input Value  : None
@@ -894,7 +894,7 @@ line level    source
  819   1          CLR_TMDS_RX3_HDCP2_AKE_INIT_RECEIVED();
  820   1          CLR_TMDS_RX3_HDCP2_AKE_NO_STORED_KM_RECEIVED();
  821   1          CLR_TMDS_RX3_HDCP2_AKE_STORED_KM_RECEIVED();
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 15  
 
  822   1          CLR_TMDS_RX3_HDCP2_LC_INIT_RECEIVED();
  823   1          CLR_TMDS_RX3_HDCP2_SKE_SEND_EKS_RECEIVED();
@@ -958,7 +958,7 @@ line level    source
  881   1          ScalerSetBit_EXINT(P2E_23_HDCP_MSGRAP_H, ~(_BIT1 | _BIT0), 0x00);
  882   1          ScalerSetByte_EXINT(P2E_24_HDCP_MSGRAP_L, 0x00);
  883   1          ScalerSetByte_EXINT(P2E_25_HDCP_MSGRDP, ucValue);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 16  
 
  884   1      }
  885          //--------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
                   ScalerSetByte(P2E_24_HDCP_MSGRAP_L, usAddress);
               
                   // Set HDCP 2 Read SRAM Message Value, Disable HDCP 2 Read SRAM auto Increase
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 17  
 
                   for(usTemp = usAddress; usTemp < (usAddress + usLength); usTemp++)
                   {
@@ -1086,7 +1086,7 @@ line level    source
                   {
                       DebugMessageHDCP2("[D3]H_prime", pucSHA256[pData[0]]);
                   }
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 18  
 
               
                   // Load Km to Read SRAM
@@ -1150,7 +1150,7 @@ line level    source
 1066   1      
 1067   1          // RSA Calculate
 1068   1          ScalerHdcp2RxRsaCal_WDINT(pucHdcp2KpubKm);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 19  
 
 1069   1      }
 1070          
@@ -1214,7 +1214,7 @@ line level    source
 1125   2      
 1126   2              // Load Km to Read SRAM
 1127   2              ScalerTMDSRx3Hdcp2SetRdMsgValue_WDINT(0x01, g_pucHdcp2Sha256, 32);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/20/2026 19:43:41 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERTMDSRX3HDCP2_SEPTPHY                                        09/21/2026 15:32:28 PAGE 20  
 
 1128   2      
 1129   2              // Set Message Size = 0x21

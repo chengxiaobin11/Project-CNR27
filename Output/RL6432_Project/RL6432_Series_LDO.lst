@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_LDO                                                 09/20/2026 19:44:15 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_LDO                                                 09/21/2026 15:33:04 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_LDO
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          
   47          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_LDO                                                 09/20/2026 19:44:15 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_LDO                                                 09/21/2026 15:33:04 PAGE 2   
 
   48          // Description  : LDO Power Control.
   49          // Input Value  : ucPorStatus    --> _POWER_STATUS_NORMAL/_POWER_STATUS_SAVING/_POWER_STATUS_OFF Select.

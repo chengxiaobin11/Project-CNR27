@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERMCU
@@ -62,7 +62,7 @@ line level    source
   45          bit ScalerMcuDdcRamClockCheckSafe(EnumClkSel enumClock, BYTE ucDiv);
   46          void ScalerMcuFlashClockGroupSetting(EnumClkSel enumClock);
   47          void ScalerMcuPwmControl(EnumPowerStatus enumPowStatus);
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 2   
 
   48          #if(_STARTUP_SPEED_UP_SUPPORT == _OFF)
   49          void ScalerMcuCacheInitial(void);
@@ -126,7 +126,7 @@ line level    source
  107   1      #if(_ISP_CHANNEL_PROTECT_SUPPORT != _OFF)
                   // Enable DDCCI Auto Switch Function
                   MCU_FF2A_IIC_IRQ_CONTROL2 |= _BIT4;
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 3   
 
               
                   // ISP channel initial select for Hub
@@ -190,7 +190,7 @@ line level    source
  167   1          // Stop Timer2 and Clear Flag
  168   1          TR2 = _OFF;
  169   1          TF2 = _OFF;
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 4   
 
  170   1          TCLK = 0;
  171   1          RCLK = 0;
@@ -254,7 +254,7 @@ line level    source
                   // Enable Serial Port IRQ
                   ES = _ENABLE;
               #endif
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 5   
 
  232   1      
  233   1      
@@ -318,7 +318,7 @@ line level    source
                   ScalerLCTankIOSCFromM2PLL(_ON);
               
                   // System Clock Select From M2PLL divider
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 6   
 
                   ScalerLCTankSystemClkFromM2PLLMcuDiv(_ON);
               
@@ -382,7 +382,7 @@ line level    source
  352   1          MCU_FF13_ADC2_THRESHOLD_H = 0x00;
  353   1          MCU_FF14_ADC2_THRESHOLD_L = 0xFF;
  354   1          MCU_FF15_ADC3_THRESHOLD_H = 0x00;
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 7   
 
  355   1          MCU_FF16_ADC3_THRESHOLD_L = 0xFF;
  356   1      
@@ -446,7 +446,7 @@ line level    source
                           ucInput = _D1_INPUT_PORT;
               #elif(((_D2_INPUT_PORT_TYPE != _D2_NO_PORT) && (_D2_DDC_CHANNEL_SEL == _DDC1)) ||\
                     ((_D2_INPUT_PORT_TYPE == _D2_DUAL_DVI_PORT) && (_D3_DDC_CHANNEL_SEL == _DDC1)))
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 8   
 
                           ucInput = _D2_INPUT_PORT;
               #elif(((_D3_INPUT_PORT_TYPE != _D3_NO_PORT) && (_D3_DDC_CHANNEL_SEL == _DDC1)) ||\
@@ -510,7 +510,7 @@ line level    source
                     ((_D3_INPUT_PORT_TYPE == _D3_DUAL_DVI_PORT) && (_D4_DDC_CHANNEL_SEL == _DDC4)))
                           ucInput = _D3_INPUT_PORT;
               #elif(((_D4_INPUT_PORT_TYPE != _D4_NO_PORT) && (_D4_DDC_CHANNEL_SEL == _DDC4)) ||\
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 9   
 
                     ((_D4_INPUT_PORT_TYPE == _D4_DUAL_DVI_PORT) && (_D5_DDC_CHANNEL_SEL == _DDC4)))
                           ucInput = _D4_INPUT_PORT;
@@ -574,7 +574,7 @@ line level    source
                       case _D1_INPUT_PORT:
                           ucDdcChannel = _D1_DDC_CHANNEL_SEL;
                           break;
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 10  
 
               #endif
               
@@ -638,7 +638,7 @@ line level    source
  600          //--------------------------------------------------
  601          // Description  : Both MCU/Flash clock switching and setting
  602          // Input Value  : Clock --> _M2PLL_CLK/_EXT_XTAL_CLK/_IOSC_CLK
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 11  
 
  603          // Output Value : None
  604          //--------------------------------------------------
@@ -702,7 +702,7 @@ line level    source
  660   2      
  661   2              // Both Mcu/Flash first stage divider
  662   2              MCU_FFED_MCU_CONTROL = ((_FLASH_CLK_IN_DIV & 0x0F) << 2) | (MCU_FFED_MCU_CONTROL & 0xC3);
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 12  
 
  663   2      
  664   2              // Flash second stage divider
@@ -766,7 +766,7 @@ line level    source
  718   2              ucTempPwmClock = MCU_FFF2_PWM_I2C_CLOCK_STOP;
  719   2              ucTempPwmClock |= (_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0);
  720   2              ucTempPwmClock &= ~(((BYTE)_PWM5_PSAV_EN << 5) | ((BYTE)_PWM4_PSAV_EN << 4) | ((BYTE)_PWM3_PSAV_EN
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 13  
 
              - << 3) |
  721   2                                  ((BYTE)_PWM2_PSAV_EN << 2) | ((BYTE)_PWM1_PSAV_EN << 1) | ((BYTE)_PWM0_PSAV_EN
@@ -830,7 +830,7 @@ line level    source
               void ScalerMcuDdcRamEDIDAddrSelect(EnumD0D1DDCRAMSelect enumDdcRamSel, EnumDDCAddrType enumDdcAddr)
               {
                   switch(enumDdcRamSel)
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 14  
 
                   {
                       case _D0_DDCRAM:
@@ -895,7 +895,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =   ----       1
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/20/2026 19:43:21 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERMCU                                                         09/21/2026 15:32:08 PAGE 15  
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1013,7 +1013,7 @@ void OsdHdrAdj(void)
 	UserAdjustColorEffectMode();
 #endif
 }
-//ÖØÈë
+//ï¿½ï¿½ï¿½ï¿½
 void OsdFuncAdj1()
 {
 	BYTE j=OSD_MAIN_MENU_ITEM<<4|OSD_SubMenuCur;
@@ -1703,7 +1703,7 @@ void OsdFuncAdj(void)
 		case _MENU_FUN_COLORGAMUT:
 			g_usAdjustValue = OsdDisplayDetOverRange(g_usAdjustValue,_PCM_OSD_NATIVE,_PCM_OSD_SRGB,_ON);
 			SET_OSD_PCM_STATUS(g_usAdjustValue);
-#if(_OCC_SUPPORT == _ON)//¿ªÆôÒªÖØÐÂµ÷
+#if(_OCC_SUPPORT == _ON)//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Âµï¿½
 			OsdFuncColorPcmAdjust();
 #endif
 	
@@ -1730,7 +1730,7 @@ void OsdFuncAdj(void)
 		
 #if(_ROTATE_FUN_SUPPORT)
 		case _MENU_FUN_ROTATE:
-#if 0//²»Ö§³Ö
+#if 0//ï¿½ï¿½Ö§ï¿½ï¿½
 			g_usAdjustValue = OsdDisplayDetOverRange(g_usAdjustValue,3,_DISP_ROTATE_0,_ON);
 			SET_OSD_ROTATE_STATUS(g_usAdjustValue);
 			SET_OSD_DISP_ROTATE(g_usAdjustValue);
@@ -1761,7 +1761,7 @@ void OsdFuncAdj(void)
 			g_usAdjustValue =tOSD_OSD_ROTATE2[g_usAdjustValue];
 			g_usAdjustValue = OsdDisplayDetOverRange(g_usAdjustValue,3,_OSD_ROTATE_DEGREE_0,_ON);
 #if !_MEW_OSD_FONT
-			while(g_usAdjustValue==_OSD_ROTATE_DEGREE_270||g_usAdjustValue==_OSD_ROTATE_DEGREE_90)////90or270hz ²»ÄÜÕý³£ÏÔÊ¾ Ëõ¼õ³¤¶Èµ¼ÖÂ
+			while(g_usAdjustValue==_OSD_ROTATE_DEGREE_270||g_usAdjustValue==_OSD_ROTATE_DEGREE_90)////90or270hz ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½
 				g_usAdjustValue = OsdDisplayDetOverRange(g_usAdjustValue,3,_OSD_ROTATE_DEGREE_0,_ON);
 #endif
 			g_usAdjustValue =tOSD_OSD_ROTATE2[g_usAdjustValue];
@@ -1781,7 +1781,7 @@ void OsdFuncAdj(void)
 			g_usAdjustValue = (BYTE)OsdDisplayDetOverRangeRotation(g_usAdjustValue, 2, _OFF, _ON);
 			SET_FUN_KVM(g_usAdjustValue);
 #if(_PCB_TYPE == _RL6432__156PIN__HKMRT255XE08__1T1H1DP_LVDS)
-			if(GET_FUN_KVM() == _OFF)//×Ô¶¯
+			if(GET_FUN_KVM() == _OFF)//ï¿½Ô¶ï¿½
 			{
 				if(SysSourceGetInputPort()== _D0_INPUT_PORT )
 				{
@@ -2492,7 +2492,7 @@ void OsdFuncColorFormatAdjust(void)
 // Input Value  : None
 // Output Value : None
 //--------------------------------------------------
-#if(_OCC_SUPPORT == _ON)//¿ªÆôÒªÖØÐÂµ÷
+#if(_OCC_SUPPORT == _ON)//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Âµï¿½
 void OsdFuncColorPcmAdjust(void)
 {
 #if(_PCM_FUNCTION == _ON)

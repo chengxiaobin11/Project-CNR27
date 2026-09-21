@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONCOLOR                                                 09/20/2026 19:43:41 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONCOLOR                                                 09/21/2026 15:32:29 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONCOLOR
@@ -62,7 +62,7 @@ line level    source
               void ScalerColorSwitchColorInfoArray(EnumColorInfo enumColorInfo);
               void ScalerColorSwitchColorInfoArray_EXINT0(EnumColorInfo enumColorInfo);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONCOLOR                                                 09/20/2026 19:43:41 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONCOLOR                                                 09/21/2026 15:32:29 PAGE 2   
 
   48          
   49          //****************************************************************************

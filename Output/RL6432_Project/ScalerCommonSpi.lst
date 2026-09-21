@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONSPI
@@ -62,7 +62,7 @@ line level    source
                   _SPI0_RX_XRAM_ADDRESS_F300,
               } EnumSpi0RxXramAddress;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               #pragma save
               #pragma OT(8)
               bit ScalerSpiData(bit bReadWrite, WORD usDataLength, BYTE *pucDataBuf)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 3   
 
               {
                   BYTE ucIndex = 0;
@@ -190,7 +190,7 @@ line level    source
               
                       if(bReadWrite == _WRITE)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 4   
 
                           // Set data
                           for(ucIndex = 0; ucIndex < ucCommandLength; ucIndex++)
@@ -254,7 +254,7 @@ line level    source
                   BYTE ucTimeOut = _SPI_TRANSACTION_FINISH_COUNT;
               
                   if((bReadWrite == _READ) && (usDataLength > _SPI0_RX_BUFFER_MAX_LENGTH))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 5   
 
                   {
                       DebugMessageScaler("SPI Read DataLength > _SPI0_RX_BUFFER_MAX_LENGTH", usDataLength);
@@ -318,7 +318,7 @@ line level    source
                       }
               
                       // Start SPI transaction
-C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/20/2026 19:43:54 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSPI                                                   09/21/2026 15:32:42 PAGE 6   
 
                       ScalerSetByte(P22_A0_SPI_TRANSACTION_EN, 0x01);
               

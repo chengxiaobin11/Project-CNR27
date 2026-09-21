@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_MPS_MP4247
@@ -62,7 +62,7 @@ line level    source
               #define _MP4247_SUBADDR_LENGTH                      0x01
               #define _MP4247_DATA_LENGTH_1                       0x01
               #define _MP4247_DATA_LENGTH_2                       0x02
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 2   
 
               
               //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
                   BYTE ucOperation; // 0x01 OPERATION  0x00 OFF , 0x80 ON
                   BYTE ucVoutCommand_h; // 0x21 VOUT_COMMAND
                   BYTE ucVoutCommand_l; // 0x21 VOUT_COMMAND
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 3   
 
                   BYTE ucMfrCtrl1; // 0xD0 MFR_CTRL1
                   BYTE ucMfrCurrentLimit; // 0xD1 MFR_CURRENT_LIMIT
@@ -190,7 +190,7 @@ line level    source
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicPpsOutputModeSetting(EnumTypeCPmicDirection enu
              -mPowerDirection, EnumPDPdoType enumOutputPdoType);
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicPpsOutputModeSetting_EXINT0(EnumTypeCPmicDirect
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 4   
 
              -ion enumPowerDirection, EnumPDPdoType enumOutputPdoType);
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicPpsOutputModeSetting_WDINT(EnumTypeCPmicDirecti
@@ -254,7 +254,7 @@ line level    source
                   ScalerTypeCPmicIICWrite(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _MP4247_OPEARTION, _MP4247_SUBADDR_LENGTH, _MP
              -4247_DATA_LENGTH_1, (BYTE *)(&g_pstPmicMp4247Data.ucOperation));
                   ScalerTypeCPmicIICWrite(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _MP4247_VOUT_COMMAND, _MP4247_SUBADDR_LENGTH, 
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 5   
 
              -_MP4247_DATA_LENGTH_1, (BYTE *)(&g_pstPmicMp4247Data.ucVoutCommand_l));
                   ScalerTypeCPmicIICWrite(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _MP4247_VOUT_COMMAND + 1, _MP4247_SUBADDR_LENG
@@ -318,7 +318,7 @@ line level    source
                   if(usVoltage > 2000) // maximum 20V
                   {
                       usVoltage = 2000;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 6   
 
                   }
               
@@ -382,7 +382,7 @@ line level    source
                       // Current Setting
                       // ---------------------
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 7   
 
                       if(usCurrent <= 100) // < 1A (unit: 10mA)
                       {
@@ -446,7 +446,7 @@ line level    source
                   }
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 8   
 
               }
               
@@ -510,7 +510,7 @@ line level    source
                       else if(usVoltage <= (2000))
                       {
                           g_pstPmicMp4247Data.ucVoutCommand_h = HIBYTE(_MP4247_OUTPUT_VOL_20V);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 9   
 
                           g_pstPmicMp4247Data.ucVoutCommand_l = LOBYTE(_MP4247_OUTPUT_VOL_20V);
                       }
@@ -574,7 +574,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 10  
 
                           g_pstPmicMp4247Data.ucMfrCurrentLimit = ((g_pstPmicMp4247Data.ucMfrCurrentLimit & _BIT7) | _MP
              -4247_OUTPUT_CURRENT_LIMIT_5_0A);
@@ -638,7 +638,7 @@ line level    source
                       else if(usVoltage <= (900))
                       {
                           g_pstPmicMp4247Data.ucVoutCommand_h = HIBYTE(_MP4247_OUTPUT_VOL_9V);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 11  
 
                           g_pstPmicMp4247Data.ucVoutCommand_l = LOBYTE(_MP4247_OUTPUT_VOL_9V);
                       }
@@ -702,7 +702,7 @@ line level    source
                       }
                       else if(usCurrent <= 350)
                       {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 12  
 
                           g_pstPmicMp4247Data.ucMfrCurrentLimit = ((g_pstPmicMp4247Data.ucMfrCurrentLimit & _BIT7) | _MP
              -4247_OUTPUT_CURRENT_LIMIT_3_5A);
@@ -766,7 +766,7 @@ line level    source
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 13  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 13  
 
               
               //--------------------------------------------------
@@ -830,7 +830,7 @@ line level    source
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 14  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 14  
 
               
               //--------------------------------------------------
@@ -894,7 +894,7 @@ line level    source
               
                   // PCB Control
                   if(enumEn == _TYPE_C_PMIC_DISCHARGE_ENABLE)
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 15  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 15  
 
                   {
                       PCB_VBUS_DISCHARGE_CONTROL(_VBUS_DISCHARGE_ON);
@@ -958,7 +958,7 @@ line level    source
               // Description  : PMIC Switch Control
               // Input Value  : enumSwitchControl : _ENABLE / _DISABLE
               //                enumPowerDirection : _SRC / _SNK
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 16  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 16  
 
               // Output Value : Control result (Fail/Success)
               //--------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
               // Description  : PMIC Switch Control
               // Input Value  : enumSwitchControl : _ENABLE / _DISABLE
               //                enumPowerDirection : _SRC / _SNK
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 17  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 17  
 
               // Output Value : Control result (Fail/Success)
               //--------------------------------------------------
@@ -1086,7 +1086,7 @@ line level    source
               // Output Value : Control result (Fail/Success)
               //--------------------------------------------------
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicPpsOutputModeSetting_WDINT(EnumTypeCPmicDirecti
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/20/2026 19:45:06 PAGE 18  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_MPS_MP4247                                             09/21/2026 15:33:55 PAGE 18  
 
              -on enumPowerDirection, EnumPDPdoType enumOutputPdoType) using 3
               {

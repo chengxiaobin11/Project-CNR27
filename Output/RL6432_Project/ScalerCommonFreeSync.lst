@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONFREESYNC
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          // FUNCTION DECLARATIONS
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 2   
 
   48          DWORD ScalerFreeSyncGetFreeSyncInfo(EnumSourceSearchPort enumSearchPort, EnumAmdSpdInfoContent enumContent
              -);
@@ -126,7 +126,7 @@ line level    source
               bit ScalerFreeSyncHDMIRx0CheckAmdVsdbVer(void);
               DWORD ScalerFreeSyncHDMIRx0GetAmdSpdInfo(EnumAmdSpdInfoContent enumContent);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 3   
 
  103          
  104          #if(_HDMI_MAC_PAGE71_USE == _ON)
@@ -190,7 +190,7 @@ line level    source
  160   2      #if((_D2_INPUT_PORT_TYPE == _D2_DP_PORT) && (_DP_FREESYNC_SUPPORT == _ON))
                           usFreeSyncInfo = GET_DPRX2_AMD_SPD_INFO(enumContent);
               #elif((_D2_HDMI_SUPPORT == _ON) && (_HDMI_FREESYNC_SUPPORT == _ON))
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 4   
 
                           usFreeSyncInfo = GET_HDMIRX2_AMD_SPD_INFO(enumContent);
               #endif
@@ -254,7 +254,7 @@ line level    source
  222          {
  223   1          switch(enumSearchPort)
  224   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 5   
 
  225   2      #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT)
  226   2              case _D0_INPUT_PORT:
@@ -318,7 +318,7 @@ line level    source
               #endif
  284   2      
  285   2      #if(_D5_INPUT_PORT_TYPE != _D5_NO_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 6   
 
                       case _D5_INPUT_PORT:
               
@@ -382,7 +382,7 @@ line level    source
  345          // Description  : Get Freesync Htotal Margin
  346          // Input Value  : enumInputPort --> Source Search Port
  347          // Output Value : Htotal Margin & Htotal
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 7   
 
  348          //--------------------------------------------------
  349          void ScalerFreeSyncGetSourceInfo(EnumSourceSearchPort enumSearchPort, BYTE ucPortType, StructFreeSyncSourc
@@ -446,7 +446,7 @@ line level    source
  403   1             ((pstEdidInfo->usHblank <= pstEdidRefInfo->usRefHblankHBound) && (pstEdidInfo->usHblank >= pstEdidR
              -efInfo->usRefHblankLBound)) &&
  404   1             ((pstEdidInfo->usPixelClk <= pstEdidRefInfo->usPixelClkHBound) && (pstEdidInfo->usPixelClk >= pstEd
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 8   
 
              -idRefInfo->usPixelClkLBound)))
  405   1          {
@@ -510,7 +510,7 @@ line level    source
  459   1          // -----------------------------------------------------------
  460   1          // Base DTD
  461   1          for(ucCnt = 0; ucCnt < 4; ucCnt++)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 9   
 
  462   1          {
  463   2              // Set Start addr to DTD start location
@@ -574,7 +574,7 @@ line level    source
  515   6                              // Catch DTD's Hblank/ Hactive/ Vactive
  516   6                              stEdidInfo.usHwidth = (((WORD)(pucReadArray[usStartAddr + 4] & 0xF0) << 4) | pucRe
              -adArray[usStartAddr + 2]);
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 10  
 
  517   6                              stEdidInfo.usHblank = (((WORD)(pucReadArray[usStartAddr + 4] & 0x0F) << 8) | pucRe
              -adArray[usStartAddr + 3]);
@@ -638,7 +638,7 @@ line level    source
  571   5                          ucVicIndex = (ucVicIndex & 0x7F) - 1;
  572   5                      }
  573   4                      else if(ucVicIndex == 0)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 11  
 
  574   4                      {
  575   5                          continue;
@@ -702,7 +702,7 @@ line level    source
  632   4                      {
  633   5                          ucVicIndex = (ucVicIndex & 0x7F) - 1;
  634   5                      }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 12  
 
  635   4                      else if(ucVicIndex == 0)
  636   4                      {
@@ -766,7 +766,7 @@ line level    source
  694   4      
  695   4                      // Catch Timing1's Hblank/ Hactive/ Vactive  (Timing 1's range is 1~xxx)
  696   4                      stEdidInfo.usHwidth = (((WORD)pucReadArray[usStartAddr + 5] << 8) | pucReadArray[usStartAd
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 13  
 
              -dr + 4]) + 1;
  697   4                      stEdidInfo.usHblank = (((WORD)pucReadArray[usStartAddr + 7] << 8) | pucReadArray[usStartAd
@@ -830,7 +830,7 @@ line level    source
              -dr + 6]) + 1;
  748   4                      stEdidInfo.usVheight = (((WORD)pucReadArray[usStartAddr + 13] << 8) | pucReadArray[usStart
              -Addr + 12]) + 1;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 14  
 
  749   4                      stEdidInfo.usPixelClk = (((((DWORD)pucReadArray[usStartAddr + 2] << 16) | ((DWORD)pucReadA
              -rray[usStartAddr + 1] << 8) | pucReadArray[usStartAddr]) + 1) / 100); // 0.1 MHz
@@ -894,7 +894,7 @@ line level    source
  804   1      }
  805          
  806          #if(_TRANSLATOR_SUPPORT == _OFF)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 15  
 
  807          //--------------------------------------------------
  808          // Description  : HDMI freesync initial
@@ -958,7 +958,7 @@ line level    source
  864   2      #endif
  865   2      
  866   2                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 16  
 
  867   2      #endif
  868   2      
@@ -1022,7 +1022,7 @@ line level    source
  926   2              default:
  927   2                  break;
  928   2          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 17  
 
  929   1      
  930   1          return 0;
@@ -1086,7 +1086,7 @@ line level    source
               
                           return GET_DPRX1_V_FREQ();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 18  
 
  991   2      
  992   2      #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
@@ -1150,7 +1150,7 @@ line level    source
 1050   1          bit bCheckFreeSync = _FALSE;
 1051   1          WORD usFreesyncVfreqmax = 0;
 1052   1          WORD usFreesyncVfreqmin = 0;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 19  
 
 1053   1          WORD usAmdVfreqEffectiveBit = 0;
 1054   1      
@@ -1214,7 +1214,7 @@ line level    source
 1112   4                          break;
 1113   4      
 1114   4                      case _SPD_INFO_FREESYNC_MIN_VFREQ:
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 20  
 
 1115   4      
 1116   4                          usFreesyncVfreqmin = (((WORD)pucDPRSV0Data[11] << 8) | pucDPRSV0Data[7]);
@@ -1278,7 +1278,7 @@ line level    source
 1174   1      
 1175   1          // Pop up The result
 1176   1          SET_DP_RX0_MEASURE_POP_UP();
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 21  
 
 1177   1      
 1178   1          // HBs2Bs count in Link Clk / 2
@@ -1342,7 +1342,7 @@ line level    source
 1232   1          usHBs2BsCount = (((DWORD)ScalerGetByte(PB5_5B_MN_MEAS_HLN_M)) << 8) | ((DWORD)ScalerGetByte(PB5_5C_MN_
              -MEAS_HLN_L));
 1233   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 22  
 
 1234   1          // VTotal in line, Link Clk / 2 : (Link Rate * 27 / 2)
 1235   1          return (ulVBs2BsCount * (ScalerDpRx0GetDpcdInfo(0x00, 0x01, 0x00) * 27 / 2) / usHBs2BsCount * 1000 / _
@@ -1406,7 +1406,7 @@ line level    source
 1292   1      }
 1293          #endif // End of #if(_D0_DP_EXIST == _ON)
 1294          #if(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 23  
 
               //--------------------------------------------------
               // Description  : Get AMD SPD Info Contents
@@ -1470,7 +1470,7 @@ line level    source
                           {
                               case _SPD_INFO_FREESYNC_SUPPORT:
                                   return (((pucDPRSV0Data[6] & _BIT0) != 0x00) ? _ON : _OFF);
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 24  
 
                                   break;
               
@@ -1534,7 +1534,7 @@ line level    source
               
                       return 0x00;
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 25  
 
               
                   return 0x00;
@@ -1598,7 +1598,7 @@ line level    source
               
               #if(_D1_DP_MAC_USE == _PAGEB8)
                   ulVBs2BsCount = ((((DWORD)(ScalerGetByte(PB8_58_MN_MEAS_CTRL) & 0x1F)) << 16) | (((DWORD)ScalerGetByte
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 26  
 
              -(PB8_59_MN_MEAS_VLN_M)) << 8) | ((DWORD)ScalerGetByte(PB8_5A_MN_MEAS_VLN_L)));
               #elif(_D1_DP_MAC_USE == _PAGEB5)
@@ -1662,7 +1662,7 @@ line level    source
               #else
                   memset(pucDPRSV0Data, 0, sizeof(pucDPRSV0Data));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 27  
 
                   ScalerDpRx1GetInfoFrameRSV0(pucDPRSV0Data);
               #endif
@@ -1726,7 +1726,7 @@ line level    source
 1591   3                      SET_DP_RX0_FREESYNC_CAPABILITY_SWITCH();
 1592   3                      SET_DP_RX0_FREESYNC_SUPPORT(enumSupport);
 1593   3                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 28  
 
 1594   2      
 1595   2                  break;
@@ -1790,7 +1790,7 @@ line level    source
               // Input Value  : enumSourcePort
               // Output Value : _FREESYNC_SUPPORT_ON/ _FREESYNC_SUPPORT_OFF
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 29  
 
               EnumFreeSyncSupport ScalerFreeSyncHDMIGetFreeSyncSupport_EXINT1(EnumSourceSearchPort enumSourcePort) using
              - 2
@@ -1854,7 +1854,7 @@ line level    source
                           }
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 30  
 
                   return _FALSE;
               }
@@ -1918,7 +1918,7 @@ line level    source
                                   break;
               
                               case _SPD_INFO_FREESYNC_MIN_VFREQ:
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 31  
 
                                   if(ScalerFreeSyncHDMIRx0CheckAmdVsdbVer() == _TRUE)
                                   {
@@ -1982,7 +1982,7 @@ line level    source
                                   break;
                           }
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 32  
 
                   }
               
@@ -2046,7 +2046,7 @@ line level    source
                                   break;
               
                               case _SPD_INFO_GAMMA_2_2_EOTF_ACTIVE:
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 33  
 
                                   return ((ScalerGetDataPortBit(P71_CD_HDMI_PSAP, 0x98, _BIT2) != 0x00) ? _ON : _OFF);
                                   break;
@@ -2110,7 +2110,7 @@ line level    source
                                   {
                                       usFreesyncVfreqmax = _PANEL_FREESYNC_MAX_FRAME_RATE / 10;
                                       DebugMessageRx4("Freesync SPD info abnormal", 1);
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 34  
 
                                   }
               
@@ -2174,7 +2174,7 @@ line level    source
 2019   4                      case _SPD_INFO_FREESYNC_ACTIVE:
 2020   4                          return ((ScalerGetDataPortBit(P72_CD_HDMI_PSAP, 0x95, _BIT2) != 0x00) ? _ON : _OFF);
 2021   4                          break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 35  
 
 2022   4      
 2023   4                      case _SPD_INFO_PQ_EOTF_ACTIVE:
@@ -2238,7 +2238,7 @@ line level    source
 2081   5                              usFreesyncVfreqmax = _PANEL_FREESYNC_MIN_FRAME_RATE / 10;
 2082   5                              DebugMessageRx3("Freesync SPD info abnormal", 0);
 2083   5                          }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 36  
 
 2084   4                          else if((usFreesyncVfreqmax * 10) > _PANEL_FREESYNC_MAX_FRAME_RATE)
 2085   4                          {
@@ -2302,7 +2302,7 @@ line level    source
                               case _SPD_INFO_FREESYNC_ENABLE:
                                   return ((ScalerGetDataPortBit(P73_CD_HDMI_PSAP, 0x95, _BIT1) != 0x00) ? _ON : _OFF);
                                   break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 37  
 
               
                               case _SPD_INFO_FREESYNC_ACTIVE:
@@ -2366,7 +2366,7 @@ line level    source
                                   usFreesyncVfreqmax &= usAmdVfreqMaxBit;
               
                                   if((usFreesyncVfreqmax * 10) < _PANEL_FREESYNC_MIN_FRAME_RATE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 38  
 
                                   {
                                       usFreesyncVfreqmax = _PANEL_FREESYNC_MIN_FRAME_RATE / 10;
@@ -2430,7 +2430,7 @@ line level    source
                               case _SPD_INFO_FREESYNC_SUPPORT:
                                   return ((ScalerGetDataPortBit(P74_CD_HDMI_PSAP, 0x95, _BIT0) != 0x00) ? _ON : _OFF);
                                   break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 39  
 
               
                               case _SPD_INFO_FREESYNC_ENABLE:
@@ -2494,7 +2494,7 @@ line level    source
               
                                   pData[0] = ScalerGetDataPortSingleByte(P74_CD_HDMI_PSAP, 0x97);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 40  
 
                                   usFreesyncVfreqmax = (((WORD)pData[1] << 8) | pData[0]);
                                   usFreesyncVfreqmax &= usAmdVfreqMaxBit;
@@ -2558,7 +2558,7 @@ line level    source
                                       SET_TMDS_RX0_HPD_TRIGGER_EVENT(_TMDS_HPD_NORMAL);
                                   }
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 41  
 
               
                               SET_TMDS_RX0_FREESYNC_SUPPORT(enumSupport);
@@ -2622,7 +2622,7 @@ line level    source
               #if(_TMDS_FS_ON_ONLY_TARGETPORT_HPD_SUPPORT == _ON)
                                   if(enumFreesyncTargetPort == _D2_INPUT_PORT)
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 42  
 
                                   {
                                       SET_TMDS_RX2_HPD_TRIGGER_EVENT(_TMDS_HPD_NORMAL);
@@ -2686,7 +2686,7 @@ line level    source
 2514   3      #endif
 2515   3                  }
 2516   2                  break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 43  
 
 2517   2      #endif
 2518   2      
@@ -2750,7 +2750,7 @@ line level    source
                                   }
                               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/20/2026 19:43:47 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONFREESYNC                                              09/21/2026 15:32:35 PAGE 44  
 
                               SET_TMDS_RX5_FREESYNC_SUPPORT(enumSupport);
               

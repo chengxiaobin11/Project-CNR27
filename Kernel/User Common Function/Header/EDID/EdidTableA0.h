@@ -6,7 +6,7 @@
 #elif((_PANEL_DH_WIDTH == 1600) && (_PANEL_DV_HEIGHT == 900))
 #define _A0_EDID_TYPE_SEL                               _HK_EDID_VGA_1600_900_60HZ
 #else
-#define _A0_EDID_TYPE_SEL                               _HK_EDID_VGA_1920_1080_60HZ
+#define _A0_EDID_TYPE_SEL                               _EDID_VGA_1920_1200_60HZ
 #endif
 
 

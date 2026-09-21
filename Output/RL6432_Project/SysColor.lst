@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSCOLOR
@@ -62,7 +62,7 @@ line level    source
   40          //****************************************************************************
   41          // STRUCT / TYPE / ENUM DEFINITTIONS
   42          //****************************************************************************
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 2   
 
   43          
   44          
@@ -126,7 +126,7 @@ line level    source
  102          #if(_COLOR_IP_DCC_HISTOGRAM == _ON)
  103          //--------------------------------------------------
  104          // Description  : Color DCC Histogram Handler
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 3   
 
  105          // Input Value  : None
  106          // Output Value : None
@@ -190,7 +190,7 @@ line level    source
  164   2        
  165   2      #if _DEF_Aim_HLW
               #if 1//_HDR_AIM_AUTO_NEW
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 4   
 
               #define RGB_Limit   200//240
               #define RGB_Limit1    40//240
@@ -254,7 +254,7 @@ line level    source
                           &&(B_number<=(B_Pre<(0X100-RGB_Limit2) ? (B_Pre+RGB_Limit2):255) && B_number>=(B_Pre>=RGB_Limit2 ? (
              -B_Pre-RGB_Limit2):0))
                           )
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 5   
 
                         #else
                           else if((UserCommonOsdGetOsdEnable() == _TRUE)&&
@@ -318,7 +318,7 @@ line level    source
                               DebugMessageSystem("7.1 COLOR = ",4);
                               ScalerOsdSetColorPalette(2, 0,255,0);
                             }
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 6   
 
                             else if(G_number>RGB_Limit&&B_number>RGB_Limit)
                             {
@@ -382,7 +382,7 @@ line level    source
                               R_Pre=R_number;
                               G_Pre=G_number;
                               B_Pre=B_number;
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 7   
 
                               ScalerOsdSetColorPalette(15, 200,200,100);
                             }     
@@ -446,7 +446,7 @@ line level    source
                           if(bg_Count>10)
                           {
                             DebugMessageSystem("6.1 bg_Count  ",bg_Count);
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 8   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 8   
 
                             bg_Count=0;
                             if(R_number>RGB_Limit&&G_number>RGB_Limit&&B_number>RGB_Limit)
@@ -510,7 +510,7 @@ line level    source
                         UserCommonLocalDimmingHandler();
               #endif
  467   3      
-C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/20/2026 19:43:07 PAGE 9   
+C51 COMPILER V9.60.0.0   SYSCOLOR                                                          09/21/2026 15:31:53 PAGE 9   
 
  468   3      #if(_GLOBAL_DIMMING_SUPPORT == _ON)
                         UserCommonGlobalDimmingHandler();

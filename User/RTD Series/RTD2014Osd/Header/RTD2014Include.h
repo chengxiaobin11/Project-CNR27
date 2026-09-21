@@ -22,7 +22,7 @@
 
 #define _OSD_FONT_NONE											0 
 #define _OSD_FONT_SW_JAPANESE									1 
-#define _DEF_OSD_MC_NANFEI										2//ECOÇÐ»»ÁÁ¶È±ä»¯
+#define _DEF_OSD_MC_NANFEI										2//ECOï¿½Ð»ï¿½ï¿½ï¿½ï¿½È±ä»¯
 
 #ifndef _OSD_FONT_TYPE
 #define _OSD_FONT_TYPE											_OSD_FONT_NONE 
@@ -147,12 +147,12 @@ typedef enum //menuitem
 	_MENU_FUN_FLICKER_FREE,
 	_MENU_FUN_MPRT,
 	_MENU_FUN_GAMMA,//5
-	_MENU_FUN_COLORGAMUT, //rl6463 . rl6851 hdrÊý¾Ý²»Ö§³Ö
+	_MENU_FUN_COLORGAMUT, //rl6463 . rl6851 hdrï¿½ï¿½ï¿½Ý²ï¿½Ö§ï¿½ï¿½
 	_MENU_FUN_SATURATION,	
 	_MENU_FUN_OVERCLOCK,
 #if(_ROTATE_FUN_SUPPORT)
-	_MENU_FUN_ROTATE,	//Ðý×ª
-	_MENU_FUN_OSD_ROTATE,	//Ðý×ª//ÓÐÎÊÌâ 90/270²»ÐÐ£¬180Ðý×ªÓÐÎÊÌâ£¬²»µ÷ÁË
+	_MENU_FUN_ROTATE,	//ï¿½ï¿½×ª
+	_MENU_FUN_OSD_ROTATE,	//ï¿½ï¿½×ª//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 90/270ï¿½ï¿½ï¿½Ð£ï¿½180ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 #if 1//_MOTION_BLUR_REDUCTION_SUPPORT
 	_MENU_FUN_MBRSYNC,///5
@@ -161,7 +161,7 @@ typedef enum //menuitem
 	_MENU_FUN_HOTRIGHT,//5
 
 #if 1//(_OSD_POWER_SAVING_MODE)
-	_MENU_FUN_POWER_SAVING,	//42ÖÖ,ÏÈ¼ÓÒ»ÏÂ°É
+	_MENU_FUN_POWER_SAVING,	//42ï¿½ï¿½,ï¿½È¼ï¿½Ò»ï¿½Â°ï¿½
 #endif
 #if _DEF_KVM_FUN
 	_MENU_FUN_KVM,
@@ -223,14 +223,14 @@ extern BYTE xdata OSD_ITEM_MASK[10];
 #define OSD_ITEM_MASK_GET(x)  (OSD_ITEM_MASK[(x - _MENU_FUN_BACKLIGHT)/8]&(0x01<<((x - _MENU_FUN_BACKLIGHT)%8)))
 
 #else
-// OSD_ITEM_MASKÔÝÊ±Ö»¸øhotkeyÊ¹ÓÃ,×öÒÆÎ»²Ù×÷À´½ÚÊ¡¿Õ¼ä,6Î»µÄÊý×éÖ§³Ö48ÖÖ¹¦ÄÜ
+// OSD_ITEM_MASKï¿½ï¿½Ê±Ö»ï¿½ï¿½hotkeyÊ¹ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½Õ¼ï¿½,6Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½48ï¿½Ö¹ï¿½ï¿½ï¿½
 
-/****************************OSD_MASK[]µÄÒ»Ð©²Ù×÷********************************/
+/****************************OSD_MASK[]ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½********************************/
 #define OSD_ITEM_MASK_SET(x)  (OSD_ITEM_MASK[(x - _MENU_FUN_BACKLIGHT)/8] |= (0x01<<((x - _MENU_FUN_BACKLIGHT)%8)))
 #define OSD_ITEM_MASK_CLR(x)  (OSD_ITEM_MASK[(x - _MENU_FUN_BACKLIGHT)/8] &= ~(0x01<<((x - _MENU_FUN_BACKLIGHT)%8)))
 #define OSD_ITEM_MASK_GET(x)  (OSD_ITEM_MASK[(x - _MENU_FUN_BACKLIGHT)/8]&(0x01<<((x - _MENU_FUN_BACKLIGHT)%8)))
 
-/****************************OSD_ITEM_BASE[]µÄÒ»Ð©²Ù×÷****************************/
+/****************************OSD_ITEM_BASE[]ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½****************************/
 
 #define OSD_ITEM(x)       OSD_ITEM_BASE[x - _MENU_FUN_BACKLIGHT]
 #define OSD_MASK_SET(x)  (OSD_MASK[OSD_ITEM(x)>>4] |= (0x01<<(OSD_ITEM(x)&0x0f))); (OSD_ITEM(x) == 0xff)?0: OSD_ITEM_MASK_SET(x)
@@ -239,9 +239,9 @@ extern BYTE xdata OSD_ITEM_MASK[10];
 #define OSD_MASK(x,y)  		(OSD_MASK[x] &  (0x01<<y))
 #define OSD_MASKSET(x,y)    (OSD_MASK[x] |= (0x01<<y))
 #endif
-/*OSD_MASK_SET ºÍ OSD_MASK µÄÇø±ðÔÚÓÚ:
-* OSD_MASK_SET´«½øÀ´µÄ²ÎÊýÊÇ¹¦ÄÜ£¬ÀýÈç_MENU_FUN_BACKLIGHT
-* OSD_MASK´«½øÀ´µÄ²ÎÊýÊÇOSDÀïµÄÎ»ÖÃ£¬ÀýÈçµÚÒ»¸ö½çÃæµÄµÚÒ»Ïî
+/*OSD_MASK_SET ï¿½ï¿½ OSD_MASK ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
+* OSD_MASK_SETï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½_MENU_FUN_BACKLIGHT
+* OSD_MASKï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½OSDï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½
 */
 
 
@@ -2893,34 +2893,34 @@ typedef enum
 {
 	_START_LANGUAGE = 0,
 	_ENGLISH = 0,
-	_FRENCH,							//·¨Óï
-	_SPANISH,				//Î÷°àÑÀÎÄ
-	_PORTUGUESE,				//ÆÏÌÑÑÀÎÄ
-	_GERMAN,							//µÂÓï
-	_ITALIAN,				//Òâ´óÀûÎÄ
-	_DUTCH, 			//ºÉÀ¼ÎÄ
-	_SVENSKA,			//ÈðµäÎÄ
-	_SUOMI, 			//·ÒÀ¼ÎÄ
-	_POLSKI,			//²¨À¼ÎÄ
-	_CESTINA,	//½Ý¿ËÓï
+	_FRENCH,							//ï¿½ï¿½ï¿½ï¿½
+	_SPANISH,				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_PORTUGUESE,				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_GERMAN,							//ï¿½ï¿½ï¿½ï¿½
+	_ITALIAN,				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_DUTCH, 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_SVENSKA,			//ï¿½ï¿½ï¿½ï¿½ï¿½
+	_SUOMI, 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_POLSKI,			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_CESTINA,	//ï¿½Ý¿ï¿½ï¿½ï¿½
 	
-	_RUSSIAN,           //¶íÎÄ--¹þÈø¿Ë¶íÂÞË¹
-	_KOREAN,          //º«ÎÄ
-	_CHINESE_F,                         	//·±Ìå ÖÐÎÄ
-	_CHINESE_S,                         	//¼òÌå ÖÐÎÄ
-	_JAPANESE,			//ÈÕÎÄ
+	_RUSSIAN,           //ï¿½ï¿½ï¿½ï¿½--ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½Ë¹
+	_KOREAN,          //ï¿½ï¿½ï¿½ï¿½
+	_CHINESE_F,                         	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	_CHINESE_S,                         	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	_JAPANESE,			//ï¿½ï¿½ï¿½ï¿½
 	
-	_XILAYU,		//Ï£À°Óï
-	_MAGYAR,   		//ÐÙÑÀÀûÓï
-	_TURKISH,					//ÍÁ¶úÆäÎÄ
+	_XILAYU,		//Ï£ï¿½ï¿½ï¿½ï¿½
+	_MAGYAR,   		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_TURKISH,					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-///////ÐÂÔö/////////////////////////////
-	_VIETNAMESE, //Ô½ÄÏÓï
-	_HEBREW, 	//Ï£²®À´Óï
-	_ARABIC, 	//°¢À­²®Óï
+///////ï¿½ï¿½ï¿½ï¿½/////////////////////////////
+	_VIETNAMESE, //Ô½ï¿½ï¿½ï¿½ï¿½
+	_HEBREW, 	//Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	_ARABIC, 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	_UZBEK,		//ÎÚ×È±ð¿ËÓï
-	_UKRAINE,		//ÎÚ¿ËÀ¼Óï
+	_UZBEK,		//ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½
+	_UKRAINE,		//ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 #if((_DEF_OSD_LANGUAGE_ARROW))
 #if(_UKRAINE_SUPPRT == _ON)
@@ -2964,9 +2964,9 @@ typedef enum
 
 
 
-///////¸¨Öú·­Òë/////////////////////////////
+///////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/////////////////////////////
 	_LANGUAGE_Energy=0x80,
-	_LANGUAGE_ARABIC_1, 	//°¢À­²®Óï
+	_LANGUAGE_ARABIC_1, 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 }EnumOSDLanguageDef;
 

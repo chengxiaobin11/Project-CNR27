@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDPTX
@@ -62,7 +62,7 @@ line level    source
               StructDPTxHDCPAuthInfo g_stTxHDCPAuthInfo;
               StructCloneModeSwitchInfo g_stCloneModeSwitch;
               BYTE g_pucDpTxHdcpKsvFifo[_DP_TX_HDCP_DEVICE_COUNT_MAX * 5];
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 2   
 
               #if(_DP_HDCP14_CTS_SUPPORT == _ON)
               BYTE g_pucDpTxHdcpKsvBackup[5];
@@ -126,7 +126,7 @@ line level    source
               void ScalerDpTxForceIdlePatternSetting(void);
               void ScalerDpTxForceIdlePattern_EXINT0(void);
               void ScalerDpTxSSTSetting(void);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 3   
 
               void ScalerDpTxSSTMSASetting(void);
               void ScalerDpTxConfigMstStreamLaneNum(void);
@@ -190,7 +190,7 @@ line level    source
               bit ScalerDpTxHDCPCheckBinfo(void);
               bit ScalerDpTxHDCPAuth2CompareV(void);
               void ScalerDpTxHDCPChangeAuthState(EnumDPTxHDCPAuthState enumHDCPAuthState);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 4   
 
               void ScalerDpTxHDCPTimeoutToReadR0Event(void);
               void ScalerDpTxHDCPTimeoutForVReadyEvent(void);
@@ -254,7 +254,7 @@ line level    source
                           }
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 5   
 
               
                       case _DP_TX_MODE_STATUS_LINK_TRAINING:
@@ -318,7 +318,7 @@ line level    source
                       default:
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 6   
 
                   }
               
@@ -382,7 +382,7 @@ line level    source
                           {
                               // Set 1s to Notify as to avoid DownRequest MSG traffic things
                               ScalerTimerActiveTimerEvent(SEC(1), _SCALER_TIMER_EVENT_DP_TX_CABLE_STATUS_CHANGE_EVENT);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 7   
 
                           }
                           else
@@ -446,7 +446,7 @@ line level    source
                               // Update Total Received Count
                               if((GET_DP_TOTAL_RECEIVED_MSG_COUNT() >= GET_DP_TX_RECEIVED_MSG_COUNT()) && (GET_DP_TX_REC
              -EIVED_MSG_COUNT() > 0))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 8   
 
                               {
                                   SET_DP_TOTAL_RECEIVED_MSG_COUNT(GET_DP_TOTAL_RECEIVED_MSG_COUNT() - GET_DP_TX_RECEIVED
@@ -510,7 +510,7 @@ line level    source
                           break;
               
                       case _DP_TX_MODE_STATUS_INITIAL:
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 9   
 
               
                           if(GET_DP_TX_DOWNSTREAM_INFO_READY() == _TRUE)
@@ -574,7 +574,7 @@ line level    source
                                       {
                                           SET_DP_TX_HDCP_DOWNSTREAM_EVENT(_DP_TX_HDCP_DOWNSTREAM_AUTH_EVENT_REAUTH);
                                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 10  
 
                                   }
                                   else
@@ -638,7 +638,7 @@ line level    source
                   ScalerGDIPhyTxCMUPowerOff();
               
                   // Power On Aux CH
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 11  
 
                   ScalerSetBit(PBD_A0_AUX_TX_CTRL, ~_BIT0, _BIT0);
               
@@ -702,7 +702,7 @@ line level    source
                   SET_REG_DP_TX_DOWNSTREAM_MSG_BURST_LENGTH(_DP_TX_AUX_WRITE_BURST_LENGTH);
               
                   // Enable Only Read One SBMSG
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 12  
 
                   ScalerSetBit(PBD_CA_AUX_TX_MSG_RD_CTRL, ~_BIT5, _BIT5);
               
@@ -766,7 +766,7 @@ line level    source
                   }
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 13  
 
                   // For LLCTS 4.2.1.1 First CMD TO 3.2ms
                   SET_DP_TX_DOWNSTREAM_LTTPR_NUM(8);
@@ -830,7 +830,7 @@ line level    source
                       if(ScalerDpTxAuxNativeRead(0x00, 0x22, 0x00, 16, pucData) == _FALSE)
                       {
                           return _FALSE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 14  
 
                       }
               
@@ -894,7 +894,7 @@ line level    source
               
                       // MST_CAP = 1
                       if((pucData[10] & _BIT0) == _BIT0)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 15  
 
                       {
                           // Set link Address Reply information
@@ -958,7 +958,7 @@ line level    source
                   {
                       SET_DP_TX_DOWNSTREAM_PEERDEVICE_TYPE(_DP_SST_SINK);
                       SET_DP_TX_DOWNSTREAM_MSGCAP_STATUS(_DP_MSG_NO_SUPPORT);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 16  
 
                       SET_DP_TX_DOWNSTREAM_LEGACYPLUG_STATUS(_DP_UNPLUG);
                   }
@@ -1022,7 +1022,7 @@ line level    source
               }
               
               #if(_DP_TX_EDID_MODIFY_REMOVE_HDR_FS2_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 17  
 
               //--------------------------------------------------
               // Description  : Read Downstream port EDID
@@ -1086,7 +1086,7 @@ line level    source
                   return _TRUE;
               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 18  
 
               //--------------------------------------------------
               // Description  : Read Downstream port EDID
@@ -1150,7 +1150,7 @@ line level    source
              - enumCtaDataBlock);
               
                           // Remove DataBlock from pusCtaDataBlockAddr
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 19  
 
                           pusCtaDataBlockAddr[enumCtaDataBlock] = 0x00;
                       }
@@ -1214,7 +1214,7 @@ line level    source
              - enumDidDataBlock);
               
                           // Remove DataBlock from pusCtaDataBlockAddr
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 20  
 
                           pusDidDataBlockAddr[enumDidDataBlock] = 0x00;
                       }
@@ -1278,7 +1278,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Shift Data Block Address which follow base Data Block process
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 21  
 
               // Input Value  : enumShiftDir, LengthExtend, pusCtaDataBlockAddr; enumCtaBaseDataBlock
               // Output Value :
@@ -1342,7 +1342,7 @@ line level    source
               // Description  : Calculate one block of EDID checksum
               // Input Value  : Output Port, Start Address
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 22  
 
               //-------------------------------------------------------------
               bit ScalerDpTxEdidDidCheckSumCal(BYTE *pucDdcRamAddr, WORD usStartAddr, WORD usEndAddr)
@@ -1406,7 +1406,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 23  
 
                       case _DP_TX_V11_1LANE_HBR:
               
@@ -1470,7 +1470,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerDpTxVersionCheck(BYTE ucDpVersion)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 24  
 
               {
                   if(ucDpVersion < _DP_VERSION_1_0)
@@ -1534,7 +1534,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 25  
 
               // Description  : Handle Tx Output stream
               // Input Value  : DP Tx Input Source
@@ -1598,7 +1598,7 @@ line level    source
                               ScalerSetBit(PBB_00_DP_PHY_CTRL, ~_BIT1, 0x00);
               
               #if(_DP_FREESYNC_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 26  
 
                               ScalerDpTxDfpDeviceFreesyncEnableReset();
               #endif
@@ -1662,7 +1662,7 @@ line level    source
               
                               // Main Link switch to VIDEO pattern
                               ScalerSetBit(PBB_01_DPTX_ML_PAT_SEL, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_DP_TX_OUTPUT_VIDE
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 27  
 
              -O_PATTERN << 4));
               
@@ -1726,7 +1726,7 @@ line level    source
                       }
               
                       if(GET_DP_TX_DOWNSTREAM_DPCD_REV() >= _DP_VERSION_1_2)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 28  
 
                       {
                           pData[0] = (GET_DP_TX_DOWNSTREAM_UP_REQUEST_CAP_STATUS() << 1);
@@ -1790,7 +1790,7 @@ line level    source
                       ScalerDpTxSetStreamSource_EXINT0(_DP_TX_SOURCE_NONE);
                   }
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 29  
 
               
               //--------------------------------------------------
@@ -1854,7 +1854,7 @@ line level    source
                           ScalerSetByte(PBB_AA_MN_M_VID_M, (BYTE)(ulMvidFWCal >> 8));
                           ScalerSetByte(PBB_AB_MN_M_VID_L, (BYTE)(ulMvidFWCal >> 0));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 30  
 
                           bMvidHWMode = _FALSE;
               
@@ -1918,7 +1918,7 @@ line level    source
                       if(ucValidHwMvidMeaCnt > 2)
                       {
                           ulMvid -= (ulHwMvidMax + ulHwMvidMin);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 31  
 
                           ucValidHwMvidMeaCnt -= 2;
               
@@ -1982,7 +1982,7 @@ line level    source
                   {
                       // Disable Audio
                       ScalerDpTxSSTAudioPlaySetting(_DP_TX_AUDIO_OFF);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 32  
 
                   }
               #endif
@@ -2046,7 +2046,7 @@ line level    source
                   SET_DP_TX_MSA_COLOR_DEPTH(GET_DP_TX_INPUT_COLOR_DEPTH());
               
                   // Set Color Space & Colorimetry
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 33  
 
                   switch(GET_DP_TX_INPUT_COLOR_SPACE())
                   {
@@ -2110,7 +2110,7 @@ line level    source
               
                                       case _COLORIMETRY_EXT_RGB_ADOBERGB:
                                           SET_DP_TX_MSA_COLORIMETRY_VALUE(_DP_MSA_COLORIMETRY_RGB_ADOBERGB);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 34  
 
                                           break;
               
@@ -2174,7 +2174,7 @@ line level    source
               
                                       case _COLORIMETRY_EXT_YCC_XVYCC601:
                                           SET_DP_TX_MSA_COLORIMETRY_VALUE(_DP_MSA_COLORIMETRY_YCC422_XVYCC601);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 35  
 
                                           break;
               
@@ -2238,7 +2238,7 @@ line level    source
               
                       case _COLOR_SPACE_Y_ONLY:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 36  
 
                           SET_DP_TX_MSA_COLORIMETRY_VALUE(_DP_MSA_COLORIMETRY_Y_ONLY);
                           break;
@@ -2302,7 +2302,7 @@ line level    source
                               break;
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 37  
 
               }
               
@@ -2366,7 +2366,7 @@ line level    source
                           {
                               SET_DP_TX_IRQ_HPD_DETECTED();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 38  
 
                               if((pData_EXINT[0] & _BIT1) == _BIT1)
                               {
@@ -2430,7 +2430,7 @@ line level    source
               
                       // Read TEST_LANE_COUNT
                       ScalerDpTxAuxNativeRead(0x00, 0x02, 0x20, 1, pData);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 39  
 
               
                       SET_DP_TX_DOWNSTREAM_MAX_LANE_NUM((pData[0] & 0x1F));
@@ -2494,7 +2494,7 @@ line level    source
                           case _DP_TX_TRAINING_PATTERN2:
               
                               SET_DP_TX_LT_RESULT(ScalerDpTxTrainPattern2());
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 40  
 
               
                               if(GET_DP_TX_LT_RESULT() == _DP_TX_TRAINING_PATTERN2_PASS)
@@ -2558,7 +2558,7 @@ line level    source
                               {
                                   SET_DP_TX_LT_RESULT(_DP_TX_TRAINING_FAIL);
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 41  
 
               
                               ScalerDpTxTrainPatternEnd();
@@ -2622,7 +2622,7 @@ line level    source
               // Input Value  :
               // Output Value :
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 42  
 
               BYTE ScalerDpTxTrainPattern2(void)
               {
@@ -2686,7 +2686,7 @@ line level    source
               
                   if(pData[0] != 0x00)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 43  
 
                       // Delay 4 * pData[0] ms
                       ScalerTimerDelayXms(pData[0] << 2);
@@ -2750,7 +2750,7 @@ line level    source
                               {
                                   CLR_DP_TX_TP2_CNT();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 44  
 
                                   return _DP_TX_TRAINING_PATTERN2_PASS;
                               }
@@ -2814,7 +2814,7 @@ line level    source
                       case _DP_FOUR_LANE:
               
                           ScalerDpTxTP2Lane3Adjust();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 45  
 
                           ScalerDpTxTP2Lane2Adjust();
                           ScalerDpTxTP2Lane1Adjust();
@@ -2878,7 +2878,7 @@ line level    source
                   else if(GET_DP_TX_LT_RESULT() == _DP_TX_TRAINING_FAIL)
                   {
                       // Power Down ML PHY
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 46  
 
                       ScalerGDIPhyTxMLPowerOff();
               
@@ -2942,7 +2942,7 @@ line level    source
               
                           CLR_DP_TX_HPD_FIRST_PLUG();
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 47  
 
               
                       if((pData[0] & _BIT4) == _BIT4)
@@ -3006,7 +3006,7 @@ line level    source
               
                       default:
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 48  
 
                   }
               
@@ -3070,7 +3070,7 @@ line level    source
                       }
               
                       if(GET_DP_TX_IRQ_HPD_TYPE(_DP_TX_IRQ_HPD_STREAM_STATUS_CHG_IRQ) == _DP_TX_IRQ_HPD_STREAM_STATUS_CH
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 49  
 
              -G_IRQ)
                       {
@@ -3134,7 +3134,7 @@ line level    source
                               }
                           }
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 50  
 
               
                       if(GET_DP_TX_IRQ_HPD_TYPE(_DP_TX_IRQ_HPD_MCCS_IRQ) == _DP_TX_IRQ_HPD_MCCS_IRQ)
@@ -3198,7 +3198,7 @@ line level    source
                           pucData[1] = _TEST_ACK;
                       }
                       else
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 51  
 
                       {
                           pucData[1] = _TEST_NAK;
@@ -3262,7 +3262,7 @@ line level    source
                       CLR_DP_TX_EXCEED_LINK_BANDWIDTH();
                   }
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 52  
 
               
               //--------------------------------------------------
@@ -3326,7 +3326,7 @@ line level    source
                   usBe2Be = (DWORD)(usBe2Be - GET_DP_TX_HORIZONTAL_DE_PERIOD()) * 7 / 10;
               
                   // if BS2BE > max_audio_packet, Sec_end_count = BS2BE - max_audio_packet
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 53  
 
                   // else Sec_end_count = 0;
                   if(usBe2Be > usMaxAudioPacket)
@@ -3390,7 +3390,7 @@ line level    source
               // Output Value : Changed => _TRUE or No Changed => _FALSE
               //--------------------------------------------------
               bit ScalerDpTxAudioGetChannelChange(void)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 54  
 
               {
                   // Get Channel Count from DP Source
@@ -3454,7 +3454,7 @@ line level    source
               
                           SET_DP_TX_AUDIO_INFOFRAME_SAMPLING_FREQ(_DP_TX_AUDIO_INFOFRAME_FREQ_176_4K);
                           return 1764;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 55  
 
               
                       case _DP_TX_AUDIO_FREQ_192K:
@@ -3518,7 +3518,7 @@ line level    source
                               }
                           }
                           else
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 56  
 
                           {
                               if(GET_DP_TX_AUDIO_READY_TO_PLAY() == _TRUE)
@@ -3582,7 +3582,7 @@ line level    source
               
                   switch(enumPackettype)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 57  
 
                       case _SEC_PACKET_TYPE_AUDIO_TIMESTAMP:
               
@@ -3646,7 +3646,7 @@ line level    source
                           }
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 58  
 
               
                       case _SEC_PACKET_TYPE_INFOFRAME_RSV:
@@ -3710,7 +3710,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : DP Tx Get Parity byte for Audio Packet Header
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 59  
 
               // Input Value  : Packet Header
               // Output Value : Packet Parity
@@ -3774,7 +3774,7 @@ line level    source
              -TxAudioInfoframeCurrent)); pData[0]++)
                       {
                           ScalerSetBit(PBC_55_DP_INFO_FM_ADR, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 60  
 
              -pData[0]);
                           g_pucDpTxAudioInfoframeCurrent[pData[0] - ucAudioInfoFrameStartIndex] = ScalerGetByte(PBC_56_D
@@ -3838,7 +3838,7 @@ line level    source
               
                       if(bAIFChanged == _TRUE)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 61  
 
                           ScalerSetBit(PBC_71_SEC_AWD_STATUS_0, ~_BIT4, _BIT4);
               
@@ -3902,7 +3902,7 @@ line level    source
                   if(GET_DP_TX_DOWNSTREAM_DPCD_REV() == _DP_VERSION_1_2)
                   {
                       // Read Training Aux Read Interval
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 62  
 
                       ScalerDpTxAuxNativeRead(0x00, 0x00, 0x0E, 1, pData);
               
@@ -3966,7 +3966,7 @@ line level    source
               
                           if(ScalerDpTxTP1Lane0Adjust() == _FAIL)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 63  
 
                               return _DP_TX_TRAINING_PATTERN1_ADJUST_FAIL;
                           }
@@ -4030,7 +4030,7 @@ line level    source
                   else
                   {
                       CLR_DP_TX_TP1_LANE0_SAME_VOL_CNT();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 64  
 
                   }
               
@@ -4094,7 +4094,7 @@ line level    source
                   SET_DP_TX_LANE1_CURRENT_VOL_SWING(GET_DP_TX_LANE1_ADJUST_VOL_SWING());
                   SET_DP_TX_LANE1_CURRENT_PRE_EMPHASIS(GET_DP_TX_LANE1_ADJUST_PRE_EMPHASIS());
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 65  
 
                   if(GET_DP_TX_LANE1_CURRENT_VOL_SWING() == _DP_TX_LEVEL_3)
                   {
@@ -4158,7 +4158,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 66  
 
                       CLR_DP_TX_LANE2_CURRENT_VOL_SWING_MAX_REACH();
                   }
@@ -4222,7 +4222,7 @@ line level    source
                   if(GET_DP_TX_LANE3_CURRENT_PRE_EMPHASIS() == _DP_TX_LEVEL_3)
                   {
                       SET_DP_TX_LANE3_CURRENT_PRE_EMPHASIS_MAX_REACH();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 67  
 
                   }
                   else
@@ -4286,7 +4286,7 @@ line level    source
                   {
                       SET_DP_TX_LANE1_CURRENT_PRE_EMPHASIS(GET_DP_TX_LANE1_ADJUST_PRE_EMPHASIS());
                       SET_DP_TX_LANE1_CURRENT_VOL_SWING(GET_DP_TX_LANE1_ADJUST_VOL_SWING());
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 68  
 
                   }
               
@@ -4350,7 +4350,7 @@ line level    source
               // Description  : DP Tx Link Training 2 Lane3  Adjust
               // Input Value  :
               // Output Value :
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 69  
 
               //--------------------------------------------------
               void ScalerDpTxTP2Lane3Adjust(void)
@@ -4414,7 +4414,7 @@ line level    source
                   CLR_DP_TX_LANE2_CURRENT_PRE_EMPHASIS_MAX_REACH();
               
                   SET_DP_TX_LANE3_CURRENT_VOL_SWING(_DP_TX_LEVEL_0);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 70  
 
                   CLR_DP_TX_LANE3_CURRENT_VOL_SWING_MAX_REACH();
                   SET_DP_TX_LANE3_CURRENT_PRE_EMPHASIS(_DP_TX_LEVEL_0);
@@ -4478,7 +4478,7 @@ line level    source
                   }
               
                   // Only do This when Input is not DP or DP MST is Off
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 71  
 
                   if((ucPortType != _PORT_DP) || (GET_REG_DP_RX_MST_ENABLE() == _DISABLE))
                   {
@@ -4542,7 +4542,7 @@ line level    source
                                   ScalerSetBit(PBB_DF_VESA_FMT_REGEN, ~_BIT1, 0x00);
                               }
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 72  
 
               
                               // Get Tx Input Timing
@@ -4606,7 +4606,7 @@ line level    source
               //--------------------------------------------------
               // Description  : DP Tx MSA MISC0/MISC1 Setting
               // Input Value  : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 73  
 
               // Output Value : None
               //--------------------------------------------------
@@ -4670,7 +4670,7 @@ line level    source
                           case _COLOR_DEPTH_7_BITS:
                               SET_DP_TX_INPUT_COLOR_DEPTH(0x02);
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 74  
 
               
                           case _COLOR_DEPTH_8_BITS:
@@ -4734,7 +4734,7 @@ line level    source
               {
                   if(GET_INPUT_TIMING_INTERLACE_FLG() == _TRUE)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 75  
 
                       SET_DP_TX_INPUT_INTERLACE_MODE(_ON);
               
@@ -4798,7 +4798,7 @@ line level    source
               bit ScalerDpTxBlockStatusCheck(EnumSourceSearchPort enumInputPort)
               {
                   enumInputPort = enumInputPort;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 76  
 
               
                   if(GET_DP_RX_TARGET_MST_PORT() != _DP_MST_NO_PORT)
@@ -4862,7 +4862,7 @@ line level    source
                       }
                   }
                   else
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 77  
 
                   {
                       if(GET_DP_TX_HPD_DETECTION_ENABLE() == _ENABLE)
@@ -4926,7 +4926,7 @@ line level    source
                       {
                           ScalerDpTxHDCPEncryptSignalProc(_DISABLE);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 78  
 
                           SET_DP_TX_HDCP_AUTH_START();
               
@@ -4990,7 +4990,7 @@ line level    source
                               CLR_DP_TX_HDCP2_STOP_CONTENT_STREAM();
               #endif
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 79  
 
               
                           if(GET_DP_TX_HDCP_DOWNSTREAM_SUPPORTED() == _TRUE)
@@ -5054,7 +5054,7 @@ line level    source
                                   {
                                       ScalerDpTxHDCPChangeAuthState(_DP_TX_HDCP_STATE_AUTH_PASS);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 80  
 
                                       SET_DP_TX_HDCP_DOWNSTREAM_EVENT(_DP_TX_HDCP_DOWNSTREAM_AUTH_EVENT_PASS);
                                   }
@@ -5118,7 +5118,7 @@ line level    source
                               else
                               {
                                   ScalerDpTxHDCPChangeAuthState(_DP_TX_HDCP_STATE_IDLE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 81  
 
               
                                   SET_DP_TX_HDCP_DOWNSTREAM_EVENT(_DP_TX_HDCP_DOWNSTREAM_AUTH_EVENT_DEVICE_DEPTH_MAX);
@@ -5182,7 +5182,7 @@ line level    source
               {
                   CLR_DP_TX_HDCP_DOWNSTREAM_SUPPORTED();
                   CLR_DP_TX_HDCP_DOWNSTREAM_REPEATER();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 82  
 
               
                   if(GET_DP_TX_MODE_STATE() != _DP_TX_MODE_STATUS_UNPLUG)
@@ -5246,7 +5246,7 @@ line level    source
                       ScalerSetBit(PBB_30_DPTX_HDCP_CTRL1, ~_BIT4, 0x00);
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 83  
 
                   // Step2: Check Bksv
                   if(ScalerDpTxHDCPAuth1CheckBksv() == _FAIL)
@@ -5310,7 +5310,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Dp Tx HDCP Auth Part 1- Gen An
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 84  
 
               // Input Value  :
               // Output Value :
@@ -5374,7 +5374,7 @@ line level    source
               
                   if(ScalerTimerPollingFlagProc(5, PBB_31_DPTX_HDCP_CTRL2, _BIT0, 1) == _SUCCESS)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 85  
 
                       bResult = _SUCCESS;
                   }
@@ -5438,7 +5438,7 @@ line level    source
                   }
                   while(ucCompareCounter < 3);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 86  
 
                   SET_DP_TX_HDCP_AUTH_START();
               
@@ -5502,7 +5502,7 @@ line level    source
                       ScalerSetBit(PBB_5B_DP_HDCP_TX_SHA_CTRL, ~_BIT0, _BIT0);
               
                       // Delay(810ns) for HW SHA data write_in
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 87  
 
                       for(ucLoopIndex = 0; ucLoopIndex < 1; ucLoopIndex ++)
                       {
@@ -5566,7 +5566,7 @@ line level    source
                           }
               
                           ScalerSetByte(PBB_5C_DP_HDCP_TX_SHA_DATA_3, GET_DP_TX_HDCP_M0_5());
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 88  
 
                           ScalerSetByte(PBB_5D_DP_HDCP_TX_SHA_DATA_2, GET_DP_TX_HDCP_M0_6());
                           ScalerSetByte(PBB_5E_DP_HDCP_TX_SHA_DATA_1, GET_DP_TX_HDCP_M0_7());
@@ -5630,7 +5630,7 @@ line level    source
                           usKsvLengthTemp += 4;
               
                           if((usKsvLengthTemp % _DP_HDCP_SHA1_INPUT_SIZE) == 0)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 89  
 
                           {
                               ScalerDpTxHDCPAuth2ShaRun((usKsvLengthTemp == _DP_HDCP_SHA1_INPUT_SIZE) ? _TRUE : _FALSE);
@@ -5694,7 +5694,7 @@ line level    source
                           for(ucLoopIndex = 0; ucLoopIndex < 1; ucLoopIndex ++)
                           {
                               _nop_();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 90  
 
                           }
               
@@ -5758,7 +5758,7 @@ line level    source
                           // Delay(810ns) for HW SHA data write_in
                           for(ucLoopIndex = 0; ucLoopIndex < 1; ucLoopIndex ++)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 91  
 
                               _nop_();
                           }
@@ -5822,7 +5822,7 @@ line level    source
                           ScalerSetByte(PBB_5F_DP_HDCP_TX_SHA_DATA_0, 0x00);
               
                           // Enable write 32-bit data to SHA-1 block
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 92  
 
                           ScalerSetBit(PBB_5B_DP_HDCP_TX_SHA_CTRL, ~_BIT0, _BIT0);
               
@@ -5886,7 +5886,7 @@ line level    source
                           }
               
                           usKsvLengthTemp += 4;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 93  
 
                       }
               
@@ -5950,7 +5950,7 @@ line level    source
                   ScalerDpTxAuxNativeRead(0x06, 0x80, 0x2A, 2, pData);
               
                   // Record Binfo of Downstream
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 94  
 
                   SET_DP_TX_HDCP_DOWNSTREAM_BINFO_DEVICE(pData[0]);
                   SET_DP_TX_HDCP_DOWNSTREAM_BINFO_DEPTH(pData[1]);
@@ -6014,7 +6014,7 @@ line level    source
                   SET_DP_TX_HDCP_AUTH_STATE(enumHDCPAuthState);
                   SET_DP_TX_HDCP_AUTH_STATE_CHANGE();
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 95  
 
               
               //--------------------------------------------------
@@ -6078,7 +6078,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Enable HDCP TX Encryption
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 96  
 
               // Input Value  : _ENABLE or _DISABLE
               // Output Value :
@@ -6142,7 +6142,7 @@ line level    source
               // Description  : Dp Tx HDCP Check DownStream Device is Same or not
               // Input Value  : None
               // Output Value : _TRUE or _FALSE
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 97  
 
               //--------------------------------------------------
               bit ScalerDpTxHDCPDownstreamBksvChange(void)
@@ -6206,7 +6206,7 @@ line level    source
                       return _FALSE;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 98  
 
                   CLR_DP_TX_DOWNSTREAM_DPPLUG_CHANGE();
               
@@ -6270,7 +6270,7 @@ line level    source
                   {
                       // Check if Tx is sending or waiting a MSG before clear 111h[1]
                       if((GET_DP_GEN_DOWN_REQUEST_MSG() == _DP_MSG_CLEAR_PAYLOAD_ID_TABLE) ||
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 99  
 
                          (GET_DP_RX_SELF_GEN_DOWN_REQUEST_MSG() == _TRUE) || (GET_DP_TX_RECEIVED_MSG_COUNT() > 0))
                       {
@@ -6334,7 +6334,7 @@ line level    source
                   WORD usProductID = 0x00;
                   EnumDPTxEdidVendorModel enumDPTxEdidVendorModel = 0x00;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 100 
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 100 
 
                   // Step1: Read Tx Downstream EDID of Vendor and Product only
                   if(ScalerDpTxAuxI2CoverWrite(0x50, 1, &ucEdidOffset, 1) == _FALSE)
@@ -6398,7 +6398,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 101 
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 101 
 
               WORD ScalerDpTxGetDownStreamEdidBw(void)
               {
@@ -6462,7 +6462,7 @@ line level    source
                       if((ucFreeSyncConfig & _BIT7) == _BIT7)
                       {
                           ucFreeSyncConfig &= ~_BIT7;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/20/2026 19:43:45 PAGE 102 
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPTX                                                  09/21/2026 15:32:33 PAGE 102 
 
               
                           // Disable DFP Freesync Enable

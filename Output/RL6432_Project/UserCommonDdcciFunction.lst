@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONDDCCIFUNCTION
@@ -62,7 +62,7 @@ line level    source
   45          #endif
   46          #if(_D5_INPUT_PORT_TYPE == _D5_DVI_PORT)
   47              _DVI_D5,
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 2   
 
   48          #endif
   49          
@@ -126,7 +126,7 @@ line level    source
  104          #elif((_D0_INPUT_PORT_TYPE==_D0_DP_PORT)+(_D1_INPUT_PORT_TYPE==_D1_DP_PORT)+(_D2_INPUT_PORT_TYPE==_D2_DP_P
              -ORT)==0)
               #define _DEF_STRING_INPUT_DP                  ""
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 3   
 
               #else
               #warning "zhe is DDCCI error!!"
@@ -165,10 +165,10 @@ line level    source
  135          #define _DEF_STRING_CT3                     "05 "//6500
  136          
  137          #if _CT_7500_SUPPRT
-              #define _DEF_STRING_CT4                     "06 "//7500
-              #else
- 140          #define _DEF_STRING_CT4                     ""//7500
- 141          #endif
+ 138          #define _DEF_STRING_CT4                     "06 "//7500
+ 139          #else
+              #define _DEF_STRING_CT4                     ""//7500
+              #endif
  142          
  143          #define _DEF_STRING_CT5                     "08 "//9300
  144          #define _DEF_STRING_CT6                     "0B "//SRGB
@@ -190,7 +190,7 @@ line level    source
  159          Russian   0x09
  160          Spanish   0x0A
  161          Swedish   0x0B
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 4   
 
  162          Turkish   0x0C
  163          Chineses_T  0x0D
@@ -254,7 +254,7 @@ line level    source
              -ver(2.2))"
  209          #define _CAPABILITIES_STRING_HDMI                              _DEF_CAPABILITIES_STRING_DDCCI// "(prot(mon
              -itor)type(LCD)model(RTK)cmds(01 02 03 07 0C E3 F3)vcp(02 04 05 06 08 0B 0C 10 12 14(01 02 04 05 06 08 0B) 16 18 1A 52 60
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 5   
 
              -(01 03 04 0F 10 11 12) 87 AC AE B2 B6 C6 C8 CA CC(01 02 03 04 06 0A 0D) D6(01 04 05) DF FD FF)mswhql(1)asset_eep(40)mccs
              -_ver(2.2))"
@@ -318,7 +318,7 @@ line level    source
  264          // VARIABLE DECLARATIONS
  265          //****************************************************************************
  266          
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 6   
 
  267          //****************************************************************************
  268          // FUNCTION DECLARATIONS
@@ -382,7 +382,7 @@ line level    source
  324   1          UserDdcciHandler();
  325   1      }
  326          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 7   
 
  327          // Description  : Initial TX variables and Send Null-Message
  328          // Input Value  : None
@@ -446,7 +446,7 @@ line level    source
  386          {
  387   1          g_pucDdcciTxBuf[_DDCCI_TYPE_CODE] = ucTypeOpcode;
  388   1          g_pucDdcciTxBuf[_DDCCI_MAX_HIGH_BYTE] = HIBYTE(usMax);
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 8   
 
  389   1          g_pucDdcciTxBuf[_DDCCI_MAX_LOW_BYTE] = LOBYTE(usMax);
  390   1          g_pucDdcciTxBuf[_DDCCI_PRESENT_HIGH_BYTE] = HIBYTE(usPresent);
@@ -510,7 +510,7 @@ line level    source
  448   1      #if((_DP_SUPPORT == _ON) && (_DP_MST_SUPPORT == _ON))
                   if(GET_RUN_DDCCI_COMMAND_SRC() == _DDCCI_CMD_SRC_MST)
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 9   
 
                       enumPortType = GET_PORT_TYPE(SysSourceGetInputPortType(ScalerDpRxMstGetInputPort(ScalerDpRxMstGetC
              -apablePort())));
@@ -574,7 +574,7 @@ line level    source
                   UserInterfaceDdcciGetCpStringData(pucDest, enumPortType, usStartIndex, usLength);
               
               #else
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 10  
 
  509   1      
  510   1          switch(enumPortType)
@@ -638,7 +638,7 @@ line level    source
                       case _PORT_DUAL_DVI:
                           return (sizeof(tCP_STRING_DVI) - 1);
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 11  
 
  571   2      
  572   2      #if(_HDMI_PORT_EXIST == _ON)
@@ -702,7 +702,7 @@ line level    source
  630   2      
  631   2                  // Dual bank Type
  632   2                  g_pucDdcciTxBuf[5] = 0xFF;
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 12  
 
  633   2      
  634   2                  // Active User(1)
@@ -766,7 +766,7 @@ line level    source
  692   5                              UserCommonDdcciGetFwInfoRequest();
  693   5                              break;
  694   5      #if(_DUAL_BANK_DEBUG_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 13  
 
                                   case _DDCCI_CMD_SWITCH_DEBUG_SALVE_REQUEST:
                                       ScalerDebugSetDdcciSwitchState();
@@ -830,7 +830,7 @@ line level    source
                   BYTE ucSendLen = 0;
               
                   if(g_pucDdcciRxBuf[_DDCCI_SINK_OPCODE] != 0)
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 14  
 
                   {
                       SET_SMBUS_BLOCK_RW_STATUS(_TRUE);
@@ -888,13 +888,13 @@ line level    source
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    775    ----
-   CONSTANT SIZE    =    840    ----
+   CONSTANT SIZE    =    849    ----
    XDATA SIZE       =   ----      14
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/20/2026 19:44:32 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONDDCCIFUNCTION                                           09/21/2026 15:33:22 PAGE 15  
 
 END OF MODULE INFORMATION.
 

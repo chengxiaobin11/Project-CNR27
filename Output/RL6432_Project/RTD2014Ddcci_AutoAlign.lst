@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014DDCCI_AUTOALIGN
@@ -62,7 +62,7 @@ line level    source
   45   2          g_pucDdcciTxBuf[2] = 0x03;  
   46   2          g_pucDdcciTxBuf[3] = 0x58;
   47   2          g_pucDdcciTxBuf[4] =0xE7;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 2   
 
   48   2      
   49   2        }
@@ -126,7 +126,7 @@ line level    source
  107          
  108          bit IS_RGB_ADJ(void)
  109          {
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 3   
 
  110   1        return ((g_pucDdcciRxBuf[4]==0x20)&&(g_pucDdcciRxBuf[5]==0x01));
  111   1      }
@@ -190,7 +190,7 @@ line level    source
  169   2          SET_PANEL_TIME_HOUR(0);
  170   2          SET_PANEL_TIME_MIN(0);
  171   2          SET_PANEL_BURN_TIME_HOUR(0);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 4   
 
  172   2          SET_PANEL_BURN_TIME_MIN(0);
  173   2          RTDNVRamSavePanelUsedTimeData();
@@ -254,7 +254,7 @@ line level    source
  231   2           SET_COLOR_TEMP_TYPE_USER_B(128);
  232   2           UserAdjustContrast(100);
  233   2           UserAdjustBacklight(100);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 5   
 
  234   2             RTDDdccireply(_TRUE);
  235   2         }
@@ -318,7 +318,7 @@ line level    source
  293   2         }
  294   1         if(IS_SAVE_5800())
  295   1         {
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 6   
 
  296   2           SET_COLOR_TEMP_TYPE(_CT_5800);
  297   2           RTDNVRamSaveColorSetting(GET_COLOR_TEMP_TYPE());
@@ -382,7 +382,7 @@ line level    source
               void RTDDdcciAutoAlignPro(void);
               //--------------------------------------------------
               // Description  : 
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 7   
 
               // Input Value  : None
               // Output Value : None
@@ -446,7 +446,7 @@ line level    source
               }
               
               bit IS_SAVE_sRGB(void)
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 8   
 
               {
                 return ((g_pucDdcciRxBuf[4]==0x30)&&(g_pucDdcciRxBuf[5]==0x04));
@@ -510,7 +510,7 @@ line level    source
                    RTDFactoryOsdFuncDisableOsd();
                    SET_COLOR_TEMP_TYPE_USER_R(128);
                    SET_COLOR_TEMP_TYPE_USER_G(128);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 9   
 
                    SET_COLOR_TEMP_TYPE_USER_B(128);
                    UserAdjustContrast(100);
@@ -574,7 +574,7 @@ line level    source
                    //spt
                    SET_COLOR_TEMP_TYPE(_CT_6500);
                    RTDNVRamSaveColorSetting(GET_COLOR_TEMP_TYPE());
-C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/20/2026 19:44:58 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI_AUTOALIGN                                            09/21/2026 15:33:47 PAGE 10  
 
                  }
                  if(IS_SAVE_5800())

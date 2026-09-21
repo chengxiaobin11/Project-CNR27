@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERMEASURE
@@ -62,7 +62,7 @@ line level    source
   45          
   46          DWORD g_ulInputActiveRegionBackUp;
   47          bit g_bInputTimingDoubleCheck = _FALSE;
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 2   
 
   48          
   49          #if((_MEASURE_ADJUSTED_IHF_SUPPORT == _ON) || (_MEASURE_ADJUSTED_IVF_SUPPORT == _ON))
@@ -126,7 +126,7 @@ line level    source
               void ScalerMeasureDynamicColorSetAutoMeasure(BYTE ucColor);
               bit ScalerMeasureDynamicColorGetResult(BYTE *pucColorAverageValue, bit bWait);
               #endif
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 3   
 
  106          
  107          //****************************************************************************
@@ -190,7 +190,7 @@ line level    source
  165   2              return _FALSE;
  166   2          }
  167   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 4   
 
  168   1          // Disable IVS bypass
  169   1          ScalerMeasureVgaVsBypass(_DISABLE);
@@ -254,7 +254,7 @@ line level    source
              -)) << 8) |
  227   1                           ((WORD)ScalerGetByte(P30_06_MEAS_HS_PERIOD_A_L)));
  228   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 5   
 
  229   1          // Calculate difference of V period
  230   1          PDATA_WORD(0) = (WORD)(ABSDWORD(pulActiveRegionCount[0], pulActiveRegionCount[1]) % PDATA_WORD(1));
@@ -318,7 +318,7 @@ line level    source
  288   1      
  289   1          // Pop up stable measure result
  290   1          ScalerSetBit(P0_4F_STABLE_MEASURE, ~_BIT1, _BIT1);
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 6   
 
  291   1      
  292   1          // Polarity
@@ -382,7 +382,7 @@ line level    source
  348   2      
  349   2              return _TRUE;
  350   2          }
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 7   
 
  351   1      
  352   1          // Clear VGIP Interlace Toggle Flag
@@ -446,7 +446,7 @@ line level    source
  409   1          enumSourceType = enumSourceType;
  410   1          enumSourceSearchPort = enumSourceSearchPort;
  411   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 8   
 
  412   1      #if(_FREESYNC_SUPPORT == _ON)
  413   1          if((enumSourceType == _SOURCE_DP) && (GET_FREESYNC_ENABLED() == _TRUE))
@@ -510,7 +510,7 @@ line level    source
  471   4      
  472   4      #if(_DP_FREESYNC_SUPPORT == _ON)
  473   4                      // DP Freesync case
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 9   
 
  474   4                      if(GET_DP_FREESYNC_ENABLED() == _TRUE)
  475   4                      {
@@ -574,7 +574,7 @@ line level    source
  532          {
  533   1      #if(_IDOMAIN_ONLINE_MEASURE_SUPPORT == _ON)
  534   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 10  
 
  535   1          // Check over-range watchdog
  536   1          if(ScalerGetBit(P16_17_MEAS_HS_VS_DELTA_WD, (_BIT2 | _BIT1 | _BIT0)) != 0x00)
@@ -638,7 +638,7 @@ line level    source
               
               #endif // End of #if(_ONLINE_MEASURE_SUPPORT == _ON)
  596   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 11  
 
  597   1          return _FALSE;
  598   1      }
@@ -702,7 +702,7 @@ line level    source
  656   2              else if(GET_INPUT_TIMING_VFREQ() > (PDATA_WORD(1) >> 1))
  657   2              {
  658   3                  // Measure Time Clock = 4096 Xtal; VS Measure Invert Disable; Disable HS/DEN swap
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 12  
 
  659   3                  ScalerSetBit(P16_01_MEAS_CTL0, ~(_BIT7 | _BIT6 | _BIT4 | _BIT3), _BIT6);
  660   3              }
@@ -766,7 +766,7 @@ line level    source
                       }
                       else if(GET_INPUT_TIMING_VFREQ() > (PDATA_WORD(1) >> 2))
                       {
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 13  
 
                           // Measure Time Clock = 8192 Xtal; VS Measure Invert Disable; Disable HS/DEN swap
                           ScalerSetBit(P30_01_MEAS_CTL0, ~(_BIT7 | _BIT6 | _BIT4 | _BIT3), _BIT7);
@@ -830,7 +830,7 @@ line level    source
  779   1      }
  780          
  781          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 14  
 
  782          // Description  : Set for Region Count Measure
  783          // Input Value  : bTarget --> Measure type: digital or analog
@@ -894,7 +894,7 @@ line level    source
  840   1          return (DWORD)(usVHeight - 1) * usHTotal + usHWidth;
  841   1      }
  842          
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 15  
 
  843          //--------------------------------------------------
  844          // Description  : Calculate active region measure with adjusted H/V size
@@ -958,7 +958,7 @@ line level    source
               // Input Value  : void
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 16  
 
               void ScalerMeasureGlobalDimmingPatternEstimateInitial(void)
               {
@@ -1022,7 +1022,7 @@ line level    source
               void ScalerMeasureGlobalDimmingPatternEstimateStart(void)
               {
                   // restart auto-function
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 17  
 
                   if(ScalerGetBit(P0_7D_AUTO_ADJ_CTRL1, _BIT0) == 0x00)
                   {
@@ -1086,7 +1086,7 @@ line level    source
 1023   1          {
 1024   2              g_stInputTimingData.usHFreq = (_SYNC_PROC_CLK * 10 * 2 / pstMeasureSyncHV->usHSPeriod + 1) / 2;
 1025   2              g_stInputTimingData.usVFreq = (_SYNC_PROC_CLK * 1000 * 10 * 2 / pstMeasureSyncHV->usHSPeriod / pst
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 18  
 
              -MeasureSyncHV->usVSPeriod + 1) / 2;
 1026   2          }
@@ -1150,7 +1150,7 @@ line level    source
                   else
               #endif
 1081   1          {
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 19  
 
 1082   2              g_stInputTimingData.usVStart = PDATA_WORD(0);
 1083   2              g_stInputTimingData.usVHeight = (pstActiveRegion->usVActiveEnd - pstActiveRegion->usVActiveStart) 
@@ -1214,7 +1214,7 @@ line level    source
 1138   2              return _FALSE;
 1139   2          }
 1140   1      
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 20  
 
 1141   1      #if((_DVI_SUPPORT == _ON) || (_HDMI_SUPPORT == _ON))
 1142   1          if((enumSourceType == _SOURCE_DVI) || (enumSourceType == _SOURCE_HDMI))
@@ -1278,7 +1278,7 @@ line level    source
 1199   1          ScalerVgipCaptureEnable(_TRUE);
 1200   1      
 1201   1          // Set active region measure
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 21  
 
 1202   1          ScalerMeasureSetInputRegionCount(_ACTIVE_REGION_TYPE);
 1203   1          SET_INPUT_TIMING_ACTIVE_REGION(ScalerMeasureGetInputRegionCountResult(_WAIT));
@@ -1342,7 +1342,7 @@ line level    source
                   usActVEnd = ((pData[0] & 0x1F) << 8) | (pData[1]);
               
                   usActVheight = usActVEnd - usActVStart;
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 22  
 
               
                   return (DWORD)usDDomainVpos * usIVHeight / usActVheight;
@@ -1406,7 +1406,7 @@ line level    source
                   switch(ucColor)
                   {
                       case _AUTO_RED_CHANNEL:
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 23  
 
                           ScalerSetBit(P0_7A_AUTO_ADJ_CTRL0, ~(_BIT1 | _BIT0), _BIT1);
                           break;
@@ -1470,7 +1470,7 @@ line level    source
                       ulAutoSum /= 3;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/20/2026 19:43:22 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERMEASURE                                                     09/21/2026 15:32:09 PAGE 24  
 
                   if(ulArea > 0)
                   {

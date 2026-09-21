@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERINTERFACE
@@ -62,7 +62,7 @@ line level    source
   45          #if(_ADJ_BACKLIGHT_BY_TABLE == _ON)
                 //For DCR :
                 BYTE code tBacklight_Table[101] =
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 2   
 
                 {
                    0,  2,  4, 6,  8,  10,  12,  14,  16,  18,
@@ -126,7 +126,7 @@ line level    source
  101          #define _USER_DRR_CLK_MARGIN                    (1)
  102          #define _USER_DRR_HTOTAL_MARGIN                 (2)
  103          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 3   
 
  104          #if(_DP_FREESYNC_SUPPORT == _ON)
  105          #define GET_DP_FREESYNC_IHWIDTH(x)              (tDrrFreeSyncDpTimingInfo[(x)].usIHwidth)
@@ -190,7 +190,7 @@ line level    source
  163          #endif
  164          
  165          #if(_HDMI_FREESYNC_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 4   
 
  166          StructDrrFreeSyncTimingInfo code tDrrFreeSyncHdmiTimingInfo[] =
  167          {
@@ -254,7 +254,7 @@ line level    source
  225          };
  226          
  227          BYTE code tSU_COEF_128_TAPS_8[] =
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 5   
 
  228          {
  229          #include "./Sharpness/Sharpness128TapsNormalTable8.h"
@@ -318,7 +318,7 @@ line level    source
  286          #include "./Sharpness/Sharpness128Taps1to1Table8.h"
  287          };
  288          BYTE code tSU_1to1_COEF_128_TAPS_10[] =
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 6   
 
  289          {
  290          #include "./Sharpness/Sharpness128Taps1to1Table10.h"
@@ -382,7 +382,7 @@ line level    source
               #include "./Sharpness/Sharpness96Taps1to1Table0.h"
               };
               
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 7   
 
               BYTE code tSU_1to1_COEF_96_TAPS_2[] =
               {
@@ -446,7 +446,7 @@ line level    source
               #endif
               #endif  // End of #if(_ULTRA_VIVID_SUPPORT == _ON)
  407          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 8   
 
  408          #if(_YPEAKING_SUPPORT == _ON)
               //----------------------------------------------------------------------------------------------------
@@ -510,7 +510,7 @@ line level    source
  467          
  468          #if(_DEBUG_MESSAGE_SUPPORT == _OFF)
               BYTE UserInterfaceGetDdcciStatus_EXINT1(void);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 9   
 
               BYTE UserInterfaceGetFactoryCommand_EXINT1(void);
               #if((_HDMI_FREESYNC_SUPPORT == _ON) && (_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD == _MCCS_SWITCH_MODE))
@@ -574,7 +574,7 @@ line level    source
  528          #if(_PANEL_POWER_SEQUENCE_CONTROL_BY_USER == _ON)
               void UserInterfacePanelPowerAction(BYTE ucEvent);
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 10  
 
  531          
  532          void UserInterfaceAdjustWaitPanelT1(void);
@@ -638,7 +638,7 @@ line level    source
  590          #if(_ASPECT_RATIO_WITHOUT_MUTE == _ON)
               WORD UserInterfaceGetAspectRatioMinDVHeight(void);
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 11  
 
  593          
  594          #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
@@ -702,7 +702,7 @@ line level    source
  651          void UserInterfaceDisplayInitialization(void);
  652          void UserInterfaceAdjustInputTiming(void);
  653          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 12  
 
  654          #if(_UNDERSCAN_SUPPORT == _ON)
  655          bit UserInterfaceAdjustUnderScan(void);
@@ -766,7 +766,7 @@ line level    source
  712          //-------------------------------------------------------
  713          #if(_VGA_SUPPORT == _ON)
  714          BYTE UserInterfaceGetVGAConfuseMode(BYTE ucModeIndex);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 13  
 
  715          bit UserInterfaceGetLoadModeTableDefaultStatus(void);
  716          bit UserInterfaceGetFirstAutoConfigStatus(void);
@@ -830,7 +830,7 @@ line level    source
              -tiveTimePortType);
               WORD UserInterfaceGetEizoSearchFinishTime(void);
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 14  
 
  775          
  776          //-------------------------------------------------------
@@ -894,7 +894,7 @@ line level    source
               #endif
  835          #endif // End of #if(_AUDIO_SUPPORT == _ON)
  836          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 15  
 
  837          #if((_OGC_SUPPORT == _ON) || (_OCC_SUPPORT == _ON) || (_OGC_DICOM_SUPPORT == _ON) || (_UNIFORMITY_SUPPORT 
              -== _ON))
@@ -958,7 +958,7 @@ line level    source
  895          // Input Value  : None
  896          // Output Value : None
  897          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 16  
 
  898          void UserAdjustBacklight(BYTE usBacklight)
  899          {
@@ -1022,7 +1022,7 @@ line level    source
  957   1      #if(_MPRT_SUPPORT == _ON)
               
                 if((GET_OSD_MPRT()!=_OFF)&&(SysModeGetModeState() ==_MODE_STATUS_ACTIVE)&&(GET_INPUT_TIMING_VFREQ()> _MPR
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 17  
 
              -T_MIN_FRAME_RATE)&&(GET_OSD_FREE_SYNC_STATUS() == _OFF))
                 {
@@ -1086,7 +1086,7 @@ line level    source
 1018   2      
 1019   2              case _USER_TIMER_EVENT_OSD_SHOW_NO_CABLE:
 1020   2                  SET_OSD_EVENT_MESSAGE(_OSDEVENT_SHOW_NOSIGNAL_MSG);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 18  
 
 1021   2                  break;
 1022   2      
@@ -1150,7 +1150,7 @@ line level    source
                         OsdDispNavigatMenu();        
                       }
                       else if((GET_OSD_STATE() == _MENU_NAVIGAT_NONE)||(SysModeGetModeState() != _MODE_STATUS_ACTIVE) || (GE
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 19  
 
              -T_OSD_FACTORY_MODE() == _ON))
                       {
@@ -1214,7 +1214,7 @@ line level    source
                           break;
               #endif
 1142   2      
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 20  
 
 1143   2      
 1144   2      #if(_FREESYNC_SUPPORT == _ON)
@@ -1278,7 +1278,7 @@ line level    source
 1201   2      #if(_DCR_SUPPORT == _ON)
 1202   2          case _USER_TIMER_EVENT_DCR_CAL_TIME:
 1203   2            g_ucDCR_15SEC_OffBLFlag = _TRUE;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 21  
 
 1204   2            break;
 1205   2          case _USER_TIMER_EVENT_DCR_TUNE_PWM_TIMER:
@@ -1342,7 +1342,7 @@ line level    source
                       ScalerTimerReactiveTimerEvent(SEC(5), _USER_TIMER_EVENT_OSD_DISABLE);
                     #else
                       ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 22  
 
                     #endif
                     }
@@ -1406,7 +1406,7 @@ line level    source
               bit UserInterfaceDebugIIC(BYTE ucType, BYTE *pucDdcciArray, BYTE *pucReturnValue)
               {
                   bit bDebugMode = _FALSE;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 23  
 
               
                   pucDdcciArray = pucDdcciArray;
@@ -1470,7 +1470,7 @@ line level    source
               BYTE led_start = 0;
               
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 24  
 
 1389          #if(_IR_VIRTUAL)  
               BYTE tcc_time = 0,ir_up_time = 0,wave_H_count = 0,data_count = 0;
@@ -1534,7 +1534,7 @@ line level    source
                       {
                       r_data=r_data>>1;
                       r_data=r_data|0x80000000;    //  bit1
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 25  
 
                       data_count++;
                       }
@@ -1598,7 +1598,7 @@ line level    source
                     }   
               
                   break;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 26  
 
               
                   case 0x03:
@@ -1662,7 +1662,7 @@ line level    source
                   if(led_time >= 1)
                   {
                     led_time = 0;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 27  
 
                     LED_CONTRL(LED_HIGH);
                     led_flag =9;
@@ -1726,7 +1726,7 @@ line level    source
 1634          
 1635          #if(_UART_SUPPORT == _ON)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 28  
 
               // Description  : Action in Serial Port0 int defined by User
               // Input Value  : None
@@ -1790,7 +1790,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 29  
 
                       return _FALSE;
                   }
@@ -1854,7 +1854,7 @@ line level    source
               
                       case _D4_INPUT_PORT:
               #if(_D4_HDMI_MULTI_EDID_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 30  
 
                           memcpy(pucEdidContent, tHDMI_EXT_EEPROM_EDID_TABLE[UserAdjustGetHdmiExternalEdidIndex(ucInputP
              -ort)], _D4_EDID_EXTERNAL_EEPROM_MAX_SIZE);
@@ -1918,7 +1918,7 @@ line level    source
               
                   switch(ucHdmiVer)
                   {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 31  
 
                       case _HDMI_1P4:
                           break;
@@ -1982,7 +1982,7 @@ line level    source
               #endif
               
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 32  
 
                           break;
               #endif // #if(_D0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
@@ -2046,7 +2046,7 @@ line level    source
               
               #if(_D3_HDMI_SUPPORT == _ON)
               
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 33  
 
               #if(_D3_HDMI_MULTI_EDID_SUPPORT == _ON)
                           if(UserCommonInterfaceHDMIGetMultiEdidLocated(_D3_INPUT_PORT, UserInterfaceGetMultiHdmiEdidInd
@@ -2110,7 +2110,7 @@ line level    source
                           break;
               #endif // #if(_D5_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
               
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 34  
 
               #if(_D6_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
                       case _D6_INPUT_PORT_EDID:
@@ -2174,7 +2174,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Get USB3 Retimer PS Support Status
               // Input Value  : void
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 35  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 35  
 
               // Output Value : EnumUSBPSSupportStatus
               //--------------------------------------------------
@@ -2238,7 +2238,7 @@ line level    source
               // Description  : Get HDCP By User Defined Method
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 36  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 36  
 
               //--------------------------------------------------
               void UserInterfaceGetTxHDCPKeyByUser(WORD usSubAddr, WORD usLength, BYTE *pucReadArray)
@@ -2302,7 +2302,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Get HDCP By User Defined Method
               // Input Value  : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 37  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 37  
 
               // Output Value : None
               //--------------------------------------------------
@@ -2366,7 +2366,7 @@ line level    source
               // Description  : Get HDCP2.2 TX KEY -- RRMODN
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 38  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 38  
 
               //--------------------------------------------------
               void UserInterfaceGetDpTxHdcp2NPinvByUser(WORD usSubAddr, WORD usLength, BYTE *pucReadArray)
@@ -2430,7 +2430,7 @@ line level    source
 2293          // Description  : Wait For Panel Power Sequence T3
 2294          // Input Value  : None
 2295          // Output Value : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 39  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 39  
 
 2296          //--------------------------------------------------
 2297          void UserInterfaceAdjustWaitPanelT3(void)
@@ -2494,7 +2494,7 @@ line level    source
 2355   2              UserCommonInterfaceDpGetEdidNativeTimingBw(_NO_PORT_EDID);
 2356   2      #endif
 2357   2      
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 40  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 40  
 
 2358   2      #if(_DVI_SUPPORT == _ON)
 2359   2              UserCommonInterfaceTmdsGetZ0Status(_D0_INPUT_PORT);
@@ -2558,7 +2558,7 @@ line level    source
 2417   1          UserCommonInterfaceDdcciSwitch(GET_OSD_DDCCI_STATUS(), UserCommonNVRamGetSystemData(_SEARCH_PORT));
 2418   1          RTDKeyInitial();
 2419   1          SET_PANELPOWERSTATUS(_PANEL_POWER_OFF_STATE);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 41  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 41  
 
 2420   1      
 2421   1      #if(_MOTION_BLUR_REDUCTION_SUPPORT == _OFF)
@@ -2622,7 +2622,7 @@ line level    source
               #endif
 2480   1      }
 2481          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 42  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 42  
 
 2482          //--------------------------------------------------
 2483          // Description  : User Power Switch
@@ -2686,7 +2686,7 @@ line level    source
 2538   2      
 2539   2                  // Save System Power Status Data.
 2540   2                  UserCommonNVRamSaveSystemData();
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 43  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 43  
 
 2541   2      
 2542   2                  break;
@@ -2750,7 +2750,7 @@ line level    source
 2597   2      
 2598   2                  // Update LED Status
 2599   2                  UserInterfaceKeyPadLedControl(_LED_POWER_OFF);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 44  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 44  
 
 2600   2      
 2601   2                  // Set Monitor Power Off Status
@@ -2814,7 +2814,7 @@ line level    source
 2658   2                  break;
 2659   2      
 2660   2              case _LED_POWER_SEARCH:
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 45  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 45  
 
 2661   2                  PCB_LED_IDLE();
 2662   2                  break;
@@ -2878,7 +2878,7 @@ line level    source
 2720   2                  break;
 2721   2      
 2722   2              default:
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 46  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 46  
 
 2723   2                  break;
 2724   2          }
@@ -2942,7 +2942,7 @@ line level    source
                       if((GET_INPUT_TIMING_HWIDTH() > 800) ||
                          (GET_INPUT_TIMING_VHEIGHT() > 600))
                       {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 47  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 47  
 
                           DebugMessageScaler("FRC only supports dos-mode timing", 0);
                           return _TRUE;
@@ -3006,7 +3006,7 @@ line level    source
 2843          // Output Value : None
 2844          //--------------------------------------------------
 2845          bit UserInterfaceGetForcePSStatus(void)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 48  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 48  
 
 2846          {
 2847   1          return (GET_FORCE_POW_SAV_STATUS());
@@ -3070,7 +3070,7 @@ line level    source
 2905          // Output Value : True --> User Check Ready to Power Saving
 2906          //--------------------------------------------------
 2907          bit UserInterfaceGetIntoPSStatus(void)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 49  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 49  
 
 2908          {
 2909   1          if(ScalerOsdGetOsdEnable() == _TRUE)
@@ -3134,7 +3134,7 @@ line level    source
 2967   2      
 2968   2              case _CHECK_SYSTEM_DATA_LOAD:
 2969   2              case _CHECK_SYSTEM_DATA_SAVE:
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 50  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 50  
 
 2970   2              case _CHECK_MODE_USER_DATA_LOAD:
 2971   2              case _CHECK_MODE_USER_DATA_SAVE:
@@ -3198,7 +3198,7 @@ line level    source
 3029   1      
 3030   1      #if(_COLOR_FORMAT_CONVERT == _ON)
 3031   1          switch(SysSourceGetSourceType())
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 51  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 51  
 
 3032   1          {
 3033   2              case _SOURCE_VGA:
@@ -3262,7 +3262,7 @@ line level    source
                       {500, 1920,  1080},   // 1080p
                       {600, 1920,  1080},   // 1080p
               
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 52  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 52  
 
                       // Don't delete it, and place it at last.
                       {  0,    0,    0},
@@ -3326,7 +3326,7 @@ line level    source
               #if((_OVERSCAN_DVI_SUPPORT == _ON) || (_OVERSCAN_HDMI_SUPPORT == _ON) || (_OVERSCAN_DP_SUPPORT == _ON))
                           // Interlaced and YUV Timing Always do overscan
                           if(GET_INPUT_TIMING_INTERLACE_FLG() == _TRUE)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 53  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 53  
 
                           {
                               bDoOverScan = _TRUE;
@@ -3390,7 +3390,7 @@ line level    source
 3214   2                  return _ASPECT_RATIO_FULL;
 3215   2          }
 3216   1      }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 54  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 54  
 
 3217          
 3218          //--------------------------------------------------
@@ -3454,7 +3454,7 @@ line level    source
               #endif
 3276          
 3277          #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 55  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 55  
 
 3278          //--------------------------------------------------
 3279          // Description  : Get aspect original mode ratio
@@ -3518,7 +3518,7 @@ line level    source
 3337   2      #if (_DISPLAY_VER_MIRROR_SUPPORT == _ON)
                       case _DISP_ROTATE_VER_MIRROR:
                           return _ROT_VER_MIRROR;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 56  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 56  
 
               #endif
 3341   2          }
@@ -3582,7 +3582,7 @@ line level    source
 3399          void UserInterfaceGetDVMaxMinFreq(StructDVCustomizedFreq *pstDVCustomizedFreq)
 3400          {
 3401   1          pstDVCustomizedFreq = pstDVCustomizedFreq;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 57  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 57  
 
 3402   1      
 3403   1      #if(_MN_FINE_TUNE_LASTLINE_SUPPORT == _ON)
@@ -3646,7 +3646,7 @@ line level    source
                   StructDDR3PhaseInfo stUserVedorDdr3PhaseData = {_DDR3_PLL_INITIAL_PHASE_0, _DDR3_PLL_INITIAL_PHASE_1, 
              -_DDR3_READ_DQ_DLYN_TAP};
                   ScalerPLLGetDDR3PhaseData(&stUserVedorDdr3PhaseData);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 58  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 58  
 
               }
               #endif
@@ -3710,7 +3710,7 @@ line level    source
                       case _BACKLIGHT_MODE_STROBE_USER_CUSTOMIZE_MBR:
                           /*
                            Strobe Backlight Position
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 59  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 59  
 
                              _____       ________________________     _____
                             |     |     |                        |   |     |
@@ -3774,7 +3774,7 @@ line level    source
               // Description  : Adjust Backlight ADIM (normally controled by scaler PWM)
               // Input Value  : Current backlight mode and backlight on/off status
               // Output Value : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 60  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 60  
 
               //--------------------------------------------------
               void UserInterfaceMbrAdimAdjust(EnumMbrBacklightMode enumBacklightMode, bit bLightCtrl)
@@ -3838,7 +3838,7 @@ line level    source
                   // e.g.
                   // when using AS3824, MBR P-dimming setting may not required to be controled by TCON in Constant Mode
                   // User can return _BACKLIGHT_PDIM_CTRL_BY_USER and place additional setting in UserInterfaceDisplayMb
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 61  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 61  
 
              -rPdimAdjust()
                   // ---
@@ -3902,7 +3902,7 @@ line level    source
               BYTE UserInterfaceMbrGetBacklightPos(void)
               {
                   return (BYTE)GET_OSD_MBR_POSITION();
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 62  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 62  
 
               }
               #endif
@@ -3966,7 +3966,7 @@ line level    source
                   return _RTK_ADV_MBR_USER_DISABLE;
               }
               #endif // End of #if(_RTK_ADVANCED_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 63  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 63  
 
               #endif // End of #if(_MOTION_BLUR_REDUCTION_SUPPORT == _ON)
 3769          
@@ -4030,7 +4030,7 @@ line level    source
 3827          {
 3828   1      #if(_PANEL_STYLE == _PANEL_LVDS)
 3829   1          // Check display format resolution according to LVDS port count
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 64  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 64  
 
 3830   1          SET_MDOMAIN_OUTPUT_HSTART(GET_MDOMAIN_OUTPUT_HSTART() + (GET_MDOMAIN_OUTPUT_HSTART() % ((BYTE)1 << _LV
              -DS_OUTPUT_PORT)));
@@ -4094,7 +4094,7 @@ line level    source
 3885          // Description  : User Judge if YCC Quantization Range is Full or Limited
 3886          // Input Value  : None
 3887          // Output Value : True or False
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 65  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 65  
 
 3888          //--------------------------------------------------
 3889          bit UserInterfaceGetYCCQuantizationFullRangeStatus(EnumColorYCCQuantization enumColorYCCQuantization)
@@ -4158,7 +4158,7 @@ line level    source
 3947   3                  case _A0_INPUT_PORT:
 3948   3      
 3949   3                      SET_OSD_COLOR_FORMAT(GET_VGA_COLOR_FORMAT_STATUS());
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 66  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 66  
 
 3950   3      
 3951   3                      break;
@@ -4222,7 +4222,7 @@ line level    source
 4009   1      
 4010   1          // Adjust Backlight
 4011   1          UserAdjustBacklight(GET_OSD_BACKLIGHT());
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 67  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 67  
 
 4012   1      
 4013   1          // Adjust Brightness & Contrast
@@ -4286,7 +4286,7 @@ line level    source
 4070   2      #endif
 4071   2      
 4072   2              // Adjust Gamma On/Off
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 68  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 68  
 
 4073   2      #if(_GAMMA_FUNCTION == _ON)
 4074   2              if(GET_OSD_GAMMA() == _GAMMA_OFF)
@@ -4350,7 +4350,7 @@ line level    source
 4132   2          }
 4133   1          else
 4134   1          {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 69  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 69  
 
 4135   2              ScalerColorDCCEnable(_FUNCTION_ON);
 4136   2          }
@@ -4414,7 +4414,7 @@ line level    source
 4194   1          UserAdjustHighLightWindowEffectSpace();
 4195   1      
 4196   1      #if(_ASPECT_ORIGINAL_MODE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 70  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 70  
 
 4197   1          if(GET_OSD_ASPECT_RATIO_TYPE() != _OSD_ASPECT_RATIO_ORIGIN)
 4198   1      #endif
@@ -4478,7 +4478,7 @@ line level    source
               //--------------------------------------------------
               // Description  : UltraVivid Proccess
               // Input Value  : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 71  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 71  
 
               // Output Value : None
               //--------------------------------------------------
@@ -4542,7 +4542,7 @@ line level    source
 4316   1      }
 4317          
 4318          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 72  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 72  
 
 4319          // Description  : Get Sharpness Coef BankNum
 4320          // Input Value  : None
@@ -4606,7 +4606,7 @@ line level    source
 4378          
 4379          #if(_IAPS_SUPPORT == _ON)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 73  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 73  
 
               // Description  : User Adjust IAPS
               // Input Value  : None
@@ -4670,7 +4670,7 @@ line level    source
               #endif
 4441   1      
 4442   1          // Adjust DCR Threshold & Source
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 74  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 74  
 
 4443   1      #if(_DCR_SUPPORT == _ON)
 4444   1      
@@ -4734,7 +4734,7 @@ line level    source
                           UserCommonNVRamSetSystemData(_SEARCH_PORT, SysSourceGetInputPort());
                       }
               
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 75  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 75  
 
                       UserCommonNVRamSetSystemData(_SOURCE_SCAN_TYPE, SysSourceGetScanType());
                       UserCommonNVRamSaveSystemData();
@@ -4798,7 +4798,7 @@ line level    source
 4564   2          }
 4565   1      
 4566   1          SET_OSD_LOGO_ON(_OFF);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 76  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 76  
 
 4567   1      
 4568   1          // Cancel Timer Events
@@ -4862,7 +4862,7 @@ line level    source
 4625   1      
 4626   1          if((ucModeIndex == _MODE_640x400_85HZ) || (ucModeIndex == _MODE_720x400_85HZ))
 4627   1          {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 77  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 77  
 
 4628   2              if((GET_INPUT_TIMING_H_POLARITY() == _TRUE) && (GET_INPUT_TIMING_V_POLARITY() == _FALSE))
 4629   2              {
@@ -4926,7 +4926,7 @@ line level    source
 4687          // Output Value : None
 4688          //--------------------------------------------------
 4689          void UserInterfaceGetAutoConfigPercentage(BYTE ucAutoPercentage)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 78  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 78  
 
 4690          {
 4691   1          ucAutoPercentage = ucAutoPercentage;
@@ -4990,7 +4990,7 @@ line level    source
                               UserAdjustAudioVolume(GET_OSD_VOLUME());
                           }
                           break;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 79  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 79  
 
               
                       case _MHL_RCP_VOLUME_DOWN:
@@ -5054,7 +5054,7 @@ line level    source
                   #if(_DEF_DP_GAME_MODE)  
                     if((GET_OSD_FREE_SYNC_STATUS() == _TRUE)&&(SysSourceGetSourceType() == _SOURCE_HDMI))
                     {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 80  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 80  
 
                       return _FREESYNC_SUPPORT_ON;
                     }
@@ -5118,7 +5118,7 @@ line level    source
 4873   2                  {
 4874   3                      return _DP_VERSION_1_4;//_DP_VERSION_1_3
 4875   3                  }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 81  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 81  
 
 4876   2                  break;
 4877   2      
@@ -5182,7 +5182,7 @@ line level    source
               
                               return _DP_VERSION_1_1;
                           }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 82  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 82  
 
                           else if(GET_OSD_DP_D6_VERSION() == _DP_VER_1_DOT_2)
                           {
@@ -5246,7 +5246,7 @@ line level    source
 4997          EnumDPMSTPort UserInterfaceGetDpMSTCapablePort(void)
 4998          {
 4999   1      #if(_DP_MST_SUPPORT == _OFF)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 83  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 83  
 
 5000   1      
 5001   1          return _DP_MST_NO_PORT;
@@ -5310,7 +5310,7 @@ line level    source
                       else
               #endif
 5060   2      
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 84  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 84  
 
 5061   2      #if(_DP_MST_AUTO_SEARCH_SUPPORT == _ON)
                       if(GET_OSD_DP_MST() == _MST_AUTO)
@@ -5374,7 +5374,7 @@ line level    source
                           return _DP_MST_NO_PORT;
                       }
                       else
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 85  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 85  
 
                       {
                           return _DP_MST_RX6_PORT;
@@ -5438,7 +5438,7 @@ line level    source
               // Input Value  : None
               // Output Value : EnumDpHpdToggleMode
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 86  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 86  
 
               EnumDpHpdToggleMode UserInterfaceGetDpDcOnHpdMode(void)
               {
@@ -5502,7 +5502,7 @@ line level    source
               //--------------------------------------------------
               void UserInterfaceAdjustSourceSearchTime(void)
               {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 87  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 87  
 
               }
               
@@ -5566,7 +5566,7 @@ line level    source
 5304   2      #endif
 5305   2              {
 5306   3      #if(_LINE_IN_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 88  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 88  
 
 5307   3                  if(UserInterfaceGetAudioSource() == _LINE_IN_AUDIO)
 5308   3                  {
@@ -5630,7 +5630,7 @@ line level    source
 5362          //--------------------------------------------------
 5363          EnumAudioInputSource UserInterfaceGetAudioSource(void)
 5364          {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 89  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 89  
 
 5365   1      #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
                   if(ScalerAudioGetInternalAudioGenEnable(SysSourceGetInputPort()) == _ENABLE)
@@ -5694,7 +5694,7 @@ line level    source
               #endif // End of #if(_LINE_IN_SUPPORT == _ON)
 5423   2      
 5424   2              default:
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 90  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 90  
 
 5425   2      
 5426   2      #if(_LINE_IN_SUPPORT == _ON)
@@ -5758,7 +5758,7 @@ line level    source
 5482          //--------------------------------------------------
 5483          // Description  : User Decide whether to Mute Audio
 5484          // Input Value  : None
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 91  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 91  
 
 5485          // Output Value : _AUDIO_NON_LPCM => Mute Audio
 5486          //--------------------------------------------------
@@ -5822,7 +5822,7 @@ line level    source
                           return _AUDIO_DP_DPCD_SUPPORT;
               
                           break;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 92  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 92  
 
               #endif
               
@@ -5886,7 +5886,7 @@ line level    source
               // Output Value : Node
               //--------------------------------------------------
               bit UserInterfaceGetAudioStandAloneStatus(void)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 93  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 93  
 
               {
                   return GET_OSD_AUDIO_STAND_ALONE();
@@ -5950,7 +5950,7 @@ line level    source
                           ScalerAudioDigitalOutputMute(_ON);
               #endif
 5669   3                  SysAudioChangeAudioState(_AUDIO_STATUS_PREPARING);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 94  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 94  
 
 5670   3              }
 5671   2          }
@@ -6014,7 +6014,7 @@ line level    source
 5728          void UserInterfaceAdjustAudioAmpFastMuteProc(bit bMute)
 5729          {
 5730   1          bMute = bMute;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 95  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 95  
 
 5731   1      
 5732   1          if(bMute)
@@ -6078,7 +6078,7 @@ line level    source
               // Input Value  : _TRUE or _FALSE
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 96  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 96  
 
               void UserInterfaceSwapExternalAudioCodecInput(bit bSwap)
               {
@@ -6142,7 +6142,7 @@ line level    source
               }
               #endif // End of #if(_AUDIO_TTS_SUPPORT_TYPE == _AUDIO_TTS_EMBEDDED_TYPE)
 5853          
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 97  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 97  
 
 5854          #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
               #if(_INTERNAL_AUDIO_CHANNEL_CONFIG_BY_USER_SUPPORT == _ON)
@@ -6206,7 +6206,7 @@ line level    source
 5912          //--------------------------------------------------
 5913          // Description  : User function Backlight Adjust for Calibration
 5914          // Input Value  : 0(Min Backlight) ~ 255(Max Backlight)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 98  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 98  
 
 5915          // Output Value : None
 5916          //--------------------------------------------------
@@ -6270,7 +6270,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Set Ypeaking Table
               // Input Value  : Request Ypeaking Table
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 99  
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 99  
 
               // Output Value : None
               //--------------------------------------------------
@@ -6334,7 +6334,7 @@ line level    source
               EnumAIOModernStandbyMode UserInterfaceGetAIOModernStandbyMode(void)
               {
                   return _AIO_MODERN_STANDBY_MODE_DISABLE;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 100 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 100 
 
               }
               #endif
@@ -6398,7 +6398,7 @@ line level    source
 6088   1          WORD usPixelClk = ScalerSyncGetInputPixelClk();
 6089   1          WORD usRefHtotalHBound = 0;
 6090   1          WORD usRefHtotalLBound = 0;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 101 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 101 
 
 6091   1          WORD usPixelClkHBound = usPixelClk;
 6092   1          WORD usPixelClkLBound = usPixelClk;
@@ -6462,7 +6462,7 @@ line level    source
               
                   for(ucIndex = 0; ucIndex < (sizeof(tDrrVrrHdmiTimingInfo) / sizeof(tDrrVrrHdmiTimingInfo[0])); ucIndex
              -++)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 102 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 102 
 
                   {
                       if((GET_HDMI_VRR_IHWIDTH(ucIndex) == GET_INPUT_TIMING_HWIDTH()) && (GET_HDMI_VRR_IVHEIGHT(ucIndex)
@@ -6526,7 +6526,7 @@ line level    source
 6204          BYTE UserAdjustDCRCalPwm(BYTE ucRGBValValue)
 6205          {
 6206   1        BYTE i=0;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 103 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 103 
 
 6207   1        BYTE ucPwm=0;
 6208   1        BYTE tRGBValValue[5] = {0,50,75,175,255};
@@ -6590,7 +6590,7 @@ line level    source
                 ucMeasureHighR    = ScalerColorDCRReadResult(_DCR_HIGH_LV_VAL_R);
                 ucMeasureHighG    = ScalerColorDCRReadResult(_DCR_HIGH_LV_VAL_G);
                 ucMeasureHighB    = ScalerColorDCRReadResult(_DCR_HIGH_LV_VAL_B);
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 104 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 104 
 
                 DebugMessageOsd("0.ucMeasureValueAvg",ucMeasureValueAvg);
                 DebugMessageOsd("0.ucMeasureHighR",ucMeasureHighR);
@@ -6654,7 +6654,7 @@ line level    source
                     DebugMessageOsd("1.dcr turn on backlight",1);
               #endif
 6322   3          }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 105 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 105 
 
 6323   2      
 6324   2        }
@@ -6718,7 +6718,7 @@ line level    source
 6382   3            ucdet=1;
 6383   3          }
 6384   2          if(uctargetPwm > ucPrePwm)
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 106 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 106 
 
 6385   2          {
 6386   3            PCB_BACKLIGHT_PWM(ucPrePwm + ucdet);
@@ -6782,7 +6782,7 @@ line level    source
                       PCB_MPRT_TCON_INVERTED_OUTPUT();
               
                       // Set TCON PWM
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/20/2026 19:44:46 PAGE 107 
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACE                                              09/21/2026 15:33:35 PAGE 107 
 
                 #if(_MPRT_WEAK_MID_HIGH)
                   if(ucTconLevel==1)

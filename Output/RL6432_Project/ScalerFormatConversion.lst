@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/20/2026 19:43:17 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/21/2026 15:32:03 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERFORMATCONVERSION
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // FUNCTION DEFINITIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/20/2026 19:43:17 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/21/2026 15:32:03 PAGE 2   
 
               //--------------------------------------------------
               // Description  : EVEN/Odd status
@@ -126,7 +126,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Control half scaling down on/off
-C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/20/2026 19:43:17 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERFORMATCONVERSION                                            09/21/2026 15:32:03 PAGE 3   
 
               // Input Value  : _ENABLE or _DISABLE
               // Output Value : None

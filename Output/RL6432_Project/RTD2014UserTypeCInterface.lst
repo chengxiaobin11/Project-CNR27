@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERTYPECINTERFACE
@@ -62,7 +62,7 @@ line level    source
               
               //****************************************************************************
               // VARIABLE DECLARATIONS
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 2   
 
               //****************************************************************************
               #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
              -cPdoIndex, StructTypeCUserPDO *pstPDO);
               EnumTypeCPdoNumber UserInterfaceTypeCPortControllerGetUserPartnerPdoCnt(BYTE ucInputPort, EnumTypeCPowerRo
              -le enumPowerRole);
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 3   
 
               void UserInterfaceTypeCPortControllerGetUserPartnerPdo(BYTE ucInputPort, EnumTypeCPowerRole enumPowerRole,
              - BYTE ucPdoIndex, StructTypeCUserPDO *pstPartnerPDO);
@@ -190,7 +190,7 @@ line level    source
               void UserInterfaceTypeCGetHpUserEvent(BYTE ucInputPort, StructTypeCHpUserEvent *pstHpUserEvent);
               void UserInterfaceTypeCHpAltModeHandler(BYTE ucInputPort, StructTypeCHpSysEvent stHpSysEvent);
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 4   
 
               #if(_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_DELL_ALT_MODE)
               EnumTypeCDellInitCompleteStatus UserInterfaceTypeCGetDellAltModeInitComplete(BYTE ucInputPort);
@@ -254,7 +254,7 @@ line level    source
                   switch(ucInputPort)
                   {
               #if(_D0_DP_TYPE_C_CONNECTOR_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 5   
 
                       case _D0_INPUT_PORT:
                           enumTypeCMode = GET_OSD_D0_TYPE_C_U3_MODE();
@@ -318,7 +318,7 @@ line level    source
               }
               #endif
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 6   
 
               #if(_DP_TYPE_C_HUB_COMMUNICATION_SUPPORT == _ON)
               //--------------------------------------------------
@@ -382,7 +382,7 @@ line level    source
               {
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 7   
 
                       case _D0_INPUT_PORT:
                           // Here: User Can Use "UserCommonUsbHubGetDspInfo(_HUB_DSP0)" to Create Draw Notice U3 Device 
@@ -446,7 +446,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
                           return _FALSE;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 8   
 
               
                           break;
@@ -510,7 +510,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Hub Billboard Control
               // Input Value  : _TYPE_C_BB_DISABLE / _TYPE_C_BB_ENABLE
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 9   
 
               // Output Value : None
               //--------------------------------------------------
@@ -574,7 +574,7 @@ line level    source
                   }
               
                   return enumCcAttachResult;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 10  
 
               }
               
@@ -638,7 +638,7 @@ line level    source
               // Input Value  : ucInputPort --> Input Port
               // Output Value : EnumTypeCPowerRole (_TYPE_C_POWER_ROLE_NONE / _TYPE_C_POWER_SNK / _TYPE_C_POWER_SRC)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 11  
 
               EnumTypeCPowerRole UserInterfaceTypeCPortControllerGetUserPowerRole(BYTE ucInputPort)
               {
@@ -702,7 +702,7 @@ line level    source
                   stTypeCUserRdo = stTypeCUserRdo;
               }
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 12  
 
               //--------------------------------------------------
               // Description  : Get User Port Ctrl Number of Src/Snk PDOs
@@ -766,7 +766,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void UserInterfaceTypeCPortControllerGetUserPartnerPdo(BYTE ucInputPort, EnumTypeCPowerRole enumPowerRole,
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 13  
 
              - BYTE ucPdoIndex, StructTypeCUserPDO *pstPartnerPDO)
               {
@@ -830,7 +830,7 @@ line level    source
               {
                   ucInputPort = ucInputPort;
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 14  
 
                   // Kernel ask User Port Controller to Reconnect
               
@@ -894,7 +894,7 @@ line level    source
               // Output Value : return _TYPE_C_USER_PORT_CTRL_COMMUNICATION_SUCCESS / _TYPE_C_USER_PORT_CTRL_COMMUNICATI
              -ON_FAIL
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 15  
 
               EnumTypeCUserPortCtrlFailureType UserInterfaceTypeCPortControllerConfigUserMultiFunction(BYTE ucInputPort,
              - EnumTypeCMultiFuncStatus enumMultiFunction)
@@ -958,7 +958,7 @@ line level    source
               EnumTypeCLenovoAltModeStatus UserInterfaceTypeCPortControllerGetUserLenovoAltModeReady(BYTE ucInputPort)
               {
                   ucInputPort = ucInputPort;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 16  
 
               
                   // User Can Use Their Own Way to Decide Port Controller Lenovo Alt Mode Ready or Not, For Example
@@ -1022,7 +1022,7 @@ line level    source
               
                   return _FALSE;
               }
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 17  
 
               #endif // End of #if((_TYPE_C_PORT_CTRL_MODAL_OPERATION_SUPPORT == _ON) && (_TYPE_C_VENDOR_ALT_MODE == _TY
              -PE_C_LENOVO_ALT_MODE))
@@ -1086,7 +1086,7 @@ line level    source
                               {
                                   // Use Pin Assignment C+D+E if U3_ON and PIN_ASSIGNMENT_E_SUPPORT_ON
                                   enumPinAssignmentConfig = _TYPE_C_PIN_ASSIGNMENT_CAP_CDE;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 18  
 
                               }
                               else
@@ -1150,7 +1150,7 @@ line level    source
                   }
               
                   return enumPinAssignmentConfig;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 19  
 
               }
               
@@ -1214,7 +1214,7 @@ line level    source
               {
                   EnumTypeCPinMismatchAction enumMismatchAction = _TYPE_C_PIN_ASSIGNMENT_MISMATCH_RECONNECT;
                   ucInputPort = ucInputPort;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 20  
 
               
                   // =============================== WARNING ===============================
@@ -1278,7 +1278,7 @@ line level    source
                           // Requirements of HPD Handling during Dell Alt Mode
                           if(((SysTypeCGetDellAltModeReady(ucInputPort) == _TYPE_C_DELL_ALT_MODE_READY) && (UserInterfac
              -eTypeCGetDellAltModeInitComplete(ucInputPort) == _TYPE_C_DELL_INIT_COMPLETE)) ||
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 21  
 
                              (SysTypeCGetEnterDellAltModeTimeOut(ucInputPort) == _TYPE_C_ENTER_DELL_ALT_MODE_TIMEOUT))
                           {
@@ -1342,7 +1342,7 @@ line level    source
                       default:
                           break;
                   }
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 22  
 
               
                   return enumAltModeWait;
@@ -1406,7 +1406,7 @@ line level    source
                   // =============================== WARNING ===============================
                   // For Embbeded Type-C:
                   // Type-C Operation Mode Should Not be '_TYPE_C_SRC_ONLY_MODE' if '_Dx_DP_TYPE_C_EMB_DEAD_BATTERY_SUPP
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 23  
 
              -ORT' = '_ON'
                   // Type-C Operation Mode Should Not be '_TYPE_C_SNK_ONLY_MODE' if '_TYPE_C_EMB_PD3_FRSWAP_SUPPORT' = '
@@ -1470,7 +1470,7 @@ line level    source
                   {
               #if(_D0_DP_TYPE_C_CONNECTOR_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 24  
 
               
                           /* Example :
@@ -1534,7 +1534,7 @@ line level    source
                               pstAlertEvent->enumExtAlertEvent = _TYPE_C_EXT_ALERT_EVENT_POWERBUTTON_PRESS;     // Power
              - button press (UFP only)
                           }
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 25  
 
                           else if(Power Button Release)
                           {
@@ -1598,7 +1598,7 @@ line level    source
                                   enumAltModeLaneCnt = _DP_LINK_4_LANE;
               
                                   break;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 26  
 
               
                               case _TYPE_C_PIN_ASSIGNMENT_D:
@@ -1662,7 +1662,7 @@ line level    source
                   return enumLenovoCheckDeviceTypeResult;
               }
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 27  
 
               //--------------------------------------------------
               // Description  : TypeC Lenovo Alt Mode Get Docking Event
@@ -1726,7 +1726,7 @@ line level    source
                           // User can Retry Last Dock Event or Send Next Dock Event corresponding to System Acknowledge
                           break;
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 28  
 
               
                       default:
@@ -1790,7 +1790,7 @@ line level    source
               
                           break;
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 29  
 
               
                       default:
@@ -1854,7 +1854,7 @@ line level    source
                               SET_D0_TYPE_C_HP_USER_VDM_CNT( N );   // Set Number of VDO (Not include VDM Header)
                               SET_D0_TYPE_C_HP_USER_VDM_DATA(0, VDO_0[31:24]);
                               SET_D0_TYPE_C_HP_USER_VDM_DATA(1, VDO_0[23:16]);
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 30  
 
                               SET_D0_TYPE_C_HP_USER_VDM_DATA(2, VDO_0[15:8]);
                               SET_D0_TYPE_C_HP_USER_VDM_DATA(3, VDO_0[7:0]);
@@ -1918,7 +1918,7 @@ line level    source
               }
               #endif // End of #if(_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_HP_ALT_MODE)
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 31  
 
               #if(_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_DELL_ALT_MODE)
               //--------------------------------------------------
@@ -1982,7 +1982,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void UserInterfaceTypeCDellAltModeHandler(BYTE ucInputPort, StructTypeCDellSysEvent stDellSysEvent)
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 32  
 
               {
                   stDellSysEvent = stDellSysEvent;
@@ -2046,7 +2046,7 @@ line level    source
               
                               // Update Dell User Event to Kernel
                               pstDellUserEvent->enumEvent = GET_D0_TYPE_C_DELL_USER_EVENT();
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 33  
 
                               pstDellUserEvent->b3VdmCnt = GET_D0_TYPE_C_DELL_USER_VDM_CNT();
               
@@ -2110,7 +2110,7 @@ line level    source
               // Output Value : return PDO from USER / KERNEL
               //--------------------------------------------------
               EnumTypeCRdoReference UserInterfaceTypeCRdoReference(BYTE ucInputPort)
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 34  
 
               {
                   switch(ucInputPort)
@@ -2174,7 +2174,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
                           // Sink Minimum PDP (100 * 0.1 = 10W) : Minimum Power Required by the Sink.
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 35  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 35  
 
                           // Note : Sink Minimum PDP Shall be less than or equal to the Sink Operational PDP.
                           pstTypeCSnkInfo->usSnkMinPDP = 100;
@@ -2238,7 +2238,7 @@ line level    source
                           break;
               
                       default:
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 36  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 36  
 
                           break;
                   }
@@ -2302,7 +2302,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
                           switch(ucPdoIndex)
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 37  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 37  
 
                           {
                               // =============================== WARNING ===============================
@@ -2366,7 +2366,7 @@ line level    source
                                   pstTypeCUserSrcPdo->usMaxVoltage = 110;
                                   pstTypeCUserSrcPdo->usMaxCurrent = 300;
               #endif
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 38  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 38  
 
                                   break;
               
@@ -2430,7 +2430,7 @@ line level    source
               
                           break;
                   }
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 39  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 39  
 
               }
               
@@ -2494,7 +2494,7 @@ line level    source
                               case _TYPE_C_PDO_NUM_4:
                               case _TYPE_C_PDO_NUM_5:
                               case _TYPE_C_PDO_NUM_6:
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 40  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 40  
 
                               case _TYPE_C_PDO_NUM_7:
                               default:
@@ -2558,7 +2558,7 @@ line level    source
                   // =======================================================================
               
                   BYTE ucPartnerPdoCnt = 0x00;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 41  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 41  
 
                   BYTE ucPdoIndex = 0x00;
                   StructTypeCUserPDO stTypeCPartnerPdo;
@@ -2622,7 +2622,7 @@ line level    source
                               pstTypeCUserRdo->b1CapMismatch = _FALSE;
                           }
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 42  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 42  
 
                           break;
               
@@ -2686,7 +2686,7 @@ line level    source
                           else
                           {
                               // If there are more than One TypeC Ports,
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 43  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 43  
 
                               // then User can Customize the Unconstrained Power Status according to the Different Situa
              -tion.
@@ -2750,7 +2750,7 @@ line level    source
               
                   return enumTypeCUPExist;
               }
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 44  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 44  
 
               
               #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
@@ -2814,7 +2814,7 @@ line level    source
               
                               case _TYPE_C_PDO_NUM_3:
               
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 45  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 45  
 
               #if(_TYPE_C_EMB_PD3_PPS_SUPPORT == _ON)
                                   // User-Defined Vbus Protect Settings
@@ -2878,7 +2878,7 @@ line level    source
                           else
                           {
                               enumHubInputPort = _HUB_UFP_NOT_TYPE_C_INPUT_PORT;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 46  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 46  
 
                           }
               
@@ -2942,7 +2942,7 @@ line level    source
                   ucInputPort = ucInputPort;
               
                   switch(ucInputPort)
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 47  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 47  
 
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -3006,7 +3006,7 @@ line level    source
                       default:
               
                           return _TYPE_C_PORT_CTRL_NO_RECONNECT;
-C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/20/2026 19:44:49 PAGE 48  
+C51 COMPILER V9.60.0.0   RTD2014USERTYPECINTERFACE                                         09/21/2026 15:33:38 PAGE 48  
 
               
                           break;

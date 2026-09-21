@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/21/2026 15:33:15 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_TIMERFUNCTION
@@ -62,7 +62,7 @@ line level    source
   45          BYTE ScalerTimerGetEventStatus(EnumWaitEventType enumEvent);
   46          BYTE ScalerTimerGetEventStatusbyReg(EnumWaitEventType enumEvent);
   47          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/21/2026 15:33:15 PAGE 2   
 
   48          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
               BYTE ScalerTimerGetEventStatusbyFlag(EnumWaitEventType enumEvent);
@@ -126,7 +126,7 @@ line level    source
  107          void ScalerTimerClrEventStatusbyReg(EnumWaitEventType enumEvent)
  108          {
  109   1          switch(enumEvent)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/21/2026 15:33:15 PAGE 3   
 
  110   1          {
  111   2              case _EVENT_DEN_START:
@@ -190,7 +190,7 @@ line level    source
  169   1          {
  170   2              case _EVENT_IVS:
  171   2              case _EVENT_IEN_STOP:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/21/2026 15:33:15 PAGE 4   
 
  172   2              case _EVENT_ALL:
  173   2              default:
@@ -254,7 +254,7 @@ line level    source
  231          
  232          #if(((_OD_SUPPORT == _ON) && (_FRC_SUPPORT == _ON)) || (_DRR_MOTION_BLUR_REDUCTION_SUPPORT == _ON))
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/20/2026 19:44:26 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TIMERFUNCTION                                       09/21/2026 15:33:15 PAGE 5   
 
               // Description  : Hold until the specified event occurs by flag
               // Input Value  : enumEvent   --> Specified event

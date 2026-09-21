@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014KEY
@@ -62,7 +62,7 @@ line level    source
   45          #define _POWER_KEY_MASK                             0x01
   46          #if 1//_DEF_OSD_KEY_2   KeyDefault������Ķ���
   47          #define _MENU_KEY_MASK                              0x02
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 2   
 
   48          #define _EXIT_KEY_MASK                              0x04 
   49          #define _RIGHT_KEY_MASK                             0x08
@@ -126,7 +126,7 @@ line level    source
               #define _IR_CODE_KEY_MENU                           0x43FB
               #define _IR_CODE_KEY_EXIT                           0x5BFB
               #define _IR_CODE_KEY_MUTE                           0x09FB
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 3   
 
               
               #define _IR_CODE_KEY_RIGHT                          0x02FB
@@ -190,7 +190,7 @@ line level    source
               
               
                 #define _IR_CODE_KEY_UP                           0x8416
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 4   
 
                 #define _IR_CODE_KEY_DOWN                           0x8D16
               
@@ -254,7 +254,7 @@ line level    source
                 #define _IR_CODE_KEY_ECO              0xA55A
                 
                 
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 5   
 
                 #define _IR_CODE_KEY_OK               0xF906
                 #define _IR_CODE_KEY_UP                           0xE51A
@@ -318,7 +318,7 @@ line level    source
               #define _IR_CODE_KEY_EXIT                           0xF2FD
               #endif
  295          
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 6   
 
  296          #ifndef _IR_CODE_KEY_EXIT2
  297          #define _IR_CODE_KEY_EXIT2                           0x0000
@@ -382,7 +382,7 @@ line level    source
  355          #define _IR_CODE_KEY_SETTING            0X2F
  356          #endif
  357          
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 7   
 
  358          #ifndef _IR_CODE_KEY_AUDIO  
  359          #define _IR_CODE_KEY_AUDIO              0X3F
@@ -446,7 +446,7 @@ line level    source
                 if(GET_OSD_GuangGan())
                 {
                   //BYTE back=g_ucGuangGan;
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 8   
 
               #if 1
                   WORD back1=PCB_ADKEY3();
@@ -510,7 +510,7 @@ line level    source
               #else       
  480   2          if(( SysPowerGetPowerStatus() == _POWER_STATUS_AC_ON) && (RTDKeyScan() == _MENU_KEY_MASK))
  481   2          {
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 9   
 
  482   3              SET_OSD_FACTORY_MODE(_ON);        
  483   3              SET_OSD_BURNING_MODE(_ON);
@@ -574,7 +574,7 @@ line level    source
  541   2      
  542   2              // SET_KEYSCANREADY();
  543   2              // Wait 0.02 sec in order to keep the keypad debounce
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 10  
 
  544   2              
  545   2      #if(Project_ID == ID_TAISHUO_2795E06_1T1P1H_M280DCA_E3B_EDP4LAN_UHD60HZ_20211116)
@@ -638,7 +638,7 @@ line level    source
  603   1        retry_Key=3;
  604   1        while(retry_Key)
  605   1        {
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 11  
 
  606   2          ucVoltage2 = PCB_ADKEY2();
  607   2          ScalerTimerDelayXms(3);
@@ -702,7 +702,7 @@ line level    source
               
               #else
               {
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 12  
 
                 BYTE i,x,y1,y2;
                   PCB_KEY_STATE(ucVoltage0, ucVoltage1, ucVoltage2, ucVoltage3, ucKeyState);
@@ -766,7 +766,7 @@ line level    source
                           
                       Cross_flag = 0;
                               SET_OSD_STATE(_MENU_NONE);
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 13  
 
                               SET_OSD_IN_FACTORY_MENU_STATUS(_FALSE);
                               SysPowerSetTargetPowerStatus(_POWER_STATUS_NORMAL);
@@ -830,7 +830,7 @@ line level    source
              -T_OSD_FACTORY_MODE() == _ON))
                       {
                         SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);          
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 14  
 
                         SET_OSD_FACTORY_MODE(_OFF);
                         SET_OSD_BURNING_MODE(_OFF);
@@ -894,7 +894,7 @@ line level    source
  847   2          }
  848   1      }
  849          
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 15  
 
  850          
  851          //--------------------------------------------------
@@ -958,7 +958,7 @@ line level    source
                               RTDKeyMessageConvert(_LEFT_KEY_MASK, _NONE_KEY_MESSAGE);
                           else
                               RTDKeyMessageConvert(_LEFT_KEY_MASK, _LEFT_KEY_MESSAGE);
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 16  
 
               #elif(_OSD_7_KEY_SUPPROT) 
                     if((_OSD_MAIN_PICTURE <= GET_OSD_STATE()) && (GET_OSD_STATE() <= _MENU_MISC_TATE5))     
@@ -1022,7 +1022,7 @@ line level    source
                                   RTDKeyMessageConvert(_DOWN_KEY_MASK, _NONE_KEY_MESSAGE);  
               #else
               
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 17  
 
                     if(GET_OSD_STATE() == _MENU_NONE)
                       RTDKeyMessageConvert(_DOWN_KEY_MASK, _DOWN_KEY_MESSAGE);
@@ -1086,7 +1086,7 @@ line level    source
 1025          // Input Value  : ucKeyMask     --> Key mask
 1026          //                ucKeyMsg      --> Key message
 1027          // Output Value : None
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 18  
 
 1028          //--------------------------------------------------
 1029          void RTDKeyMessageConvert(BYTE ucKeyMask, BYTE ucKeyMsg)
@@ -1150,7 +1150,7 @@ line level    source
                     ScalerTimerActiveTimerEvent(SEC(1.5), _USER_TIMER_EVENT_DO_POWER_DOWN);
                    
                      SET_KEY_HOLD();
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 19  
 
                      CLR_KEYREPEATENABLE(); 
                      return _TRUE;
@@ -1214,7 +1214,7 @@ line level    source
                   if(ucKeyMask == _MENU_KEY_MASK)
                   {
                   ScalerTimerActiveTimerEvent(SEC(1.2), _USER_TIMER_EVENT_DO_POWER_DOWN);
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 20  
 
                    
                    SET_KEY_HOLD();
@@ -1278,7 +1278,7 @@ line level    source
                       ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_LEFT_LONG);
                   
                   #endif    
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 21  
 
 1213   2              #if(_DEF_MENU_LOCK) 
               
@@ -1342,7 +1342,7 @@ line level    source
 1272          // Output Value : Key Mask
 1273          //--------------------------------------------------
 1274          BYTE RTDIRKeyScan(void)
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 22  
 
 1275          {
 1276   1          BYTE pucIRCodeBuffer[8] = {0};
@@ -1406,7 +1406,7 @@ line level    source
                           case (_IR_CODE_KEY_MENU>>8):
                           case (_IR_CODE_KEY_RIGHT>>8):
                           case (_IR_CODE_KEY_LEFT>>8):
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 23  
 
                           case (_IR_CODE_KEY_EXIT>>8):
                           case (_IR_CODE_KEY_UP>>8):
@@ -1470,7 +1470,7 @@ line level    source
               #elif(_IR_PROTOCAL == _IR_HHT_DZ_X5_147)
                       if((pucIRCodeBuffer[0] == ~(pucIRCodeBuffer[1])) && (pucIRCodeBuffer[3] ==0x08))
                       {
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 24  
 
                           usKeyCode = (((WORD)pucIRCodeBuffer[1]) << 8) + pucIRCodeBuffer[2];
                       }
@@ -1534,7 +1534,7 @@ line level    source
               
               #endif // End of #if(_IR_PROTOCAL == _IR_NEC_DTV328)    
 1460   2      
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 25  
 
 1461   2          DebugMessageIR("usKeyCode", usKeyCode);
 1462   2          DebugMessageOsd("usKeyCode", usKeyCode);
@@ -1598,7 +1598,7 @@ line level    source
 1518   4                
 1519   4                  SysPowerSetTargetPowerStatus(_POWER_STATUS_OFF);
 1520   4                  SET_OSD_FACTORY_MODE(_OFF);         
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 26  
 
 1521   4                  SET_OSD_BURNING_MODE(_OFF);
 1522   4                  ucin_factarystate=0;
@@ -1662,7 +1662,7 @@ line level    source
 1579   3              ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
 1580   3              break;
 1581   3              
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 27  
 
 1582   3                  case _IR_CODE_KEY_RIGHT:
 1583   3            case _IR_CODE_KEY_ADD:  
@@ -1726,7 +1726,7 @@ line level    source
 1639   4              
 1640   4                ScalerTimerReactiveTimerEvent(SEC(3), _USER_TIMER_EVENT_OSD_DISABLE);
 1641   4              }
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 28  
 
 1642   3              else if(ucin_factarystate == 1 && usKeyCode == _IR_CODE_KEY_LEFT)
 1643   3              {
@@ -1790,7 +1790,7 @@ line level    source
 1698   3              
 1699   3      #if(_SOURCE_AUTO_ON)
 1700   3               if(SysModeGetModeState() == _MODE_STATUS_POWER_SAVING)
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 29  
 
 1701   3               {
 1702   4                PCB_OFF_REGION_GPIO_SETTING_POWER_AC_PD_PS_ON();
@@ -1854,7 +1854,7 @@ line level    source
                           RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_AUDOIVOLUME-_MENU_FUN_BACKLIGHT);
                         }
                         else if(_MENU_HOT_KEY_FUNC == GET_OSD_STATE()&&OSD_SubMenuCur==_MENU_FUN_AUDOIVOLUME)
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 30  
 
                         {
                           ucKeyState = _LEFT_KEY_MASK;
@@ -1918,7 +1918,7 @@ line level    source
              -ubMenuCur))||(_MENU_FUN_SOURCE_MUTEICON == GET_OSD_STATE()))
 1819   5                  {
 1820   6                    RTDOsdDispHotkeyFuncAdjust(_MENU_FUN_OD-_MENU_FUN_BACKLIGHT);
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 31  
 
 1821   6                  }
 1822   5                  else if((_MENU_HOT_KEY_FUNC == GET_OSD_STATE())&&(OSD_SubMenuCur == _MENU_FUN_OD))
@@ -1982,7 +1982,7 @@ line level    source
 1879   3            case _IR_CODE_KEY_SCALE:
 1880   3              
 1881   3              if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
-C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/20/2026 19:44:53 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014KEY                                                        09/21/2026 15:33:42 PAGE 32  
 
 1882   3              {
 1883   4                if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)

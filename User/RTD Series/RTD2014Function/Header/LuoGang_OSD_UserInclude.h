@@ -3062,8 +3062,8 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _OSD_FONT_TYPE										_OSD_FONT_SW_JAPANESE
 	#define _DEF_HOTKEY_LEFT									_MENU_FUN_AUDOIVOLUME
 	#define _DEF_HOTKEY_RIGHT									_HOT_KEY_LOS_TYPE1
-	#define _BACKLIGHT_MAX										0x82//0xAF
-	#define _BACKLIGHT_DEF_PWM									0x7a//0x7F
+	#define _BACKLIGHT_MAX										0xFF//0xAF
+	#define _BACKLIGHT_DEF_PWM									0xCC//0x7F
 	#define _BACKLIGHT_MIN										0x1C
 	#define _DEF_LANGUAGE										_CHINESE_S
 	#define _DEF_OSD_LANGUAGE_ARROW                    			 _ON	
@@ -3071,6 +3071,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
 	#define _SOURCE_AUTO_ON								        _ON //�ź��л��Ƿ��auto
 	#define _CT_sRGB_SUPPRT							    		_ON  //ɫ���Ƿ��sRGB	
+	#define _CT_7500_SUPPRT 									_ON  //ɫ���Ƿ��7500
 	#define _HDR10_MODE_END 									_HDR10_MODE_AUTO
 	#define _DEF_HDR_MPRT_GRAY									_OFF
 	#define _ENABLE_MAIN_MENU_F_ICON							_OFF//�����ϻ�ģʽ
@@ -3087,14 +3088,14 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_SIZE								2360//0x0000
 	#define EDID_YEAR_table 							2026//���
-	#define EDID_WEEK_table 							30//�ܱ�
-	#define EDID_ID_NAME								"HKM"
-	#define DP_EDID_table								"24FHD144"//"KD-2700YM"//"27QH75YM"
+	#define EDID_WEEK_table 							38//�ܱ�
+	#define EDID_ID_NAME								"CNR"
+	#define DP_EDID_table								"CM27F60"//"KD-2700YM"//"27QH75YM"
 	#define HDMI_EDID_table 							DP_EDID_table
 	#define VGA_EDID_table								DP_EDID_table
 	#define _MEW_EDID_TYPE								_MEW_EDID_TYPE_HIGHT
-	#define _PANEL_DP_MAX_FRAME_RATE					1440//_PANEL_MAX_FRAME_RATE
-	#define _PANEL_HDMI_MAX_FRAME_RATE					1440//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
+	#define _PANEL_DP_MAX_FRAME_RATE					600//_PANEL_MAX_FRAME_RATE
+	#define _PANEL_HDMI_MAX_FRAME_RATE					600//_PANEL_DP_MAX_FRAME_RATE//1200//_PANEL_MAX_FRAME_RATE
 	#define _DEF_OD_GAIN                                0x40
 	#define _DEF_P1_PICTURE_ITEM0								_MENU_FUN_BACKLIGHT
 	#define _DEF_P1_PICTURE_ITEM1								_MENU_FUN_CONTRAST

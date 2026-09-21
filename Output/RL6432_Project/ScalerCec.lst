@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCEC
@@ -62,7 +62,7 @@ line level    source
               #define _CEC_LANG_GERMAN                       "ger"
               #define _CEC_LANG_SPANISH                      "spa"
               #define _CEC_LANG_CHINESE                      "chi"
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 2   
 
               #define _CEC_LANG_JAPANESE                     "jpn"
               
@@ -126,7 +126,7 @@ line level    source
               //****************************************************************************
               // FUNCTION DECLARATIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 3   
 
               void ScalerCecInitial(void);
               void ScalerCecRxProcess(void);
@@ -190,7 +190,7 @@ line level    source
                       // -- 28.0/28(=0x1C) = 1.0Mhz
                       ScalerSetByte(P18_A4_CEC1_CR0_5, 0x1C);
                   }
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 4   
 
               
                   // close pad rising time
@@ -254,7 +254,7 @@ line level    source
               
                   // Cec Variable Initial Reset
                   ScalerCecVariableReset();
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 5   
 
               }
               
@@ -318,7 +318,7 @@ line level    source
               
                       // Shift Cec Rx Backup buffer
                       memset(pucBackupFifoTemp, 0, _CEC_RX_BACKUP_FIFO_SIZE);
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 6   
 
                       memcpy(pucBackupFifoTemp, &g_pucCecRxBackupFifo[g_stCecRxReceivedInfo.ucDbLength + 2], (_CEC_RX_BA
              -CKUP_FIFO_SIZE - (g_stCecRxReceivedInfo.ucDbLength + 2)));
@@ -382,7 +382,7 @@ line level    source
                   {
                       // Set CEC Rx force Nack/ Negative Ack
                       ScalerSetBit(P18_A6_CEC1_CR0_7, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT2), (_BIT7 | _BIT5 | _BIT4))
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 7   
 
              -;
                   }
@@ -446,7 +446,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               bit ScalerCecRxGetMsgAnalyzingFlag(void)
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 8   
 
               {
                   return GET_CEC_RX_MSG_ANALYZING();
@@ -510,7 +510,7 @@ line level    source
               // Output Value : _TRUE or _FALSE
               //--------------------------------------------------
               bit ScalerCecCheckRxSituation(void)
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 9   
 
               {
                   // Check EOM (B1[7]: Rx EOM, B2[7]: Header EOM)
@@ -574,7 +574,7 @@ line level    source
                                   }
                                   else
                                   {
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 10  
 
                                       // Load Cec Rx Received MSG to backup fifo
                                       ScalerCecRxWriteIntoBackupFifo();
@@ -638,7 +638,7 @@ line level    source
                   {
                       // if Last CEC RX MSG hasn't been read by DP SRC
                       if((GET_CEC_RX_MSG_ANALYZING() == _TRUE) || (g_ucCecRxTotalQueueMsgIdx > 0x00))
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 11  
 
                       {
                           // Load Cec Rx Received MSG to backup fifo
@@ -702,7 +702,7 @@ line level    source
              - _BIT3 | _BIT2 | _BIT1 | _BIT0));
                   g_pucCecRxBackupFifo[g_ucCecRxBackupFifoWaterLevel + 1] = ucHbInfo;
               
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 12  
 
                   if((g_pucCecRxBackupFifo[g_ucCecRxBackupFifoWaterLevel] + g_ucCecRxBackupFifoWaterLevel + 2) > _CEC_RX
              -_BACKUP_FIFO_SIZE)
@@ -766,7 +766,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Cec TX Send Msg Process
               // Input Value  : None
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 13  
 
               // Output Value : None
               //--------------------------------------------------
@@ -830,7 +830,7 @@ line level    source
                                   SET_CEC_TX_EVENT(_CEC_TX_LINE_ERROR_EVENT);
                                   DebugMessageCEC("CEC TX FAKE Line Error Happened Orz.........", 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 14  
 
                                   ScalerSetBit(P18_B7_CEC1_TXCR0_RSV_0, ~(_BIT7 | _BIT6 | _BIT5), (_BIT7 | _BIT6 | _BIT5
              -));
@@ -894,7 +894,7 @@ line level    source
               #if((_HW_HDMI_CEC_GEN == _HW_CEC_GEN_TYPE_2) || (_HW_HDMI_CEC_GEN == _HW_CEC_GEN_TYPE_3))
                   BYTE ucHbInfo = ScalerGetByte(P18_E3_CEC_RX_FIFO_RSV_0);
               #else
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 15  
 
                   BYTE ucHbInfo = ((ScalerGetByte(P18_B0_CEC1_RXCR0_1) & 0x0F) << 4);
               
@@ -958,7 +958,7 @@ line level    source
                   DebugMessageCEC("CEC Reset", 0);
               }
               
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 16  
 
               //--------------------------------------------------
               // Description  : CEC Tx send set (w/ retry cnt)
@@ -1022,7 +1022,7 @@ line level    source
               {
               #if(_CEC_RX_INT_SUPPORT == _ON)
                   // rx_int=1 or DB_EOM received in snooping mode
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 17  
 
                   if((ScalerGetBit_EXINT(P18_B0_CEC1_RXCR0_1, _BIT4) == _BIT4) && (ScalerGetBit_EXINT(P18_B1_CEC1_RXCR0_
              -2, _BIT6) == _BIT6))
@@ -1087,7 +1087,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/20/2026 19:43:31 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCEC                                                         09/21/2026 15:32:18 PAGE 18  
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

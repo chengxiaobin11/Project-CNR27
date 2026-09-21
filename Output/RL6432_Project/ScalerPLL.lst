@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERPLL
@@ -62,7 +62,7 @@ line level    source
               #if(_LC_TANK_SUPPORT == _ON)
               
               #if(_XTALESS_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 2   
 
               #define _M2PLL_DEFAULT_N_F_CODE                     0x1B0315E2UL
               #else
@@ -126,7 +126,7 @@ line level    source
  107          //--------------------------------------------------
  108          #if(_DPLL_STRUCT_TYPE == _DPLL_STRUCT_N_F_COMBO_LVDSPLL)
               #define _DPLL_BOUNDRY                               350000
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 3   
 
               #else
  111          #if((_DPLL_BAND11_SUPPORT == _ON) && (_IMD_DOMAIN_ULTRA_HIGH_SPEED_SUPPORT == _ON))
@@ -190,7 +190,7 @@ line level    source
  169              DWORD ulDivider;
  170          
  171          #if(_VGA_APLL_HIGH_GAIN_MODE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 4   
 
                   BYTE b1HighGainMode : 1;
               #endif
@@ -254,7 +254,7 @@ line level    source
               void ScalerPLLSetDPLLFreqNfCombo(DWORD ulFreq);
               #endif
  232          
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 5   
 
  233          #if(_DPLL_STRUCT_TYPE == _DPLL_STRUCT_N_F)
               void ScalerPLLSetDPLLFreqNf(DWORD ulFreq);
@@ -318,7 +318,7 @@ line level    source
  292          void ScalerPLLM2PLLPower(BYTE ucOn)
  293          {
  294   1      #if(_M2PLL_STRUCT_TYPE == _M2PLL_STRUCT_M_N)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 6   
 
  295   1          if(ucOn == _ON)
  296   1          {
@@ -382,7 +382,7 @@ line level    source
                       ScalerSetBit(P41_03_PLL_IN_CONTROL, ~_BIT0, _BIT0);
               
                       // Power On LDO
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 7   
 
                       ScalerSetBit(P41_09_M2PLL_LDO, ~_BIT7, _BIT7);
               
@@ -446,7 +446,7 @@ line level    source
               
                   // Disable LDO
                   ScalerSetBit(P1_D2_LVDSPLL_2, ~_BIT2, 0x00);
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 8   
 
               
                   // Power Down PLL
@@ -510,7 +510,7 @@ line level    source
  477   1          // Reset DPLL Output Divier
  478   1          ScalerSetBit(P1_C0_DPLL_N, ~(_BIT5 | _BIT4), 0x00);
  479   1      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 9   
 
  480   1          // DPLL Bypass Calibration
  481   1          ScalerSetBit(P1_C3_DPLL_CAL, ~_BIT5, _BIT5);
@@ -574,7 +574,7 @@ line level    source
                   ScalerSetByte(_REG_DPLL_N_F_CODE_3, ((ulFCode & 0x000FF) >> 0));
               
                   // Set Double Buffer for N.f code
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 10  
 
                   ScalerSetBit(_REG_DPLL_N_F_CODE_0, ~(_BIT7 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT7 | ((ucNCode & 0xF0
              -) >> 4)));
@@ -638,7 +638,7 @@ line level    source
                       ///////////////////////////////////////////////////////////////////////////
                       ulSSCGStep = ((((DWORD)(ScalerGetDWord(_REG_DPLL_N_F_CODE_0) & 0x0FFFFFFF) >> 5) * 5 * ucSpreadRan
              -ge * 2) / 1000 + (usTBase / 2)) / usTBase;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 11  
 
               
                       if((ulSSCGStep >> 8) < 1)
@@ -702,7 +702,7 @@ line level    source
  658   1      #if(_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N)
                   ScalerPLLSetDPLLFreqMN(ulFreq);
               #elif(_DPLL_STRUCT_TYPE == _DPLL_STRUCT_M_N_CASCADE_N_F)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 12  
 
  661   1          ScalerPLLSetDPLLFreqNfCascade(ulFreq);
  662   1      #elif(_DPLL_STRUCT_TYPE == _DPLL_STRUCT_N_F_COMBO_LVDSPLL)
@@ -766,7 +766,7 @@ line level    source
                       PDATA_DWORD(1) = (((DWORD)(ScalerGetByte(P1_D9_DPLL_M_N_MSB) & 0x30) << 4) + ScalerGetByte(P1_BF_D
              -PLL_M) + 2) * ulRefClk / (((DWORD)(ScalerGetByte(P1_D9_DPLL_M_N_MSB) & 0x0F) << 4) + (ScalerGetByte(P1_C0_DPLL_N) & 0x0F
              -) + 2) / (1 << (ScalerGetByte(P1_DA_DPLL_OUTPUT_CLK_DIV) & 0x03)) / 2;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 13  
 
               
                       if(ABSDWORD(PDATA_DWORD(0), PDATA_DWORD(1)) <= (PDATA_DWORD(1) / 10))
@@ -830,7 +830,7 @@ line level    source
               
                               pData[14] = 1;
                               break;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 14  
 
               
                           default:
@@ -894,7 +894,7 @@ line level    source
                           case 3:
               
                               pData[14] = 1;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 15  
 
                               break;
               
@@ -958,7 +958,7 @@ line level    source
              -  //
                           //////////////////////////////////////////////////////////////////////////////////////////////
              -////
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 16  
 
                           PDATA_DWORD(0) = (DWORD)usMcode * 700UL * 628 * 20 / 1880 / ((7 + (ScalerGetBit(P1_C1_DPLL_CRN
              -T, (_BIT7 | _BIT6 | _BIT5)) >> 5) * 2) * 100);
@@ -1022,7 +1022,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 17  
 
                       default:
               
@@ -1086,7 +1086,7 @@ line level    source
 1009   1      
 1010   1      #if(_MN_DPLL_PATH_TYPE == _MN_DPLL_PATH2)
               
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 18  
 
                   // Set MN DPLL Phase Swallow Path2
                   ScalerSetBit(P1_C3_DPLL_CAL, ~_BIT0, 0x00);
@@ -1150,7 +1150,7 @@ line level    source
                       ucOutputdivider = 2;
                   }
                   else if(PDATA_DWORD(1) <= _DPLL_BOUNDRY_2)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 19  
 
                   {
                       ucOutputdivider = 1;
@@ -1214,7 +1214,7 @@ line level    source
               
                   // Set M Code
                   ScalerSetByte(P1_BF_DPLL_M, ((usMcode - 2) & 0xFF));
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 20  
 
                   ScalerSetBit(P1_D9_DPLL_M_N_MSB, ~(_BIT5 | _BIT4), (((usMcode - 2) >> 4) & 0x30));
               
@@ -1278,7 +1278,7 @@ line level    source
 1192   1          if(bDISPPower == _ON)
 1193   1          {
 1194   2              PDATA_DWORD(1) = (((DWORD)(ScalerGetByte(P1_D9_DPLL_M_N_MSB) & 0x30) << 4) + ScalerGetByte(P1_BF_D
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 21  
 
              -PLL_M) + 2) * ulRefClk / (((DWORD)(ScalerGetByte(P1_D9_DPLL_M_N_MSB) & 0x0F) << 4) + (ScalerGetByte(P1_C0_DPLL_N) & 0x0F
              -) + 2) / (1 << (ScalerGetByte(P1_DA_DPLL_OUTPUT_CLK_DIV) & 0x03)) / 2;
@@ -1342,7 +1342,7 @@ line level    source
 1250   3      
 1251   3                      pData[14] = 1;
 1252   3                      break;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 22  
 
 1253   3      
 1254   3                  default:
@@ -1406,7 +1406,7 @@ line level    source
 1311   3                      break;
 1312   3      
 1313   3                  case 2:
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 23  
 
 1314   3      
 1315   3                      pData[14] = 2;
@@ -1470,7 +1470,7 @@ line level    source
              -  //
 1366   2                  // If VCO band = 'b10, Icp = (700 * M * 2 * pi) / (1880 * 0x01C1[7:5]).                       
              -  //
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 24  
 
 1367   2                  // If VCO band = 'b11, Icp = (700 * M * 2 * pi) / (2340 * 0x01C1[7:5]).                       
              -  //
@@ -1534,7 +1534,7 @@ line level    source
 1420   2              /*@fallthrough@*/
 1421   2              case _DPLL_SET_OFFSET:
 1422   2      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 25  
 
 1423   2                  // Calculate DPLL Output Freq. According to current Settings
 1424   2                  PDATA_DWORD(0) = ulRefClk * 1000 / ((1 << (ucOutputdivider)) * 2) * usMcode / 2;
@@ -1598,7 +1598,7 @@ line level    source
               // Input Value  : Target Freq
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 26  
 
               void ScalerPLLSetDPLLFreqNfCombo(DWORD ulFreq)
               {
@@ -1662,7 +1662,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 27  
 
                           ucDPLLSettingState = _DPLL_SET_FREQ;
                           ucPostDiv = (ScalerGetByte(P1_D0_LVDSPLL_0) & (_BIT6 | _BIT5)) >> 5;
@@ -1726,7 +1726,7 @@ line level    source
                           // PDATA_DWORD(1) = ((ulFreq * 7) >> _LVDS_OUTPUT_PORT)
                           // NFcode = PDATA_DWORD(1) * 2 * Postdiv / Xtal
                           ucNcode = (PDATA_DWORD(1) << ucPostDiv) * ucPreDiv / _EXT_XTAL;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 28  
 
                           ucFcode_MSB4b = (((PDATA_DWORD(1) << ucPostDiv) * ucPreDiv - ((DWORD)_EXT_XTAL) * ucNcode) << 
              -4) / _EXT_XTAL;
@@ -1790,7 +1790,7 @@ line level    source
                           ultemp = (((DWORD)(ucNcode - 2) << 20) | ((DWORD)ucFcode_MSB4b << 16) | (DWORD)usFcode_LSB16b)
              -;
                           ScalerPLLSetDPLLNFcode(ultemp);
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 29  
 
               
                           // Clk Ready
@@ -1854,7 +1854,7 @@ line level    source
                   bDISPPower = ScalerPLLGetDptxPowerStatus();
               
               #endif // End of #if(_PANEL_STYLE == _PANEL_LVDS)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 30  
 
               
                   PDATA_DWORD(1) = ulFreq * 16;
@@ -1918,7 +1918,7 @@ line level    source
               
                       /*@fallthrough@*/
                       case _DPLL_SET_FREQ:
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 31  
 
                       case _DPLL_SET_POWER_ON:
               
@@ -1982,7 +1982,7 @@ line level    source
              -LL_ANALOG_SETTING_3, _BIT2 | _BIT1 | _BIT0) *2)) * 100);
                           pData[1] = (PDATA_DWORD(0) + 25) / 50;
                           pData[1] -= (pData[1] == 0) ? 0 : 1;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 32  
 
               
                           // Set CMU Icp, Ipfrs
@@ -2046,7 +2046,7 @@ line level    source
 1882          // Output Value : New Parameter
 1883          //--------------------------------------------------
 1884          DWORD ScalerPLLGetNewCount(DWORD ulCountNew, DWORD ulCountOld, DWORD ulValueOld, bit bProportion)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 33  
 
 1885          {
 1886   1          if(bProportion == _TRUE)
@@ -2110,7 +2110,7 @@ line level    source
                   else
               #endif
 1946   1          {
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 34  
 
 1947   2              if(ScalerTimerWaitForEvent(_EVENT_IVS) == _FALSE)
 1948   2              {
@@ -2174,7 +2174,7 @@ line level    source
               
                   // DPLL path 2 frequency and offset is in inverse propition
                   bProportion = _FALSE;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 35  
 
               
                   // Get current (2^15 + offset)
@@ -2238,7 +2238,7 @@ line level    source
 2063   2              /////////////////////////////////////////////////////////////////////////
 2064   2              ///
 2065   2              /// N.F PLL: active_count and NF code relation are in inverse proportion when frame sync fine tune
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 36  
 
 2066   2              ///
 2067   2              /// (disp_act_region * N.F_old) = (input_act_region * N.F_new)
@@ -2302,7 +2302,7 @@ line level    source
 2121   1      
 2122   1          // Pop out Last line
 2123   1          ScalerSetBit(P0_44_LAST_LINE_H, ~_BIT7, 0x00);
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 37  
 
 2124   1          GET_DVTOTAL_LASTLINE(usLastLine);
 2125   1          usLastLine = (usLastLine << _D_DOMAIN_PATH);
@@ -2366,7 +2366,7 @@ line level    source
 2183   2              ulDiffOffsetNew = ScalerPLLGetNewCount(ulDtotalNew, ulDtotal, ulDiffOffsetNew, bProportion);
 2184   2              ulDclk = (ScalerPLLGetNewCount(ulDiffOffsetNew, ulDiffOffsetOld, GET_D_CLK_FREQ(), bProportion));
 2185   2      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 38  
 
 2186   2              ulDtotalTemp = ScalerMDomainDtotalLastLineFinetune(ulDclk, ulPanelClockMaxSpread, ulPanelClockMinS
              -pread, ulDtotalNew);
@@ -2430,7 +2430,7 @@ line level    source
 2242   1          ScalerMeasureSetInputRegionCount(_ACTIVE_REGION_TYPE);
 2243   1      
 2244   1          // Disable Last Line Measure by Field
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 39  
 
 2245   1          ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~(_BIT7 | _BIT6), 0x00);
 2246   1      }
@@ -2494,7 +2494,7 @@ line level    source
 2303   3              }
 2304   2      
 2305   2              for(pData[0] = 0; pData[0] < ucN; pData[0]++)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 40  
 
 2306   2              {
 2307   3                  ScalerTimerWaitForEvent(_EVENT_DVS);
@@ -2558,7 +2558,7 @@ line level    source
 2362   1          {
 2363   2              // Get current (2^15 + offset)
 2364   2              ulDiffOffsetOld = 32768 + ulDiffOffsetOld;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 41  
 
 2365   2          }
 2366   1          else
@@ -2622,7 +2622,7 @@ line level    source
 2423   2      
 2424   2              // Calcualte last line target maximum
 2425   2              ulPixel2offsetMax = (DWORD)(g_stMDomainOutputData.usHTotal * (PDATA_WORD(0) - PDATA_WORD(1))) + _M
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 42  
 
              -N_LAST_LINE_MAX - usLastLine;
 2426   2              ulPixel2offsetMax /= ulPixelPerOffsetOld;
@@ -2686,7 +2686,7 @@ line level    source
 2481   1          if(GET_INTERLACED_MODE() == _TRUE)
 2482   1          {
 2483   2              // Calculate next frame Dtotal
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 43  
 
 2484   2              ulDtotal = ((DWORD)usDVtotalNext * g_stMDomainOutputData.usHTotal + usLastLineNext);
 2485   2      
@@ -2750,7 +2750,7 @@ line level    source
 2541   5                          ulDiffOffsetNew -= pData[15];
 2542   5                      }
 2543   4                  }
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 44  
 
 2544   3      
 2545   3      #endif
@@ -2814,7 +2814,7 @@ line level    source
 2603          //--------------------------------------------------
 2604          // Description  : Set display clock (Dclk)/memory clock(Mclk) frequency in kHz
 2605          // Input Value  : ulFreq    --> Target Dclk/Mclk frequency
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 45  
 
 2606          // Output Value : None
 2607          //--------------------------------------------------
@@ -2878,7 +2878,7 @@ line level    source
 2662   1      
 2663   1          // MPLL_VCO_clk_now
 2664   1          PDATA_DWORD(0) = ulFreq * _MPLL_FIXED_DIV;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 46  
 
 2665   1      
 2666   1          // pData[15]: [5:4]=DPLL_O[1:0],[1:0]=DPLL VCO band
@@ -2942,7 +2942,7 @@ line level    source
 2724   2                  break;
 2725   2          }
 2726   1      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 47  
 
 2727   1          usMcode = (usMcode + (pData[0] / 2)) / pData[0];
 2728   1      
@@ -3006,7 +3006,7 @@ line level    source
 2784   1          // DPLL VCORSTB Set to Normal
 2785   1          ScalerSetBit(P0_F8_MPLL_WD, ~_BIT1, (_DPLL_VCORSTB_NORMAL_VALUE << 1));
 2786   1      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 48  
 
 2787   1          // Power up MPLL
 2788   1          ScalerSetBit(P0_F8_MPLL_WD, ~(_BIT6 | _BIT5 | _BIT3 | _BIT0), _BIT3);
@@ -3070,7 +3070,7 @@ line level    source
 2845   1          BYTE ucNcode = 0;
 2846   1          SBYTE chKcode = 0;
 2847   1          WORD usIcode = 0;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 49  
 
 2848   1          WORD usPcode = 0;
 2849   1          WORD usApllRefClock = 0;
@@ -3134,7 +3134,7 @@ line level    source
 2906   2      
 2907   2              // Get M, K code, M + K/16 = pllclock / 1024
 2908   2              ucMcode = ulOldPllDivider >> 10; // M code is the integer part.
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 50  
 
 2909   2      
 2910   2              // K is the fraction part quantized by 16
@@ -3198,7 +3198,7 @@ line level    source
 2968   3                  // Resiter = 3b'110 --> 16K
 2969   3                  pData[14] = (_BIT7 | _BIT6);
 2970   3              }
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 51  
 
 2971   2          }
 2972   1          else // Else (_APLL_REF_CLK == _LC_TANK_XTAL_FREQUENCY)
@@ -3262,7 +3262,7 @@ line level    source
 3029   2              //                                                                                              //
 3030   2              // N = 2                                                                                        //
 3031   2              // Loop filter resister = 3b'010 (R1 = 8K), 8.4K Consider 0.4K parasitic resistance             //
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 52  
 
 3032   2              //                                                                                              //
 3033   2              //         pi * 27M * M                                                                         //
@@ -3326,7 +3326,7 @@ line level    source
 3088   2          }
 3089   1      
 3090   1          // Set M code
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 53  
 
 3091   1          ScalerSetByte(P1_AC_PLL_M, (ucMcode - 3));
 3092   1      
@@ -3390,7 +3390,7 @@ line level    source
 3149   1          // Calculate I code
 3150   1          usIcode = (WORD)(((DWORD)usCurrHFreq * g_stApllData.usPEValue * (ulOldPllDivider >> 10)) / 1192);
 3151   1      
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 54  
 
 3152   1          // Total gain = 3 / 8
 3153   1          usIcode = (usIcode / 64) & 0x00007fff; // n = 64 x 8 = 512
@@ -3454,7 +3454,7 @@ line level    source
 3210          void ScalerAPLLLockThdSet(WORD usHFreq)
 3211          {
 3212   1          if(usHFreq <= 250) // 25K
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 55  
 
 3213   1          {
 3214   2              ScalerSetBit(P1_B8_DDS_MIX_1, ~(_BIT3 | _BIT2 | _BIT1), (_BIT3 | _BIT1));   // PE thd= 46
@@ -3518,7 +3518,7 @@ line level    source
 3272   3                      break;
 3273   3      
 3274   3                  case 5:
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 56  
 
 3275   3                      *pusDelta = (*pusDelta + (_G_VALUE_DIVIDER_5 / 2)) / _G_VALUE_DIVIDER_5;
 3276   3                      break;
@@ -3582,7 +3582,7 @@ line level    source
 3333   1          PDATA_DWORD(1) += ((g_stApllData.ulDivider & 0x0000ffff) >> 0) * ((ulClockRatio & 0xffff0000) >> 16);
 3334   1          PDATA_DWORD(2) = ((g_stApllData.ulDivider & 0x0000ffff) >> 0) * ((ulClockRatio & 0x0000ffff) >> 0);
 3335   1          PDATA_DWORD(3) = (PDATA_DWORD(0) << (16 - 14)) + (PDATA_DWORD(1) >> 14) + (PDATA_DWORD(2) >> (16 + 14)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 57  
 
              -);
 3336   1      
@@ -3646,7 +3646,7 @@ line level    source
 3392   1      
 3393   1          // Calculate P code
 3394   1          usPcode = (WORD)(((DWORD)191 * usIcode * ScalerPLLGetApllReferClkFreqKhz() / ((ucNcode * GET_INPUT_TIM
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 58  
 
              -ING_HFREQ() + 5) / 10)) >> 7); // Total Gain = 192/512
 3395   1      
@@ -3710,7 +3710,7 @@ line level    source
 3452   1          SDWORD lTemp = 0;
 3453   1      
 3454   1          // Disable Sum_i Measure
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 59  
 
 3455   1          ScalerSetBit(P1_AA_FAST_PLL_CTRL, ~_BIT2, 0x00);
 3456   1      
@@ -3774,7 +3774,7 @@ line level    source
 3513   2          }
 3514   1      
 3515   1          // Compensate K Value
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 60  
 
 3516   1          chKcode = chKcode + chKValue;
 3517   1      
@@ -3838,7 +3838,7 @@ line level    source
 3573   2      
 3574   2              // Get phase delay count reference mode table
 3575   2              ucEdgePhaseTemp = (PDATA_DWORD(0) * g_usPhaseDelayTimeLongPath / 10000000) + _PHASE_DELAY_HALF_PER
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 61  
 
              -IOD_SHIFT;
 3576   2      
@@ -3902,7 +3902,7 @@ line level    source
 3632   3              }
 3633   2              else if((ucPhase >= ucRightBound) && (ucPhase < ucLeftBound))
 3634   2              {
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 62  
 
 3635   3                  g_stRegVgaCapture.b2_02_3_HSSYNCEDGE_HDLYONE = 0;
 3636   3              }
@@ -3966,7 +3966,7 @@ line level    source
                   usLCTankFreq = _LC_TANK_XTAL_FREQUENCY;
               
               #endif // End of #if(_EFUSE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 63  
 
               
               #else
@@ -4030,7 +4030,7 @@ line level    source
               #endif
 3755          
 3756          #endif // End of #if(_VGA_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 64  
 
 3757          
 3758          
@@ -4094,7 +4094,7 @@ line level    source
                           // Enable DDR2PLL CLK output, and wait until PLL is stable
                           ScalerSetDWord(DDR2_GET_REG(P88_08_PLL_CTRL1_1, ucDDRSel), (0x00CF0000 | ((~0xFFFFF800 & GET_O
              -ESYNC_SETTING(tDDR2_PLL_PHASE[ucDDRSel])))));
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 65  
 
                           ScalerTimerPollingFlagProc(40, DDR2_GET_REG(P90_13_INT_STATUS2_0, ucDDRSel), _BIT0, _TRUE);
                       }
@@ -4158,7 +4158,7 @@ line level    source
                       else if(ulFreq >= 1066000)
                       {
                           ScalerSetDWord(DDR2_GET_REG(P88_1C_PLL_CTRL3_1, ucDDRSel), 0x22505254);
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 66  
 
                       }
                       else if(ulFreq >= 677000)
@@ -4222,7 +4222,7 @@ line level    source
               #elif(_DDR2PLL_SSC_AMPLITUDE == _1_PERCENT)
                       ScalerSetDWord(DDR2_GET_REG(P88_20_PLL_SSC0_1, ucDDRSel), 0x00074002);
               #elif(_DDR2PLL_SSC_AMPLITUDE == _2_PERCENT)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 67  
 
                       ScalerSetDWord(DDR2_GET_REG(P88_20_PLL_SSC0_1, ucDDRSel), 0x000C6502);
               #endif
@@ -4286,7 +4286,7 @@ line level    source
               void ScalerPLLSetDDRPLLFreq(DWORD ulFreq)
               {
                   BYTE ucNCode = 0;
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 68  
 
               
                   // Disable CLK output, Reset PLL, Disable PLL
@@ -4350,7 +4350,7 @@ line level    source
               
                   //=============================================
                   // Calculate Freq. & Set N F code & Disable SSC
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 69  
 
                   //=============================================
                   ucNCode = ulFreq / (DWORD)_EXT_XTAL;
@@ -4414,7 +4414,7 @@ line level    source
                   ScalerSetDWord(PAC_30_DQS_PRE_PST_AMBLE_CTRL1, 0x00001000);
               
               #if(_DDR3_MULTIPHASE_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 70  
 
                   // DDR 2X DC1 Read initial Phase Setting
                   ScalerSetDWord(PA8_80_DQ0_1_DLYN_1, g_stDdr3PhaseData.ulDdrReadDqDelayTap); // set inital read DQS to 
@@ -4478,7 +4478,7 @@ line level    source
                   pData[0] = ucSyncSel;
                   pData[1] = 0x00;
                   pData[2] = pucPhaseOfClk[5];
-C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/20/2026 19:43:25 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERPLL                                                         09/21/2026 15:32:12 PAGE 71  
 
                   pData[3] = pucPhaseOfClk[4];
                   ScalerSetDWord(PA5_0C_SYS_PLL_DDR4_1, PDATA_DWORD(0));

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/20/2026 19:43:29 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/21/2026 15:32:16 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERTIMERFUNCTION
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          // FUNCTION DEFINITIONS
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/20/2026 19:43:29 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/21/2026 15:32:16 PAGE 2   
 
   48          //--------------------------------------------------
   49          // Description  : Hold until the specified event occurs
@@ -126,7 +126,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/20/2026 19:43:29 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERTIMERFUNCTION                                               09/21/2026 15:32:16 PAGE 3   
 
    CODE SIZE        =    162    ----
    CONSTANT SIZE    =   ----    ----

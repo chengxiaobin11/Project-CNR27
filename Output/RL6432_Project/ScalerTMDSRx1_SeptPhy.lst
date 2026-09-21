@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERTMDSRX1_SEPTPHY
@@ -62,7 +62,7 @@ line level    source
               void ScalerTMDSRx1PowerOffProc(void);
               void ScalerTMDSRx1TMDSVideoDetectEvent(void);
               
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 2   
 
               #if(_D1_HDMI_SUPPORT == _ON)
               bit ScalerTMDSRx1HdmiAviPixelRepInfoChanged(void);
@@ -126,7 +126,7 @@ line level    source
                   else if((enumDeonlyConfig & _DE_ONLY_ENABLE) == _DE_ONLY_ENABLE)
                   {
                       ScalerSetBit(P71_A7_TMDS_PWDCTL, ~_BIT7, _BIT7);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 3   
 
                   }
               
@@ -190,7 +190,7 @@ line level    source
               //--------------------------------------------------
               // Description  : TMDS video Detect Event
               // Input Value  : None
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 4   
 
               // Output Value : None
               //--------------------------------------------------
@@ -254,7 +254,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTMDSRx1SpdInfoPacketDetect(bit bWait)
               {
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 5   
 
                   if(bWait == _WAIT)
                   {
@@ -318,7 +318,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTMDSRx1ScrambleStatusReset(void)
               {
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 6   
 
                   // Set Scramble Detect Manual Mode
                   ScalerSetBit(P71_38_HDMI_CTRL_38, ~(_BIT4 | _BIT2 | _BIT1), 0x00);
@@ -382,7 +382,7 @@ line level    source
               
                   ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_D5_PORT_PAGE71_HDMI_SCDC_D5);
                   ScalerSetByte_EXINT(P71_3A_HDMI_CTRL_3A, g_stTmdsMacRxScdcInfoSet.pucIdstring[2]);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 7   
 
               
                   ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_D6_PORT_PAGE71_HDMI_SCDC_D6);
@@ -446,7 +446,7 @@ line level    source
               
                       ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_E6_PORT_PAGE71_HDMI_SCDC_E6);
                       ScalerSetByte_EXINT(P71_3A_HDMI_CTRL_3A, g_stDrrHdmiAmdAupiInfo.ucScalerDeviceIdL);
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 8   
 
               
                       ScalerSetByte_EXINT(P71_39_HDMI_CTRL_39, _P71_3A_PT_E7_PORT_PAGE71_HDMI_SCDC_E7);
@@ -510,7 +510,7 @@ line level    source
                           ScalerTMDSRx1SwitchHdcpSlaveAddr();
                       }
               
-C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/20/2026 19:43:38 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERTMDSRX1_SEPTPHY                                             09/21/2026 15:32:25 PAGE 9   
 
               #if(_DELL_HDMI_HPD_DDC_STYLE_SUPPORT == _ON)
                       g_ucTmdsD1DdcramNackStatus = ScalerSyncGetDdcForceNackStatus(_D1_INPUT_PORT);

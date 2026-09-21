@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONHDR
@@ -62,7 +62,7 @@ line level    source
   45          #if(_HDR10_SUPPORT == _ON)
   46          WORD code tusHDR10_IG_ADDRESS_INDEX[] =
   47          {
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 2   
 
   48              _OGC_HDR10_IG_540_NOR_ADDRESS,
   49              _OGC_HDR10_IG_540_DARK_ADDRESS,
@@ -126,7 +126,7 @@ line level    source
  106          #if(_HDR10_SUPPORT == _ON)
  107          EnumHDR10Status UserCommonHDRGetHDR10Status(void);
  108          EnumHDR10ChangeStatus UserCommonHDRGetHDR10ChangeStatus(void);
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 3   
 
  109          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10LvType(void);
  110          EnumHDR10MaxMasteringLvType UserCommonHDRGetHDR10ModifyLvType(EnumHDR10MaxMasteringLvType enumHDR10MaxMast
@@ -190,7 +190,7 @@ line level    source
  166   1          EnumHDR10ModeDef enumHDR10ModeStatus = _HDR10_MODE_OFF;
  167   1          EnumFreeSyncSupport enumFreesyncIIModeStatus = _FREESYNC_SUPPORT_OFF;
  168   1      
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 4   
 
  169   1      #if(_HDR10_SUPPORT == _ON)
  170   1          enumHDR10ModeStatus = UserInterfaceHDRGetHDR10ModeStatus(SysSourceGetInputPort());
@@ -254,7 +254,7 @@ line level    source
  225   4                              UserCommonHDRAdjustSDRProc();
  226   4      
  227   4      #if(_COLORIMETRY_SEAMLESS_CHANGE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 5   
 
                                       SET_SDR_UPDATE_COLORIMETRY();
               #endif
@@ -318,7 +318,7 @@ line level    source
  286          EnumHDRTargetStatus UserCommonHDRGetTargetStatus(EnumHDRFlowStatus enumHDRFlowStatus, EnumHDR10ModeDef enu
              -mHDR10ModeStatus, EnumFreeSyncSupport enumFreesyncIIModeStatus)
  287          {
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 6   
 
  288   1          EnumHDRTargetStatus enumHDRTargetStatus = _HDR_TARGET_STATUS_DO_NOTHING;
  289   1          EnumHDR10ChangeStatus enumHDR10ChangeStatus = _HDR10_INFO_NO_CHANGE;
@@ -382,7 +382,7 @@ line level    source
  343   3                      enumHDRTargetStatus = _HDR_TARGET_STATUS_SMPTE_ST_2084;
  344   3                      break;
  345   3                  }
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 7   
 
  346   2                  else
  347   2      #endif
@@ -446,7 +446,7 @@ line level    source
  402   2                  if((enumHDR10ModeStatus == _HDR10_MODE_AUTO) &&
  403   2                     ((enumHDR10ChangeStatus != _HDR10_INFO_NO_CHANGE) ||
  404   2                      (ucFreeSyncIIChangeStatus != _FREESYNC_II_INFO_NO_CHANGE)))
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 8   
 
  405   2                  {
  406   3                      DebugMessageHDR("HDR10 Metadata EOTF", (g_stHDR10SaticMetadata.ucEOTF));
@@ -510,7 +510,7 @@ line level    source
  462          //--------------------------------------------------
  463          void UserCommonHDRAdjustSDRProc(void)
  464          {
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 9   
 
  465   1      #if((_RGB_QUANTIZATION_RANGE_SUPPORT == _ON) && (_RGB_QUANTIZATION_DEFAULT_RANGE_JUDGE_BY_USER == _ON))
                   if(ScalerColorGetColorSpaceRGB(UserCommonInterfaceGetColorFormat()) == _TRUE)
@@ -574,7 +574,7 @@ line level    source
  522   2          }
  523   1      
  524   1          return _HDR10_OFF;
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 10  
 
  525   1      }
  526          #if 0
@@ -638,7 +638,7 @@ line level    source
  583   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_540)
  584   2              {
  585   3                  return _HDR10_MAX_MASTERING_LV_TYPE_540;
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 11  
 
  586   3              }
  587   2              else if(usMaxDisplayLv <= _HDR10_MAX_MASTERING_LV_1200)
@@ -702,7 +702,7 @@ line level    source
  643   3                  return _HDR10_MAX_MASTERING_LV_TYPE_NOTM;
  644   3              }
  645   2              else
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 12  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 12  
 
  646   2              {
  647   3                  return enumHDR10MaxMasteringLvType;
@@ -766,7 +766,7 @@ line level    source
              -axMasteringLvType * 2 + enumHDR10DarkEnhanceStatus];
                               break;
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 13  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 13  
 
  702   3      
  703   3                  case _HDR10_FIXED_POINT_TM_OFF:
@@ -830,7 +830,7 @@ line level    source
  759   1          else // User Assign HDR10 PCM Table
  760   1          {
  761   2              DebugMessageHDR("HDR apply User Assigned PCM Table!!", 0x00);
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 14  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 14  
 
  762   2          }
  763   1      
@@ -894,7 +894,7 @@ line level    source
  814   3      #if(_HDR10_USER_DEFINE_FIXED_POINT_TONEMAPPING_SUPPORT == _ON)
                           case _HDR10_FIXED_POINT_TM_USER:
                               usHDRInputGammaFlashAddress = tusHDR10_IG_USER_DEFINE_FIXED_POINT_ADDRESS_INDEX[enumHDR10M
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 15  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 15  
 
              -axMasteringLvType * 2 + enumHDR10DarkEnhanceStatus];
                               break;
@@ -958,7 +958,7 @@ line level    source
               #endif
  874   1      #if(_DEF_HDR_540)
                 usHDRInputGammaFlashAddress = _OGC_HDR10_IG_540_NOR_ADDRESS;
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 16  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 16  
 
                 usHDRColorMatrixFlashAddress = _OCC_HDR10_BT2020_MATRIX_ADDRESS;
               #endif  
@@ -1022,7 +1022,7 @@ line level    source
  934   2      
  935   2                  usHDRColorMatrixFlashAddress = _OCC_HDR10_ADOBE_MATRIX_ADDRESS;
  936   2                  DebugMessageHDR("HDR apply AdobeRGB matrix", 0x00);
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 17  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 17  
 
  937   2      
  938   2                  break;
@@ -1086,7 +1086,7 @@ line level    source
  996   3                  }
  997   2      
  998   2                  break;
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 18  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 18  
 
  999   2      
 1000   2              default:
@@ -1150,7 +1150,7 @@ line level    source
               {
                   WORD usHDRColorMatrixFlashAddress = 0x0000;
                   usHDRColorMatrixFlashAddress = UserCommonHDRGetHDR10ColorMatrix();
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 19  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 19  
 
                   ScalerTimerWaitForEvent(_EVENT_DEN_STOP);
                   ScalerColorPCMSRGBAdjust(_SRGB_1_BIT_SHIFT_LEFT, (g_pucDISP_CALIBRATION_FLASH + usHDRColorMatrixFlashA
@@ -1214,7 +1214,7 @@ line level    source
 1117          // Output Value : HDR Max Mastering Lv Type for Light Enhance (540/1200/4000/10000/NOTM nit)
 1118          //--------------------------------------------------
 1119          EnumHDR10LightEnhanceMaxMasteringLv UserCommonHDRGetHDR10LvTypeForLightEnhance(void)
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 20  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 20  
 
 1120          {
 1121   1          BYTE pucTemp[2];
@@ -1278,7 +1278,7 @@ line level    source
 1177   4                      }
 1178   3                      else if(usHDR10MaxMasteringLvNoTMUB <= _HDR10_MAX_MASTERING_LV_4000)
 1179   3                      {
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 21  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 21  
 
 1180   4                          return _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_4000;
 1181   4                      }
@@ -1342,7 +1342,7 @@ line level    source
                           {
                               case _HDR10_LIGHTENHANCE_MAX_MASTERING_LV_540:
                                   ScalerColorIAPSGainValueAdjust(_LIGHTENHANCE_IAPSGAIN_540NIT);
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 22  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 22  
 
                                   break;
               
@@ -1406,7 +1406,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 23  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 23  
 
                       return (g_stHDR10SaticMetadata.usMaxCLL);
                   }
@@ -1470,7 +1470,7 @@ line level    source
                       {
                           SET_FREESYNC_II_EOTF_TYPE_SETTING(g_stFreeSyncIIMetadata.b5EOTFType);
                           ucFreeSyncIIChangeStatus |= _FREESYNC_II_EOTF_TYPE_CHANGE;
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 24  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 24  
 
                       }
               
@@ -1534,7 +1534,7 @@ line level    source
                   ScalerColorContrastEnable(_FUNCTION_OFF);
               #endif
               
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 25  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 25  
 
               #if(_LOCAL_DIMMING_SUPPORT == _ON)
                   if(UserCommonLocalDimmingGetEnableStatus() == _LD_ENABLE)
@@ -1598,7 +1598,7 @@ line level    source
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   1776    ----
-C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/20/2026 19:44:35 PAGE 26  
+C51 COMPILER V9.60.0.0   USERCOMMONHDR                                                     09/21/2026 15:33:24 PAGE 26  
 
    CONSTANT SIZE    =     28    ----
    XDATA SIZE       =      2      67

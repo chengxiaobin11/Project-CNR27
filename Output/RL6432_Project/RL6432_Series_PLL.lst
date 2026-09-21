@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_PLL
@@ -62,7 +62,7 @@ line level    source
               #define _DPTX_PLL_BOUNDRY_3                         1500000
               #endif // End of #if((_LVDS_PORT_SEL == _LVDS_1_PORT_C) || (_LVDS_PORT_SEL == _LVDS_1_PORT_D) || (_LVDS_PO
              -RT_SEL == _LVDS_2_PORT_CD) || (_LVDS_PORT_SEL == _LVDS_4_PORT_ABCD))
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 2   
 
   41          
   42          #endif // End of #if(_PANEL_STYLE == _PANEL_LVDS)
@@ -126,7 +126,7 @@ line level    source
  100          
  101          //--------------------------------------------------
  102          // Description  : Get DPLL Ref Clk from DPTx PLL or Xtal
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 3   
 
  103          // Input Value  : Dclk
  104          // Output Value : DPTx PLL clk or Xtal Clk
@@ -190,7 +190,7 @@ line level    source
  159   1      
  160   1          // LVDS data rate = ((Pixel Clk) / (LVDS Outport)) * 7
  161   1          PDATA_DWORD(1) = ((PDATA_DWORD(0) << _D_DOMAIN_PATH) / (1 << _LVDS_OUTPUT_PORT)) * 7;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 4   
 
  162   1      
  163   1          // ucDispPllParam: [3:2] = LVDS PI Operation Frequency Seletcion
@@ -254,7 +254,7 @@ line level    source
                   // [2:0] PI Current setting
                   // ScalerSetBit(P38_D0_DPTX_CMU0, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_
              -BIT6 | _BIT5 | _BIT4 | _BIT1 | _BIT0));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 5   
 
               
                   // [2] 0:Small Kvco, 1:Big Kvco
@@ -318,7 +318,7 @@ line level    source
                   WORD usFCode = 0;
                   DWORD ulCMUFreq = 0;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 6   
 
                   if(ScalerGetBit(P55_00_LVDS_COMMON_AB_CTRL0, _BIT3) == _BIT3)
                   {
@@ -382,7 +382,7 @@ line level    source
                       ScalerSetBit(P55_70_DPTX_CMU0, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), _BIT0);
               
                       // Phy range = 1.5~3 GHz, VCO = 1.5~3 GHz, spdsel = div1
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 7   
 
                       ScalerSetBit(P55_5D_DPTX_CKRDDUTY_SPD_SEL, ~(_BIT1 | _BIT0), 0x00);
               
@@ -446,7 +446,7 @@ line level    source
                   // Wait Watch Dog to check PLL is stable or not
                   ScalerTimerPollingFlagProc(2, P38_D4_DPTX_CMU4, _BIT7, _TRUE);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/20/2026 19:44:22 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_PLL                                                 09/21/2026 15:33:11 PAGE 8   
 
                   // Disable WD
                   ScalerSetBit(P38_D5_DPTX_CMU5, ~_BIT7, 0x00);

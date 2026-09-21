@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/20/2026 19:44:11 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/21/2026 15:33:00 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DPTX
@@ -62,7 +62,7 @@ line level    source
               // FUNCTION DEFINITIONS
               //****************************************************************************
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/20/2026 19:44:11 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/21/2026 15:33:00 PAGE 2   
 
               // Description  : DP Tx Clone Output Process
               // Input Value  : Input Port Type to be Cloned
@@ -126,7 +126,7 @@ line level    source
                           // Clear Header for Audio
                           ScalerDpTxClearSecDataHeader(_SEC_PACKET_TYPE_AUDIO_STREAM);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/20/2026 19:44:11 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/21/2026 15:33:00 PAGE 3   
 
                           // Set Maud
                           ScalerSetByte(PBC_20_AUD_TS_MAUD_H, 0x00);
@@ -190,7 +190,7 @@ line level    source
                       case _DP_TX_AUDIO_ON:
               
                           // Disable TX audio
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/20/2026 19:44:11 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/21/2026 15:33:00 PAGE 4   
 
                           ScalerSetBit(PBC_00_SEC_FUNCTION_CTRL, ~_BIT0, 0x00);
               
@@ -254,7 +254,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/20/2026 19:44:11 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DPTX                                                09/21/2026 15:33:00 PAGE 5   
 
 END OF MODULE INFORMATION.
 

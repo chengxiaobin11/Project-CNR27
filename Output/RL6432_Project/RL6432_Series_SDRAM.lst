@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/20/2026 19:44:24 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/21/2026 15:33:13 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_SDRAM
@@ -62,7 +62,7 @@ line level    source
   45          // FUNCTION DEFINITIONS
   46          //****************************************************************************
   47          #if(_MEMORY_TYPE_CONFIG == _MEMORY_SDRAM)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/20/2026 19:44:24 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/21/2026 15:33:13 PAGE 2   
 
               //--------------------------------------------------
               // Description  : Sdram ScalerSdramPowerMode
@@ -126,7 +126,7 @@ line level    source
                       // Enable Second OP power
                       ScalerSetBit(P4_10_SDDR_CTRL, ~_BIT1, 0x00);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/20/2026 19:44:24 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/21/2026 15:33:13 PAGE 3   
 
                       // DDR Second Vref select internal
                       ScalerSetBit(P4_10_SDDR_CTRL, ~_BIT4, 0x00);
@@ -190,7 +190,7 @@ line level    source
                   ScalerSetByte(P4_03_SDDR_CDAR_CTRL, 0x50);
                   ScalerSetByte(P4_04_SDDR_DQSX0_CTRL0, 0x01);
                   ScalerSetByte(P4_05_SDDR_DQSX0_CTRL1, 0xAA);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/20/2026 19:44:24 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_SDRAM                                               09/21/2026 15:33:13 PAGE 4   
 
                   ScalerSetByte(P4_06_SDDR_DQX0_CTRL0, 0x01);
                   ScalerSetByte(P4_07_SDDR_DQX0_CTRL1, 0xAA);

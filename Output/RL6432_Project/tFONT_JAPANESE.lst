@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 1   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TFONT_JAPANESE
@@ -62,7 +62,7 @@ line level    source
   45            0x44,0xf8,0xc4,
   46            0x64,0x8f,0x4c,
   47            0x00,0x80,0x40,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 2   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 2   
 
   48            0x00,0x00,0x00,
   49            
@@ -126,7 +126,7 @@ line level    source
  107            0x02,0x01,0x00,
  108            0xfa,0x9b,0xe4,
  109            0x7a,0x18,0x48,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 3   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 3   
 
  110            0x2f,0x1f,0x4e,
  111            0x02,0x47,0x08,
@@ -190,7 +190,7 @@ line level    source
  169            0x00,0x00,0x00,
  170            
  171            //========Address -- (0f),
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 4   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 4   
 
  172            0x00,0x00,0x00,
  173            0x00,0x00,0x00,
@@ -254,7 +254,7 @@ line level    source
  231            0x99,0x23,0x2e,
  232            0xf0,0x22,0x22,
  233            0x00,0x44,0x26,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 5   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 5   
 
  234            0x00,0x00,0x00,
  235            0x00,0x00,0x00,
@@ -318,7 +318,7 @@ line level    source
  293            0x00,0x00,0x00,
  294            0x00,0x00,0x00,
  295            0x70,0xf0,0x88,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 6   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 6   
 
  296            0x00,0x01,0x80,
  297            0x00,0x12,0x00,
@@ -382,7 +382,7 @@ line level    source
  355            0x00,0x00,0x00,
  356            0x00,0x00,0x00,
  357            
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 7   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 7   
 
  358            //========Address -- (20),
  359            0x00,0x00,0x00,
@@ -446,7 +446,7 @@ line level    source
  417            0x00,0x26,0x00,
  418            0x16,0xa2,0x00,
  419            0x00,0x22,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 8   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 8   
 
  420            0x00,0x22,0x00,
  421            0x00,0x00,0x00,
@@ -510,7 +510,7 @@ line level    source
  479            //========Address -- (2b),
  480            0x00,0x00,0x00,
  481            0x01,0x0f,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 9   
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 9   
 
  482            0x0f,0x0f,0x0e,
  483            0x03,0x0f,0x08,
@@ -574,7 +574,7 @@ line level    source
  541            0x44,0x47,0x4c,
  542            0x00,0x00,0x00,
  543            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 10  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 10  
 
  544            
  545            //========Address -- (31),
@@ -638,7 +638,7 @@ line level    source
  603            0x74,0xf0,0xc4,
  604            0x44,0x00,0x44,
  605            0x40,0x00,0x48,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 11  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 11  
 
  606            0x00,0x01,0x80,
  607            0x01,0x68,0x00,
@@ -702,7 +702,7 @@ line level    source
  665            
  666            //========Address -- (3c),
  667            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 12  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 12  
 
  668            0x00,0x00,0x00,
  669            0x22,0x00,0x00,
@@ -766,7 +766,7 @@ line level    source
  727            0x23,0x0f,0x88,
  728            0x23,0x0f,0x88,
  729            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 13  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 13  
 
  730            0x00,0x00,0x00,
  731            
@@ -830,7 +830,7 @@ line level    source
  789            0x00,0x00,0x00,
  790            0x00,0x88,0x00,
  791            0x01,0x80,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 14  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 14  
 
  792            0x11,0x00,0x88,
  793            0x22,0x03,0x4c,
@@ -894,7 +894,7 @@ line level    source
  851            0x00,0x00,0x00,
  852            
  853            //========Address -- (4d),
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 15  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 15  
 
  854            0x00,0x00,0x00,
  855            0x00,0x22,0x00,
@@ -958,7 +958,7 @@ line level    source
  913            0xf2,0xf0,0xe8,
  914            0x48,0xc2,0x42,
  915            0x10,0xc3,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 16  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 16  
 
  916            0x00,0x00,0x00,
  917            0x00,0x00,0x00,
@@ -1022,7 +1022,7 @@ line level    source
  975            0x00,0x00,0x00,
  976            0x02,0x00,0x00,
  977            0x2f,0x07,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 17  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 17  
 
  978            0x23,0x80,0x88,
  979            0x66,0x00,0x88,
@@ -1086,7 +1086,7 @@ line level    source
 1037            0x00,0x00,0x00,
 1038            0x00,0x00,0x00,
 1039            
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 18  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 18  
 
 1040            //========Address -- (5e),
 1041            0x00,0x00,0x00,
@@ -1150,7 +1150,7 @@ line level    source
 1099            0xf2,0xf1,0xc0,
 1100            0x22,0x11,0x00,
 1101            0x00,0x11,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 19  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 19  
 
 1102            0x01,0x2c,0x00,
 1103            0x00,0x00,0x00,
@@ -1214,7 +1214,7 @@ line level    source
 1161            //========Address -- (69),
 1162            0x00,0x00,0x00,
 1163            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 20  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 20  
 
 1164            0x10,0xe1,0x08,
 1165            0x01,0x0c,0x00,
@@ -1278,7 +1278,7 @@ line level    source
 1223            0x11,0x10,0xe0,
 1224            0x00,0x00,0x00,
 1225            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 21  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 21  
 
 1226            
 1227            //========Address -- (6f),
@@ -1342,7 +1342,7 @@ line level    source
 1285            0x20,0x0f,0x8e,
 1286            0x84,0x8e,0x88,
 1287            0x00,0x8a,0xaa,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 22  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 22  
 
 1288            0x44,0xfa,0x44,
 1289            0x99,0x25,0xa2,
@@ -1406,7 +1406,7 @@ line level    source
 1347            
 1348            //========Address -- (7a),
 1349            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 23  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 23  
 
 1350            0x00,0x00,0x00,
 1351            0x70,0xf0,0xe2,
@@ -1470,7 +1470,7 @@ line level    source
 1409            0x44,0x00,0x00,
 1410            0x43,0x0f,0x08,
 1411            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 24  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 24  
 
 1412            0x00,0x00,0x00,
 1413            
@@ -1534,7 +1534,7 @@ line level    source
 1471            0x00,0x00,0x00,
 1472            0x42,0x00,0x44,
 1473            0x20,0x00,0x44,
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 25  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 25  
 
 1474            0x00,0x00,0x88,
 1475            0x00,0x12,0x00,
@@ -1598,7 +1598,7 @@ line level    source
 1533          #endif
 1534          
 
-C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/20/2026 19:45:00 PAGE 26  
+C51 COMPILER V9.60.0.0   TFONT_JAPANESE                                                    09/21/2026 15:33:50 PAGE 26  
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

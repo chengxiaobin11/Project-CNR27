@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSD
@@ -62,7 +62,7 @@ line level    source
                 },
               
                 {// 3
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 2   
 
                   _DEF_P3_COLORTEMP_ITEM0,
                   _DEF_P3_COLORTEMP_ITEM1,
@@ -126,7 +126,7 @@ line level    source
  107          //****************************************************************************
  108          
  109          
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 3   
 
  110          //****************************************************************************
  111          // STRUCT / TYPE / ENUM DEFINITTIONS
@@ -190,7 +190,7 @@ line level    source
                 for(i=0;i<6;i++)
                   for(j=0;j<6;j++)
                   {
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 4   
 
                     if(OsdStateDefine1[i][j]==suber)
                       return i;
@@ -254,7 +254,7 @@ line level    source
                   if((bD0_DP_PIN16_CONNECT == _FALSE)&&((MCU_FFE4_DDC0_EDID_IRQ & _BIT0) == _TRUE)&&(SysSourceGetInputPort
              -() != _D1_INPUT_PORT))
                   {
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 5   
 
               
                     if(SysSourceGetInputPort() != _D0_INPUT_PORT)
@@ -318,7 +318,7 @@ line level    source
                 else if(_ROTATION_IN_D == 0)
                 {
                 
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 6   
 
                   _3036_ROTATION1 = 0;
               
@@ -382,7 +382,7 @@ line level    source
                   } 
                 }
               
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 7   
 
               #endif
  348   1      #if(Project_ID == ID_2795E02_1TYEPC1DP1HDMI_20201119)||(Project_ID == ID_CHANGJIA_2795E02_1T1DP1H_AUO_M270
@@ -446,7 +446,7 @@ line level    source
                       HUB_SWITCH2(1);
                   }
                 }
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 8   
 
                 else
                 {
@@ -510,7 +510,7 @@ line level    source
                             HUB_SWITCH(0);
                             //HUB_SWITCH2(0);
                            }
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 9   
 
                         }
               #endif
@@ -574,7 +574,7 @@ line level    source
                         OsdDispShowLogo();
               #else
                                 OsdDispShowLogo();
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 10  
 
                                 UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
               #endif
@@ -638,7 +638,7 @@ line level    source
                       #endif
                       #if(_D5_INPUT_PORT_TYPE==_D5_HDMI_PORT)
                         PCB_D5_HOTPLUG(_D5_HOT_PLUG_LOW);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 11  
 
                       #endif
                         ScalerTimerDelayXms(300);
@@ -702,7 +702,7 @@ line level    source
  648   2            DebugMessageSystem("Input Timing VTotal", GET_INPUT_TIMING_VTOTAL());
  649   2            DebugMessageSystem("Input Timing VStart", GET_INPUT_TIMING_VSTART());
  650   2            DebugMessageSystem("Input Timing VHeight", GET_INPUT_TIMING_VHEIGHT());
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 12  
 
  651   2            DebugMessageSystem("Input Timing VSyncSWidth", GET_INPUT_TIMING_VSYNCWIDTH());
  652   2            */
@@ -766,7 +766,7 @@ line level    source
                               } 
                               ScalerTimerActiveTimerEvent(SEC(3), _USER_TIMER_EVENT_USB_POWER_ON);
                       
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 13  
 
                               g_ucSearchIndexPre = SysSourceGetInputPort();
                             }
@@ -830,7 +830,7 @@ line level    source
  768   3                      if(SysPowerGetPowerStatus() == _POWER_STATUS_NORMAL)
  769   3                      {
  770   4                          SET_OSD_EVENT_MESSAGE(_OSDEVENT_SHOW_NOSUPPORT_MSG);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 14  
 
  771   4                          UserInterfaceKeyPadLedControl(_LED_POWER_NOSUPPORT);
  772   4                      }
@@ -894,7 +894,7 @@ line level    source
  830   4                      }
  831   3       #endif
  832   3                  }
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 15  
 
  833   2           else if(GET_OSD_WAKE_UP_SWITCH_DDCCI_PORT() == _TRUE)
  834   2                  {
@@ -958,7 +958,7 @@ line level    source
  892   2                 (SysModeGetModeState() == _MODE_STATUS_NOSIGNAL) ||
  893   2                 (SysModeGetModeState() == _MODE_STATUS_POWER_SAVING))
  894   2              {
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 16  
 
  895   3            if((((GET_OSD_STATE() < _MENU_NULL)&&(_MENU_FUN_BACKLIGHT <= GET_OSD_STATE())&& GetOsdShowType(OsdState
              -Define(OSD_MAIN_MENU_ITEM,OSD_SubMenuCur)) == _TYPE_SLIDER)||(_MENU_HOT_KEY_FUNC == GET_OSD_STATE() && GetOsdShowType(OS
@@ -1022,7 +1022,7 @@ line level    source
                         if((GET_OSD_TIME_OUT() < 10) || (GET_OSD_STATE() == _HOT_KEY_LOS_TYPE1) || (GET_OSD_STATE() == _HOT_K
              -EY_LOS_TYPE2))
                       #endif
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 17  
 
  951   5                          {
  952   6                              ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_OSD_DISABLE);
@@ -1086,7 +1086,7 @@ line level    source
 1008   3            UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
 1009   3            ScalerTimerActiveTimerEvent(SEC(_DEF_OSD_DISP_NOSIGNAL_MSG_TIME), _USER_TIMER_EVENT_OSD_SHOW_POWER_SAVI
              -NG);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 18  
 
 1010   3          }
 1011   2                  break;
@@ -1150,7 +1150,7 @@ line level    source
                           UserAdjustAudioTtsPlayEvent(_AUDIO_TTS_EVENT_POWER_SAVING);
               #endif // End of #if(_AUDIO_TTS_SUPPORT_TYPE == _AUDIO_TTS_EMBEDDED_TYPE)
 1071   2               
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 19  
 
 1072   2      #if(_MPRT_SUPPORT == _ON)
                     UserAdjustLowMotionBlurDisplay(_OFF);
@@ -1214,7 +1214,7 @@ line level    source
                       else
               #endif
 1132   3              if(Cross_flag == 1)
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 20  
 
 1133   3              {
 1134   4                RTDOsdDispHotkeyFuncAdjust(_HOT_KEY_LOS_TYPE1-_MENU_FUN_BACKLIGHT);       
@@ -1278,7 +1278,7 @@ line level    source
 1192   2                  OsdFuncSetOsdItemFlag();
 1193   2                  UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
 1194   2                  ScalerTimerReactiveTimerEvent(SEC(GET_OSD_TIME_OUT()), _USER_TIMER_EVENT_OSD_SHOW_POWER_SAVING
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 21  
 
              -);
 1195   2                  
@@ -1342,7 +1342,7 @@ line level    source
                           }
               
                           UserCommonInterfacePanelPowerAction(_BACKLIGHT_ON);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 22  
 
                           break;
               #endif
@@ -1406,7 +1406,7 @@ line level    source
                     break;
               
                       default:
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 23  
 
                           break;
                   }
@@ -1470,7 +1470,7 @@ line level    source
 1377   3      #if(Project_ID == ID_CHANGJIA_GS24S3F_HK2556E01_1P2H_M236HVR010_FHD144HZ_20210908)||(ID_CHANGJIA_HK2556E01
              -_1P2H_M270HAN02_V6_FHD144HZ_20210908 == Project_ID)
                             SET_OSD_CROSS_HAIR_TYPE1(0);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 24  
 
               #endif
 1380   3                  #if(Project_ID == ID_DR_HK2785E02_1P3H_MV315QHBN10_QHD75HZ_FHD144HZ_20210428)
@@ -1534,7 +1534,7 @@ line level    source
 1434   2                  if(SysModeGetModeState() == _MODE_STATUS_ACTIVE)
 1435   2                { 
 1436   3                  #if(Project_ID == ID_ZHEHAO_HK2795E041DP2HDMI__AUO_M315DVR01_9_QHD165HZ__20201104)||(Project_ID 
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 25  
 
              -== ID_TIEMU_HK2513E02_1V1H__SGM2701B01_2_FHD75HZ__20200718)\
 1437   3                          ||(ID_TIEMU_HK2513E02_1V1H__M270HVR01_1_FHD75HZ__20200908 == Project_ID)||(ID_TJ_HK279
@@ -1598,7 +1598,7 @@ line level    source
 1492   2              case _EXIT_KEY_MESSAGE:
 1493   2            OsdDispDisableOsd();
 1494   2      #if 0//(_DIALPOINT_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 26  
 
                     if((SysModeGetModeState() ==_MODE_STATUS_ACTIVE)&&(GET_OSD_DIAL_POINT_STYLE() != _DIAPOINT_STYLE_OFF))
                     {
@@ -1662,7 +1662,7 @@ line level    source
 1554                      break;
 1555          
 1556                  case _RIGHT_KEY_MESSAGE:
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 27  
 
 1557                UpdateOSDMainInterface(_OSD_MAIN_PICTURE);
 1558          
@@ -1726,7 +1726,7 @@ line level    source
 1616                OSDSubMenuMove();
 1617                      break;
 1618          
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 28  
 
 1619                  case _RIGHT_KEY_MESSAGE:
 1620                UpdateOSDMainInterface(_OSD_MAIN_COLORTEMP);
@@ -1790,7 +1790,7 @@ line level    source
 1678                    
 1679                OSDSubMenuMove();
 1680                      break;
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 29  
 
 1681          
 1682                  case _RIGHT_KEY_MESSAGE:
@@ -1854,7 +1854,7 @@ line level    source
 1740          #endif
 1741          */
 1742          void MENU_FUN_COMMON(void)
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 30  
 
 1743          {
 1744   1          switch(GET_KEYMESSAGE())
@@ -1918,7 +1918,7 @@ line level    source
 1799   2            break;
 1800   2        }
 1801   1      
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 31  
 
 1802   1      
 1803   1      }
@@ -1982,7 +1982,7 @@ line level    source
 1858   1      
 1859   1        switch(GET_KEYMESSAGE())
 1860   1        {
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 32  
 
 1861   2      #if(Project_ID == ID_TIEMU_HK2513E02_1V1H__SGM2701B01_2_FHD75HZ__20200718)||(ID_TIEMU_HK2513E02_1V1H__M270
              -HVR01_1_FHD75HZ__20200908 == Project_ID)||(ID_TJ_HK2795E051DP2HDMI__AUO_M270KCJ_K7B_QHD165HZ__20200917 == Project_ID)
@@ -2046,7 +2046,7 @@ line level    source
 1915   2            OsdDispDisableOsd();    
 1916   2              break;
 1917   2      
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 33  
 
 1918   2      #if(Project_ID == ID_CHANGJIA_GS24S3F_HK2556E01_1P2H_M236HVR010_FHD144HZ_20210908)||(ID_CHANGJIA_HK2556E01
              -_1P2H_M270HAN02_V6_FHD144HZ_20210908 == Project_ID)
@@ -2110,7 +2110,7 @@ line level    source
                     else
                     {
                       usHCenter = GET_MDOMAIN_OUTPUT_HSTART()-GET_MDOMAIN_OUTPUT_HBSTART()+(GET_MDOMAIN_OUTPUT_HWIDTH()/2)-(
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 34  
 
              -_OSD_SPOT_WIDTH_1/2)+_DIGITAL_H_DIALPOINT_OFFSET;
                       usVCenter = GET_MDOMAIN_OUTPUT_VSTART()-GET_MDOMAIN_OUTPUT_VBSTART()+(GET_MDOMAIN_OUTPUT_VHEIGHT()/2)-
@@ -2174,7 +2174,7 @@ line level    source
               switch(GET_OSD_COLOR_EFFECT())
               {
                case _COLOREFFECT_STANDARD:
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 35  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 35  
 
                 OsdFontPut2BitTable(ROW(3), COL(13), tOSD_ECO_STANDART_ICON, (_PALETTE_INDEX0 << 4) | COLOR0(_CP_BLACK),
              - COLOR1(_CP_BLUE), COLOR2(_CP_DARKBLUE), COLOR3(_CP_LIGHTBLUE));
@@ -2238,7 +2238,7 @@ line level    source
                   case _LEFT_KEY_MESSAGE:
                   if(OSD_MASK_GET(_MENU_FUN_ECO_ICON))
                       DrawMenuEcoIcon();
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 36  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 36  
 
                   else
                   {
@@ -2302,7 +2302,7 @@ line level    source
 2144   5                }
 2145   4              }
 2146   3          #else         
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 37  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 37  
 
                       SysSourceSwitchInputPort(OsdFuncGetOsdItemFlag());
                     #if(Project_ID == ID_TEST_HK2556MINI_TYPEC_WIFI_EDP60HZ_20200908)
@@ -2366,7 +2366,7 @@ line level    source
 2204   2              OsdFontPut1BitTable(ROW(0), COL(0), tOSD_TYPE2_ICON4, COLOR(_CP_RED, _CP_BG),0);
 2205   2            else if(4 == GET_OSD_CROSS_HAIR_TYPE2())
 2206   2              OsdFontPut1BitTable(ROW(0), COL(0), tOSD_TYPE2_ICON5, COLOR(_CP_YELLOW, _CP_BG),0);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 38  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 38  
 
 2207   2            else if(5 == GET_OSD_CROSS_HAIR_TYPE2())
 2208   2              OsdFontPut1BitTable(ROW(0), COL(0), tOSD_TYPE2_ICON6, COLOR(_CP_RED, _CP_BG),0);
@@ -2430,7 +2430,7 @@ line level    source
                       OsdFontPut1BitTable(ROW(0), COL(0), tOSD_TYPE2_ICON2, COLOR(_CP_RED, _CP_BG),0);
                     else if(2 == GET_OSD_CROSS_HAIR_TYPE2())
                       OsdFontPut1BitTable(ROW(0), COL(0), tOSD_TYPE2_ICON3, COLOR(_CP_RED, _CP_BG),0);
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 39  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 39  
 
                     
                           RTDNVRamSaveOSDData();*/
@@ -2494,7 +2494,7 @@ line level    source
 2323   2      #if(_FREESYNC_SUPPORT == _ON)
 2324   2          ScalerFreeSyncGetFreeSyncInfo(_NO_INPUT_PORT,_SPD_INFO_OUI);
 2325   2      #endif
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 40  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 40  
 
 2326   2      #if((_HDMI_HDR10_SUPPORT == _ON) && (_D3_INPUT_PORT_TYPE != _D3_HDMI_PORT) &&(_HDMI_MAC_PAGE72_USE == _ON)
              -)
@@ -2558,7 +2558,7 @@ line level    source
 2384            OSDSubMenuMove,
 2385            OSDSubMenuMove,
 2386            OSDSubMenuMove,
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 41  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 41  
 
 2387            OSDSubMenuMove,
 2388            OSDSubMenuMove,
@@ -2622,7 +2622,7 @@ line level    source
 2446            MENU_FUN_COMMON,//_MENU_FUN_OSD_ROTATE, //��ת
 2447          #endif
 2448          #if 1//_MOTION_BLUR_REDUCTION_SUPPORT
-C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/20/2026 19:44:53 PAGE 42  
+C51 COMPILER V9.60.0.0   RTD2014OSD                                                        09/21/2026 15:33:43 PAGE 42  
 
 2449            MENU_FUN_COMMON,//_MENU_FUN_MBRSYNC
 2450          #endif

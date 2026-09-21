@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_INTERSIL_RAA489800
@@ -62,7 +62,7 @@ line level    source
               // Initial Setting
               //--------------------------------------------------
               #define _ADDR_14_SYS_CURRENT_LIMIT_LB           0xDC    // 1.5A
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 2   
 
               #define _ADDR_14_SYS_CURRENT_LIMIT_HB           0x05
               
@@ -126,7 +126,7 @@ line level    source
               #define _ADDR_3D_UVControl                      0x01    // Enable UV
               #define _ADDR_3D_OVControl                      0x01    // Enable OV
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 3   
 
               //Control3 Register 0x4C
               #define _ADDR_4C_PGOODSetting                   0x01    // PGOOD suppressed until VREF equals to VDAC
@@ -190,7 +190,7 @@ line level    source
               }StructRAA489800RVSRegulatingVoltMap;
               
               typedef struct // RVS Onput Current Register 0x4A
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 4   
 
               {
                   BYTE ucRVSOutputCurrent_LB;
@@ -254,7 +254,7 @@ line level    source
               typedef struct // Control2 Register 0x3D
               {
                   BYTE b1CR2FaultLatchOff : 1;            // BIT[0]:Disable fault latch off fucntion for WOC, UV, ADPOV 
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 5   
 
              -or OTP fault event
                   BYTE b1CR2WOCFault : 1;                 // BIT[1]:Enable and disable WOC fault.
@@ -318,7 +318,7 @@ line level    source
                   BYTE b1INFO1CCModeChange : 1;           // BIT[7]: Controller has entered/exited CC mode
                   BYTE b1INFO1ADPsideOV : 1;              // BIT[8]: Adapter side OV fault
                   BYTE b1INFO1OTP : 1;                    // BIT[9]: OTP fault
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 6   
 
                   BYTE b1INFO1SYSsideUV : 1;              // BIT[10]: Sys output UV fault
                   BYTE b1INFO1SYSsideOV : 1;              // BIT[11]: Sys output OV fault
@@ -382,7 +382,7 @@ line level    source
                   _ADDR_39_SysSideDischarge,              // Disable
                   _ADDR_39_ADPSideDischarge,              // Disable
                   _ADDR_39_VINRegulationLoop,             // Enable input voltage regulation loop
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 7   
 
                   0x00,                                   // Reserved
                   _ADDR_39_FETShortTH,                    // 400mV
@@ -446,7 +446,7 @@ line level    source
               
                   _ADDR_4C_ForceOpMode,                   // No effect
                   _ADDR_4C_FRWStartupDebounceTime,        // Debounce time is 200us
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 8   
 
                   _ADDR_4C_RVSStartupDebounceTime,        // Debounce time is 200us
                   0x00,                                   // Reserved
@@ -510,7 +510,7 @@ line level    source
              -itchControl, EnumTypeCPmicDirection enumPowerDirection);
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicSwitchControl_EXINT0(EnumTypeCPmicSwitchControl
              - enumSwitchControl, EnumTypeCPmicDirection enumPowerDirection);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 9   
 
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicSwitchControl_WDINT(EnumTypeCPmicSwitchControl 
              -enumSwitchControl, EnumTypeCPmicDirection enumPowerDirection);
@@ -574,7 +574,7 @@ line level    source
              -GTH, 2, (BYTE *)(&g_stPMICCR2Data)) == _SUCCESS)
                   {
                       DebugMessageTypeC("Write CR2 Success", 0x00);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 10  
 
                   }
                   else
@@ -638,7 +638,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 11  
 
                       DebugMessageTypeC("Write FWR Regualting Volt Fail", 0x00);
                       return;
@@ -702,7 +702,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 12  
 
                       DebugMessageTypeC("Write FWR Regualting Volt Fail", 0x00);
                       return;
@@ -766,7 +766,7 @@ line level    source
                       {
                           g_stPMICFRWRegulatingVolt.ucFRWRegulatingVolt_LB = pucTempData[0];
                           g_stPMICFRWRegulatingVolt.ucFRWRegulatingVolt_HB = pucTempData[1];
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 13  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 13  
 
               
                           if(ScalerTypeCPmicIICWrite(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _RAA489800_FRW_REGULATING_VOLTAGE, 
@@ -830,7 +830,7 @@ line level    source
                   g_stPMICSysCurrentLimit.ucSysCurrentLimit_LB = 0;
                   g_stPMICSysCurrentLimit.ucSysCurrentLimit_HB = 0;
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 14  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 14  
 
                   // Disable FWREN & RVSEN GPIO
                   PCB_PMIC_FRWEN_CONTROL(_FRWEN_CONTROL_OFF);
@@ -894,7 +894,7 @@ line level    source
                       }
               
                       // Current Offset Compensation
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 15  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 15  
 
                       usCurrent = (usCurrent >= _PMIC_OFFSET_CURRENT ? (usCurrent - _PMIC_OFFSET_CURRENT) : 0);
               
@@ -958,7 +958,7 @@ line level    source
                       PCB_PMIC_FRWEN_CONTROL(_FRWEN_CONTROL_ON);
                       PCB_PMIC_RVSEN_CONTROL(_RVSEN_CONTROL_OFF);
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 16  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 16  
 
                       // Maximum Voltage Judgment
                       if((usVoltage > 2100) || (usVoltage < 300))   // 3V ~ 21V
@@ -1022,7 +1022,7 @@ line level    source
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 17  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 17  
 
               //--------------------------------------------------
               // Description  : Turn off PMIC
@@ -1086,7 +1086,7 @@ line level    source
                   // Set PMIC VBUS Sys Discharge status
                   g_stPMICCR0Data.b1CR0SysSideDischarge = enumEn;
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 18  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 18  
 
                   if(enumEn == _TYPE_C_PMIC_DISCHARGE_ENABLE)
                   {
@@ -1150,7 +1150,7 @@ line level    source
               {
                   if(enumSwitchControl == _TYPE_C_PMIC_SWITCH_CONTROL_ENABLE)
                   {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 19  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 19  
 
                       if(enumPowerDirection == _TYPE_C_PMIC_DIRECTION_SRC)
                       {
@@ -1214,7 +1214,7 @@ line level    source
                   {
                       if(enumPowerDirection == _TYPE_C_PMIC_DIRECTION_SRC)
                       {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 20  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 20  
 
                           PCB_PMIC_VBUS_SINK_CONTROL(_VBUS_SINK_SWITCH_OFF);
                           PCB_PMIC_VBUS_SOURCE_CONTROL(_VBUS_SOURCE_SWITCH_ON);
@@ -1278,7 +1278,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 21  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 21  
 
               // Description  : PMIC Read Output Status
               // Input Value  : None
@@ -1342,7 +1342,7 @@ line level    source
                   if(ScalerTypeCPmicIICRead(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _RAA489800_MANUFACTURER_ID, _RAA489800_SUBAD
              -DR_LENGTH, 1, pucTempData) == _SUCCESS)
                   {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 22  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 22  
 
                       DebugMessageTypeC("5.Pmic:MANUFACTURER_ID", pucTempData[0]);
                   }
@@ -1406,7 +1406,7 @@ line level    source
                   else
                   {
                       DebugMessageTypeC("5.Pmic:Info2 Fail", 0x00);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/20/2026 19:45:05 PAGE 23  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_INTERSIL_RAA489800                                     09/21/2026 15:33:55 PAGE 23  
 
                       return _TYPE_C_PMIC_CONTROL_FAIL;
                   }
