@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDUALLINKDVI
@@ -62,7 +62,7 @@ line level    source
               void ScalerDualLinkDVIClockInvert(void);
               void ScalerDualLinkDVIScanInitial(BYTE ucInputPort);
               bit ScalerDualLinkDVIPSPreDetect(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 2   
 
               bit ScalerDualLinkDVINormalPreDetect(BYTE ucInputPort);
               BYTE ScalerDualLinkDVIScanInputPort(BYTE ucInputPort);
@@ -126,7 +126,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 3   
 
                   return _FALSE;
               }
@@ -190,7 +190,7 @@ line level    source
                   return _FALSE;
               }
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 4   
 
               //--------------------------------------------------
               // Description  : Invert duali phy-to-MAC 1x clock
@@ -254,7 +254,7 @@ line level    source
               
                       case _D4_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 5   
 
               #if(_D4_INPUT_PORT_TYPE == _D4_DUAL_DVI_PORT)
                           ScalerDualLinkDVIRx4ScanInitial();
@@ -318,7 +318,7 @@ line level    source
               {
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 6   
 
                       case _D2_INPUT_PORT:
               
@@ -382,7 +382,7 @@ line level    source
               #if(_D4_INPUT_PORT_TYPE == _D4_DUAL_DVI_PORT)
                           return ScalerDualLinkDVIRx4ScanInputPort();
               #endif
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 7   
 
               
                           break;
@@ -446,7 +446,7 @@ line level    source
                   }
               
                   // Reset Freq. Detect Counter(Toggle) & Choose Measure Clk to TMDS Clk
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 8   
 
                   ScalerSetBit(P71_E6_HDMI_FREQDET_CTRL, ~(_BIT7 | _BIT5 | _BIT4), 0x00);
                   ScalerSetBit(P71_E6_HDMI_FREQDET_CTRL, ~_BIT7, _BIT7);
@@ -510,7 +510,7 @@ line level    source
                       MCU_FE69_DDC2_EDID_IRQ |= _BIT3;
                   }
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 9   
 
                   ScalerTimerDelayXms(6);
               
@@ -574,7 +574,7 @@ line level    source
                               ScalerSetByte(P71_EA_HDMI_FREQDET_LOWER_M, HIBYTE(_TMDS_FREQ_NORMAL_LOWER_BOUND));
                               ScalerSetByte(P71_EB_HDMI_FREQDET_LOWER_L, LOBYTE(_TMDS_FREQ_NORMAL_LOWER_BOUND));
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 10  
 
                               // Set Stable Time (0x7F = about 5ms)
                               ScalerSetByte(P71_EC_HDMI_FREQDET_STABLE, 0x7F);
@@ -638,7 +638,7 @@ line level    source
               #if(_TMDS_LOW_SPEED_PORT_SPEED_LIMIT == _OFF)
                               // Set Upper Bound
                               ScalerSetByte(P72_E8_HDMI_FREQDET_UPPER_M, HIBYTE(_TMDS_FREQ_NORMAL_HIGH_SPEED_UPPER_BOUND
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 11  
 
              -));
                               ScalerSetByte(P72_E9_HDMI_FREQDET_UPPER_L, LOBYTE(_TMDS_FREQ_NORMAL_HIGH_SPEED_UPPER_BOUND
@@ -702,7 +702,7 @@ line level    source
                       ScalerSetBit(P72_CC_HDMI_GPVS, ~_BIT5, _BIT5);
               
                       if(ScalerTMDSRx3FormatDetect() == _SOURCE_HDMI)
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 12  
 
                       {
                           DebugMessageRx2("Format Detect HDMI", 0x00);
@@ -766,7 +766,7 @@ line level    source
                           ucTMDSRx3VideoDataType = ScalerTMDSRx3TMDSVideoDetect(_NOT_WAIT);
               
                           DebugMessageRx2("D2 Video Detect", ucTMDSRx2VideoDataType);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 13  
 
                           DebugMessageRx2("D3 Video Detect", ucTMDSRx3VideoDataType);
               
@@ -830,7 +830,7 @@ line level    source
                           ScalerTMDSRx3HdmiPacketDetect(_WAIT);
               
                           ScalerSyncTMDSRx3HdmiVideoSetting();
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 14  
 
               
                           SET_COLOR_DEPTH(ScalerTMDSRx3HdmiGetColorDepth());
@@ -894,7 +894,7 @@ line level    source
                       ScalerTMDSRx3DviVideoSetting();
               
                       SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 15  
 
               
                       // Turn off Deep Color Block
@@ -958,7 +958,7 @@ line level    source
                       ScalerSetBit(P72_A6_TMDS_OUTCTL, ~(_BIT6 | _BIT5 | _BIT4 | _BIT3), (_BIT6 | _BIT5 | _BIT4 | _BIT3)
              -);
                   }
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 16  
 
                   else
                   {
@@ -1022,7 +1022,7 @@ line level    source
               
                   // Read Out Rx3 DFE VTH Value
                   ScalerSetBit(P7C_F0_COEF_1, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 17  
 
               
                   // Lane0 VTH adapt Value
@@ -1086,7 +1086,7 @@ line level    source
               #endif // End of #if(_D2_INPUT_PORT_TYPE == _D2_DUAL_DVI_PORT)
               
               #if(_D3_INPUT_PORT_TYPE == _D3_DUAL_DVI_PORT)
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 18  
 
               //--------------------------------------------------
               // Description  : Initial Setting for Dual DVI Scanning Port(Power Normal)
@@ -1150,7 +1150,7 @@ line level    source
                   // Delay enough time for freq. measure (calculated for measure 10 times)
                   ScalerTimerDelayXms(5);
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 19  
 
                   // Detect Freq. Measure Stable
                   if((ScalerGetBit(P72_E6_HDMI_FREQDET_CTRL, (_BIT6 | _BIT2)) == _BIT6) && (ScalerGetBit(P72_EF_HDMI_ERR
@@ -1214,7 +1214,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : TMDS Port Source/Sync Scanning and Setting
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 20  
 
               // Input Value  : Input Port(D3, Dual DVI)
               // Output Value : Source DVI --> DVI Format
@@ -1278,7 +1278,7 @@ line level    source
                               ScalerSetByte(P73_E9_HDMI_FREQDET_UPPER_L, LOBYTE(_TMDS_FREQ_NORMAL_HIGH_SPEED_UPPER_BOUND
              -));
               #else
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 21  
 
                               ScalerSetByte(P73_E8_HDMI_FREQDET_UPPER_M, HIBYTE(_TMDS_FREQ_NORMAL_LOW_SPEED_UPPER_BOUND)
              -);
@@ -1342,7 +1342,7 @@ line level    source
                               // Set Lower Bound
                               ScalerSetByte(P73_EA_HDMI_FREQDET_LOWER_M, HIBYTE(_TMDS_FREQ_NORMAL_LOWER_BOUND));
                               ScalerSetByte(P73_EB_HDMI_FREQDET_LOWER_L, LOBYTE(_TMDS_FREQ_NORMAL_LOWER_BOUND));
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 22  
 
               
                               // Set Stable Time (0x7F = about 5ms)
@@ -1406,7 +1406,7 @@ line level    source
                           ucTMDSRx4VideoDataType = ScalerTMDSRx4TMDSVideoDetect(_WAIT);
               
                           if(ucTMDSRx4VideoDataType == _TMDS_VIDEO_DATA_DE_ONLY)
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 23  
 
                           {
                               DebugMessageRx3("DE Only Mode", 0x00);
@@ -1470,7 +1470,7 @@ line level    source
               
                               if(bDualDviMode == _TRUE)
                               {
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 24  
 
                                   // Enable DE Only Mode
                                   ScalerSetBit(P72_A7_TMDS_PWDCTL, ~_BIT7, _BIT7);
@@ -1534,7 +1534,7 @@ line level    source
               
                               SET_INPUT_PIXEL_CLK((GET_INPUT_PIXEL_CLK() << 3) / GET_COLOR_DEPTH());
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 25  
 
                               if(ScalerTMDSRx4HdmiDeepColorProc(g_usTMDSRx4ClkCount) == _FALSE)
                               {
@@ -1598,7 +1598,7 @@ line level    source
                       else
                       {
                           ScalerDualLinkDVIRx3Switch(_DISABLE);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 26  
 
                       }
               
@@ -1662,7 +1662,7 @@ line level    source
               
                       // Disable Dual DVI Output from D3 + D4 Port
                       ScalerSetBit(P31_03_FC_DUAL_DVI_CTRL1, ~_BIT7, 0x00);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 27  
 
               
                       // Enable Video Output
@@ -1726,7 +1726,7 @@ line level    source
                   // Lane2 VTH adapt Value
                   ScalerSetBit(P7D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT7);
                   pchTMDSRx4Vth[2] = (ScalerGetByte(P7D_F1_COEF_2) & 0x0F);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 28  
 
               
                   // Read Out Rx3 DFE Tap0 Value
@@ -1790,7 +1790,7 @@ line level    source
                   ScalerTMDSRx4Initial();
                   ScalerTMDSRx5Initial();
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 29  
 
                   // Both Initial D4 Port & D5 Port Interrupt Initial
                   ScalerTMDSRx4InterruptInitial();
@@ -1854,7 +1854,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 30  
 
                       // Disable Freq. Detection
                       ScalerSetBit(P73_E6_HDMI_FREQDET_CTRL, ~_BIT7, 0x00);
@@ -1918,7 +1918,7 @@ line level    source
                   bit bDualDviMode = _FALSE;
               
                   if((GET_TMDS_RX4_PHY_SET() == _TRUE) && (GET_TMDS_RX5_PHY_SET() == _TRUE))
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 31  
 
                   {
                       BYTE ucTMDSType = _SOURCE_NONE;
@@ -1982,7 +1982,7 @@ line level    source
               
                               // Set Stable Time (0x7F = about 5ms)
                               ScalerSetByte(P74_EC_HDMI_FREQDET_STABLE, 0x7F);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 32  
 
                               //-------- Set Port5 Stable Bound End ----//
               
@@ -2046,7 +2046,7 @@ line level    source
                               ScalerSetBit(P74_E6_HDMI_FREQDET_CTRL, ~_BIT1, 0x00);
               
                               // Reset Freq. Detect Counter(Toggle)
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 33  
 
                               ScalerSetBit(P74_E6_HDMI_FREQDET_CTRL, ~_BIT7, 0x00);
                               ScalerSetBit(P74_E6_HDMI_FREQDET_CTRL, ~_BIT7, _BIT7);
@@ -2110,7 +2110,7 @@ line level    source
                               ScalerSetBit(P74_A7_TMDS_PWDCTL, ~_BIT7, _BIT7);
                           }
                           else
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 34  
 
                           {
                               return _SOURCE_NONE;
@@ -2174,7 +2174,7 @@ line level    source
                           }
                           else if(ucTMDSRx5VideoDataType == _TMDS_VIDEO_DATA_RGBHV)
                           {
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 35  
 
                               // Enable DE Only Mode
                               ScalerSetBit(P74_A7_TMDS_PWDCTL, ~_BIT7, _BIT7);
@@ -2238,7 +2238,7 @@ line level    source
                               // Turn On Deep Color Block
                               ScalerSetBit(P74_B5_TMDS_UDC0, ~_BIT7, _BIT7);
                           }
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 36  
 
                           else
                           {
@@ -2302,7 +2302,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Switch Dual DVI
               // Input Value  : _Enable/ Disable
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 37  
 
               // Output Value : None
               //--------------------------------------------------
@@ -2366,7 +2366,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 38  
 
               //--------------------------------------------------
               // Description  : TMDS Check Dual DVI Format
@@ -2430,7 +2430,7 @@ line level    source
                   // Lane1 Tap0 adapt Value
                   ScalerSetBit(P7D_F2_COEF_3, ~(_BIT7 | _BIT6), _BIT6);
                   pchTMDSRx4Tap0[1] = ScalerGetByte(P7D_F1_COEF_2);
-C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/21/2026 15:32:03 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERDUALLINKDVI                                                 09/24/2026 09:30:02 PAGE 39  
 
               
                   // Lane2 Tap0 adapt Value

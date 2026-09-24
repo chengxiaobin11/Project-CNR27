@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSTYPEC
@@ -62,7 +62,7 @@ line level    source
               #define _TYPE_C_LOC_PWR_DEBOUNCE_TIME_100MS             100 // (ms)
               #define _TYPE_C_LOC_PWR_DEBOUNCE_TIME_200MS             200 // (ms)
               #define _TYPE_C_LOC_PWR_DEBOUNCE_TIME_500MS             500 // (ms)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 2   
 
               #define _TYPE_C_PORT_CTRL_LOC_PWR_DEBOUNCE_TIME         _TYPE_C_LOC_PWR_DEBOUNCE_TIME_100MS
               
@@ -126,7 +126,7 @@ line level    source
              -odeStatusChange = _TRUE)
               #define CLR_TYPE_C_ALT_MODE_STATUS_CHG(x)               (g_pstTypeCStatus[SysTypeCGetTypeCIndex(x)].b1AltM
              -odeStatusChange = _FALSE)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 3   
 
               
               #define GET_TYPE_C_PDO_CHG_STATUS(x)                    (g_pstTypeCStatus[SysTypeCGetTypeCIndex(x)].b1PdoC
@@ -190,7 +190,7 @@ line level    source
              -x)] = (y))
               
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 4   
 
               // STRUCT / TYPE / ENUM DEFINITTIONS
               //****************************************************************************
@@ -254,7 +254,7 @@ line level    source
               
                   _NO_INPUT_PORT,
               };
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 5   
 
               
               //****************************************************************************
@@ -318,7 +318,7 @@ line level    source
               void SysTypeCSetPortControllerPdo(BYTE ucInputPort, EnumTypeCPowerRole enumPowerRole, BYTE ucPdoIndex, Str
              -uctTypeCUserPDO stTypeCUserPdo);
               void SysTypeCSetPortControllerInitRdo(BYTE ucInputPort, StructTypeCUserInitRDO stTypeCUserInitRdo);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 6   
 
               void SysTypeCSetPortControllerRdo(BYTE ucInputPort, StructTypeCUserRDO stTypeCUserRdo);
               void SysTypeCSetPortControllerPdoByKernel(BYTE ucInputPort, EnumTypeCPowerRole enumPowerRole);
@@ -382,7 +382,7 @@ line level    source
               void SysTypeCSetUserEventFlag(BYTE ucInputPort, EnumTypeCUserEvent enumUserEvent);
               bit SysTypeCCheckUserEvent(BYTE ucInputPort, EnumTypeCUserEvent enumUserEvent);
               void SysTypeCUserEventProc(BYTE ucInputPort, WORD usUserEvent);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 7   
 
               void SysTypeCClrUserEventFlag(BYTE ucInputPort, EnumTypeCUserEvent enumUserEvent);
               void SysTypeCSetPdSystemEvent(BYTE ucInputPort, EnumPDSysEvent enumPdSysEvent);
@@ -446,7 +446,7 @@ line level    source
               #endif
               
               #if(_DP_USB_HUB_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 8   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 8   
 
               void SysTypeCUsbHubProc(BYTE ucInputPort);
               #endif
@@ -510,7 +510,7 @@ line level    source
                   ScalerTypeCVbusPoweredSnkInitial(_D0_INPUT_PORT);
               #endif
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 9   
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 9   
 
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                   // 5400 Port Ctrl  : Enable Vender Command
@@ -574,7 +574,7 @@ line level    source
               
                   DebugMessageSystem("8. [TYPE C] <Step 0/2> D1 CC Unattach", _TYPE_C_ATTACHED_STATE);
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 10  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 10  
 
               #if(_D1_DP_TYPE_C_DISCRETE_PORT_CTRL_LINK == _DISCRETE_PORT_CTRL_USE_SMBUS)
                   UserCommonPortControllerSetD1I2CDetection();
@@ -638,7 +638,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 11  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 11  
 
               void SysTypeCHandler(void)
               {
@@ -702,7 +702,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Type-C Handler Used to Sync Port Controller and Scaler
               // Input Value  : ucInputPort --> Inputput
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 12  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 12  
 
               // Output Value : None
               //--------------------------------------------------
@@ -766,7 +766,7 @@ line level    source
               #endif
               
                                   // Set Explicit Contract = True to Scaler Layer Macro
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 13  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 13  
 
                                   SysTypeCSetExplicitContract(ucInputPort, _TRUE);
               
@@ -830,7 +830,7 @@ line level    source
                               }
                               else
                               {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 14  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 14  
 
                                   // 1. Check if Still in DP Alt Mode or Whether Multi-Function Bit Change Done
                                   if((SysTypeCGetPortControllerAltModeReady(ucInputPort) != _TYPE_C_ALT_MODE_READY) || (
@@ -894,7 +894,7 @@ line level    source
                               DebugMessageSystem("8. [TYPE C] <Step 0/2> CC Unattach", _TYPE_C_RECONNECT_STATE);
                           }
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 15  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 15  
 
                           break;
               
@@ -958,7 +958,7 @@ line level    source
                               SET_TYPE_C_EXT_PORT_CTRL_AC_ON_FLAG(_D0_INPUT_PORT);
               
                               // RTS/User Port Ctrl : Set Current Pin Assignment Cap From User
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 16  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 16  
 
                               SET_TYPE_C_CURRENT_PIN_ASSIGNMENT_CAP(_D0_INPUT_PORT, UserCommonPortControllerGetPinAssign
              -mentConfig(_D0_INPUT_PORT));
@@ -1022,7 +1022,7 @@ line level    source
               #endif  // End of #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
               #endif  // End of #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 17  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 17  
 
               #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
@@ -1086,7 +1086,7 @@ line level    source
                       case _POWER_ACTION_PS_TO_OFF:
               
               #if(_PORT_CONTROLLER_EMBEDDED_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 18  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 18  
 
                           ScalerTypeCPowerSwitch(enumSwitch);
               #endif
@@ -1150,7 +1150,7 @@ line level    source
               #if(_TYPE_C_CABLE_STATUS_CHANGE_BY_ALT_MODE_SUPPORT == _ON)
               //--------------------------------------------------
               // Description  : Get ALT Mode Status Change
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 19  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 19  
 
               // Input Value  : ucInputPort
               // Output Value : _TRUE / _FALSE
@@ -1214,7 +1214,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysTypeCSystemPowerManagement(void)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 20  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 20  
 
               {
                   // --------------------------------- NOTE ---------------------------------
@@ -1278,7 +1278,7 @@ line level    source
                       }
               
                       if(stTypeCSrcPdo.usMaxCurrent != stTypeCUserPdo.usMaxCurrent)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 21  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 21  
 
                       {
                           SET_TYPE_C_PDO_CHG_STATUS(ucInputPort);
@@ -1342,7 +1342,7 @@ line level    source
                       if(stTypeCSrcPdo.usSprAvs20VMaxCurrent != stTypeCUserPdo.usSprAvs20VMaxCurrent)
                       {
                           SET_TYPE_C_PDO_CHG_STATUS(ucInputPort);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 22  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 22  
 
                           return;
                       }
@@ -1406,7 +1406,7 @@ line level    source
                               }
                               else
                               {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 23  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 23  
 
                                   SET_TYPE_C_TOTAL_SRC_PDO_CNT(_D0_INPUT_PORT, ucSPRPdoCount);
                               }
@@ -1470,7 +1470,7 @@ line level    source
                               ScalerTypeCSetProtectInfo(_D0_INPUT_PORT, ucPdoIndex, stTypeCUserProtectInfo);
                           }
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 24  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 24  
 
               #endif
               #endif
@@ -1534,7 +1534,7 @@ line level    source
                                   {
                                       SysTypeCSetPortControllerPdo(_D1_INPUT_PORT, _TYPE_C_POWER_SRC, ucPdoIndex, stType
              -CUserPdo);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 25  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 25  
 
                                   }
               
@@ -1598,7 +1598,7 @@ line level    source
                               // 4. Get Total Number of SPR PDO (Enumeration Range 1 ~ 7) and EPR PDO (Enumeration Range
              - 0 ~ 4)
                               UserCommonPortControllerGetPdoCount(_D6_INPUT_PORT, _TYPE_C_POWER_SRC, &ucSPRPdoCount, &uc
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 26  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 26  
 
              -EPRPdoCount);
               
@@ -1662,7 +1662,7 @@ line level    source
                               ScalerTypeCSetProtectInfo(_D6_INPUT_PORT, ucPdoIndex, stTypeCUserProtectInfo);
                           }
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 27  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 27  
 
               #if(_TYPE_C_EMB_PD3_1_EPR_SUPPORT == _ON)
                           for(ucPdoIndex = 8; ucPdoIndex <= (7 + ucEPRPdoCount); ucPdoIndex++)
@@ -1726,7 +1726,7 @@ line level    source
              -EPRPdoCount);
                               SysTypeCSetPortControllerPdoCnt(_D0_INPUT_PORT, _TYPE_C_POWER_SNK, ucSPRPdoCount, ucEPRPdo
              -Count);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 28  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 28  
 
               
                               if(ucEPRPdoCount != 0)
@@ -1790,7 +1790,7 @@ line level    source
                                   SET_TYPE_C_TOTAL_SNK_PDO_CNT(_D1_INPUT_PORT, ucSPRPdoCount);
                               }
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 29  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 29  
 
                               // 4. Get PDO Info and Write to Port Controller
                               for(ucPdoIndex = 1; ucPdoIndex <= GET_TYPE_C_TOTAL_SNK_PDO_CNT(_D1_INPUT_PORT); ucPdoIndex
@@ -1854,7 +1854,7 @@ line level    source
                                   SysTypeCSetPortControllerPdo(_D6_INPUT_PORT, _TYPE_C_POWER_SNK, ucPdoIndex, stTypeCUse
              -rPdo);
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 30  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 30  
 
                                   // Debug Message
                                   DebugMessageSystem("8. [TYPE C] <PDO> ======== PDO Num ========", ucPdoIndex);
@@ -1918,7 +1918,7 @@ line level    source
                               // Set Default Request Info to Port Ctrl, 5V @ 500mA
                               SysTypeCSetPortControllerRdo(_D0_INPUT_PORT, stTypeCUserRdo);
                           }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 31  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 31  
 
                           else
                           {
@@ -1982,7 +1982,7 @@ line level    source
               #if((_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED) && (_TYPE_C_POWER_SOURCE == _TYPE_C_VBUS_P
              -OWER_ONLY))
                           // Default Initial Request for Vbus Powered Sink
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 32  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 32  
 
                           stTypeCInitUserRdo.enumReqType = _TYPE_C_REQ_TARGET_VOL;
                           stTypeCInitUserRdo.enumTargetVolRDO = _TYPE_C_RDO_5_1V;
@@ -2046,7 +2046,7 @@ line level    source
                               UserCommonPortControllerGetRdoInfo(_D0_INPUT_PORT, &stTypeCUserRdo);
                           }
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 33  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 33  
 
                           // Set Request Info to Port Ctrl
                           SysTypeCSetPortControllerRdo(_D0_INPUT_PORT, stTypeCUserRdo);
@@ -2110,7 +2110,7 @@ line level    source
                       default:
               
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 34  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 34  
 
                   }
               }
@@ -2174,7 +2174,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Get Default Type-C Operation Mode From Project Define
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 35  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 35  
 
               // Input Value  : ucInputPort --> Inputput
               // Output Value : Type-C Operation Mode (_TYPE_C_SRC_ONLY_MODE / _TYPE_C_SNK_ONLY_MODE / _TYPE_C_DRP_NO_PR
@@ -2238,7 +2238,7 @@ line level    source
                   switch(ucInputPort)
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 36  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 36  
 
                       case _D0_INPUT_PORT:
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
@@ -2302,7 +2302,7 @@ line level    source
                           return ScalerTypeCGetAltModeReady(ucInputPort);
               #elif((_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES) || (_D0_DP_TYPE_C_PORT_CTRL_TYPE =
              -= _PORT_CONTROLLER_USER))
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 37  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 37  
 
                           return UserCommonPortControllerGetAltModeReady(ucInputPort);
               #endif
@@ -2366,7 +2366,7 @@ line level    source
                           enumOrientation = UserCommonPortControllerGetUserOrientation(_D0_INPUT_PORT);
               #else
                           enumOrientation = _TYPE_C_ORIENTATION_UNFLIP;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 38  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 38  
 
               #endif
               
@@ -2430,7 +2430,7 @@ line level    source
               bit SysTypeCGetPortControllerPinAssignment(BYTE ucInputPort)
               {
                   EnumTypeCPinCfgType enumPinAssignment = _TYPE_C_PIN_ASSIGNMENT_NONE;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 39  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 39  
 
               
                   switch(ucInputPort)
@@ -2494,7 +2494,7 @@ line level    source
               
                           break;
               #endif  // End of #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 40  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 40  
 
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -2558,7 +2558,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           bGetExplicitContract = ScalerTypeCGetExplicitContract(_D0_INPUT_PORT);
               #elif((_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES) && (_TYPE_C_RTS5400_SERIES_PDO_INF
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 41  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 41  
 
              -O_SUPPORT == _ON))
                           bGetExplicitContract = UserCommonPortControllerGet5400ExplicitContract(_D0_INPUT_PORT);
@@ -2622,7 +2622,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 42  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 42  
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           return _FAIL;
@@ -2686,7 +2686,7 @@ line level    source
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 43  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 43  
 
               
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
@@ -2750,7 +2750,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           stTypeCCableInfoForDpcd = ScalerTypeCGetCableInfoForDpcd(_D0_INPUT_PORT);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 44  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 44  
 
                           stTypeCCableInfoForDpcd = UserCommonPortControllerGet5400CableInfoForDpcd(_D0_INPUT_PORT);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
@@ -2814,7 +2814,7 @@ line level    source
               
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 45  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 45  
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
@@ -2878,7 +2878,7 @@ line level    source
                               ucPdoCnt = ucSPRPdoCnt;
                           }
               #elif(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 46  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 46  
 
                           ucPdoCnt = UserCommonPortControllerGetUserPdoCnt(_D1_INPUT_PORT, enumPowerRole);
               #endif
@@ -2942,7 +2942,7 @@ line level    source
                   enumPowerRole = enumPowerRole;
                   ucPdoIndex = ucPdoIndex;
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 47  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 47  
 
                   switch(ucInputPort)
                   {
@@ -3006,7 +3006,7 @@ line level    source
               //--------------------------------------------------
               void SysTypeCUpdateDisplayConfig(BYTE ucInputPort)
               {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 48  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 48  
 
                   // 1. Set DP lANE Mapping According to Pin Assignment and Orientation
                   SysTypeCSetDpLaneMapping(ucInputPort, GET_TYPE_C_PIN_ASSIGNMENT(ucInputPort), GET_TYPE_C_ORIENTATION(u
@@ -3070,7 +3070,7 @@ line level    source
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           ScalerTypeCSetMaxPower(_D6_INPUT_PORT, usMaxPower);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 49  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 49  
 
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                           // UserCommonPortControllerSet5400MaxPower(_D6_INPUT_PORT, usMaxPower);
@@ -3134,7 +3134,7 @@ line level    source
               #elif((_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES) && (_TYPE_C_RTS5400_SERIES_PDO_INF
              -O_SUPPORT == _ON))
               #if(_PORT_CONTROLLER_PD3_1_EPR_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 50  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 50  
 
                           if(UserCommonPortControllerGet5400MaxPower(_D1_INPUT_PORT) != usPresentPower)
                           {
@@ -3198,7 +3198,7 @@ line level    source
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                           // UserCommonPortControllerSet5400SnkInfo(_D0_INPUT_PORT, stTypeCSnkInfo);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 51  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 51  
 
                           // UserCommonPortControllerSetUserSnkInfo(_D0_INPUT_PORT, stTypeCSnkInfo);
               #endif
@@ -3262,7 +3262,7 @@ line level    source
               
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 52  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 52  
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
@@ -3326,7 +3326,7 @@ line level    source
                   ucInputPort = ucInputPort;
                   enumPowerRole = enumPowerRole;
                   ucPdoIndex = ucPdoIndex;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 53  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 53  
 
                   stTypeCUserPdo = stTypeCUserPdo;
               
@@ -3390,7 +3390,7 @@ line level    source
              -e, stTypeCUserPdo.usMaxVoltage, stTypeCUserPdo.enumPeakCurrent);
                           }
                           else if(stTypeCUserPdo.enumPdoType == _PD_3_2_SPR_ADJUSTABLE_PDO)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 54  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 54  
 
                           {
                               ScalerTypeCSetSPRAvsPdo(_D1_INPUT_PORT, enumPowerRole, ucPdoIndex, stTypeCUserPdo.usSprAvs
@@ -3454,7 +3454,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysTypeCSetPortControllerInitRdo(BYTE ucInputPort, StructTypeCUserInitRDO stTypeCUserInitRdo)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 55  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 55  
 
               {
                   ucInputPort = ucInputPort;
@@ -3518,7 +3518,7 @@ line level    source
               void SysTypeCSetPortControllerRdo(BYTE ucInputPort, StructTypeCUserRDO stTypeCUserRdo)
               {
                   ucInputPort = ucInputPort;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 56  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 56  
 
                   stTypeCUserRdo = stTypeCUserRdo;
               
@@ -3582,7 +3582,7 @@ line level    source
               
                           break;
                   }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 57  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 57  
 
               }
               
@@ -3646,7 +3646,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Set DP Lane Mapping According to 5400 / User Pin Assignment
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 58  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 58  
 
               // Input Value  : ucInputPort --> Inputput
               // Output Value : None
@@ -3710,7 +3710,7 @@ line level    source
                           break;
                   }
               }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 59  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 59  
 
               
               //--------------------------------------------------
@@ -3774,7 +3774,7 @@ line level    source
                           {
                               return _TRUE;
                           }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 60  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 60  
 
                           else
                           {
@@ -3838,7 +3838,7 @@ line level    source
                           }
               
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 61  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 61  
 
               
                       case _TYPE_C_POWER_CHG_TO_OFF:
@@ -3902,7 +3902,7 @@ line level    source
                           if((GET_TYPE_C_CAPABILITY_CHG(ucInputPort) & _TYPE_C_UPDATE_SRC_CAP) == _TYPE_C_UPDATE_SRC_CAP
              -)
                           {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 62  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 62  
 
                               return _TRUE;
                           }
@@ -3966,7 +3966,7 @@ line level    source
                               {
                                   bPinAssignmentMismatch = _TRUE;
                               }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 63  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 63  
 
               
                               // Check Negotiated Pin Assignment Not Part of Target Pin Assignment
@@ -4030,7 +4030,7 @@ line level    source
                           }
               
                           // 4-2. Pin Assignment Mismatch Wait Config
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 64  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 64  
 
                           if(enumMismatchAction == _TYPE_C_PIN_ASSIGNMENT_MISMATCH_WAIT_CONFIG)
                           {
@@ -4094,7 +4094,7 @@ line level    source
                       SysTypeCSetPortControllerFunctionSupport(ucInputPort, UserCommonPortControllerGetFunctionSupport(u
              -cInputPort));
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 65  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 65  
 
                       // Get Type-C Operation Mode From User, and Update to Port Controller
                       SysTypeCSetPortControllerOperationMode(ucInputPort, UserCommonPortControllerGetOperationMode(ucInp
@@ -4158,7 +4158,7 @@ line level    source
                       if((stAlertEvent.enumTypeOfAlert & _TYPE_C_TYPE_OF_ALERT_ALL) != _TYPE_C_TYPE_OF_ALERT_NONE)
                       {
                           SysTypeCSetPortControllerAlertEvent(ucInputPort, stAlertEvent);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 66  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 66  
 
                       }
                       else
@@ -4222,7 +4222,7 @@ line level    source
                   bit bControlResult = _FAIL;
                   enumPowerControlStatus = enumPowerControlStatus;
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 67  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 67  
 
                   switch(ucInputPort)
                   {
@@ -4286,7 +4286,7 @@ line level    source
               // Input Value  : ucInputPort --> Inputput
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 68  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 68  
 
               void SysTypeCPortCtrlPowerOnProc(BYTE ucInputPort)
               {
@@ -4350,7 +4350,7 @@ line level    source
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D6_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 69  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 69  
 
               
                           break;
@@ -4414,7 +4414,7 @@ line level    source
               {
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 70  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 70  
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
@@ -4478,7 +4478,7 @@ line level    source
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           ScalerTypeCCcFunctionControl(_D1_INPUT_PORT, enumCcFunction);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 71  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 71  
 
               #elif(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                           UserCommonPortController5400CcFunctionControl(_D1_INPUT_PORT, enumCcFunction);
@@ -4542,7 +4542,7 @@ line level    source
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 72  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 72  
 
               #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           // ScalerTypeCSetTargetPowerMode(_D1_INPUT_PORT, enumPowerRole);
@@ -4606,7 +4606,7 @@ line level    source
                   SET_TYPE_C_ORIENTATION(ucInputPort, _TYPE_C_ORIENTATION_NONE);
                   SysTypeCSetExplicitContract(ucInputPort, _FALSE);
                   SET_TYPE_C_PIN_ASSIGNMENT(ucInputPort, _TYPE_C_PIN_ASSIGNMENT_NONE);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 73  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 73  
 
                   SysTypeCUpdateDisplayConfig(ucInputPort);
               
@@ -4670,7 +4670,7 @@ line level    source
               
                       default:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 74  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 74  
 
                           return _FAIL;
               
@@ -4734,7 +4734,7 @@ line level    source
                           ScalerTimerActiveTimerEvent(SEC(0.5), _SYSTEM_TIMER_EVENT_D6_TYPE_C_UNATTACH);
               #endif
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 75  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 75  
 
               #endif  // End of #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               
@@ -4798,7 +4798,7 @@ line level    source
               
                   // Update Pin Assignment Capability (From User)
                   enumPinAssignmentCap = UserCommonPortControllerGetPinAssignmentConfig(ucInputPort);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 76  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 76  
 
                   SET_TYPE_C_TARGET_PIN_ASSIGNMENT_CAP(ucInputPort, enumPinAssignmentCap);
               
@@ -4862,7 +4862,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysTypeCSetPortControllerFunctionSupport(BYTE ucInputPort, EnumTypeCFunctionSupport enumFunctionSuppo
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 77  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 77  
 
              -rt)
               {
@@ -4926,7 +4926,7 @@ line level    source
               
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 78  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 78  
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
@@ -4990,7 +4990,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           // Request Embedded TypeC to Send Status Message
                           ScalerTypeCSetPdSystemEvent(_D0_INPUT_PORT, _PD_SYS_EVENT_STATUS_EVENT);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 79  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 79  
 
               
                           // Set Status Info to Embedded Port Ctrl
@@ -5054,7 +5054,7 @@ line level    source
               void SysTypeCSetPortControllerAlertEvent(BYTE ucInputPort, StructTypeCAlertEvent stTypeCAlertEvent)
               {
                   stTypeCAlertEvent = stTypeCAlertEvent;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 80  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 80  
 
               
                   if(SysTypeCGetPortControllerCcAttach(ucInputPort) == _TYPE_C_ATTACH)
@@ -5118,7 +5118,7 @@ line level    source
                       }
                   }
                   else
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 81  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 81  
 
                   {
                       DebugMessageTypeC("[TYPE C] Alert Message Can't be Send without CC Attach", 0);
@@ -5182,7 +5182,7 @@ line level    source
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // stTypeCPartnerStatusEvent = UserCommonUsbTypeCUserGetPartnerStatusInfo(_D6_INPUT_PORT);
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 82  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 82  
 
               
                           break;
@@ -5246,7 +5246,7 @@ line level    source
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           stTypeCPartnerAlertEvent = ScalerTypeCGetPartnerAlertInfo(_D6_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 83  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 83  
 
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                           // stTypeCPartnerAlertEvent = UserCommonUsbTypeCRtsGetPartnerAlertInfo(_D6_INPUT_PORT);
@@ -5310,7 +5310,7 @@ line level    source
                           enumPortCtrlEvent = ScalerTypeCGetPortCtrlEvent(_D6_INPUT_PORT);
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
                           enumPortCtrlEvent = UserCommonPortController5400GetPortCtrlEvent(_D6_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 84  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 84  
 
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // enumPortCtrlEvent = UserCommonPortControllerUserGetPortCtrlEvent(_D6_INPUT_PORT);
@@ -5374,7 +5374,7 @@ line level    source
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // UserCommonPortControllerUserClrPortCtrlEvent(_D6_INPUT_PORT, enumPortCtrlEvent);
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 85  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 85  
 
                           break;
               #endif
@@ -5438,7 +5438,7 @@ line level    source
                               return _TRUE;
                           }
                           else
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 86  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 86  
 
                           {
                               return _FALSE;
@@ -5502,7 +5502,7 @@ line level    source
                   EnumTypeCDataRole enumTypeCDataRole = _TYPE_C_DATA_ROLE_NONE;
               
                   if(SysTypeCGetCcAttach(ucInputPort) == _FALSE)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 87  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 87  
 
                   {
                       return enumTypeCDataRole;
@@ -5566,7 +5566,7 @@ line level    source
               // Output Value : EnumTypeCPowerRole (_TYPE_C_POWER_ROLE_NONE / _TYPE_C_POWER_SNK / _TYPE_C_POWER_SRC)
               //--------------------------------------------------
               EnumTypeCPowerRole SysTypeCGetPowerRole(BYTE ucInputPort)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 88  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 88  
 
               {
                   EnumTypeCPowerRole enumTypeCPowerRole = _TYPE_C_POWER_ROLE_NONE;
@@ -5630,7 +5630,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 89  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 89  
 
               // Description  : Get Port Controller Port Partner Flag (Current Operating Mode)
               // Input Value  : ucInputPort --> Inputput
@@ -5694,7 +5694,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Return Type C Total Source PDO Count
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 90  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 90  
 
               // Input Value  : ucInputPort
               // Output Value : Total Source PDO Count
@@ -5758,7 +5758,7 @@ line level    source
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 91  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 91  
 
               
                           ucTotalSnkPdoCnt = GET_TYPE_C_TOTAL_SNK_PDO_CNT(_D1_INPUT_PORT);
@@ -5822,7 +5822,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Get Port Controller Number of Partner Src/Snk PDOs
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 92  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 92  
 
               // Input Value  : ucInputPort
               //                enumPowerRole : _TYPE_C_POWER_SRC / _TYPE_C_POWER_SNK
@@ -5886,7 +5886,7 @@ line level    source
                               ucPdoCnt = 7 + ucEPRPdoCnt;
                           }
                           else
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 93  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 93  
 
                           {
                               ucPdoCnt = ucSPRPdoCnt;
@@ -5950,7 +5950,7 @@ line level    source
                       return stTypeCPartnerPdo;
                   }
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 94  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 94  
 
                   switch(ucInputPort)
                   {
@@ -6014,7 +6014,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Get Port Controller Negotiated Voltage / Current
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 95  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 95  
 
               // Input Value  : ucInputPort, Voltage (10mV) / Current (10mA)
               // Output Value : None
@@ -6078,7 +6078,7 @@ line level    source
                       case _D6_INPUT_PORT:
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 96  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 96  
 
                           // CC Attached, Power Contract Established : Return Negotiated Voltage & Current
                           // CC Attached, No Power Contract : Return 5V / Current According to Rp Value
@@ -6142,7 +6142,7 @@ line level    source
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           stTypeCSrcPdo = ScalerTypeCGetRequestedSrcPdo(_D1_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 97  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 97  
 
               #elif((_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES) && (_TYPE_C_RTS5400_SERIES_PDO_INF
              -O_SUPPORT == _ON))
@@ -6206,7 +6206,7 @@ line level    source
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 98  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 98  
 
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
@@ -6270,7 +6270,7 @@ line level    source
               #endif
               
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 99  
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 99  
 
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               
@@ -6334,7 +6334,7 @@ line level    source
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // usAdcOutputVoltage = UserCommonPortControllerGetUserAdcOutputVoltage(_D0_INPUT_PORT);
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 100 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 100 
 
               
                           break;
@@ -6398,7 +6398,7 @@ line level    source
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // usAdcOutputCurrent = UserCommonPortControllerGetUserAdcOutputCurrent(_D0_INPUT_PORT);
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 101 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 101 
 
               
                           break;
@@ -6462,7 +6462,7 @@ line level    source
               {
                   BYTE ucPortOpMode = 0x00;
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 102 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 102 
 
                   ucInputPort = ucInputPort;
               
@@ -6526,7 +6526,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 103 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 103 
 
               // Description  : Set Explicit Contract Info to Scaler Macro
               // Input Value  : ucInputPort, bGetExplicitContract
@@ -6590,7 +6590,7 @@ line level    source
                   {
                       ucIndex = ucIndex + 1;
                   }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 104 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 104 
 
               
               #endif
@@ -6654,7 +6654,7 @@ line level    source
               
                           break;
                   }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 105 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 105 
 
                   return _FALSE;
               }
@@ -6718,7 +6718,7 @@ line level    source
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 106 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 106 
 
               
                           UserCommonNVRamSetSystemData(_DP_D1_LANES, enumDpLaneCount);
@@ -6782,7 +6782,7 @@ line level    source
                   }
               
                   return bAcOnFlag;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 107 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 107 
 
               }
               
@@ -6846,7 +6846,7 @@ line level    source
               
                           CLR_TYPE_C_CAPABILITY_CHG(_D1_INPUT_PORT, enumCapability);
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 108 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 108 
 
                           break;
               #endif
@@ -6910,7 +6910,7 @@ line level    source
               bit SysTypeCCheckUserEvent(BYTE ucInputPort, EnumTypeCUserEvent enumUserEvent)
               {
                   switch(enumUserEvent)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 109 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 109 
 
                   {
                       case _TYPE_C_USER_EVENT_SEND_HARD_RESET:
@@ -6974,7 +6974,7 @@ line level    source
               #endif
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 110 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 110 
 
                       case _D1_INPUT_PORT:
               
@@ -7038,7 +7038,7 @@ line level    source
                       case _D6_INPUT_PORT:
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 111 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 111 
 
                           ScalerTypeCSetPdSystemEvent(_D6_INPUT_PORT, enumPdSysEvent);
               #elif(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
@@ -7102,7 +7102,7 @@ line level    source
               #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D6_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 112 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 112 
 
               #if(_D6_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           stDpStatusInfo = ScalerTypeCGetDpStatusInfo(_D6_INPUT_PORT);
@@ -7166,7 +7166,7 @@ line level    source
                               // Get LenovoDockEvent from User
                               UserCommonInterfaceTypeCGetLenovoDockingEvent(ucInputPort, &stLenovoDockEvent);
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 113 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 113 
 
                               // Set LenovoDockEvent to Port Ctrl
                               SysTypeCSetPortControllerLenovoDockingEvent(ucInputPort, stLenovoDockEvent);
@@ -7230,7 +7230,7 @@ line level    source
                   StructTypeCHpSysEvent stHpSysEvent = {_TYPE_C_HP_SYS_EVENT_NONE, {0x00}, 0x00};
                   StructTypeCHpUserEvent stHpUserEvent = {_TYPE_C_HP_USER_EVENT_NONE, {0x00}, 0x00};
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 114 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 114 
 
                   if(SysTypeCGetPortControllerHpAltModeReady(ucInputPort) == _TYPE_C_HP_ALT_MODE_READY)
                   {
@@ -7294,7 +7294,7 @@ line level    source
                   SET_TYPE_C_LENOVO_DEVICE_TYPE(ucInputPort, _TYPE_C_LENOVO_DEVICE_TYPE_NONE);
                   CLR_TYPE_C_LENOVO_RCV_DEVICE_TYPE_TIMEOUT(ucInputPort);
               }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 115 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 115 
 
               
               //--------------------------------------------------
@@ -7358,7 +7358,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Get Port Partner Lenovo Device Type from Port Controller
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 116 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 116 
 
               // Input Value  : ucInputPort --> Inputput
               // Output Value : Lenovo Device Type
@@ -7422,7 +7422,7 @@ line level    source
               // Output Value : NONE
               //--------------------------------------------------
               void SysTypeCActiveLenovoRcvDeviceTypeTimerEvent(BYTE ucInputPort, WORD usTimeoutCnt)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 117 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 117 
 
               {
                   switch(ucInputPort)
@@ -7486,7 +7486,7 @@ line level    source
               #endif
               
               #if(_D6_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 118 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 118 
 
                       case _D6_INPUT_PORT:
               
@@ -7550,7 +7550,7 @@ line level    source
                   StructTypeCLenovoSysEvent stLenovoSysEvent = {_TYPE_C_LENOVO_SYS_DC_MODE, _TYPE_C_LENOVO_SYS_STATE_NON
              -E, _FALSE, 0x00, 0x00};
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 119 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 119 
 
                   switch(ucInputPort)
                   {
@@ -7614,7 +7614,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 120 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 120 
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           ScalerTypeCSetLenovoDockingEvent(_D0_INPUT_PORT, stLenovoDockEvent);
@@ -7678,7 +7678,7 @@ line level    source
                           return UserCommonPortControllerCheckUserLenovoDockingEventBusy(_D0_INPUT_PORT);
               #endif
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 121 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 121 
 
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               
@@ -7742,7 +7742,7 @@ line level    source
               
               #if(_TYPE_C_VENDOR_ALT_MODE == _TYPE_C_ACER_ALT_MODE)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 122 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 122 
 
               // Description  : Get Port Controller Acer Alt Mode Ready Info
               // Input Value  : ucInputPort --> Inputput
@@ -7806,7 +7806,7 @@ line level    source
               // Description  : Type C Acer Alt Mode Get System Event
               // Input Value  : ucInputPort
               // Output Value : StructTypeCAcerSysEvent
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 123 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 123 
 
               //--------------------------------------------------
               StructTypeCAcerSysEvent SysTypeCGetPortControllerAcerSystemEvent(BYTE ucInputPort)
@@ -7870,7 +7870,7 @@ line level    source
               void SysTypeCSetPortControllerAcerUserEvent(BYTE ucInputPort, StructTypeCAcerUserEvent stAcerUserEvent)
               {
                   switch(ucInputPort)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 124 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 124 
 
                   {
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -7934,7 +7934,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 125 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 125 
 
                           enumCheckBusyResult = ScalerTypeCCheckAcerUserEventBusy(_D0_INPUT_PORT);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
@@ -7998,7 +7998,7 @@ line level    source
               // Description  : Get Port Controller Hp Alt Mode Ready Info
               // Input Value  : ucInputPort --> Inputput
               // Output Value : Hp Alt Mode Ready Status (_TYPE_C_HP_ALT_MODE_READY / _TYPE_C_HP_ALT_MODE_NOT_READY)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 126 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 126 
 
               //--------------------------------------------------
               EnumTypeCHpAltModeStatus SysTypeCGetPortControllerHpAltModeReady(BYTE ucInputPort)
@@ -8062,7 +8062,7 @@ line level    source
               StructTypeCHpSysEvent SysTypeCGetPortControllerHpSystemEvent(BYTE ucInputPort)
               {
                   StructTypeCHpSysEvent stHpSysEvent = {_TYPE_C_HP_SYS_EVENT_NONE, {0x00}, 0x00};
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 127 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 127 
 
               
                   switch(ucInputPort)
@@ -8126,7 +8126,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 128 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 128 
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           ScalerTypeCSetHpUserEvent(_D0_INPUT_PORT, stHpUserEvent);
@@ -8190,7 +8190,7 @@ line level    source
                           // enumCheckBusyResult = UserCommonPortControllerCheck5400HpUserEventBusy(_D0_INPUT_PORT);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
                           // enumCheckBusyResult = UserCommonPortControllerCheckUserHpUserEventBusy(_D0_INPUT_PORT);
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 129 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 129 
 
               #endif
                           break;
@@ -8254,7 +8254,7 @@ line level    source
               {
                   EnumTypeCDellAltModeStatus enumDellAltModeStatus = _TYPE_C_DELL_ALT_MODE_NOT_READY;
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 130 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 130 
 
                   switch(ucInputPort)
                   {
@@ -8318,7 +8318,7 @@ line level    source
               
                   switch(ucInputPort)
                   {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 131 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 131 
 
               #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _D0_INPUT_PORT:
@@ -8382,7 +8382,7 @@ line level    source
               #if(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_EMBEDDED)
                           ScalerTypeCSetDellUserEvent(_D0_INPUT_PORT, stDellUserEvent);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_RTS5400_SERIES)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 132 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 132 
 
                           // UserCommonUsbTypeCRtsSetDellUserEvent(_D0_INPUT_PORT, stDellUserEvent);
               #elif(_D0_DP_TYPE_C_PORT_CTRL_TYPE == _PORT_CONTROLLER_USER)
@@ -8446,7 +8446,7 @@ line level    source
              -);
               #endif
                           break;
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 133 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 133 
 
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
               
@@ -8510,7 +8510,7 @@ line level    source
               #endif
                           break;
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 134 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 134 
 
               
               #if(_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -8574,7 +8574,7 @@ line level    source
                           // enumEnterDellAMTimeOutResult = UserCommonPortControllerGetUserEnterDellAltModeTimeOut(_D0_I
              -NPUT_PORT);
               #endif
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 135 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 135 
 
                           break;
               #endif  // End of #if(_D0_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
@@ -8638,7 +8638,7 @@ line level    source
               //--------------------------------------------------
               EnumTypeCEnterDellAltModeTimeOut SysTypeCGetEnterDellAltModeTimeOut(BYTE ucInputPort)
               {
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 136 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 136 
 
                   return SysTypeCGetPortControllerEnterDellAltModeTimeOut(ucInputPort);
               }
@@ -8702,7 +8702,7 @@ line level    source
              -INK != _DISCRETE_PORT_CTRL_USE_SMBUS)))
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 137 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 137 
 
               // Description  : Cancel Timer Event Which Set Type C to Unattach State
               // Input Value  : ucInputPort --> Inputput
@@ -8766,7 +8766,7 @@ line level    source
               #if((_D1_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON) && (_D1_BILLBOARD_SUPPORT == _ON))
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 138 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 138 
 
                           ScalerTimerActiveTimerEvent(usTimeoutCnt, _SYSTEM_TIMER_EVENT_D1_ENABLE_BILLBOARD);
               
@@ -8830,7 +8830,7 @@ line level    source
               // Description  : Type-C Billboard Control
               // Input Value  : _TYPE_C_BB_DISABLE / _TYPE_C_BB_ENABLE
               // Output Value : None
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 139 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 139 
 
               //--------------------------------------------------
               void SysTypeCBillboardControl(BYTE ucInputPort, EnumBillboardCtrl enumAtion)
@@ -8894,7 +8894,7 @@ line level    source
               {
               #if(_USB3_RETIMER_SUPPORT == _ON)
                   // Process Hub UFP Switch
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 140 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 140 
 
                   if(SysTypeCCheckCapabilityChange(ucInputPort, _TYPE_C_HUB_INPUT_SWITCH_CHG) == _TRUE)
                   {
@@ -8958,7 +8958,7 @@ line level    source
                           break;
                   }
               }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 141 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 141 
 
               
               //--------------------------------------------------
@@ -9022,7 +9022,7 @@ line level    source
               #endif
               
                           default:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 142 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 142 
 
                               break;
                       }
@@ -9086,7 +9086,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Set Usb Hub Config U3 Delay Time
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 143 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 143 
 
               // Input Value  : ucInputPort --> Input Port
               // Output Value : Usb Hub Info
@@ -9150,7 +9150,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysTypeCD0UsbHubDetectProc(void)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 144 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 144 
 
               {
                   CLR_D0_USB_HUB_PLUG_DEVICE_CHANGE_FLG();
@@ -9214,7 +9214,7 @@ line level    source
               
                       case _USB_MODE_STATUS_DETECT_SS_STATE:
                       case _USB_MODE_STATUS_SS_STATE:
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 145 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 145 
 
               
                           if(GET_D1_USB_HUB_SS_DEVICE_DETECT_FLG() == _TRUE)
@@ -9278,7 +9278,7 @@ line level    source
                                   DebugMessageSystem("8. [TYPE C] <HUB> D6 Hub Info Change", GET_D6_USB_HUB_PLUG_DEVICE_
              -CHANGE_FLG());
                               }
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 146 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 146 
 
                           }
               
@@ -9342,7 +9342,7 @@ line level    source
               // Description  : Control Retimer/Hub Enable/Disable
               // Input Value  : ucInputPort
               // Output Value : None
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 147 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 147 
 
               //--------------------------------------------------
               void SysTypeCHubInputSwitchProc(BYTE ucInputPort)
@@ -9406,7 +9406,7 @@ line level    source
               #endif // End of #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
 8656          
 8657          #if(_TYPE_C_GPIO_MODE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/21/2026 15:31:53 PAGE 148 
+C51 COMPILER V9.60.0.0   SYSTYPEC                                                          09/24/2026 09:29:52 PAGE 148 
 
               //--------------------------------------------------
               // Description  : Return CC Pin Status

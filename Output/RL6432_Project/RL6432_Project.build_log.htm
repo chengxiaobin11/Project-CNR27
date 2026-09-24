@@ -576,24 +576,24 @@ User command #2: ".\Tool\build\link_hdr.bat" "C:\Keil_v5\" .\STD_FW_1P.uvproj RL
 opt	: opt(3), sort, hex2bin(.\HexToBin.exe)
 lib	: 189 extracted
 misc	: m51:.\Output\RL6432_Project.m51, 
-group0	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
+group0	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
 group1	: SCALERCOMMONMCU, SCALERMCU, SYSMAIN
-group2	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
-group3	: RTDFACTORYFUNCTION, RTDFACTORYMODE
-group4	: SCALERCOMMONFREESYNC, SCALERSYNC
+group2	: RTDFACTORYFUNCTION, RTDFACTORYMODE
+group3	: SCALERCOMMONFREESYNC, SCALERSYNC
+group4	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
 banked	: 0x343d-0xfeff (guard = 0x100)
 Linking #1...
 banks	: [0, 1, 2, 3, 4, 5, 6, 7, 8]
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DRAWEDIDINFO?RTDFACTORYFUNCTION
-Program Size: data=90.3 xdata=4360 code=443557
+Program Size: data=90.3 xdata=4360 code=443574
 Done.                                        - 0 Error(s), 1 Warning(s)
 D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin del .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin 
 D:\Workdir\workdir\Project-CNR27>.\AddCheckSum.exe .\Output\RL6432_Project\RL6432_Project.bin  .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin BANK1 .\Output\RL6432_Project_1\HDR.bin HdrBank14 
 The file .\Output\RL6432_Project_1\HDR.bin can't open!
 D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project_1\RL6432_Project.bin del .\Output\RL6432_Project_1\RL6432_Project.bin 
 ".\Output\RL6432_Project\RL6432_Project.LIB" - 0 Error(s), 46 Warning(s).
-Build Time Elapsed:  00:02:17
+Build Time Elapsed:  00:02:16
 </pre>
 </body>
 </html>

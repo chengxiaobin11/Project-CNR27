@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONSYNC
@@ -62,7 +62,7 @@ line level    source
   43          // CODE TABLES
   44          //****************************************************************************
   45          
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 2   
 
   46          //****************************************************************************
   47          // VARIABLE DECLARATIONS
@@ -126,7 +126,7 @@ line level    source
  105          StructDpPortHpdAssertType g_stHpdType =
  106          {
  107          #if(_D0_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 3   
 
  108              _DP_HPD_NONE,
  109          #endif
@@ -190,7 +190,7 @@ line level    source
  167          
  168          #endif // End of #if(_DP_SUPPORT == _ON)
  169          
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 4   
 
  170          #if(_DP_TX_SUPPORT == _ON)
               StructDPTxStatusInfo g_stDpTxStatus;
@@ -254,7 +254,7 @@ line level    source
               StructDigitalColorInfo g_stTMDSRx0ColorInfo;
               StructDigitalColorInfoChanged g_stTMDSRx0ColorInfoChanged;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 5   
 
  231          
  232          #if((_D1_HDMI_SUPPORT == _ON) && (_TMDS_COMBO_EXIST == _OFF))
@@ -318,7 +318,7 @@ line level    source
  290          BYTE g_ucCheckUrgentEventOccured;
  291          #endif
  292          
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 6   
 
  293          #if(_HDMI_SUPPORT == _ON)
  294          BYTE g_pucTMDSRxAviInfo[6];
@@ -382,7 +382,7 @@ line level    source
               bit ScalerSyncFreeSyncIIGetCurrentStatus(StructFreeSyncIIInfo *pstFreeSyncIIMetadata, EnumSourceSearchPort
              - enumSourceSearchPort);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 7   
 
  350          #endif
  351          
@@ -446,7 +446,7 @@ line level    source
               #endif
  409          
  410          #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 8   
 
  411          
  412          #if(_DP_TX_SUPPORT == _ON)
@@ -510,7 +510,7 @@ line level    source
  469          bit ScalerSyncHDMIDdcCheckBusy(BYTE ucInputPort, EnumTMDSDdcDebounceType enumTmdsDdcDebounceType, BYTE ucD
              -ebounceTimeScale, WORD usDebounceTimePeriod);
  470          #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 9   
 
  471          void ScalerSyncTMDSHPDToggleProc(void);
  472          void ScalerSyncTMDSSetHdmiZ0HpdType(EnumHdmiZ0HpdType enumHdmiZ0HpdType, WORD usZ0LowPeriod, WORD usZ0HpdI
@@ -574,7 +574,7 @@ line level    source
               void ScalerSyncTMDSRx2HdmiVideoSetting(void);
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 10  
 
               void ScalerSyncTMDSRx2HdmiColorimetrySetting(void);
               void ScalerSyncTMDSRx2HdmiColorimetryExtSetting(void);
@@ -638,7 +638,7 @@ line level    source
  587          //****************************************************************************
  588          // FUNCTION DEFINITIONS
  589          //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 11  
 
  590          #if(_FREESYNC_SUPPORT == _ON)
  591          //--------------------------------------------------
@@ -702,7 +702,7 @@ line level    source
  649   1          switch(ucInputPort)
  650   1          {
  651   2              case _D0_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 12  
 
  652   2                  return GET_FREESYNC_VER_D0_BY_EDID();
  653   2      
@@ -766,7 +766,7 @@ line level    source
  709   1          StructHDR10StaticMetaData stHDR10InfoData;
  710   1      #endif
  711   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 13  
 
  712   1      #if(_FREESYNC_II_SUPPORT == _ON)
                   StructFreeSyncIIInfo stFreeSyncIIData;
@@ -830,7 +830,7 @@ line level    source
  771   2      
  772   2              case _D1_INPUT_PORT:
  773   2      #if(_D1_HDMI_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 14  
 
                           if(_HDMI_HDR10_SUPPORT == _OFF)
                           {
@@ -894,7 +894,7 @@ line level    source
  833          
  834          //--------------------------------------------------
  835          // Description  : Get Current HDR data
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 15  
 
  836          // Input Value  : stHDRSaticMetadata --> HDR data
  837          //                enumSourceSearchPort --> Input port
@@ -958,7 +958,7 @@ line level    source
               #endif
  895   3      
  896   3      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 16  
 
  897   3      #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
               
@@ -1022,7 +1022,7 @@ line level    source
                               GET_TMDSRX5_HDR10_DATA(pucHDRInfoData);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 17  
 
               #endif // End of #if(_HDMI_HDR10_SUPPORT == _ON)
               #endif
@@ -1086,7 +1086,7 @@ line level    source
 1010   1          pstHDRSaticMetadata->usMinDisplayMasteringLv = 0x0000;
 1011   1      
 1012   1          pstHDRSaticMetadata->usMaxCLL = 0x0000;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 18  
 
 1013   1          pstHDRSaticMetadata->usMaxFALL = 0x0000;
 1014   1      
@@ -1150,7 +1150,7 @@ line level    source
               
                           switch(enumDPGetRSV0InfoStatus)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 19  
 
                               case _DP_GET_RSV0_INFO_INITIAL:
                               default:
@@ -1214,7 +1214,7 @@ line level    source
               
                                   break;
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 20  
 
               
                           break;
@@ -1278,7 +1278,7 @@ line level    source
 1191          #endif // End of #if(_DP_ULTRA_HDR_SUPPORT == _ON)
 1192          
 1193          #if(_FREESYNC_II_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 21  
 
               //--------------------------------------------------
               // Description  : Get Current FreeSync II data enable status
@@ -1342,7 +1342,7 @@ line level    source
               #if(_D3_HDMI_SUPPORT == _ON)
                           if(_HDMI_FREESYNC_II_SUPPORT == _OFF)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 22  
 
                               return _FALSE;
                           }
@@ -1406,7 +1406,7 @@ line level    source
               #else
                               bFreeSyncIIInfoReceive = _TRUE;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 23  
 
                               memcpy(pucFreeSyncIIInfoData, g_pucDPRx0RSV0Backup, _HW_DP_INFOFRAME_RSV0_LENGTH);
                               break;
@@ -1470,7 +1470,7 @@ line level    source
                               bFreeSyncIIInfoReceive = GET_TMDS_RX0_SPD_INFO_FRAME_RECEIVED();
               #else
                               bFreeSyncIIInfoReceive = GET_TMDS_RX2_SPD_INFO_FRAME_RECEIVED();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 24  
 
               #endif
               
@@ -1534,7 +1534,7 @@ line level    source
                   pstFreeSyncIIMetadata->b5EOTFType = 0x00;
                   pstFreeSyncIIMetadata->ucBacklightControlRatio = 0x00;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 25  
 
                   return _FALSE;
               }
@@ -1598,7 +1598,7 @@ line level    source
 1496   2              // D0 Port Version Switch
 1497   2      #if(_D0_DP_EXIST == _ON)
 1498   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 26  
 
 1499   2      #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
                       if(GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT)
@@ -1662,7 +1662,7 @@ line level    source
 1556   4                      CLR_DP_RX_D0_EDID_SWITCH();
 1557   4      
 1558   4                      bDPRx0DoLongHotPlug = _TRUE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 27  
 
 1559   4                  }
 1560   3      
@@ -1726,7 +1726,7 @@ line level    source
                               ScalerDpRx0SetDpcdBitValue(0x00, 0x00, 0x02, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), GET
              -_DP_RX_D6_PORT_TARGET_LANE_COUNT());
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 28  
 
                               bDPRx0DoLongHotPlug = _TRUE;
                           }
@@ -1790,7 +1790,7 @@ line level    source
 1671   3      #if(_DP_MST_SUPPORT == _ON)
                           if(ScalerDpRxMstGetMstCapability(_D0_INPUT_PORT) == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 29  
 
                               ScalerDpRx0SetHotPlugEvent(_DP_MST_LONG_HPD_EVENT);
                           }
@@ -1854,7 +1854,7 @@ line level    source
                       if(ScalerDpRx1GetDpcdBitInfo(0x00, 0x00, 0x02, (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)) != GET_DP_
              -RX_D1_PORT_TARGET_LANE_COUNT())
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 30  
 
                           ScalerDpRx1SetDpcdBitValue(0x00, 0x00, 0x02, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), GET_DP_
              -RX_D1_PORT_TARGET_LANE_COUNT());
@@ -1918,7 +1918,7 @@ line level    source
                           {
                               ScalerDpRx1SetHotPlugEvent(_DP_LONG_HPD_EVENT);
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 31  
 
                       }
               
@@ -1982,7 +1982,7 @@ line level    source
                               {
                                   ScalerDpRx0ChangeDpcdVersion(GET_DP_RX_D0_PORT_TARGET_VERSION(), _DP_MST_NO_PORT);
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 32  
 
                           }
               #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
@@ -2046,7 +2046,7 @@ line level    source
                           if(GET_DP_RX_TARGET_MST_PORT() == _DP_MST_RX1_PORT)
                           {
                               ScalerDpRx1ChangeDpcdVersion(GET_DP_RX_D1_PORT_TARGET_VERSION(), _DP_MST_RX1_PORT);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 33  
 
                           }
                           else
@@ -2110,7 +2110,7 @@ line level    source
               #endif// End of #if(_D0_DP_EXIST == _ON)
               
               #if(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 34  
 
                       // Align 0220Xh & 0000Xh
                       for(pData[0] = 0x02; pData[0] <= 0x0F; pData[0]++)
@@ -2174,7 +2174,7 @@ line level    source
 2024   4                          return _TRUE;
 2025   4                      }
 2026   3      #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 35  
 
 2027   3                  }
 2028   2      
@@ -2238,7 +2238,7 @@ line level    source
 2085          // Input Value  : enumInputPort
 2086          // Output Value : _HIGH / _LOW
 2087          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 36  
 
 2088          bit ScalerSyncDpGetHotPlugStatus(EnumSourceSearchPort enumInputPort)
 2089          {
@@ -2302,7 +2302,7 @@ line level    source
 2146   2      #endif
 2147   2      
 2148   2      #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 37  
 
                       case _D1_INPUT_PORT:
               
@@ -2366,7 +2366,7 @@ line level    source
               
                           return (PCB_D2_HOTPLUG_DETECT() == _D2_HOT_PLUG_HIGH);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 38  
 
 2210   2      
 2211   2              default:
@@ -2430,7 +2430,7 @@ line level    source
                           {
                               if(ScalerAudioDpGetCapabilityState(_D1_INPUT_PORT) == _AUDIO_DP_DPCD_SUPPORT)
                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 39  
 
               #if(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_ALL)
                                   ScalerDpRx0SetDpcdValue(0x00, 0x00, 0x04, 0x01);
@@ -2494,7 +2494,7 @@ line level    source
                               if(ScalerAudioDpGetCapabilityState(_D2_INPUT_PORT) == _AUDIO_DP_DPCD_SUPPORT)
                               {
               #if(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_ALL)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 40  
 
                                   ScalerDpRx0SetDpcdValue(0x00, 0x00, 0x04, 0x01);
               
@@ -2558,7 +2558,7 @@ line level    source
                               if(ScalerAudioDpGetCapabilityState(_D0_INPUT_PORT) == _AUDIO_DP_DPCD_SUPPORT)
                               {
                                   ScalerDpRx0SetDpcdValue(0x00, 0x00, 0x04, 0x01);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 41  
 
               
                                   ScalerDpRx0SetDpcdValue(0x00, 0x00, 0x0A, 0x06);
@@ -2622,7 +2622,7 @@ line level    source
                                   ScalerDpRx0SetDpcdBitValue(0x00, 0x22, 0x07, ~_BIT6, _BIT6);
               #endif
 2457   4                      }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 42  
 
 2458   3                      else
 2459   3                      {
@@ -2686,7 +2686,7 @@ line level    source
               #endif
 2518   2      
 2519   2      #if(_D2_INPUT_PORT_TYPE == _D2_DP_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 43  
 
                       case _D2_INPUT_PORT:
               
@@ -2750,7 +2750,7 @@ line level    source
                               }
                               else
                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 44  
 
                                   ScalerDpRx0SetDpcdBitValue(0x00, 0x00, 0x07, ~_BIT6, 0x00);
               
@@ -2814,7 +2814,7 @@ line level    source
                           }
               
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 45  
 
               #endif
               
@@ -2878,7 +2878,7 @@ line level    source
                               if(GET_DP_RX2_ADAPTIVESYNC_SUPPORT() == _DP_ADAPTIVESYNC_SUPPORT_ON)
                               {
               #if(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_ALL)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 46  
 
                                   ScalerDpRx0SetDpcdBitValue(0x00, 0x00, 0x07, ~_BIT6, _BIT6);
               
@@ -2942,7 +2942,7 @@ line level    source
               
               #if(_HW_DP_DPCD_EXT_CAP_PHYSICAL_ADDRESS_SUPPORT == _ON)
                                   ScalerDpRx0SetDpcdBitValue(0x00, 0x22, 0x07, ~_BIT6, 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 47  
 
               #endif
                                   g_ucDpRx0DPCD02214hValue = 0x00;
@@ -3006,7 +3006,7 @@ line level    source
               
                       default:
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 48  
 
                   }
               
@@ -3070,7 +3070,7 @@ line level    source
 2889   2                  break;
 2890   2          }
 2891   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 49  
 
 2892   1          return _FALSE;
 2893   1      }
@@ -3134,7 +3134,7 @@ line level    source
 2951   1          // Check HDCP Enable Status
 2952   1          if(ScalerDpRx0HdcpCheckEnabled() == _TRUE)
 2953   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 50  
 
 2954   2              SET_DP_RX0_HDCP_CHECK_ENABLE();
 2955   2          }
@@ -3198,7 +3198,7 @@ line level    source
                           ucLTStatus = GET_DP_RX0_LINK_TRAINING_STATUS();
               
               #elif(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_D1_D2)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 51  
 
                           ucLTStatus = GET_DP_RX1_LINK_TRAINING_STATUS();
               #endif
@@ -3262,7 +3262,7 @@ line level    source
 3075          #if(_DP_IRQ_HPD_MODE == _DP_IRQ_HPD_T2_MODE)
 3076          //--------------------------------------------------
 3077          // Description  : Irq Assert Timer2 Event Proc
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 52  
 
 3078          // Input Value  : None
 3079          // Output Value : None
@@ -3326,7 +3326,7 @@ line level    source
 3137   1          {
 3138   2      #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
 3139   2              if(GET_DP_D0_HPD_IRQ_ASSERT_T2_EVENT() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 53  
 
 3140   2              {
 3141   3                  if(PCB_D0_HOTPLUG_DETECT() == _D0_HOT_PLUG_HIGH)
@@ -3390,7 +3390,7 @@ line level    source
 3199   2      #endif
 3200   2      
 3201   2      #if(_D1_DP_EXIST == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 54  
 
                       g_ucDpRx1AuxModeBackup_EXINT = ScalerGetBit_EXINT(PBA_D0_AUX_MODE_SET, _BIT1);
               
@@ -3454,7 +3454,7 @@ line level    source
               
               #if(_D0_INPUT_PORT_TYPE == _D0_DP_PORT)
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 55  
 
               #if(_DP_DPCD_DFP_PRESENT_REF_TO == _DP_MST_CAPABILITY)
                       if(ScalerDpRx0GetDpcdBitInfo(0x00, 0x00, 0x21, _BIT0) == _BIT0)
@@ -3518,7 +3518,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 56  
 
               #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
                       case _D1_INPUT_PORT:
@@ -3582,7 +3582,7 @@ line level    source
 3385          #if((_PORT_CONTROLLER_RTS5400_SERIES_SUPPORT == _ON) || (_PORT_CONTROLLER_USERDECITION_SUPPORT == _ON))
               //--------------------------------------------------
               // Description  : Pin assignment mapping
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 57  
 
               // Input Value  : ucInputPort     --> Input Port
               //                ucPinAssignType --> Pin Assignment Type
@@ -3646,7 +3646,7 @@ line level    source
               {
                   switch(enumPowerAction)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 58  
 
                       case _POWER_ACTION_AC_ON_TO_NORMAL:
                       case _POWER_ACTION_PS_TO_NORMAL:
@@ -3710,7 +3710,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Decide Current Port DPTx whether Can Output or not
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 59  
 
               // Input Value  : InputPort
               // Output Value : _TRUE or _FALSE
@@ -3774,7 +3774,7 @@ line level    source
               
               #if(_D1_DP_EXIST == _ON)
                   if(g_enumDpMSTCapablePort == _DP_MST_RX1_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 60  
 
                   {
                       SET_DP_RX_HDCP_UPSTREAM_PORT(_HDCP_D1_PORT);
@@ -3838,7 +3838,7 @@ line level    source
               #if(_D1_DP_EXIST == _ON)
                       if(GET_DP_RX_HDCP2_UPSTREAM_PORT() == _HDCP_D1_PORT)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 61  
 
                           if(ScalerSyncDpCableStatus(_D1_INPUT_PORT) == _HIGH)
                           {
@@ -3902,7 +3902,7 @@ line level    source
               
                   return _DP_RX_HDCP_UPSTREAM_AUTH_EVENT_NONE;
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 62  
 
               
               //--------------------------------------------------
@@ -3966,7 +3966,7 @@ line level    source
                               }
               
                               if(GET_DP_RX0_HDCP2_UPSTREAM_EVENT() == _DP_RX_HDCP2_UPSTREAM_AUTH_EVENT_START_HANDSHAKE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 63  
 
                               {
                                   return _TRUE;
@@ -4030,7 +4030,7 @@ line level    source
                                   {
                                       return _TRUE;
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 64  
 
                               }
               
@@ -4094,7 +4094,7 @@ line level    source
                   {
                       if(GET_DP_TX_HDCP_AUTH_STATE_CHANGE() == _TRUE)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 65  
 
                           if((GET_DP_TX_HDCP_AUTH_STATE() == _DP_TX_HDCP_STATE_AUTH_1) ||
                              (GET_DP_TX_HDCP_AUTH_STATE() == _DP_TX_HDCP_STATE_AUTH_1_COMPARE_R0) ||
@@ -4158,7 +4158,7 @@ line level    source
               EnumDpRxHdcp2UpstreamAuthStatus ScalerSyncDpHdcp2GetUpstreamEvent(void)
               {
               #if((_D0_DP_EXIST == _ON) || ((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWIT
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 66  
 
              -CH_FROM_D0)))
                   if(GET_DP_RX_HDCP2_UPSTREAM_PORT() == _HDCP_D0_PORT)
@@ -4222,7 +4222,7 @@ line level    source
               // Output Value : TRUE or FALSE
               //--------------------------------------------------
               bit ScalerSyncDpGetHdcp2ModeStatus(void)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 67  
 
               {
               #if((_D0_DP_EXIST == _ON) || ((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWIT
@@ -4286,7 +4286,7 @@ line level    source
                       }
               
                       if(GET_DP_CHECK_AUX_CH_POWER_STATUS() == _DP_RX_AUX_POWER_STATUS_OFF)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 68  
 
                       {
                           return _FALSE;
@@ -4350,7 +4350,7 @@ line level    source
                               // DP Rx MST DC OFF HPD Toggle Not Process
                               SET_DP_RX_MST_DC_OFF_HPD_TOGGLE_HOLD();
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 69  
 
               
                           return _TRUE;
@@ -4414,7 +4414,7 @@ line level    source
               
                           ScalerTimerReactiveTimerEvent(SEC(3), _SCALER_TIMER_EVENT_DP_RX0_SOURCE_WRITE_POWER_STATUS_EVE
              -NT_DEBOUNCE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 70  
 
               
                           break;
@@ -4478,7 +4478,7 @@ line level    source
                       case _D0_INPUT_PORT:
               
                           CLR_DP_RX0_SOURCE_WRITE_POWER_STATUS_EVENT();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 71  
 
               
                           break;
@@ -4542,7 +4542,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : DownLoad TX HDCP Key
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 72  
 
               // Input Value  : None
               // Output Value : None
@@ -4606,7 +4606,7 @@ line level    source
                           {
               #if((_TMDS_HDCP_2_2_SUPPORT == _ON) && ((_D0_INPUT_PORT_TYPE == _D0_HDMI_PORT) || (_D0_INPUT_PORT_TYPE == 
              -_D0_MHL_PORT)))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 73  
 
                               if(GET_TMDS_RX0_HDCP2_MODE() == _TRUE)
                               {
@@ -4670,7 +4670,7 @@ line level    source
                           if(ScalerTMDSHdcpEnabled(ucInputPort) == _TRUE)
                           {
               #if((_TMDS_HDCP_2_2_SUPPORT == _ON) && ((_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT) || (_D1_INPUT_PORT_TYPE == 
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 74  
 
              -_D1_MHL_PORT)))
                               if(GET_TMDS_RX1_HDCP2_MODE() == _TRUE)
@@ -4734,7 +4734,7 @@ line level    source
 4478   2      #if(_D2_TMDS_SUPPORT == _ON)
                           if(ScalerTMDSHdcpEnabled(ucInputPort) == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 75  
 
               #if((_TMDS_HDCP_2_2_SUPPORT == _ON) && ((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT) || (_D2_INPUT_PORT_TYPE == 
              -_D2_MHL_PORT)))
@@ -4798,7 +4798,7 @@ line level    source
                           }
                           else
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 76  
 
                               return _HDCP_NONE;
                           }
@@ -4862,7 +4862,7 @@ line level    source
                               }
                           }
                           else
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 77  
 
                           {
                               return _HDCP_NONE;
@@ -4926,7 +4926,7 @@ line level    source
                       return _TRUE;
                   }
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 78  
 
 4663   1      
 4664   1      #if((_DP_MST_SUPPORT == _ON) && (_DP_TX_SUPPORT == _ON))
@@ -4990,7 +4990,7 @@ line level    source
                   }
               #endif
 4722   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 79  
 
 4723   1          return _FALSE;
 4724   1      }
@@ -5054,7 +5054,7 @@ line level    source
 4782          #pragma OT(8)
 4783          void ScalerSyncDdcDetectDebounce_EXINT1(void) using 2
 4784          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 80  
 
 4785   1          WORD usDebounceCnt = 0;
 4786   1      
@@ -5118,7 +5118,7 @@ line level    source
 4843   1      #if(((_D0_TMDS_SUPPORT == _ON) && (_D0_DDC_CHANNEL_SEL == _DDC1)) || ((_D1_TMDS_SUPPORT == _ON) && (_D1_DD
              -C_CHANNEL_SEL == _DDC1)) || ((_D2_TMDS_SUPPORT == _ON) && (_D2_DDC_CHANNEL_SEL == _DDC1)))
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 81  
 
                   // DDC1 Detect SCL Toggle
                   if((MCU_FFE5_DDC1_EDID_IRQ & 0x0C) == 0x0C)
@@ -5182,7 +5182,7 @@ line level    source
                           // Disable SCL Toggle IRQ
                           MCU_FE69_DDC2_EDID_IRQ &= ~_BIT3;
                           // Clear SCL Toggle
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 82  
 
                           MCU_FE69_DDC2_EDID_IRQ |= _BIT2;
               
@@ -5246,7 +5246,7 @@ line level    source
                   {
                       // Debounce 300us
                       ScalerSyncDdcDetectDebounce_EXINT1();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 83  
 
               
                       // Clear SCL Toggle
@@ -5310,7 +5310,7 @@ line level    source
 5027          
 5028          //--------------------------------------------------
 5029          // Description  : Initial Setting for TMDS Scanning Port(Power Normal)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 84  
 
 5030          // Input Value  : Input Port
 5031          // Output Value : None
@@ -5374,7 +5374,7 @@ line level    source
                              ((GET_D12_CABLE_STATUS() == _TRUE) && (PCB_GET_HDMI_SW_SELECT() == _SW_SEL_HDMI3_1)))
               #else
 5091   2                  if(GET_D3_CABLE_STATUS() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 85  
 
 5092   2      #endif
 5093   2                  {
@@ -5438,7 +5438,7 @@ line level    source
                                   // Set a Polling Duration: 30us*usDebounceTimePeriod
                                   for(ustemp = 0; ustemp < usDebounceTimePeriod; ustemp++)
                                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 86  
 
                                       // Delay 30us
                                       DELAY_30US();
@@ -5502,7 +5502,7 @@ line level    source
                                   for(ustemp = 0; ustemp < usDebounceTimePeriod; ustemp++)
                                   {
                                       // delay (ucDebounceTimeScale) ms for IIC 100k
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 87  
 
                                       ScalerTimerDelayXms(ucDebounceTimeScale);
               
@@ -5566,7 +5566,7 @@ line level    source
               #endif
 5275   2      
 5276   2      #if(_D1_HDMI_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 88  
 
                       case _D1_INPUT_PORT:
               
@@ -5630,7 +5630,7 @@ line level    source
                                       // Delay 30us
                                       DELAY_30US();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 89  
 
                                       if((MCU_FFE5_DDC1_EDID_IRQ & _BIT2) == _BIT2)
                                       {
@@ -5694,7 +5694,7 @@ line level    source
                                       ScalerTimerDelayXms(ucDebounceTimeScale);
               
                                       if((MCU_FE69_DDC2_EDID_IRQ & _BIT2) == _BIT2)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 90  
 
                                       {
                                           MCU_FE69_DDC2_EDID_IRQ |= _BIT2;
@@ -5758,7 +5758,7 @@ line level    source
                                           return _FALSE;
                                       }
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 91  
 
                               }
               #endif
@@ -5822,7 +5822,7 @@ line level    source
                                       if((MCU_FE69_DDC2_EDID_IRQ & _BIT2) == _BIT2)
                                       {
                                           MCU_FE69_DDC2_EDID_IRQ |= _BIT2;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 92  
 
                                       }
                                       else
@@ -5886,7 +5886,7 @@ line level    source
 5584   4                      }
 5585   3                      else if(enumTmdsDdcDebounceType == _DELAY_XMS_TIMESCALE)
 5586   3                      {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 93  
 
 5587   4                          // Set a Polling Duration: ucDebounceTimeScale(ms)*usDebounceTimePeriod
 5588   4                          for(ustemp = 0; ustemp < usDebounceTimePeriod; ustemp++)
@@ -5950,7 +5950,7 @@ line level    source
                                       {
                                           MCU_FE7B_DDC4_EDID_IRQ |= _BIT2;
                                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 94  
 
                                       else
                                       {
@@ -6014,7 +6014,7 @@ line level    source
                           return _TRUE;
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 95  
 
 5711   2      
 5712   2              default:
@@ -6078,7 +6078,7 @@ line level    source
                       else if(GET_TMDS_RX0_HPD_TRIGGER_EVENT() == _TMDS_HPD_EDID_SWITCH)
                       {
                           pstTmdsHpdSeq[1 + ucPortNum].usHpdTime = _TMDS_EDID_SWITCH_HPD_TIME;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 96  
 
                       }
                       else
@@ -6142,7 +6142,7 @@ line level    source
                       pstTmdsHpdSeq[1 + ucPortNum].enumPort = _D2_INPUT_PORT;
               
                       if(GET_TMDS_RX2_HPD_TRIGGER_EVENT() == _TMDS_HPD_NORMAL)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 97  
 
                       {
                           pstTmdsHpdSeq[1 + ucPortNum].usHpdTime = GET_HDMI_HOTPLUG_TIME();
@@ -6206,7 +6206,7 @@ line level    source
 5894   3              }
 5895   2      
 5896   2              ucPortNum ++;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 98  
 
 5897   2              CLR_TMDS_RX3_HPD_TRIGGER_EVENT();
 5898   2          }
@@ -6270,7 +6270,7 @@ line level    source
                           pstTmdsHpdSeq[1 + ucPortNum].usHpdTime = GET_HDMI_HOTPLUG_TIME();
                       }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 99  
 
                       if(GET_HDMI_Z0_HPD_TYPE() == _HDMI_HPD_TOGGLE_BEFORE_Z0_TOGGLE)
                       {
@@ -6334,7 +6334,7 @@ line level    source
               #endif
 6018   4      
 6019   4      #if(_D1_TMDS_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 100 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 100 
 
                               case _D1_INPUT_PORT:
               
@@ -6398,7 +6398,7 @@ line level    source
                                   if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && (GET_D4_CABLE_STATUS() == _TRUE))
                                   {
                                       // Restore Z0 Status
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 101 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 101 
 
                                       ScalerSetBit(P7D_18_IMPEDANCE_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), g_ucTMDSRx4Z0S
              -tatus);
@@ -6462,7 +6462,7 @@ line level    source
 6130   3      #if(_D1_TMDS_SUPPORT == _ON)
               
                           case _D1_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 102 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 102 
 
               
                               ScalerTMDSHotPlugLowProc(_D1_INPUT_PORT);
@@ -6526,7 +6526,7 @@ line level    source
 6192   3              }
 6193   2          }
 6194   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 103 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 103 
 
 6195   1          // HPD High Process
 6196   1          for(ucI = 1; ucI <= ucPortNum; ucI ++)
@@ -6590,7 +6590,7 @@ line level    source
                               {
                                   ScalerTMDSAfterHotPlugEventProc(_D2_INPUT_PORT, _FALSE);
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 104 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 104 
 
                               break;
               #endif
@@ -6654,7 +6654,7 @@ line level    source
 6310   3              }
 6311   2          }
 6312   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 105 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 105 
 
 6313   1          if(GET_HDMI_Z0_HPD_TYPE() == _HDMI_HPD_TOGGLE_BEFORE_Z0_TOGGLE)
 6314   1          {
@@ -6718,7 +6718,7 @@ line level    source
               #endif
               #endif
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 106 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 106 
 
                                   break;
               #endif
@@ -6782,7 +6782,7 @@ line level    source
 6434   4      #if(_D0_TMDS_SUPPORT == _ON)
                               case _D0_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 107 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 107 
 
                                   if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && (GET_D0_CABLE_STATUS() == _TRUE))
                                   {
@@ -6846,7 +6846,7 @@ line level    source
 6488   5                              // Restore Z0 Status
 6489   5                              ScalerSetBit(P7C_18_IMPEDANCE_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), g_ucTMDSRx3Z0S
              -tatus);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 108 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 108 
 
 6490   5                          }
 6491   4                          break;
@@ -6910,7 +6910,7 @@ line level    source
               // Description  : CLR HPD Trigger Event
               // Input Value  : Input Port
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 109 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 109 
 
               //--------------------------------------------------
               void ScalerSyncTMDSClrHPDTriggerEvent(EnumSourceSearchPort enumInputPort)
@@ -6974,7 +6974,7 @@ line level    source
               // Output Value : _TRUE : VBUS Power Exist
               //--------------------------------------------------
               bit ScalerSyncMHLVBusPowerExist(void)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 110 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 110 
 
               {
               #if(_D0_INPUT_PORT_TYPE == _D0_MHL_PORT)
@@ -7038,7 +7038,7 @@ line level    source
 6668   1          {
 6669   2      #if(_VGA_SUPPORT == _ON)
 6670   2              case _SOURCE_VGA:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 111 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 111 
 
 6671   2      
 6672   2                  break;
@@ -7102,7 +7102,7 @@ line level    source
 6730   1          CLR_HDR10_INFO_DATA();
 6731   1          CLR_HDR10_SETTING_DATA();
 6732   1      #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 112 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 112 
 
 6733   1      
 6734   1      #if(_FREESYNC_II_SUPPORT == _ON)
@@ -7166,7 +7166,7 @@ line level    source
 6791   3                  }
 6792   2      
 6793   2      #if(_URGENT_EVENT_CHECK_MODE == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 113 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 113 
 
 6794   2                  // Clear Urgent Event Occured Flag When System Flow Is Runing to Normal
 6795   2                  ScalerSyncClrUrgentEventFlg();
@@ -7230,7 +7230,7 @@ line level    source
               #endif
 6854   2      
 6855   2      #if(_EMBEDDED_DP_TX_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 114 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 114 
 
                           ScalerSyncEmbeddedDpTxPowerProc(enumPowerAction);
               #endif
@@ -7294,7 +7294,7 @@ line level    source
               void ScalerSyncClearActivedPort(void)
               {
                   CLR_STORE_ACTIVED_PORT();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 115 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 115 
 
               }
               #endif
@@ -7358,7 +7358,7 @@ line level    source
 6977   2                  else if(ucInputPort == _A2_INPUT_PORT)
 6978   2                  {
 6979   3                      PCB_VGA_SWITCH_A2();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 116 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 116 
 
 6980   3                  }
 6981   2      
@@ -7422,7 +7422,7 @@ line level    source
 7039   2                  {
 7040   3      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
                               if(GET_DIGITAL_PORT_SWITCH_TO_D1() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 117 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 117 
 
                               {
                                   ScalerGDIPhyPowerProc(_D1_INPUT_PORT, _POWER_ACTION_SWITCH_INTERFACE_TO_OFF);
@@ -7486,7 +7486,7 @@ line level    source
               #if(_HDMI_HPD_TOGGLE_BY_Z0_OFF_DDC_TOGGLE == _ON)
                               if(((MCU_FFE4_DDC0_EDID_IRQ & _BIT2) == _BIT2) || (GET_TMDS_RX0_AC_ON_HPD_TOGGLE_EVENT() =
              -= _TRUE))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 118 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 118 
 
               #endif
                               {
@@ -7550,7 +7550,7 @@ line level    source
               #else
                               ScalerGDIPhyPowerProc(_D0_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 119 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 119 
 
               
               #else // Else of #if(_DP_HDMI_COMPATIBLE_MODE == _ON)
@@ -7614,7 +7614,7 @@ line level    source
               
                       case _D1_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 120 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 120 
 
                           if(ucSourceSearchDelayMode != _SOURCE_SEARCH_POLLING_MODE)
                           {
@@ -7678,7 +7678,7 @@ line level    source
              -E == _D1_DVI_PORT))
                           if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && ((GET_DIGITAL_PORT_SWITCH_TO_D1() == _FALSE) || (GE
              -T_TMDS_RX1_PS_WAKEUP_HPD_TOGGLE() == _TRUE)) && (GET_HDMI_Z0_HPD_TYPE() == _HDMI_HPD_Z0_TOGGLE_AT_SAME_TIME))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 121 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 121 
 
                           {
               #if(_HDMI_HPD_TOGGLE_BY_Z0_OFF_DDC_TOGGLE == _ON)
@@ -7742,7 +7742,7 @@ line level    source
                               else
                               {
                                   ScalerGDIPhyPowerProc(_D1_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 122 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 122 
 
                               }
               #else
@@ -7806,7 +7806,7 @@ line level    source
                           break;
               #endif
 7395   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 123 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 123 
 
 7396   2      #if(_D2_INPUT_PORT_TYPE != _D2_NO_PORT)
               
@@ -7870,7 +7870,7 @@ line level    source
                           }
               
               #else // Else of #if((_D2_TMDS_SUPPORT == _ON) && (_TMDS_TOGGLE_HPD_Z0_FOR_ACER == _ON))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 124 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 124 
 
               
               #if((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT) || (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT) || (_D2_INPUT_PORT_TYP
@@ -7934,7 +7934,7 @@ line level    source
                                   else
                                   {
                                       ScalerGDIPhyPowerProc(_D2_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 125 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 125 
 
                                   }
                               }
@@ -7998,7 +7998,7 @@ line level    source
                                   ScalerGDIPhyPowerProc(_D2_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
                               }
               #endif // End of #if(_DP_HDMI_COMPATIBLE_MODE == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 126 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 126 
 
                           }
               
@@ -8062,7 +8062,7 @@ line level    source
                           if(GET_DIGITAL_PORT_SWITCH_TO_D3() == _FALSE)
                           {
                               SET_TMDS_RX3_HPD_TRIGGER_EVENT(_TMDS_HPD_ACER);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 127 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 127 
 
                               ScalerTMDSHotPlugEvent(_D3_INPUT_PORT);
                           }
@@ -8126,7 +8126,7 @@ line level    source
               #elif(_D3_INPUT_PORT_TYPE == _D3_MHL_PORT)
                               if(GET_D3_TMDS_MODE() == _TMDS_HDMI_MODE)
                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 128 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 128 
 
                                   if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && (GET_D3_HDMI_5V_STATUS() == _TRUE))
                                   {
@@ -8190,7 +8190,7 @@ line level    source
 7747   5      #if(_HDMI_HPD_TOGGLE_BY_Z0_OFF_DDC_TOGGLE == _ON)
                                       CLR_TMDS_RX3_AC_ON_HPD_TOGGLE_EVENT();
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 129 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 129 
 
 7750   5                          }
 7751   4      
@@ -8254,7 +8254,7 @@ line level    source
                               }
               #endif
                           }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 130 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 130 
 
               
               #if((_D4_TMDS_SUPPORT == _ON) && (_TMDS_TOGGLE_HPD_Z0_FOR_ACER == _ON))
@@ -8318,7 +8318,7 @@ line level    source
                                   {
                                       ScalerGDIPhyPowerProc(_D4_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 131 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 131 
 
                                   else
               #endif
@@ -8382,7 +8382,7 @@ line level    source
                               }
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 132 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 132 
 
               #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
                               if(GET_DIGITAL_PORT_SWITCH_TO_D1() == _TRUE)
@@ -8446,7 +8446,7 @@ line level    source
               #endif
                                   {
                                       SET_TMDS_RX5_HPD_TRIGGER_EVENT(_TMDS_HPD_NORMAL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 133 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 133 
 
                                       ScalerTMDSHotPlugEvent(_D5_INPUT_PORT);
                                       CLR_TMDS_RX5_PS_WAKEUP_HPD_TOGGLE();
@@ -8510,7 +8510,7 @@ line level    source
                                   ScalerGDIPhyPowerProc(_D5_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
                               }
                               else
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 134 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 134 
 
               #endif
                               {
@@ -8574,7 +8574,7 @@ line level    source
                           else if(ucDetectPort == _A1_INPUT_PORT)
                           {
                               PCB_VGA_SWITCH_A1();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 135 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 135 
 
                           }
                           else if(ucDetectPort == _A2_INPUT_PORT)
@@ -8638,7 +8638,7 @@ line level    source
                       case _D6_INPUT_PORT:
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 136 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 136 
 
                           if(ucSourceSearchDelayMode != _SOURCE_SEARCH_POLLING_MODE)
                           {
@@ -8702,7 +8702,7 @@ line level    source
                           {
               #if(_TMDS_DDC_CHECK_BUSY_BEFORE_HPD == _ON)
                               if(ScalerSyncHDMIDdcCheckBusy(_D0_INPUT_PORT, _DELAY_XMS_TIMESCALE, 25, 8) == _FALSE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 137 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 137 
 
               #endif
                               {
@@ -8766,7 +8766,7 @@ line level    source
               
                           break;
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 138 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 138 
 
               
               #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
@@ -8830,7 +8830,7 @@ line level    source
               
               #else // Else of #if((_D1_TMDS_SUPPORT == _ON) && (_TMDS_TOGGLE_HPD_Z0_FOR_ACER == _ON))
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 139 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 139 
 
               #if((_D1_INPUT_PORT_TYPE == _D1_HDMI_PORT) || (_D1_INPUT_PORT_TYPE == _D1_MHL_PORT))
                           if((GET_HDMI_HOTPLUG_TOGGLE() == _TRUE) && (GET_DIGITAL_PORT_SWITCH_TO_D1() == _FALSE))
@@ -8894,7 +8894,7 @@ line level    source
               
                               ScalerGDIPhyPowerProc(_D1_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 140 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 140 
 
               #endif // End of #if(_DP_HDMI_COMPATIBLE_MODE == _ON)
                           }
@@ -8958,7 +8958,7 @@ line level    source
               #endif
                           if(GET_TMDS_RX2_TOGGLE_Z0_EVENT() == _TRUE)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 141 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 141 
 
                               SET_TMDS_RX2_HPD_TRIGGER_EVENT(_TMDS_HPD_ACER);
                               ScalerTMDSHotPlugEvent(_D2_INPUT_PORT);
@@ -9022,7 +9022,7 @@ line level    source
                               }
               #else
                               ScalerGDIPhyPowerProc(_D2_INPUT_PORT, _POWER_ACTION_OFF_TO_NORMAL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 142 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 142 
 
               #endif
               
@@ -9086,7 +9086,7 @@ line level    source
               
               #if(_DP_HDMI_COMPATIBLE_MODE == _OFF)
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 143 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 143 
 
               #if((_D3_TMDS_SUPPORT == _ON) && (_TMDS_TOGGLE_HPD_Z0_FOR_ACER == _ON))
               
@@ -9150,7 +9150,7 @@ line level    source
                                       ScalerTimerDelayXms(GET_HDMI_HOTPLUG_TIME());
                                       PCB_D3_HOTPLUG(_D3_HOT_PLUG_HIGH);
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 144 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 144 
 
                                   else
                                   {
@@ -9214,7 +9214,7 @@ line level    source
                                   ScalerGDIPhyPowerProc(_D3_INPUT_PORT, _POWER_ACTION_SWITCH_INTERFACE_TO_OFF);
                               }
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 145 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 145 
 
               
               #if((_D5_INPUT_PORT_TYPE != _D5_NO_PORT) && (_D4_INPUT_PORT_TYPE != _D4_DUAL_DVI_PORT))
@@ -9278,7 +9278,7 @@ line level    source
                       case _D5_INPUT_PORT:
               
                           if(ucSourceSearchDelayMode != _SOURCE_SEARCH_POLLING_MODE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 146 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 146 
 
                           {
               #if(_D0_INPUT_PORT_TYPE != _D0_NO_PORT)
@@ -9342,7 +9342,7 @@ line level    source
               #endif
                               {
                                   SET_TMDS_RX5_HPD_TRIGGER_EVENT(_TMDS_HPD_NORMAL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 147 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 147 
 
                                   ScalerTMDSHotPlugEvent(_D5_INPUT_PORT);
                               }
@@ -9406,7 +9406,7 @@ line level    source
 8905   4      #if(_D0_DDC_CHANNEL_SEL == _DDC0)
 8906   4                          MCU_FFE4_DDC0_EDID_IRQ |= _BIT5;
 8907   4      #elif(_D0_DDC_CHANNEL_SEL == _DDC1)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 148 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 148 
 
                                   MCU_FFE5_DDC1_EDID_IRQ |= _BIT5;
               #elif(_D0_DDC_CHANNEL_SEL == _DDC2)
@@ -9470,7 +9470,7 @@ line level    source
 8967   3      #if(_D4_INPUT_PORT_TYPE != _D4_NO_PORT)
                           case _D4_INPUT_PORT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 149 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 149 
 
               #if(_D4_INPUT_PORT_TYPE == _D4_MHL_PORT)
                               if(GET_D4_TMDS_MODE() == _TMDS_HDMI_MODE)
@@ -9534,7 +9534,7 @@ line level    source
 9029   3      #elif(_D0_AUX_DDC_CHANNEL == _D0_AUX_MAP_DDC1_PIN)
               
                               // Disable DDC1 Force Nack
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 150 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 150 
 
                               MCU_FFE5_DDC1_EDID_IRQ &= ~_BIT5;
               
@@ -9598,7 +9598,7 @@ line level    source
               
                               // Enable Segment Control for Link Layer CTS
                               MCU_FF2E_DDC1_DDC_CONTROL_2 |= _BIT2;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 151 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 151 
 
               
               #elif(_D1_AUX_DDC_CHANNEL == _D1_AUX_MAP_DDC2_PIN)
@@ -9662,7 +9662,7 @@ line level    source
               
               #elif(_D2_AUX_DDC_CHANNEL == _D2_AUX_MAP_DDC2_PIN)
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 152 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 152 
 
                               // Disable DDC2 Force Nack
                               MCU_FE69_DDC2_EDID_IRQ &= ~_BIT5;
@@ -9726,7 +9726,7 @@ line level    source
                               MCU_FE78_DDC4_DDC_CONTROL_2 |= _BIT2;
               #elif(_D4_INPUT_PORT_TYPE == _D4_MHL_PORT)
                               if(GET_D4_TMDS_MODE() == _TMDS_HDMI_MODE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 153 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 153 
 
               #endif
                               {
@@ -9790,7 +9790,7 @@ line level    source
 9277   4                          return _TRUE;
 9278   4                      }
 9279   3                  }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 154 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 154 
 
 9280   2      
 9281   2                  break;
@@ -9854,7 +9854,7 @@ line level    source
               #endif
                           }
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 155 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 155 
 
               #endif
 9343   2      
@@ -9918,7 +9918,7 @@ line level    source
                               {
                                   return _TRUE;
                               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 156 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 156 
 
                           }
                           break;
@@ -9982,7 +9982,7 @@ line level    source
 9463   2                  break;
 9464   2      #endif
 9465   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 157 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 157 
 
 9466   2      #if(_D4_HDMI_SUPPORT == _ON)
                       case _D4_INPUT_PORT:
@@ -10046,7 +10046,7 @@ line level    source
                           DebugMessageRx0("Get Color Space YUV444", pData[0]);
                           SET_COLOR_SPACE(_COLOR_SPACE_YCBCR444);
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 158 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 158 
 
               
                       // Set Pixel Repetition
@@ -10110,7 +10110,7 @@ line level    source
               
                           case _AVI_PIXEL_REPETITION_8:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 159 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 159 
 
                               DebugMessageRx0("Get Pixel Repetition 8", 0x00);
                               SET_TMDS_RX0_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_8);
@@ -10174,7 +10174,7 @@ line level    source
                       ScalerTimerDelayXms(20);
                   }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 160 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 160 
 
                   ScalerTMDSRx0SetPorchColor(GET_COLOR_SPACE());
               }
@@ -10238,7 +10238,7 @@ line level    source
                               DebugMessageRx0("Get Colorimetry INTO_DEFAULT", 0x00);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 161 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 161 
 
                       }
                   }
@@ -10302,7 +10302,7 @@ line level    source
               
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 162 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 162 
 
                           case _AVI_COLORIMETRY_EXT_001:
               
@@ -10366,7 +10366,7 @@ line level    source
               
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RGB_ADOBERGB);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 163 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 163 
 
                               break;
               
@@ -10430,7 +10430,7 @@ line level    source
                       }
                   }
                   else if(GET_COLOR_SPACE() == _COLOR_SPACE_RGB)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 164 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 164 
 
                   {
                       switch(ScalerTMDSRx0HdmiGetAVIInfo(_AVI_INFO_RGB_QUANTIZATION))
@@ -10494,7 +10494,7 @@ line level    source
               // Input Value  : None
               // Output Value : Changed ==> _TRUE; No Changed ==> _FALSE;
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 165 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 165 
 
               bit ScalerSyncTMDSRx0HdmiColorInfoChanged(void)
               {
@@ -10558,7 +10558,7 @@ line level    source
                                   pucTemp[0] = ScalerTMDSRx0HdmiGetAVIInfo(_AVI_INFO_EXTENDED_COLORIMETRY);
               
                                   pucTemp[1] = GET_TMDS_RX0_COLORIMETRY_EXT_PREVALUE();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 166 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 166 
 
               
                                   ScalerSyncTMDSRx0HdmiColorimetryExtSetting();
@@ -10622,7 +10622,7 @@ line level    source
                   }
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 167 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 167 
 
               #if(_RGB_QUANTIZATION_RANGE_SUPPORT == _ON)
                   if(GET_COLOR_SPACE() == _COLOR_SPACE_RGB)
@@ -10686,7 +10686,7 @@ line level    source
                       }
                       else if(pData[0] == _AVI_COLOR_SPACE_11)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 168 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 168 
 
                           // YCC420
                           DebugMessageRx1("Get Color Space YUV420", pData[0]);
@@ -10750,7 +10750,7 @@ line level    source
                               SET_TMDS_RX1_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_6);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 169 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 169 
 
               
                           case _AVI_PIXEL_REPETITION_7:
@@ -10814,7 +10814,7 @@ line level    source
                           SET_COLOR_SPACE(_COLOR_SPACE_RGB);
                           SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_RESERVED);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 170 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 170 
 
                           // Manual Set Color Space to RGB and disable pixel repetition
               #if(_D1_INPUT_PORT_TMDS_MAC_PAGE == _PAGE70)
@@ -10878,7 +10878,7 @@ line level    source
               
                           case _AVI_COLORIMETRY_10:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 171 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 171 
 
                               DebugMessageRx1("Get Colorimetry 709", 0x00);
               
@@ -10942,7 +10942,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 172 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 172 
 
               //--------------------------------------------------
               // Description  : TMDS Rx1 Colorimetry Extended Setting
@@ -11006,7 +11006,7 @@ line level    source
                               DebugMessageRx1("Get Colorimetry EXT_YCC_ITUR_BT2020_NCL", 0x00);
               
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT2020_NCL);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 173 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 173 
 
               
                               break;
@@ -11070,7 +11070,7 @@ line level    source
                       switch(GET_TMDS_RX1_QUANTIZATION_PREVALUE())
                       {
                           case _AVI_YCC_QUANTIZATION_FULL:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 174 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 174 
 
               
                               DebugMessageRx1("Get YCC FULL RANGE", 0x00);
@@ -11134,7 +11134,7 @@ line level    source
               
                               DebugMessageRx1("Get RGB RESERVED RANGE", 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 175 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 175 
 
                               SET_TMDS_RX1_QUANTIZATION_PREVALUE(_AVI_RGB_QUANTIZATION_RESERVED);
               
@@ -11198,7 +11198,7 @@ line level    source
                           {
                               if((pucTemp[0] == _AVI_COLORIMETRY_11) || (pucTemp[1] == _AVI_COLORIMETRY_11))
                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 176 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 176 
 
                                   SET_TMDS_RX1_COLORIMETRY_CHANGED();
                               }
@@ -11262,7 +11262,7 @@ line level    source
              -)
                       {
                           DebugMessageRx1("YCC Quantization Range Changed", 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 177 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 177 
 
               
                           if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _FALSE)
@@ -11326,7 +11326,7 @@ line level    source
               {
                   if(GET_HDMI_RX2_AVI_INFO_FRAME_RECEIVED() == _TRUE)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 178 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 178 
 
                       // Color Space Auto/ Pixel Repetition auto mode
                       ScalerSetDataPortBit(P71_C9_HDMI_AP, _P71_CA_PT_51_PORT_PAGE71_HDMI_ACRCR, ~(_BIT6 | _BIT2), (_BIT
@@ -11390,7 +11390,7 @@ line level    source
                               SET_TMDS_RX2_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_3);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 179 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 179 
 
               
                           case _AVI_PIXEL_REPETITION_4:
@@ -11454,7 +11454,7 @@ line level    source
                   else    // No Info Frame Received
                   {
               #if(_D2_INPUT_PORT_TYPE == _D2_MHL_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 180 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 180 
 
                       if(GET_TMDS_RX2_CLK_MODE() == _TMDS_MHL_PPMODE_PHY_SETTING)
                       {
@@ -11518,7 +11518,7 @@ line level    source
                               DebugMessageRx2("Get Colorimetry YCC_SMPTE_170M", 0x00);
               
                               SET_TMDS_RX2_COLORIMETRY_PREVALUE(_AVI_COLORIMETRY_01);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 181 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 181 
 
               
                               SET_COLORIMETRY(_COLORIMETRY_YCC_SMPTE_170M);
@@ -11582,7 +11582,7 @@ line level    source
               
                               DebugMessageRx2("Get Colorimetry INTO_DEFAULT", 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 182 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 182 
 
                               SET_COLORIMETRY(_COLORIMETRY_RGB_SRGB);
               
@@ -11646,7 +11646,7 @@ line level    source
               
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ITUR_BT2020_CL);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 183 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 183 
 
                               break;
               
@@ -11710,7 +11710,7 @@ line level    source
               void ScalerSyncTMDSRx2HdmiQuantizationSetting(void)
               {
                   if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR420) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 184 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 184 
 
              -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
                   {
@@ -11774,7 +11774,7 @@ line level    source
                               SET_TMDS_RX2_QUANTIZATION_PREVALUE(_AVI_RGB_QUANTIZATION_DEFAULT);
               
                               SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_DEFAULT_RANGE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 185 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 185 
 
               
                               break;
@@ -11838,7 +11838,7 @@ line level    source
                               if(!(((pucTemp[0] == _AVI_COLORIMETRY_00) && (pucTemp[1] == _AVI_COLORIMETRY_01)) || ((puc
              -Temp[0] == _AVI_COLORIMETRY_01) && (pucTemp[1] == _AVI_COLORIMETRY_00))))
                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 186 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 186 
 
                                   SET_TMDS_RX2_COLORIMETRY_CHANGED();
                               }
@@ -11902,7 +11902,7 @@ line level    source
                   }
               
               #if(_YCC_QUANTIZATION_RANGE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 187 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 187 
 
                   if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR420) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
              -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
@@ -11966,7 +11966,7 @@ line level    source
 11323  00      #if(_D3_INPUT_PORT_TYPE != _D3_DUAL_DVI_PORT)
 11324  00      //--------------------------------------------------
 11325  00      // Description  : TMDS Rx0 Video Setting
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 188 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 188 
 
 11326  00      // Input Value  : None
 11327  00      // Output Value : None
@@ -12030,7 +12030,7 @@ line level    source
 11384  03                      SET_TMDS_RX3_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_2);
 11385  03      
 11386  03                      break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 189 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 189 
 
 11387  03      
 11388  03                  case _AVI_PIXEL_REPETITION_3:
@@ -12094,7 +12094,7 @@ line level    source
 11446  02              ScalerSyncTMDSRx3HdmiColorimetrySetting();
 11447  02      
 11448  02              // Set Quantization
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 190 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 190 
 
 11449  02      #if((_RGB_QUANTIZATION_RANGE_SUPPORT == _ON) || (_YCC_QUANTIZATION_RANGE_SUPPORT == _ON))
 11450  02              ScalerSyncTMDSRx3HdmiQuantizationSetting();
@@ -12158,7 +12158,7 @@ line level    source
 11504  03      
 11505  03                      SET_COLORIMETRY(_COLORIMETRY_YCC_SMPTE_170M);
 11506  03      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 191 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 191 
 
 11507  03                      break;
 11508  03      
@@ -12222,7 +12222,7 @@ line level    source
 11566  03                      SET_COLORIMETRY(_COLORIMETRY_EXT);
 11567  03      
 11568  03                      ScalerSyncTMDSRx3HdmiColorimetryExtSetting();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 192 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 192 
 
 11569  03      
 11570  03                      break;
@@ -12286,7 +12286,7 @@ line level    source
 11626  03                      SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_ADOBEYCC601);
 11627  03      
 11628  03                      break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 193 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 193 
 
 11629  03      
 11630  03                  case _AVI_COLORIMETRY_EXT_101:
@@ -12350,7 +12350,7 @@ line level    source
 11687  00      
 11688  00      #if((_RGB_QUANTIZATION_RANGE_SUPPORT == _ON) || (_YCC_QUANTIZATION_RANGE_SUPPORT == _ON))
 11689  00      //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 194 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 194 
 
 11690  00      // Description  : TMDS Rx3 Quantization Setting
 11691  00      // Input Value  : None
@@ -12414,7 +12414,7 @@ line level    source
 11748  03      
 11749  03                      break;
 11750  03      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 195 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 195 
 
 11751  03                  case _AVI_RGB_QUANTIZATION_DEFAULT:
 11752  03      
@@ -12478,7 +12478,7 @@ line level    source
 11810  03                  pucTemp[1] = GET_TMDS_RX3_COLORIMETRY_PREVALUE();
 11811  03      
 11812  03                  ScalerSyncTMDSRx3HdmiColorimetrySetting();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 196 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 196 
 
 11813  03      
 11814  03                  if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR420) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR42
@@ -12542,7 +12542,7 @@ line level    source
 11866  05                      }
 11867  04                      else
 11868  04                      {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 197 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 197 
 
 11869  05                          return _TRUE;
 11870  05                      }
@@ -12606,7 +12606,7 @@ line level    source
 11924  01      #endif
 11925  01      
 11926  01          return _FALSE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 198 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 198 
 
 11927  01      }
 11928  00      #endif
@@ -12670,7 +12670,7 @@ line level    source
                               SET_TMDS_RX4_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_1);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 199 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 199 
 
               
                           case _AVI_PIXEL_REPETITION_2:
@@ -12734,7 +12734,7 @@ line level    source
                               DebugMessageRx4("Get Pixel Repetition Error", 0x00);
                               SET_TMDS_RX4_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_0);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 200 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 200 
 
                               break;
                       }
@@ -12798,7 +12798,7 @@ line level    source
                       switch(ScalerTMDSRx4HdmiGetAVIInfo(_AVI_INFO_COLORIMETRY))
                       {
                           case _AVI_COLORIMETRY_00:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 201 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 201 
 
               
                               DebugMessageRx4("Get Colorimetry YCC_SMPTE_170M", 0x00);
@@ -12862,7 +12862,7 @@ line level    source
               
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 202 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 202 
 
                           case _AVI_COLORIMETRY_11:
               
@@ -12926,7 +12926,7 @@ line level    source
               
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 203 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 203 
 
                           case _AVI_COLORIMETRY_EXT_011:
               
@@ -12990,7 +12990,7 @@ line level    source
               
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RESERVED);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 204 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 204 
 
                               break;
                       }
@@ -13054,7 +13054,7 @@ line level    source
                           case _AVI_RGB_QUANTIZATION_FULL:
               
                               DebugMessageRx4("Get RGB FULL RANGE", 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 205 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 205 
 
               
                               SET_TMDS_RX4_QUANTIZATION_PREVALUE(_AVI_RGB_QUANTIZATION_FULL);
@@ -13118,7 +13118,7 @@ line level    source
               
                       if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _FALSE)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 206 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 206 
 
                           BYTE pucTemp[2];
               
@@ -13182,7 +13182,7 @@ line level    source
                                   {
                                       if(!(((pucTemp[0] != _AVI_COLORIMETRY_EXT_100) && (pucTemp[0] != _AVI_COLORIMETRY_
              -EXT_110)) && ((pucTemp[1] != _AVI_COLORIMETRY_EXT_100) && (pucTemp[1] != _AVI_COLORIMETRY_EXT_110))))
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 207 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 207 
 
                                       {
                                           SET_TMDS_RX4_COLORIMETRY_EXT_CHANGED();
@@ -13246,7 +13246,7 @@ line level    source
                           }
                           else
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 208 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 208 
 
                               return _TRUE;
                           }
@@ -13310,7 +13310,7 @@ line level    source
               
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 209 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 209 
 
                           case _AVI_PIXEL_REPETITION_1:
               
@@ -13374,7 +13374,7 @@ line level    source
                               SET_TMDS_RX5_AVI_PIXEL_REPETITION(_AVI_PIXEL_REPETITION_9);
               
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 210 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 210 
 
               
                           default:
@@ -13438,7 +13438,7 @@ line level    source
               void ScalerSyncTMDSRx5HdmiColorimetrySetting(void)
               {
                   if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR420) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GE
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 211 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 211 
 
              -T_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
                   {
@@ -13502,7 +13502,7 @@ line level    source
                           case _AVI_COLORIMETRY_00:
               
                               DebugMessageRx5("Get Colorimetry RGB_SRGB", 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 212 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 212 
 
               
                               SET_COLORIMETRY(_COLORIMETRY_RGB_SRGB);
@@ -13566,7 +13566,7 @@ line level    source
                           case _AVI_COLORIMETRY_EXT_010:
               
                               DebugMessageRx5("Get Colorimetry EXT_YCC_SYCC601", 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 213 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 213 
 
               
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_SYCC601);
@@ -13630,7 +13630,7 @@ line level    source
                               break;
               
                           default:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 214 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 214 
 
               
                               DebugMessageRx5("Get Colorimetry INTO_DEFAULT", 0x00);
@@ -13694,7 +13694,7 @@ line level    source
               
                               SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_LIMIT_RANGE);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 215 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 215 
 
                               break;
               
@@ -13758,7 +13758,7 @@ line level    source
               
                   // Check Colorimetry
                   if(ScalerTMDSRx5HdmiGetAVIInfo(_AVI_INFO_COLORIMETRY) != GET_TMDS_RX5_COLORIMETRY_PREVALUE())
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 216 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 216 
 
                   {
                       DebugMessageRx5("Colorimetry Changed", 0x00);
@@ -13822,7 +13822,7 @@ line level    source
                                       {
                                           SET_TMDS_RX5_COLORIMETRY_EXT_CHANGED();
                                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 217 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 217 
 
                                   }
                                   else if(GET_COLOR_SPACE() == _COLOR_SPACE_RGB)
@@ -13886,7 +13886,7 @@ line level    source
                           if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _FALSE)
                           {
                               ScalerSyncTMDSRx5HdmiQuantizationSetting();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 218 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 218 
 
               
                               SET_TMDS_RX5_QUANTIZATION_CHANGED();
@@ -13950,7 +13950,7 @@ line level    source
                           return GET_DP_RX0_COLORIMETRY_CHANGED();
               #elif(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_D1_D2)
                           return GET_DP_RX1_COLORIMETRY_CHANGED();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 219 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 219 
 
               #else
                           return GET_DP_RX2_COLORIMETRY_CHANGED();
@@ -14014,7 +14014,7 @@ line level    source
 13250  00      {
 13251  01          switch(enumSourceSearchPort)
 13252  01          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 220 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 220 
 
 13253  02              case _D0_INPUT_PORT:
 13254  02      #if((_D6_INPUT_PORT_TYPE != _D6_NO_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
@@ -14078,7 +14078,7 @@ line level    source
 13312  02                  break;
 13313  02      
 13314  02              case _D4_INPUT_PORT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 221 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 221 
 
 13315  02      
 13316  02      #if(_D4_INPUT_PORT_TYPE == _D4_HDMI_PORT)
@@ -14142,7 +14142,7 @@ line level    source
               #if(_TMDS_PAGE2_COMBO_EXIST == _ON)
                           return GET_TMDS_RX0_QUANTIZATION_CHANGED();
               #else
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 222 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 222 
 
                           return GET_TMDS_RX1_QUANTIZATION_CHANGED();
               #endif
@@ -14206,7 +14206,7 @@ line level    source
 13436  02                  break;
 13437  02          }
 13438  01      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 223 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 223 
 
 13439  01          return _FALSE;
 13440  01      }
@@ -14270,7 +14270,7 @@ line level    source
               #endif
 13499  02                  break;
 13500  02      
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 224 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 224 
 
 13501  02              case _D3_INPUT_PORT:
 13502  02      
@@ -14334,7 +14334,7 @@ line level    source
 13560  02              case _D1_INPUT_PORT:
 13561  02      
 13562  02      #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 225 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 225 
 
               #if(_HW_DIGITAL_PORT_COMBO_PHY_TYPE == _DIGITAL_PORT_COMBO_PHY_ALL)
                           CLR_DP_RX0_COLORIMETRY_EXT_CHANGED();
@@ -14398,7 +14398,7 @@ line level    source
 13622  02      #if(_D5_INPUT_PORT_TYPE == _D5_HDMI_PORT)
               #if(_TMDS_PAGE2_COMBO_EXIST == _ON)
                           CLR_TMDS_RX0_COLORIMETRY_EXT_CHANGED();
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 226 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 226 
 
               #else
                           CLR_TMDS_RX5_COLORIMETRY_EXT_CHANGED();
@@ -14462,7 +14462,7 @@ line level    source
               #endif
               
               #elif(_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT)
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 227 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 227 
 
               #if(_TMDS_PAGE2_COMBO_EXIST == _ON)
                           CLR_TMDS_RX0_QUANTIZATION_CHANGED();
@@ -14526,7 +14526,7 @@ line level    source
 13745  01      
 13746  01          return _FALSE;
 13747  01      }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 228 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 228 
 
 13748  00      
 13749  00      //--------------------------------------------------
@@ -14590,7 +14590,7 @@ line level    source
 13807  02              {
 13808  03                  DebugMessageScaler("Warning :  VGA DDC wait SCL idle timeout", 0);
 13809  03              }
-C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/21/2026 15:32:43 PAGE 229 
+C51 COMPILER V9.60.0.0   SCALERCOMMONSYNC                                                  09/24/2026 09:30:42 PAGE 229 
 
 13810  02          }
 13811  01      

@@ -83,7 +83,7 @@ extern code BYTE *tOSD_SOURCE_TYPE_STATUS[];
 #define _BURNIN_STR_IC_NAME                	  _R__,_T__,_D__
 #endif
 #ifndef _MAIN_PAGE_MODEL_NAME
-#define _MAIN_PAGE_MODEL_NAME               _M__,_o__,_d__,_e__,_l__,__,_COLON__,__,_2__,_3__,_1__,_3__
+#define _MAIN_PAGE_MODEL_NAME               _M__,_o__,_d__,_e__,_l__,__,_COLON__,__,_2__,_5__,_5__,_7__
 #endif
 #ifndef _PANNEL_NAME
 #define _PANNEL_NAME                        _P__,_a__,_n__,_e__,_l__,__,_COLON__,__,_A__,_U__,_O__
@@ -4708,7 +4708,7 @@ void DrawEDIDInfo(BYTE *pDDCRAMData,WORD ManVal,BYTE PortNameInedx,BYTE PortTyp)
 	 GetEDIDPanelSize(pDDCRAMData);
 	 //Panel Resolution
 	 GetEDIDPanelResolution(pDDCRAMData);
-	 //»ñÈ¡hv
+	 //ï¿½ï¿½È¡hv
 	 // EDID Port Status
 	 GetOSDEDIDResult(pDDCRAMData,PortTyp);
  

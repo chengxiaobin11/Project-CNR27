@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSDPALETTE
@@ -62,7 +62,7 @@ line level    source
   45          #define _RGB_PINK                               255, 128, 255
   46          
   47          #define _RGB_ORANGE_H                           250, 180,  40
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 2   
 
   48          #define _RGB_ORANGE_DARK                        224, 120,   7
   49          #define _RGB_LIGHT_GRAY                         210, 210, 210
@@ -126,7 +126,7 @@ line level    source
  107          #define _LOGO_YELLOW                            255, 255,   0
  108          #define _LOGO_GRAY                              96,   96,  96
  109          
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 3   
 
  110          #endif
  111          
@@ -190,7 +190,7 @@ line level    source
               #define _LOGO_BLUE1               254,107,21
               #elif(_LOGO_TYPE == _LOGO_DUAM) 
               #define _LOGO_BLUE1               0,0,0
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 4   
 
               //#elif(_LOGO_TYPE == _LOGO_EXAN) 
               //#define _LOGO_BLUE1               254,107,21
@@ -254,7 +254,7 @@ line level    source
                   _RGB_BLUE1,
                   _RGB_BLUE1,
                   _RGB_BLUE1,
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 5   
 
                   _RGB_BLUE1,
                   _RGB_BLUE1,
@@ -318,7 +318,7 @@ line level    source
  293          
  294          };
  295           #if(_DEF_ECO_ICON)
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 6   
 
               BYTE code tPALETTE_ECO_ICON_MENU[] =
               {
@@ -382,7 +382,7 @@ line level    source
  354   2                  break;
  355   2      
  356   2              case _PALETTE_MAIN_MENU:
-C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/21/2026 15:33:46 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSDPALETTE                                                 09/24/2026 09:31:45 PAGE 7   
 
  357   2                  OsdPaletteLoadPigment(_PALETTE_INDEX0, tPALETTE_MAIN_MENU);
  358   2                  break;

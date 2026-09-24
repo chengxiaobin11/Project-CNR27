@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERSYNC
@@ -62,7 +62,7 @@ line level    source
   45              100, 120, 24, 25, 30, 50, 60, 24, 25, 30,                       // Vic 91~100
   46              50, 60, 24, 25, 30, 50, 60, 48, 48, 48,                         // Vic 101~110
   47              48, 48, 48, 48, 48, 48, 100, 120, 100, 120,                     // Vic 111~120
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 2   
 
   48              24, 25, 30, 48, 50, 60, 100, 0, 0, 0,                           // Vic 121~130
   49              0, 0, 0, 0, 0, 0, 0, 0, 0, 0,                                    // Vic 131~140
@@ -126,7 +126,7 @@ line level    source
  107              0, 0, 380, 3320, 3120, 1320, 3320, 3120, 1320, 2880,           // Vic 191~200
  108              1120, 3320, 3120, 1320, 3320, 3120, 1320, 2880, 1120, 2260,   // Vic 201~210
  109              3260, 760, 2260, 3260, 760, 2960, 760, 1184, 304, 0,           // Vic 211~220
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 3   
 
  110          };
  111          
@@ -190,7 +190,7 @@ line level    source
  169          };
  170          #endif
  171          
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 4   
 
  172          //****************************************************************************
  173          // VARIABLE DECLARATIONS
@@ -254,7 +254,7 @@ line level    source
  230          
  231          WORD ScalerSyncGetDpRxPortEdidBw(EnumDpEdidPort enumDpEdidPort);
  232          #endif
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 5   
 
  233          
  234          #if(_ADC_SUPPORT == _ON)
@@ -318,7 +318,7 @@ line level    source
  289   4                      {
  290   5                          // No Data Block Situation => d = 4, Record Cta Extend Block 1st DTD Start Addr, Searc
              -h other Block.
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 6   
 
  291   5                          // No DTD & No Data Block Situation => d = 0, Record Cta Extend Block 1st DTD Start Ad
              -dr, Search other Block.
@@ -382,7 +382,7 @@ line level    source
  348   7                                      case _CTA_EXTDBTAG_T7_VTDB:
  349   7      
  350   7                                          pusCtaDataBlockAddr[_CTA_T7_VTDB] = usEDIDDataBlockStartAddress;
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 7   
 
  351   7                                          break;
  352   7      
@@ -446,7 +446,7 @@ line level    source
  406   6      
  407   6                                  break;
  408   6      
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 8   
 
  409   6                              default:
  410   6      
@@ -510,7 +510,7 @@ line level    source
  467   4                      bit bEndOfDidExt = _FALSE;
  468   4      
  469   4                      usEDIDDataBlockStartAddress = 0x85 + ((WORD)(ucIndex) * 0x80);
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 9   
 
  470   4                      usEDIDDidChecksumAddress = 0x85 + pucDdcRamAddr[(WORD)ucIndex * 0x80 + 0x82] + ((WORD)(ucI
              -ndex) * 0x80);
@@ -574,7 +574,7 @@ line level    source
  523   6      
  524   6                                  pusDidDataBlockAddr[_DID_CTA_DB] = usEDIDDataBlockStartAddress;
  525   6      
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 10  
 
  526   6                                  // Scan CTA Data Block in DID Ext Data Block
  527   6                                  ScalerSyncGetDidCtaExtDbAddress(pusDidDataBlockAddr, pucDdcRamAddr);
@@ -638,7 +638,7 @@ line level    source
  581   2      
  582   2              switch(enumTag)
  583   2              {
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 11  
 
  584   3                  // Extension Data Block, Check Tag Code
  585   3                  case _CTA_DBTAG_EXTTAG:
@@ -702,7 +702,7 @@ line level    source
  643   3                      ucEDIDBlockBytesNum = (pucDdcRamAddr[usEDIDDataBlockStartAddress] & 0x1F);
  644   3                      // Not Data Block
  645   3                      if(ucEDIDBlockBytesNum == 0)
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 12  
 
  646   3                      {
  647   4                          // Set value to end while
@@ -766,7 +766,7 @@ line level    source
  705          
  706          //--------------------------------------------------
  707          // Description  : Get Dp Rx Port Edid Bw
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 13  
 
  708          // Input Value  : enumDpEdidPort --> Dp Rx EDID port
  709          // Output Value : Edid Native Bw, Unit: 0.01M
@@ -830,7 +830,7 @@ line level    source
  767   2      
  768   2                  // ADC Bandgap Enable
  769   2                  ScalerADCBandgap(_ON);
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 14  
 
  770   2      
  771   2      #if(_VGA_SUPPORT == _ON)
@@ -894,7 +894,7 @@ line level    source
  829   1      }
  830          #endif
  831          
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 15  
 
  832          #if(_DDR_BURN_IN_TEST == _ON)
               //--------------------------------------------------
@@ -958,7 +958,7 @@ line level    source
                       ScalerDebug();
                   }
               }
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 16  
 
               
               //--------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
                   // Wait until DVS_START
                   ScalerTimerWaitForEvent(_EVENT_DVS);
                   ScalerTimerWaitForEvent(_EVENT_DVS);
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 17  
 
               
                   if(g_bDDRDdomainGetGlobalCrc == _FALSE)
@@ -1086,7 +1086,7 @@ line level    source
               //--------------------------------------------------
               // Description  : ScalerDDR3EnableCRCFunction
               // Input Value  : None
-C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/21/2026 15:32:15 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERSYNC                                                        09/24/2026 09:30:14 PAGE 18  
 
               // Output Value : None
               //--------------------------------------------------

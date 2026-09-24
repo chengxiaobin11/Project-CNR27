@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014DDCCI
@@ -62,7 +62,7 @@ line level    source
              -COLORTEMP_USER_MIN)
   45          
   46          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 2   
 
   47          // For DDCCI Set Input Port
   48          //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
  106          BYTE code tLANGUAGEDEFINE[] = {0x02,0x03,0x0A, 0x08,0x04,0x05,0x14, 0x0B,0x16,0x1C  ,0x12,0x09 ,0x07,0x01,
              -0x0D, 0x06,0x17,0x1A,0x0C};
  107          
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 3   
 
  108          
  109          //****************************************************************************
@@ -190,7 +190,7 @@ line level    source
  167          #if((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT) || (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT))
                   _HDMI_D2,
               #endif
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 4   
 
  170          #if((_D3_INPUT_PORT_TYPE == _D3_HDMI_PORT) || (_D3_INPUT_PORT_TYPE == _D3_MHL_PORT))
  171              _HDMI_D3,
@@ -254,7 +254,7 @@ line level    source
  229   2      
  230   2      #if(_D1_INPUT_PORT_TYPE != _D1_NO_PORT)
                       case _D1_INPUT_PORT:
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 5   
 
               #if(_D1_INPUT_PORT_TYPE == _D1_DVI_PORT)
                           ucOsdSourcePort = _DVI_D1;
@@ -318,7 +318,7 @@ line level    source
                           {
                               ucOsdSourcePort = _DVI_D3;
                           }
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 6   
 
               #endif
  295   2      
@@ -382,7 +382,7 @@ line level    source
                           else
                           {
                               ucOsdSourcePort = _HDMI_D5;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 7   
 
                           }
               #endif
@@ -446,7 +446,7 @@ line level    source
                   WORD ucChksum = 0;
                   BYTE usCount = 0;
               
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 8   
 
                   for(usCount = 0; usCount < 127; usCount++)
                   {
@@ -510,7 +510,7 @@ line level    source
  477   4                          break;
  478   4      
  479   4                      case _DDCCI_CMD_CAPABILITIES_REQUEST:
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 9   
 
  480   4                          UserCommonDdcciGetCapabilitiesRequest();
  481   4                          break;
@@ -574,7 +574,7 @@ line level    source
                   return 0;
               }
               #endif
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 10  
 
  539          
  540          //--------------------------------------------------
@@ -638,7 +638,7 @@ line level    source
               #endif
  595   3        
  596   3              g_pucDdcciTxBuf[7]=0;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 11  
 
  597   3              g_pucDdcciTxBuf[8]=0;
  598   3              g_pucDdcciTxBuf[9]=0;
@@ -702,7 +702,7 @@ line level    source
  652   3                          UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, (93 - 30), (65 - 3
              -0));
  653   3                          break;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 12  
 
  654   3      
  655   3                      case _CT_5800:
@@ -766,7 +766,7 @@ line level    source
  709   2      
  710   2                  pucTemp[1] = UserCommonAdjustRealValueToPercent(GET_COLOR_TEMP_TYPE_USER_R(),
  711   2                                                                  _COLORTEMP_USER_MAX,
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 13  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 13  
 
  712   2                                                                  _COLORTEMP_USER_MIN,
  713   2                                                                  _COLORTEMP_USER_CENTER);
@@ -830,7 +830,7 @@ line level    source
  771   2              case _DDCCI_OPCODE_VCP_AUTO_COLOR:
  772   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 0x01, 0x01);
  773   2                  break;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 14  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 14  
 
  774   2      #endif
  775   2      
@@ -894,7 +894,7 @@ line level    source
  826   2              case _DDCCI_OPCODE_VCP_GREEN_BLACK_LEVEL:
  827   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 100, g_ucDdcciGreenBlackLe
              -vel);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 15  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 15  
 
  828   2                  break;
  829   2      
@@ -958,7 +958,7 @@ line level    source
  883   2                  UserCommonDdcciSetVCPReplyValue(_DDCCI_CMD_GETVCP_TP_SET_PARAMETER, 0x20, tLANGUAGEDEFINE[GET_
              -OSD_LANGUAGE()]);
  884   2                  break;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 16  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 16  
 
  885   2      
  886   2              case _DDCCI_OPCODE_VCP_POWER_MODE:
@@ -1022,7 +1022,7 @@ line level    source
  943   2      
  944   2              case _DDCCI_OPCODE_VCP_NEW_CONTROL_VALUE:
  945   2              case _DDCCI_OPCODE_VCP_AUTO_SET_UP:
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 17  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 17  
 
  946   2              case _DDCCI_OPCODE_VCP_AUTO_COLOR:
  947   2      
@@ -1086,7 +1086,7 @@ line level    source
 1002   1          else
 1003   1          {
 1004   2          
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 18  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 18  
 
 1005   2              switch(g_pucDdcciRxBuf[_DDCCI_SOURCE_OPCODE])
 1006   2              {
@@ -1150,7 +1150,7 @@ line level    source
 1064   3                      {
 1065   3                          SET_FORCE_POW_SAV_STATUS(_FALSE);
 1066   3                          SysSourceSetScanType(_SOURCE_SWITCH_FIXED_PORT);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 19  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 19  
 
 1067   3                          SysSourceSwitchInputPort(_DVI_2);
 1068   3                          SysModeSetResetTarget(_MODE_ACTION_RESET_TO_SEARCH);
@@ -1214,7 +1214,7 @@ line level    source
                         SysSourceSwitchInputPort(_D2_INPUT_PORT);
               #else
 1124   3                ;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 20  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 20  
 
 1125   3      #endif
 1126   3      
@@ -1278,7 +1278,7 @@ line level    source
 1181   3                      break;
 1182   3      
 1183   3                  case _DDCCI_OPCODE_VCP_RECAL_BRI_CON:
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 21  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 21  
 
 1184   3      
 1185   3                      RTDNVRamRestoreBriCon();
@@ -1342,7 +1342,7 @@ line level    source
 1243   3                      else
 1244   3                      {
 1245   4                          SET_COLOR_TEMP_TYPE(_CT_SRGB);
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 22  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 22  
 
 1246   4                      }
 1247   3      
@@ -1406,7 +1406,7 @@ line level    source
 1304   3       
 1305   3                       
 1306   3                       ucTemp=g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE];
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 23  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 23  
 
 1307   3                        
 1308   3                        if(ucTemp > 100)
@@ -1470,7 +1470,7 @@ line level    source
 1366   4                              break;
 1367   4                      }
 1368   3      
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 24  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 24  
 
 1369   3                      RTDNVRamLoadColorSetting(GET_COLOR_TEMP_TYPE());
 1370   3      
@@ -1534,7 +1534,7 @@ line level    source
 1424   4                          SET_COLOR_TEMP_TYPE_USER_G(UserCommonAdjustPercentToRealValue(g_pucDdcciRxBuf[_DDCCI_S
              -ET_LOW_BYTE],
 1427   4                                                                                        _COLORTEMP_USER_MAX,
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 25  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 25  
 
 1427   4                                                                                        _COLORTEMP_USER_MIN,
 1427   4                                                                                        _COLORTEMP_USER_CENTER))
@@ -1598,7 +1598,7 @@ line level    source
 1478   4                          UserAdjustContrast(GET_OSD_CONTRAST());
 1479   4      #endif
 1480   4      
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 26  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 26  
 
 1481   4                          SET_OSD_EVENT_MESSAGE(_OSDEVENT_SAVE_NVRAM_COLORPROC_MSG);
 1482   4                      }
@@ -1662,7 +1662,7 @@ line level    source
 1540   3                      if(SysSourceGetSourceType() == _SOURCE_VGA)
 1541   3                      {
 1542   4                          if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] > 100)
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 27  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 27  
 
 1543   4                          {
 1544   5                              g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] = 100;
@@ -1726,7 +1726,7 @@ line level    source
 1599   3                  case _DDCCI_OPCODE_VCP_POWER_MODE:
 1600   3      
 1601   3                      if(g_pucDdcciRxBuf[_DDCCI_SET_LOW_BYTE] == 4)
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 28  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 28  
 
 1602   3                      {
 1603   4                          SET_FORCE_POW_SAV_STATUS(_FALSE);
@@ -1790,7 +1790,7 @@ line level    source
 1661   4                              break;
 1662   4                          case 0x01:
 1663   4                              ucTemp=_CHINESE_F;
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 29  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 29  
 
 1664   4                              break;
 1665   4                          case 0x0D:
@@ -1854,7 +1854,7 @@ line level    source
 1723   1      }
 1724          
 1725          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 30  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 30  
 
 1726          // Description  : Reset monitor
 1727          // Input Value  : None
@@ -1918,7 +1918,7 @@ line level    source
 1785   1        udAddress = (g_pucDdcciRxBuf[5]);
 1786   1      
 1787   1        switch(ucFlag)
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 31  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 31  
 
 1788   1      
 1789   1        {
@@ -1982,7 +1982,7 @@ line level    source
 1847   2            break;
 1848   2      
 1849   2          case 5:     
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 32  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 32  
 
 1850   2      #if(_D3_INPUT_PORT_TYPE != _D3_NO_PORT)
 1851   2      #if(_D3_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_FLASH)
@@ -2046,7 +2046,7 @@ line level    source
                     {
                       return;
                     }
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 33  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 33  
 
               #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_SYSTEM_EEPROM)
               #elif(_D0_EMBEDDED_DDCRAM_LOCATION == _EDID_TABLE_LOCATION_USER)
@@ -2110,7 +2110,7 @@ line level    source
                     if(UserCommonFlashWrite(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D3))
                     {
-C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/21/2026 15:33:42 PAGE 34  
+C51 COMPILER V9.60.0.0   RTD2014DDCCI                                                      09/24/2026 09:31:41 PAGE 34  
 
                       if(UserCommonFlashRead(_EDID_FLASH_BANK,_EDID_D3_ADDRESS_FLASH, _D3_EMBEDDED_DDCRAM_MAX_SIZE, MCU_DDCR
              -AM_D3))

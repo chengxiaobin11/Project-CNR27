@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_ADC                                                 09/21/2026 15:32:51 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_ADC                                                 09/24/2026 09:30:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_ADC
@@ -62,7 +62,7 @@ line level    source
   45          #if(_VGA_CHROMA_PATTERN12_SUPPORT == _ON)
               //--------------------------------------------------
               // Description  : Set clamp-to-top status
-C51 COMPILER V9.60.0.0   RL6432_SERIES_ADC                                                 09/21/2026 15:32:51 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_ADC                                                 09/24/2026 09:30:50 PAGE 2   
 
               // Input Value  : _ENABLE or _DISABLE
               // Output Value : None

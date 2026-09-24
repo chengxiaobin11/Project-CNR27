@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTRGBGAMMA                                         09/21/2026 15:33:37 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTRGBGAMMA                                         09/24/2026 09:31:36 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERADJUSTRGBGAMMA
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               void UserAdjustRGBGamma(BYTE ucGamma);
               
-C51 COMPILER V9.60.0.0   RTD2014USERADJUSTRGBGAMMA                                         09/21/2026 15:33:37 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERADJUSTRGBGAMMA                                         09/24/2026 09:31:36 PAGE 2   
 
               
               

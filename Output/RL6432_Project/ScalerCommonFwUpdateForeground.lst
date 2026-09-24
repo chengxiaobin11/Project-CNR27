@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/21/2026 15:32:51 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/24/2026 09:30:50 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONFWUPDATEFOREGROUND
@@ -62,7 +62,7 @@ line level    source
               #endif
               
               // Reserved Xdata for isp program Sram
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/21/2026 15:32:51 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/24/2026 09:30:50 PAGE 2   
 
               #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE == _EDID_SIZE_NONE)
               BYTE xdata g_pucProgamBuffer[128]              _at_ _HW_FLASH_PROG_USING_XRAM_START_ADDR;
@@ -126,7 +126,7 @@ line level    source
               void ScalerFwUpdateForegroundSceneBackup(void)
               {
               #if(_A0_EMBEDDED_DDCRAM_MAX_SIZE != _EDID_SIZE_NONE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/21/2026 15:32:51 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONFWUPDATEFOREGROUND                                    09/24/2026 09:30:50 PAGE 3   
 
                   // Backup DDC status
                   g_bFwUpdateForegroundDdcciStatus = ScalerSyncGetDdcForceNackStatus(_A0_INPUT_PORT);

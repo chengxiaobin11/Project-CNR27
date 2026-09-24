@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_TMDS
@@ -62,7 +62,7 @@ line level    source
   45          void ScalerTMDSInterruptInitial(BYTE ucInputPort);
   46          void ScalerTMDSSetDeOnlyModeConfig(EnumSourceSearchPort enumSourceSearchPort, EnumDeOnlyConfig enumDeonlyC
              -onfig);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 2   
 
   47          EnumDeOnlyConfig ScalerTMDSGetDeOnlyModeConfig(EnumSourceSearchPort enumSourceSearchPort);
   48          void ScalerTMDSIntHandler_EXINT0(void);
@@ -126,7 +126,7 @@ line level    source
               bit ScalerTMDSGetFirstActiveHdcp14BchErrorCheck(BYTE ucInputPort);
               void ScalerTMDSHdcp14BchErrorCheckReset(BYTE ucInputPort);
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 3   
 
  109          
  110          #if(_DVI_SUPPORT == _ON)
@@ -190,7 +190,7 @@ line level    source
  167          // Description  : Initialize TMDS Interrupt Required Settings
  168          // Input Value  : None
  169          // Output Value : None
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 4   
 
  170          //--------------------------------------------------
  171          void ScalerTMDSInterruptInitial(BYTE ucInputPort)
@@ -254,7 +254,7 @@ line level    source
                           break;
               #endif
  230   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 5   
 
  231   2      #if(_D3_TMDS_SUPPORT == _ON)
  232   2              case _D3_INPUT_PORT:
@@ -318,7 +318,7 @@ line level    source
  290   1      #if(_D1_TMDS_SUPPORT == _ON)
                   ScalerTMDSRx1IntHandler_EXINT0();
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 6   
 
  293   1      
  294   1      #if(_D2_TMDS_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  352   2      #if(_D3_TMDS_SUPPORT == _ON)
  353   2              case _SCALER_TIMER_EVENT_RX3_TMDS_VIDEO_DETECT:
  354   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 7   
 
  355   2                  ScalerTMDSRx3TMDSVideoDetectEvent();
  356   2      
@@ -446,7 +446,7 @@ line level    source
  414          {
  415   1          switch(ucInputPort)
  416   1          {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 8   
 
  417   2      #if(_D1_TMDS_SUPPORT == _ON)
               
@@ -510,7 +510,7 @@ line level    source
  476   2              ScalerTMDSRx3HdmiAVMuteProc();
  477   2          }
  478   1      #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 9   
 
  479   1      }
  480          
@@ -574,7 +574,7 @@ line level    source
  538   1      }
  539          
  540          #if(_HDMI_IDENTIFY_GAME_SRC_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 10  
 
               //--------------------------------------------------
               // Description  : Get HDMI SPD Info Contents
@@ -638,7 +638,7 @@ line level    source
  600   1          ScalerTMDSRx3ReadRequestTimerEventEnable_WDINT(bEnable);
  601   1      #endif
  602   1      }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 11  
 
  603          
  604          //--------------------------------------------------
@@ -702,7 +702,7 @@ line level    source
  662   2                  break;
  663   2      #endif
  664   2      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 12  
 
  665   2              default:
  666   2                  break;
@@ -766,7 +766,7 @@ line level    source
  724          
  725          #if(_TMDS_HDMI_2_0_SCDC_RR_CTS_SUPPORT == _ON)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 13  
 
               // Description  : TMDS Set Scdc Info
               // Input Value  : ucInputPort
@@ -830,7 +830,7 @@ line level    source
                   return enumFreeSyncSupport;
               }
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 14  
 
               //--------------------------------------------------
               // Description  : TMDS Set Amd Aupi Scdc Info
@@ -894,7 +894,7 @@ line level    source
                           if(ScalerColorGetColorSpace() == _COLOR_SPACE_YCBCR420)
                           {
                               return _FALSE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 15  
 
                           }
               
@@ -958,7 +958,7 @@ line level    source
  910   2              default:
  911   2                  break;
  912   2          }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 16  
 
  913   1      }
  914          
@@ -1022,7 +1022,7 @@ line level    source
  972          // Output Value : TRUE => HDCP Enabled
  973          //--------------------------------------------------
  974          bit ScalerTMDSHdcpEnabled(BYTE ucInputPort)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 17  
 
  975          {
  976   1          switch(ucInputPort)
@@ -1086,7 +1086,7 @@ line level    source
 1031   2      
 1032   2      #if((_D2_TMDS_SUPPORT == _ON) && (_D2_INPUT_PORT_TYPE != _D2_DUAL_DVI_PORT))
                           return ScalerTMDSRx2TMDSPSPreDetect();
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 18  
 
               #endif
 1035   2      
@@ -1150,7 +1150,7 @@ line level    source
 1093   2      
 1094   2                  break;
 1095   2          }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 19  
 
 1096   1      
 1097   1          return _FALSE;
@@ -1214,7 +1214,7 @@ line level    source
 1155   1          switch(ucSourceType)
 1156   1          {
 1157   2              case _SOURCE_DVI:
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 20  
 
 1158   2              case _SOURCE_HDMI:
 1159   2      
@@ -1278,7 +1278,7 @@ line level    source
 1217          {
 1218   1          switch(ucPortSelect)
 1219   1          {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 21  
 
 1220   2      #if(_D1_TMDS_SUPPORT == _ON)
                       case _D1_INPUT_PORT:
@@ -1342,7 +1342,7 @@ line level    source
 1279   2      
 1280   2                  break;
 1281   2      #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 22  
 
 1282   2      
 1283   2              default:
@@ -1406,7 +1406,7 @@ line level    source
               
                           break;
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 23  
 
 1344   2      
 1345   2      #if(_D2_TMDS_SUPPORT == _ON)
@@ -1470,7 +1470,7 @@ line level    source
 1403   1      }
 1404          
 1405          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 24  
 
 1406          // Description  : ScalerTMDSHdcp1p4AksvClear
 1407          // Input Value  : None
@@ -1534,7 +1534,7 @@ line level    source
                       case _SCALER_TIMER_EVENT_RX1_TMDS_HDCP14_BCH_ERR_CHK:
                           ScalerTMDSRx1Hdcp14BchErrorCheckEvent();
                           break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 25  
 
               #endif
               #if(_D2_TMDS_SUPPORT == _ON)
@@ -1598,7 +1598,7 @@ line level    source
                           ScalerTMDSRx2Hdcp14BchErrorCheckReset();
                           break;
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 26  
 
               #if(_D3_TMDS_SUPPORT == _ON)
                       case _D3_INPUT_PORT:
@@ -1662,7 +1662,7 @@ line level    source
                           {
               #if(_TMDS_HDCP_2_2_SUPPORT == _ON)
                               // Set D2 Port HDCP Address is 0x74
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 27  
 
                               ScalerSetDataPortByte(P71_C3_HDCP_AP, _P71_C4_PT_C2_PORT_PAGE71_HDCP_SLAVE_ADD, 0x3A);
               
@@ -1726,7 +1726,7 @@ line level    source
 1650   2          }
 1651   1      }
 1652          
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 28  
 
 1653          //--------------------------------------------------
 1654          // Description  : Change HDCP Cap
@@ -1790,7 +1790,7 @@ line level    source
 1712   2      
 1713   2                  // Set Not Support HDCP 2.2 Feature
 1714   2                  ScalerSetDataPortByte(P72_C3_HDCP_AP, _P72_C4_PT_50_PORT_PAGE72_HDCP2_VER, 0x00);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 29  
 
 1715   2      #endif
 1716   2                  break;
@@ -1854,7 +1854,7 @@ line level    source
                   }
               #endif
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 30  
 
               #if(_D3_HDMI_SUPPORT == _ON)
                   if(GET_DIGITAL_PORT_SWITCH_TO_D3() == _TRUE)
@@ -1918,7 +1918,7 @@ line level    source
                       // Enable CLK Lane Z0
                       ScalerSetBit(P7A_18_IMPEDANCE_00, ~_BIT7, _BIT7);
                   }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/21/2026 15:33:16 PAGE 31  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_TMDS                                                09/24/2026 09:31:15 PAGE 31  
 
               #endif
               

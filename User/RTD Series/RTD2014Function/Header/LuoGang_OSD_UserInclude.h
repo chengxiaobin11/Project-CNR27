@@ -3065,7 +3065,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _BACKLIGHT_MAX										0xFF//0xAF
 	#define _BACKLIGHT_DEF_PWM									0xCC//0x7F
 	#define _BACKLIGHT_MIN										0x1C
-	#define _DEF_LANGUAGE										_CHINESE_S
+	#define _DEF_LANGUAGE										_ENGLISH//_CHINESE_S
 	#define _DEF_OSD_LANGUAGE_ARROW                    			 _ON	
 	#define _DEF_GAMMA											_GAMMA_22
 	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
@@ -3081,7 +3081,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _OD_STRONG											0X40
 	#define _OD_WEAK_MID_HIGH									_OFF // OD ǿ����
 	#define _MPRT_DCR_REPULSION                                 _ON  //DCR��MPRT����
-	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_1__,__,_2__,_0__,_2__,_6__,_0__,_9__,_1__,_6__
+	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_2__,__,_2__,_0__,_2__,_6__,_0__,_9__,_2__,_3__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_6500
 	#define EDID_SIZE_WR								_ON//д��ߴ�

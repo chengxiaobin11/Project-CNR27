@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_OD
@@ -62,7 +62,7 @@ line level    source
               void ScalerODIntHandler_EXINT0(void);
               #endif
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 2   
 
               //****************************************************************************
               // FUNCTION DEFINITIONS
@@ -126,7 +126,7 @@ line level    source
                       SET_OD_CURR_DYNAMIC_STATUS(_DISABLE);
                       ScalerGlobalSetInterrupt(_IRQ_DEN_START, _DISABLE);
               #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 3   
 
                       // Disable OD function
                       ScalerSetBit(P3_A1_LS_CTRL0, ~(_BIT7 | _BIT6), 0x00);
@@ -190,7 +190,7 @@ line level    source
                       BYTE ucFreerunDVSCount = 0;
               
                       // Set DEN_START flag
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 4   
 
                       SET_EVENT_DEN_START_INT(_TRUE);
               
@@ -254,7 +254,7 @@ line level    source
                           // <OD control>:             |___on__|__off__|___on__|__off__|__off__|___on__|__off__|___on__|
              -__off__|__off__|
                           // OD actual(DB effective):  |_______|___ON__|__OFF__|___ON__|__OFF__|__OFF__|___ON__|__OFF__|
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 5   
 
              -___ON__|__OFF__|
                           // OD memory access:         |_______|_______|___R___|___W___|___R___|_______|___W___|___R___|
@@ -318,7 +318,7 @@ line level    source
              -__F3___|
                           // <Free run DVS count>:     |___0___|___1___|___2___|___0___|___1___|___2___|___0___|___1___|
              -___2___|
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 6   
 
                           // <OD control>:             |___on__|__off__|__off__|___on__|__off__|__off__|___on__|__off__|
              -__off__|
@@ -382,7 +382,7 @@ line level    source
                       }// End of switch(GET_MEMORY_DVF_SELECT())
                   }// End of if(ScalerGetBit_EXINT(P0_05_IRQ_CTRL1, (_BIT3 | _BIT2)) == (_BIT3 | _BIT2))
               } // End of void ScalerODIntHandler_EXINT0()
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/21/2026 15:33:09 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OD                                                  09/24/2026 09:31:08 PAGE 7   
 
               #endif // End of #if(_FRC_SUPPORT == _ON)
               #endif  // End of #if(_OD_SUPPORT == _ON)

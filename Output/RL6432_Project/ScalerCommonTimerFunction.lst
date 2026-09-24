@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTIMERFUNCTION
@@ -62,7 +62,7 @@ line level    source
   44          #define _TIMER_COUNT_PS_TEMP                    ((DWORD)12 * _FLASH_CLK_PS_DIV * _MCU_CLK_PS_DIV)
   45          
   46          //////////////////////////////////////////////////////
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 2   
 
   47          // Power Saving/Down Fast Mode for DP Aux Handshake //
   48          //////////////////////////////////////////////////////
@@ -126,7 +126,7 @@ line level    source
   93          #define _TIMER1_UART_COUNT_PS_BYTE              (0x100 - ((BYTE)(((DWORD)_INTERNAL_OSC_XTAL + (_TIMER1_UAR
              -T_COUNT_PS_TEMP / 2)) / _TIMER1_UART_COUNT_PS_TEMP)))
   94          #else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 3   
 
               #define _TIMER1_UART_COUNT_PS_WORD              (0xFFFF - ((WORD)(((DWORD)_INTERNAL_OSC_XTAL + (_TIMER1_UA
              -RT_COUNT_PS_TEMP / 2)) / _TIMER1_UART_COUNT_PS_TEMP)))
@@ -190,7 +190,7 @@ line level    source
  142          #define _EVENT_TIME_MAX                         61000
  143          
  144          /////////////////
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 4   
 
  145          // Active Mode //
  146          /////////////////
@@ -254,7 +254,7 @@ line level    source
  198          // Idle Mode //
  199          ///////////////
  200          #define _IDLE_TIME_TEMP                         ((_SYS_PS_TIMER_PRECISION_SUPPPORT == _ON) ? ((DWORD)0x000
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 5   
 
              -0FFFF / (((DWORD)_EXT_XTAL + _TIMER2_COUNT_IN_TEMP) / _TIMER2_COUNT_IN_TEMP)) : ((DWORD)0x0000FFFF / (((DWORD)_INTERNAL_
              -OSC_XTAL + _TIMER2_COUNT_PS_TEMP) / _TIMER2_COUNT_PS_TEMP)))
@@ -318,7 +318,7 @@ line level    source
              -ALID)
  249          #define CLR_EVENT_VALID(x)                      (g_pstTimerEvent[x].enumEventID = _SCALER_TIMER_EVENT_INVA
              -LID)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 6   
 
  250          
  251          #define GET_EVENT_ID(x)                         (g_pstTimerEvent[x].enumEventID)
@@ -382,7 +382,7 @@ line level    source
  307          #if((_INSTANT_TIMER_EVENT_0 == _ON) || (_INSTANT_TIMER_EVENT_1 == _ON))
  308          EnumScalerTimerOperationMode g_enumTimerMode = _TIMER_OPERATION_INITIAL_MODE;
  309          #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 7   
 
  310          
  311          #if(_INSTANT_TIMER_EVENT_0 == _ON)
@@ -446,7 +446,7 @@ line level    source
  368          
  369          #if(_SYSTEM_LOW_POWER_IDLE_SUPPORT == _ON)
               void ScalerTimerAddTimerCounter(void);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 8   
 
               #endif
  372          
@@ -510,7 +510,7 @@ line level    source
               // Input Value  : None
               // Output Value : None
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 9   
 
               BYTE ScalerTimerGetRecordTimer_EXINT0(void) using 1
               {
@@ -574,7 +574,7 @@ line level    source
  488   1          BYTE ucIndex = 0;
  489   1          WORD usNextTime = 0xFFF;
  490   1          BYTE ucActiveWDID = _SCALER_WD_TIMER_EVENT_NULL;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 10  
 
  491   1          BYTE ucActiveWDTime = 0;
  492   1          BYTE ucWDTimeMSB = 0;
@@ -638,7 +638,7 @@ line level    source
                                           break;
               #endif // End of #if(_D1_INPUT_PORT_TYPE == _D1_DP_PORT)
  551   6      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 11  
 
  552   6      #if(_HDMI_2_0_SUPPORT == _ON)
  553   6      
@@ -702,7 +702,7 @@ line level    source
               #endif
               #endif
  609   6      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 12  
 
  610   6      #if((_DP_HDCP_2_2_SUPPORT == _ON) && (_D0_DP_EXIST == _ON))
  611   6                              case _SCALER_WD_TIMER_EVENT_DP_RX0_HDCP2_AKE_INIT:
@@ -766,7 +766,7 @@ line level    source
                                                   ucActiveWDTime = 10;
                                               }
                                               else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 13  
 
                                               {
                                                   // Reactive WD Timer to Start RSA Cal
@@ -830,7 +830,7 @@ line level    source
                                                   ucActiveWDTime = 10;
                                               }
                                               else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 14  
 
                                               {
                                                   // Reactive WD Timer to Start RSA Cal
@@ -894,7 +894,7 @@ line level    source
  788   8                                          ucActiveWDTime = 10;
  789   8                                      }
  790   7                                      else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 15  
 
  791   7                                      {
  792   8                                          // Reactive WD Timer to Start RSA Cal
@@ -958,7 +958,7 @@ line level    source
                                                   ucActiveWDTime = 10;
                                               }
                                               else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 16  
 
                                               {
                                                   // Reactive WD Timer to Start RSA Cal
@@ -1022,7 +1022,7 @@ line level    source
                                               }
                                               else
                                               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 17  
 
                                                   // Reactive WD Timer to Start RSA Cal
                                                   ucActiveWDID = _SCALER_WD_TIMER_EVENT_TMDS_RX5_HDCP2_RSA_CAL_START;
@@ -1086,7 +1086,7 @@ line level    source
              -WD_EVENT_TIME(ucIndex) - usWDLatchedTime) : 0));
  969   6                          }
  970   5                          else if(GET_GLOBAL_XTAL_CLK_SWITCH() == _GLOBAL_XTAL_CLK_SEL_TO_INTERNAL)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 18  
 
  971   5                          {
  972   6                              // Calculate Remain Event Time; xtal -> iosc
@@ -1150,7 +1150,7 @@ line level    source
 1028   1      
 1029   1          // Calculate Target WD Count
 1030   1          usTime = ((DWORD)usTime * (_SYS_USE_ISO_CLK ? _INTERNAL_OSC_XTAL : _EXT_XTAL)) >> 11;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 19  
 
 1031   1      
 1032   1          for(ucIndex = 0; ucIndex < _WD_TIMER_EVENT_COUNT; ucIndex++)
@@ -1214,7 +1214,7 @@ line level    source
 1090   4      
 1091   4                      // Clear WD Timer Count
 1092   4                      MCU_FFEA_WATCHDOG_TIMER |= _BIT6;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 20  
 
 1093   4      
 1094   4                      SET_WD_EVENT_TIME(ucIndex, usTime);
@@ -1278,7 +1278,7 @@ line level    source
 1150   5                          for(ucEventIndex = 0; ucEventIndex < _WD_TIMER_EVENT_COUNT; ucEventIndex++)
 1151   5                          {
 1152   6                              if((GET_WD_EVENT_VALID(ucEventIndex) == _FALSE) || (ucEventIndex == ucIndex))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 21  
 
 1153   6                              {
 1154   7                                  continue;
@@ -1342,7 +1342,7 @@ line level    source
 1211   3                  usWDLatchedTime = ((WORD)((ucWDTimeMSB & 0x7F) << 5) | (ucWDTimeLSB >> 3));
 1212   3      
 1213   3                  SET_WD_EVENT_ID(ucIndex, enumEventID);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 22  
 
 1214   3      
 1215   3                  // If Target WD Count overflows
@@ -1406,7 +1406,7 @@ line level    source
 1272   5                          if(usTime == 0)
 1273   5                          {
 1274   6                              // Threshold Set 0 will Induce HW IRQ can't happen
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 23  
 
 1275   6                              SET_TIMER_WD_THRESHOLD_COUNT(1);
 1276   6                          }
@@ -1470,7 +1470,7 @@ line level    source
 1332          // Input Value  : ucEventID => Event ID
 1333          // Output Value : None
 1334          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 24  
 
 1335          void ScalerTimerWDCancelTimerEvent(EnumScalerWDTimerEventID enumEventID)
 1336          {
@@ -1534,7 +1534,7 @@ line level    source
 1393   3      
 1394   3                  // An intermediate variable
 1395   3                  PDATA_WORD(0) = usTimerMs * 1000;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 25  
 
 1396   3      
 1397   3                  // Back up timer event period
@@ -1598,7 +1598,7 @@ line level    source
 1454   2              // Enable interrupt of Timer0
 1455   2              ET0 = _ENABLE;
 1456   2      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 26  
 
 1457   2              // Reset Timer0 Axis Counter
 1458   2              g_usTimerAxisCnt0 = 0;
@@ -1662,7 +1662,7 @@ line level    source
 1516   2              if((MCU_FFED_MCU_CONTROL & _BIT1) == _BIT1)
 1517   2              {
 1518   3                  PDATA_WORD(0) = 0xFFFF - ((WORD)((_TIMER01_TEMP_COUNT_M2PLL * PDATA_WORD(0)) / 1000));
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 27  
 
 1519   3              }
 1520   2              else
@@ -1726,7 +1726,7 @@ line level    source
 1577   1      
 1578   1          while(usPar2 != 0)
 1579   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 28  
 
 1580   2              usTemp = usPar2;
 1581   2              usPar2 = usPar1 % usPar2;
@@ -1790,7 +1790,7 @@ line level    source
 1637   2      #if(_UART_SUPPORT == _ON)
               #if(_UART_LOW_BAUD_RATE_SUPPORT == _ON)
                           g_ucTimerCountLByte1_Uart = LOBYTE(_TIMER1_UART_COUNT_IN_WORD);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 29  
 
                           g_ucTimerCountHByte1_Uart = HIBYTE(_TIMER1_UART_COUNT_IN_WORD);
               #else
@@ -1854,7 +1854,7 @@ line level    source
 1697   4      
 1698   4      #if(_INSTANT_TIMER_EVENT_0 == _ON)
 1699   4                          if(bTR0Info == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 30  
 
 1700   4                          {
 1701   5                              g_usTimerBackupCount0 = 0xFFFF - ((WORD)((_TIMER01_TEMP_COUNT_IOSC_FAST * g_usTime
@@ -1918,7 +1918,7 @@ line level    source
                               pucTimercounter[4] = _TIMER1_UART_COUNT_PS_BYTE;
               #endif
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 31  
 
 1758   3                  }
 1759   2      
@@ -1982,7 +1982,7 @@ line level    source
               
               #if(_INSTANT_TIMER_EVENT_1 == _ON)
                               if(bTR1Info == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 32  
 
                               {
                                   g_usTimerBackupCount1 = 0xFFFF - ((WORD)((_TIMER01_TEMP_COUNT_OSD * g_usTimerPreviousC
@@ -2046,7 +2046,7 @@ line level    source
 1877   3      
 1878   3                  // Stop Timer 0
 1879   3                  TR0 = _OFF;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 33  
 
 1880   3      
 1881   3                  // Clear overflow flag
@@ -2110,7 +2110,7 @@ line level    source
                   TF1 = 0;
               #if(_UART_LOW_BAUD_RATE_SUPPORT == _ON)
                   TL1 = g_ucTimerCountLByte1_Uart;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 34  
 
                   TH1 = g_ucTimerCountHByte1_Uart;
               #else
@@ -2174,7 +2174,7 @@ line level    source
                   {
                       if(g_bNotifyTimer2Int == _TRUE)
                       {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 35  
 
                           usOffset = _TIMER_COUNT_TEMP_PS_FAST1 - 1;
                       }
@@ -2238,7 +2238,7 @@ line level    source
 2063   2      
 2064   2      #if(_D5_TMDS_SUPPORT == _ON)
                       case _SCALER_TIMER_EVENT_RX5_TMDS_VIDEO_DETECT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 36  
 
               #endif
 2067   2              ScalerTMDSVideoDetectEvent(enumEventID);
@@ -2302,7 +2302,7 @@ line level    source
 2125   2              break;
 2126   2      
 2127   2      #if(_D0_HDMI_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 37  
 
                       case _SCALER_TIMER_EVENT_RX0_HDMI_HPD_ASSERTED:
                           PCB_D0_HOTPLUG(_D0_HOT_PLUG_HIGH);
@@ -2366,7 +2366,7 @@ line level    source
 2187   2      #endif
 2188   2      
 2189   2      #if(_HDMI_2_0_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 38  
 
 2190   2      
 2191   2      #if(_D1_HDMI_2_0_SUPPORT == _ON)
@@ -2430,7 +2430,7 @@ line level    source
               #endif
 2250   2      
 2251   2      #if((_D2_INPUT_PORT_TYPE == _D2_HDMI_PORT) || (_D2_INPUT_PORT_TYPE == _D2_MHL_PORT))
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 39  
 
                       case _SCALER_TIMER_EVENT_RX2_HDCP2_REAUTH:
               #endif
@@ -2494,7 +2494,7 @@ line level    source
                       case _SCALER_TIMER_EVENT_AUDIO_D3_FW_TRACKING_PREPARING:
               #endif
               #if(_D4_HDMI_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 40  
 
                       case _SCALER_TIMER_EVENT_AUDIO_D4_FW_TRACKING_PREPARING:
               #endif
@@ -2558,7 +2558,7 @@ line level    source
                       case _SCALER_TIMER_EVENT_DP_RX2_HOTPLUG_ASSERTED:
                       case _SCALER_TIMER_EVENT_DP_RX2_HDCP_LONG_HOTPLUG_EVENT:
                       case _SCALER_TIMER_EVENT_DP_RX2_LONG_HOTPLUG_EVENT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 41  
 
                       case _SCALER_TIMER_EVENT_DP_RX2_LINK_STATUS_IRQ:
               
@@ -2622,7 +2622,7 @@ line level    source
 2435   2                  break;
 2436   2      
 2437   2      #if(_DP_MST_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 42  
 
                       case _SCALER_TIMER_EVENT_DP_RX0_SOURCE_WRITE_POWER_STATUS_EVENT_DEBOUNCE:
               
@@ -2686,7 +2686,7 @@ line level    source
                       case _SCALER_TIMER_EVENT_DP_RX1_RSV0_PACKET_DETECT:
               
                           ScalerDpRx1RSV0PacketDetectEvent();
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 43  
 
                           break;
               #endif
@@ -2750,7 +2750,7 @@ line level    source
               
                       case _SCALER_TIMER_EVENT_DP_RX1_HDCP_REPEATER_PROC_TIMEOUT:
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 44  
 
                           ScalerDpRx1HDCPSetRepeaterProcTimeout();
                           break;
@@ -2814,7 +2814,7 @@ line level    source
                           SET_DP_TX_WAIT_TOPOLOGY_REBUILD_MSG();
               
                           if(GET_REG_DP_RX_MST_ENABLE() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 45  
 
                           {
                               switch(g_enumDpMSTCapablePort)
@@ -2878,7 +2878,7 @@ line level    source
               
               #if(_DP_HDCP_2_2_SUPPORT == _ON)
                       case _SCALER_TIMER_EVENT_DP_TX_HDCP2_WAITING_TO_READ_CERTIFICATE:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 46  
 
               
                           ScalerDpTxHdcp2TimeoutToReadCertificateEvent();
@@ -2942,7 +2942,7 @@ line level    source
               
                           ScalerHdmiTxHdcp2TimeoutToReadHPrimeEvent();
                           break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 47  
 
               
                       case _SCALER_TIMER_EVENT_HDMI_TX_HDCP2_WAITING_TO_ENCRYPT_DATA:
@@ -3006,7 +3006,7 @@ line level    source
               
                           ScalerMHLTimerEventProc(enumEventID);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 48  
 
                           break;
               
@@ -3070,7 +3070,7 @@ line level    source
                       case _SCALER_TIMER_EVENT_PD_RX0_SRC_TURN_OFF_POWER:
                       case _SCALER_TIMER_EVENT_PD_RX0_SEND_HARD_RST:
                       case _SCALER_TIMER_EVENT_PD_RX0_SNK_HARD_RST_TIMEOUT:
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 49  
 
                       case _SCALER_TIMER_EVENT_PD_RX0_TPC_ERR_RECOVER:
                       case _SCALER_TIMER_EVENT_PD_RX0_CLR_SRC_CAP_WAIT:
@@ -3134,7 +3134,7 @@ line level    source
                           break;
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 50  
 
               #if(_DP_TYPE_C_PORT_CTRL_SUPPORT == _ON)
                       case _SCALER_TIMER_EVENT_BACKGROUND_FW_UPDATE_TYPEC_BUSY:
@@ -3198,7 +3198,7 @@ line level    source
 2991   1          // Search for Existing Event with the same Event ID
 2992   1          for(ucEventIndex = 0; ucEventIndex < _TIMER_EVENT_COUNT; ucEventIndex++)
 2993   1          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 51  
 
 2994   2              if(GET_EVENT_VALID(ucEventIndex) == _TRUE)
 2995   2              {
@@ -3262,7 +3262,7 @@ line level    source
 3052   1      }
 3053          
 3054          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 52  
 
 3055          // Description  : Cancel an event
 3056          // Input Value  : Event     --> Event which we want to cancel
@@ -3326,7 +3326,7 @@ line level    source
 3114   1          BYTE ucEventIndex = 0;
 3115   1      
 3116   1          // Search Correponding EventID and wait until it finished
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 53  
 
 3117   1          for(ucEventIndex = 0; ucEventIndex < _TIMER_EVENT_COUNT; ucEventIndex++)
 3118   1          {
@@ -3390,7 +3390,7 @@ line level    source
               }
               #endif
 3176          
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 54  
 
 3177          //--------------------------------------------------
 3178          // Description  : Check timer and events. We have to run this function when setting up a timer for an even
@@ -3454,7 +3454,7 @@ line level    source
 3235   2              usPresentTime = g_usTimerCounter;
 3236   2          }
 3237   1      
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 55  
 
 3238   1          return usPresentTime;
 3239   1      }
@@ -3518,7 +3518,7 @@ line level    source
 3297   5                      }
 3298   4                  }
 3299   3              }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 56  
 
 3300   2          }
 3301   1      }
@@ -3582,7 +3582,7 @@ line level    source
 3358   3                  if(((bit)ScalerGetBit_EXINT(usRegister, ucBit) ^ bSuccess) == _FALSE)
 3359   3                  {
 3360   4                      return _TRUE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 57  
 
 3361   4                  }
 3362   3              }
@@ -3646,7 +3646,7 @@ line level    source
 3420   1      
 3421   1          return usTimer;
 3422   1      }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 58  
 
 3423          #endif
 3424          
@@ -3710,7 +3710,7 @@ line level    source
 3481          //----------------------------------------------------------------------
 3482          WORD ScalerTimerTimer2Count_WDINT(WORD usTimer) using 3
 3483          {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/21/2026 15:32:43 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTIMERFUNCTION                                         09/24/2026 09:30:42 PAGE 59  
 
 3484   1          if(TF2 == 1)
 3485   1          {

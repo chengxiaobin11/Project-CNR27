@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/21/2026 15:33:29 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/24/2026 09:31:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONSEAMLESSCHG
@@ -62,7 +62,7 @@ line level    source
               // FUNCTION DECLARATIONS
               //****************************************************************************
               void UserCommonSeamlessChgHandler(void);
-C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/21/2026 15:33:29 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/24/2026 09:31:28 PAGE 2   
 
               void UserCommonSeamlessChgAdjust(EnumSeamlessFlowStatus enumSeamlessFlowStatus);
               EnumColorimetryChangeStatus UserCommonSeamlessChgGetChangeStatus(void);
@@ -126,7 +126,7 @@ line level    source
                               }
               #endif
               
-C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/21/2026 15:33:29 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONSEAMLESSCHG                                             09/24/2026 09:31:28 PAGE 3   
 
                               if(GET_SDR_UPDATE_COLORIMETRY() == _FALSE)
                               {

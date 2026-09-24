@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/21/2026 15:33:26 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/24/2026 09:31:25 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONPORTCONTROLLEREMBEDDED
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               #if(_USB3_RETIMER_SUPPORT == _ON)
               EnumUSBPSSupportStatus UserCommonPortControllerGetUsbPSStatus(void);
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/21/2026 15:33:26 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/24/2026 09:31:25 PAGE 2   
 
               EnumUSBPDSupportStatus UserCommonPortControllerGetUsbPDStatus(void);
               #endif
@@ -126,7 +126,7 @@ line level    source
                           break;
                   }
               
-C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/21/2026 15:33:26 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONPORTCONTROLLEREMBEDDED                                  09/24/2026 09:31:25 PAGE 3   
 
                   return enumHubInputPort;
               }

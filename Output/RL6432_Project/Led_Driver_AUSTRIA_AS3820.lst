@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 1   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LED_DRIVER_AUSTRIA_AS3820
@@ -62,7 +62,7 @@ line level    source
               #define _DEVICE_LED_DRIVER_BLOCK_DATA               0x00
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 2   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 2   
 
               // Read / Write
               //--------------------------------------------------
@@ -126,7 +126,7 @@ line level    source
               //****************************************************************************
               BYTE code tucPanelLocalPwmType[] =
               {
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 3   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 3   
 
                   _PANEL_PWM_LOCAL_1, _PANEL_PWM_LOCAL_2, _PANEL_PWM_LOCAL_3, _PANEL_PWM_LOCAL_4,
                   _PANEL_PWM_LOCAL_5, _PANEL_PWM_LOCAL_6, _PANEL_PWM_LOCAL_7, _PANEL_PWM_LOCAL_8,
@@ -190,7 +190,7 @@ line level    source
                       pucRegData[1] = (*(pucDdcciArray + _DEBUG_I2C_SUB) | _DEVICE_LED_DRIVER_READ);
               
                       ScalerSpiData(_READ, 2, pucRegData);
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 4   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 4   
 
               
                       *pucReturnValue = pucRegData[1];
@@ -254,7 +254,7 @@ line level    source
                   {
                       (_DEVICE_LED_DRIVER_DEVICE_ADDRESS | _DEVICE_LED_DRIVER_SINGLE_DATA),
                       0x02,
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 5   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 5   
 
                       0xFF
                   };
@@ -318,7 +318,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 6   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 6   
 
               // Description  : Set Led Driver Pwm Enable/Disable
               // Input Value  : _ENABLE or _DISABLE
@@ -382,7 +382,7 @@ line level    source
                   BYTE pucTemp[3 + ((_PANEL_PWM_LOCAL_END - _PANEL_PWM_LOCAL_START + 1) * 2)] = {0};
                   BYTE ucLength = 0;
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 7   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 7   
 
               #if(_LD_HDR10_BOOST_SUPPORT == _ON)
                   ScalerTimerCancelTimerEvent(_USER_TIMER_EVENT_HDR_COOL);
@@ -446,7 +446,7 @@ line level    source
                   {
                       pucTemp[3 + (ucI * 2)] = (usValue & 0x00FF);
                       pucTemp[4 + (ucI * 2)] = ((usValue & 0x0F00) >> 8);
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 8   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 8   
 
                   }
               
@@ -510,7 +510,7 @@ line level    source
              -:
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_8) ? _REG_ADDRESS_PWM8_PLUS_WIDTH_LSB 
              -:
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 9   
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 9   
 
                                 (_PANEL_PWM_LOCAL_START == _DEVICE_LED_DRIVER_PWM_9) ? _REG_ADDRESS_PWM9_PLUS_WIDTH_LSB 
              -:
@@ -574,7 +574,7 @@ line level    source
                   BYTE ucI = 0;
                   BYTE ucJ = 0;
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 10  
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 10  
 
                   BYTE pucTemp[3 + ((_PANEL_PWM_LOCAL_END - _PANEL_PWM_LOCAL_START + 1) * 2)] = {0};
                   BYTE ucLength = (_PANEL_PWM_LOCAL_END - _PANEL_PWM_LOCAL_START + 1);
@@ -638,7 +638,7 @@ line level    source
               }
               #endif
               
-C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/21/2026 15:33:54 PAGE 11  
+C51 COMPILER V9.60.0.0   LED_DRIVER_AUSTRIA_AS3820                                         09/24/2026 09:31:53 PAGE 11  
 
               //--------------------------------------------------
               // Description  : Adjust Backlight

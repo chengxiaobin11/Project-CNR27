@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERFRC
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_DISP_LATENCY_ADJUST_SUPPORT == _ON)
               WORD ScalerFRCGetIVS2DVSDelayMax(WORD usFRCVerSize);
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 2   
 
               #endif
   49          
@@ -126,7 +126,7 @@ line level    source
  106          {
  107   1          // preread = den_start - _PRE_READ_MEMORY x VSU factor - 1
  108   1          // VSU >= 1
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 3   
 
  109   1          usFRCVerSize = (((DWORD)g_stMDomainOutputData.usVHeight * 10) / usFRCVerSize) * _PRE_READ_MEMORY + 1;
  110   1          usFRCVerSize = ((usFRCVerSize % 10) ? (usFRCVerSize / 10 + 1) : (usFRCVerSize / 10));
@@ -190,7 +190,7 @@ line level    source
                           PDATA_WORD(2) = g_stMDomainInputData.usVHeight - 2;
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 4   
 
                   else
               #endif
@@ -254,7 +254,7 @@ line level    source
  224   4                          PDATA_WORD(0) = ((g_stMDomainInputData.usVStart + usInputVHeight) + g_stMDomainInputDa
              -ta.usVTotal);
  225   4                          PDATA_WORD(0) = (PDATA_WORD(0) >> 1) + (PDATA_WORD(0) % 2);
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 5   
 
  226   4                      }
  227   3                      else
@@ -318,7 +318,7 @@ line level    source
  278   3                      {
  279   4                          PDATA_WORD(0) = PDATA_WORD(1);
  280   4                      }
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 6   
 
  281   3      
  282   3      #if(_DISP_LATENCY_ADJUST_SUPPORT == _ON)
@@ -382,7 +382,7 @@ line level    source
  334   3      
  335   3                          PDATA_WORD(0) = (PDATA_WORD(0) + PDATA_WORD(1)) / 2;
  336   3      
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 7   
 
  337   3                          break;
  338   3      
@@ -446,7 +446,7 @@ line level    source
               #endif
  390   2      
  391   2              PDATA_WORD(2) = (ulIVStoDVSPixels / g_stMDomainInputData.usHTotal);
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 8   
 
  392   2              PDATA_WORD(3) = (ulIVStoDVSPixels - ((DWORD)g_stMDomainInputData.usHTotal * PDATA_WORD(2))) >> 4;
  393   2              PDATA_WORD(4) = 0x0000;
@@ -510,7 +510,7 @@ line level    source
  450   1          WORD usPreReadLine = ScalerFRCCalculatePreReadLine(usInputVHeight);
  451   1      
  452   1          // Consider Double Frame Size
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 9   
 
  453   1          if(_MEMORY_ROW > ((DWORD)usInputHWidth * GET_MEMORY_DATA_BIT() / _MEMORY_BIT_NUM * usInputVHeight * 2 
              -/ _MEMORY_COL_PER_BANK / _MEMORY_BANK))
@@ -574,7 +574,7 @@ line level    source
  510          
  511          #if(_FRC_HW_AUTO_3BLOCK_TOGGLE_SUPPORT == _ON)
  512          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 10  
 
  513          // Description  : Set display adderss for auto block toggle
  514          // Input Value  : ulBlockStep --> block step(single frame input and display)
@@ -638,7 +638,7 @@ line level    source
  569   1      #if(_MEMORY_BANK == 2)
                   // Capture Bank [1:0] --> 1'b0, Bank[0]
                   // Display Bank [0]
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 11  
 
                   PDATA_DWORD(0) = (PDATA_DWORD(0) >> 1);
               #endif
@@ -702,7 +702,7 @@ line level    source
  631   1      
  632   1          // IVS to DVS shift value for hardware auto toggle among three initial read address
  633   1          // Set Shift = 2 _3_IVF, _2_5_IVF
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 12  
 
  634   1          ScalerSetBit(P5_CB_MN_BLOCK_STEP_H, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), 2 << 4);
  635   1      
@@ -766,7 +766,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void ScalerFRCSetAspectRatioDDomain(void)
-C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/21/2026 15:32:04 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERFRC                                                         09/24/2026 09:30:03 PAGE 13  
 
               {
                   WORD usAspNewDVst = 0;

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DP_INT
@@ -62,7 +62,7 @@ line level    source
   45          void ScalerDpWDTimerEventProc_WDINT(EnumScalerWDTimerEventID enumEventID);
   46          void ScalerDpRxDpcdPortAccessBackup_WDINT(void);
   47          void ScalerDpRxDpcdPortAccessBackupRestore_WDINT(void);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 2   
 
   48          #endif
   49          
@@ -126,7 +126,7 @@ line level    source
  105   3      
  106   3                  return _TRUE;
  107   3              }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 3   
 
  108   2          }
  109   1      
@@ -190,7 +190,7 @@ line level    source
  167   5                          ScalerDpRx0ErrorCounterUpdate_EXINT0();
  168   5      
  169   5                          // Wait for RCV_STANBY, in Order to Reply AUX DEFER
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 4   
 
  170   5                          ScalerDpRx0AuxWaitRcv_EXINT0();
  171   5      
@@ -254,7 +254,7 @@ line level    source
  227   5                      }
  228   4                      else if(usDpRx0AuxAddressStart == 0x10)
  229   4                      {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 5   
 
  230   5                          // Set DPCD 02210h[3] = 1 --> VSC_SDP_EXTENSION_FOR_COLORIMETRY_SUPPORTED
  231   5                          ScalerSetByte_EXINT(PB7_D9_AUX_TX_DATA, g_ucDpRx0DPCD02210hValue);
@@ -318,7 +318,7 @@ line level    source
                                       }
                                   }
                               }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 6   
 
                               // Read Cmd Reply Data
                               else if(ScalerGetBit_EXINT(PB7_D2_AUX_RX_CMD, (_BIT7 | _BIT6 | _BIT5 | _BIT4)) == (_BIT7 |
@@ -382,7 +382,7 @@ line level    source
  344   3                  if(((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_NORMAL_TRAINING_PATTERN_1_FAIL) ||
  345   3                      (GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_NORMAL_TRAINING_PATTERN_2_FAIL)) &&
  346   3                     ((g_ucDpRx0LTPatternSet & (_BIT7 | _BIT6 | _BIT5)) == _BIT6) &&
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 7   
 
  347   3                     ((g_ucDpRx0LinkRate != ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x00)) ||
  348   3                      (g_ucDpRx0LaneCount != (ScalerDpRx0GetDpcdInfo_EXINT0(0x00, 0x01, 0x01) & 0x1F))))
@@ -446,7 +446,7 @@ line level    source
  406   6                              }
  407   5                              else
  408   5                              {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 8   
 
  409   6                                  if(ScalerDpRx0TrainingPattern1_EXINT0(_DP_FAKE_LT) == _TRUE)
  410   6                                  {
@@ -510,7 +510,7 @@ line level    source
              -_LINK_TRAINING_STATUS() == _DP_NORMAL_TRAINING_PATTERN_END_REBUILD_PHY))
  468   4                          {
  469   5                              ScalerDpRx0TrainingPatternEnd_EXINT0();
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 9   
 
  470   5                          }
  471   4                          else if((GET_DP_RX0_LINK_TRAINING_STATUS() == _DP_NORMAL_TRAINING_PATTERN_2_PASS) || (
@@ -574,7 +574,7 @@ line level    source
  524   5      
  525   5      #if(_DP_HBR2_MARGIN_LINK_SUPPORT == _ON)
               #if((_D6_INPUT_PORT_TYPE == _D6_DP_PORT) && (_D6_INPUT_PORT_SWITCH_FROM == _SWITCH_FROM_D0))
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 10  
 
                                       if(GET_D6_SWITCH_SELECT() == _D0_INPUT_PORT)
                                       {
@@ -638,7 +638,7 @@ line level    source
                           IP = 0xA0;
               
                           // DPCD 022xxh Into INT
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 11  
 
                           if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT7 | _BIT6)) != (_BIT7 | _BIT6))
                           {
@@ -702,7 +702,7 @@ line level    source
                       }
               
                       // Symbol Error Count Read IRQ
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 12  
 
                       if(ScalerGetBit_EXINT(PBA_FB_DUMMY_1, (_BIT1 | _BIT0)) == (_BIT1 | _BIT0))
                       {
@@ -766,7 +766,7 @@ line level    source
                           for(usDpRx1AuxAddressStart = ((WORD)g_ucDpAuxRx1DpcdAddress); usDpRx1AuxAddressStart < usDpRx1
              -AuxAddressTerm; usDpRx1AuxAddressStart++)
                           {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 13  
 
                               if(usDpRx1AuxAddressStart == 0x00)
                               {
@@ -830,7 +830,7 @@ line level    source
                                   // Wait Reply ACK
                                   ScalerDpRx1AuxWaitRcv_EXINT0();
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 14  
 
                                   // Reset Aux FIFO
                                   ScalerSetBit_EXINT(PBA_DA_AUX_FIFO_RST, ~_BIT0, _BIT0);
@@ -894,7 +894,7 @@ line level    source
                           ScalerSetBit_EXINT(PBA_FB_DUMMY_1, ~(_BIT7 | _BIT5 | _BIT3 | _BIT1), _BIT3);
               
                           bReturnValueD1 = _TRUE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 15  
 
                       }
               #endif
@@ -958,7 +958,7 @@ line level    source
                                       }
                                   }
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 16  
 
                                   if((GET_DP_RX1_LINK_TRAINING_STATUS() != _DP_NORMAL_TRAINING_PATTERN_1_PASS) &&
                                      (GET_DP_RX1_LINK_TRAINING_STATUS() != _DP_FAKE_TRAINING_PATTERN_1_PASS))
@@ -1022,7 +1022,7 @@ line level    source
                                       }
                                       else
                                       {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 17  
 
                                           SET_DP_RX1_LINK_TRAINING_STATUS(_DP_FAKE_TRAINING_PATTERN_2_FAIL);
                                       }
@@ -1086,7 +1086,7 @@ line level    source
                                           (GET_DP_RX1_LINK_TRAINING_STATUS() == _DP_FAKE_TRAINING_PATTERN_2_FAIL) ||
                                           (GET_DP_RX1_LINK_TRAINING_STATUS() == _DP_NORMAL_TRAINING_PATTERN_1_PASS) ||
                                           (GET_DP_RX1_LINK_TRAINING_STATUS() == _DP_FAKE_TRAINING_PATTERN_1_PASS))
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 18  
 
                                   {
                                       SET_DP_RX1_LINK_TRAINING_STATUS(_DP_LINK_TRAINING_FAIL);
@@ -1150,7 +1150,7 @@ line level    source
 1065          void ScalerDpWDTimerEventProc_WDINT(EnumScalerWDTimerEventID enumEventID) using 3
 1066          {
 1067   1          BYTE ucTemp = 0;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 19  
 
 1068   1      
 1069   1          switch(enumEventID)
@@ -1214,7 +1214,7 @@ line level    source
               
                               if((ucTemp & _BIT1) == _BIT1)
                               {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 20  
 
                                   SET_DP_RX1_AUX_MANUAL_MODE_EXINT();
                               }
@@ -1278,7 +1278,7 @@ line level    source
 1189   1          // Disable Dpcd Auto Inc
 1190   1          ScalerSetBit_EXINT(PB7_C0_DPCD_CTRL, ~_BIT0, 0x00);
 1191   1      #endif
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 21  
 
 1192   1      
 1193   1      #if(_D1_DP_EXIST == _ON)
@@ -1342,7 +1342,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/21/2026 15:32:56 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DP_INT                                              09/24/2026 09:30:54 PAGE 22  
 
    CODE SIZE        =   1526    ----
    CONSTANT SIZE    =   ----    ----

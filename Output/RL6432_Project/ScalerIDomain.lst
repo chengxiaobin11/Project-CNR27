@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERIDOMAIN
@@ -62,7 +62,7 @@ line level    source
   45          
   46          //****************************************************************************
   47          // FUNCTION DECLARATIONS
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 2   
 
   48          //****************************************************************************
   49          void ScalerIDomainVgipSetInputCapture(void);
@@ -126,7 +126,7 @@ line level    source
  106   3                  {
  107   4                      ScalerVgipSetCaptureVStartPosition(GET_MDOMAIN_INPUT_VSTART() - GET_INPUT_TIMING_VSTART())
              -;
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 3   
 
  108   4                  }
  109   3              }
@@ -190,7 +190,7 @@ line level    source
  160   5                      }
  161   4                  }
  162   3                  else
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 4   
 
  163   3                  {
  164   4                      g_stMDomainInputData.usVHeight = g_stMDomainInputData.usVTotal - _VGIP_IV_CAPTURE_MIN_VALU
@@ -254,7 +254,7 @@ line level    source
  216   3                  default:
  217   3      
  218   3                      // Set VGIP V Capture  Start Position
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 5   
 
  219   3                      ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
  220   3      
@@ -318,7 +318,7 @@ line level    source
  275   3                  ScalerVgipSetCaptureVDelay(usInitialIVDelay);
  276   3      
  277   3                  // Set VGIP V Capture  Start Position
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 6   
 
  278   3                  ScalerVgipSetCaptureVStartPosition(g_stMDomainInputData.usVStart);
  279   3              }
@@ -382,7 +382,7 @@ line level    source
  335   1          WORD usIV2DVdelay = 0;
  336   1          WORD usIVSdelayExtend = 0;
  337   1      
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 7   
 
  338   1          // Bypass IHV delay in digital capture
  339   1          if(ScalerVgipGetDigitalCaptureStatus() == _TRUE)
@@ -446,7 +446,7 @@ line level    source
                               else
                               {
                                   usIVSdelayExtend = g_stMDomainInputData.usVStart % 2;
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 8   
 
                                   g_stMDomainInputData.usVStart += g_stMDomainInputData.usVStart % 2;
                               }
@@ -510,7 +510,7 @@ line level    source
  452          // Output Value : None
  453          //--------------------------------------------------
  454          void ScalerIDomainFineTuneHCaptureStart(WORD usDeltaIHCapture)
-C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/21/2026 15:32:05 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERIDOMAIN                                                     09/24/2026 09:30:05 PAGE 9   
 
  455          {
  456   1          ScalerVgipSetCaptureHStartPosition(usDeltaIHCapture + ScalerVgipGetCaptureHStartPosition() - 2);

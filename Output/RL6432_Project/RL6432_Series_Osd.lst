@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_OSD
@@ -62,7 +62,7 @@ line level    source
              -dDoubleHeightType);
   45          void ScalerOsdMapRotation(EnumOsdRotateType enumOsdRotateType, EnumOsdRotateMapA enumOsdRotateMapA, BYTE u
              -cMapARowSize, EnumOsdRotateMapB enumOsdRotateMapB, BYTE ucMapBRowSize, EnumOsdRotateFontLib enumOsdRotateFontLib);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 2   
 
   46          
   47          //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
   98   1      
   99   1          ucTemp = ScalerGetByte(P3A_41_FRAME_CTRL_41);
  100   1      
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 3   
 
  101   1          // _BIT2 : Enable Font A Remapping, _BIT1 : Enable Font B Remapping.
  102   1          ScalerSetBit(P3A_41_FRAME_CTRL_41, ~(_BIT2 | _BIT1), ((enumOsdRotateMapA << 2) | (enumOsdRotateMapB <<
@@ -190,7 +190,7 @@ line level    source
  159   3                      ScalerSetByte(P3A_41_FRAME_CTRL_41, (_BIT3)); // _OSD_ROTATE_CW
  160   3                      ScalerOsdFontLibraryRotation();
  161   3                      break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 4   
 
  162   3      
  163   3                  case _OSD_ROTATE_DEGREE_180:
@@ -254,7 +254,7 @@ line level    source
  218   1          {
  219   2              ScalerOsdPositionOffset(_OSD_POSITION_OFFSET_WINDOW, X_POS(10), Y_POS(0));
  220   2          }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 5   
 
  221   1      
  222   1          // correct offset
@@ -318,7 +318,7 @@ line level    source
                           ScalerOsdPositionOffset(_OSD_POSITION_OFFSET_GLOBAL, X_POS(_OSD_POSITION_OFFSET_H - 1), Y_POS(
              -_OSD_POSITION_OFFSET_V));
                       }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/21/2026 15:33:10 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_OSD                                                 09/24/2026 09:31:09 PAGE 6   
 
                       else
                       {

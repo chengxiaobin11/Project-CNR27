@@ -113,21 +113,21 @@
 //--------------------------------------------------
 //#define _LVDS_CABLE_TYPE                       _PANEL_LVDS_CABLE_TYPE
 #if(_LVDS_OUTPUT_PORT == _LVDS_2_PORT)
-#define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
-#define _LVDS_PORT_MIRROR                       _ENABLE
-#define _LVDS_PORT_AB_SWAP                    	_DISABLE
-#define _LVDS_PORT_CD_SWAP                    	_DISABLE
-#define _LVDS_PORT_EF_SWAP                      _DISABLE
-#define _LVDS_PORT_GH_SWAP                     	_DISABLE
-#define _LVDS_PN_SWAP                         	_DISABLE //Need Check
-
 // #define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
 // #define _LVDS_PORT_MIRROR                       _ENABLE
-// #define _LVDS_PORT_AB_SWAP                    	_ENABLE
-// #define _LVDS_PORT_CD_SWAP                    	_ENABLE
+// #define _LVDS_PORT_AB_SWAP                    	_DISABLE
+// #define _LVDS_PORT_CD_SWAP                    	_DISABLE
 // #define _LVDS_PORT_EF_SWAP                      _DISABLE
 // #define _LVDS_PORT_GH_SWAP                     	_DISABLE
-// #define _LVDS_PN_SWAP                         	_ENABLE //Need Check
+// #define _LVDS_PN_SWAP                         	_DISABLE //Need Check
+
+#define _LVDS_PORT_SEL                        	_LVDS_2_PORT_AB
+#define _LVDS_PORT_MIRROR                       _ENABLE
+#define _LVDS_PORT_AB_SWAP                    	_ENABLE
+#define _LVDS_PORT_CD_SWAP                    	_ENABLE
+#define _LVDS_PORT_EF_SWAP                      _DISABLE
+#define _LVDS_PORT_GH_SWAP                     	_DISABLE
+#define _LVDS_PN_SWAP                         	_ENABLE //Need Check
 
 #elif(_LVDS_OUTPUT_PORT == _LVDS_4_PORT)
 

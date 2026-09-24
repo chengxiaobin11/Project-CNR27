@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERLCTANK
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               void ScalerLCTankIOSCFromM2PLL(bit bOn);
               void ScalerLCTankSystemClkFromM2PLLMcuDiv(bit bOn);
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 2   
 
               void ScalerLCTankSystemInitial(void);
               void ScalerLCTankThermalSensorInitial(void);
@@ -126,7 +126,7 @@ line level    source
                       MCU_FFE9_MCU_CLK_CONTROL_1 = (MCU_FFE9_MCU_CLK_CONTROL_1 & ~(_BIT3 | _BIT2 | _BIT1 | _BIT0)) | _BI
              -T1;
                       MCU_FFED_MCU_CONTROL = (MCU_FFED_MCU_CONTROL & ~(_BIT5 | _BIT4 | _BIT3 | _BIT2)) | (_BIT5 | _BIT4 
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 3   
 
              -| _BIT2);
               
@@ -190,7 +190,7 @@ line level    source
                   // ICP current 100uA
                   ScalerSetBit(P66_B7_LC_CTRL5, ~(_BIT1 | _BIT0), 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 4   
 
                   // LC tank LDO power on
                   ScalerSetBit(P66_B5_LC_CTRL4, ~_BIT5, _BIT5);
@@ -254,7 +254,7 @@ line level    source
               
                   // FCW format 8.18
                   ScalerSetByte(P5F_6D_SSC_CTRL2, 0x06);
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 5   
 
               
                   // LUT clear to all 0
@@ -318,7 +318,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 6   
 
                       // Set FCW(EFUSE)
                       ScalerSetByte(P5F_61_FCW_SET_H, pucFcwValue[3]);
@@ -382,7 +382,7 @@ line level    source
                       ScalerSetBit(P30_40_I_ACT_MEAS_CTRL, ~_BIT1, _BIT1);
               
                       // Get active measure result
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 7   
 
                       g_ulLCTankBaseCount = (((DWORD)ScalerGetByte(P30_42_I_ACT_MEAS_RESULT_H) << 16) |
                                              (ScalerGetByte(P30_43_I_ACT_MEAS_RESULT_M) << 8) |
@@ -446,7 +446,7 @@ line level    source
                           else
                           {
                               ulDpllCode += (ulDpllCode * ulDiff) / ulActiveCount;
-C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/21/2026 15:32:07 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERLCTANK                                                      09/24/2026 09:30:06 PAGE 8   
 
                           }
               

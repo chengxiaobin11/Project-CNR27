@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERVGATOP
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          
   47          
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 2   
 
   48          //****************************************************************************
   49          // CODE TABLES
@@ -126,7 +126,7 @@ line level    source
  104          WORD ScalerVgaTopSearchHsEdge(void);
  105          void ScalerVgaTopModifyHsLatchEdgeDelay(void);
  106          
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 3   
 
  107          //****************************************************************************
  108          // FUNCTION DEFINITIONS
@@ -190,7 +190,7 @@ line level    source
  166          void ScalerVgaTopSetCapture(void)
  167          {
  168   1      #if(_VGA_CAPTURE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 4   
 
  169   1          WORD usVgaTopVstartLimit = (DWORD)_PANEL_DV_START * GET_INPUT_TIMING_VHEIGHT() / _PANEL_DV_HEIGHT + 2;
  170   1      
@@ -254,7 +254,7 @@ line level    source
  228   2              case 0x00:
  229   2              case 0x04:
  230   2              case 0x06:
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 5   
 
  231   2              case 0x07:
  232   2                  // Field detection by hs positive edge
@@ -318,7 +318,7 @@ line level    source
  289          {
  290   1          WORD usHLbound = 0;
  291   1          WORD usHRbound = 0;
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 6   
 
  292   1          WORD usHSWidth = 0;
  293   1          WORD usVSWidth = 0;
@@ -382,7 +382,7 @@ line level    source
  350   1          usHRbound = usHTotal - usHRbound;
  351   1      
  352   1          // Set H boundary
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 7   
 
  353   1          ScalerVgaTopAutoFuncHBoundInitial(usHLbound, usHRbound);
  354   1      
@@ -446,7 +446,7 @@ line level    source
  406          
  407          //--------------------------------------------------
  408          // Description  : Pop Up Auto-Function Result
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 8   
 
  409          // Input Value  : stActiveRegion --> measure result
  410          //                bWait --> wait auto-function stop or not
@@ -510,7 +510,7 @@ line level    source
  464   2              if(g_stRegVgaAuto.b1_0D_7_M_VGEN_EN == _TRUE)
  465   2              {
  466   3                  pstActiveRegion->usHActiveStart += 1;
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 9   
 
  467   3                  pstActiveRegion->usHActiveEnd += 1;
  468   3              }
@@ -574,7 +574,7 @@ line level    source
  521   4      
  522   4                      bWait = _WAIT;
  523   4                  }
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 10  
 
  524   3      
  525   3                  // Check auto-boundary V start
@@ -638,7 +638,7 @@ line level    source
  582   1          // Set Difference Threshold
  583   1          g_stRegVgaAuto.uc_09_DIFF_TH = ucSODThreshold;
  584   1      
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 11  
 
  585   1          // Hardware Auto Measure Trigger Select to IVS, Initial Phase --> 0.
  586   1          g_stRegVgaAuto.b1_0C_7_AUTOPHASE_SEL_TRI = _FALSE;
@@ -702,7 +702,7 @@ line level    source
  643   4                      *pulSODMin = PDATA_DWORD(0);
  644   4                  }
  645   3      
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 12  
 
  646   3                  ucTargetPhase += enumPhaseStep;
  647   3      
@@ -766,7 +766,7 @@ line level    source
  703   5                          ucBestPhase = ucTargetPhase - enumPhaseStep;
  704   5                      }
  705   4                  }
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 13  
 
  706   3      
  707   3                  ucTargetPhase += enumPhaseStep;
@@ -830,7 +830,7 @@ line level    source
  765   1      
  766   1          return _TRUE;
  767   1      }
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 14  
 
  768          
  769          //--------------------------------------------------
@@ -894,7 +894,7 @@ line level    source
  826   1      }
  827          
  828          //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 15  
 
  829          // Description  : Hold until the specified event occurs
  830          // Input Value  : enumEvent   --> Specified event
@@ -958,7 +958,7 @@ line level    source
  888          void ScalerVgaTopDoubleBufferEnable(bit bEn)
  889          {
  890   1      #if(_VGA_CAPTURE_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 16  
 
  891   1      
  892   1          if(bEn == _ENABLE)
@@ -1022,7 +1022,7 @@ line level    source
  949          //--------------------------------------------------
  950          WORD ScalerVgaTopGetCaptureVHeight(void)
  951          {
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 17  
 
  952   1          return (((WORD)g_stRegVgaCapture.b4_08_4_IV_ACT_LEN_HI << 8) | g_stRegVgaCapture.uc_0B_IV_ACT_LEN_LO);
  953   1      }
@@ -1086,7 +1086,7 @@ line level    source
 1010          WORD ScalerVgaTopGetCaptureHStartPosition(void)
 1011          {
 1012   1          return (((WORD)g_stRegVgaCapture.b4_04_0_IH_ACT_STA_HI << 8) | g_stRegVgaCapture.uc_05_IH_ACT_STA_LO) 
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 18  
 
              -+ 2;
 1013   1      }
@@ -1150,7 +1150,7 @@ line level    source
               #endif
 1070   1      }
 1071          
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 19  
 
 1072          //--------------------------------------------------
 1073          // Description  : Set VGATOP Capture V Delay
@@ -1214,7 +1214,7 @@ line level    source
 1130   1          ScalerSetByte(P30_E0_VGATOP_PAT_GEN_GRN_INI_L, 0x00);
 1131   1          ScalerSetByte(P30_E1_VGATOP_PAT_GEN_BLU_INI_L, 0x00);
 1132   1          ScalerSetByte(P30_E2_VGATOP_PAT_GEN_INI_H, 0x00);
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 20  
 
 1133   1      #endif
 1134   1      
@@ -1278,7 +1278,7 @@ line level    source
 1192   3              }
 1193   2      
 1194   2              // Pop out result
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 21  
 
 1195   2              PDATA_DWORD(0) = GET_AUTO_RESULT_DWORD();
 1196   2      
@@ -1342,7 +1342,7 @@ line level    source
 1254   1          SET_FREE_RUN_DVTOTAL((WORD)_HS_DELAY_DVTOTAL);
 1255   1      
 1256   1          // Update last line = DHtotal
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 22  
 
 1257   1          SET_FREE_RUN_LAST_LINE(_HS_DELAY_DHTOTAL);
 1258   1      
@@ -1406,7 +1406,7 @@ line level    source
 1315   1          // 2. Detect HS/clock meta-stability
 1316   1          /////////////////////////////////////////////////////////////////////////
 1317   1      
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 23  
 
 1318   1          // Set APLL clock to target freq. by calculating IHtotal
 1319   1          if(ScalerAPLLAdjust(_HS_DELAY_IHTOTAL, _HS_DELAY_REAL_DHFREQ) == _TRUE)
@@ -1470,7 +1470,7 @@ line level    source
 1374   6      
 1375   6      #else
               
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 24  
 
                                       // Calculate negative HS delay
                                       usCurrentPhaseDelayTime = PDATA_WORD(0) - usCurrentPhaseDelayTime;
@@ -1534,7 +1534,7 @@ line level    source
 1435   1      
 1436   1      #if(_PHASE_DELAY_TIME_VALUE_SHORT_PATH >= 0)
 1437   1          DebugMessageAnalog("Positive Short Path HS Delay Calibrated", g_usPhaseDelayTimeShortPath);
-C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/21/2026 15:32:17 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERVGATOP                                                      09/24/2026 09:30:16 PAGE 25  
 
 1438   1      #else
                   DebugMessageAnalog("Negative Short Path HS Delay Calibrated", g_usPhaseDelayTimeShortPath);

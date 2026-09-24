@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 1   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TFONT_CHINESE_S
@@ -62,7 +62,7 @@ line level    source
   45            0x22,0x42,0x88,
   46            0x26,0x03,0x88,
   47            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 2   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 2   
 
   48            0x00,0x00,0x00,
   49            
@@ -126,7 +126,7 @@ line level    source
  107            0x42,0x74,0x88,
  108            0x00,0x44,0x88,
  109            0xe2,0x80,0x60,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 3   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 3   
 
  110            0x22,0xf4,0xc4,
  111            0x23,0x21,0x80,
@@ -190,7 +190,7 @@ line level    source
  169            0x00,0x00,0x00,
  170            
  171            //========Address -- (0f),
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 4   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 4   
 
  172            0x00,0x00,0x00,
  173            0x22,0x00,0x88,
@@ -254,7 +254,7 @@ line level    source
  231            0xf2,0xf0,0xe8,
  232            0x30,0xf4,0x80,
  233            0x24,0x4c,0x84,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 5   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 5   
 
  234            0x00,0x00,0x00,
  235            0x00,0x00,0x00,
@@ -318,7 +318,7 @@ line level    source
  293            0x00,0x00,0x00,
  294            0x74,0xc4,0x22,
  295            0x74,0xc4,0x48,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 6   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 6   
 
  296            0x71,0xc0,0x22,
  297            0xf4,0xe4,0x48,
@@ -382,7 +382,7 @@ line level    source
  355            0x00,0x00,0x00,
  356            0x00,0x00,0x00,
  357            
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 7   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 7   
 
  358            //========Address -- (20),
  359            0x00,0x00,0x00,
@@ -446,7 +446,7 @@ line level    source
  417            0x72,0xa2,0xaa,
  418            0x2f,0x2b,0xae,
  419            0x22,0x28,0xa8,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 8   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 8   
 
  420            0x32,0x00,0x88,
  421            0x00,0x00,0x00,
@@ -510,7 +510,7 @@ line level    source
  479            //========Address -- (2b),
  480            0x00,0x00,0x00,
  481            0x00,0x22,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 9   
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 9   
 
  482            0x84,0x58,0x08,
  483            0x10,0x21,0x60,
@@ -574,7 +574,7 @@ line level    source
  541            0x2c,0x00,0x86,
  542            0x00,0x00,0x00,
  543            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 10  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 10  
 
  544            
  545            //========Address -- (31),
@@ -638,7 +638,7 @@ line level    source
  603            0x97,0x1f,0x2c,
  604            0x17,0x1f,0x0c,
  605            0x44,0x04,0x44,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 11  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 11  
 
  606            0x40,0x4a,0x40,
  607            0x3c,0x21,0x2e,
@@ -702,7 +702,7 @@ line level    source
  665            
  666            //========Address -- (3c),
  667            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 12  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 12  
 
  668            0x00,0x84,0x00,
  669            0xf0,0xf0,0xe0,
@@ -766,7 +766,7 @@ line level    source
  727            0x8f,0x9a,0x22,
  728            0x00,0x24,0x2c,
  729            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 13  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 13  
 
  730            0x00,0x00,0x00,
  731            
@@ -830,7 +830,7 @@ line level    source
  789            0x74,0xf4,0xc4,
  790            0x4f,0x2f,0x4e,
  791            0x47,0x4f,0x4c,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 14  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 14  
 
  792            0x47,0x4f,0x4c,
  793            0x07,0x4f,0x0c,
@@ -894,7 +894,7 @@ line level    source
  851            0x00,0x00,0x00,
  852            
  853            //========Address -- (4d),
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 15  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 15  
 
  854            0x00,0x00,0x00,
  855            0x24,0x8e,0x0e,
@@ -958,7 +958,7 @@ line level    source
  913            0x44,0xaa,0xaa,
  914            0x44,0xaa,0xaa,
  915            0x56,0x26,0xea,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 16  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 16  
 
  916            0x00,0x00,0x00,
  917            0x00,0x00,0x00,
@@ -1022,7 +1022,7 @@ line level    source
  975            0x00,0x00,0x00,
  976            0x01,0x03,0x0e,
  977            0x55,0xc1,0x80,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 17  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 17  
 
  978            0x5f,0x3e,0xe2,
  979            0x15,0x22,0xaa,
@@ -1086,7 +1086,7 @@ line level    source
 1037            0x30,0x00,0xc0,
 1038            0x00,0x00,0x00,
 1039            
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 18  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 18  
 
 1040            //========Address -- (5e),
 1041            0x00,0x00,0x00,
@@ -1150,7 +1150,7 @@ line level    source
 1099            0x0f,0x4f,0x0e,
 1100            0x00,0x4a,0x00,
 1101            0x01,0xa1,0x00,
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 19  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 19  
 
 1102            0x12,0x10,0x08,
 1103            0xc0,0x00,0x60,
@@ -1214,7 +1214,7 @@ line level    source
 1161            
 1162          
 1163          };  
-C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/21/2026 15:33:48 PAGE 20  
+C51 COMPILER V9.60.0.0   TFONT_CHINESE_S                                                   09/24/2026 09:31:48 PAGE 20  
 
 1164          
 1165          

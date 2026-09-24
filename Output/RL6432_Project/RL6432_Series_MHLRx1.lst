@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_MHLRX1
@@ -62,7 +62,7 @@ line level    source
               #define GET_MHL_RX1_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx1WriteBurstProcessDone)
               #define SET_MHL_RX1_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx1WriteBurstProcessDone = _TRUE)
               #define CLR_MHL_RX1_WRITE_BURST_PROCESS_DONE()   (g_bMHLRx1WriteBurstProcessDone = _FALSE)
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               void ScalerMHLRx1TimerEventProc(EnumScalerTimerEventID enumEventID);
               
               //****************************************************************************
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 3   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 3   
 
               // FUNCTION DEFINITIONS
               //****************************************************************************
@@ -190,7 +190,7 @@ line level    source
               
                   PCB_D1_HDMI_MHL_SWITCH(_TMDS_SWITCH_HDMI_HPD);
                   PCB_D1_MHL_VBUS_SWITCH(_MHL_VBUS_OFF);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 4   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 4   
 
               
                   // [1] Disable MHL Mode
@@ -254,7 +254,7 @@ line level    source
               #endif
               
                   // Discovery Function Power Down and System Clk Gated
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 5   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 5   
 
                   ScalerSetBit(P2A_A0_CBUS_CTRL_00, ~(_BIT6 | _BIT5 | _BIT3 | _BIT2), _BIT6);
               
@@ -318,7 +318,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 6   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 6   
 
                       if(ScalerGetBit(P2A_A8_CBUS_CTRL_08, _BIT5) == _BIT5)
                       {
@@ -382,7 +382,7 @@ line level    source
               
                   // Clear Wake Up Pulses Flag
                   ScalerSetBit(P2A_A0_CBUS_CTRL_00, ~_BIT3, _BIT3);
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 7   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 7   
 
               
                   // Sys Clk Divider
@@ -446,7 +446,7 @@ line level    source
                   // Link Layer Timeout
                   ScalerSetBit(P2A_C5_CBUS_CTRL_25, ~(_BIT5 | _BIT4 | _BIT3 | _BIT2 | _BIT1), (_BIT2 | _BIT1));
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 8   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 8   
 
                   // Set Global MEC Packe TMOUT -> 192ms
                   ScalerSetBit(P2A_C5_CBUS_CTRL_25, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
@@ -510,7 +510,7 @@ line level    source
               #endif
               
                   // Enable Discovery Done IRQ and Clear Flag
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 9   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 9   
 
                   ScalerSetBit(P2A_A0_CBUS_CTRL_00, ~(_BIT2 | _BIT0), (_BIT2 | _BIT0));
               }
@@ -574,7 +574,7 @@ line level    source
                   ScalerSetByte_EXINT(P2A_AB_CBUS_CTRL_0B, pData_EXINT[0]);
               
                   // MSC channel manual mode disable
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 10  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 10  
 
                   ScalerSetBit_EXINT(P2A_C8_CBUS_CTRL_28, ~_BIT7, 0x00);
               }
@@ -638,7 +638,7 @@ line level    source
                       else
                       {
                           return _FALSE;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 11  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 11  
 
                       }
                   }
@@ -702,7 +702,7 @@ line level    source
                   {
                       return _TRUE;
                   }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 12  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 12  
 
               }
               
@@ -766,7 +766,7 @@ line level    source
                       ScalerSetBit_EXINT(P7A_18_IMPEDANCE_00, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), 0x00);
               
                       // Disable Auto K-offset Auto Mode
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 13  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 13  
 
                       ScalerSetBit_EXINT(P7A_24_KOFFSET_00, ~_BIT5, 0x00);
               
@@ -830,7 +830,7 @@ line level    source
                       ucResultPacket = ScalerMHLRx1MscFIFOSendCommand(enumMSCCommand, enumMSCOffset, enumMSCValue, 0, _N
              -ULL_POINTER);
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 14  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 14  
 
                       switch(ucResultPacket)
                       {
@@ -894,7 +894,7 @@ line level    source
               
                   if(enumMode == _MHL_WRITE_BURST_WITH_REQ)
                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 15  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 15  
 
                       // Clear Grant To Write Flag
                       ScalerSetDataPortByte(P2A_AC_CBUS_CTRL_0C, _MSC_RCHANGE_INT, _MSC_GRT_WRT);
@@ -958,7 +958,7 @@ line level    source
               
                   return _FAIL;
               }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 16  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 16  
 
               
               //--------------------------------------------------
@@ -1022,7 +1022,7 @@ line level    source
                               return _FAIL;
                               break;
                       }
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 17  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 17  
 
                   }
                   else
@@ -1086,7 +1086,7 @@ line level    source
                           ucSendType = _MSC_SEND_COM_OFF_DAT_COM;
                           ucWaitType = _MSC_WAIT_COMMAND;
                           break;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 18  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 18  
 
               
                       default:
@@ -1150,7 +1150,7 @@ line level    source
                           return _MHL_ABORT_FAIL;
                       }
                       else if((ScalerGetBit(P2A_F6_CBUS_CTRL_56, _BIT7) == _BIT7) && (ScalerGetBit(P2A_F7_CBUS_CTRL_57, 
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 19  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 19  
 
              -_BIT7) == 0x00))
                       {
@@ -1214,7 +1214,7 @@ line level    source
                   /************* Get MSC_MSG(0x68) Invalid Command ***************/
                   /***************************************************************/
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 20  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 20  
 
                   if(((bit)ScalerGetBit(P2A_CE_CBUS_CTRL_2E, _BIT3) == _TRUE) && ((bit)ScalerGetBit(P2A_D4_CBUS_CTRL_34,
              - _BIT1) == _TRUE))
@@ -1278,7 +1278,7 @@ line level    source
                                   if((bit)ScalerGetDataPortBit(P2A_AC_CBUS_CTRL_0C, _MSC_RCHANGE_INT, _MSC_DCAP_CHG) == 
              -_TRUE)
                                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 21  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 21  
 
                                       // Write 1 Clear DevCap_Chg Flag
                                       ScalerSetDataPortByte(P2A_AC_CBUS_CTRL_0C, _MSC_RCHANGE_INT, _MSC_DCAP_CHG);
@@ -1342,7 +1342,7 @@ line level    source
                           // SEQ -> 1
                           pucWriteBurstTmp[10] = 0x01;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 22  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 22  
 
                           // NUM_ENT -> 0
                           pucWriteBurstTmp[11] = 0x00;
@@ -1406,7 +1406,7 @@ line level    source
                   // Sent Command to Triger VBUS for HTC M8
                   if(((GET_MHL_RX1_ADOPTER_ID_HBYTE() == _HTC_BUTTERFLY_ADOPTER_ID_HBYTE) && (GET_MHL_RX1_ADOPTER_ID_LBY
              -TE() == _HTC_BUTTERFLY_ADOPTER_ID_LBYTE)) &&
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 23  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 23  
 
                      (GET_MHL_RX1_SENT_MSC_DCAP_RDY() == _FALSE) && (GET_MHL_RX1_PROCESS_STATE() == _MHL_STATE_SET_DEV_C
              -AP_DONE))
@@ -1470,7 +1470,7 @@ line level    source
                   // Adopter ID
                   ScalerSetDataPortByte(P2A_AC_CBUS_CTRL_0C, _MSC_ADOPTER_ID_H_03, (BYTE)(((WORD)_MHL2_ADOPTER_ID >> 8) 
              -& 0x00FF));
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 24  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 24  
 
                   ScalerSetDataPortByte(P2A_AC_CBUS_CTRL_0C, _MSC_ADOPTER_ID_L_04, (BYTE)(_MHL2_ADOPTER_ID & 0x00FF));
               
@@ -1534,7 +1534,7 @@ line level    source
                   if((ucActivePort == _D1_INPUT_PORT) && (ucModeState != _MODE_STATUS_INITIAL) && (ucModeState != _MODE_
              -STATUS_POWER_OFF))
                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 25  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 25  
 
                       switch(GET_MHL_RX1_PROCESS_STATE())
                       {
@@ -1598,7 +1598,7 @@ line level    source
                               return _TRUE;
                               break;
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 26  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 26  
 
                           case _MHL_STATE_DONE:
                           default:
@@ -1662,7 +1662,7 @@ line level    source
                   return _TRUE;
               }
               
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 27  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 27  
 
               //--------------------------------------------------
               // Description  : Get RCP Key Code for D1 Port
@@ -1726,7 +1726,7 @@ line level    source
                   }
               
                   //------------------------------------------------------------//
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 28  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 28  
 
                   //-------- PSM --> PNM While Wake Up Pulses Received ---------//
                   //------------------------------------------------------------//
@@ -1790,7 +1790,7 @@ line level    source
                   }
               
                   return _FAIL;
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 29  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 29  
 
               }
               
@@ -1854,7 +1854,7 @@ line level    source
               {
                   switch(enumEventID)
                   {
-C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/21/2026 15:33:07 PAGE 30  
+C51 COMPILER V9.60.0.0   RL6432_SERIES_MHLRX1                                              09/24/2026 09:31:06 PAGE 30  
 
                       case _SCALER_TIMER_EVENT_MHL_RX1_READY_TO_TRANSMIT:
               

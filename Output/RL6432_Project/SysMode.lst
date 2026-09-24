@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSMODE
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          // FUNCTION DECLARATIONS
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 2   
 
   48          void SysModeHandler(void);
   49          BYTE SysModeGetModeState(void);
@@ -126,7 +126,7 @@ line level    source
                               {
                                   if(GET_POWER_STATUS() == _POWER_STATUS_OFF)
                                   {
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 3   
 
                                       SET_TARGET_POWER_STATUS(_POWER_STATUS_NORMAL);
               
@@ -190,7 +190,7 @@ line level    source
  167   4                          {
  168   5                              DebugMessageSystem("Input Timing V Polarity is Negative", 0);
  169   5                          }
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 4   
 
  170   4      
  171   4                          DebugMessageSystem("Input Timing InterLace", GET_INPUT_TIMING_INTERLACE_FLG());
@@ -254,7 +254,7 @@ line level    source
                                           {
                                               SET_TARGET_POWER_STATUS(_POWER_STATUS_SAVING);
               
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 5   
 
                                               CLR_SOURCE_SWITCH_FINISH();
                                           }
@@ -318,7 +318,7 @@ line level    source
                                       UserCommonInterfacePanelPowerAction(_BACKLIGHT_OFF);
               #else
                                       // Turn off Panel Power to prevent garbage
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 6   
 
                                       UserCommonInterfacePanelPowerAction(_PANEL_OFF);
               #endif
@@ -382,7 +382,7 @@ line level    source
  350   2                  break;
  351   2      
  352   2              default:
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 7   
 
  353   2      
  354   2                  break;
@@ -446,7 +446,7 @@ line level    source
  412   1          // Set up variables for dispaly setting
  413   1          SysModeSetUpDisplayInitialization();
  414   1      
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 8   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 8   
 
  415   1          // Set Up Input Timing to I Domain
  416   1          SysModeSetUpInputCapture();
@@ -510,7 +510,7 @@ line level    source
  474   1      
  475   1          // Check Case to Disable Global Double Buffer
  476   1          if(SysModeCheckToDisableGlobalDoubleBuffer() == _TRUE)
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 9   
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 9   
 
  477   1          {
  478   2              ScalerGlobalDoubleBufferEnable(_DISABLE);
@@ -574,7 +574,7 @@ line level    source
  536          
  537          //--------------------------------------------------
  538          // Description  : Set Up stuffs into I-Domain
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 10  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 10  
 
  539          // Input Value  : Timing Info Into VGIP
  540          // Output Value : None
@@ -638,7 +638,7 @@ line level    source
  598   2      
  599   2                  // Clear Measure Ready Flag
  600   2                  CLR_MODE_TIMING_CONFIRM();
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 11  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 11  
 
  601   2      
  602   2                  // Clear M Domain Ready Flag
@@ -702,7 +702,7 @@ line level    source
  660   2                  CLR_SOURCE_JUDGE(g_ucSearchIndex);
  661   2      
  662   2      #if(_SOURCE_BACKGROUND_DETECT_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 12  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 12  
 
                           CLR_SOURCE_BG_JUDGE(g_ucBgDetectIndex);
               #endif
@@ -766,7 +766,7 @@ line level    source
  722          //--------------------------------------------------
  723          void SysModeSetFreeRun(void)
  724          {
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 13  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 13  
 
  725   1          DWORD ulDclk = GET_D_CLK_FREQ();
  726   1      
@@ -830,7 +830,7 @@ line level    source
  784          // Output Value : None
  785          //--------------------------------------------------
  786          void SysModeSetResetTarget(EnumModeAction enumResetTarget)
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 14  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 14  
 
  787          {
  788   1          if(GET_MODE_STATE() == _MODE_STATUS_INITIAL)
@@ -894,7 +894,7 @@ line level    source
  846          void SysModeDisplayTimingInitial(void)
  847          {
  848   1          // Set Up Display Timing According to Panel Spec
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 15  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 15  
 
  849   1          SET_MDOMAIN_OUTPUT_HWIDTH(_PANEL_DH_WIDTH);
  850   1          SET_MDOMAIN_OUTPUT_HBWIDTH(_PANEL_DH_WIDTH);
@@ -958,7 +958,7 @@ line level    source
  908   1          if(SysSourceGetSourceType() != _SOURCE_VGA)
  909   1      #endif
  910   1          {
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 16  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 16  
 
  911   2              ScalerMDomainUpdateInputInfo();
  912   2          }
@@ -1022,7 +1022,7 @@ line level    source
                   {
                       WORD usIVfreq = SysModeDrrGetIVFreq(enumSearchPort);
               
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 17  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 17  
 
                       if(usIVfreq != 0)
                       {
@@ -1086,7 +1086,7 @@ line level    source
 1031   1          BYTE ucPortType = GET_PORT_TYPE(SysSourceGetInputPortType(enumSearchPort));
 1032   1          BYTE *pucReadArray = UserCommonInterfaceEdidGetDDCRamAddress(enumSearchPort);
 1033   1          WORD usIVfreq = 0;
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 18  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 18  
 
 1034   1          WORD usInputPixelClk = 0;
 1035   1      
@@ -1150,7 +1150,7 @@ line level    source
 1093   3                  usInputPixelClk = ScalerSyncGetInputPixelClk();
 1094   3              }
 1095   2      
-C51 COMPILER V9.60.0.0   SYSMODE                                                           09/21/2026 15:31:50 PAGE 19  
+C51 COMPILER V9.60.0.0   SYSMODE                                                           09/24/2026 09:29:49 PAGE 19  
 
 1096   2              // Get IVF from EDID info, if any
 1097   2              if(ScalerFreeSyncEdidAnalysisGetVfreqMax(pucReadArray, usInputPixelClk, &stSourceInfo, &usIVfreq) 

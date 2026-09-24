@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014USERINTERFACECEC
@@ -62,7 +62,7 @@ line level    source
               bit g_bCecLaPollingStart;
               bit g_bCecLaPollingContinue;
               BYTE g_ucCecLaCnt;
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
               {
                   // --------------------------------------------
                   // Part 1: Check Tx Send Task is done?
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 3   
 
                   // --------------------------------------------
                   if((g_bCecTxNeedSend == 1) && (ScalerCecGetTxState() == _CEC_TX_IDLE_STATE))
@@ -190,7 +190,7 @@ line level    source
                                   break;
               
                               case _CEC_OPCODE_STANDBY:
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 4   
 
               
                                   // Need to standby
@@ -254,7 +254,7 @@ line level    source
                   {
                       // Reset cec tx strucrt
                       memset(&g_stUserCecTxStruct, 0, sizeof(g_stUserCecTxStruct));
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 5   
 
               
                       // Packing <Standby>
@@ -318,7 +318,7 @@ line level    source
                   // Topology build by scan LA
                   if(g_bCecLaPollingStart == 1)
                   {
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 6   
 
                       if(g_bCecTxNeedSend == 0)
                       {
@@ -382,7 +382,7 @@ line level    source
                           g_bCecLaPollingStart = 0;
                       }
                   }
-C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/21/2026 15:33:40 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014USERINTERFACECEC                                           09/24/2026 09:31:39 PAGE 7   
 
                   else if(ScalerTimerSearchActiveTimerEvent(_USER_TIMER_EVENT_CEC_LA_POLLING) == _FALSE)
                   {

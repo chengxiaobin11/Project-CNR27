@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSAUDIO
@@ -62,7 +62,7 @@ line level    source
   45          EnumAudioSamplingFreqPacket g_enumAudioFSBackup = _AUDIO_FREQ_PACKET_NO_AUDIO;
   46          
   47          //****************************************************************************
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 2   
 
   48          // FUNCTION DECLARATIONS
   49          //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
  106          {
  107   1          SysAudioAnalogAudioHandler();
  108   1      
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 3   
 
  109   1      #if(_INTERNAL_AUDIO_TEST_SUPPORT == _ON)
                   if(ScalerAudioGetInternalAudioGenEnable(SysSourceGetInputPort()) == _ENABLE)
@@ -190,7 +190,7 @@ line level    source
  167   3                  }
  168   2      
  169   2                  break;
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 4   
 
  170   2      
  171   2      #if(_AUDIO_DVC_FAST_CONTROL_SUPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
                                   ScalerTimerDelayXms(3);
               #endif
  229   4      
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 5   
 
  230   4                          // Fast Control DVC & Ext.Amp & Ext. DSP
  231   4                          SysAudioFastOutputProc(_ENABLE);
@@ -318,7 +318,7 @@ line level    source
                                   ScalerAudioDigitalReset(ScalerAudioGetDigitalAudioPortMapping());
               
                                   ScalerTimerDelayXms(3);
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 6   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 6   
 
                                   // RX Digital Audio Output Control
                                   ScalerAudioDigitalOutputMute(_ON);
@@ -382,7 +382,7 @@ line level    source
               #endif
                               // Update User Define Frequency When No Audio
                               SysAudioSetUserDefineAudioFrequency();
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 7   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 7   
 
               
                               // Set User Define Frequency When No Audio except input port
@@ -446,7 +446,7 @@ line level    source
  411          //--------------------------------------------------
  412          // Description  : Get Current Audio
  413          // Input Value  : None
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 8   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 8   
 
  414          // Output Value : Node
  415          //--------------------------------------------------
@@ -510,7 +510,7 @@ line level    source
  472   2      
  473   2                  // Disable Audio
  474   2                  ScalerAudioDisable();
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 9   
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 9   
 
  475   2      
  476   2                  SysAudioChangeAudioState(_AUDIO_STATUS_POWER_OFF);
@@ -574,7 +574,7 @@ line level    source
  532   4                      // Digital Audio Output DVC Mute
  533   4                      ScalerAudioMuteProc(_ON, UserInterfaceGetAudioVolume());
  534   4                  }
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 10  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 10  
 
  535   3      
  536   3                  // Set DVC State: Mute State
@@ -638,7 +638,7 @@ line level    source
  592   2          }
  593   1          else
  594   1          {
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 11  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 11  
 
  595   2              ScalerAudioDVCVolumeFastMute(_OFF, UserInterfaceGetAudioVolume());
  596   2      #if(_AUDIO_DVC_FAST_CONTROL_SUPPORT == _ON)
@@ -702,7 +702,7 @@ line level    source
  654          
  655          //--------------------------------------------------
  656          // Description  : Audio Analog Handler
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 12  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 12  
 
  657          // Input Value  : None
  658          // Output Value : None
@@ -766,7 +766,7 @@ line level    source
              -AUDIO_INPUT == _PS_AUDIO_DP)))
                                   if((GET_SOURCE_JUDGE(g_ucSearchIndex) == _TRUE) || (GET_SOURCE_SCAN_TYPE() == _SOURCE_
              -SWITCH_FIXED_PORT) ||
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 13  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 13  
 
                                      ((UserInterfaceGetAudioStandAloneStatus() == _TRUE) &&
                                       (UserInterfaceGetAudioSource() == _DIGITAL_AUDIO) &&
@@ -830,7 +830,7 @@ line level    source
  766   2                  {
  767   3                      ScalerAudioDACClrStateChange();
  768   3      
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 14  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 14  
 
  769   3                      DebugMessageAudio("Audio Dac Charge", _AUDIO_DAC_CHARGE);
  770   3      
@@ -894,7 +894,7 @@ line level    source
                       ScalerTimerDelayXms(3);
                       // RX Digital Audio Output Mute
                       ScalerAudioDigitalOutputMute(_ON);
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 15  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 15  
 
               #endif
                       if(GET_SOURCE_JUDGE(g_ucSearchIndex) == _TRUE)
@@ -958,7 +958,7 @@ line level    source
  886          {
  887   1          ScalerAudioInitial();
  888   1      
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 16  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 16  
 
  889   1          ScalerAudioSourceInputSwitch(UserInterfaceGetAudioSource(), SysSourceGetInputPort());
  890   1      
@@ -1022,7 +1022,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               void SysAudioFwTrackingHandler(void)
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 17  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 17  
 
               {
                   ScalerAudioFwTrackingHandler();
@@ -1086,7 +1086,7 @@ line level    source
                   }
               
                   CLR_AUDIO_PLAYING_ALONE();
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 18  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 18  
 
               }
               
@@ -1150,7 +1150,7 @@ line level    source
 1066          
 1067          #if(_AUDIO_TTS_SUPPORT_TYPE == _AUDIO_TTS_EMBEDDED_TYPE)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/21/2026 15:31:47 PAGE 19  
+C51 COMPILER V9.60.0.0   SYSAUDIO                                                          09/24/2026 09:29:47 PAGE 19  
 
               // Description  : Check TTS Playback Event
               // Input Value  : None

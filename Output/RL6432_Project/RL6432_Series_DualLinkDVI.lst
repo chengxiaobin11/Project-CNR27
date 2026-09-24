@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/21/2026 15:33:01 PAGE 1   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/24/2026 09:31:00 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RL6432_SERIES_DUALLINKDVI
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_D2_INPUT_PORT_TYPE == _D2_DUAL_DVI_PORT)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/21/2026 15:33:01 PAGE 2   
+C51 COMPILER V9.60.0.0   RL6432_SERIES_DUALLINKDVI                                         09/24/2026 09:31:00 PAGE 2   
 
               // Description  : Get Whehter Current Mode is Dual DVI Mode
               // Input Value  : None

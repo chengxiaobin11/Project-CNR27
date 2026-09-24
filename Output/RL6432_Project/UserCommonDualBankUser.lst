@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 1   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USERCOMMONDUALBANKUSER
@@ -62,7 +62,7 @@ line level    source
               //****************************************************************************
               // STRUCT / TYPE / ENUM DEFINITTIONS
               //****************************************************************************
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 2   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 2   
 
               
               //****************************************************************************
@@ -126,7 +126,7 @@ line level    source
                   {
                       case _SCALER_BOOT_ENABLE_ISP_CHANNEL_OP_CODE:
                           DebugMessageSystem("rev enable isp channel", _SCALER_BOOT_ENABLE_ISP_CHANNEL_OP_CODE);
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 3   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 3   
 
                           UserCommonDualBankUserEnableISPChannel();
                           ucLength = 2;
@@ -190,7 +190,7 @@ line level    source
                           break;
               
                       case _SCALER_BOOT_GET_ISP_CURRENT_KEY_ADDR_OP_CODE:
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 4   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 4   
 
                           ucLength = 5;
                           ulAddress = UserCommonDualBankUserGetCurrentKeyAddr();
@@ -254,7 +254,7 @@ line level    source
               // Output Value : Duanl Bank Info 6 Byte
               //--------------------------------------------------
               void UserCommonDualBankUserGetFwInfo(BYTE *pucArry)
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 5   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 5   
 
               {
                   BYTE ucCurBank = MCU_FFFF_PBANK_SWITCH;
@@ -318,7 +318,7 @@ line level    source
               }
               #if(_DUAL_BANK_TYPE != _DUAL_BANK_FLASH_PARTITION_USER_FLAG_MODE)
               #if(_DUAL_BANK_TYPE != _DUAL_BANK_DIGITAL_SIGNATURE_ONLY)
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 6   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 6   
 
               //--------------------------------------------------
               // Description  : Get to be program region information
@@ -382,7 +382,7 @@ line level    source
                   ulAddr = (DWORD)_DUAL_BANK_USER_I_USER_DATA_BANK_ADDR << 16;
                   ulAddr += _DUAL_BANK_USER_I_FLAG_START_ADDR;
               #endif
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 7   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 7   
 
                   return ulAddr;
               }
@@ -446,7 +446,7 @@ line level    source
                       ucResult |= 0x00;
                   }
                   else if(pucUserFlag[_USER_FLAG_VERIFY_TAG] == _TAG_VERIFY_FW_FAIL)
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 8   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 8   
 
                   {
                       ucResult |= 0x10;
@@ -510,7 +510,7 @@ line level    source
               #endif
                   return ulAddr;
               }
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 9   
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 9   
 
               
               
@@ -574,7 +574,7 @@ line level    source
                   else
                   {
                       ulAddr = (DWORD)_DUAL_BANK_USER_I_USER_DATA_BANK_ADDR << 16;
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 10  
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 10  
 
                       ulAddr += _DUAL_BANK_USER_I_KEY_START_ADDR;
                   }
@@ -638,7 +638,7 @@ line level    source
  587          
  588          
 
-C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/21/2026 15:33:31 PAGE 11  
+C51 COMPILER V9.60.0.0   USERCOMMONDUALBANKUSER                                            09/24/2026 09:31:30 PAGE 11  
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONTYPECPOWER
@@ -62,7 +62,7 @@ line level    source
               #define _TYPE_C_VSAFE5V_LOW_BND         46
               
               #define _TYPE_C_VSAFE0V_UP_BND          8
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 2   
 
               
               // Just for Retimer On/Off
@@ -126,7 +126,7 @@ line level    source
               #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_SCALER_SARADC)
               WORD ScalerTypeCPowerRx0CorrectionToIdealData_WDINT(WORD usRawData);
               #endif // End of #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_SCALER_SARADC)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 3   
 
               #endif // End of #if(_TYPE_C_PMIC_TYPE != _PMIC_NONE)
               
@@ -190,7 +190,7 @@ line level    source
              -_BY_SCALER_SARADC) || (_TYPE_C_EIZO_CUSTOMIZED_PMIC_SIC437A_SUPPORT == _ON))
               void ScalerTypeCPowerRangeIntControl_EXINT0(EnumTypeCAdcChannel enumChannel, bit bAction);
               void ScalerTypeCPowerRangeIntControl_WDINT(EnumTypeCAdcChannel enumChannel, bit bAction);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 4   
 
               void ScalerTypeCPowerRangeIntSetting(EnumTypeCAdcChannel enumChannel, WORD usHigh, WORD usLow, bit bRange)
              -;
@@ -254,7 +254,7 @@ line level    source
               
                   // [0x7F05] [2:0]ADC Number of Outputs Averaged (1/2/4/8/16/32) = 4
                   ScalerSetBit(P7F_05_10B_ADC_AVE_CTRL, ~(_BIT2 | _BIT1 | _BIT0), _BIT1);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 5   
 
               
                   // [0x7F07-08] ADC Switch Time (#ADC_CLK Cycles) = 8 * 12 clk cycles
@@ -318,7 +318,7 @@ line level    source
                   // [4:3] Channel1/0 (UFP_VOMN/IMON)
                   ScalerSetBit(P7F_01_10B_ADC_CH_EN, ~_BIT3, _BIT3);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 6   
 
               #else
                   ScalerSetBit(P7F_01_10B_ADC_CH_EN, ~(_BIT4 | _BIT3), 0x00);
@@ -382,7 +382,7 @@ line level    source
               {
                   BYTE pucEfuseValueTemp[8] = {0};
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 7   
 
                   // Read Check Bit
                   ScalerEfuseGetData(_EFUSE_CHECK_BIT, 1, &pucEfuseValueTemp[0]);
@@ -446,7 +446,7 @@ line level    source
               // Input Value  : None
               // Output Value : EnumTypeCLocalPowerExist (_TYPE_C_LOCAL_POWER_NOT_EXIST / _TYPE_C_LOCAL_POWER_EXIST)
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 8   
 
               EnumTypeCLocalPowerExist ScalerTypeCPowerGetLocPowExist(void)
               {
@@ -510,7 +510,7 @@ line level    source
                   if(g_bsign == 0x01)
                   {
                       if(ulAx > ulB)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 9   
 
                       {
                           ulResult = ((ulAx - ulB) * 512 / 1000);
@@ -574,7 +574,7 @@ line level    source
               // Output Value : ADC_Code (0 ~ 1024)
               //--------------------------------------------------
               WORD ScalerTypeCPowerRx0CorrectionToIdealData_WDINT(WORD usRawData) using 3
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 10  
 
               {
                   DWORD ulResult = (DWORD)(usRawData);
@@ -638,7 +638,7 @@ line level    source
                   }
               
                   return (WORD)ulCorrectionCompThr;
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 11  
 
               }
               
@@ -702,7 +702,7 @@ line level    source
                           ulCorrectionCompThr = (ulCorrectionCompThr - g_ucoffset) * 1000 / g_usSlop;
                       }
                       else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 12  
 
                       {
                           ulCorrectionCompThr = (ulCorrectionCompThr - 0) * 1000 / 1953;
@@ -766,7 +766,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Set Vbus Thr When Attached
               // Input Value  : ucVoltage : Negotiated Voltage in 10mV
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 13  
 
               // Output Value : None
               //--------------------------------------------------
@@ -830,7 +830,7 @@ line level    source
                       return _TRUE;
                   }
                   else
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 14  
 
                   {
                       return _FALSE;
@@ -894,7 +894,7 @@ line level    source
                           return _FALSE;
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 15  
 
                   else
                   {
@@ -958,7 +958,7 @@ line level    source
                   if(usVoltage == 100)
                   {   // Check Vbus = vSafe5V (4.5 ~ 5.5 V)
                       if((ScalerTypeCPowerGetAdcOutput(_TYPE_C_UFP_VMON) >= (WORD)((DWORD)usVoltage * 213 / 100 * 9 / 10
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 16  
 
              -)) &&
                          (ScalerTypeCPowerGetAdcOutput(_TYPE_C_UFP_VMON) <= (WORD)((DWORD)usVoltage * 213 / 100 * 11 / 1
@@ -1022,7 +1022,7 @@ line level    source
               #if(_TYPE_C_PMIC_TYPE != _PMIC_NONE)
                       // Control PMIC to Turn On Vbus Power
                       ScalerTypeCPmicRx0Setting(bAction, bPowerDirection, enumPdoType, usVoltage, usCurrent, enumPeakCur
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 17  
 
              -rent);
               #endif
@@ -1086,7 +1086,7 @@ line level    source
                       // Control PMIC to Turn On Vbus Power
                       ScalerTypeCPmicRx0Setting_EXINT0(bAction, bPowerDirection, enumPdoType, usVoltage, usCurrent, enum
              -PeakCurrent);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 18  
 
               #endif
               
@@ -1150,7 +1150,7 @@ line level    source
              -eakCurrent);
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 19  
 
                       SET_RX0_REQ_PWR(0);
                       SET_RX0_OUTPUT_VOL(0);
@@ -1214,7 +1214,7 @@ line level    source
               
               #if(_TYPE_C_EIZO_CUSTOMIZED_PMIC_SIC437A_SUPPORT == _ON)
                       if(ScalerTypeCPmicRx0GetVbus5VCheckFlag_EXINT0() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 20  
 
                       {
                           // Disable INT
@@ -1278,7 +1278,7 @@ line level    source
               //--------------------------------------------------
               // Description  : Return Embedded Port Ctrl ADC Channel Output Current Value
               // Input Value  : ucInputPort
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 21  
 
               // Output Value : Output Current Value (Unit: 10mA)
               //--------------------------------------------------
@@ -1342,7 +1342,7 @@ line level    source
               // Output Value : None
               //--------------------------------------------------
               WORD ScalerTypeCPowerGetAdcOutput_EXINT0(EnumTypeCAdcChannel enumChannel) using 1
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 22  
 
               {
                   DWORD ulResult = 0;
@@ -1406,7 +1406,7 @@ line level    source
               {
                   // Clear IRQ Flag
                   ScalerTypeCPowerRangeIntClearFlag(enumChannel);
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 23  
 
               
                   // Control Judgment
@@ -1470,7 +1470,7 @@ line level    source
                       else
                       {
                           ScalerSetBit(P7F_3A_10B_ADC_VBUS_INT, ~(_BIT6 | _BIT5 | _BIT4 | _BIT2 | _BIT1 | _BIT0), (_BIT4
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 24  
 
              - << enumChannel));
                           ScalerSetBit(P7F_3B_10B_ADC_VBUS_INT_EN, ~(_BIT4 << enumChannel), 0x00);
@@ -1534,7 +1534,7 @@ line level    source
               {
                   if(bAction == _ENABLE)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 25  
 
                       if(bType == _ON)
                       {
@@ -1598,7 +1598,7 @@ line level    source
               //--------------------------------------------------
               void ScalerTypeCPowerVbusCompThrSetting(EnumAdcVbusCompChannel enumChannel, bit bType, WORD usThreshold)
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 26  
 
                   // Clip Threshole to Valid Value (Not More than 10-bit)
                   usThreshold = usThreshold & (0x03FF);
@@ -1662,7 +1662,7 @@ line level    source
               // Input Value  : enumChannel : 0 (_TYPE_C_A0_UFP_VBUS) / 1 (_TYPE_C_A2_LOC_PW) / 2 (_TYPE_C_A4_DFP_VBUS)
               //                bType : _ON (Vbus On Comparator) / _OFF (Vbus Off Comparator)
               //                usDebCycle : Number of ADC CLK Cycle to be Debounced
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 27  
 
               // Output Value : None
               //--------------------------------------------------
@@ -1726,7 +1726,7 @@ line level    source
               // Description  : ADC Vbus Range Detection IRQ Control
               // Input Value  : enumChannel : 0/1 (_TYPE_C_UFP_VMON/IMON) / 2 (_TYPE_C_LOC_PW) / 3/4 (_TYPE_C_DFP_VMON/I
              -MON)
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 28  
 
               //                bRange : IRQ Triggered When Within / Without Range
               //                bAction : _ENABLE / _DISABLE
@@ -1790,7 +1790,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : ADC Vbus Range Detection IRQ Setting
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 29  
 
               // Input Value  : enumChannel : 0/1 (_TYPE_C_UFP_VMON/IMON) / 2 (_TYPE_C_LOC_PW) / 3/4 (_TYPE_C_DFP_VMON/I
              -MON)
@@ -1854,7 +1854,7 @@ line level    source
                   usLow = ((usLow >= 0x03FC) ? 0x03FC : (usLow & 0x03FF));
               
                   // [0x7F20-29] Set High Threshold
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 30  
 
                   // [0x7F20] adc_a0_hi_thr[9:2] = ucHigh[9:2]
                   // [0x7F21] adc_a0_hi_thr[1:0] = ucHigh[1:0]
@@ -1918,7 +1918,7 @@ line level    source
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   ----    ----
    CONSTANT SIZE    =   ----    ----
-C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/21/2026 15:32:46 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONTYPECPOWER                                            09/24/2026 09:30:45 PAGE 31  
 
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

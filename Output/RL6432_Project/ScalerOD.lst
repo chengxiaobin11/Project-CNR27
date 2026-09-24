@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALEROD                                                          09/21/2026 15:32:10 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/24/2026 09:30:09 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALEROD
@@ -62,7 +62,7 @@ line level    source
   45          //****************************************************************************
   46          #if(_OD_SUPPORT == _ON)
               BYTE ScalerODGetCompressionBitNum(DWORD ulMemoryRemainSpace, WORD usMemoryRemainBW);
-C51 COMPILER V9.60.0.0   SCALEROD                                                          09/21/2026 15:32:10 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/24/2026 09:30:09 PAGE 2   
 
               bit ScalerODGetSupportStatus(void);
               EnumFunctionOnOFF ScalerODGetStatus(void);
@@ -126,7 +126,7 @@ line level    source
                   //=============================================
                   // Otherwise, OD off
                   //=============================================
-C51 COMPILER V9.60.0.0   SCALEROD                                                          09/21/2026 15:32:10 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALEROD                                                          09/24/2026 09:30:09 PAGE 3   
 
                   return _OFF;
               }

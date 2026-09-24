@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERROTATION
@@ -62,7 +62,7 @@ line level    source
               void ScalerRotationDisplayCtrlCW90CW270(void);
               void ScalerRotationFRCDisplayCtrl(WORD usHorSize, WORD usVerSize);
               void ScalerRotationFRCInputCtrl(WORD usHorSize, WORD usVerSize);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 2   
 
               void ScalerRotationInitial(void);
               void ScalerRotationSetControl(EnumRotationType enumRotationType);
@@ -126,7 +126,7 @@ line level    source
  105   1          {
  106   2              // Check format conversion E/O status
  107   2      #if(_FORMAT_CONVERSION_SUPPORT == _ON)
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 3   
 
                       if(ScalerFmtCnvFtoPGetStatus() == _TRUE)
                       {
@@ -190,7 +190,7 @@ line level    source
               
                   usPreReadLine = ScalerFRCCalculatePreReadLine(usVerSize);
               
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 4   
 
                   // E/O mode
                   usVerSize = usVerSize >> 1;
@@ -254,7 +254,7 @@ line level    source
                   // Set M1/M2 Pixel Number
                   ScalerSetWord(P20_A2_DISP_M1_PXL_NUM_H, usHorSize);
                   ScalerSetWord(P60_A2_DISP_M2_PXL_NUM_H, usHorSize);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 5   
 
               
                   // Set M1/M2 Line number
@@ -318,7 +318,7 @@ line level    source
                   // Set M1/M2 Input Format 30 Bit
                   if(GET_MEMORY_DATA_BIT() == (_COLOR_DEPTH_10_BITS * 3))
                   {
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 6   
 
                       ScalerSetBit(P20_AE_DISP_M1_DISP_CTRL2, ~_BIT7, _BIT7);
                       ScalerSetBit(P60_AE_DISP_M2_DISP_CTRL2, ~_BIT7, _BIT7);
@@ -382,7 +382,7 @@ line level    source
                       {
                           // blk_num
                           PDATA_WORD(2) = PDATA_WORD(1) / _ROTATION_BLK_LENGTH;
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 7   
 
                           // blk_rem'
                           PDATA_WORD(3) = (PDATA_WORD(1) % _ROTATION_BLK_LENGTH);
@@ -446,7 +446,7 @@ line level    source
                           ScalerSetByte(P20_D8_ROT_DISP_M1_PICT_FST_WID_L, pData[1]);
                           ScalerSetBit(P60_D7_ROT_DISP_M2_PICT_FST_WID_H, ~(_BIT2 | _BIT1 | _BIT0), (pData[0] & 0x07));
                           ScalerSetByte(P60_D8_ROT_DISP_M2_PICT_FST_WID_L, pData[1]);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 8   
 
                       }
               
@@ -510,7 +510,7 @@ line level    source
                           // One Line total pixel for SDRAM (unit : 64 bits)
                           ulTemp = ((DWORD)usHorSize * GET_MEMORY_DATA_BIT() % 64) ?
                                    (((DWORD)usHorSize * GET_MEMORY_DATA_BIT() / 64) + 1) :
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 9   
 
                                    ((DWORD)usHorSize * GET_MEMORY_DATA_BIT() / 64);
               
@@ -574,7 +574,7 @@ line level    source
                           ScalerSetWord(P20_21_CAP_M1_LINE_NUM_H, usVerSize);
                           ScalerSetWord(P60_21_CAP_M2_LINE_NUM_H, usVerSize);
               
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 10  
 
                           // Set M1/M2 Length
                           ScalerSetByte(P20_25_CAP_M1_WR_LEN, _ROTATION_WRITE_LENGTH_CW180);
@@ -638,7 +638,7 @@ line level    source
                   ScalerSetByte(P20_26_CAP_M1_WR_REMAIN, ((ulTemp >> 16) & 0xFF));
                   ScalerSetByte(P60_26_CAP_M2_WR_REMAIN, ((ulTemp >> 16) & 0xFF));
               
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 11  
 
                   if((GET_ROT_TYPE() == _ROT_CW90) || (GET_ROT_TYPE() == _ROT_CW270))
                   {
@@ -702,7 +702,7 @@ line level    source
                       ScalerSetBit(P60_34_ROT_CAP_M2_BLK_STRT_Y_MSB, ~(_BIT2 | _BIT1 | _BIT0), (pData[0] & 0x07));
                       ScalerSetByte(P60_35_ROT_CAP_M2_BLK_STRT_Y_LSB, pData[1]);
               
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 12  
 
                       // Set blk_w
                       ScalerSetByte(P20_36_ROT_CAP_M1_BLK_W, _ROTATION_FRC_CAP_BLK_W);
@@ -766,7 +766,7 @@ line level    source
                       }
                       else
                       {
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 13  
 
                           // Set GP_BLK_LEN
                           ScalerSetByte(P20_3A_ROT_CAP_M1_GENERALPICT_LEN, 0x00);
@@ -830,7 +830,7 @@ line level    source
               {
                   // (For Roation using) Merge m1 display frame sync fifo to m2 display frame sync fifo.
                   // ScalerSetDataPortBit(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_24_DISP_MAIN_FIFO_LEN_CTRL, ~_BIT1, 
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 14  
 
              -_BIT1);
               
@@ -894,7 +894,7 @@ line level    source
                   switch(enumRotationType)
                   {
                       case _ROT_DISABLE:
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 15  
 
                       default:
               
@@ -958,7 +958,7 @@ line level    source
                   // Apply Double buffer
                   ScalerSetBit(P20_AD_DISP_STATUS, ~_BIT4, _BIT4);
                   ScalerSetBit(P60_AD_DISP_STATUS, ~_BIT4, _BIT4);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 16  
 
               }
               
@@ -1022,7 +1022,7 @@ line level    source
                   {
                       // Disable Rotation Control
                       ScalerRotationSetControl(_ROT_DISABLE);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 17  
 
                   }
               }
@@ -1086,7 +1086,7 @@ line level    source
                   {
                       ScalerSetBit(P20_F3_ROTATION_IN_LEN_H, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), ((usVSize) >> 8) 
              -& 0x1F);
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 18  
 
                       ScalerSetByte(P20_F4_ROTATION_IN_LEN_L, ((usVSize) & 0xFF));
                   }
@@ -1150,7 +1150,7 @@ line level    source
               
                       // Get DC-Sys Page size selection, unit: Byte
                       switch(ScalerGetBit(PA0_05_DC_SYS_MISC, (_BIT1 | _BIT0)))
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 19  
 
                       {
                           default:
@@ -1214,7 +1214,7 @@ line level    source
               // Description  : Set Left/ Right Mirror
               // Input Value  : None
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/21/2026 15:32:13 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERROTATION                                                    09/24/2026 09:30:12 PAGE 20  
 
               //--------------------------------------------------
               void ScalerRotationDisplayCtrlLRMirror(void)

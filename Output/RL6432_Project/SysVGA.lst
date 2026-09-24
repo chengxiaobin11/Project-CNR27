@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SYSVGA                                                            09/21/2026 15:31:52 PAGE 1   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/24/2026 09:29:52 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYSVGA
@@ -62,7 +62,7 @@ line level    source
   45          // FUNCTION DECLARATIONS
   46          //****************************************************************************
   47          BYTE SysVgaScanInputPort(BYTE ucInputPort);
-C51 COMPILER V9.60.0.0   SYSVGA                                                            09/21/2026 15:31:52 PAGE 2   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/24/2026 09:29:52 PAGE 2   
 
   48          
   49          #if(_UNDERSCAN_SUPPORT == _ON)
@@ -126,7 +126,7 @@ line level    source
  107   2              DebugMessageSystem("Input Timing VFreq", GET_INPUT_TIMING_VFREQ());
  108   2              DebugMessageSystem("Input Timing VTotal", GET_INPUT_TIMING_VTOTAL());
  109   2              DebugMessageSystem("Input Timing VStart", GET_INPUT_TIMING_VSTART());
-C51 COMPILER V9.60.0.0   SYSVGA                                                            09/21/2026 15:31:52 PAGE 3   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/24/2026 09:29:52 PAGE 3   
 
  110   2              DebugMessageSystem("Input Timing VHeight", GET_INPUT_TIMING_VHEIGHT());
  111   2              DebugMessageSystem("Input Timing VSyncSWidth", GET_INPUT_TIMING_VSYNCWIDTH());
@@ -190,7 +190,7 @@ line level    source
  169   3                  ScalerVgaTopModifyVsLatchEdge(_WAIT);
  170   3      
  171   3                  // Clear Sync Changed Status flag bit.
-C51 COMPILER V9.60.0.0   SYSVGA                                                            09/21/2026 15:31:52 PAGE 4   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/24/2026 09:29:52 PAGE 4   
 
  172   3                  ScalerSyncProcClearSyncChangeStatus();
  173   3      
@@ -254,7 +254,7 @@ line level    source
  231   2      #endif
  232   2          }
  233   1      }
-C51 COMPILER V9.60.0.0   SYSVGA                                                            09/21/2026 15:31:52 PAGE 5   
+C51 COMPILER V9.60.0.0   SYSVGA                                                            09/24/2026 09:29:52 PAGE 5   
 
  234          #endif
  235          #endif // End of #if(_VGA_SUPPORT == _ON)

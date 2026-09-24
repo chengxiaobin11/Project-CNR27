@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 1   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TYPEC_PMIC_ONSEMI_NCP81239
@@ -62,7 +62,7 @@ line level    source
               
               //--------------------------------------------------
               // Definitions of Pmic NCP81239 Control
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 2   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 2   
 
               //--------------------------------------------------
               #define _TUNE_RISE                          0
@@ -126,7 +126,7 @@ line level    source
               
                   BYTE b1CR04Pfet : 1;
                   BYTE b1CR04Cfet : 1;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 3   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 3   
 
                   BYTE b3CR04Reserved : 3;
                   BYTE b1CR04Cs2DisCharge : 1;
@@ -190,7 +190,7 @@ line level    source
               
               //****************************************************************************
               // CODE TABLES
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 4   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 4   
 
               //****************************************************************************
               StructNCP81239RegisterMap code g_stPmicInitialData =
@@ -254,7 +254,7 @@ line level    source
                   0x00,                              // Reserved
                   0x00,                              // Reserved
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 5   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 5   
 
                   0x00,                              // Vfb value(Read Only)
                   0x00,                              // Vin value(Read Only)
@@ -318,7 +318,7 @@ line level    source
               #endif
               #if(_TYPE_C_PMIC_DEBUG == _ON)
               EnumTypeCPmicControlResult ExternalDeviceInterfaceTypeCPmicDebugCheckStatus(void);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 6   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 6   
 
               #endif
               #if(_TYPE_C_PMIC_FW_OCP_PROTECT_METHOD == _TYPE_C_PMIC_FW_OCP_BY_POLLING_PMIC)
@@ -382,7 +382,7 @@ line level    source
                       g_stPMICData.b1CR0BPmicDirection = _PMIC_SOURCE;
                   }
                   else
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 7   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 7   
 
                   {
                       g_stPMICData.b1CR0BPmicDirection = _PMIC_SINK;
@@ -446,7 +446,7 @@ line level    source
               {
                   BYTE ucPowerOnCount = 0;
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 8   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 8   
 
                   usCurrent = usCurrent;
               
@@ -510,7 +510,7 @@ line level    source
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 9   
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 9   
 
               
               //--------------------------------------------------
@@ -574,7 +574,7 @@ line level    source
               
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 10  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 10  
 
               
               //--------------------------------------------------
@@ -638,7 +638,7 @@ line level    source
              -mEn) using 1
               {
                   // Set PMIC VBUS Discharge status
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 11  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 11  
 
                   g_stPMICData.b1CR04Pfet = enumEn;
               
@@ -702,7 +702,7 @@ line level    source
                   if(ScalerTypeCPmicIICWrite_WDINT(_TYPE_C_RX0_PMIC_SLAVE_ADDRESS, _NCP81239_CTRL_REG04, _NCP81239_SUBAD
              -DR_LENGTH, 1, (BYTE *)(&g_stPMICData) + _NCP81239_CTRL_REG04) == _SUCCESS)
                   {
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 12  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 12  
 
                       return _TYPE_C_PMIC_CONTROL_SUCCESS;
                   }
@@ -766,7 +766,7 @@ line level    source
                   else
                   {
                       PCB_PMIC_VBUS_SOURCE_CONTROL(_VBUS_SOURCE_SWITCH_OFF);
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 13  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 13  
 
                       PCB_PMIC_VBUS_SINK_CONTROL(_VBUS_SINK_SWITCH_OFF);
                   }
@@ -830,7 +830,7 @@ line level    source
                   enumPowerDirection= enumPowerDirection;
                   enumOutputPdoType = enumOutputPdoType;
               
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 14  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 14  
 
                   return _TYPE_C_PMIC_CONTROL_SUCCESS;
               }
@@ -894,7 +894,7 @@ line level    source
                   else
                   {
                       return _TYPE_C_PMIC_CONTROL_FAIL;
-C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/21/2026 15:33:56 PAGE 15  
+C51 COMPILER V9.60.0.0   TYPEC_PMIC_ONSEMI_NCP81239                                        09/24/2026 09:31:55 PAGE 15  
 
                   }
               }

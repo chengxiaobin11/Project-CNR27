@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 1   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TFONT_KOREAN
@@ -62,7 +62,7 @@ line level    source
   45            0x00,0x00,0x22,
   46            0x00,0x00,0x20,
   47            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 2   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 2   
 
   48            
   49            //========Address -- (04),
@@ -126,7 +126,7 @@ line level    source
  107            0x00,0x48,0x22,
  108            0x12,0x42,0x32,
  109            0x40,0x10,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 3   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 3   
 
  110            0x00,0x07,0x0c,
  111            0x00,0x88,0x22,
@@ -190,7 +190,7 @@ line level    source
  169            
  170            //========Address -- (0f),
  171            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 4   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 4   
 
  172            0x00,0x00,0x62,
  173            0x30,0xf1,0x22,
@@ -254,7 +254,7 @@ line level    source
  231            0x00,0x11,0x00,
  232            0x00,0x11,0x00,
  233            0x00,0x10,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 5   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 5   
 
  234            0x00,0x00,0x00,
  235            
@@ -318,7 +318,7 @@ line level    source
  293            0x07,0x0e,0x62,
  294            0x07,0x4d,0x2e,
  295            0x22,0x00,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 6   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 6   
 
  296            0x30,0xf0,0x22,
  297            0x01,0x0f,0x0e,
@@ -382,7 +382,7 @@ line level    source
  355            0x00,0x00,0x00,
  356            
  357            //========Address -- (20),
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 7   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 7   
 
  358            0x00,0x00,0x00,
  359            0x01,0x08,0x62,
@@ -446,7 +446,7 @@ line level    source
  417            0x07,0x0f,0x0f,
  418            0x00,0x11,0x00,
  419            0x00,0x11,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 8   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 8   
 
  420            0x00,0x10,0x00,
  421            0x00,0x00,0x00,
@@ -510,7 +510,7 @@ line level    source
  479            0x00,0x00,0x00,
  480            0x07,0x0e,0x62,
  481            0x07,0x5c,0xe2,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 9   
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 9   
 
  482            0x22,0x10,0xe2,
  483            0x30,0xf0,0x22,
@@ -574,7 +574,7 @@ line level    source
  541            0x00,0xf0,0xe0,
  542            0x00,0x00,0x00,
  543            
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 10  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 10  
 
  544            //========Address -- (31),
  545            0x00,0x00,0x00,
@@ -638,7 +638,7 @@ line level    source
  603            0x12,0xc2,0x23,
  604            0x21,0x2c,0x22,
  605            0x00,0x00,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 11  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 11  
 
  606            0x10,0x88,0x00,
  607            0x00,0xf0,0xe0,
@@ -702,7 +702,7 @@ line level    source
  665            //========Address -- (3c),
  666            0x00,0x00,0x00,
  667            0x00,0x00,0x62,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 12  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 12  
 
  668            0x30,0xf1,0x22,
  669            0x03,0x1e,0xe2,
@@ -766,7 +766,7 @@ line level    source
  727            0x00,0x88,0x22,
  728            0x00,0x70,0xc0,
  729            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 13  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 13  
 
  730            
  731            //========Address -- (42),
@@ -830,7 +830,7 @@ line level    source
  789            0x00,0x48,0x22,
  790            0x01,0x84,0x22,
  791            0x24,0x21,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 14  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 14  
 
  792            0x01,0x08,0x22,
  793            0x00,0x88,0x00,
@@ -894,7 +894,7 @@ line level    source
  851            
  852            //========Address -- (4d),
  853            0x00,0x00,0x00,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 15  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 15  
 
  854            0x06,0x06,0x62,
  855            0x23,0x2e,0x22,
@@ -958,7 +958,7 @@ line level    source
  913            0x01,0x08,0x22,
  914            0x00,0x88,0x00,
  915            0x00,0xf0,0xe0,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 16  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 16  
 
  916            0x00,0x00,0x00,
  917            
@@ -1022,7 +1022,7 @@ line level    source
  975            0x03,0x0e,0x62,
  976            0x03,0x2e,0x22,
  977            0x00,0x48,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 17  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 17  
 
  978            0x16,0x00,0x22,
  979            0x00,0x07,0x0c,
@@ -1086,7 +1086,7 @@ line level    source
 1037            0x00,0x00,0x00,
 1038            
 1039            //========Address -- (5e),
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 18  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 18  
 
 1040            0x00,0x00,0x00,
 1041            0x00,0x00,0x62,
@@ -1150,7 +1150,7 @@ line level    source
 1099            0x22,0x22,0x32,
 1100            0x23,0x2e,0x22,
 1101            0x20,0x00,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 19  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 19  
 
 1102            0x00,0x00,0x20,
 1103            0x00,0x00,0x00,
@@ -1214,7 +1214,7 @@ line level    source
 1161            0x00,0x00,0x00,
 1162            0x01,0x08,0x62,
 1163            0x24,0x42,0x22,
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 20  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 20  
 
 1164            0x42,0x24,0x32,
 1165            0x10,0x80,0x20,
@@ -1278,7 +1278,7 @@ line level    source
 1223            0x00,0x00,0x00,
 1224            0x00,0x00,0x00,
 1225            
-C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/21/2026 15:33:50 PAGE 21  
+C51 COMPILER V9.60.0.0   TFONT_KOREAN                                                      09/24/2026 09:31:49 PAGE 21  
 
 1226            //========Address -- (6f),
 1227            0x00,0x00,0x00,

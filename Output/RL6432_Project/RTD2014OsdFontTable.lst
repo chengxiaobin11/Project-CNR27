@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 1   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE RTD2014OSDFONTTABLE
@@ -62,7 +62,7 @@ line level    source
   45          BYTE code tOSD_BOARD_DOWN_LEFT[] =
   46          {
   47             _iHKC_12, _iHKC_20,_REPEAT_,39,_iHKC_13,_END_,
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 2   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 2   
 
   48          };
   49          
@@ -126,7 +126,7 @@ line level    source
  107          ___,_iHKC_15,_iHKC_16,_iHKC_17,_iHKC_18,___,_END_,        
  108          };
  109          
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 3   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 3   
 
  110          BYTE code tiOSD_MAIN_OSDSETTING_ICON[] =
  111          {
@@ -190,7 +190,7 @@ line level    source
               
               BYTE code tOSD_ECO_TEXT_ICON[] =
               {
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 4   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 4   
 
                  0x30, 0X31,0X32,0X33,_NEXT_,
                  0x38, 0X39,0X3a,0X3b,_NEXT_,
@@ -254,7 +254,7 @@ line level    source
               {
                   _iHKC_1B, _iHKC_1C, _END_,
               };
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 5   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 5   
 
               
               BYTE code tOSD_iFACTORY_F_MAIN_OSD_ICON[] =
@@ -318,7 +318,7 @@ line level    source
  292            0x00,0x8D,0x8E,0x8F,0x90,0x91,0x92,0x00,_NEXT_,
  293            0x00,0x00,0x00,0x93,0x94,0x00,0x00,0x00,_NEXT_,
  294            0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,_END_,
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 6   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 6   
 
  295          };
  296          
@@ -382,7 +382,7 @@ line level    source
  352          //****************************************************************************
  353          //--------------------------------------------------
  354          // Description  :
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 7   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 7   
 
  355          // Input Value  : None
  356          // Output Value : None
@@ -446,7 +446,7 @@ line level    source
  414   2              {
  415   3                  ucHTemp++;
  416   3                  pucArray++;
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 8   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 8   
 
  417   3              }
  418   2              else if(*pucArray == _REPEAT_)
@@ -510,7 +510,7 @@ line level    source
  476   1          ScalerOsdCommandAllByte(usOsdAddr + g_usFontSelectStart, ucByte0, ucIcon, ucByte2);
  477   1      }
  478          
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 9   
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 9   
 
  479          
  480          void OsdFontPut4BitTable(BYTE ucRow, BYTE ucCol, BYTE *pucArray)
@@ -574,7 +574,7 @@ line level    source
  538   3                  if((ucHTemp == ucOsdWidth) && (*(pucArray + 1) != _NEXT_))
  539   3                  {
  540   4                      ucRow++;
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 10  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 10  
 
  541   4                      ucHTemp = ucCol;
  542   4                  }
@@ -638,7 +638,7 @@ line level    source
  599          {
  600   1          WORD xdata usOsdAddr = (WORD)ucRow * g_ucOsdWidth + ucCol;
  601   1          BYTE xdata ucByte0 = 0;
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 11  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 11  
 
  602   1          BYTE xdata ucByte2 = 0;
  603   1      
@@ -702,7 +702,7 @@ line level    source
  659   2              {
  660   3                  ucCount = *(pucArray + 1) - 1;
  661   3      
-C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/21/2026 15:33:45 PAGE 12  
+C51 COMPILER V9.60.0.0   RTD2014OSDFONTTABLE                                               09/24/2026 09:31:44 PAGE 12  
 
  662   3                  while(ucCount > 0)
  663   3                  {

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERCOMMONDPRX1
@@ -62,7 +62,7 @@ line level    source
               BYTE g_ucDpRx1DPCD02210hValue;
               #endif
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 2   
 
               #if(_DP_ADAPTIVESYNC_SUPPORT == _ON)
               BYTE g_ucDpRx1DPCD02214hValue;
@@ -126,7 +126,7 @@ line level    source
               #if(_DP_RX1_ASSR_MODE_SUPPORT == _ON)
               bit ScalerDpRx1VbiosAssrCheck(bit bMSACheckResult);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 3   
 
               bit ScalerDpRx1ChangeSrambleSeed(void);
               bit ScalerDpRx1InterlaceCheck(WORD *pusVTotal, BYTE *pucOddFlg);
@@ -190,7 +190,7 @@ line level    source
               #if((_DP_FREESYNC_SUPPORT == _ON) || (_DP_ULTRA_HDR_SUPPORT == _ON))
               void ScalerDpRx1GetInfoFrameRSV0(BYTE *pucDPRx1RSV0Data);
               #endif
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 4   
 
               
               #if(_DP_ULTRA_HDR_SUPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : Check Valid Video Data
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 5   
 
               // Input Value  : None
               // Output Value : None
@@ -318,7 +318,7 @@ line level    source
               #else
                       if((GET_DP_RX1_LINK_TRAINING_STATUS() == _DP_LINK_TRAINING_NONE) &&
                          (ScalerDpRx1GetDpcdInfo(0x00, 0x01, 0x00) == 0x00))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 6   
 
               #endif
                       {
@@ -382,7 +382,7 @@ line level    source
                           }
                           while((ucDpLaneCount == _DP_TWO_LANE) || (ucDpLaneCount == _DP_ONE_LANE));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 7   
 
                           if(ucDpLaneCount != 0x00)
                           {
@@ -446,7 +446,7 @@ line level    source
                   BYTE ucDpLinkRateDecide = _DP_LINK_NONE;
               
                   do
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 8   
 
                   {
                       if(ucDpLinkRate == 0)
@@ -510,7 +510,7 @@ line level    source
               
                       ScalerDpRx1SignalDetectInitial(ucDpLinkRate, ucDpLEQScanValue);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 9   
 
                       usDataStreamL0 = ScalerDpRx1SignalDetectMeasureCount(_D1_DP_LANE0, _DP_MEASURE_TARGET_RAW_DATA, _D
              -P_MEASURE_PERIOD_2000_CYCLE);
@@ -574,7 +574,7 @@ line level    source
                       case _DP_MEASURE_PERIOD_1000_CYCLE:
               
               #if(_HW_SIGNAL_MEASURE_GEN_TYPE == _SIGNAL_MEASURE_GEN_1)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 10  
 
                           // [4:0] DP_XTAL_CYCLE = 5'b00011
                           ScalerSetBit(PB0_50_DP_SIG_DET_0, ~(_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT1 | _BIT0));
@@ -638,7 +638,7 @@ line level    source
                   WORD usMeasureUpperBound = 0;
                   WORD usMeasureLowerBound = 0;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 11  
 
                   // Scrambling Disable Check
                   if(ScalerDpRx1GetDpcdBitInfo(0x00, 0x01, 0x02, _BIT5) == _BIT5)
@@ -702,7 +702,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 12  
 
                       case _DP_LINK_RBR:
               
@@ -766,7 +766,7 @@ line level    source
                              ((usDataStreamL1 > usMeasureUpperBound) || (usDataStreamL1 < usMeasureLowerBound)) ||
                              ((usDataStreamL2 > usMeasureUpperBound) || (usDataStreamL2 < usMeasureLowerBound)) ||
                              ((usDataStreamL3 > usMeasureUpperBound) || (usDataStreamL3 < usMeasureLowerBound)))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 13  
 
                           {
               #if(_HW_DP_GDI_RX1_DFE_TYPE == _PASSIVE_DFE)
@@ -830,7 +830,7 @@ line level    source
                       ScalerRead(PB9_14_MSA_VST_0, 2, &pData[10], _AUTOINC);
               
                       if(((((DWORD)pData[0] << 16) | ((DWORD)pData[1] << 8) | ((DWORD)pData[2] << 0)) != 0x00) &&
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 14  
 
                          (PDATA_WORD(2) != 0x00) && (PDATA_WORD(3) != 0x00) && (PDATA_WORD(4) != 0x00) && (PDATA_WORD(5)
              - != 0x00) &&
@@ -894,7 +894,7 @@ line level    source
               
                   SET_DP_RX1_AUX_AUTO_MODE();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 15  
 
                   return bMSACheckResult;
               }
@@ -958,7 +958,7 @@ line level    source
                       SET_DP_RX1_VFRONT_PORCH(_DP_VSYNC_FRONT_PORCH);
               
                       // Reset Intercae Mode
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 16  
 
                       ScalerDpRx1InterlaceReset();
               
@@ -1022,7 +1022,7 @@ line level    source
              -RUE) == _FALSE)
                           {
                               return _FALSE;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 17  
 
                           }
               
@@ -1086,7 +1086,7 @@ line level    source
               
                       // if VTotal Difference > 1/2 HTotal
                       if((ABSDWORD(ulVBs2bsLengN, ulVBs2bsLengN1)) > (usHTotalCount / 2))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 18  
 
                       {
                           if(ScalerDpRx1InterlaceVtotalGetMSACheck(ulVBs2bsLengN) == _TRUE)
@@ -1150,7 +1150,7 @@ line level    source
                           return _TRUE;
                       }
                       else
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 19  
 
                       {
                           // Check VBID Field Toggle and VBID Interlace Info
@@ -1214,7 +1214,7 @@ line level    source
                           {
                               // Field Information reference to VBID
                               ScalerSetBit(PB8_57_INTERLACE_MODE_CONFIG, ~(_BIT6 | _BIT5 | _BIT0), 0x00);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 20  
 
               
                               // Get Vactive
@@ -1278,7 +1278,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 21  
 
               // Description  : Judge Vtotal from MSA or not
               // Input Value  : None
@@ -1342,7 +1342,7 @@ line level    source
                       SET_DP_RX1_QUANTIZATION_PREVALUE((pData[1] & _BIT7) >> 7);
                       SET_DP_RX1_COLOR_DEPTH_PREVALUE(pData[1] & (_BIT2 | _BIT1 | _BIT0));
                       SET_DP_RX1_COLOR_SPACE_PREVALUE(pData[0] & (_BIT7 | _BIT6 | _BIT5 | _BIT4));
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 22  
 
               
                       DebugMessageRx1("VSC DB16", pData[0]);
@@ -1406,7 +1406,7 @@ line level    source
                           default:
                               SET_COLOR_SPACE(_COLOR_SPACE_RGB);
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 23  
 
                       }
               
@@ -1470,7 +1470,7 @@ line level    source
               
                           default:
                               SET_COLOR_DEPTH(_COLOR_DEPTH_8_BITS);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 24  
 
                               break;
                       }
@@ -1534,7 +1534,7 @@ line level    source
                   // Set Quantization Range
                   ScalerDpRx1QuantizationSetting();
               }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 25  
 
               
               //--------------------------------------------------
@@ -1598,7 +1598,7 @@ line level    source
               {
                   BYTE ucColorimetryValue = (GET_DP_RX1_COLORIMETRY_PREVALUE() << 1);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 26  
 
                   if((GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR422) || (GET_COLOR_SPACE() == _COLOR_SPACE_YCBCR444))
                   {
@@ -1662,7 +1662,7 @@ line level    source
                               DebugMessageRx1("_COLORIMETRY_RGB_DCI_P3", 0);
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 27  
 
                           case (_BIT4 | _BIT3 | _BIT2 | _BIT1):
                               SET_COLORIMETRY(_COLORIMETRY_RGB_COLOR_PROFILE);
@@ -1726,7 +1726,7 @@ line level    source
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_YCC_SYCC601);
                               DebugMessageRx1("_COLORIMETRY_EXT_YCC_SYCC601", 0);
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 28  
 
               
                           case _VSC_COLORIMETRY_5:
@@ -1790,7 +1790,7 @@ line level    source
                               break;
               
                           default:
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 29  
 
                               SET_EXT_COLORIMETRY(_COLORIMETRY_EXT_RESERVED);
                               DebugMessageRx1("_COLORIMETRY_EXT_RESERVED", 0);
@@ -1854,7 +1854,7 @@ line level    source
                           // Special case for AdobeRGB
                           if(GET_COLORIMETRY() == _COLORIMETRY_RGB_ADOBERGB)
                           {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 30  
 
                               SET_COLOR_RGB_QUANTIZATION_RANGE(_RGB_QUANTIZATION_FULL_RANGE);
                               DebugMessageRx1("_RGB_QUANTIZATION_FULL_RANGE", 0);
@@ -1918,7 +1918,7 @@ line level    source
               
                               case _BIT2:
                                   if(GET_COLOR_SPACE() != _COLOR_SPACE_YCBCR444)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 31  
 
                                   {
                                       DebugMessageRx1("Misc change: Color Format, _COLOR_SPACE_YCBCR444", 0);
@@ -1982,7 +1982,7 @@ line level    source
                               else
                               {
                                   SET_DP_RX1_COLORIMETRY_PREVALUE((ucMisc0 & (_BIT4 | _BIT3 | _BIT2 | _BIT1)) >> 1);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 32  
 
                                   ScalerDpRx1ColorimetrySetting();
                                   SET_DP_RX1_COLORIMETRY_CHANGED();
@@ -2046,7 +2046,7 @@ line level    source
                           }
               #endif
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 33  
 
               
               #if(_DP_FREESYNC_SUPPORT == _ON)
@@ -2110,7 +2110,7 @@ line level    source
                       {
                           case _VSC_COLOR_SPACE_0:
                               if(GET_COLOR_SPACE() != _COLOR_SPACE_RGB)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 34  
 
                               {
                                   DebugMessageRx1("VSC change: Color Space, _COLOR_SPACE_RGB", 0);
@@ -2174,7 +2174,7 @@ line level    source
                               break;
                       }
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 35  
 
                   else
                   {
@@ -2238,7 +2238,7 @@ line level    source
                       {
                           DebugMessageRx1("VSC change: Dynamic Range", ((pucVscColorFormat[1] & _BIT7) >> 7));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 36  
 
                           if(GET_DIGITAL_COLOR_INFO_CHANGE_RESET() == _TRUE)
                           {
@@ -2302,7 +2302,7 @@ line level    source
                   ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX1_RSV1_PACKET_DETECT);
               
               #if((_DP_MST_SUPPORT == _ON) && (_DP_TX_SUPPORT == _ON))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 37  
 
                   ScalerSetByte(PBC_54_DP_INFO_FM_RSV1, _DP_SDP_TYPE_VSC);
               
@@ -2366,7 +2366,7 @@ line level    source
                           {
                               // Debounce for 10ms
                               for(ucDebounceCnt = 0; ucDebounceCnt < 5; ucDebounceCnt++)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 38  
 
                               {
                                   ScalerTimerDelayXms(2);
@@ -2430,7 +2430,7 @@ line level    source
                       CLR_DP_RX1_CHECK_AUX_CH_NO_POWER_DEBOUNCE();
                       CLR_DP_RX1_CHECK_AUX_CH_POWER_STATUS();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 39  
 
                       ScalerTimerCancelTimerEvent(_SCALER_TIMER_EVENT_DP_RX1_AUX_CH_NO_POWER_CHECK_DEBOUNCE);
                   }
@@ -2494,7 +2494,7 @@ line level    source
                   ScalerDpRx1SetDpcdValue(0x00, 0x02, 0xC0, 0x00);
               
                   // Clear Payload ID Table (0x2C1 ~ 0x2FF)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 40  
 
                   ScalerSetBit(PBA_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, _BIT6);
                   ScalerSetBit(PBA_B0_AUX_PAYLOAD_CLEAR, ~_BIT6, 0x00);
@@ -2558,7 +2558,7 @@ line level    source
                       // Clear Flag
                       CLR_REG_DP_RX_DOWN_REQUEST_BUF0_MSG_FINISH();
                       CLR_REG_DP_RX_DOWN_REQUEST_BUF1_MSG_FINISH();
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 41  
 
               
                       // Clear BUF0
@@ -2622,7 +2622,7 @@ line level    source
                   {
                       ScalerDpRx1SetDpcdValue_EXINT0(0x00, 0x00, (0x30 + pData_EXINT[0]), 0x00);
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 42  
 
               
                   // Disable 0x111/1C2 IRQ
@@ -2686,7 +2686,7 @@ line level    source
                   {
                       SET_DP_RX1_AUX_COMMAND_NO_REPLY();
                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 43  
 
               
                   // Clr Buf0/Buf1 DownRequest MSG Finish Flag
@@ -2750,7 +2750,7 @@ line level    source
                   // Disable DOWN_REP_MSG_RDY Bit INT
                   CLR_REG_DP_RX_DOWN_REPLY_READY_BIT_IRQ_EXINT();
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 44  
 
                   // Disable UP_REQ_MSG_RDY INT
                   CLR_REG_DP_RX_UP_REQUEST_READY_BIT_IRQ_EXINT();
@@ -2814,7 +2814,7 @@ line level    source
                   // =========== Link Clock Measure Start ===========
                   PDATA_WORD(0) = ScalerDpRx1SignalDetectMeasureCount(_D1_DP_LANE0, _DP_MEASURE_TARGET_CDR_CLOCK, _DP_ME
              -ASURE_PERIOD_2000_CYCLE);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 45  
 
               
                   if(PDATA_WORD(0) == 0)
@@ -2878,7 +2878,7 @@ line level    source
                   // Get Measure Result
                   PDATA_DWORD(2) = 0;
                   ScalerRead(PA_58_MN_MEAS_CTRL, 3, &pData[9], _AUTOINC);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 46  
 
               
                   // Get Measure Htotal Counts
@@ -2942,7 +2942,7 @@ line level    source
                       // Enable Field Sync by BE
                       ScalerSetBit(PA_F1_DP_RSV1, ~_BIT0, _BIT0);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 47  
 
                       // HW Check Interlace
                       if(ScalerGetBit(PA_56_INTERLACE_MODE_CONFIG, _BIT5) == _BIT5)
@@ -3006,7 +3006,7 @@ line level    source
                       // Enable DP Interlace
                       ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT5 | _BIT0), _BIT7);
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 48  
 
                       if((*pucOddFlg) == _FALSE)
                       {
@@ -3070,7 +3070,7 @@ line level    source
                           // Enable interlace mode, field reference HW
                           ScalerSetBit(PA_56_INTERLACE_MODE_CONFIG, ~(_BIT7 | _BIT6 | _BIT5 | _BIT0), (_BIT7 | _BIT6));
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 49  
 
                           *pusVTotal = usTempVTotal;
               
@@ -3134,7 +3134,7 @@ line level    source
               #if(_HW_DP_VSC_SDP_REG_SUPPORT != _ON)
               //--------------------------------------------------
               // Description  : DP Rx1 MstToSst VSC Packet Detect Event
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 50  
 
               // Input Value  : None
               // Output Value : None
@@ -3198,7 +3198,7 @@ line level    source
              -) & 0x7FFF) == 0x00) ||
                          (PDATA_WORD(4) == 0x00) || (PDATA_WORD(5) == 0x00) || (PDATA_WORD(6) == 0x00) || ((PDATA_WORD(7
              -) & 0x7FFF) == 0x00))
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 51  
 
                       {
                           if((PDATA_WORD(0) == 0x00) && (PDATA_WORD(1) == 0x00) && (PDATA_WORD(2) == 0x00) && ((PDATA_WO
@@ -3262,7 +3262,7 @@ line level    source
               
                   if((((DWORD)pData[0] << 16) | ((DWORD)pData[1] << 8) | ((DWORD)pData[2] << 0)) == 0x00)
                   {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 52  
 
                       return _FALSE;
                   }
@@ -3326,7 +3326,7 @@ line level    source
              - _TRUE))
                   {
                       if(ScalerSyncDpGetHotPlugStatus(_D1_INPUT_PORT) == _HIGH)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 53  
 
                       {
                           return;
@@ -3390,7 +3390,7 @@ line level    source
                           case 55:
                               DELAY_XUS(500);
                               break;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 54  
 
               
                           case 60:
@@ -3454,7 +3454,7 @@ line level    source
               //--------------------------------------------------
               void ScalerDpRx1InterlaceReset(void)
               {
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 55  
 
                   // Interlace mode disable, refer to VBID[1], Field Inverse Disable, Clear Hwardware Detect Interlace F
              -lag, Clear Fake Interlace Flag
@@ -3518,7 +3518,7 @@ line level    source
               
                   // H Blanking = HTotal - HActive
                   PDATA_WORD(0) = usDpHtotal - usHActive;
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 56  
 
               
                   // Set BS to HS delay to (HBlanking + 1/2 FIFO - HStart), BS2HS delay: 2 pixel mode
@@ -3582,7 +3582,7 @@ line level    source
                               DELAY_XUS_EXINT(768);
                               break;
               
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 57  
 
                           case 90:
                               DELAY_XUS_EXINT(816);
@@ -3646,7 +3646,7 @@ line level    source
               
                           ucTemp ++;
                       }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 58  
 
                       while(ucTemp < _HW_DP_INFOFRAME_RSV0_LENGTH);
               
@@ -3710,7 +3710,7 @@ line level    source
                                   {
                                       SET_DP_RX1_HDR_INFO_FRAME_RECEIVED();
                                       memcpy(g_pucDPRx1HDR10Backup, pucDPRx1RSV0Data, _HW_DP_INFOFRAME_RSV0_LENGTH);
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 59  
 
                                   }
                               }
@@ -3774,7 +3774,7 @@ line level    source
                                       CLR_DP_RX1_AMD_SPD_INFO_FRAME_RECEIVED();
                                       memset(g_pucDPRx1RSV0Backup, 0, _HW_DP_INFOFRAME_RSV0_LENGTH);
                                   }
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 60  
 
                                   else
                                   {
@@ -3838,7 +3838,7 @@ line level    source
               }
               
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 61  
 
               // Description  : DP InfoFrame RSV0 initial setting
               // Input Value  : None
@@ -3902,7 +3902,7 @@ line level    source
               
               #if(_DP_FREESYNC_SUPPORT == _ON)
                   if(GET_DP_RX1_AMD_SPD_INFO_FRAME_RECEIVED() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 62  
 
                   {
                       CLR_DP_RX1_AUDIO_INFO_FRAME_RECEIVED();
@@ -3966,7 +3966,7 @@ line level    source
               #endif // End of #if(_D1_DP_EXIST == _ON)
 
 
-C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/21/2026 15:32:31 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERCOMMONDPRX1                                                 09/24/2026 09:30:30 PAGE 63  
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   ----    ----

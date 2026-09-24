@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 1   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SCALERDISPLAYDPTX
@@ -62,7 +62,7 @@ line level    source
               bit g_bDptxSscEn = 0;
               
               #if((_DISPLAY_DP_TX_PORT_1 == _ON) && (_DISPLAY_DP_TX_PORT_2 == _ON))
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 2   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 2   
 
               #if(_PANEL_DPTX_8_LANE_LT_SYNCHRONIZE == _ON)
               StructDPTxLTInfo g_stDisplayDPTxLTInfo;
@@ -126,7 +126,7 @@ line level    source
               bit ScalerDisplayDPTx1TP1Lane3Adjust(void);
               void ScalerDisplayDPTx1TP2Lane0Adjust(void);
               void ScalerDisplayDPTx1TP2Lane1Adjust(void);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 3   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 3   
 
               void ScalerDisplayDPTx1TP2Lane2Adjust(void);
               void ScalerDisplayDPTx1TP2Lane3Adjust(void);
@@ -190,7 +190,7 @@ line level    source
               void ScalerDisplayDPTx2TP2Lane1Adjust(void);
               void ScalerDisplayDPTx2TP2Lane2Adjust(void);
               void ScalerDisplayDPTx2TP2Lane3Adjust(void);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 4   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 4   
 
               
               #if(_PANEL_DPTX_FORCE_OUTPUT_SUPPORT == _ON)
@@ -254,7 +254,7 @@ line level    source
              -ss, BYTE ucLength, BYTE *pucDataArray, bit bMOT);
               
               //****************************************************************************
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 5   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 5   
 
               // FUNCTION DEFINITIONS
               //****************************************************************************
@@ -318,7 +318,7 @@ line level    source
                   // Set Power Normal
                   pData[0] = 0x01;
                   if(ScalerDisplayDPTx1NativeAuxWrite(0x00, 0x06, 0x00, 1, pData) == _FALSE)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 6   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 6   
 
                   {
                       return _FALSE;
@@ -382,7 +382,7 @@ line level    source
                   SET_DISPLAY_DP_TX1_ENHANCE_FRAMING((bit)(pData[2] & _BIT7));
               
                   // Set Max Downspread
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 7   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 7   
 
                   SET_DISPLAY_DP_TX1_DOWN_SPREAD((bit)(pData[3] & _BIT0));
               
@@ -446,7 +446,7 @@ line level    source
                       PDATA_DWORD(0) /= ((GET_DISPLAY_DP_TX_SSCG_CONFIG() == _TRUE) ? (270UL * GET_DISPLAY_DP_TX1_LINK_R
              -ATE() * 9975UL / 10000UL) : (270UL * GET_DISPLAY_DP_TX1_LINK_RATE()));
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 8   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 8   
 
                       PDATA_DWORD(0) = PDATA_DWORD(0) / 10UL + (PDATA_DWORD(0) % 10 > 5 ? 1 : 0);
               
@@ -510,7 +510,7 @@ line level    source
                                   ulHwMvidMax = PDATA_DWORD(2);
                               }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 9   
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 9   
 
                               PDATA_DWORD(3) = PDATA_DWORD(2);
               
@@ -574,7 +574,7 @@ line level    source
                       }
               
                       // Set Nvid for FW mode
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 10  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 10  
 
                       ScalerSetByte(P9C_AC_MN_N_VID_H, pData[5]);
                       ScalerSetByte(P9C_AD_MN_N_VID_M, pData[6]);
@@ -638,7 +638,7 @@ line level    source
                   ScalerSetBit(P9C_D3_LFIFO_WL_SET, ~_BIT7, 0x00);
               
                   // Pixel Generation Block Reset
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 11  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 11  
 
                   ScalerSetBit(P9C_A1_DP_RESET_CTRL, ~_BIT7, _BIT7);
                   ScalerSetBit(P9C_A1_DP_RESET_CTRL, ~_BIT7, 0x00);
@@ -702,7 +702,7 @@ line level    source
                   // HW Can't Set Valid TU < 0
                   if((PDATA_WORD(1) >> 3) == 0x00)
                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 12  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 12  
 
                       ScalerSetByte(P9C_CD_TU_DATA_SIZE0, 0x01);
                       ScalerSetByte(P9C_CE_TU_DATA_SIZE1, 0x00);
@@ -766,7 +766,7 @@ line level    source
               
                   // Set VStart
                   ScalerSetByte(P9C_C1_MN_STRM_ATTR_VST_M, HIBYTE(g_stDisplayDPTx1TimingInfo.usVStart));
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 13  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 13  
 
                   ScalerSetByte(P9C_C2_MN_STRM_ATTR_VST_L, LOBYTE(g_stDisplayDPTx1TimingInfo.usVStart));
               
@@ -830,7 +830,7 @@ line level    source
                                   }
               
                                   break;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 14  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 14  
 
               
                               case _DISPLAY_DP_TX_TRAINING_PATTERN2:
@@ -894,7 +894,7 @@ line level    source
                   // Start TP1 Process
                   if(GET_DISPLAY_DP_TX1_LT_RESULT() == _DISPLAY_DP_TX_TRAINING_NO_RESULT)
                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 15  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 15  
 
                       // Repeat Bist Pattern --> for Training Pattern
                       ScalerSetBit(P38_85_PHY0_TXBIST_00_H2, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
@@ -958,7 +958,7 @@ line level    source
               
                           break;
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 16  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 16  
 
                       case _DP_TWO_LANE:
               
@@ -1022,7 +1022,7 @@ line level    source
                       pData[3] = g_stDisplayDPTx1LTInfo.ucLane3Adjust;
               
                       // Write DPCD 103h-107h (Voltage Swing and Pre-emphasis)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 17  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 17  
 
                       ScalerDisplayDPTx1NativeAuxWrite(0x00, 0x01, 0x03, 4, pData);
                   }
@@ -1086,7 +1086,7 @@ line level    source
               
                       case _DP_TWO_LANE:
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 18  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 18  
 
                           ScalerDisplayDPTx1TP2Lane1Adjust();
                           ScalerDisplayDPTx1TP2Lane0Adjust();
@@ -1150,7 +1150,7 @@ line level    source
                       ScalerSetBit(P9C_0D_DPTX_PHY_CTRL, ~_BIT4, _BIT4);
               
                       // Main Link switch to IDLE Pattern
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 19  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 19  
 
                       ScalerDisplayDPTx1VideoStreamOutput(_DISABLE);
               
@@ -1214,7 +1214,7 @@ line level    source
                       pData[0] = ((BYTE)GET_DISPLAY_DP_TX1_FRAMING_CHANGE_CAPABLE() << 1);
                       ScalerDisplayDPTx1NativeAuxWrite(0x00, 0x01, 0x0A, 1, pData);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 20  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 20  
 
                       ScalerDisplayDPTx1EnhanceFramingMode(_ENABLE);
                   }
@@ -1278,7 +1278,7 @@ line level    source
                       CLR_DISPLAY_DP_TX1_TP1_LANE0_SAME_VOL_CNT();
                   }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 21  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 21  
 
                   // Set Tx Current voltage swing based on Rx Adjust voltage(flag)
                   SET_DISPLAY_DP_TX1_LANE0_CURRENT_VOL_SWING(GET_DISPLAY_DP_TX1_LANE0_ADJUST_VOL_SWING());
@@ -1342,7 +1342,7 @@ line level    source
                   SET_DISPLAY_DP_TX1_LANE1_CURRENT_VOL_SWING(GET_DISPLAY_DP_TX1_LANE1_ADJUST_VOL_SWING());
                   SET_DISPLAY_DP_TX1_LANE1_CURRENT_PRE_EMPHASIS(GET_DISPLAY_DP_TX1_LANE1_ADJUST_PRE_EMPHASIS());
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 22  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 22  
 
                   if(GET_DISPLAY_DP_TX1_LANE1_CURRENT_VOL_SWING() == _DISPLAY_DP_TX_LEVEL_3)
                   {
@@ -1406,7 +1406,7 @@ line level    source
                   {
                       SET_DISPLAY_DP_TX1_LANE2_CURRENT_VOL_SWING_MAX_REACH();
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 23  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 23  
 
                   else
                   {
@@ -1470,7 +1470,7 @@ line level    source
                   {
                       CLR_DISPLAY_DP_TX1_LANE3_CURRENT_VOL_SWING_MAX_REACH();
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 24  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 24  
 
               
                   if(GET_DISPLAY_DP_TX1_LANE3_CURRENT_PRE_EMPHASIS() == _DISPLAY_DP_TX_LEVEL_3)
@@ -1534,7 +1534,7 @@ line level    source
                   // Check: (Current Vol swing level + Adjust Vol swing level) > 3
                   if((GET_DISPLAY_DP_TX1_LANE1_CURRENT_VOL_SWING() + GET_DISPLAY_DP_TX1_LANE1_ADJUST_PRE_EMPHASIS()) > _
              -DISPLAY_DP_TX_LEVEL_3)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 25  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 25  
 
                   {
                       SET_DISPLAY_DP_TX1_LANE1_CURRENT_PRE_EMPHASIS((_DISPLAY_DP_TX_LEVEL_3 - GET_DISPLAY_DP_TX1_LANE1_C
@@ -1598,7 +1598,7 @@ line level    source
                   {
                       SET_DISPLAY_DP_TX1_LANE2_CURRENT_PRE_EMPHASIS_MAX_REACH();
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 26  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 26  
 
                   else
                   {
@@ -1662,7 +1662,7 @@ line level    source
               
                   // Training Pattern 1 For Link Training
                   // Repeat Bist Pattern --> for Training Pattern
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 27  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 27  
 
                   ScalerSetBit(P38_85_PHY0_TXBIST_00_H2, ~(_BIT7 | _BIT6), (_BIT7 | _BIT6));
               
@@ -1726,7 +1726,7 @@ line level    source
                   ScalerSetBit(P38_88_PHY0_TXBIST_00_L1, ~_BIT4, 0x00);
               
               #elif(_PANEL_DPTX_SCRAMBLE_SEED_TYPE == _PANEL_DPTX_SCRAMBLE_SEED_0XFFFF)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 28  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 28  
 
               
                   // Scambling Seed Select to 0xFFFF
@@ -1790,7 +1790,7 @@ line level    source
               
                           // Set Lane Number: 4
                           SET_DISPLAY_DP_TX1_LANE_NUM(_DP_FOUR_LANE);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 29  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 29  
 
               
                           break;
@@ -1854,7 +1854,7 @@ line level    source
                   CLR_DISPLAY_DP_TX1_LANE2_CURRENT_VOL_SWING_MAX_REACH();
                   SET_DISPLAY_DP_TX1_LANE2_CURRENT_PRE_EMPHASIS(_DISPLAY_DP_TX_LEVEL_0);
                   CLR_DISPLAY_DP_TX1_LANE2_CURRENT_PRE_EMPHASIS_MAX_REACH();
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 30  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 30  
 
               
                   SET_DISPLAY_DP_TX1_LANE3_CURRENT_VOL_SWING(_DISPLAY_DP_TX_LEVEL_0);
@@ -1918,7 +1918,7 @@ line level    source
                   // Hsyc polarity
                   g_stDisplayDPTx1TimingInfo.b1HSP = 1;
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 31  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 31  
 
                   switch(ScalerMDomainGetFrameSyncMode())
                   {
@@ -1982,7 +1982,7 @@ line level    source
               
                           break;
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 32  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 32  
 
               
                   ScalerSetByte(P0_2A_DISPLAY_FORMAT_ADDR_PORT, _P0_2B_PT_0D_DISPLAY_VER_SYNC_END);
@@ -2046,7 +2046,7 @@ line level    source
               
                           // Adjust Lane0 PHY voltage swing level and Pre-emphasis
                           ScalerDisplayDPTx1SetSignalLevel(_DISPLAY_DP_TX_LANE_0, GET_DISPLAY_DP_TX1_LANE0_CURRENT_VOL_S
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 33  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 33  
 
              -WING(), GET_DISPLAY_DP_TX1_LANE0_CURRENT_PRE_EMPHASIS());
               
@@ -2110,7 +2110,7 @@ line level    source
                   {
                       return _FALSE;
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 34  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 34  
 
               
                   return _TRUE;
@@ -2174,7 +2174,7 @@ line level    source
               
                   // Setting Aux
                   ScalerDisplayDPTx1AuxPHYSet(_DISPLAY_DP_TX_AUX_DIFF_MODE);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 35  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 35  
 
               
                   // Set Aux Timeout
@@ -2238,7 +2238,7 @@ line level    source
                       // CLR Flag
                       ScalerSetByte(P9D_B1_AUX_IRQ_EVENT, 0x3F);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 36  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 36  
 
                       // Reset AUX FIFO
                       ScalerSetBit(P9D_AB_AUX_FIFO_CTRL, ~(_BIT1 | _BIT0), (_BIT1 | _BIT0));
@@ -2302,7 +2302,7 @@ line level    source
                                       else
                                       {
                                           // Disable Timeout Retry
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 37  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 37  
 
                                           ScalerSetBit(P9D_B0_AUX_RETRY_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3), 0x0
              -0);
@@ -2366,7 +2366,7 @@ line level    source
                                       ScalerSetBit(P9D_B0_AUX_RETRY_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3), 0x00);
               
                                       // CLR Flag
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 38  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 38  
 
                                       ScalerSetByte(P9D_B1_AUX_IRQ_EVENT, 0x3F);
               
@@ -2430,7 +2430,7 @@ line level    source
                   {
                       return _FALSE;
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 39  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 39  
 
               
                   // Enable Timeout Retry
@@ -2494,7 +2494,7 @@ line level    source
                                   ScalerSetByte(P9D_B1_AUX_IRQ_EVENT, 0x3F);
               
                                   if(ucWriteRetryNum != _DISPLAY_DP_TX_AUX_RETRY_LIMIT)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 40  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 40  
 
                                   {
                                       // Reset FIFO
@@ -2558,7 +2558,7 @@ line level    source
                   // CLR Flag
                   ScalerSetByte(P9D_B1_AUX_IRQ_EVENT, 0x3F);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 41  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 41  
 
                   // Reset FIFO
                   ScalerSetBit(P9D_AB_AUX_FIFO_CTRL, ~(_BIT1 | _BIT0), (_BIT1 | _BIT0));
@@ -2622,7 +2622,7 @@ line level    source
               }
               
               #if(_PANEL_DPTX_HPD_DETECT == _ON)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 42  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 42  
 
               //--------------------------------------------------
               // Description  : Display DP Tx HPD Detection
@@ -2686,7 +2686,7 @@ line level    source
                   return _TRUE;
               }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 43  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 43  
 
               //--------------------------------------------------
               // Description  : DP Tx Aux Read
@@ -2750,7 +2750,7 @@ line level    source
                       if(ucLength == 0)
                       {
                           ucLength = 1;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 44  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 44  
 
                       }
                       else if(ucLength > 16)
@@ -2814,7 +2814,7 @@ line level    source
                                   }
                                   else
                                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 45  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 45  
 
                                       ucCheckLength = ScalerGetBit_EXINT(P9D_AE_AUX_FIFO_WR_PTR, (_BIT4 | _BIT3 | _BIT2 
              -| _BIT1 | _BIT0));
@@ -2878,7 +2878,7 @@ line level    source
                           // Increasing Retry Num
                           ucReadRetryNum++;
                       }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 46  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 46  
 
                       while((ucReadRetryNum <= _DISPLAY_DP_TX_AUX_RETRY_LIMIT) && (ScalerGetBit_EXINT(P9D_AE_AUX_FIFO_WR
              -_PTR, (_BIT4 | _BIT3 | _BIT2 | _BIT1 | _BIT0)) == 0x00) && (bReceiveFlag == _FALSE));
@@ -2942,7 +2942,7 @@ line level    source
               }
               #endif
               #endif
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 47  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 47  
 
               #endif // End of #if(_DISPLAY_DP_TX_PORT_1 == _ON)
               
@@ -3006,7 +3006,7 @@ line level    source
               
                   // Read Sink Cabability
                   if(ScalerDisplayDPTx2NativeAuxRead(0x00, 0x00, 0x00, 16, pData) == _FALSE)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 48  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 48  
 
                   {
                       return _FALSE;
@@ -3070,7 +3070,7 @@ line level    source
               // Description  : Handle Tx2 Output stream
               // Input Value  : DP Tx Input Source
               // Output Value : None
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 49  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 49  
 
               //--------------------------------------------------
               void ScalerDisplayDPTx2VideoStreamOutput(bit bOutput)
@@ -3134,7 +3134,7 @@ line level    source
               
                           PDATA_DWORD(2) = (((DWORD)ScalerGetByte(P9E_AF_MVID_AUTO_H) << 16) | ((DWORD)ScalerGetByte(P9E
              -_B0_MVID_AUTO_M) << 8) | ScalerGetByte(P9E_B1_MVID_AUTO_L));
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 50  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 50  
 
               
                           // For RLE0779A/RL6449A disable auto Mvid is zero
@@ -3198,7 +3198,7 @@ line level    source
               
                               // Record total valid hw measure times
                               ucValidHwMvidMeaCnt++;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 51  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 51  
 
                           }
                       }
@@ -3262,7 +3262,7 @@ line level    source
               
                       // Double buffer only by Vsync
                       ScalerSetBit(P9E_01_DPTX_ML_PAT_SEL, ~(_BIT1 | _BIT0), _BIT1);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 52  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 52  
 
               
               #if(_PANEL_DPTX_HPD_DETECT == _ON)
@@ -3326,7 +3326,7 @@ line level    source
                           break;
               
                       default:
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 53  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 53  
 
               
                           pData[0] = 8;
@@ -3390,7 +3390,7 @@ line level    source
                   // Secondary End Counter Should Smaller Than H blanking Clock Count(counted by link clk)
                   ScalerSetByte(P9E_D4_ARBITER_SEC_END_CNT_HB, 0x00);
                   ScalerSetByte(P9E_D5_ARBITER_SEC_END_CNT_LB, 0x10);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 54  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 54  
 
               }
               
@@ -3454,7 +3454,7 @@ line level    source
               #if(!((_PANEL_DPTX_8_LANE_LT_SYNCHRONIZE == _ON) && ((_DISPLAY_DP_TX_PORT_1 == _ON) && (_DISPLAY_DP_TX_POR
              -T_2 == _ON))))
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 55  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 55  
 
               // Description  : DP Tx Link Training
               // Input Value  :
@@ -3518,7 +3518,7 @@ line level    source
                                       SET_DISPLAY_DP_TX2_LT_RESULT(_DISPLAY_DP_TX_TRAINING_FAIL);
               
                                       DebugMessageCheck("eDP Tx2 LTend Fail", 0x00);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 56  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 56  
 
                                   }
                                   else
@@ -3582,7 +3582,7 @@ line level    source
                       // Write DPCD 103h-107h  (Voltage Swing and Pre-emphasis)
                       ScalerDisplayDPTx2NativeAuxWrite(0x00, 0x01, 0x03, 4, pData);
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 57  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 57  
 
               
                   // Delay Time us [400,x]
@@ -3646,7 +3646,7 @@ line level    source
               // Description  : DP Tx Link Training 2
               // Input Value  :
               // Output Value :
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 58  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 58  
 
               //--------------------------------------------------
               BYTE ScalerDisplayDPTx2TrainPattern2(void)
@@ -3710,7 +3710,7 @@ line level    source
               
                   if((((GET_DISPLAY_DP_TX2_LANE_NUM() == _DP_FOUR_LANE) && ((GET_DISPLAY_DP_TX2_LANE3_EQ_DONE() & GET_DI
              -SPLAY_DP_TX2_LANE2_EQ_DONE() & GET_DISPLAY_DP_TX2_LANE1_EQ_DONE() & GET_DISPLAY_DP_TX2_LANE0_EQ_DONE()) == _TRUE)) ||
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 59  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 59  
 
                       ((GET_DISPLAY_DP_TX2_LANE_NUM() == _DP_TWO_LANE) && ((GET_DISPLAY_DP_TX2_LANE1_EQ_DONE() & GET_DIS
              -PLAY_DP_TX2_LANE0_EQ_DONE()) == _TRUE)) ||
@@ -3774,7 +3774,7 @@ line level    source
               #endif
               
                   ScalerDisplayDPTx2SetTps3PatternMux(_OFF);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 60  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 60  
 
               
                   if(GET_DISPLAY_DP_TX2_LT_RESULT() == _DISPLAY_DP_TX_TRAINING_PASS)
@@ -3838,7 +3838,7 @@ line level    source
                       ScalerSetBit(P38_85_PHY0_TXBIST_00_H2, ~_BIT7, 0x00);
                   }
               }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 61  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 61  
 
               #endif
               
@@ -3902,7 +3902,7 @@ line level    source
               
                   // Set DPTx Spread Spectrum
                   ScalerDisplayDPTxSSCSet(GET_DISPLAY_DP_TX_SSCG_CONFIG(), _PANEL_DPTX_SPREAD_RANGE);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 62  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 62  
 
               }
               
@@ -3966,7 +3966,7 @@ line level    source
               
               //--------------------------------------------------
               // Description  : DP Tx Link Training 1 Lane1 Adjust
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 63  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 63  
 
               // Input Value  :
               // Output Value :
@@ -4030,7 +4030,7 @@ line level    source
               // Input Value  :
               // Output Value :
               //--------------------------------------------------
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 64  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 64  
 
               bit ScalerDisplayDPTx2TP1Lane2Adjust(void)
               {
@@ -4094,7 +4094,7 @@ line level    source
               {
                   // Check1: (Adjust Vol swing level + Current Vol pre emphasisl) > 3
                   if((GET_DISPLAY_DP_TX2_LANE3_ADJUST_VOL_SWING() + GET_DISPLAY_DP_TX2_LANE3_CURRENT_PRE_EMPHASIS()) > _
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 65  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 65  
 
              -DISPLAY_DP_TX_LEVEL_3)
                   {
@@ -4158,7 +4158,7 @@ line level    source
                   {
                       SET_DISPLAY_DP_TX2_LANE0_CURRENT_PRE_EMPHASIS((_DISPLAY_DP_TX_LEVEL_3 - GET_DISPLAY_DP_TX2_LANE0_C
              -URRENT_VOL_SWING()));
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 66  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 66  
 
                   }
                   else
@@ -4222,7 +4222,7 @@ line level    source
                   }
                   else
                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 67  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 67  
 
                       CLR_DISPLAY_DP_TX2_LANE1_CURRENT_PRE_EMPHASIS_MAX_REACH();
                   }
@@ -4286,7 +4286,7 @@ line level    source
                       SET_DISPLAY_DP_TX2_LANE3_CURRENT_PRE_EMPHASIS(GET_DISPLAY_DP_TX2_LANE3_ADJUST_PRE_EMPHASIS());
                       SET_DISPLAY_DP_TX2_LANE3_CURRENT_VOL_SWING(GET_DISPLAY_DP_TX2_LANE3_ADJUST_VOL_SWING());
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 68  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 68  
 
               
                   if(GET_DISPLAY_DP_TX2_LANE3_CURRENT_VOL_SWING() == _DISPLAY_DP_TX_LEVEL_3)
@@ -4350,7 +4350,7 @@ line level    source
                   ScalerSetBit(P38_89_PHY0_TXBIST_01_H2, ~_BIT1, _BIT1);
               
                   // Select TP2
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 69  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 69  
 
                   ScalerSetBit(P38_88_PHY0_TXBIST_00_L1, ~_BIT5, 0x00);
               
@@ -4414,7 +4414,7 @@ line level    source
                   ScalerSetBit(P38_85_PHY0_TXBIST_00_H2, ~_BIT7, 0x00);
               }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 70  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 70  
 
               //--------------------------------------------------
               // Description  : DP Tx Force Output Pre-Check
@@ -4478,7 +4478,7 @@ line level    source
                   }
               
                   // Set Enhanceed Framing
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 71  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 71  
 
                   SET_DISPLAY_DP_TX2_ENHANCE_FRAMING(_PANEL_DPTX_FORCE_MSA_ENHANCE_FRAMING);
               
@@ -4542,7 +4542,7 @@ line level    source
                   // Disable Digital PHY Enhancement
                   ScalerSetBit(P38_89_PHY0_TXBIST_01_H2, ~_BIT3, 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 72  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 72  
 
                   // Enable Enhancement
                   ScalerSetBit(P9E_A0_DP_MAC_CTRL, ~_BIT2, ((BYTE)bEnable << 2));
@@ -4606,7 +4606,7 @@ line level    source
               
                           GET_DVTOTAL_LASTLINE(PDATA_WORD(0));
                           ScalerSetBit(P0_43_FS_DELAY_FINE_TUNE, ~_BIT5, 0x00);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 73  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 73  
 
               
                           PDATA_WORD(1) = GET_FREE_RUN_DVTOTAL();
@@ -4670,7 +4670,7 @@ line level    source
                   // Vsyc polarity
                   g_stDisplayDPTx2TimingInfo.b1VSP = 1;
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 74  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 74  
 
                   return _TRUE;
               }
@@ -4734,7 +4734,7 @@ line level    source
                   }
               }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 75  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 75  
 
               //--------------------------------------------------
               // Description  : DP Tx Native Aux Write
@@ -4798,7 +4798,7 @@ line level    source
                       {
                           return _FALSE;
                       }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 76  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 76  
 
                   }
               
@@ -4862,7 +4862,7 @@ line level    source
               //                ucLowAddress --> Low Byte of  Aux Read Address
               //                ucLength --> Aux Read Length
               //                ucAutoInc --> Address Auto Increase flag
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 77  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 77  
 
               //                pWriteArray --> Data Array of Aux Read
               // Output Value : TRUE --> Aux Read Sucessful
@@ -4926,7 +4926,7 @@ line level    source
               
                       // Set Read Length : TX_LEN = ucLength-1
                       ScalerSetByte(P9F_A7_AUXTX_REQ_LEN, (ucLength - 1));
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 78  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 78  
 
               
                       // Reset AUX Start Bit
@@ -4990,7 +4990,7 @@ line level    source
                                       {
                                           ucCheckLength = ucLength;
                                       }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 79  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 79  
 
               
                                       // Read Data From Buffer
@@ -5054,7 +5054,7 @@ line level    source
                       // residual times decrease
                       ucResidualReceiveTimes--;
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 80  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 80  
 
                   while(ucResidualReceiveTimes > 0);
               
@@ -5118,7 +5118,7 @@ line level    source
                   {
                       ucLength = 1;
                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 81  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 81  
 
                   else if(ucLength > 16)
                   {
@@ -5182,7 +5182,7 @@ line level    source
                               else
                               {
                                   // Disable Timeout Retry
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 82  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 82  
 
                                   ScalerSetBit(P9F_B0_AUX_RETRY_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3), 0x00);
               
@@ -5246,7 +5246,7 @@ line level    source
               
                   // Set HPD 1ms Timer to 2ms
                   ScalerSetBit(P9E_73_HPD_TIMER1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), (_BIT3 | _BIT2 | _BIT0));
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 83  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 83  
 
                   ScalerSetByte(P9E_75_HPD_TIMER3, 0x2C);
               
@@ -5310,7 +5310,7 @@ line level    source
                           return _TRUE;
                       }
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 84  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 84  
 
               #if(_PANEL_DPTX_IRQ_HPD_DETECT == _ON)
                       // IRQ HPD
@@ -5374,7 +5374,7 @@ line level    source
                   BYTE ucCheckLength = 0;
                   BYTE ucCommand = ucCommandAddrH & 0xF0;
                   DWORD ulAddr = TO_DWORD(0x00, ucCommandAddrH & 0x0F, ucAddrM, ucAddrL);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 85  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 85  
 
               
                   // if aux_en = 0, return false
@@ -5438,7 +5438,7 @@ line level    source
               
                           // Delay Time us [5,175] Polling AUX Done Bit
                           for(ucAuxPollingCount = 0; ucAuxPollingCount < 25; ucAuxPollingCount++)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 86  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 86  
 
                           {
                               DELAY_5US_EXINT();
@@ -5502,7 +5502,7 @@ line level    source
                                           ScalerSetBit_EXINT(P9F_B0_AUX_RETRY_2, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4 | _BIT3
              -), 0x00);
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 87  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 87  
 
                                           // CLR Flag
                                           ScalerSetByte_EXINT(P9F_B1_AUX_IRQ_EVENT, 0x3F);
@@ -5566,7 +5566,7 @@ line level    source
               
                   // Delay Time us [400,x]
                   DELAY_XUS_EXINT(400);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 88  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 88  
 
               
                   return _FALSE;
@@ -5630,7 +5630,7 @@ line level    source
               
                       // Set ADJR P
                       ScalerSetBit(P9F_61_AUX_1, ~(_BIT3 | _BIT2 | _BIT1 | _BIT0), 0x00);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 89  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 89  
 
               
                       // [5]Enable Single-Ended Mode, [4:3]Aux Vth-->50mV, [0]Aux 50ohm auto K(Enable Big_Z0_P)
@@ -5694,7 +5694,7 @@ line level    source
               {
                   if(bAphyMux == _ON)
                   {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 90  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 90  
 
               #if(_PANEL_DPTX_LANE_SWAP == _ENABLE)
                       // Set TX2 DPHY to APHY mux from MAC1
@@ -5758,7 +5758,7 @@ line level    source
               
                   // Set Voltage Swing and pre-emphasis level 0
                   ScalerDisplayDPTx2SignalReset();
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 91  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 91  
 
               
                   // Initial bist mode
@@ -5822,7 +5822,7 @@ line level    source
                           ScalerSetBit(P38_A1_DPTX_PHY_CTRL1, ~(_BIT7 | _BIT6 | _BIT5 | _BIT4), (_BIT7 | _BIT6 | _BIT5 |
              - _BIT4));
               
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 92  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 92  
 
                           break;
               
@@ -5886,7 +5886,7 @@ line level    source
                           pData[0] = (_DISPLAY_DP_TX_TP_1 | _DISPLAY_DP_TX_SCRAMBLING_DISABLE);
                           pData[1] = g_stDisplayDPTx2LTInfo.ucLane0Adjust;
                           pData[2] = g_stDisplayDPTx2LTInfo.ucLane1Adjust;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 93  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 93  
 
                           pData[3] = g_stDisplayDPTx2LTInfo.ucLane2Adjust;
                           pData[4] = g_stDisplayDPTx2LTInfo.ucLane3Adjust;
@@ -5950,7 +5950,7 @@ line level    source
                   switch(GET_DISPLAY_DP_TX_LANE_NUM())
                   {
                       case _DP_FOUR_LANE:
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 94  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 94  
 
               
                           if((GET_DISPLAY_DP_TX1_LANE3_CR_DONE() == _TRUE) &&
@@ -6014,7 +6014,7 @@ line level    source
                           }
                           else
                           {
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 95  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 95  
 
                               if((ScalerDisplayDPTx2TP1Lane1Adjust() == _FAIL) ||
                                  (ScalerDisplayDPTx2TP1Lane0Adjust() == _FAIL))
@@ -6078,7 +6078,7 @@ line level    source
               // Description  : DP Tx Link Training 2
               // Input Value  :
               // Output Value :
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 96  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 96  
 
               //--------------------------------------------------
               BYTE ScalerDisplayDPTxTrainPattern2(void)
@@ -6142,7 +6142,7 @@ line level    source
                           pData[0] = g_stDisplayDPTx2LTInfo.ucLane0Adjust;
                           pData[1] = g_stDisplayDPTx2LTInfo.ucLane1Adjust;
                           pData[2] = g_stDisplayDPTx2LTInfo.ucLane2Adjust;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 97  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 97  
 
                           pData[3] = g_stDisplayDPTx2LTInfo.ucLane3Adjust;
               
@@ -6206,7 +6206,7 @@ line level    source
                               SET_DISPLAY_DP_TX2_LT_RESULT(_DISPLAY_DP_TX_TRAINING_PATTERN2_ADJUST_FAIL);
                           }
                           else if((GET_DISPLAY_DP_TX2_LANE3_EQ_DONE() == _TRUE) &&
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 98  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 98  
 
                                   (GET_DISPLAY_DP_TX2_LANE2_EQ_DONE() == _TRUE) &&
                                   (GET_DISPLAY_DP_TX2_LANE1_EQ_DONE() == _TRUE) &&
@@ -6270,7 +6270,7 @@ line level    source
                               SET_DISPLAY_DP_TX2_LT_RESULT(_DISPLAY_DP_TX_TRAINING_PATTERN2_ADJUST_FAIL);
                           }
                           else if(GET_DISPLAY_DP_TX2_LANE0_EQ_DONE() == _TRUE)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 99  
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 99  
 
                           {
                               if(GET_DISPLAY_DP_TX2_LANE_ALIGN_DONE() == _TRUE)
@@ -6334,7 +6334,7 @@ line level    source
                               ScalerDisplayDPTx1TP2Lane1Adjust();
                               ScalerDisplayDPTx1TP2Lane0Adjust();
                           }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 100 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 100 
 
               
                           if(GET_DISPLAY_DP_TX2_LT_RESULT() != _DISPLAY_DP_TX_TRAINING_PATTERN2_PASS)
@@ -6398,7 +6398,7 @@ line level    source
               
                           pData[0] = ((BYTE)GET_DISPLAY_DP_TX1_FRAMING_CHANGE_CAPABLE() << 1) | _BIT0;
                           ScalerDisplayDPTx1NativeAuxWrite(0x00, 0x01, 0x0A, 1, pData);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 101 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 101 
 
                       }
                       else
@@ -6462,7 +6462,7 @@ line level    source
                       // Panel DPTx Power Sequence Check Point
                       PCB_DPTX1_POWER_SEQUENCE(_DPTX_POWER_SEQUENCE_IDLE_PATTERN);
                       PCB_DPTX2_POWER_SEQUENCE(_DPTX_POWER_SEQUENCE_IDLE_PATTERN);
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 102 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 102 
 
               
                       // Disable bist mode
@@ -6526,7 +6526,7 @@ line level    source
               
                                       DebugMessageCheck("eDP Tx LT2 Lane or PN Fail", 0x00);
                                   }
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 103 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 103 
 
               
                                   break;
@@ -6590,7 +6590,7 @@ line level    source
               bit ScalerDisplayDPTxStableDetect(void)
               {
               #if(_DISPLAY_DP_TX_PORT_1 == _ON)
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 104 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 104 
 
               #if(_PANEL_DPTX_SET_HPD_DETECT_SEQUENCE == _HPD_DETECT_AFTER_VIDEO_STREAM)
                   if(GET_DISPLAY_DP_TX1_STREAM_OUTPUT() != _ENABLE)
@@ -6654,7 +6654,7 @@ line level    source
                       default:
               
                           return _FALSE;
-C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/21/2026 15:31:59 PAGE 105 
+C51 COMPILER V9.60.0.0   SCALERDISPLAYDPTX                                                 09/24/2026 09:29:58 PAGE 105 
 
                   }
               }
