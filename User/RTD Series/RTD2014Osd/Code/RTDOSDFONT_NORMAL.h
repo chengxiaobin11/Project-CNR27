@@ -4831,7 +4831,7 @@ BYTE code tFONT_CHINESE_S[]=
 0x00,0x00,0x00,
 
 
-//========Address -- (00),	//½Ú
+//========Address -- (00),	//ï¿½ï¿½
 0x00,0x00,0x00,
 0x01,0x01,0x00,
 0x1f,0x1f,0x0e,
@@ -9241,7 +9241,7 @@ BYTE code tFONT_Energy[] =
 #endif
 enum OSDFontDeFT
 {
-	//·±Ìå
+	//ï¿½ï¿½ï¿½ï¿½
  	_FT_cai_46= 0x46,_FT_liang_47,_FT_du_48,_FT_tu_49,_FT_xiang_4A,_FT_she_4B,
 	
 	_FT_zhi_4C, _FT_yan_4D,_FT_se_4E, _FT_ding_4F_,FT_chong_50,_FT_qi_51,_FT_ta_52,_FT_dui_53,_FT_bi_54, _FT_qing_55,
@@ -9260,7 +9260,7 @@ enum OSDFontDeFT
 	_FT_zheng_93,_FT_ji_94,_FT_XI_95,_FT_ming_96,
 	_FT_HEI_97,_FT_HENG_98,_FT_TAI_99,_FT_QING_9A,_FT_JING_9B,_FT_GA_9C,_FT_MA_9D,_FT_YU_9E,_FT_BAO_9F,_FT_HE_A0,_FT_CHAO_A1,_FT_PING_A2,_FT_DENG_A3,_FT_XIAO_A4,_FT_SHAN_A5,_FT_SHUO_A6,
 	_FT_wen_A7,_FT_ben_A8,_FT_zui_A9,_FT_da_AA,
-	_FT_jie_AB,//½Ú
+	_FT_jie_AB,//ï¿½ï¿½
 	_FT_gao_AC,//
 	_FT_gan_AB,//
 	
@@ -9296,11 +9296,11 @@ enum OSDFontDef
 	_EY_MENX_C0,_EY_P_C1,_EY_PX_C2,_EY_C_C3,_EY_CX_C4,_EY_T_C5,_EY_TX_C6,_EY_Y_C7,_EY_YX_C8,_EY_FAI_C9,_EY_FAIX_CA,_EY_X_CB,_EY_XX_CC,_EY_UW_CD,_EY_UWX_CE,_EY_LD_CF,
 	_EY_LDX_D0,_EY_CZ_D1,_EY_CZX_D2,_EY_CZW_D3,_EY_CZWX_D4,_EY_BT_D5,_EY_BTX_D6,_EY_BI_D7,_EY_BIX_D8,_EY_XB_D9,_EY_XBX_DA,_EY_OH_DB,_EY_OHX_DC,_EY_NX_DD,_EY_NXX_DE,_EY_FR_DF,
 	_EY_FRX_E0,
-	_z3_E1=0XE1,//ÃüÃû¹æÔò,a+-=i1,¨¦=e2,a+``=a5,c+Î²°Í=c6
+	_z3_E1=0XE1,//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,a+-=i1,ï¿½ï¿½=e2,a+``=a5,c+Î²ï¿½ï¿½=c6
 	_c3_E2,_E2_E3,_S2_E4,
-	_xila_BETE_E5,//¦Â
-	_a4_E6,//¨¤
-	_YN_E7,//¨¤
+	_xila_BETE_E5,//ï¿½ï¿½
+	_a4_E6,//ï¿½ï¿½
+	_YN_E7,//ï¿½ï¿½
 
 // #if(_UKRAINE_SUPPRT == _ON)
 	_UA_I_CAPITAL_F2 = 0xF2,
@@ -9315,7 +9315,7 @@ enum OSDFontDef
 
 //#if(_UZBEK_SUPPRT)
 	_HARD_SIGN_F3=0XF3,//'
-	_DEGREE_F4,//¡ã
+	_DEGREE_F4,//ï¿½ï¿½
 //#endif
 
 	
@@ -9352,87 +9352,87 @@ enum OSDFontDef_Vietnamese
 
 enum OSDFontDef_simplified_Chinese
 {
-	_CH_BU_46 = 0x46,	//²»
+	_CH_BU_46 = 0x46,	//ï¿½ï¿½
 	_CH_ZHI_47,			//Ö§
-	_CH_CHI_48,			//³Ö
-	_CH_MING_49,		//Ã÷
-	_CH_LIANG_4A,		//ÁÁ
-	_CH_DU_4B,			//¶È
+	_CH_CHI_48,			//ï¿½ï¿½
+	_CH_MING_49,		//ï¿½ï¿½
+	_CH_LIANG_4A,		//ï¿½ï¿½
+	_CH_DU_4B,			//ï¿½ï¿½
 	_CH_TU_4C,			//Í¼
-	_CH_XIANG_4D,		//Ïñ
-	_CH_SHE_4E,			//Éè
-	_CH_ZHI_4F,			//ÖÃ
-	_CH_YAN_50,			//ÑÕ
+	_CH_XIANG_4D,		//ï¿½ï¿½
+	_CH_SHE_4E,			//ï¿½ï¿½
+	_CH_ZHI_4F,			//ï¿½ï¿½
+	_CH_YAN_50,			//ï¿½ï¿½
 	_CH_SE_51,			//É«
-	_CH_DING_52,		//¶¨
-	_CH_ZHONG_53,		//ÖØ
-	_CH_QI_54,			//Æä
-	_CH_TA_55,			//Ëû
-	_CH_DUI_56,			//¶Ô
-	_CH_BI_57,			//±È
-	_CH_QING_58,		//Çé
-	_CH_JING_59,		//¾°
+	_CH_DING_52,		//ï¿½ï¿½
+	_CH_ZHONG_53,		//ï¿½ï¿½
+	_CH_QI_54,			//ï¿½ï¿½
+	_CH_TA_55,			//ï¿½ï¿½
+	_CH_DUI_56,			//ï¿½ï¿½
+	_CH_BI_57,			//ï¿½ï¿½
+	_CH_QING_58,		//ï¿½ï¿½
+	_CH_JING_59,		//ï¿½ï¿½
 	_CH_MO_5A,			//Ä£
 	_CH_SHI_5B,			//Ê½
-	_CH_BIAO_5C,		//±ê
+	_CH_BIAO_5C,		//ï¿½ï¿½
 	_CH_ZHUN_5D,		//×¼		
-	_CH_DIAN_5E,		//µç
+	_CH_DIAN_5E,		//ï¿½ï¿½
 	_CH_YING_5F,		//Ó°
-	_CH_YOU_60,			//ÓÎ
+	_CH_YOU_60,			//ï¿½ï¿½
 	_CH_XI_61,			//Ï·
-	_CH_DI_62,			//µÍ
-	_CH_GUANG_63,		//¹â
+	_CH_DI_62,			//ï¿½ï¿½
+	_CH_GUANG_63,		//ï¿½ï¿½
 	_CH_SHUI_64,		//Ë®
 	_CH_PING_65,		//Æ½
 	_CH_WEI_66,			//Î»
-	_CH_CHUI_67,		//´¹
+	_CH_CHUI_67,		//ï¿½ï¿½
 	_CH_ZHI_68,			//Ö±
 	_CH_SHI_69,			//Ê±
-	_CH_ZHONG_6A,		//ÖÓ
-	_CH_XIANG_6B,		//Ïà
-	_CH_LI_6C,			//Àý
-	_CH_ZI_6D,			//×Ô
-	_CH_WEN_6E,			//ÎÂ
+	_CH_ZHONG_6A,		//ï¿½ï¿½
+	_CH_XIANG_6B,		//ï¿½ï¿½
+	_CH_LI_6C,			//ï¿½ï¿½
+	_CH_ZI_6D,			//ï¿½ï¿½
+	_CH_WEN_6E,			//ï¿½ï¿½
 	_CH_NUAN_6F,		//Å¯
-	_CH_LEN_70,			//Àä
-	_CH_HU_71,			//»§
-	_CH_HONG_72,		//ºì
-	_CH_LV_73,			//ÂÌ
-	_CH_LAN_74,			//À¶
-	_CH_GUAN_75,		//¹Ø
-	_CH_BI_76,			//±Õ
-	_CH_KAI_77,			//¿ª
-	_CH_QI_78,			//Æô
-	_CH_TIAO_79,		//µ÷
-	_CH_ZHENG_7A,		//Õû
-	_CH_KUAN_7B,		//¿í
-	_CH_PIN_7C,			//ÆÁ
-	_CH_ZHENG_7D,		//Õý
-	_CH_CHANG_7E,		//³£
-	_CH_YONG_7F,		//ÓÃ
-	_CH_YU_80,			//Óï
-	_CH_YAN_81,			//ÑÔ
-	_CH_XIAN_82,		//ÏÔ
+	_CH_LEN_70,			//ï¿½ï¿½
+	_CH_HU_71,			//ï¿½ï¿½
+	_CH_HONG_72,		//ï¿½ï¿½
+	_CH_LV_73,			//ï¿½ï¿½
+	_CH_LAN_74,			//ï¿½ï¿½
+	_CH_GUAN_75,		//ï¿½ï¿½
+	_CH_BI_76,			//ï¿½ï¿½
+	_CH_KAI_77,			//ï¿½ï¿½
+	_CH_QI_78,			//ï¿½ï¿½
+	_CH_TIAO_79,		//ï¿½ï¿½
+	_CH_ZHENG_7A,		//ï¿½ï¿½
+	_CH_KUAN_7B,		//ï¿½ï¿½
+	_CH_PIN_7C,			//ï¿½ï¿½
+	_CH_ZHENG_7D,		//ï¿½ï¿½
+	_CH_CHANG_7E,		//ï¿½ï¿½
+	_CH_YONG_7F,		//ï¿½ï¿½
+	_CH_YU_80,			//ï¿½ï¿½
+	_CH_YAN_81,			//ï¿½ï¿½
+	_CH_XIAN_82,		//ï¿½ï¿½
 	_CH_SHI_83,			//Ê¾
-	_CH_JIAN_84,		//¼ä
+	_CH_JIAN_84,		//ï¿½ï¿½
 	_CH_TOU_85,			//Í¸
-	_CH_DONG_86,		//¶¯
-	_CH_SHU_87,			//Êä
-	_CH_RU_88,			//Èë
+	_CH_DONG_86,		//ï¿½ï¿½
+	_CH_SHU_87,			//ï¿½ï¿½
+	_CH_RU_88,			//ï¿½ï¿½
 	_CH_XUAN_89,		//Ñ¡
-	_CH_ZE_8A,			//Ôñ
-	_CH_YIN_8B,			//Òô
-	_CH_LIANG_8C,		//Á¿
-	_CH_XIN_8D,			//ÐÅ
-	_CH_HAO_8E,			//ºÅ
-	_CH_JI_8F,			//»ú
-	_CH_WU_90,			//ÎÞ
-	_CH_HEI_91,			//ºÚ
-	_CH_HENG_92,		//ºâ
+	_CH_ZE_8A,			//ï¿½ï¿½
+	_CH_YIN_8B,			//ï¿½ï¿½
+	_CH_LIANG_8C,		//ï¿½ï¿½
+	_CH_XIN_8D,			//ï¿½ï¿½
+	_CH_HAO_8E,			//ï¿½ï¿½
+	_CH_JI_8F,			//ï¿½ï¿½
+	_CH_WU_90,			//ï¿½ï¿½
+	_CH_HEI_91,			//ï¿½ï¿½
+	_CH_HENG_92,		//ï¿½ï¿½
 	_CH_TAI_93,		 //Ì¬
-	_CH_QING_94,		 //Çå
-	_CH_XI_95, 	 //Îú
-	_CH_JING_96,	 //¾²
+	_CH_QING_94,		 //ï¿½ï¿½
+	_CH_XI_95, 	 //ï¿½ï¿½
+	_CH_JING_96,	 //ï¿½ï¿½
 	_CH_GA_97,	 
 	_CH_MA_98,	
 	_CH_YU_99,	
@@ -9457,8 +9457,8 @@ enum OSDFontDef_simplified_Chinese
 	_CH_xuan_A9,
 	_CH_cai_AA,
 	_CH_jie_AB,
-	_CH_gao_AC,//¸ß
-	_CH_gan_AB,//¸Ð
+	_CH_gao_AC,//ï¿½ï¿½
+	_CH_gan_AB,//ï¿½ï¿½
 	
 };
 

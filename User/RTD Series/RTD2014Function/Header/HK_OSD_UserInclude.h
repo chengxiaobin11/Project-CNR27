@@ -23,9 +23,9 @@
 
 #ifndef _HDR_SUPPORT//||_EDID_HDMI_HDR_SUPPORT||_EDID_HDMI_HDR_SUPPORT
 #if(_PROJECT == _RL6463_PROJECT)
-#define _HDR_SUPPORT								_OFF//´úÂë ´ø²»´øHDR
+#define _HDR_SUPPORT								_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #elif(_PROJECT == _RL6432_PROJECT)||(_PROJECT == _RL6449_PROJECT)||(_PROJECT == _RL6851_PROJECT)
-#define _HDR_SUPPORT								_ON//´úÂë ´ø²»´øHDR
+#define _HDR_SUPPORT								_ON//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #endif
 #endif
 
@@ -45,9 +45,9 @@
 
 #ifndef EDID_HDR_SC//||_EDID_HDMI_HDR_SUPPORT||_EDID_HDMI_HDR_SUPPORT
 #if(_PROJECT == _RL6463_PROJECT)||(_PROJECT == _RL6851_PROJECT)
-#define EDID_HDR_SC								_HDR_SUPPORT//_OFF//´úÂë ´ø²»´øHDR
+#define EDID_HDR_SC								_HDR_SUPPORT//_OFF//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #elif(_PROJECT == _RL6432_PROJECT)||(_PROJECT == _RL6449_PROJECT)
-#define EDID_HDR_SC								_HDR_SUPPORT//_ON//´úÂë ´ø²»´øHDR
+#define EDID_HDR_SC								_HDR_SUPPORT//_ON//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #else
 #warning "zhe is HDR is fail!!"
 #endif
@@ -55,125 +55,125 @@
 #include"HK_OSD_FuncDefine.h"
 
 /*
-		³£ÓÃ¹¦ÄÜ¶¨Òå
+		ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½
 */
 #ifndef _MC_LANGUAGE
 #define _MC_LANGUAGE                                       _OFF
 #endif
 
 #ifndef _MC_EUROPE
-#define _MC_EUROPE                                      	_OFF//¾ýÐÇ½ÜÅ·ÖÞ¿Í»§ÐèÇó
+#define _MC_EUROPE                                      	_OFF//ï¿½ï¿½ï¿½Ç½ï¿½Å·ï¿½Þ¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_Energy_Value
-#define _DEF_Energy_Value									_DEF_BACKLIGHT//ÄÜÐ§ÌáÐÑÁÁ¶È
+#define _DEF_Energy_Value									_DEF_BACKLIGHT//ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_Energy_Msg
-#define _DEF_Energy_Msg										_OFF//ÄÜÐ§ÌáÊ¾¿ª¹Ø
+#define _DEF_Energy_Msg										_OFF//ï¿½ï¿½Ð§ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _OSD_BLACK_WHITE_TYPE
-#define	_OSD_BLACK_WHITE_TYPE								_OFF //ºÚ°×ºÍÀ¶°×²Ëµ¥Ñ¡Ôñ
+#define	_OSD_BLACK_WHITE_TYPE								_OFF //ï¿½Ú°×ºï¿½ï¿½ï¿½ï¿½×²Ëµï¿½Ñ¡ï¿½ï¿½
 #endif
 
 #ifndef _NAVIGAT_MENU_SURPPORT
-#define _NAVIGAT_MENU_SURPPORT						  		_OFF  //µ¼º½²Ëµ¥
+#define _NAVIGAT_MENU_SURPPORT						  		_OFF  //ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 #endif
 #ifndef _ENABLE_VGA_AUTO_ADJUST
-#define _ENABLE_VGA_AUTO_ADJUST						  		_OFF  //VGAÍ¨µÀÍË³ö¼ü¸ÄÎª×Ô¶¯Ð£Õý¹¦ÄÜ
+#define _ENABLE_VGA_AUTO_ADJUST						  		_OFF  //VGAÍ¨ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ô¶ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_DX_LED_MODE
-#define _DEF_DX_LED_MODE									_OFF //µ¾ÐËLEDµÆÄ£Ê½
+#define _DEF_DX_LED_MODE									_OFF //ï¿½ï¿½ï¿½ï¿½LEDï¿½ï¿½Ä£Ê½
 #endif
 
 #ifndef _DEF_DX_LED_MODE2
-#define _DEF_DX_LED_MODE2									_OFF //µ¾ÐËLEDµÆÄ£Ê½2 Spectrum£º101-Marquee:110-Rotate£º011
+#define _DEF_DX_LED_MODE2									_OFF //ï¿½ï¿½ï¿½ï¿½LEDï¿½ï¿½Ä£Ê½2 Spectrumï¿½ï¿½101-Marquee:110-Rotateï¿½ï¿½011
 #endif
 
 #ifndef _DEF_DX_LED_MODE3
-#define _DEF_DX_LED_MODE3									_OFF //µ¾ÐËLEDµÆÄ£Ê½3 Spectrum£º101-Marquee:110-Rotate£º011   Ö»¿ØÖÆSCLºÍSDA
+#define _DEF_DX_LED_MODE3									_OFF //ï¿½ï¿½ï¿½ï¿½LEDï¿½ï¿½Ä£Ê½3 Spectrumï¿½ï¿½101-Marquee:110-Rotateï¿½ï¿½011   Ö»ï¿½ï¿½ï¿½ï¿½SCLï¿½ï¿½SDA
 #endif
 
 
 #ifndef _OSD_DX_RUSSIAN_TEXT
-#define _OSD_DX_RUSSIAN_TEXT								_OFF //µ¾ÐË·­Òë
+#define _OSD_DX_RUSSIAN_TEXT								_OFF //ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _SOURCE_AUTO_ON
-#define _SOURCE_AUTO_ON								        _OFF //ÐÅºÅÇÐ»»ÊÇ·ñ´øauto
+#define _SOURCE_AUTO_ON								        _OFF //ï¿½Åºï¿½ï¿½Ð»ï¿½ï¿½Ç·ï¿½ï¿½auto
 #endif
 
 #ifndef	_EOC_RTS_FPS_SUPPORT
-#define _EOC_RTS_FPS_SUPPORT					     	    _ON  //ECOÄ£Ê½ÊÇ·ñ´ø RTSºÍFPS
+#define _EOC_RTS_FPS_SUPPORT					     	    _ON  //ECOÄ£Ê½ï¿½Ç·ï¿½ï¿½ RTSï¿½ï¿½FPS
 #endif
 
 #ifndef	_EOC_ENERGY_SUPPORT
-#define _EOC_ENERGY_SUPPORT					     	    _OFF  //ºêÏÄÄÜÔ´ÖÐÐÄ
+#define _EOC_ENERGY_SUPPORT					     	    _OFF  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½
 #endif
 
 
 
 /*
 #ifndef _CT_7500_5800_sRGB_SUPPRT
-#define _CT_7500_5800_sRGB_SUPPRT							_OFF  //É«ÎÂÊÇ·ñ´ø7500.5800.sRGB
+#define _CT_7500_5800_sRGB_SUPPRT							_OFF  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500.5800.sRGB
 #endif
 
 #ifndef _CT_7500_SUPPRT
-#define _CT_7500_SUPPRT										_ON//É«ÎÂÊÇ·ñ´ø7500
+#define _CT_7500_SUPPRT										_ON//É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 #endif
 
 #ifndef _CT_5800_sRGB_SUPPRT
-#define _CT_5800_sRGB_SUPPRT							    _OFF  //É«ÎÂÊÇ·ñ´ø5800.sRGB
+#define _CT_5800_sRGB_SUPPRT							    _OFF  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½5800.sRGB
 #endif
 
 
 #ifndef _CT_sRGB_SUPPRT
-#define _CT_sRGB_SUPPRT							    		_OFF  //É«ÎÂÊÇ·ñ´øsRGB
+#define _CT_sRGB_SUPPRT							    		_OFF  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #endif
 */
 #ifndef _CT_7500_SUPPRT
-#define _CT_7500_SUPPRT										_OFF//É«ÎÂÊÇ·ñ´ø7500
+#define _CT_7500_SUPPRT										_OFF//É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½7500
 #endif
 	
 #ifndef _CT_5800_SUPPRT
-#define _CT_5800_SUPPRT							    		_OFF  //É«ÎÂÊÇ·ñ´ø5800
+#define _CT_5800_SUPPRT							    		_OFF  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½5800
 #endif
 	
 #ifndef _CT_sRGB_SUPPRT
-#define _CT_sRGB_SUPPRT							    		_OFF  //É«ÎÂÊÇ·ñ´øsRGB
+#define _CT_sRGB_SUPPRT							    		_OFF  //É«ï¿½ï¿½ï¿½Ç·ï¿½ï¿½sRGB
 #endif
 
 
 #ifndef _RESET_KEEP_LANGUAGE
-#define _RESET_KEEP_LANGUAGE								_OFF //¸´Î»ÊÇ·ñ»Ö¸´ÓïÑÔ
+#define _RESET_KEEP_LANGUAGE								_OFF //ï¿½ï¿½Î»ï¿½Ç·ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _OSD_RECALL_FUNC
-#define _OSD_RECALL_FUNC									_OFF  //ÍË³ö²Ëµ¥ÊÇ·ñ¼ÇÒäÇ°ÃæµÄ×´Ì¬
+#define _OSD_RECALL_FUNC									_OFF  //ï¿½Ë³ï¿½ï¿½Ëµï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½×´Ì¬
 #endif
 
 #ifndef _DCR_PANEL_ON_OFF
-#define _DCR_PANEL_ON_OFF									_OFF //DCR´ò¿ª£¬ºÚ³¡ÊÇ·ñ¹Ø±³¹â
+#define _DCR_PANEL_ON_OFF									_OFF //DCRï¿½ò¿ª£ï¿½ï¿½Ú³ï¿½ï¿½Ç·ï¿½Ø±ï¿½ï¿½ï¿½
 #endif 
 
 #ifndef _ADJ_BACKLIGHT_BY_TABLE
-#define _ADJ_BACKLIGHT_BY_TABLE								_OFF //±³¹âµ÷½Ú·½Ê½ 
+#define _ADJ_BACKLIGHT_BY_TABLE								_OFF //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½Ê½ 
 #endif
-//Ê¹ÓÃTABLE·½Ê½Ê±£¬ÇëÍ¬Ê±Ò²¶¨Òå_BACKLIGHT_DEF_PWM  _BACKLIGHT_MIN _BACKLIGHT_MAX (for DCR Mode)
+//Ê¹ï¿½ï¿½TABLEï¿½ï¿½Ê½Ê±ï¿½ï¿½ï¿½ï¿½Í¬Ê±Ò²ï¿½ï¿½ï¿½ï¿½_BACKLIGHT_DEF_PWM  _BACKLIGHT_MIN _BACKLIGHT_MAX (for DCR Mode)
 
 #ifndef _OSD_7_KEY_SUPPROT
-#define _OSD_7_KEY_SUPPROT									_OFF // 7¼üµÄ¿ª¹Ø
+#define _OSD_7_KEY_SUPPROT									_OFF // 7ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _OSD_5_KEY_SUPPROT
-#define _OSD_5_KEY_SUPPROT									_OFF // 5¼üµÄ¿ª¹Ø
+#define _OSD_5_KEY_SUPPROT									_OFF // 5ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
 #endif
 
 
 #ifndef _BOARD_LINE_IN
-#define _BOARD_LINE_IN										_OFF // ÒôÆµÊäÈë
+#define _BOARD_LINE_IN										_OFF // ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _LONG_PRESS_POWER_DOWN
@@ -182,39 +182,39 @@
 
 
 #ifndef _OD_WEAK_MID_HIGH
-#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ÖÐÈõ
+#define _OD_WEAK_MID_HIGH									_OFF // OD Ç¿ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _MPRT_WEAK_MID_HIGH
-#define _MPRT_WEAK_MID_HIGH									_OFF //mprtÇ¿ÖÐÈõ
+#define _MPRT_WEAK_MID_HIGH									_OFF //mprtÇ¿ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _OSD_FLICKER_FREE
-#define _OSD_FLICKER_FREE									_OFF//²Ëµ¥ÉÏ´øflick±êÖ¾
+#define _OSD_FLICKER_FREE									_OFF//ï¿½Ëµï¿½ï¿½Ï´ï¿½flickï¿½ï¿½Ö¾
 #endif
 
 #ifndef _OSD_SHOW_SYNC
-#define _OSD_SHOW_SYNC										_ON//²Ëµ¥ÉÏÏÔÊ¾sync
+#define _OSD_SHOW_SYNC										_ON//ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾sync
 #endif
 
 #ifndef _OSD_POWER_SAVING_MODE
-#define _OSD_POWER_SAVING_MODE								_OFF//ÊÇ·ñÖ§³ÖÊ¡µçÄ£Ê½
+#define _OSD_POWER_SAVING_MODE								_OFF//ï¿½Ç·ï¿½Ö§ï¿½ï¿½Ê¡ï¿½ï¿½Ä£Ê½
 #endif
 
 #ifndef _DEF_1080I_RESET
-#define _DEF_1080I_RESET									_OFF//Õë¶Ô1080iÇÐ»»ºó×´Ì¬Ã»ÓÐ»Ö¸´
+#define _DEF_1080I_RESET									_OFF//ï¿½ï¿½ï¿½1080iï¿½Ð»ï¿½ï¿½ï¿½×´Ì¬Ã»ï¿½Ð»Ö¸ï¿½
 #endif
 
 #ifndef _DEF_POWER_LONG_KEY
-#define _DEF_POWER_LONG_KEY									_OFF//µçÔ´¼ü³¤°´¿ª»ú
+#define _DEF_POWER_LONG_KEY									_OFF//ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _BURN_IN_LED
-#define _BURN_IN_LED                                        _OFF //ÀÏ»¯Ö¸Ê¾µÆ
+#define _BURN_IN_LED                                        _OFF //ï¿½Ï»ï¿½Ö¸Ê¾ï¿½ï¿½
 #endif
 
 #ifndef _MENU_INFOR_SHOW_HDR
-#define	_MENU_INFOR_SHOW_HDR								_OFF//²Ëµ¥ÐÅÏ¢Ò³ÃæÏÔÊ¾ HDR
+#define	_MENU_INFOR_SHOW_HDR								_OFF//ï¿½Ëµï¿½ï¿½ï¿½Ï¢Ò³ï¿½ï¿½ï¿½ï¿½Ê¾ HDR
 #endif
 
 
@@ -237,22 +237,22 @@
 
 
 //SET_COLOR_DEPTH(_COLOR_DEPTH_10_BITS);
-/*		  ³£ÓÃÄ¬ÈÏÖµ¶¨Òå            */
+/*		  ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½            */
 #ifndef _DEF_BACKLIGHT
-#define _DEF_BACKLIGHT                                		80//Ä¬ÈÏ¸ÄÎª80  50//±³¹âÄ¬ÈÏÖµ
+#define _DEF_BACKLIGHT                                		80//Ä¬ï¿½Ï¸ï¿½Îª80  50//ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
 #endif
 
 
 #ifndef _DEF_OSD_BACKLIGHT
-#define _DEF_OSD_BACKLIGHT                               	_OFF//0//±³¹âosdÄ¬ÈÏÖµºÍÇúÏßÄ¬ÈÏÖµ²»Ò»ÖÂÊ±ÉèÖÃosdÄ¬ÈÏÖµ
+#define _DEF_OSD_BACKLIGHT                               	_OFF//0//ï¿½ï¿½ï¿½ï¿½osdÄ¬ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½osdÄ¬ï¿½ï¿½Öµ
 #endif
 
 #ifndef _DEF_H_POS
-#define _DEF_H_POS                                   		50//Ä¬ÈÏosdË®Æ½Î»ÖÃ
+#define _DEF_H_POS                                   		50//Ä¬ï¿½ï¿½osdË®Æ½Î»ï¿½ï¿½
 #endif
 
 #ifndef _DEF_V_POS
-#define _DEF_V_POS                                       	50//Ä¬ÈÏosd´¹Ö±Î»ÖÃ
+#define _DEF_V_POS                                       	50//Ä¬ï¿½ï¿½osdï¿½ï¿½Ö±Î»ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OSD_TIMEOUT
@@ -260,47 +260,47 @@
 #endif
 
 #ifndef _DEF_CONTRAST
-#define _DEF_CONTRAST                                      	50//Ä¬ÈÏ¶Ô±È¶È
+#define _DEF_CONTRAST                                      	50//Ä¬ï¿½Ï¶Ô±È¶ï¿½
 #endif
 
 #ifndef _DEF_LANGUAGE
-#define _DEF_LANGUAGE										_CHINESE_S//Ä¬ÈÏÓïÑÔ
+#define _DEF_LANGUAGE										_CHINESE_S//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_COLORTEMP
-#define _DEF_COLORTEMP										_CT_6500//Ä¬ÈÏÉ«ÎÂ
+#define _DEF_COLORTEMP										_CT_6500//Ä¬ï¿½ï¿½É«ï¿½ï¿½
 #endif
 
 #ifndef _DEF_GAMMA
-#define _DEF_GAMMA										    _GAMMA_OFF//Ä¬ÈÏgamma
+#define _DEF_GAMMA										    _GAMMA_OFF//Ä¬ï¿½ï¿½gamma
 #endif
 
 #ifndef _DEF_VOLUME
-#define _DEF_VOLUME										     50//ÒôÁ¿osdÄ¬ÈÏÖµ
+#define _DEF_VOLUME										     50//ï¿½ï¿½ï¿½ï¿½osdÄ¬ï¿½ï¿½Öµ
 #endif
 
 #ifndef _DEF_VOLUME_PWM
-#define _DEF_VOLUME_PWM										 80//ÒôÁ¿ÇúÏßÄ¬ÈÏÖµ //Ã»ÓÐÓÃ
+#define _DEF_VOLUME_PWM										 80//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ //Ã»ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OD
-#define _DEF_OD										         _OFF//odÄ¬ÈÏ¿ª¹Ø
+#define _DEF_OD										         _OFF//odÄ¬ï¿½Ï¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_FREESYNC
-#define _DEF_FREESYNC									     _OFF//freesyncÄ¬ÈÏ¿ª¹Ø
+#define _DEF_FREESYNC									     _OFF//freesyncÄ¬ï¿½Ï¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_HDR_MODE
-#define _DEF_HDR_MODE									     _HDR10_MODE_OFF//hdrÄ¬ÈÏÖµ
+#define _DEF_HDR_MODE									     _HDR10_MODE_OFF//hdrÄ¬ï¿½ï¿½Öµ
 #endif
 
 #ifndef _DEF_FACTORY_MODE
-#define _DEF_FACTORY_MODE								     _ON//¹¤³§Ä£Ê½Ä¬ÈÏ¿ª¹Ø
+#define _DEF_FACTORY_MODE								     _ON//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_BURNING_MODE
-#define _DEF_BURNING_MODE								     _ON//ÀÏ»¯Ä£Ê½Ä¬ÈÏ¿ª¹Ø
+#define _DEF_BURNING_MODE								     _ON//ï¿½Ï»ï¿½Ä£Ê½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _SMALL_LOGO_TYPE
@@ -308,54 +308,54 @@
 #endif
 
 #ifndef _LOGO_TYPE
-#define _LOGO_TYPE								    		 _LOGO_NONE//Ä¬ÈÏlogo
+#define _LOGO_TYPE								    		 _LOGO_NONE//Ä¬ï¿½ï¿½logo
 #endif
 
 #ifndef _OSD_LOGO_TYPE
-#define _OSD_LOGO_TYPE								    	_OSD_LOGO_None//Ä¬ÈÏlogo
+#define _OSD_LOGO_TYPE								    	_OSD_LOGO_None//Ä¬ï¿½ï¿½logo
 #endif
 
 #ifndef _OSD_LANGUAGE_DELETE
-#define _OSD_LANGUAGE_DELETE                                 _OFF//É¾³ý²»³£ÓÃÓïÑÔ
+#define _OSD_LANGUAGE_DELETE                                 _OFF//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OSD_LANGUAGE_ARROW
-#define _DEF_OSD_LANGUAGE_ARROW								_OFF//osdÓïÑÔ±äÎª×óÓÒÇÐ»»Ñ¡Ôñ
+#define _DEF_OSD_LANGUAGE_ARROW								_OFF//osdï¿½ï¿½ï¿½Ô±ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Ñ¡ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OSD_LANGUAGE_SHOW
-#define _DEF_OSD_LANGUAGE_SHOW								_OFF//osdÓïÑÔÔÚÖ÷²Ëµ¥ÏÔÊ¾µ±Ç°ÓïÑÔ
+#define _DEF_OSD_LANGUAGE_SHOW								_OFF//osdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OSD_LANGUAGE_PAGE_RANK_4x6
-#define _DEF_OSD_LANGUAGE_PAGE_RANK_4x6                     _ON//Ñ¡ÔñÓïÑÔÒ³ÃæÐÐÁÐÊý 4X6,¹Ø±ÕÔòÊÇ 4x5 
+#define _DEF_OSD_LANGUAGE_PAGE_RANK_4x6                     _ON//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4X6,ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ 4x5 
 #endif
 #if(Project_ID == _ID_2313ARE02_PN238CS02_2_FHD100HZ_20260427)
 #ifndef _DEF_DIGITAL_VOL_MAX
-#define _DEF_DIGITAL_VOL_MAX								 0xFB8//ÒôÁ¿×î´óÖµ
+#define _DEF_DIGITAL_VOL_MAX								 0xFB8//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 #endif
 #ifndef _DEF_DIGITAL_VOL_CENTER
-#define _DEF_DIGITAL_VOL_CENTER								 0x9F5//ÒôÁ¿Ä¬ÈÏÖµ
+#define _DEF_DIGITAL_VOL_CENTER								 0x9F5//ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
 #endif
 #elif(Project_ID == _ID_2513ARE02_PN238CS02_2_FHD100HZ_20260713)
 #ifndef _DEF_DIGITAL_VOL_MAX
-#define _DEF_DIGITAL_VOL_MAX								 0xFB8//ÒôÁ¿×î´óÖµ
+#define _DEF_DIGITAL_VOL_MAX								 0xFB8//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 #endif
 #ifndef _DEF_DIGITAL_VOL_CENTER
-#define _DEF_DIGITAL_VOL_CENTER								 0x9F5//ÒôÁ¿Ä¬ÈÏÖµ
+#define _DEF_DIGITAL_VOL_CENTER								 0x9F5//ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
 #endif
 #else
 #ifndef _DEF_DIGITAL_VOL_MAX
-#define _DEF_DIGITAL_VOL_MAX								 0X2000//ÒôÁ¿×î´óÖµ
+#define _DEF_DIGITAL_VOL_MAX								 0X2000//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 #endif
 #ifndef _DEF_DIGITAL_VOL_CENTER
-#define _DEF_DIGITAL_VOL_CENTER								 0X1600//ÒôÁ¿Ä¬ÈÏÖµ
+#define _DEF_DIGITAL_VOL_CENTER								 0X1600//ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
 #endif
 
 #endif
 
 #ifndef _DEF_DIGITAL_VOL_MIN
-#define _DEF_DIGITAL_VOL_MIN							     0//ÒôÁ¿×îÐ¡Öµ
+#define _DEF_DIGITAL_VOL_MIN							     0//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡Öµ
 #endif
 
 
@@ -399,16 +399,16 @@
 #endif   
 
 #ifndef _ENABLE_PAWER_SAVING_MENU
-#define _ENABLE_PAWER_SAVING_MENU								    	_ON//¹ØµôºóPAWERSAVING²Ëµ¥²»ÏÔÊ¾
+#define _ENABLE_PAWER_SAVING_MENU								    	_ON//ï¿½Øµï¿½ï¿½ï¿½PAWERSAVINGï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
 #endif
 
-/*           ²»³£ÓÃ 				*/
+/*           ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 				*/
 #ifndef _DEF_BRIGHTNESS
-#define _DEF_BRIGHTNESS                                      50//osdÊý×ÖÁÁ¶È
+#define _DEF_BRIGHTNESS                                      50//osdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_SHAPNESS
-#define _DEF_SHAPNESS                                        2//ÈñÀû¶È
+#define _DEF_SHAPNESS                                        2//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_ECO
@@ -424,11 +424,11 @@
 #endif
 
 #ifndef _DEF_OSDROTATE
-#define _DEF_OSDROTATE										_OSD_ROTATE_DEGREE_0//osd Ðý×ª
+#define _DEF_OSDROTATE										_OSD_ROTATE_DEGREE_0//osd ï¿½ï¿½×ª
 #endif
 
 #ifndef _DEF_DISP_ROTATE
-#define _DEF_DISP_ROTATE									_DISP_ROTATE_0//Í¼ÏñÐý×ª
+#define _DEF_DISP_ROTATE									_DISP_ROTATE_0//Í¼ï¿½ï¿½ï¿½ï¿½×ª
 #endif
 
 #ifndef _DEF_AUDIO_SOURCE
@@ -465,7 +465,7 @@
 #endif
 
 #ifndef _DEF_FLICKER_FREE
-#define _DEF_FLICKER_FREE									     _ON//Ä¬ÈÏ¿ª£¬±³¹âÆµÂÊ>20000
+#define _DEF_FLICKER_FREE									     _ON//Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½>20000
 #endif
 
 #ifndef _DEF_MPRT
@@ -507,35 +507,35 @@
 
 
 #ifndef _DEF_GAME_MODE
-#define _DEF_GAME_MODE								     	_OFF//DP,HDMIÓÎÏ·Ä£Ê½
+#define _DEF_GAME_MODE								     	_OFF//DP,HDMIï¿½ï¿½Ï·Ä£Ê½
 #endif
 
 #ifndef _DEF_GAME_FREESYNC
-#define _DEF_GAME_FREESYNC								   	_OFF//ÓÎÏ·Ä£Ê½¹Ø±Õfreesync
+#define _DEF_GAME_FREESYNC								   	_OFF//ï¿½ï¿½Ï·Ä£Ê½ï¿½Ø±ï¿½freesync
 #endif
 
 #ifndef _DEF_DP_GAME_MODE
-#define _DEF_DP_GAME_MODE								     _OFF//DPµ¥Ä£Ê½ÓÎÏ·Ä£Ê½
+#define _DEF_DP_GAME_MODE								     _OFF//DPï¿½ï¿½Ä£Ê½ï¿½ï¿½Ï·Ä£Ê½
 #endif
 
 #ifndef _DEF_DP_OVERCLOCK
-#define _DEF_DP_OVERCLOCK								     _OFF//DP³¬Æµ
+#define _DEF_DP_OVERCLOCK								     _OFF//DPï¿½ï¿½Æµ
 #endif
 
 #ifndef _DEF_HDMI_OVERCLOCK
-#define _DEF_HDMI_OVERCLOCK								     _OFF//HDMI³¬Æµ
+#define _DEF_HDMI_OVERCLOCK								     _OFF//HDMIï¿½ï¿½Æµ
 #endif
 
 #ifndef _ROTATE_FUN_SUPPORT
 #if 1//_DISPLAY_ROTATION_SUPPORT
-#define _ROTATE_FUN_SUPPORT								      _ON//_OFF//³¬ÆµÄ¬ÈÏ×´Ì¬
+#define _ROTATE_FUN_SUPPORT								      _ON//_OFF//ï¿½ï¿½ÆµÄ¬ï¿½ï¿½×´Ì¬
 #else
-#define _ROTATE_FUN_SUPPORT								      _OFF//_OFF//³¬ÆµÄ¬ÈÏ×´Ì¬
+#define _ROTATE_FUN_SUPPORT								      _OFF//_OFF//ï¿½ï¿½ÆµÄ¬ï¿½ï¿½×´Ì¬
 #endif
 #endif
 
 #ifndef _DEF_OVERCLOCK
-#define _DEF_OVERCLOCK								         _OFF//³¬ÆµÄ¬ÈÏ×´Ì¬
+#define _DEF_OVERCLOCK								         _OFF//ï¿½ï¿½ÆµÄ¬ï¿½ï¿½×´Ì¬
 #endif
 
 #ifndef _DEF_IR_PROTOCAL
@@ -543,7 +543,7 @@
 #endif
 
 #ifndef _MPRT_DCR_REPULSION
-#define	_MPRT_DCR_REPULSION                                 _OFF //DCRºÍMPRT»¥³â
+#define	_MPRT_DCR_REPULSION                                 _OFF //DCRï¿½ï¿½MPRTï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_OSD_DISP_NOSIGNAL_MSG_TIME
@@ -551,7 +551,7 @@
 #endif
 
 #ifndef _DEF_FACTORY_EDIDINFO
-#define _DEF_FACTORY_EDIDINFO                               _OFF//factoryÏÔÊ¾edidÐÅÏ¢£¬Î´ÍêÉÆ
+#define _DEF_FACTORY_EDIDINFO                               _OFF//factoryï¿½ï¿½Ê¾edidï¿½ï¿½Ï¢ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_DCC
@@ -565,7 +565,7 @@
 
 
 #ifndef _OSD_6_KEY_SUPPROT
-#define _OSD_6_KEY_SUPPROT									_OFF // 7¼üµÄ¿ª¹Ø
+#define _OSD_6_KEY_SUPPROT									_OFF // 7ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_MENU_LOCK
@@ -577,28 +577,28 @@
 #endif
 
 #ifndef _DEF_HOTKEY_TIME
-#define _DEF_HOTKEY_TIME									_OFF //¿ì½Ý²Ëµ¥×Ô¶¯¹Ø±ÕÊ±¼ä
+#define _DEF_HOTKEY_TIME									_OFF //ï¿½ï¿½Ý²Ëµï¿½ï¿½Ô¶ï¿½ï¿½Ø±ï¿½Ê±ï¿½ï¿½
 #endif
 
 #ifndef _ENABLE_MAIN_MENU_F_ICON
-#define _ENABLE_MAIN_MENU_F_ICON							_ON//¹¤³§ÀÏ»¯Ä£Ê½
+#define _ENABLE_MAIN_MENU_F_ICON							_ON//ï¿½ï¿½ï¿½ï¿½ï¿½Ï»ï¿½Ä£Ê½
 #endif
 
 #ifndef _DEF_ECO_ICON
-#define _DEF_ECO_ICON										_OFF //ÓÐÎÊÌâ
+#define _DEF_ECO_ICON										_OFF //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif		
 
 #ifndef _DEF_LOS_TYPE3
-#define _DEF_LOS_TYPE3										_OFF //¿ì½Ý²Ëµ¥×Ô¶¯¹Ø±Õ
+#define _DEF_LOS_TYPE3										_OFF //ï¿½ï¿½Ý²Ëµï¿½ï¿½Ô¶ï¿½ï¿½Ø±ï¿½
 #endif
 
 
 #ifndef _DEF_TIMING_PI
-#define _DEF_TIMING_PI								         _OFF//osdÏÔÊ¾·Ö±æÂÊÊÇ·ñ´øP£¬I//NO USE
+#define _DEF_TIMING_PI								         _OFF//osdï¿½ï¿½Ê¾ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Pï¿½ï¿½I//NO USE
 #endif
 
 #ifndef _DEF_HDR_540
-#define _DEF_HDR_540								         _OFF//HDRÖ¸¶¨ÁÁ¶È
+#define _DEF_HDR_540								         _OFF//HDRÖ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef _DEF_DCR_ECO_GRAY
@@ -622,15 +622,15 @@
 #endif
 
 #ifndef OSD_TRANS
-#define OSD_TRANS								_OFF//Ò»´Î20
+#define OSD_TRANS								_OFF//Ò»ï¿½ï¿½20
 #endif
 
 #ifndef _DEF_BURN_EDID2
-#define _DEF_BURN_EDID2                             _OFF//²¹³äname sn
+#define _DEF_BURN_EDID2                             _OFF//ï¿½ï¿½ï¿½ï¿½name sn
 #endif
 
 #ifndef _DEF_RESET_FACTORY_OFF
-#define _DEF_RESET_FACTORY_OFF							_ON//¹¤³§ÖØÖÃ¹Ø±ÕÀÏ»¯
+#define _DEF_RESET_FACTORY_OFF							_ON//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¹Ø±ï¿½ï¿½Ï»ï¿½
 #endif
 
 #ifndef _DEF_ASPECT_RATIO_AMOUNT
@@ -642,19 +642,19 @@
 #endif
 
 #ifndef _DEF_VGA_HDR_GRAY
-#define _DEF_VGA_HDR_GRAY									_ON//VGA½ûÖ¹HDR
+#define _DEF_VGA_HDR_GRAY									_ON//VGAï¿½ï¿½Ö¹HDR
 #endif
 
 #ifndef _DEF_OSD_BRIGHT_CHANGE
-#define _DEF_OSD_BRIGHT_CHANGE								_ON//ECOÇÐ»»ÁÁ¶È±ä»¯
+#define _DEF_OSD_BRIGHT_CHANGE								_ON//ECOï¿½Ð»ï¿½ï¿½ï¿½ï¿½È±ä»¯
 #endif
 
 #ifndef _DEF_DX_KEY_LED
-#define _DEF_DX_KEY_LED										_OFF//ECOÇÐ»»ÁÁ¶È±ä»¯
+#define _DEF_DX_KEY_LED										_OFF//ECOï¿½Ð»ï¿½ï¿½ï¿½ï¿½È±ä»¯
 #endif
 
 #ifndef _FREESYNC_LEFT_RIGHT_EFFECT
-#define _FREESYNC_LEFT_RIGHT_EFFECT                        _OFF //×óÓÒ¼üÇÐ»»freesyncÉúÐ§
+#define _FREESYNC_LEFT_RIGHT_EFFECT                        _OFF //ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½Ð»ï¿½freesyncï¿½ï¿½Ð§
 #endif
 //--------------------------------------------------
 // Definitions of Backlight Range
@@ -818,7 +818,7 @@
 #define _MEW_EDID_TYPE_HIGHT					10//160 23xy/(50000-y) x=1080,y=144  jiegou:77
 #define _MEW_EDID_TYPE_MIDEL					11//160 41
 #define _MEW_EDID_TYPE_LOW						12//120,25
-#define _MEW_EDID_TYPE_USER						12//×Ô¶¨Òå
+#define _MEW_EDID_TYPE_USER						12//ï¿½Ô¶ï¿½ï¿½ï¿½
 
 #ifndef _MEW_EDID_TYPE
 #define _MEW_EDID_TYPE							_MEW_EDID_TYPE_HIGHT
@@ -836,14 +836,14 @@
 #define _PANEL_VGA_MAX_FRAME_RATE				_PANEL_MAX_FRAME_RATE
 #endif
 
-//ÏÈÍ³Ò»´ò¿ª°É
-#define _EDID_HDR_SUPPORT							_ON//Ö±½Ó ´ø²»´øHDR//·ÏÆú£¬ÔÝ²»ÓÃ
+//ï¿½ï¿½Í³Ò»ï¿½ò¿ª°ï¿½
+#define _EDID_HDR_SUPPORT							_ON//Ö±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½
 
 #ifndef _EDID_HDR_SUPPORT//||_EDID_HDMI_HDR_SUPPORT||_EDID_HDMI_HDR_SUPPORT
 #if(_PROJECT == _RL6463_PROJECT)||(_PROJECT == _RL6851_PROJECT)
-#define _EDID_HDR_SUPPORT							_OFF//Ö±½Ó ´ø²»´øHDR
+#define _EDID_HDR_SUPPORT							_OFF//Ö±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #elif(_PROJECT == _RL6432_PROJECT)||(_PROJECT == _RL6449_PROJECT)
-#define _EDID_HDR_SUPPORT							_ON//Ö±½Ó ´ø²»´øHDR
+#define _EDID_HDR_SUPPORT							_ON//Ö±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HDR
 #else
 #warning "zhe is HDR is fail!!"
 #endif
@@ -868,35 +868,35 @@
 #endif
 
 #ifndef EDID_SIZE_WR
-#define EDID_SIZE_WR								_ON//Ð´Èë³ß´ç
+#define EDID_SIZE_WR								_ON//Ð´ï¿½ï¿½ß´ï¿½
 #endif
 
 #ifndef EDID_COLOR_CHARACTERISTICS_INFO
-#define EDID_COLOR_CHARACTERISTICS_INFO				_OFF//Ð´Èëcolor characteristics info
+#define EDID_COLOR_CHARACTERISTICS_INFO				_OFF//Ð´ï¿½ï¿½color characteristics info
 #endif
 
 #ifndef _DEF_HDR_STATIC
-#define _DEF_HDR_STATIC								_OFF//Ð´ÈëHDR Static Metadata data block
+#define _DEF_HDR_STATIC								_OFF//Ð´ï¿½ï¿½HDR Static Metadata data block
 #endif
 
 #ifndef EDID_ESTABLISHED_INFO
-#define EDID_ESTABLISHED_INFO						_OFF//Ð´Èëestablished TIMING info
+#define EDID_ESTABLISHED_INFO						_OFF//Ð´ï¿½ï¿½established TIMING info
 #endif
 
 #ifndef EDID_STANDARD_TIMING_INFO
-#define EDID_STANDARD_TIMING_INFO					_OFF//Ð´Èëstardard timings info
+#define EDID_STANDARD_TIMING_INFO					_OFF//Ð´ï¿½ï¿½stardard timings info
 #endif
 
 #ifndef EDID_color_depth_INFO
-#define EDID_color_depth_INFO						_OFF//Ð´ÈëEDID_color_depth_INFO info youwenti
+#define EDID_color_depth_INFO						_OFF//Ð´ï¿½ï¿½EDID_color_depth_INFO info youwenti
 #endif
 
 #ifndef EDID_ADD_VIDEO_CAPABILITY_DATA
-#define EDID_ADD_VIDEO_CAPABILITY_DATA				_OFF//Ð´ÈëEDID_ADD_VIDEO_CAPABILITY_DATA info ÐÞ¸Ä
+#define EDID_ADD_VIDEO_CAPABILITY_DATA				_OFF//Ð´ï¿½ï¿½EDID_ADD_VIDEO_CAPABILITY_DATA info ï¿½Þ¸ï¿½
 #endif
 
 #ifndef EDID_TIMING_XG
-#define EDID_TIMING_XG								_OFF//Ð´Èëtiming info ÐÞ¸Ä ²»½¨ÒéÓÃ
+#define EDID_TIMING_XG								_OFF//Ð´ï¿½ï¿½timing info ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 
 #ifndef VGA_EDID_table
@@ -949,11 +949,11 @@
 #endif
 
 #ifndef EDID_YEAR_table
-#define EDID_YEAR_table                         2025//Äê·Ý
+#define EDID_YEAR_table                         2025//ï¿½ï¿½ï¿½
 #endif
 
 #ifndef EDID_WEEK_table
-#define EDID_WEEK_table                         1//ÖÜ±ð
+#define EDID_WEEK_table                         1//ï¿½Ü±ï¿½
 #endif
 
 #include"Logo_define.h"

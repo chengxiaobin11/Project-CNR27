@@ -117,8 +117,6 @@ Kernel\Scaler\ScalerFunction\Code\ScalerTMDSRx3_SeptPhy.c(1092): warning C294: u
 compiling ScalerTMDSRx3HDCP2_SeptPhy.c...
 compiling ScalerCommonColor.c...
 compiling ScalerCommonDebug.c...
-Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c(47): warning C320: "NOTE: DEBUG MESSAGE SUPPORT ON!!"
-Kernel\Scaler\ScalerCommonFunction\Code\ScalerCommonDebug.c(56): warning C320: "_HDMI_FREESYNC_CAPABILITY_SWITCH_METHOD Should Be _EDID_SWITCH_MODE When Both _DEBUG_MESSAGE_SUPPORT and _HDMI_FREESYNC_SUPPORT are _ON!!!MCCS CODE in EDID Should be 0!!!"
 compiling ScalerCommonDPRx0.c...
 compiling ScalerCommonDPRx0HDCP2.c...
 compiling ScalerCommonDPRx1.c...
@@ -576,24 +574,24 @@ User command #2: ".\Tool\build\link_hdr.bat" "C:\Keil_v5\" .\STD_FW_1P.uvproj RL
 opt	: opt(3), sort, hex2bin(.\HexToBin.exe)
 lib	: 189 extracted
 misc	: m51:.\Output\RL6432_Project.m51, 
-group0	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
-group1	: SCALERCOMMONMCU, SCALERMCU, SYSMAIN
-group2	: RTDFACTORYFUNCTION, RTDFACTORYMODE
-group3	: SCALERCOMMONFREESYNC, SCALERSYNC
-group4	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
-banked	: 0x343d-0xfeff (guard = 0x100)
+group0	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
+group1	: SCALERCOMMONFREESYNC, SCALERSYNC
+group2	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
+group3	: RTDFACTORYFUNCTION, RTDFACTORYMODE
+group4	: SCALERCOMMONMCU, SCALERMCU, SYSMAIN
+banked	: 0x3094-0xfeff (guard = 0x100)
 Linking #1...
 banks	: [0, 1, 2, 3, 4, 5, 6, 7, 8]
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DRAWEDIDINFO?RTDFACTORYFUNCTION
-Program Size: data=90.3 xdata=4360 code=443574
+Program Size: data=84.1 xdata=4364 code=441787
 Done.                                        - 0 Error(s), 1 Warning(s)
-D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin del .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin 
-D:\Workdir\workdir\Project-CNR27>.\AddCheckSum.exe .\Output\RL6432_Project\RL6432_Project.bin  .\Output\RL6432_Project_1\RL6432_Project_WithChkSum.bin BANK1 .\Output\RL6432_Project_1\HDR.bin HdrBank14 
-The file .\Output\RL6432_Project_1\HDR.bin can't open!
-D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project_1\RL6432_Project.bin del .\Output\RL6432_Project_1\RL6432_Project.bin 
-".\Output\RL6432_Project\RL6432_Project.LIB" - 0 Error(s), 46 Warning(s).
-Build Time Elapsed:  00:02:16
+D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin del .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin 
+D:\Workdir\workdir\Project-CNR27>.\AddCheckSum.exe .\Output\RL6432_Project\RL6432_Project.bin  .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin BANK1 .\Output\RL6432_Project\HDR.bin HdrBank14 
+checksum  store in 0001fffe   0001ffff
+D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project\RL6432_Project.bin del .\Output\RL6432_Project\RL6432_Project.bin 
+".\Output\RL6432_Project\RL6432_Project.LIB" - 0 Error(s), 44 Warning(s).
+Build Time Elapsed:  00:02:22
 </pre>
 </body>
 </html>

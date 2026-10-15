@@ -34,10 +34,10 @@ BYTE code tsOSD_BRI[] =
 	_L_,_u_,_m_,_i_,_n_,_a_,_n_,_c_,_j_,_a_,_END_,
 	
 	_S_,_v_,_e1_,_t_,_e_,_l_,_n_,_DOT_,_END_,
-	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//¶íÓï	Ã÷ÁÁ¶È
+	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_HY_46_,_HY_47_,_END_,
-	_FT_liang_47,_FT_du_48,_END_,     //ÁÁ¶È 
-	_CH_MING_49,_CH_LIANG_4A,_CH_DU_4B,_END_,	//?¨°¨¬??D??  ?¡Â¨¢¨¢?¨¨
+	_FT_liang_47,_FT_du_48,_END_,     //ï¿½ï¿½ï¿½ï¿½ 
+	_CH_MING_49,_CH_LIANG_4A,_CH_DU_4B,_END_,	//?ï¿½ï¿½ï¿½ï¿½??D??  ?ï¿½Â¨ï¿½ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4b,_JA_bd,_JA_4d,_JA_4e,_END_,	//15
 #else
@@ -80,10 +80,10 @@ BYTE code tsOSD_BRI[] =
 	
 	_S_,_v_,_e1_,_t_,_e_,_l_,_n_,_DOT_,_END_,
 	
-	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//¶íÓï	Ã÷ÁÁ¶È
+	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_HY_46_,_HY_47_,_END_,
-	_FT_liang_47,_FT_du_48,_END_,     //ÁÁ¶È 
-	_CH_MING_49,_CH_LIANG_4A,_CH_DU_4B,_END_,	//?¨°¨¬??D??  ?¡Â¨¢¨¢?¨¨
+	_FT_liang_47,_FT_du_48,_END_,     //ï¿½ï¿½ï¿½ï¿½ 
+	_CH_MING_49,_CH_LIANG_4A,_CH_DU_4B,_END_,	//?ï¿½ï¿½ï¿½ï¿½??D??  ?ï¿½Â¨ï¿½ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4b,_JA_bd,_JA_4d,_JA_4e,_END_,	//15
 #else
@@ -120,10 +120,10 @@ BYTE code tsOSD_IMAGE[] =
 	_U_,_s_,_t_,_a_,_w_,_i_,_e_,_n_,_DOT_,__b_,__r_,__a_,__z_,__u_,_END_,
 	_N_,_a_,_s_,_t_,_a_,_v_,_DOT_,_O_,_b_,__r_,__a_,__z_,__u_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//¶íÓï	Í¼ÏñÉèÖÃ
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_HY_48_,_HY_49_,_HY_4A_,_,_HY_4B_,_HY_4C_,_END_,
-		_FT_tu_49,_FT_xiang_4A,_FT_she_4B,_FT_ding_4F_,_END_,   //ˆDÏñÔO¶¨
-	_CH_TU_4C,_CH_XIANG_4D,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?¨°¨¬??D??  ¨ª???¨¦¨¨??
+		_FT_tu_49,_FT_xiang_4A,_FT_she_4B,_FT_ding_4F_,_END_,   //ï¿½Dï¿½ï¿½ï¿½Oï¿½ï¿½
+	_CH_TU_4C,_CH_XIANG_4D,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½??D??  ï¿½ï¿½???ï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4b,_JA_c6,_JA_4d,_JA_be,_END_,
 #else
@@ -161,10 +161,10 @@ BYTE code tsOSD_IMAGE[] =
 	_U_,_s_,_t_,_a_,_w_,_i_,_e_,_n_,_DOT_,__b_,__r_,__a_,__z_,__u_,_END_,
 	_N_,_a_,_s_,_t_,_a_,_v_,_DOT_,_O_,_b_,__r_,__a_,__z_,__u_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//¶íÓï	Í¼ÏñÉèÖÃ
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_HY_48_,_HY_49_,_HY_4A_,_,_HY_4B_,_HY_4C_,_END_,
-		_FT_tu_49,_FT_xiang_4A,_FT_she_4B,_FT_ding_4F_,_END_,   //ˆDÏñÔO¶¨
-	_CH_TU_4C,_CH_XIANG_4D,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?¨°¨¬??D??  ¨ª???¨¦¨¨??
+		_FT_tu_49,_FT_xiang_4A,_FT_she_4B,_FT_ding_4F_,_END_,   //ï¿½Dï¿½ï¿½ï¿½Oï¿½ï¿½
+	_CH_TU_4C,_CH_XIANG_4D,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½??D??  ï¿½ï¿½???ï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4b,_JA_c6,_JA_4d,_JA_be,_END_,
 #else
@@ -202,10 +202,10 @@ BYTE code tsOSD_CT_TITLE[] =
 	_U_,_s_,_t_,_DOT_,_,_K_,_o_,_l_,__o_,__r_,_o2_,_w_,_END_,
 	_N_,_a_,_s_,_t_,_DOT_,_B_,_a_,_r_,__v_,__y_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_UWX_CE,_EY_BX_A4,_DOT_,_END_,	//	¶íÓï   ÑÕÉ«Éè¶¨
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_UWX_CE,_EY_BX_A4,_DOT_,_END_,	//	ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½É«ï¿½è¶¨
 	_HY_4D_,_HY_4E_,_,_HY_4B_,_HY_4C_,_END_,
-	_FT_se_4E,_FT_cai_46,_FT_she_4B,_FT_ding_4F_,_END_,  //É«²ÊÔO¶¨
-	_CH_YAN_50,_CH_SE_51,_CH_SHE_4E,_CH_DING_52,_END_,		//?¨°¨¬?		??¨¦?¨¦¨¨?¡§
+	_FT_se_4E,_FT_cai_46,_FT_she_4B,_FT_ding_4F_,_END_,  //É«ï¿½ï¿½ï¿½Oï¿½ï¿½
+	_CH_YAN_50,_CH_SE_51,_CH_SHE_4E,_CH_DING_52,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		??ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4f,_JA_50,_JA_51,_END_,
 #else
@@ -247,10 +247,10 @@ BYTE code tsOSD_CT_TITLE[] =
 	_U_,_s_,_t_,_DOT_,_,_K_,_o_,_l_,__o_,__r_,_o2_,_w_,_END_,
 	_N_,_a_,_s_,_t_,_DOT_,_B_,_a_,_r_,__v_,__y_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_UWX_CE,_EY_BX_A4,_DOT_,_END_,	//	¶íÓï   ÑÕÉ«Éè¶¨
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_UWX_CE,_EY_BX_A4,_DOT_,_END_,	//	ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½É«ï¿½è¶¨
 	_HY_4D_,_HY_4E_,_,_HY_4B_,_HY_4C_,_END_,
-	_FT_se_4E,_FT_cai_46,_FT_she_4B,_FT_ding_4F_,_END_,  //É«²ÊÔO¶¨
-	_CH_YAN_50,_CH_SE_51,_CH_SHE_4E,_CH_DING_52,_END_,		//?¨°¨¬?		??¨¦?¨¦¨¨?¡§
+	_FT_se_4E,_FT_cai_46,_FT_she_4B,_FT_ding_4F_,_END_,  //É«ï¿½ï¿½ï¿½Oï¿½ï¿½
+	_CH_YAN_50,_CH_SE_51,_CH_SHE_4E,_CH_DING_52,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		??ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_4f,_JA_50,_JA_51,_END_,
 #else
@@ -288,10 +288,10 @@ BYTE code tsOSD_CT[] =
 	_T_,_e_,_m_,_p_,_e_,_r_,_DOT_,_B_,_a_,_r_,_w_,_o_,_w_,_a_,_END_,
 	_T_,_e_,_p_,_DOT_,_B_,_a_,_r_,_e_,_v_,_END_,
 	
-	_EY_UW_CD,_EY_BX_A4,_DOT_,_,_EY_P_C1,_EY_EX_AA,_EY_ZZX_AE,_EY_NX_B2,_EY_MX_BA,_END_,	//¶íÓï   É«ÎÂ	
+	_EY_UW_CD,_EY_BX_A4,_DOT_,_,_EY_P_C1,_EY_EX_AA,_EY_ZZX_AE,_EY_NX_B2,_EY_MX_BA,_END_,	//ï¿½ï¿½ï¿½ï¿½   É«ï¿½ï¿½	
 	_HY_4D_,_,_HY_4F_,_HY_47_,_END_,
-	_FT_se_4E,_FT_wen_6B,_END_, 	//É«œØ
-	_CH_SE_51,_CH_WEN_6E,_END_,		//?¨°¨¬? 	¨¦???
+	_FT_se_4E,_FT_wen_6B,_END_, 	//É«ï¿½ï¿½
+	_CH_SE_51,_CH_WEN_6E,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½???
 	_JA_4f,_JA_96,_JA_4a,_END_,
 
 
@@ -327,10 +327,10 @@ BYTE code tsOSD_CT[] =
 	_T_,_e_,_m_,_p_,_e_,_r_,_DOT_,_B_,_a_,_r_,_w_,_o_,_w_,_a_,_END_,
 	_T_,_e_,_p_,_DOT_,_B_,_a_,_r_,_e_,_v_,_END_,
 	
-	_EY_UW_CD,_EY_BX_A4,_DOT_,_,_EY_P_C1,_EY_EX_AA,_EY_ZZX_AE,_EY_NX_B2,_EY_MX_BA,_END_,	//¶íÓï   É«ÎÂ	
+	_EY_UW_CD,_EY_BX_A4,_DOT_,_,_EY_P_C1,_EY_EX_AA,_EY_ZZX_AE,_EY_NX_B2,_EY_MX_BA,_END_,	//ï¿½ï¿½ï¿½ï¿½   É«ï¿½ï¿½	
 	_HY_4D_,_,_HY_4F_,_HY_47_,_END_,
-	_FT_se_4E,_FT_wen_6B,_END_, 	//É«œØ
-	_CH_SE_51,_CH_WEN_6E,_END_,		//?¨°¨¬? 	¨¦???
+	_FT_se_4E,_FT_wen_6B,_END_, 	//É«ï¿½ï¿½
+	_CH_SE_51,_CH_WEN_6E,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½???
 	_JA_4f,_JA_96,_JA_4a,_END_,
 
 
@@ -363,10 +363,10 @@ BYTE code tsOSD_OSDSETTING[] =
 	_U_,_s_,_t_,_a_,_w_,_i_,_e_,_n_,_i_,_a_,_,_O_,_S_,_D_,_END_,
 	_N_,_a_,_s_,_t_,_a_,_v_,_DOT_,_O_,_S_,_D_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_MX_BA,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//¶íÓï	OSD	
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_MX_BA,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//ï¿½ï¿½ï¿½ï¿½	OSD	
 	 _O_,_S_,_D_,_,_HY_4B_,_HY_4C_,_END_,
-	 _O_,_S_,_D_,_FT_she_4B,_FT_ding_4F_,_END_,  // OSD ÔO¶¨
-	 _O_,_S_,_D_,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?¨°¨¬?  OSD¨¦¨¨??
+	 _O_,_S_,_D_,_FT_she_4B,_FT_ding_4F_,_END_,  // OSD ï¿½Oï¿½ï¿½
+	 _O_,_S_,_D_,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?  OSDï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_50,_JA_51,_END_,
 #else
@@ -402,10 +402,10 @@ BYTE code tsOSD_OSDSETTING[] =
 	_U_,_s_,_t_,_a_,_w_,_i_,_e_,_n_,_i_,_a_,_,_O_,_S_,_D_,_END_,
 	_N_,_a_,_s_,_t_,_a_,_v_,_DOT_,_O_,_S_,_D_,_END_,
 
-	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_MX_BA,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//¶íÓï	OSD	
+	_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_,_EY_MX_BA,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//ï¿½ï¿½ï¿½ï¿½	OSD	
 	 _O_,_S_,_D_,_,_HY_4B_,_HY_4C_,_END_,
-	 _O_,_S_,_D_,_FT_she_4B,_FT_ding_4F_,_END_,  // OSD ÔO¶¨
-	 _O_,_S_,_D_,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?¨°¨¬?  OSD¨¦¨¨??
+	 _O_,_S_,_D_,_FT_she_4B,_FT_ding_4F_,_END_,  // OSD ï¿½Oï¿½ï¿½
+	 _O_,_S_,_D_,_CH_SHE_4E,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?  OSDï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_50,_JA_51,_END_,
 #else
@@ -445,10 +445,10 @@ BYTE code tsOSD_RESET[] =
 	_R_,_e_,_s_,_e_,_t_,_END_,
 	_R_,_e_,_s_,_e_,_t_,_o_,_v_,_a_,_t_,_END_,
 
-	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//¶íÓï	ÖØÖÃ
+	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_50_,_HY_51_,_HY_52_,_END_,
-	FT_chong_50,_FT_she_4B,_END_,                //ÖØÔO
-	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?¨°¨¬?   ????
+	FT_chong_50,_FT_she_4B,_END_,                //ï¿½ï¿½ï¿½O
+	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?   ????
 	_JA_52,_JA_53,_JA_54,_JA_55,_END_,
 
 	
@@ -482,10 +482,10 @@ BYTE code tsOSD_RESET[] =
 	_R_,_e_,_s_,_e_,_t_,_END_,
 	_R_,_e_,_s_,_e_,_t_,_o_,_v_,_a_,_t_,_END_,
 
-	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//¶íÓï	ÖØÖÃ
+	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_50_,_HY_51_,_HY_52_,_END_,
-	FT_chong_50,_FT_she_4B,_END_,                //ÖØÔO
-	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?¨°¨¬?   ????
+	FT_chong_50,_FT_she_4B,_END_,                //ï¿½ï¿½ï¿½O
+	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?   ????
 	_JA_52,_JA_53,_JA_54,_JA_55,_END_,
 
 	
@@ -517,10 +517,10 @@ BYTE code tsOSD_MISC[] =
 	_E_,__k_,__s_,__t_,__r_,__a_,_END_,
 	_E_,__x_,__t_,__r_,__a_,_END_,
 
-	_EY_KOU_A7,_EY_OX_BE,_EY_MENX_C0,_DOT_,_,_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_NSX_B4,_EY_KX_B6,_EY_NX_B2,_END_,	//¶íÓï	ÆäËû
+	_EY_KOU_A7,_EY_OX_BE,_EY_MENX_C0,_DOT_,_,_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_NSX_B4,_EY_KX_B6,_EY_NX_B2,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_53_,_HY_54_,_HY_51_,_HY_55_,_END_,
 		_FT_qi_51,_FT_ta_52,_END_,  
-	_CH_QI_54,_CH_TA_55,_END_,		//?¨°¨¬? ??????
+	_CH_QI_54,_CH_TA_55,_END_,		//?ï¿½ï¿½ï¿½ï¿½? ??????
 	_JA_56,_JA_57,_JA_58,_END_,
 
 	_5c,_57,_4d,_53,_51,_4a,_49,_4f,_END_,
@@ -553,10 +553,10 @@ BYTE code tsOSD_MISC[] =
 	_E_,__k_,__s_,__t_,__r_,__a_,_END_,
 	_E_,__x_,__t_,__r_,__a_,_END_,
 
-	_EY_KOU_A7,_EY_OX_BE,_EY_MENX_C0,_DOT_,_,_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_NSX_B4,_EY_KX_B6,_EY_NX_B2,_END_,	//¶íÓï	ÆäËû
+	_EY_KOU_A7,_EY_OX_BE,_EY_MENX_C0,_DOT_,_,_EY_H_BB,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_NSX_B4,_EY_KX_B6,_EY_NX_B2,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_53_,_HY_54_,_HY_51_,_HY_55_,_END_,
 		_FT_qi_51,_FT_ta_52,_END_,  
-	_CH_QI_54,_CH_TA_55,_END_,		//?¨°¨¬? ??????
+	_CH_QI_54,_CH_TA_55,_END_,		//?ï¿½ï¿½ï¿½ï¿½? ??????
 	_JA_56,_JA_57,_JA_58,_END_,
 
 	_5c,_57,_4d,_53,_51,_4a,_49,_4f,_END_,
@@ -587,10 +587,10 @@ BYTE code tsOSD_BRIGHTNESS[] =
 	_J_,_a_,_s_,_n_,_o_,_s2_,_c2_,_END_,
 	_J_,_a_,_s_,_END_,
 	
-	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//¶íÓï	ÁÁ¶È
+	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_56_,_HY_51_,_END_,
 	_FT_liang_47,_FT_du_48,_END_,
-	_CH_LIANG_4A,_CH_DU_4B,_END_,		//?¨°¨¬? 	¨¢¨¢?¨¨
+	_CH_LIANG_4A,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 	_JA_59,_JA_5a,_JA_5b,_END_,
 
 	_47,_48,_49,_4a,_4b,_4c,_4d,_49,_4e,_49,_4f,_END_,
@@ -623,10 +623,10 @@ BYTE code tsOSD_BRIGHTNESS[] =
 	_J_,_a_,_s_,_n_,_o_,_s2_,_c2_,_END_,
 	_J_,_a_,_s_,_END_,
 	
-	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//¶íÓï	ÁÁ¶È
+	_EY_FR_DF,_EY_PX_C2,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_56_,_HY_51_,_END_,
 	_FT_liang_47,_FT_du_48,_END_,
-	_CH_LIANG_4A,_CH_DU_4B,_END_,		//?¨°¨¬? 	¨¢¨¢?¨¨
+	_CH_LIANG_4A,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 	_JA_59,_JA_5a,_JA_5b,_END_,
 
 	_47,_48,_49,_4a,_4b,_4c,_4d,_49,_4e,_49,_4f,_END_,
@@ -658,10 +658,10 @@ BYTE code tsOSD_CONTRAST[] =
 	_K_,_o_,_n_,_t_,_r_,_a_,_s_,_t_,_END_,
 	_K_,_o_,_n_,_t_,_r_,_a_,_s_,_t_,_END_,
 
-	_EY_K_B5,_EY_OX_BE,_EY_HX_BC,_EY_TX_C6,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_END_,	//¶íÓï	¶Ô±È¶È
+	_EY_K_B5,_EY_OX_BE,_EY_HX_BC,_EY_TX_C6,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½Ô±È¶ï¿½
 	_HY_57_,_HY_58_,_END_,
 	_FT_dui_53,_FT_bi_54,_FT_du_48,_END_,
-	_CH_DUI_56,_CH_BI_57,_CH_DU_4B,_END_,		//?¨°¨¬?    ??¡À¨¨?¨¨
+	_CH_DUI_56,_CH_BI_57,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½?    ??ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 	_JA_5c,_JA_5d,_JA_55,_JA_5e,_JA_5f,_JA_55,_END_,
 
 	_A_,_4c,_49,_5d,_51,_4a,_53,_4e,_END_,
@@ -695,10 +695,10 @@ BYTE code tsOSD_CONTRAST[] =
 	_K_,__o_,__n_,__t_,__r_,__a_,__s_,__t_,_END_,
 	_K_,__o_,__n_,__t_,__r_,__a_,__s_,__t_,_END_,
 
-	_EY_K_B5,_EY_OX_BE,_EY_HX_BC,_EY_TX_C6,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_END_,	//¶íÓï	¶Ô±È¶È
+	_EY_K_B5,_EY_OX_BE,_EY_HX_BC,_EY_TX_C6,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½Ô±È¶ï¿½
 	_HY_57_,_HY_58_,_END_,
 	_FT_dui_53,_FT_bi_54,_FT_du_48,_END_,
-	_CH_DUI_56,_CH_BI_57,_CH_DU_4B,_END_,		//?¨°¨¬?    ??¡À¨¨?¨¨
+	_CH_DUI_56,_CH_BI_57,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½?    ??ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 	_JA_5c,_JA_5d,_JA_55,_JA_5e,_JA_5f,_JA_55,_END_,
 
 	_A_,_4c,_49,_5d,_51,_4a,_53,_4e,_END_,
@@ -790,12 +790,12 @@ BYTE code tsOSD_ECO[] =
 	_E_,_k_,_o_,_n_,_o_,_m_,_i_,_c_,_z_,_n_,_y_,_END_,
 	_E_,__k_,__o_,_END_,
 
-	_EY_OH_DB,_EY_KX_B6,_EY_OX_BE,_EY_HX_BC,_EY_OX_BE,_EY_MX_BA,_END_,	//¶íÓï	ÁÁ¶ÈÇé¾°Ä£Ê½
+	_EY_OH_DB,_EY_KX_B6,_EY_OX_BE,_EY_HX_BC,_EY_OX_BE,_EY_MX_BA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½é¾°Ä£Ê½
 	
     _HY_8A_,_HY_8B_,_HY_77_,_HY_78_,_END_,//	_E_,__c_,__o_,_END_,
 
 	_FT_qing_55,_FT_jing_56,_FT_mo_57,_FT_shi_58,_END_,	
-	_CH_QING_58,_CH_JING_59,_CH_MO_5A,_CH_SHI_5B,_END_,	//?¨°¨¬?  		¨¢¨¢?¨¨?¨¦?¡ã?¡ê¨º?
+	_CH_QING_58,_CH_JING_59,_CH_MO_5A,_CH_SHI_5B,_END_,	//?ï¿½ï¿½ï¿½ï¿½?  		ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ê¨º?
 
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 		_JA_c4,_JA_a9,_JA_c5,_JA_94,_JA_61,_JA_60,_JA_61,_JA_62,_END_,
@@ -991,10 +991,10 @@ BYTE code tsOSD_H_POSITION[] =
 	_P_,__o_,__z_,__y_,__c_,__j_,__a_,_ ,_P_,_o_,_z_,_i_,_o_,_m_,_a_,_END_,
 	_H_,_DOT_,_P_,__o_,__l_,__o_,__h_,__a_,_END_,
 
-	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_GZ_A5,_EY_OX_BE,_EY_PX_C2,_DOT_,_END_,	//¶íÓï		Ë®Æ½Î»ÖÃ
+	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_GZ_A5,_EY_OX_BE,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½		Ë®Æ½Î»ï¿½ï¿½
 	_HY_59_,_HY_5A_,_,_HY_5B_,_HY_5C_,_END_,
 		_FT_shui_61,_FT_ping_62,_FT_wei_63,_FT_zhi_4C,_END_,
-	_CH_SHUI_64,_CH_PING_65,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?¨°¨¬? 		????????
+	_CH_SHUI_64,_CH_PING_65,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 		????????
 	_JA_63,_JA_64,_JA_65,_JA_66,_END_,
 
 	_O_,_57,_4b,_63,_DOT_, _,_51,_62,_53,_4e,_END_,
@@ -1032,10 +1032,10 @@ _P_,_,_S_,__i_,__j_,__a_,__i_,__n_,_t_,_i_,_END_,
 _P_,__o_,__z_,__y_,__c_,__j_,__a_,_ ,_P_,_i_,_o_,_n_,_o_,_w_,_a_,_END_,
 _V_,_DOT_,_P_,__o_,__l_,__o_,__h_,__a_,_END_,
 
-_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_B_A3,_EY_EX_AA,_EY_PX_C2,_DOT_,_END_,	//¶íÓï		´¹Ö±Î»ÖÃ
+_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_B_A3,_EY_EX_AA,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½Ö±Î»ï¿½ï¿½
 _HY_59_,_HY_5D_,_,_HY_5B_,_HY_5C_,_END_,   
 _FT_chui_64,_FT_zhi_65,_FT_wei_63,_FT_zhi_4C,_END_,
-	_CH_CHUI_67,_CH_ZHI_68,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?¨°¨¬?	¡ä1?¡À????
+	_CH_CHUI_67,_CH_ZHI_68,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½1?ï¿½ï¿½????
 _JA_67,_JA_68,_JA_65,_JA_66,_END_,
 
 
@@ -1067,10 +1067,10 @@ BYTE code tsOSD_OSD_H_POSITION[] =
 	_O_,_S_,_D_,_,_,_P_,__o_,__z_,__y_,__c_,__j_,__a_,_ ,_P_,_o_,_z_,_i_,_o_,_m_,_a_,_END_,
 	_O_,_S_,_D_,_,_,_H_,_DOT_,_P_,__o_,__l_,__o_,__h_,__a_,_END_,
 
-	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_GZ_A5,_EY_OX_BE,_EY_PX_C2,_DOT_,_END_,	//¶íÓï		Ë®Æ½Î»ÖÃ
+	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_GZ_A5,_EY_OX_BE,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½		Ë®Æ½Î»ï¿½ï¿½
 	_O_,_S_,_D_,_,_,_HY_59_,_HY_5A_,_,_HY_5B_,_HY_5C_,_END_,
 	_O_,_S_,_D_,_,_,_FT_shui_61,_FT_ping_62,_FT_wei_63,_FT_zhi_4C,_END_,
-	_O_,_S_,_D_,_,_,_CH_SHUI_64,_CH_PING_65,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?¨°¨¬? 		????????
+	_O_,_S_,_D_,_,_,_CH_SHUI_64,_CH_PING_65,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 		????????
 	_O_,_S_,_D_,_,_,_JA_63,_JA_64,_JA_65,_JA_66,_END_,
 
 	_O_,_57,_4b,_63,_DOT_, _,_51,_62,_53,_4e,_END_,
@@ -1100,10 +1100,10 @@ _O_,_S_,_D_,_,_,_P_,_,_S_,__i_,__j_,__a_,__i_,__n_,_t_,_i_,_END_,
 _O_,_S_,_D_,_,_,_P_,__o_,__z_,__y_,__c_,__j_,__a_,_ ,_P_,_i_,_o_,_n_,_o_,_w_,_a_,_END_,
 _O_,_S_,_D_,_,_,_V_,_DOT_,_P_,__o_,__l_,__o_,__h_,__a_,_END_,
 
-_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_B_A3,_EY_EX_AA,_EY_PX_C2,_DOT_,_END_,	//¶íÓï		´¹Ö±Î»ÖÃ
+_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_ZZX_AE,_DOT_,_,_EY_MEN_BF,_EY_OX_BE,_,_EY_B_A3,_EY_EX_AA,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½Ö±Î»ï¿½ï¿½
 _O_,_S_,_D_,_,_,_HY_59_,_HY_5D_,_,_HY_5B_,_HY_5C_,_END_,   
 _O_,_S_,_D_,_,_,_FT_chui_64,_FT_zhi_65,_FT_wei_63,_FT_zhi_4C,_END_,
-_O_,_S_,_D_,_,_,_CH_CHUI_67,_CH_ZHI_68,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?¨°¨¬?	¡ä1?¡À????
+_O_,_S_,_D_,_,_,_CH_CHUI_67,_CH_ZHI_68,_CH_WEI_66,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½1?ï¿½ï¿½????
 _O_,_S_,_D_,_,_,_JA_67,_JA_68,_JA_65,_JA_66,_END_,
 
 
@@ -1136,10 +1136,10 @@ BYTE code tsOSD_PIXEL_CLOCK[] =
 	_Z_,_e_,_g_,_a_,_r_,_END_,
 	_T_,_a_,_k_,_t_,_END_,
 
-	_EY_LD_CF,_EY_AX_A0,_EY_CX_C4,_EY_BIX_D8,_END_,		//¶íÓï	Ê±ÖÓ
+	_EY_LD_CF,_EY_AX_A0,_EY_CX_C4,_EY_BIX_D8,_END_,		//ï¿½ï¿½ï¿½ï¿½	Ê±ï¿½ï¿½
 	_HY_5E_,_HY_5F_,_END_,
 	_FT_shi_66,_FT_zhong_67,_END_,
-	_CH_SHI_69,_CH_ZHONG_6A,_END_,		//?¨°¨¬?		¨º¡À?¨®
+	_CH_SHI_69,_CH_ZHONG_6A,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½
 	_JA_63,_JA_64,_JA_69,_JA_6a,_JA_6b,_END_,
 
 	_P_,_o_,_pai_,_4d,_4b,_END_,
@@ -1168,10 +1168,10 @@ BYTE code tsOSD_PHASE[] =
 	_F_,_a_,_z_,_a_,_END_,
 	_F_,_a2_,_z_,_e_,_END_,
 
-	_EY_FAI_C9,_EY_OX_BE,_EY_KX_B6,_EY_YX_C8,_EY_CX_C4,_DOT_,_END_,	//¶íÓï	ÏàÎ»
+	_EY_FAI_C9,_EY_OX_BE,_EY_KX_B6,_EY_YX_C8,_EY_CX_C4,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½Î»
 	_HY_5B_,_HY_4E_,_END_,
 	_FT_xiang_68,_FT_wei_63,_END_,
-	_CH_XIANG_6B,_CH_WEI_66,_END_,		//?¨¤??
+	_CH_XIANG_6B,_CH_WEI_66,_END_,		//?ï¿½ï¿½??
 	_JA_65,_JA_6c,_END_,
 
 	_47,_5b,_53,_4e,_END_,
@@ -1202,12 +1202,12 @@ BYTE code tsOSD_ASPECT[] =
 	_W_,_s_,_p_,_o2_,_l10_,_c_,_z_,_DOT_,_O_,__b_,__r_,__a_,__z_,__u_,_END_,
 	_P_,_o_,_m_,_e1_,_r_, _,_S_,_t_,_r_,__a_,__n_, _,_O_,_b_,_r_,_DOT_,_END_,	
 	
-	_EY_FAI_C9,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_TX_C6,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//¶íÓï	Í¼Ïñ±ÈÀý
+	_EY_FAI_C9,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_TX_C6,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	 _HY_52_,_HY_AD_,_HY_60_,_HY_61_,_END_,//_HY_48_,_HY_49_,_HY_4A_,_,_HY_60_,_HY_61_,_END_,
 
 	_FT_tu_49,_FT_xiang_4A,_FT_bi_54,_FT_li_69,_END_,	
-	_CH_TU_4C,_CH_XIANG_4D,_CH_BI_57,_CH_LI_6C,_END_,	//?¨°¨¬?		¨ª???¡À¨¨¨¤y	
+	_CH_TU_4C,_CH_XIANG_4D,_CH_BI_57,_CH_LI_6C,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½???ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½y	
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_bf,_JA_5f,_JA_c0,_JA_a9,_JA_55,_JA_c1,_END_,
 #else
@@ -1251,12 +1251,12 @@ BYTE code tsOSD_ASPECT[] =
 	_W_,_s_,_p_,_o2_,_l10_,_c_,_z_,_DOT_,_O_,__b_,__r_,__a_,__z_,__u_,_END_,
 	_P_,_o_,_m_,_e1_,_r_, _,_S_,_t_,_r_,__a_,__n_, _,_O_,_b_,_r_,_DOT_,_END_,	
 
-	_EY_FAI_C9,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_TX_C6,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//¶íÓï	Í¼Ïñ±ÈÀý
+	_EY_FAI_C9,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_TX_C6,_,_EY_N_B1,_EY_3X_B0,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_EY_AX_A0,_EY_ZZX_AE,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	 _HY_52_,_HY_AD_,_HY_60_,_HY_61_,_END_,//_HY_48_,_HY_49_,_HY_4A_,_,_HY_60_,_HY_61_,_END_,
 
 	_FT_tu_49,_FT_xiang_4A,_FT_bi_54,_FT_li_69,_END_,	
-	_CH_TU_4C,_CH_XIANG_4D,_CH_BI_57,_CH_LI_6C,_END_,	//?¨°¨¬?		¨ª???¡À¨¨¨¤y	
+	_CH_TU_4C,_CH_XIANG_4D,_CH_BI_57,_CH_LI_6C,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½???ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½y	
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_bf,_JA_5f,_JA_c0,_JA_a9,_JA_55,_JA_c1,_END_,
 #else
@@ -1337,10 +1337,10 @@ BYTE code tsOSD_RED[] =
 	_C_,_z_,_e_,_r_,_w_,_o_,_n_,_y_,_END_,
 	_C1_,_e_,_r_,_v_,_e_,_n_,_a2_,_END_,
 
-	_EY_K_B5,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//¶íÓï	ºì
+	_EY_K_B5,_EY_PX_C2,_EY_AX_A0,_EY_CX_C4,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½
 	_HY_62_,_HY_4D_,_END_,
 	_FT_hong_6F,_END_,
-	_CH_HONG_72,_END_,		//o¨¬
+	_CH_HONG_72,_END_,		//oï¿½ï¿½
 	_JA_8d,_END_,
 
 	
@@ -1372,10 +1372,10 @@ BYTE code tsOSD_GREEN[] =
 	_Z_,_i_,_e_,_l_,_o_,_n_,_y_,_END_,
 	_Z_,_e_,_l_,_e_,_n_,_a2_,_END_,
 
-	_EY_3_AF,_EY_EX_AA,_EY_PAIX_B8,_EY_EX_AA,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//¶íÓï		ÂÌ
+	_EY_3_AF,_EY_EX_AA,_EY_PAIX_B8,_EY_EX_AA,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½
 	_HY_63_,_HY_4D_,_END_,
 	_FT_lv_70,_END_,
-	_CH_LV_73,_END_,	//?¨¬
+	_CH_LV_73,_END_,	//?ï¿½ï¿½
 	_JA_98,_END_,
 
 	_5c,_57,_5b,_53,_4b,_4c,_o_,_END_,
@@ -1403,10 +1403,10 @@ BYTE code tsOSD_BLUE[] =
 	_N_,_i_,_e_,_b_,_i_,_e_,_s_,_k_,_i_,_END_,
 	_M_,_o_,_d_,_r_,_a2_,_END_,
 
-	_EY_C_C3,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_END_,	//¶íÓï		À¶
+	_EY_C_C3,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½
 	_HY_64_,_HY_4D_,_END_,
 	_FT_lan_71,_END_,
-	_CH_LAN_74,_END_,	//?¨°¨¬?		¨¤?
+	_CH_LAN_74,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?
 	_JA_8e,_END_,
 
 	
@@ -1439,10 +1439,10 @@ BYTE code tsOSD_LANGUAGE[] =
 	_J_,_e7_,_z_,_y_,_k_,_END_,
 	_J_,_a_,_z_,_y_,_k_,_END_,
 
-	_EY_FR_DF,_EY_3X_B0,_EY_BIX_D8,_EY_KX_B6,_END_,		//¶íÓï	ÓïÑÔ
+	_EY_FR_DF,_EY_3X_B0,_EY_BIX_D8,_EY_KX_B6,_END_,		//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 	_HY_65_,_HY_66_,_END_,
 	_FT_yu_7E,_FT_yan_7F,_END_,
-	_CH_YU_80,_CH_YAN_81,_END_,		//?¨°¨¬?	¨®???
+	_CH_YU_80,_CH_YAN_81,_END_,		//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½???
 	_JA_70,_JA_71,_END_,	
 
 
@@ -1475,10 +1475,10 @@ BYTE code tsOSD_OSD_TIMER[] =
 	_C_,_z_,_a_,_s_,_,_Z_,_a_,_k_,_o_,_n2_,_DOT_,_END_,
 	_C1_,_a_,_s_,_o_,_v_,_y2_, _,_I_,_n_,_t_,_e_,_r_,_v_,_a_,_l_,_END_,
 	
-	_EY_B_A3,_EY_PX_C2,_DOT_,_,_EY_O_BD,_EY_TX_C6,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_DOT_,_,_EY_M_B9,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//¶íÓï	ÏÔÊ¾Ê±¼ä
+	_EY_B_A3,_EY_PX_C2,_DOT_,_,_EY_O_BD,_EY_TX_C6,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_DOT_,_,_EY_M_B9,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½Ê¾Ê±ï¿½ï¿½
 	_HY_4A_,_HY_67_,_HY_68_,_HY_69_,_END_,
 	_FT_shi_66,_FT_jian_82,_FT_ti_80,_FT_shi_81,_END_,
-	_CH_XIAN_82,_CH_SHI_83,_CH_SHI_69,_CH_JIAN_84,_END_,	//?¨°¨¬?		??¨º?¨º¡À??
+	_CH_XIAN_82,_CH_SHI_83,_CH_SHI_69,_CH_JIAN_84,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		??ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_74,_JA_76,_JA_50,_JA_51,_END_,
 #else
@@ -1518,10 +1518,10 @@ BYTE code tsOSD_OSD_TIMER[] =
 	_C_,_z_,_a_,_s_,_,_Z_,_a_,_k_,_o_,_n2_,_DOT_,_END_,
 	_C1_,_a_,_s_,_o_,_v_,_y2_, _,_I_,_n_,_t_,_e_,_r_,_v_,_a_,_l_,_END_,
 
-	_EY_B_A3,_EY_PX_C2,_DOT_,_,_EY_O_BD,_EY_TX_C6,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_DOT_,_,_EY_M_B9,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//¶íÓï	ÏÔÊ¾Ê±¼ä
+	_EY_B_A3,_EY_PX_C2,_DOT_,_,_EY_O_BD,_EY_TX_C6,_EY_OX_BE,_EY_6X_A2,_EY_PX_C2,_DOT_,_,_EY_M_B9,_EY_EX_AA,_EY_HX_BC,_EY_NXX_DE,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½Ê¾Ê±ï¿½ï¿½
 	_HY_4A_,_HY_67_,_HY_68_,_HY_69_,_END_,
 	_FT_shi_66,_FT_jian_82,_FT_ti_80,_FT_shi_81,_END_,
-	_CH_XIAN_82,_CH_SHI_83,_CH_SHI_69,_CH_JIAN_84,_END_,	//?¨°¨¬?		??¨º?¨º¡À??
+	_CH_XIAN_82,_CH_SHI_83,_CH_SHI_69,_CH_JIAN_84,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		??ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_74,_JA_76,_JA_50,_JA_51,_END_,
 #else
@@ -1560,10 +1560,10 @@ BYTE code tsOSD_TRANSPARENCY[] =
 	_P_,_r_,_z_,_e_,_z_,_r_,_DOT_,_END_,
 	_P_,_r_,_u6_,_h_,_l_,_e_,_d_,_n_,_o_,_s_,_t_,_END_,
 
-	_EY_MEN_BF,_EY_PX_C2,_EY_OX_BE,_EY_3X_B0,_EY_PX_C2,_DOT_,_END_,	//¶íÓï	Í¸Ã÷¶È
+	_EY_MEN_BF,_EY_PX_C2,_EY_OX_BE,_EY_3X_B0,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¸ï¿½ï¿½ï¿½ï¿½
 	_HY_6A_,_HY_57_,_HY_47_,_END_,
 	_FT_tou_83,_FT_ming_96,_FT_du_48,_END_,
-	_CH_TOU_85,_CH_MING_49,_CH_DU_4B,_END_,		//?¨°¨¬? 	¨ª??¡Â?¨¨
+	_CH_TOU_85,_CH_MING_49,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_77,_JA_59,_JA_4a,_END_,
 #else
@@ -1604,10 +1604,10 @@ BYTE code tsOSD_TRANSPARENCY[] =
 	_P_,_r_,_z_,_e_,_z_,_r_,_DOT_,_END_,
 	_P_,_r_,_u6_,_h_,_l_,_e_,_d_,_n_,_o_,_s_,_t_,_END_,
 
-	_EY_MEN_BF,_EY_PX_C2,_EY_OX_BE,_EY_3X_B0,_EY_PX_C2,_DOT_,_END_,	//¶íÓï	Í¸Ã÷¶È
+	_EY_MEN_BF,_EY_PX_C2,_EY_OX_BE,_EY_3X_B0,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	Í¸ï¿½ï¿½ï¿½ï¿½
 	_HY_6A_,_HY_57_,_HY_47_,_END_,
 	_FT_tou_83,_FT_ming_96,_FT_du_48,_END_,
-	_CH_TOU_85,_CH_MING_49,_CH_DU_4B,_END_,		//?¨°¨¬? 	¨ª??¡Â?¨¨
+	_CH_TOU_85,_CH_MING_49,_CH_DU_4B,_END_,		//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_S_,_D_,_,_,_JA_77,_JA_59,_JA_4a,_END_,
 #else
@@ -1646,7 +1646,7 @@ BYTE code tsOSD_IMAGE_AUTO_ADJUST[] =
 	_A_,_u_,_t_,_o_,_m_, _DOT_,_K_,_o_,_n_,_f_,_i_,_g_,_u_,_r_,_DOT_,_END_,
 	_A_,_u_,_t_,_o_, _,_K_,_o_,_n_,_f_,_i_,_g_,_END_,
 
-	_EY_A_9F,_EY_BX_A4,_EY_TX_C6,_EY_OX_BE,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_END_,	//¶íÓï	×Ô¶¯Í¼Ïñµ÷Õû
+	_EY_A_9F,_EY_BX_A4,_EY_TX_C6,_EY_OX_BE,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_DOT_,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½Ô¶ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	_HY_52_,_HY_AD_,_HY_6C_,_HY_6D_,_HY_6E_,_HY_4C_,_END_,	//_HY_6C_,_HY_6D_,_HY_6E_,_HY_4C_,_END_,
 
@@ -1654,7 +1654,7 @@ BYTE code tsOSD_IMAGE_AUTO_ADJUST[] =
 	
 
 	_FT_zi_6A,_FT_dong_84,_FT_tu_49,_FT_xiang_4A,_FT_tiao_92,_FT_zheng_93,_END_,
-	_CH_ZI_6D,_CH_DONG_86,_CH_TU_4C,_CH_XIANG_4D,_CH_TIAO_79,_CH_ZHENG_7A,_END_,	//¡Á??¡¥¨ª???¦Ì¡Â??
+	_CH_ZI_6D,_CH_DONG_86,_CH_TU_4C,_CH_XIANG_4D,_CH_TIAO_79,_CH_ZHENG_7A,_END_,	//ï¿½ï¿½??ï¿½ï¿½ï¿½ï¿½???ï¿½Ì¡ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_79,_JA_7a,_JA_4d,_JA_be,_END_,
 #else
@@ -1695,10 +1695,10 @@ BYTE code tsOSD_COLOR_AUTO_ADJUST[] =
 	_A_,_u_,_t_,_o_, _,_B_,_a_,_r_,_v_,_a_,_END_,
 
 
-	_EY_A_9F,_EY_BX_A4,_EY_TX_C6,_EY_OX_BE,_,_EY_UWX_CE,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//¶íÓï	×Ô¶¯ÑÕÉ«µ÷Õû	
+	_EY_A_9F,_EY_BX_A4,_EY_TX_C6,_EY_OX_BE,_,_EY_UWX_CE,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½Ô¶ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½	
 	_HY_4D_,_HY_4E_,_HY_6C_,_HY_6D_,_HY_6E_,_HY_4C_,_END_,//_HY_6C_,_HY_6D_,_HY_4D_,_HY_4E_,_END_,
 	_FT_zi_6A,_FT_dong_84,_FT_yan_4D,_FT_se_4E,_FT_tiao_92,_FT_zheng_93,_END_,
-	_CH_ZI_6D,_CH_DONG_86,_CH_YAN_50,_CH_SE_51,_CH_TIAO_79,_CH_ZHENG_7A,_END_,		//?¨°¨¬?	¡Á??¡¥??¨¦?¦Ì¡Â??
+	_CH_ZI_6D,_CH_DONG_86,_CH_YAN_50,_CH_SE_51,_CH_TIAO_79,_CH_ZHENG_7A,_END_,		//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½??ï¿½ï¿½??ï¿½ï¿½?ï¿½Ì¡ï¿½??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 			_JA_c7,_JA_7b,_JA_6a,_JA_55, _JA_90,_JA_5e,_JA_5d,_JA_5f,_END_,
 #else
@@ -1731,10 +1731,10 @@ BYTE code tsOSD_RESET_PAGE[] =
 	_R_,_e_,_s_,_e_,_t_,_END_,
 	_R_,_e_,_s_,_e_,_t_,_o_,_v_,_a_,_t_,_END_,
 
-	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//¶íÓï		ÖØÖÃ
+	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½ï¿½ï¿½
 	_HY_50_,_HY_51_,_HY_52_,_END_,
 	FT_chong_50,_FT_she_4B,_END_,
-	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?¨°¨¬?   ????
+	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?   ????
 	_JA_52,_JA_53,_JA_54,_JA_55,_END_,
 
 	
@@ -1767,10 +1767,10 @@ BYTE code tsOSD_RESET_PAGE[] =
 	_R_,_e_,_s_,_e_,_t_,_END_,
 	_R_,_e_,_s_,_e_,_t_,_o_,_v_,_a_,_t_,_END_,
 
-	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//¶íÓï		ÖØÖÃ
+	_EY_C_C3,_EY_6_A1,_EY_PX_C2,_EY_OX_BE,_EY_CX_C4,_,_EY_HX_BC,_EY_AX_A0,_EY_CX_C4,_EY_TX_C6,_EY_PX_C2,_EY_OX_BE,_EY_EX_AA,_EY_KX_B6,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½ï¿½ï¿½
 	_HY_50_,_HY_51_,_HY_52_,_END_,
 	FT_chong_50,_FT_she_4B,_END_,
-	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?¨°¨¬?   ????
+	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?   ????
 	_JA_52,_JA_53,_JA_54,_JA_55,_END_,
 
 	
@@ -1809,7 +1809,7 @@ BYTE code tsOSD_GuangGan[] =
 	_G_,_u_,_a_,_n_,_g_,_G_,_a_,_n_,_END_,
 	_G_,_u_,_a_,_n_,_g_,_G_,_a_,_n_,_END_,//	_HY_50_,_HY_51_,_HY_52_,_END_,
 	_FT_guang_60,_FT_gan_AB,_END_,//	FT_chong_50,_FT_she_4B,_END_,
-	_CH_GUANG_63,_CH_gan_AB,_END_,//	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?¨°¨¬?   ????
+	_CH_GUANG_63,_CH_gan_AB,_END_,//	_CH_ZHONG_53,_CH_ZHI_4F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?   ????
 	_G_,_u_,_a_,_n_,_g_,_G_,_a_,_n_,_END_,//	_JA_52,_JA_53,_JA_54,_JA_55,_END_,
 
 	
@@ -1847,10 +1847,10 @@ BYTE code tsOSD_SIGNAL_SOURCE[] =
 	_W_,_y_,_b_,_o3_,_r_, _,_W_,_e_,_j_,_s2_,_c_,_i_,_a_,_END_,
 	_V_,_y2_,_b_,_e1_,_r_, _,_V_,_s_,_t_,_u_,_p_,_u_,_END_,
 
-	_EY_B_A3,_EY_BIX_D8,_EY_6_A1,_EY_OX_BE,_EY_PX_C2,_,_EY_B_A3,_EY_XX_CC,_EY_OX_BE,_EY_KOUX_A8,_EY_AX_A0,_END_,	//¶íÓï		ÊäÈëÑ¡Ôñ
+	_EY_B_A3,_EY_BIX_D8,_EY_6_A1,_EY_OX_BE,_EY_PX_C2,_,_EY_B_A3,_EY_XX_CC,_EY_OX_BE,_EY_KOUX_A8,_EY_AX_A0,_END_,	//ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
 	_HY_6F_,_HY_70_,_,_HY_71_,_HY_72_,_END_,
 	_FT_shu_85,_FT_ru_86,_FT_xuan_87,FT_ze_88,_END_,
-	_CH_SHU_87,_CH_RU_88,_CH_XUAN_89,_CH_ZE_8A,_END_,	//?¨°¨¬?	¨º?¨¨?????
+	_CH_SHU_87,_CH_RU_88,_CH_XUAN_89,_CH_ZE_8A,_END_,	//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½?ï¿½ï¿½?????
 
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_82,_JA_83,_JA_ca,_JA_61,_JA_5f,_END_,
@@ -1892,14 +1892,14 @@ BYTE code tsOSD_LOW_BLUE[] =
 #if(_OSD_DX_RUSSIAN_TEXT)
 	_L_,_o_,_w_,_,_B_,_l_,_u_,_e_,_,_L_,_i_,_g_,_h_,_t_,_END_,
 #else
-	_EY_H_BB,_EY_NX_B2,_EY_3X_B0,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//¶íÓï	µÍÀ¶¹â	
+	_EY_H_BB,_EY_NX_B2,_EY_3X_B0,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 #endif
 	_L_,_o_,_w_,_B_,_l_,_u_,_e_,_L_,_i_,_g_,_h_,_t_,_END_,
 
 	
 
 	_FT_di_5F,_FT_lan_71,_FT_guang_60,_END_,
-	_CH_DI_62,_CH_LAN_74,_CH_GUANG_63,_END_,	//?¨°¨¬? 	¦Ì¨ª¨¤?1a
+	_CH_DI_62,_CH_LAN_74,_CH_GUANG_63,_END_,	//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½Ì¨ï¿½ï¿½ï¿½?1a
 	_JA_95,_JA_93,_JA_61,_JA_5e,_JA_6a,_JA_55,_JA_a5,_JA_a6,_END_,
 
 	
@@ -1941,14 +1941,14 @@ BYTE code tsOSD_LOW_BLUE[] =
 #if(_OSD_DX_RUSSIAN_TEXT)
 	_L_,_o_,_w_,_,_B_,_l_,_u_,_e_,_,_L_,_i_,_g_,_h_,_t_,_END_,
 #else
-	_EY_H_BB,_EY_NX_B2,_EY_3X_B0,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//¶íÓï	µÍÀ¶¹â	
+	_EY_H_BB,_EY_NX_B2,_EY_3X_B0,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_NX_B2,_EY_HX_BC,_EY_NX_B2,_EY_NSX_B4,_,_EY_CX_C4,_EY_BX_A4,_EY_EX_AA,_EY_TX_C6,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 #endif
 	_L_,_o_,_w_,_B_,_l_,_u_,_e_,_L_,_i_,_g_,_h_,_t_,_END_,
 
 	
 
 	_FT_di_5F,_FT_lan_71,_FT_guang_60,_END_,
-	_CH_DI_62,_CH_LAN_74,_CH_GUANG_63,_END_,	//?¨°¨¬? 	¦Ì¨ª¨¤?1a
+	_CH_DI_62,_CH_LAN_74,_CH_GUANG_63,_END_,	//?ï¿½ï¿½ï¿½ï¿½? 	ï¿½Ì¨ï¿½ï¿½ï¿½?1a
 	_JA_95,_JA_93,_JA_61,_JA_5e,_JA_6a,_JA_55,_JA_a5,_JA_a6,_END_,
 
 	
@@ -2049,10 +2049,10 @@ BYTE code tsOSD_VOLUME[] =
 	_G_,_l10_,_o_,_s2_,_n_,_o_,_s2_,_c2_,_END_,
 	_H_,_l_,_a_,_s_,_i_,_t_,_o_,_s_,_t_,_END_,
 
-	_EY_GZ_A5,_EY_PX_C2,_EY_OX_BE,_EY_MX_BA,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//¶íÓï	ÒôÁ¿
+	_EY_GZ_A5,_EY_PX_C2,_EY_OX_BE,_EY_MX_BA,_EY_KX_B6,_EY_OX_BE,_EY_CX_C4,_EY_TX_C6,_EY_XBX_DA,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½
 		_HY_9B_,_HY_79_,_END_,
 	_FT_ying_89,_FT_liang_8A,_END_,
-	_CH_YIN_8B,_CH_LIANG_8C,_END_,	//?¨°¨¬?		¨°?¨¢?
+	_CH_YIN_8B,_CH_LIANG_8C,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?ï¿½ï¿½?
 	_JA_86,_JA_87,_END_,
 
 	
@@ -2154,12 +2154,12 @@ BYTE code tsOSD_AUTO_POWERDOWN[] =
 	_T_,_i_,_m_,_e_,_r_,_  ,_w_,_y_,_l10_,_z_,_a_,_s_,_i_,_l_,_END_,
 	_C1_,_a_,_s_,_o_,_v_,_a_,_C1_,_v_,_y_,_p_,_DOT_,_END_,
 	
-   	_EY_T_C5,_EY_AX_A0,_EY_NSX_B4,_EY_MX_BA,_EY_EX_AA,_EY_PX_C2,_EY_BX_A4,_EY_XBX_DA,_EY_KX_B6,_EY_PAIX_B8,_END_,	//¶íÓï	¶¨Ê±¹Ø»ú	
+   	_EY_T_C5,_EY_AX_A0,_EY_NSX_B4,_EY_MX_BA,_EY_EX_AA,_EY_PX_C2,_EY_BX_A4,_EY_XBX_DA,_EY_KX_B6,_EY_PAIX_B8,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½Ê±ï¿½Ø»ï¿½	
 	_HY_AE_,_HY_AF_,_,_HY_4B_,_HY_4C_,_END_,//_HY_97_,_HY_98_,_HY_7C_,_HY_51_,_,_HY_68_,_HY_69_,_END_,
 	
 	
 	_FT_ding_4F_,_FT_shi_66,_FT_guan_72,_FT_ji_94,_END_,
-	_CH_DING_52,_CH_SHI_69,_CH_GUAN_75,_CH_JI_8F,_END_,		//?¨°¨¬?		?¡§¨º¡À1??¨²
+	_CH_DING_52,_CH_SHI_69,_CH_GUAN_75,_CH_JI_8F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1??ï¿½ï¿½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_79,_JA_7a,_JA_c2,_JA_c3,_JA_7e,_JA_7f,_END_,
 #else
@@ -2197,11 +2197,11 @@ BYTE code tsOSD_POWERSAVING[] =
 		_E_,_n_,_e_,_r_,_g_,_y_,_,_S_,_a_,_v_,_e_,_END_,
    	
 	
-	_E_,_n_,_e_,_r_,_g_,_y_,_,_S_,_a_,_v_,_e_,_END_,	 		//¶íÓï		
+	_E_,_n_,_e_,_r_,_g_,_y_,_,_S_,_a_,_v_,_e_,_END_,	 		//ï¿½ï¿½ï¿½ï¿½		
 	_HY_AE_,_HY_71_,_HY_77_,_HY_78_,_END_,
 	
 	_FT_jie_AB,_FT_dian_5B,_FT_mo_57,_FT_shi_58,_END_,
-	_CH_jie_AB,_CH_DIAN_5E,_CH_MO_5A,_CH_SHI_5B,_END_,		//½ÚµçÄ£Ê½
+	_CH_jie_AB,_CH_DIAN_5E,_CH_MO_5A,_CH_SHI_5B,_END_,		//ï¿½Úµï¿½Ä£Ê½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_c8,_JA_c9,_JA_ad,_END_,
 #else
@@ -2233,11 +2233,11 @@ BYTE code tsOSD_POWERSAVING[] =
 	_E_,_N_,_E_,_R_,_G_,_Y_,_,_S_,_A_,_V_,_E_,_END_,
 	_E_,_N_,_E_,_R_,_G_,_Y_,_,_S_,_A_,_V_,_E_,_END_,
    	
-	_E_,_N_,_E_,_R_,_G_,_Y_,_,_S_,_A_,_V_,_E_,_END_,  		//¶íÓï		
+	_E_,_N_,_E_,_R_,_G_,_Y_,_,_S_,_A_,_V_,_E_,_END_,  		//ï¿½ï¿½ï¿½ï¿½		
 	_HY_AE_,_HY_71_,_HY_77_,_HY_78_,_END_,
 	
 	_FT_jie_AB,_FT_dian_5B,_FT_mo_57,_FT_shi_58,_END_,
-	_CH_jie_AB,_CH_DIAN_5E,_CH_MO_5A,_CH_SHI_5B,_END_,		//½ÚµçÄ£Ê½
+	_CH_jie_AB,_CH_DIAN_5E,_CH_MO_5A,_CH_SHI_5B,_END_,		//ï¿½Úµï¿½Ä£Ê½
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_JA_c8,_JA_c9,_JA_ad,_END_,
 #else
@@ -2614,10 +2614,10 @@ BYTE code tsOSD_ECO_STANDARD[] =
 	_S_,_t_,_a_,_n_,_d_,_a_,_r_,_d_,_END_,
 	_S_,_t_,_a_,_n_,_d_,_a_,_r_,_d_,_n_,_i2_,_END_,	
 
-	_EY_C_C3,_EY_TX_C6,_EY_AX_A0,_EY_HX_BC,_EY_KOUX_A8,_EY_AX_A0,_EY_PX_C2,_EY_TX_C6,_END_,	//	¶íÓï		±ê×¼
+	_EY_C_C3,_EY_TX_C6,_EY_AX_A0,_EY_HX_BC,_EY_KOUX_A8,_EY_AX_A0,_EY_PX_C2,_EY_TX_C6,_END_,	//	ï¿½ï¿½ï¿½ï¿½		ï¿½ï¿½×¼
 	_HY_7D_,_HY_7E_,_END_,  
 	_FT_biao_59,_FT_zhun_5A,_END_,
-	_CH_BIAO_5C,_CH_ZHUN_5D,_END_,	//?¨°¨¬?		¡À¨º¡Á?
+	_CH_BIAO_5C,_CH_ZHUN_5D,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
 	_JA_5f,_JA_88,_JA_5d,_JA_80,_JA_61,_JA_62,_END_,
 
 
@@ -2649,10 +2649,10 @@ BYTE code tsOSD_ECO_GAME[] =
 	_G_,_r_,_a_,_END_,
 	_H_,_r_,_a_,_END_,
 
-	_EY_N_B1,_EY_GZX_A6,_EY_PX_C2,_EY_AX_A0,_END_,	//¶íÓï	ÓÎÏ·
+	_EY_N_B1,_EY_GZX_A6,_EY_PX_C2,_EY_AX_A0,_END_,	//ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½Ï·
 	_HY_7F_,_HY_80_,_END_,
 	_FT_you_5D,_FT_xi_5E,_END_,
-	_CH_YOU_60,_CH_XI_61,_END_,		//?¨°¨¬?		¨®??¡¤
+	_CH_YOU_60,_CH_XI_61,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½??ï¿½ï¿½
 	_JA_8b,_JA_61,_JA_8c,_END_,
 
 	_5c,_4f,_4b,_56,_4c,_5d,_61,_4b,_END_,
@@ -2685,7 +2685,7 @@ BYTE code tsOSD_ECO_MOVIE[] =
 	_EY_K_B5,_EY_NXX_DE,_EY_HX_BC,_EY_OX_BE,_END_,
 	_HY_6B_,_HY_52_,_END_,
 	_FT_dian_5B,_FT_ying_5C,_END_,
-	_CH_DIAN_5E,_CH_YING_5F,_END_,		//?¨°¨¬?		¦Ì?¨®¡ã
+	_CH_DIAN_5E,_CH_YING_5F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½
 	_JA_8a,_JA_4b,_END_,
 
 	
@@ -2719,7 +2719,7 @@ BYTE code tsOSD_ECO_INTERNET[] =
 	_EY_K_B5,_EY_NXX_DE,_EY_HX_BC,_EY_OX_BE,_END_,
 	_HY_57_,_HY_52_,_END_,
 	_FT_dian_5B,_FT_ying_5C,_END_,
-	_CH_DIAN_5E,_CH_YING_5F,_END_,		//?¨°¨¬?		¦Ì?¨®¡ã
+	_CH_DIAN_5E,_CH_YING_5F,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½
 	_JA_8a,_JA_4b,_END_,
 	
 	_T_,_4f,_4b,_4c,_5d,_4f,_END_,
@@ -2759,7 +2759,7 @@ BYTE code tsOSD_ECO_TEXT[] =
 	_FT_wen_A7,_FT_ben_A8,_END_,
 	_CH_wen_A5,_CH_ben_A6,_END_,	
 	_JA_ba,_JA_bb,_JA_5f,_JA_55,_END_,
-	_K_,_4a,_5d,_52,_4a,_4c,_o_,_END_,//¦ª¦Å?¦Ì¦Å¦Í¦Ï	
+	_K_,_4a,_5d,_52,_4a,_4c,_o_,_END_,//ï¿½ï¿½ï¿½ï¿½?ï¿½Ì¦Å¦Í¦ï¿½	
 	_S_,_z_,_o3_,_v_,_e_,_g_,_END_,
 	_M_,_e_,_t_,_i_,_n_,_END_,
 	
@@ -2791,10 +2791,10 @@ BYTE code tsOSD_ON[] =
 	_Z_,_a_,_p_,_n_,_u_,_t_,_o_,_END_,
 
 	
-	_EY_B_A3,_EY_KX_B6,_EY_PAIX_B8,_DOT_,_END_,		//¿ªÆô 
+	_EY_B_A3,_EY_KX_B6,_EY_PAIX_B8,_DOT_,_END_,		//ï¿½ï¿½ï¿½ï¿½ 
 	_HY_81_,_HY_51_,_END_,
 	_FT_kai_74,_FT_qi_75,_END_,
-	_CH_KAI_77,_CH_QI_78,_END_,		//?¨°¨¬?		?a??
+	_CH_KAI_77,_CH_QI_78,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_N_,_END_,
 #else
@@ -2865,8 +2865,8 @@ BYTE code tsOSD_MODE2[] =
 	_M_,_o_,_d_,_e_,_l_,_2_,_END_,
 	_M_,_o_,_d_,_e_,_l_,_2_,_END_,
 	_FT_mo_57,_FT_shi_58,_2_,_END_,
-	//_CH_MO_5A,_CH_SHI_5B,_2_,_END_,		//?¨°¨¬?		?a??
-	_CH_HONG_72,_CH_SE_51,_END_,		//?¨°¨¬?		?a??
+	//_CH_MO_5A,_CH_SHI_5B,_2_,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
+	_CH_HONG_72,_CH_SE_51,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
 
 	
 	_M_,_o_,_d_,_e_,_l_,_2_,_END_,
@@ -2901,9 +2901,9 @@ BYTE code tsOSD_MODE3[] =
 	_M_,_o_,_d_,_e_,_l_,_3_,_END_,
 	_M_,_o_,_d_,_e_,_l_,_3_,_END_,
 	_FT_mo_57,_FT_shi_58,_3_,_END_,
-//	_CH_MO_5A,_CH_SHI_5B,_3_,_END_,		//?¨°¨¬?		?a??
+//	_CH_MO_5A,_CH_SHI_5B,_3_,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
 
-	_CH_LAN_74,_CH_SE_51,_END_,		//?¨°¨¬?		?a??
+	_CH_LAN_74,_CH_SE_51,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
 
 	_M_,_o_,_d_,_e_,_l_,_3_,_END_,
 
@@ -2937,9 +2937,9 @@ BYTE code tsOSD_MODE4[] =
 	_M_,_o_,_d_,_e_,_l_,_4_,_END_,
 	_M_,_o_,_d_,_e_,_l_,_4_,_END_,
 	_FT_mo_57,_FT_shi_58,_4_,_END_,
-//	_CH_MO_5A,_CH_SHI_5B,_4_,_END_,		//?¨°¨¬?		?a??
+//	_CH_MO_5A,_CH_SHI_5B,_4_,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		?a??
 
-        _CH_LV_73,_CH_SE_51,_END_,      //?¨°¨¬?        ?a??
+        _CH_LV_73,_CH_SE_51,_END_,      //?ï¿½ï¿½ï¿½ï¿½?        ?a??
 	_M_,_o_,_d_,_e_,_l_,_4_,_END_,
 
 	_M_,_o_,_d_,_e_,_l_,_4_,_END_,
@@ -3217,10 +3217,10 @@ BYTE code tsOSD_OFF[] =
 	_W_,_y_,_l10_,_a10_, _c_,_z_,_o_,_n_,_e_,_END_,
 	_V_,_y_,_p_,_n_,_u_,_t_,_o_,_END_,
 
-	_EY_B_A3,_EY_BIX_D8,_EY_KX_B6,_EY_PAIX_B8,_DOT_,_END_,	//¹Ø±Õ
+	_EY_B_A3,_EY_BIX_D8,_EY_KX_B6,_EY_PAIX_B8,_DOT_,_END_,	//ï¿½Ø±ï¿½
 	_HY_7C_,_HY_51_,_END_,
 	_FT_guan_72,_FT_bi_73,_END_,
-	_CH_GUAN_75,_CH_BI_76,_END_,	//?¨°¨¬?		1?¡À?
+	_CH_GUAN_75,_CH_BI_76,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		1?ï¿½ï¿½?
 #if(_OSD_FONT_TYPE==_OSD_FONT_SW_JAPANESE)
 	_O_,_F_,_F_,_END_,
 #else
@@ -3314,10 +3314,10 @@ BYTE code	tsOSD_ASPECT_WIDE[]=
 	_S_,_z_,_e_,_r_,_o_,_k_,_i_,_END_,
 	_S1_,_i_,_r_,_o_,_k_,_o_,_u2_,_h_,_l_,_y2_,_END_,
 	
-	_EY_CZ_D1,_EY_NX_B2,_EY_PX_C2,_EY_OX_BE,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_END_,	//¿íÆÁ
+	_EY_CZ_D1,_EY_NX_B2,_EY_PX_C2,_EY_OX_BE,_EY_KX_B6,_EY_NX_B2,_EY_NSX_B4,_END_,	//ï¿½ï¿½ï¿½ï¿½
 	_HY_83_,_HY_48_,_HY_78_,_END_,
 	_FT_kuan_79,_FT_ping_7A,_END_,
-	_CH_KUAN_7B,_CH_PIN_7C,_END_,	//?¨°¨¬?		?¨ª?¨¢
+	_CH_KUAN_7B,_CH_PIN_7C,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		?ï¿½ï¿½?ï¿½ï¿½
 	_JA_7b,_JA_6a,_JA_62,_END_,
 
 	_E_,_5f,_57,_4a,_5d,_4f,_END_,
@@ -3369,18 +3369,18 @@ BYTE code tsOSD_7500[] =
 	_N_,_o_,_r_,_m_,_a_,_l_,_n_,_i2_,_END_,
 	_N_,_o_,_r_,_m_,_a2_,_l_,_n_,_e_,_END_,
 	
-	_EY_H_BB,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_PAIX_B8,_EY_XBX_DA,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//Õý³£
+	_EY_H_BB,_EY_OX_BE,_EY_PX_C2,_EY_MX_BA,_EY_AX_A0,_EY_PAIX_B8,_EY_XBX_DA,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//ï¿½ï¿½ï¿½ï¿½
 
 	
 	_HY_7D_,_HY_7E_,_END_,//_HY_51_,_HY_82_,_HY_4D_,_END_,
 	//_FT_zhengd_7B,_FT_chang_7C,_FT_se_4E,_END_,
-	//_CH_ZHENG_7D,_CH_CHANG_7E,_END_,	//?¨°¨¬?		?y3¡ê
+	//_CH_ZHENG_7D,_CH_CHANG_7E,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		?y3ï¿½ï¿½
 #if(Project_ID ==ID_SONGREN_HK2513E01_1V1H_ST215B042_20210329)||(Project_ID ==ID_SONGREN_HK2513E01_1V1H_SG2381B01_20210129)
 	_FT_zhengd_7B,_FT_chang_7C,_FT_se_4E,_END_,	
 	_CH_ZHENG_7D,_CH_CHANG_7E,_END_,
 #else
 	_FT_biao_59,_FT_zhun_5A,_END_,
-	_CH_BIAO_5C,_CH_ZHUN_5D,_END_,	//?¨°¨¬?		¡À¨º¡Á?
+	_CH_BIAO_5C,_CH_ZHUN_5D,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
 #endif
 	_JA_a7,_JA_61,_JA_a3,_JA_93,_END_,
 
@@ -3418,11 +3418,11 @@ BYTE code tsOSD_COOL[] =
 	_Z_,_i_,_m_,_n_,_e_,_END_,
 	_S_,_t_,_u_,_d_,_e_,_n_,_e2_,_END_,
 	
-	_EY_X_CB,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_KOUX_A8,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//ÀäÉ«
+	_EY_X_CB,_EY_OX_BE,_EY_PAIX_B8,_EY_OX_BE,_EY_KOUX_A8,_EY_HX_BC,_EY_BIX_D8,_EY_NSX_B4,_END_,	//ï¿½ï¿½É«
 	 _HY_84_,_HY_54_,_HY_A4_,_END_,//_HY_84_,_HY_54_,_HY_85_,_HY_4D_,_END_,
 
 	_FT_leng_6D,_FT_se_4E,_FT_wen_6B,_END_,
-	_CH_LEN_70,_CH_SE_51,_END_,		//?¨°¨¬?		¨¤?¨¦?
+	_CH_LEN_70,_CH_SE_51,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?ï¿½ï¿½?
 	_JA_97,_JA_4f,_END_,
 
 
@@ -3459,7 +3459,7 @@ BYTE code tsOSD_WARM[] =
 	_HY_87_,_HY_88_,_HY_B0_,_END_,//	_HY_87_,_HY_88_,_HY_7B_,_HY_4D_,_END_,
 
 	_FT_nuan_6C,_FT_se_4E,_FT_wen_6B,_END_,
-	_CH_NUAN_6F,_CH_SE_51,_END_,	//?¨°¨¬?		?¡¥¨¦?
+	_CH_NUAN_6F,_CH_SE_51,_END_,	//?ï¿½ï¿½ï¿½ï¿½?		?ï¿½ï¿½ï¿½ï¿½?
 	_JA_6e,_JA_4f,_END_,
 
 	_64,_4a,_57,_52,_4d,_END_,
@@ -3489,11 +3489,11 @@ BYTE code tsOSD_USER[] =
 	_U_,_z10_,_y_,_t_,_k_,_o_,_w_,_n_,_i_,_k_,_a_,_END_, 
 	_V_,_l_,_a_,_s_,_t_,_n_,_i2_,_END_, 
 	
-	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_XBX_DA,_EY_3X_B0,_EY_OX_BE,_EY_BX_A4,_DOT_,_END_,	//ÓÃ»§Éè¶¨
+	_EY_MEN_BF,_EY_OX_BE,_EY_PAIX_B8,_EY_XBX_DA,_EY_3X_B0,_EY_OX_BE,_EY_BX_A4,_DOT_,_END_,	//ï¿½Ã»ï¿½ï¿½è¶¨
 
 	  _HY_8A_,_HY_8B_,_HY_6C_,_END_,//_HY_8A_,_HY_8B_,_HY_6C_,_HY_4D_,_END_,
 	_FT_shi_7D,_FT_yong_91,_FT_leng_6E,_FT_she_4B,_FT_ding_4F_,_END_,
-	_CH_YONG_7F,_CH_HU_71,_CH_SHE_4E,_CH_DING_52,_END_,		//?¨°¨¬?	¨®??¡ì¨¦¨¨?¡§
+	_CH_YONG_7F,_CH_HU_71,_CH_SHE_4E,_CH_DING_52,_END_,		//?ï¿½ï¿½ï¿½ï¿½?	ï¿½ï¿½??ï¿½ì¨¦ï¿½ï¿½?ï¿½ï¿½
 	_JA_6f,_JA_61,_JA_a8,_JA_61,_JA_50,_JA_51,_END_,
 
 
@@ -3795,10 +3795,10 @@ BYTE code tsOSD_NO_SIGNAL[] =
     _B_,_r_,_a_,_k_,_,_S_,_y_,_g_,_n_,_a_,_l10_,_u_,_END_,
     _Z1_,_a2_,_d_,_n_,_y2_,_,_S_,_i_,_g_,_n_,_a2_,_l_,_END_,
 
-	_EY_H_BB,_EY_EX_AA,_EY_TX_C6,_,_EY_CX_C4,_EY_NX_B2,_EY_GZX_A6,_EY_HX_BC,_EY_AX_A0,_EY_PAIX_B8,_EY_AX_A0,_END_,	//ÎÞÐÅºÅ
+	_EY_H_BB,_EY_EX_AA,_EY_TX_C6,_,_EY_CX_C4,_EY_NX_B2,_EY_GZX_A6,_EY_HX_BC,_EY_AX_A0,_EY_PAIX_B8,_EY_AX_A0,_END_,	//ï¿½ï¿½ï¿½Åºï¿½
 	_HY_8C_,_HY_8D_,_,_HY_8E_,_HY_8F_,_END_,
 	_FT_wu_8D,_FT_xin_8B,_FT_hao_8C,_END_,
-	_CH_WU_90,_CH_XIN_8D,_CH_HAO_8E,_END_,		//?¨°¨¬?  		?TD?o?
+	_CH_WU_90,_CH_XIN_8D,_CH_HAO_8E,_END_,		//?ï¿½ï¿½ï¿½ï¿½?  		?TD?o?
 	_JA_75,_JA_8f,_JA_9a,_JA_81,_END_,
 
     _67,_4a,_4c,_,_5f,_59,_5b,_57,_56,_4a,_4b,_,_53,_86,_52,_4f,_END_,
@@ -3814,8 +3814,21 @@ BYTE code tsOSD_NO_SIGNAL[] =
 
 BYTE code tsOSD_POWERSAVING1[] =
 {
-	_P_,_O_,_W_,_E_,_R_,_,_S_,_A_,_V_,_I_,_N_,_G_,_END_,
-
+	_P_,_o_,_w_,_e_,_r_,_,_S_,_a_,_v_,_i_,_n_,_g_,_END_,
+	_68,_c_,_o_,_n_,_o_,_m_,_i_,_e_,_,_D_,_e2_,_n_,_e_,_r_,_g_,_i_,_e_,_END_,
+	_A_,_h_,_o_,_r_,_r_,_o_,_,_d_,_e_,_,_E_,_n_,_e_,_r_,_g_,_i2_,_a_,_END_,
+	_P_,_o_,_u_,_p_,_a_,_n_,_c_,_a_,_,_d_,_e_,_,_e_,_n_,_e_,_r_,_g_,_i_,_a_,_END_,
+	_S_,_t_,_r_,_o_,_m_,_s_,_p_,_a_,_r_,_e_,_n_,_END_,
+	_R_,_i_,_s_,_p_,_a_,_r_,_m_,_i_,_o_,_,_d_,_i_,_,_e_,_n_,_e_,_r_,_g_,_i_,_a_,_END_,
+	_E_,_n_,_e_,_r_,_g_,_i_,_e_,_b_,_e_,_s_,_p_,_a_,_r_,_i_,_n_,_g_,_END_,
+	_S_,_t_,_r_,_o3_,_m_,_b_,_e_,_s_,_p_,_a_,_r_,_i_,_n_,_g_,_END_,
+	_V_,_o_,_i_,_m_,_a_,_n_,_s_,_a3_,_a3_,_s_,_t_,_o3_,_END_,
+	_O_,_s_,_z_,_c_,_z_,_e7_,_d_,_n_,_o_,_s2_,_c2_,_,_e_,_n_,_e_,_r_,_g_,_i_,_i_,_END_,
+	_u2_,_s_,_p_,_o_,_r_,_a_,_,_e_,_n_,_e_,_r_,_g_,_i_,_e_,_END_,
+	_EY_OH_DB,_EY_HX_BC,_EY_EX_AA,_EY_B_A3,_EY_GZX_A6,_EY_OX_BE,_EY_3X_B0,_EY_KX_B6,_EY_OX_BE,_EY_HX_BC,_EY_OX_BE,_EY_MX_BA,_EY_NX_B2,_EY_FRX_E0,_END_,
+	_HY_71_,_HY_70_,_,_HY_4B_,_HY_4C_,_END_,
+	_FT_jie_AB,_FT_dian_5B,_END_,
+	_CH_jie_AB,_CH_DIAN_5E,_END_,
 };
 #if(_MENU_INFOR_SHOW_HDR)
 BYTE code tsOSD_HDR[] =
@@ -3839,10 +3852,10 @@ BYTE code tsOSD_NO_SUPPORT[] =
 	_W_,_e_,_j_,_s2_,_c_,_i_,_e_,_,_N_,_i_,_e_,_o_,_b_,_s_,_l10_,_u_,_g_,_i_,_w_,_END_,
 	_N_,_e_,_p_,_o_,_d_,_p_,_o_,_r_,_DOT_,_V_,_s_,_t_,_u_,_p_,_END_,
 
-	_EY_B_A3,_EY_XX_CC,_EY_OX_BE,_EY_KOUX_A8,_,_EY_HX_BC,_EY_EX_AA,_,_EY_MENX_C0,_EY_OX_BE,_EY_KOUX_A8,_EY_KOUX_A8,_END_,	//ÊäÈë²»Ö§³Ö
+	_EY_B_A3,_EY_XX_CC,_EY_OX_BE,_EY_KOUX_A8,_,_EY_HX_BC,_EY_EX_AA,_,_EY_MENX_C0,_EY_OX_BE,_EY_KOUX_A8,_EY_KOUX_A8,_END_,	//ï¿½ï¿½ï¿½ë²»Ö§ï¿½ï¿½
 	_HY_6F_,_HY_70_,_,_HY_4A_,_HY_98_,_,_HY_99_,_HY_89_,_END_,
 	_FT_shu_85,_FT_ru_86,_FT_bu_8E,_FT_bu_8F,_FT_yuan_90,_END_,
-	_CH_SHU_87,_CH_RU_88,_CH_BU_46,_CH_ZHI_47,_CH_CHI_48,_END_,		//?¨°¨¬?		¨º?¨¨?2??¡ì3?
+	_CH_SHU_87,_CH_RU_88,_CH_BU_46,_CH_ZHI_47,_CH_CHI_48,_END_,		//?ï¿½ï¿½ï¿½ï¿½?		ï¿½ï¿½?ï¿½ï¿½?2??ï¿½ï¿½3?
 	_JA_82,_JA_83,_JA_9b,_JA_69,_JA_9c,_JA_61,_JA_55,_JA_5b,_JA_9d,_JA_9e,_JA_9f,_JA_a1,_JA_bc,_JA_a2,_END_,
 
 

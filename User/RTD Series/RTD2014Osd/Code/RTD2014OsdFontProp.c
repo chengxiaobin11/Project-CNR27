@@ -488,7 +488,7 @@ BYTE* RTDOsdTableFuncGetShowResolutionStringAddress(void)
 	BYTE timing_i = 0;
 	
 	//if((GET_INPUT_TIMING_HWIDTH()== 1920)&&(GET_INPUT_TIMING_VHEIGHT() == 540))
-	//	timing_i=1£»
+	//	timing_i=1ï¿½ï¿½
 
 	#if(_DEF_TIMING_PI)
 	if(((GET_INPUT_TIMING_HWIDTH()== 1920)&&(GET_INPUT_TIMING_VHEIGHT() == 1080))||\
@@ -519,8 +519,8 @@ BYTE* RTDOsdTableFuncGetShowResolutionStringAddress(void)
 		i +=3;
 	}
 	
-     i+=4;//HZ,¿Õ¸ñ,_END
-    //i+=1;//¿Õ¸ñ
+     i+=4;//HZ,ï¿½Õ¸ï¿½,_END
+    //i+=1;//ï¿½Õ¸ï¿½
    // i+=2;//HZ
     if(GET_INPUT_TIMING_VFREQ() >= 995)
     {
@@ -844,8 +844,8 @@ BYTE GetOsdShowType(BYTE ucStateIndex)
 		case _MENU_FUN_GunagGan:
 #endif
 #if(_ROTATE_FUN_SUPPORT)
-		case _MENU_FUN_ROTATE:	//Ðý×ª
-		case _MENU_FUN_OSD_ROTATE:	//Ðý×ª
+		case _MENU_FUN_ROTATE:	//ï¿½ï¿½×ª
+		case _MENU_FUN_OSD_ROTATE:	//ï¿½ï¿½×ª
 #endif
 #if 1//(_OSD_POWER_SAVING_MODE)
 		case _MENU_FUN_POWER_SAVING:
@@ -1372,7 +1372,7 @@ void SG_PutStringProp(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE ucString, 
 // Input Value  : None
 // Output Value : None
 //--------------------------------------------------
-#if 1//osd ÂÒµô
+#if 1//osd ï¿½Òµï¿½
 #define _FONT_SELECT_EXT1               0x100//251
 #define _FONT_SELECT_EXT2               0x100//252
 #define _NEXT_LINE                      0x100//253
@@ -1384,7 +1384,7 @@ void SG_PutStringProp(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE ucString, 
 
 
 
-void OsdPropFontDataToSram(BYTE ucFptsSelect, BYTE *ucpArray, BYTE ucRotateType)//ËùÓÐÓÃµÄÒª²¹Æë
+void OsdPropFontDataToSram(BYTE ucFptsSelect, BYTE *ucpArray, BYTE ucRotateType)//ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Òªï¿½ï¿½ï¿½ï¿½
 {
     switch(ucFptsSelect)
     {
@@ -1653,7 +1653,7 @@ void OsdPropPutString(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE ucString, 
 	 BYTE timing_i = 0;
 	 
 	 //if((GET_INPUT_TIMING_HWIDTH()== 1920)&&(GET_INPUT_TIMING_VHEIGHT() == 540))
-	 //  timing_i=1£»
+	 //  timing_i=1ï¿½ï¿½
 	
  #if(_DEF_TIMING_PI)
 	 if(((GET_INPUT_TIMING_HWIDTH()== 1920)&&(GET_INPUT_TIMING_VHEIGHT() == 1080))||\
@@ -1684,8 +1684,8 @@ void OsdPropPutString(BYTE ucRow, BYTE ucCol, BYTE ucFptsSelect, BYTE ucString, 
 		 i +=3;
 	 }
 	 
-	  i+=4;//HZ,¿Õ¸ñ,_END
-	 //i+=1;//¿Õ¸ñ
+	  i+=4;//HZ,ï¿½Õ¸ï¿½,_END
+	 //i+=1;//ï¿½Õ¸ï¿½
 	// i+=2;//HZ
 	 if(GET_INPUT_TIMING_VFREQ() >= 1000)
 	 {
@@ -2275,7 +2275,7 @@ void RTDOsdTableFuncPutStringCenter_1(BYTE ucRow, BYTE ucColStart, BYTE ucColEnd
 	BYTE i = 0;
 	//BYTE ucpage=0,ucpage1=0;
 	BYTE  tempdata[16];
-	DWORD length=0;//ÐÞ¸Ä¾ÓÖÐ×Ö·û³¤¶È¹ý³¤Òì³£
+	DWORD length=0;//ï¿½Þ¸Ä¾ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ì³£
 	BYTE ucLanguage1=0;
 	BYTE overFontEnmuFlag = 0;
 	if(ucString == _OSD_STRING_NOW_RESOLUTION)
@@ -2368,7 +2368,7 @@ void RTDOsdTableFuncPutStringCenter_1(BYTE ucRow, BYTE ucColStart, BYTE ucColEnd
 	else
 	{
 	
-		pData[5] = ucColStart;//³õÊ¼ÖµÒì³£µ¼ÖÂ
+		pData[5] = ucColStart;//ï¿½ï¿½Ê¼Öµï¿½ì³£ï¿½ï¿½ï¿½ï¿½
 		pData[0] = 0;
 	}
 
@@ -2882,7 +2882,7 @@ void RTDOsdTableFuncPutStringCenter(BYTE ucRow, BYTE ucColStart, BYTE ucColEnd, 
 	BYTE i = 0;
 	//BYTE xdata tempdata[16];
 	BYTE  tempdata[16];
-	DWORD length=0;//ÐÞ¸Ä¾ÓÖÐ×Ö·û³¤¶È¹ý³¤Òì³£
+	DWORD length=0;//ï¿½Þ¸Ä¾ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ì³£
 	BYTE ucLanguage1=0;
 	
 	if(ucString == _OSD_STRING_NOW_RESOLUTION)
@@ -4284,7 +4284,7 @@ void RTDOsdTableFuncPutStringCenter(BYTE ucRow, BYTE ucColStart, BYTE ucColEnd, 
 	BYTE i = 0;
 	//BYTE xdata tempdata[16];
 	BYTE  tempdata[16];
-	DWORD length=0;//ÐÞ¸Ä¾ÓÖÐ×Ö·û³¤¶È¹ý³¤Òì³£
+	DWORD length=0;//ï¿½Þ¸Ä¾ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ì³£
 	
 	if(ucString == _OSD_STRING_NOW_RESOLUTION)
 	{	
@@ -5324,7 +5324,7 @@ BYTE *OsdPropGetStringTableAddress(BYTE ucString ,BYTE ucIndex, BYTE* ucLanguage
 		
 		case _OSD_STRING_POWER_SAVING:
 			pucArray = tsOSD_POWERSAVING1;
-			*ucLanguage = _ENGLISH;
+			//*ucLanguage = _ENGLISH;
 		break;
 #if(_MENU_INFOR_SHOW_HDR)
 		case _OSD_STRING_HDR:

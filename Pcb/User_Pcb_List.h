@@ -26,9 +26,9 @@
  *_RL6449_PROJECT                0x5xxx
  *_RL6463_PROJECT                0x6xxx
  *_RL6492_PROJECT                0x7xxx
- *pcb ÃüÃû¹æÔò:Ð¾Æ¬ÏµÁÐ->Pin½ÅÊý->°å¿¨Ãû×Ö->ÊäÈë¶Ë¿Ú->Êä³ö¶Ë¿Ú
+ *pcb ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:Ð¾Æ¬Ïµï¿½ï¿½->Pinï¿½ï¿½ï¿½ï¿½->ï¿½å¿¨ï¿½ï¿½ï¿½ï¿½->ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½->ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½
  */
-//PCBµÚÒ»´ÎÊ¹ÓÃ£¬ÇëÉêÇë²âÊÔ£¬Ä¿Ç°ºÜ¶à¸Ð¾õ²»¶Ô
+//PCBï¿½ï¿½Ò»ï¿½ï¿½Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½Ä¿Ç°ï¿½Ü¶ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½
 /*********************RL6369*********************************************/
 
 
@@ -65,17 +65,17 @@
 #define _RL6432__156PIN__HKMRT2557E04__2H1DP__LVDS                       0x3013
 #define _RL6432__156PIN__HKMRT2556E18__2T1H__LVDS                    	 0x3014
 #define _RL6432__156PIN__HKMRT2557E03__1T1H1DP_EDP                       0x3015
-#define _RL6432__156PIN__HKMRT255XE08__1T1H1DP_LVDS                		 0x3016//´ý¶¨
-#define _RL6432__156PIN__HKMRT2557E09__1T1H1DP_EDP                       0x3017//´ý¶¨
+#define _RL6432__156PIN__HKMRT255XE08__1T1H1DP_LVDS                		 0x3016//ï¿½ï¿½ï¿½ï¿½
+#define _RL6432__156PIN__HKMRT2557E09__1T1H1DP_EDP                       0x3017//ï¿½ï¿½ï¿½ï¿½
 
-#define _RL6432__156PIN__HKMRT255XE15__2H1DP__LVDS                       0x3018//´ý¶¨
-#define _RL6432__156PIN__HKMRT255XE17__1D1H1DP_LVDS              	  	 0x3019//´ý¶¨
+#define _RL6432__156PIN__HKMRT255XE15__2H1DP__LVDS                       0x3018//ï¿½ï¿½ï¿½ï¿½
+#define _RL6432__156PIN__HKMRT255XE17__1D1H1DP_LVDS              	  	 0x3019//ï¿½ï¿½ï¿½ï¿½
 #define _RL6432__156PIN__HKMRT255XE05__2H1DP__LVDS                       0x3020
-#define _RL6432__156PIN__HKMRT255XE06__1H1DP1T__LVDS                     0x3021//´ý¶¨
-#define _RL6432__156PIN__HKMRT255XE19__1T1P1H__LVDS                      0x3022//´ý¶¨//·Ç2557E19  ²»ÓÃ
+#define _RL6432__156PIN__HKMRT255XE06__1H1DP1T__LVDS                     0x3021//ï¿½ï¿½ï¿½ï¿½
+#define _RL6432__156PIN__HKMRT255XE19__1T1P1H__LVDS                      0x3022//ï¿½ï¿½ï¿½ï¿½//ï¿½ï¿½2557E19  ï¿½ï¿½ï¿½ï¿½
 #define _RL6432__156PIN__HKMRT2557E17_1T1P1H_LVDS						 0x3023//2557E19
 
-#define _RL6432__156PIN__HKMRT2557E23__1A1H1DP__LVDS				     0x3024//´ý¶¨
+#define _RL6432__156PIN__HKMRT2557E23__1A1H1DP__LVDS				     0x3024//ï¿½ï¿½ï¿½ï¿½
 
 
 /*********************RL6432 216Pin***************************************/
@@ -95,11 +95,11 @@
 #define _RL6432__216PIN__HK_M_RT2785E02_1DP3HDMI_LVDS                    0x400A
 #define _RL6432__216PIN__HK_M_RT2785E03_1DP3HDMI_eDP                     0x400B
 #define _RL6432__216PIN__HK_M_RT2785E06_1DP2HDMI1USB_LVDS                0x400C//
-#define _RL6432__216PIN__HK_M_RT2785E07_1DP3HDMI_LVDS                	 0x400D//´ý¶¨
+#define _RL6432__216PIN__HK_M_RT2785E07_1DP3HDMI_LVDS                	 0x400D//ï¿½ï¿½ï¿½ï¿½
 
-#define _RL6432__216PIN__HK_M_RT2785E011_1DP1HDMI1DPOUT_LVDS           	 0x400E//´ý¶¨
-#define _RL6432__216PIN__HKM_RT2785E17_1T1P2H_LVDS				 		 0x400F//´ý¶¨
-#define _RL6432__216PIN__HKM_RT2785E19_1T1P1H_LVDS				 		 0x4010//´ý¶¨ //2785E20
+#define _RL6432__216PIN__HK_M_RT2785E011_1DP1HDMI1DPOUT_LVDS           	 0x400E//ï¿½ï¿½ï¿½ï¿½
+#define _RL6432__216PIN__HKM_RT2785E17_1T1P2H_LVDS				 		 0x400F//ï¿½ï¿½ï¿½ï¿½
+#define _RL6432__216PIN__HKM_RT2785E19_1T1P1H_LVDS				 		 0x4010//ï¿½ï¿½ï¿½ï¿½ //2785E20
 
 
 
@@ -128,13 +128,13 @@
 #define _RL6449__216PIN__HK_M_RTD2795E06__1T1DP1H__eDPVB1   		     0x500E
 #define _RL6449__216PIN__HK_M_RTD2775E04__1T1DP1H__eDPVB1   		     0x500F
 
-#define _RL6449__216PIN__HK_M_RTD2775E01__2DP2H__eDPVB1					 0x5010///´ý¶¨
-#define _RL6449__216PIN__HK_M_RT2795E12_1HDMIDP1DPOUT1TYPEC_EDP			 0x5011///´ý¶¨
-#define _RL6449__216PIN__HK_M_RTD2795E18_1DP2H1T_EDP					 0x5012///´ý¶¨
-#define _RL6449__216PIN__HK_M_RTD2775E05__1T1DP1H__eDPVB1				 0x5013///´ý¶¨
-#define _RL6449__216PIN__HK_M_RTD2795E15__1DP2H__eDPVB1				 	 0x5014///´ý¶¨
-#define _RL6449__216PIN__HK_M_RTD2795E20__1T1DP2H__eDPVB1				 0x5015///´ý¶¨
-#define _RL6449__216PIN__HK_M_RTD2795E16__2DP2H__eDPVB1				 	 0x5016///´ý¶¨
+#define _RL6449__216PIN__HK_M_RTD2775E01__2DP2H__eDPVB1					 0x5010///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RT2795E12_1HDMIDP1DPOUT1TYPEC_EDP			 0x5011///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RTD2795E18_1DP2H1T_EDP					 0x5012///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RTD2775E05__1T1DP1H__eDPVB1				 0x5013///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RTD2795E15__1DP2H__eDPVB1				 	 0x5014///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RTD2795E20__1T1DP2H__eDPVB1				 0x5015///ï¿½ï¿½ï¿½ï¿½
+#define _RL6449__216PIN__HK_M_RTD2795E16__2DP2H__eDPVB1				 	 0x5016///ï¿½ï¿½ï¿½ï¿½
 //#define _RL6449__216PIN__HK_M_RTD2775E05__1T1DP1H__eDPVB1   		     0x500F
 #define _RL6449__216PIN__HK_M_RTD2795E21__2DP2H__eDPVB1					 0x5017
 
@@ -142,7 +142,7 @@
 
 
 
-//#define _RL6449__216PIN__HK_M_RTD2795E18_1T1DP1H__eDPVB1                0x5018///´ý¶¨
+//#define _RL6449__216PIN__HK_M_RTD2795E18_1T1DP1H__eDPVB1                0x5018///ï¿½ï¿½ï¿½ï¿½
 
 
 /*********************RL6463*********************************************/
@@ -153,14 +153,14 @@
 #define _RL6463__128PIN__HKMRT2513E01__1A1H__LVDS                        0X6003
 #define _RL6463__128PIN__HKMRT2513E03__1A1H__LVDS                        0X6004
 
-#define _RL6463__128PIN__HKMRT2525E02__1A2H__LVDS                        0X6005//µã²»ÁÁ£¬²»È·¶¨ÊÇÖ÷°åÎÊÌâ»¹ÊÇ´úÂëÎÊÌâ
-#define _RL6463__128PIN__HKMRT2525E04__1A1P1H__LVDS                      0X6006//1A1H1P,Ä¿Ç°´úÂë²»ÄÜµã£¬xdata³¬³ö
+#define _RL6463__128PIN__HKMRT2525E02__1A2H__LVDS                        0X6005//ï¿½ã²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â»¹ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define _RL6463__128PIN__HKMRT2525E04__1A1P1H__LVDS                      0X6006//1A1H1P,Ä¿Ç°ï¿½ï¿½ï¿½ë²»ï¿½Üµã£¬xdataï¿½ï¿½ï¿½ï¿½
 
-#define _RL6463__76PIN__HKMRT2313E01__1A1H__LVDS                     	 0X6007///´ý¶¨
+#define _RL6463__76PIN__HKMRT2313E01__1A1H__LVDS                     	 0X6007///ï¿½ï¿½ï¿½ï¿½
 #define _RL6463__128PIN__HKMRT2513E05__1A1H__LVDS                  	     0X6008
 
 
-#define _RL6851__76PIN__HKMRT2313BRE01__1A1H__LVDS                  	 0X7001///´ý¶¨
+#define _RL6851__76PIN__HKMRT2313BRE01__1A1H__LVDS                  	 0X7001///ï¿½ï¿½ï¿½ï¿½
 #define _RL6851__128PIN__HKMRT2513BRE03__1A1H__LVDS                  	 0X7002//
 #define _RL6851__76PIN__HKMRT2313BRE06__1A1H__LVDS                  	 0X7003///
 

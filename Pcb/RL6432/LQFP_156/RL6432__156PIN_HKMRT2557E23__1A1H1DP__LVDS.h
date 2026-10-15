@@ -1242,7 +1242,7 @@ sbit bHeadphoneDetect                                    = P1 ^ 7;//_156PIN_PIN_
 
 #endif
 
-//#define _MAIN_PAGE_MODEL_NAME                 _M_,_o_,_d_,_e_,_l_,_,_COLON_,_,_2_,_5_,_5_,_7_
+#define _MAIN_PAGE_MODEL_NAME                 _M__,_o__,_d__,_e__,_l__,__,_COLON__,__,_2__,_5__,_5__,_7__                            
 
 #define _BURNIN_STR_IC_NAME                	 _H__,_K__,_DOT__,_M__,_DOT__,_R__,_T__,_2__,_5__,_5__,_7__,_E__,_2__,_3__
 

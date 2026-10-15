@@ -36,7 +36,7 @@
 // Panel Option
 //--------------------------------------------------
 //#define _PANEL_TYPE                                             _AU_LVDS_21_5_WUXGA
-#if(Project_ID == ID_JX_HK2556E02_1P1H_M270HCA_L7B_LVDS_FHD165HZ_20211012)
+#if(Project_ID == ID_JX_HK2556E02_1P1H_M270HCA_L7B_LVDS_FHD165HZ_20211012) || (Project_ID == ID_CHUANGWU_2557E19_MV238FHM_NG1_FHD144HZ_20260723) 
 #define _PANEL_POW_SEQ_FAST_MODE                                _OFF
 #else
 #define _PANEL_POW_SEQ_FAST_MODE                                _ON

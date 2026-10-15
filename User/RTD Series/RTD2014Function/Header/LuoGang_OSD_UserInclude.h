@@ -3055,7 +3055,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_OD										        _OFF//N
 	#define _DEF_BACKLIGHT                                      80
 	#define _MPRT_RATIO 								        60
-	#define _CONTRAST_MAX										2848//2592//2848
+	#define _CONTRAST_MAX										2592//2592//2848
 	#define _CONTRAST_MIN										1248
 	#define _DEF_DIGITAL_VOL_MAX								4731//5632//3500
 	#define _DEF_DIGITAL_VOL_CENTER                             3379//2300
@@ -3068,7 +3068,7 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_LANGUAGE										_ENGLISH//_CHINESE_S
 	#define _DEF_OSD_LANGUAGE_ARROW                    			 _ON	
 	#define _DEF_GAMMA											_GAMMA_22
-	#define _DEF_HDR_MODE    									_HDR10_MODE_AUTO
+	#define _DEF_HDR_MODE    									_HDR10_MODE_OFF//_HDR10_MODE_AUTO
 	#define _SOURCE_AUTO_ON								        _ON //�ź��л��Ƿ��auto
 	#define _CT_sRGB_SUPPRT							    		_ON  //ɫ���Ƿ��sRGB	
 	#define _CT_7500_SUPPRT 									_ON  //ɫ���Ƿ��7500
@@ -3081,12 +3081,12 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _OD_STRONG											0X40
 	#define _OD_WEAK_MID_HIGH									_OFF // OD ǿ����
 	#define _MPRT_DCR_REPULSION                                 _ON  //DCR��MPRT����
-	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_2__,__,_2__,_0__,_2__,_6__,_0__,_9__,_2__,_3__
+	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_3__,__,_2__,_0__,_2__,_6__,_1__,_0__,_1__,_4__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_6500
 	#define EDID_SIZE_WR								_ON//д��ߴ�
 	#define EDID_ID_CODE								0x2700
-	#define EDID_ID_SIZE								2360//0x0000
+	#define EDID_ID_SIZE								2700//0x0000
 	#define EDID_YEAR_table 							2026//���
 	#define EDID_WEEK_table 							38//�ܱ�
 	#define EDID_ID_NAME								"CNR"
