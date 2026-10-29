@@ -760,7 +760,7 @@
     #define _MPRT_SUPPORT                                           _OFF
 	#define _OD_SUPPORT 											_OFF
 	#define _HDMI_24C02_SUPPORT 									_OFF
-	
+	#define _DCR_PANEL_ON_OFF									    _ON
 #elif(Project_ID    ==  ID_KAIDI_HK2785E20_MV315QHM_NX0_QHD75HZ_20260319)
     #define _PCB_TYPE                                               _RL6432__216PIN__HKM_RT2785E19_1T1P1H_LVDS
     #define _PANEL_TYPE                                             _BOE_MV315QHM_NX0_LVDS_QHD75HZ//                       

@@ -276,7 +276,7 @@ compiling RTD2014UserInterfaceCec.c...
 compiling RTD2014UserTTSRecordList.c...
 compiling RTD2014NVRamOsd.c...
 compiling RTD2014Ddcci.c...
-User\RTD Series\RTD2014Osd\Code\RTD2014Ddcci.c(299): warning C294: unreachable code
+User\RTD Series\RTD2014Osd\Code\RTD2014Ddcci.c(301): warning C294: unreachable code
 compiling RTD2014Key.c...
 compiling RTD2014Osd.c...
 User\RTD Series\RTD2014Osd\Code\RTD2014Osd.c(1388): warning C322: unknown identifier
@@ -574,24 +574,24 @@ User command #2: ".\Tool\build\link_hdr.bat" "C:\Keil_v5\" .\STD_FW_1P.uvproj RL
 opt	: opt(3), sort, hex2bin(.\HexToBin.exe)
 lib	: 189 extracted
 misc	: m51:.\Output\RL6432_Project.m51, 
-group0	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
-group1	: SCALERCOMMONFREESYNC, SCALERSYNC
-group2	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
-group3	: RTDFACTORYFUNCTION, RTDFACTORYMODE
+group0	: RTD2014OSD, RTD2014OSDDISPLAY, RTD2014OSDFONTTABLE
+group1	: RTDFACTORYFUNCTION, RTDFACTORYMODE
+group2	: RL6432_SERIES_DPRX0_INT, RL6432_SERIES_DPRX1_INT, RL6432_SERIES_DP_INT, SCALERDPRX0_INT_SEPTPHY, SCALERDPRX1_INT_SEPTPHY
+group3	: SCALERCOMMONFREESYNC, SCALERSYNC
 group4	: SCALERCOMMONMCU, SCALERMCU, SYSMAIN
-banked	: 0x3094-0xfeff (guard = 0x100)
+banked	: 0x30c2-0xfeff (guard = 0x100)
 Linking #1...
 banks	: [0, 1, 2, 3, 4, 5, 6, 7, 8]
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DRAWEDIDINFO?RTDFACTORYFUNCTION
-Program Size: data=84.1 xdata=4364 code=441787
+Program Size: data=84.0 xdata=4361 code=443882
 Done.                                        - 0 Error(s), 1 Warning(s)
 D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin del .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin 
 D:\Workdir\workdir\Project-CNR27>.\AddCheckSum.exe .\Output\RL6432_Project\RL6432_Project.bin  .\Output\RL6432_Project\RL6432_Project_WithChkSum.bin BANK1 .\Output\RL6432_Project\HDR.bin HdrBank14 
 checksum  store in 0001fffe   0001ffff
 D:\Workdir\workdir\Project-CNR27>if exist .\Output\RL6432_Project\RL6432_Project.bin del .\Output\RL6432_Project\RL6432_Project.bin 
 ".\Output\RL6432_Project\RL6432_Project.LIB" - 0 Error(s), 44 Warning(s).
-Build Time Elapsed:  00:02:22
+Build Time Elapsed:  00:02:16
 </pre>
 </body>
 </html>

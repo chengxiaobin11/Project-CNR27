@@ -418,7 +418,7 @@
 //-------------------------------------------------
 #define _WAIT_TIME_TO_ACTIVE_VGA                                SEC(0.05)
 #define _WAIT_TIME_TO_ACTIVE_DVI                                SEC(0.1)
-#define _WAIT_TIME_TO_ACTIVE_HDMI                               SEC(0.1)
+#define _WAIT_TIME_TO_ACTIVE_HDMI                               SEC(0.8)
 #define _WAIT_TIME_TO_ACTIVE_DP                                 SEC(0.1)
 
 //--------------------------------------------------

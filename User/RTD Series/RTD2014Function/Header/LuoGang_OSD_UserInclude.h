@@ -3081,14 +3081,14 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _OD_STRONG											0X40
 	#define _OD_WEAK_MID_HIGH									_OFF // OD ǿ����
 	#define _MPRT_DCR_REPULSION                                 _ON  //DCR��MPRT����
-	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_3__,__,_2__,_0__,_2__,_6__,_1__,_0__,_1__,_4__
+	#define _FW_VERSION  _F__,_W__,__,_COLON__,__,_V__,_0__,_0__,_4__,__,_2__,_0__,_2__,_6__,_1__,_0__,_2__,_7__
 	#define _DEF_OSD_TIMEOUT                                    20
 	#define _DEF_COLORTEMP										_CT_6500
 	#define EDID_SIZE_WR								_ON//д��ߴ�
 	#define EDID_ID_CODE								0x2700
 	#define EDID_ID_SIZE								2700//0x0000
 	#define EDID_YEAR_table 							2026//���
-	#define EDID_WEEK_table 							38//�ܱ�
+	#define EDID_WEEK_table 							44//�ܱ�
 	#define EDID_ID_NAME								"CNR"
 	#define DP_EDID_table								"CM27F60"//"KD-2700YM"//"27QH75YM"
 	#define HDMI_EDID_table 							DP_EDID_table
@@ -3128,8 +3128,8 @@ g	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_P5_RESET_ITEM4 								_MENU_NULL
 	#define _DEF_P5_RESET_ITEM5 								_MENU_NULL
 	#define _DEF_P6_MISC_ITEM0									_MENU_FUN_SIGNAL
-	#define _DEF_P6_MISC_ITEM1									_MENU_FUN_LOWBLUE
-	#define _DEF_P6_MISC_ITEM2									_MENU_NULL//_MENU_FUN_FREESYNC
+	#define _DEF_P6_MISC_ITEM1									_MENU_FUN_AUTO_ADJUST
+	#define _DEF_P6_MISC_ITEM2									_MENU_FUN_LOWBLUE//_MENU_FUN_FREESYNC
 	#define _DEF_P6_MISC_ITEM3									_MENU_NULL//_MENU_FUN_OD
 	#define _DEF_P6_MISC_ITEM4									_MENU_NULL
 	#define _DEF_P6_MISC_ITEM5									_MENU_NULL	

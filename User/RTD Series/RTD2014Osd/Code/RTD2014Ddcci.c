@@ -130,6 +130,8 @@ void RTDDdcciColorReset(void);
 extern void RTDDdcciWEdidProc(void);
 extern void RTDDdcciAutoAlignPro(void);
 void RTDDdcciEdidProc(void);
+
+extern void CTXAlignControl(void);
 typedef enum
 {
     _VGA_A0 = 0x01,
@@ -478,6 +480,10 @@ void UserDdcciHandler(void)
 
                 case _DDCCI_CMD_CAPABILITIES_REQUEST:
                     UserCommonDdcciGetCapabilitiesRequest();
+                    break;
+
+                case CTX_ALIGN:
+                    CTXAlignControl();
                     break;
 
                 default:

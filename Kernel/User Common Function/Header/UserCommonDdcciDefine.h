@@ -71,6 +71,8 @@
 #define _DDCCI_CMD_GET_FW_INFO_REQUEST              0xC9
 #define _DDCCI_CMD_SET_SMBUS_BLOCK_REQUEST          0xC8
 
+#define CTX_ALIGN                                   0x6E
+
 #define _DDCCI_OPCODE_GET_CURRENT_FW_VER_REQUEST    0x01
 #define _DDCCI_OPCODE_GET_FW_VER_LOCATE_REQUEST     0x02
 #define _DDCCI_OPCODE_GET_DUAL_BANK_INFO_REQUEST    0x09
